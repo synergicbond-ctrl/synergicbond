@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { AppShell } from "@/components/AppShell";
 import type { NoteBlock, SolutionPart, VisualKey } from "../_data/types";
 import {
   SolutionParticlesFigure,
@@ -176,103 +177,52 @@ export function SolutionsChapterShell({
   const next = currentIndex < parts.length - 1 ? parts[currentIndex + 1] : null;
 
   return (
-    <main className="ls-page">
-      <style>{styles}</style>
+    <AppShell
+      discipline="JEE Advanced Physical Chemistry"
+      chapterTitle="Solution and Colligative Properties"
+      chapterSlug="solutions"
+      description="77-page source reconstructed with ≈27 pages of added reference depth and 65 descriptive solved questions."
+      free={false}
+      lessonNumber={`Part ${String(part.number).padStart(2, "0")} of ${parts.length}`}
+      lessonTitle={part.title}
+      hubRef={{ href: "/learn/jee-advanced/solutions", label: `All ${parts.length} parts` }}
+      prevRef={previous ? { href: `/learn/jee-advanced/solutions/${previous.slug}`, label: previous.shortTitle } : undefined}
+      nextRef={next ? { href: `/learn/jee-advanced/solutions/${next.slug}`, label: next.shortTitle } : undefined}
+    >
+      <div className="ls-page mx-auto max-w-3xl">
+        <style>{styles}</style>
 
-      <header className="ls-hero">
-        <div className="ls-hero-copy">
-          <p className="ls-super-title">JEE ADVANCED PHYSICAL CHEMISTRY</p>
-          <h1>Solution and Colligative Properties</h1>
-          <p className="ls-part-line">Part {String(part.number).padStart(2, "0")} · {part.title}</p>
-          <p className="ls-subtitle">{part.subtitle}</p>
-          <div className="ls-meta-row">
-            <span>77-page source reconstructed</span>
-            <span>≈27 pages of added reference depth</span>
-            <span>65 descriptive solved questions</span>
-            <span>No objective-question blocks</span>
+        <section className="ls-objectives">
+          <div>
+            <p className="ls-card-kicker">PART ROADMAP</p>
+            <h2>{part.title}</h2>
           </div>
-        </div>
-        <div className="ls-top-label">TOP CHAPTER NAVIGATION</div>
-      </header>
+          <ul>{part.objectives.map((objective) => <li key={objective}>{objective}</li>)}</ul>
+        </section>
 
-      <nav className="ls-part-nav" aria-label="Liquid solutions chapter parts">
-        <div className="ls-part-grid">
-          {parts.map((item) => {
-            const active = item.slug === part.slug;
-            return (
-              <Link
-                key={item.slug}
-                href={`/learn/jee-advanced/solutions/${item.slug}`}
-                className={active ? "ls-part-pill active" : "ls-part-pill"}
-                aria-current={active ? "page" : undefined}
-              >
-                <span>{String(item.number).padStart(2, "0")}</span>
-                {item.shortTitle}
-              </Link>
-            );
-          })}
+        <div className="ls-content">
+          {part.blocks.map((block, index) => <Block key={`${block.kind}-${index}-${block.title}`} block={block} />)}
         </div>
-      </nav>
-
-      <section className="ls-objectives">
-        <div>
-          <p className="ls-card-kicker">PART ROADMAP</p>
-          <h2>{part.title}</h2>
-        </div>
-        <ul>{part.objectives.map((objective) => <li key={objective}>{objective}</li>)}</ul>
-      </section>
-
-      <div className="ls-content">
-        {part.blocks.map((block, index) => <Block key={`${block.kind}-${index}-${block.title}`} block={block} />)}
       </div>
-
-      <footer className="ls-footer-nav">
-        {previous ? (
-          <Link href={`/learn/jee-advanced/solutions/${previous.slug}`} className="ls-footer-link">
-            <span>← Previous</span>
-            <strong>{previous.shortTitle}</strong>
-          </Link>
-        ) : <span />}
-        <Link href="/learn/jee-advanced/solutions" className="ls-index-link">All 17 parts</Link>
-        {next ? (
-          <Link href={`/learn/jee-advanced/solutions/${next.slug}`} className="ls-footer-link next">
-            <span>Next →</span>
-            <strong>{next.shortTitle}</strong>
-          </Link>
-        ) : <span />}
-      </footer>
-    </main>
+    </AppShell>
   );
 }
 
 const styles = `
-  :root {
-    color-scheme: dark;
-    --bg: #071524;
-    --panel: rgba(11, 29, 47, .92);
-    --panel2: rgba(15, 37, 59, .88);
-    --line: rgba(103, 232, 249, .22);
-    --cyan: #58d9ef;
-    --amber: #f7be45;
-    --violet: #b8a0ff;
-    --green: #6ee7b7;
-    --rose: #fb8fb8;
-    --text: #edf5ff;
-    --muted: #adbed0;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; }
   .ls-page {
-    min-height: 100vh;
-    padding: 0 20px 72px;
+    --bg: var(--background);
+    --panel: var(--surface);
+    --panel2: var(--surface-2);
+    --line: var(--border);
+    --cyan: var(--accent);
+    --amber: var(--chem-energy);
+    --violet: var(--chem-orbital);
+    --green: var(--chem-rule);
+    --rose: var(--chem-trap);
+    --text: var(--foreground);
+    --muted: var(--text-muted);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.72;
-    background:
-      radial-gradient(circle at 10% 0%, rgba(88,217,239,.12), transparent 30rem),
-      radial-gradient(circle at 95% 16%, rgba(184,160,255,.10), transparent 34rem),
-      linear-gradient(180deg, #0b2033 0%, #071524 38%, #05111d 100%);
   }
   .ls-hero, .ls-part-nav, .ls-objectives, .ls-content, .ls-footer-nav {
     width: min(1500px, 100%);

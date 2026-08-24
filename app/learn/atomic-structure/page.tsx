@@ -1,26 +1,13 @@
+import { AppShell } from "@/components/AppShell";
 import { renderChemistry } from "@/lib/renderChemistry";
 import { AtomicConceptMapVisual } from "./_components/AtomicVisuals";
 import { AtomicStructurePartNavigator } from "./_components/AtomicStructurePartNavigator";
 import { atomicPartMeta } from "./parts/_shared";
 import {
-  PremiumNotes, Glass, Hero, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet, type NoteSection,
+  Glass, Hero, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet,
 } from "@/components/notes/premium";
 
-// /learn/atomic-structure — premium visual chapter on the shared notes template.
-
-const SECTIONS: NoteSection[] = [
-  { id: "why", label: "Why it matters" },
-  { id: "concept-map", label: "Concept Map" },
-  { id: "source-parts", label: "Chapter Parts" },
-  { id: "models", label: "Models of the Atom" },
-  { id: "quantum", label: "Quantum Numbers" },
-  { id: "formulas", label: "Formula Cards" },
-  { id: "example", label: "Solved Example" },
-  { id: "mistakes", label: "Common Mistakes" },
-  { id: "ncert", label: "NCERT Highlights" },
-  { id: "jee", label: "JEE Focus" },
-  { id: "revision", label: "Revision Sheet" },
-];
+// /learn/atomic-structure — unified canonical shell, premium content preserved.
 
 const MODELS = [
   { name: "Dalton", idea: "Atom = indivisible solid sphere." },

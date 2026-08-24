@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { BlockMath, InlineMath } from "react-katex";
 import "katex/dist/katex.min.css";
+import { AppShell } from "@/components/AppShell";
 import { SURFACE_CHEMISTRY_PARTS } from "./part-metadata";
 
 export type Tone = "cyan" | "violet" | "amber" | "emerald" | "rose" | "slate";
@@ -593,45 +594,22 @@ export function PartShell({
   const total = SURFACE_CHEMISTRY_PARTS.length;
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#050914] text-slate-100 antialiased">
-      <div className="min-h-screen bg-[radial-gradient(circle_at_10%_0%,rgba(34,211,238,.13),transparent_31rem),radial-gradient(circle_at_92%_8%,rgba(139,92,246,.13),transparent_34rem)]">
-        <header className="border-b border-white/10">
-          <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-7 lg:px-10">
-            <a href="/learn/jee-advanced/surface-chemistry" className="text-sm font-semibold text-cyan-300">
-              ← Surface Chemistry
-            </a>
-            <div className="mt-5 inline-flex rounded-full border border-cyan-300/25 bg-cyan-300/[.07] px-3 py-1.5 text-xs font-bold uppercase tracking-[.2em] text-cyan-200">
-              JEE Advanced · Part {String(part).padStart(2, "0")} of {String(total).padStart(2, "0")}
-            </div>
-            <h1 className="mt-6 max-w-5xl text-4xl font-black tracking-[-.05em] text-white sm:text-6xl">{title}</h1>
-            <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">{description}</p>
-          </div>
-        </header>
-
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-10">{children}</div>
-
-        <nav className="mx-auto grid max-w-[1320px] gap-4 px-4 pb-16 sm:px-7 md:grid-cols-2 lg:px-10">
-          {previous ? (
-            <a href={`/learn/jee-advanced/surface-chemistry/parts/${previous.slug}`} className="rounded-lg border border-white/10 bg-slate-950/70 p-5">
-              <span className="text-xs uppercase tracking-widest text-slate-500">Previous</span>
-              <div className="mt-2 font-semibold text-white">{previous.title}</div>
-            </a>
-          ) : (
-            <div />
-          )}
-          {next ? (
-            <a href={`/learn/jee-advanced/surface-chemistry/parts/${next.slug}`} className="rounded-lg border border-cyan-300/20 bg-cyan-300/[.05] p-5 text-right">
-              <span className="text-xs uppercase tracking-widest text-cyan-400">Next</span>
-              <div className="mt-2 font-semibold text-white">{next.title}</div>
-            </a>
-          ) : (
-            <a href="/learn/jee-advanced/surface-chemistry" className="rounded-lg border border-cyan-300/20 bg-cyan-300/[.05] p-5 text-right">
-              <span className="text-xs uppercase tracking-widest text-cyan-400">Complete</span>
-              <div className="mt-2 font-semibold text-white">Return to chapter index</div>
-            </a>
-          )}
-        </nav>
+    <AppShell
+      discipline="JEE Advanced · Physical Chemistry"
+      chapterTitle="Surface Chemistry"
+      chapterSlug="surface-chemistry"
+      description="Twelve-part course on adsorption, catalysis and colloids"
+      free={false}
+      lessonNumber={`Part ${String(part).padStart(2, "0")} of ${String(total).padStart(2, "0")}`}
+      lessonTitle={title}
+      hubRef={{ href: "/learn/jee-advanced/surface-chemistry", label: "All 12 parts" }}
+      prevRef={previous ? { href: `/learn/jee-advanced/surface-chemistry/parts/${previous.slug}`, label: previous.title } : undefined}
+      nextRef={next ? { href: `/learn/jee-advanced/surface-chemistry/parts/${next.slug}`, label: next.title } : undefined}
+    >
+      <div className="mx-auto max-w-3xl">
+        <p className="mb-8 max-w-4xl text-lg leading-8 text-[var(--text-muted)]">{description}</p>
+        {children}
       </div>
-    </main>
+    </AppShell>
   );
 }

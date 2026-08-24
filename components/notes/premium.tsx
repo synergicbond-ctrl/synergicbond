@@ -20,51 +20,6 @@ export interface NoteSection {
 }
 
 /** Chapter shell: scroll-progress bar + sticky TOC + content column. */
-export function PremiumNotes({ sections, children }: { sections: NoteSection[]; children: ReactNode }) {
-  const [active, setActive] = useState(sections[0]?.id ?? "");
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const h = document.documentElement;
-      setProgress(Math.round((h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight)) * 100));
-      let cur = sections[0]?.id ?? "";
-      for (const s of sections) {
-        const el = document.getElementById(s.id);
-        if (el && el.getBoundingClientRect().top < h.clientHeight * 0.4) cur = s.id;
-      }
-      setActive(cur);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [sections]);
-
-  return (
-    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <div className="fixed inset-x-0 top-0 z-50 h-1 bg-transparent">
-        <div className="h-full bg-[var(--accent)] transition-[width] duration-150" style={{ width: `${progress}%` }} />
-      </div>
-      <div className="mx-auto flex max-w-6xl gap-8 px-5 py-10 sm:px-6">
-        <aside className="hidden w-52 shrink-0 lg:block">
-          <div className="sticky top-10">
-            <p className="mb-3 text-[11px] font-bold uppercase tracking-widest text-[var(--text-muted)]">Contents</p>
-            <nav className="space-y-0.5">
-              {sections.map((s) => (
-                <a key={s.id} href={`#${s.id}`}
-                  className={`block rounded-lg px-3 py-1.5 text-sm transition ${active === s.id ? "bg-cyan-500/10 font-bold text-[var(--accent)]" : "text-[var(--text-muted)] hover:text-[var(--foreground)]"}`}>
-                  {s.label}
-                </a>
-              ))}
-            </nav>
-            <div className="mt-4 border-t border-[var(--border)] pt-3 text-[11px] text-[var(--text-muted)]">{progress}% read</div>
-          </div>
-        </aside>
-        <main className="min-w-0 flex-1 space-y-16">{children}</main>
-      </div>
-    </div>
-  );
-}
 
 export function Glass({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`rounded-lg border border-[var(--border)] bg-[var(--surface)] ${className}`}>{children}</div>;

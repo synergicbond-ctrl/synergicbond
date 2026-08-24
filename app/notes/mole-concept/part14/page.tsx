@@ -1,6 +1,6 @@
 import React from "react";
 import MoleConceptPart14 from "../part14";
-import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
+import { MoleConceptLessonShell } from "../_lesson-helper";
 
 export const metadata = {
   title: "Mole Concept — Ozonized Oxygen and Mixture Analysis — SYNERGIC BOND",
@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <SbcCoursePartFrame courseId="mole-concept" part={14}>
+    <MoleConceptLessonShell part={14}>
       <MoleConceptPart14 />
-    </SbcCoursePartFrame>
+    </MoleConceptLessonShell>
   );
 }

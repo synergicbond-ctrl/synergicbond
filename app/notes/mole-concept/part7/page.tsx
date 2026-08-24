@@ -1,6 +1,6 @@
 import React from "react";
 import MoleConceptPart7 from "../part7";
-import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
+import { MoleConceptLessonShell } from "../_lesson-helper";
 
 export const metadata = {
   title: "Mole Concept — Charge Counting in Ions — SYNERGIC BOND",
@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <SbcCoursePartFrame courseId="mole-concept" part={7}>
+    <MoleConceptLessonShell part={7}>
       <MoleConceptPart7 />
-    </SbcCoursePartFrame>
+    </MoleConceptLessonShell>
   );
 }

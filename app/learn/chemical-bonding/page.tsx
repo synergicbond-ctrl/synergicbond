@@ -1,19 +1,8 @@
+import { AppShell } from "@/components/AppShell";
 import { renderChemistry } from "@/lib/renderChemistry";
-import { PremiumNotes, Glass, Hero, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet, type NoteSection } from "@/components/notes/premium";
+import { Glass, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet } from "@/components/notes/premium";
 import { CanonicalNotesStyles, ChapterLessonGrid } from "@/components/notes/canonical";
 import { chemBondPartMeta, CHEM_BOND_GROUPS } from "./parts/_shared";
-
-const SECTIONS: NoteSection[] = [
-  { id: "why", label: "Why it matters" },
-  { id: "coverage", label: "189-topic coverage" },
-  { id: "shapes", label: "VSEPR map" },
-  { id: "formulas", label: "Formula cards" },
-  { id: "example", label: "Solved example" },
-  { id: "mistakes", label: "Common mistakes" },
-  { id: "jee", label: "JEE Advanced focus" },
-  { id: "parts", label: "Chapter parts" },
-  { id: "revision", label: "Revision sheet" },
-];
 
 const SHAPES = [
   { sn: "2", shape: "Linear", ex: "BeCl₂, CO₂", ang: "180°" },
@@ -26,19 +15,27 @@ const SHAPES = [
 
 export default function ChemicalBondingNotes() {
   return (
-    <PremiumNotes sections={SECTIONS}>
-      <div id="why" className="scroll-mt-10">
-        <Hero
-          eyebrow="JEE Advanced · Authoritative master sequence"
-          title="Chemical Bonding &"
-          accent="Molecular Structure"
-          lead="A 189-topic deep chapter: energetic origin of bonding → ionic thermochemistry → orbitals/VBT/hybridisation/VSEPR → inorganic structures and special bonding → dipoles/resonance/hydrogen bonding → full MOT → Fajans/intermolecular forces → carbon allotropes and silicates. Historical exam models are retained, but modern bonding caveats are stated explicitly."
-          stats={[
-            { v: "189/189", k: "master topics mapped" },
-            { v: `${chemBondPartMeta.length}`, k: "balanced study parts", tone: "text-emerald-300" },
-            { v: "JEE Adv", k: "derivations + traps + modern caveats", tone: "text-amber-300" },
-          ]}
-        />
+    <AppShell
+      discipline="JEE Advanced · Authoritative master sequence"
+      chapterTitle="Chemical Bonding & Molecular Structure"
+      chapterSlug="chemical-bonding"
+      description="A 189-topic deep chapter: energetic origin of bonding → ionic thermochemistry → orbitals/VBT/hybridisation/VSEPR → inorganic structures and special bonding → dipoles/resonance/hydrogen bonding → full MOT → Fajans/intermolecular forces → carbon allotropes and silicates. Historical exam models are retained, but modern bonding caveats are stated explicitly."
+      free={false}
+    >
+      <div className="mx-auto max-w-3xl space-y-10">
+      <div className="grid gap-3 sm:grid-cols-3">
+        <Glass className="p-4 text-center">
+          <div className="text-2xl font-black text-[var(--foreground)]">189/189</div>
+          <div className="mt-1 text-xs text-[var(--text-muted)]">master topics mapped</div>
+        </Glass>
+        <Glass className="p-4 text-center">
+          <div className="text-2xl font-black text-[var(--chem-rule)]">{chemBondPartMeta.length}</div>
+          <div className="mt-1 text-xs text-[var(--text-muted)]">balanced study parts</div>
+        </Glass>
+        <Glass className="p-4 text-center">
+          <div className="text-2xl font-black text-[var(--chem-energy)]">JEE Adv</div>
+          <div className="mt-1 text-xs text-[var(--text-muted)]">derivations + traps + modern caveats</div>
+        </Glass>
       </div>
 
       <Section id="coverage" eyebrow="No heading-only padding" title="Coverage Architecture">
@@ -131,6 +128,7 @@ export default function ChemicalBondingNotes() {
           "LP–LP > LP–BP > BP–BP, but real angles also depend on electronegativity/π bonding", "BO = (Nb − Na)/2; inspect unpaired electrons for magnetism", "NO = 11 valence e⁻", "Silicates: 0→4 shared O gives isolated→3-D framework",
         ]} ctas={[{ href: "/pyq", label: "Practise PYQs" }, { href: "/memory?deck=formula", label: "Recall formulas" }]} />
       </Section>
-    </PremiumNotes>
+      </div>
+    </AppShell>
   );
 }

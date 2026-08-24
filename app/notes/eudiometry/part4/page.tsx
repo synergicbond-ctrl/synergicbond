@@ -1,6 +1,6 @@
 import React from "react";
 import EudiometryPart4 from "../part4";
-import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
+import { EudiometryLessonShell } from "../_lesson-helper";
 
 export const metadata = {
   title: "Eudiometry — Module 4: Hydrogen, Nitrogen & Oxygen Firing — SYNERGIC BOND",
@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <SbcCoursePartFrame courseId="eudiometry" part={4}>
+    <EudiometryLessonShell part={4}>
       <EudiometryPart4 />
-    </SbcCoursePartFrame>
+    </EudiometryLessonShell>
   );
 }

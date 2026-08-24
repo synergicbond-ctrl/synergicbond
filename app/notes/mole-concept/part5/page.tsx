@@ -1,6 +1,6 @@
 import React from "react";
 import MoleConceptPart5 from "../part5";
-import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
+import { MoleConceptLessonShell } from "../_lesson-helper";
 
 export const metadata = {
   title: "Mole Concept — Molecular Mass and Formula Mass — SYNERGIC BOND",
@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <SbcCoursePartFrame courseId="mole-concept" part={5}>
+    <MoleConceptLessonShell part={5}>
       <MoleConceptPart5 />
-    </SbcCoursePartFrame>
+    </MoleConceptLessonShell>
   );
 }

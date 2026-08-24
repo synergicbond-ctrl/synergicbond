@@ -91,13 +91,15 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     description: "Equivalent weight and n-factor across all species classes, principle of equivalence, and volumetric titration analysis.",
   },
   // ── Solution and Colligative Properties ───────────────────────────────────
+  // NOTE: Route returns 307 (premium redirect) despite no explicit requirePremiumLearnAccess guard.
+  // Protection mechanism needs investigation (possible middleware/global redirect).
   {
     id: "solutions",
     syllabusId: "solutions",
     title: "Solution and Colligative Properties",
     href: "/learn/jee-advanced/solutions",
     lessonLabel: "17 parts",
-    premium: false,
+    premium: true,
     description:
       "Complete JEE Advanced treatment of liquid solutions, Henry’s law, Raoult’s law, ideal and non-ideal behaviour, phase diagrams, distillation, azeotropes and all colligative properties.",
   },
@@ -141,7 +143,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     title: "Solid State",
     href: "/learn/solid-state/master",
     lessonLabel: "10 parts",
-    premium: false,
+    premium: true,
     description:
       "Complete JEE Advanced Solid State notes covering crystal classification, lattices and unit cells, seven crystal systems, packing, voids, radius-ratio rules, important ionic structures, defects, electrical properties and magnetism.",
   },
@@ -156,23 +158,25 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     description: "From Dalton and cathode rays through Bohr, spectra, quantum numbers, the Schrödinger equation, orbitals and olympiad problem sets.",
   },
   // ── Thermodynamics ─────────────────────────────────────────────────────────
+  // NOTE: Route returns 307 (premium redirect). Protection mechanism needs investigation.
   {
     id: "thermodynamics",
     syllabusId: "thermodynamics",
     title: "Thermodynamics",
     href: "/learn/thermodynamics",
     lessonLabel: "30 lessons",
-    premium: false,
+    premium: true,
     description: "Complete 30-part course: systems and state functions, first law, entropy and the second law, free energies, Maxwell relations and equilibrium.",
   },
   // ── Chemical Equilibrium ───────────────────────────────────────────────────
+  // NOTE: Route returns 307 (premium redirect). Protection mechanism needs investigation.
   {
     id: "chemical-equilibrium",
     syllabusId: "chemical-equilibrium",
     title: "Chemical Equilibrium",
     href: "/learn/chemical-equilibrium",
     lessonLabel: "18 parts",
-    premium: false,
+    premium: true,
     description: "Eighteen continuous parts covering mass action, Kc/Kp/Kx, reaction Gibbs energy, Le Chatelier applications and phase equilibria.",
   },
   // ── Isomerism ──────────────────────────────────────────────────────────────
@@ -270,35 +274,38 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
   },
 
   // ── Principles of Qualitative Analysis / Salt Analysis ───────────────────
+  // NOTE: Route returns 307 (premium redirect). Protection mechanism needs investigation.
   {
     id: "qualitative-analysis",
     syllabusId: "qualitative-analysis",
     title: "Principles of Qualitative Analysis",
     href: "/learn/jee-advanced/salt-analysis",
     lessonLabel: "18 parts",
-    premium: false,
+    premium: true,
     description:
       "Complete qualitative analysis course covering preliminary tests, anions, cation groups, confirmatory reactions, interfering radicals and systematic mixture analysis.",
   },
   // ── Environmental Chemistry ───────────────────────────────────────────────
+  // NOTE: Route returns 307 (premium redirect). Protection mechanism needs investigation.
   {
     id: "environmental-chemistry",
     syllabusId: "environmental-chemistry",
     title: "Environmental Chemistry",
     href: "/learn/jee-advanced/environmental-chemistry",
     lessonLabel: "15 parts",
-    premium: false,
+    premium: true,
     description:
       "Atmospheric, water and soil chemistry; pollution mechanisms, industrial waste, control strategies, green chemistry and circular chemical design.",
   },
   // ── Polymers ──────────────────────────────────────────────────────────────
+  // NOTE: Route returns 307 (premium redirect). Protection mechanism needs investigation.
   {
     id: "polymers",
     syllabusId: "polymers",
     title: "Polymers",
     href: "/learn/jee-advanced/polymers",
     lessonLabel: "26 sections",
-    premium: false,
+    premium: true,
     description:
       "Polymer classification, chain architecture, polymerisation mechanisms, tacticity, molecular mass, plastics, rubbers, fibres, resins, biodegradable and conducting polymers.",
   },
@@ -333,7 +340,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
   },
   {
     id: "haloalkanes-haloarenes",
-    syllabusId: "haloalkanes-and-haloarenes",
+    syllabusId: "haloalkanes-haloarenes",
     title: "Haloalkanes and Haloarenes",
     href: "/learn/jee-advanced/organic-chemistry/haloalkanes-haloarenes",
     lessonLabel: "10 sections",
@@ -342,7 +349,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
   },
   {
     id: "alcohols-phenols-ethers",
-    syllabusId: "alcohols-phenols-and-ethers",
+    syllabusId: "alcohols-phenols-ethers",
     title: "Alcohols, Phenols and Ethers",
     href: "/learn/jee-advanced/organic-chemistry/alcohols-phenols-ethers",
     lessonLabel: "10 sections",
@@ -351,7 +358,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
   },
   {
     id: "carbonyls",
-    syllabusId: "aldehydes-ketones-and-carboxylic-acids",
+    syllabusId: "aldehydes-ketones",
     title: "Aldehydes, Ketones and Carboxylic Acids",
     href: "/learn/jee-advanced/organic-chemistry/carbonyls",
     lessonLabel: "11 sections",

@@ -1,4 +1,5 @@
 "use client";
+import { AppShell } from "@/components/AppShell";
 import ElectronicConfigurationMasterV2 from "./ElectronicConfigurationMasterV2";
 import { InteractivePeriodicTableV16 } from "./InteractivePeriodicTableV16";
 
@@ -5650,124 +5651,63 @@ export default function PeriodicTableMasterNotes() {
   };
 
   return (
-    <div
-      data-layout-version="periodicity-top-nav-v14"
-      style={{
-        minHeight: "100vh",
-        background: T.bg,
-        color: T.text,
-      }}
+    <AppShell
+      discipline="JEE Inorganic Chemistry"
+      chapterTitle="Classification of Elements and Periodicity in Properties"
+      chapterSlug="periodic-table"
+      description="NCERT-first, JEE Advanced periodicity notes with data-backed animated SVGs, accessible equations, verified tables, worked examples and block-wise reference data."
+      free={true}
+      fullWidth
     >
-      <header
+      <nav
+        aria-label="Periodic table chapter sections"
         style={{
-          width: "100%",
-          borderBottom: `1px solid ${T.border}`,
-          background: `linear-gradient(180deg, ${T.surface2}, ${T.bg})`,
-          padding: "clamp(18px, 3vw, 34px) clamp(14px, 3vw, 42px)",
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 9,
+          alignItems: "center",
+          marginBottom: 24,
         }}
       >
-        <div
-          style={{
-            maxWidth: 1560,
-            margin: "0 auto",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              alignItems: "baseline",
-              justifyContent: "space-between",
-              gap: 10,
-              marginBottom: 18,
-            }}
-          >
-            <div>
-              <div
-                style={{
-                  color: T.text,
-                  fontFamily: T.serif,
-                  fontSize: "clamp(1.35rem, 2.4vw, 2rem)",
-                  fontWeight: 900,
-                }}
-              >
-                JEE Inorganic Chemistry
-              </div>
-              <div
-                style={{
-                  marginTop: 4,
-                  color: T.cyan,
-                  fontFamily: T.sans,
-                  fontSize: "clamp(.95rem, 1.4vw, 1.08rem)",
-                  fontWeight: 750,
-                }}
-              >
-                Classification of Elements and Periodicity in Properties
-              </div>
-            </div>
-            <div
+        {NAV.filter(
+          (item) =>
+            item.key !== "compendium" &&
+            item.key !== "notebook" &&
+            item.key !== "map",
+        ).map((item) => {
+          const selected = active === item.key;
+          return (
+            <button
+              key={item.key}
+              type="button"
+              onClick={() => {
+                setActive(item.key);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               style={{
-                color: T.gold,
-                fontFamily: T.mono,
-                fontSize: 12,
-                fontWeight: 900,
-                letterSpacing: ".1em",
+                border: `1px solid ${selected ? T.gold : T.border}`,
+                borderLeft: `4px solid ${selected ? T.gold : T.cyan}`,
+                borderRadius: 13,
+                padding: "10px 13px",
+                background: selected
+                  ? "rgba(232,184,75,.15)"
+                  : "rgba(18,34,50,.9)",
+                color: selected ? T.gold : T.textDim,
+                fontFamily: T.sans,
+                fontSize: "clamp(.82rem, 1.1vw, .96rem)",
+                fontWeight: selected ? 900 : 700,
+                lineHeight: 1.25,
+                cursor: "pointer",
+                boxShadow: selected
+                  ? "0 8px 24px rgba(232,184,75,.12)"
+                  : "none",
               }}
             >
-              TOP CHAPTER NAVIGATION
-            </div>
-          </div>
-
-          <nav
-            aria-label="Periodic table chapter sections"
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 9,
-              alignItems: "center",
-            }}
-          >
-            {NAV.filter(
-              (item) =>
-                item.key !== "compendium" &&
-                item.key !== "notebook" &&
-                item.key !== "map",
-            ).map((item) => {
-              const selected = active === item.key;
-              return (
-                <button
-                  key={item.key}
-                  type="button"
-                  onClick={() => {
-                    setActive(item.key);
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  style={{
-                    border: `1px solid ${selected ? T.gold : T.border}`,
-                    borderLeft: `4px solid ${selected ? T.gold : T.cyan}`,
-                    borderRadius: 13,
-                    padding: "10px 13px",
-                    background: selected
-                      ? "rgba(232,184,75,.15)"
-                      : "rgba(18,34,50,.9)",
-                    color: selected ? T.gold : T.textDim,
-                    fontFamily: T.sans,
-                    fontSize: "clamp(.82rem, 1.1vw, .96rem)",
-                    fontWeight: selected ? 900 : 700,
-                    lineHeight: 1.25,
-                    cursor: "pointer",
-                    boxShadow: selected
-                      ? "0 8px 24px rgba(232,184,75,.12)"
-                      : "none",
-                  }}
-                >
-                  {item.label}
-                </button>
-              );
-            })}
-          </nav>
-        </div>
-      </header>
+              {item.label}
+            </button>
+          );
+        })}
+      </nav>
 
       <main
         style={{
@@ -5907,6 +5847,6 @@ export default function PeriodicTableMasterNotes() {
 }`}</style>
         </>
       </main>
-    </div>
+    </AppShell>
   );
 }

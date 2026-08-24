@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useSyncExternalStore } from "react";
 import SynergicBondLockup from "@/components/SynergicBondLockup";
 import ProgramSwitcher, { type SwitcherProgram } from "@/components/portal/ProgramSwitcher";
 import { useT, LANGS, type Lang } from "@/lib/i18n";
@@ -72,6 +72,7 @@ const MEGA_MENUS: MegaMenu[] = [
         items: [
           { href: "/programs/gate",          label: "GATE",          desc: "GATE Chemistry (CY)",       icon: Medal },
           { href: "/programs/international",  label: "International",  desc: "AP · IB · A-Level · MCAT",  icon: Globe },
+          { href: "/university-chemistry",   label: "University Chemistry", desc: "B.Sc semester-wise papers", icon: Landmark },
         ],
       },
     ],
@@ -122,7 +123,6 @@ const MEGA_MENUS: MegaMenu[] = [
 
 // Plain top-level links after the mega-menus (final navbar tail).
 const NAV_LINKS: { href: string; label: string; icon: LucideIcon }[] = [
-  { href: "/university-chemistry", label: "University Chemistry", icon: Landmark },
   { href: "/pricing", label: "Pricing", icon: Gem },
   { href: "/support", label: "Support", icon: Heart },
 ];
@@ -193,6 +193,12 @@ const FREE_DESTINATIONS: PortalContext["destinations"] = {
   revision: "/revision", progress: "/performance", aiTools: "/ai-lab",
 };
 
+/** useSyncExternalStore subscribe fn for the `sb_guest` localStorage flag. */
+function subscribeToGuestFlag(onChange: () => void) {
+  window.addEventListener("storage", onChange);
+  return () => window.removeEventListener("storage", onChange);
+}
+
 export default function Navbar() {
   const pathname = usePathname();
   const { lang, setLang, t } = useT();
@@ -201,8 +207,17 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [acctOpen, setAcctOpen] = useState(false);
   const [email, setEmail] = useState<string | null>(null);
-  const [isGuest, setIsGuest] = useState(
-    () => typeof window !== "undefined" && localStorage.getItem("sb_guest") === "1"
+  // useSyncExternalStore forces the SSR/first-client-render snapshot to
+  // "false" (no localStorage during SSR) and only switches to the real
+  // localStorage value on the client's second pass, after hydration is
+  // already reconciled. Reading it via a lazy useState initializer instead
+  // caused a hydration mismatch — the server always rendered the
+  // signed-out chrome, but a guest's first client render skipped straight
+  // to the guest chrome.
+  const isGuest = useSyncExternalStore(
+    subscribeToGuestFlag,
+    () => localStorage.getItem("sb_guest") === "1",
+    () => false
   );
   const [portal, setPortal] = useState<PortalContext | null>(null);
 
@@ -256,7 +271,7 @@ export default function Navbar() {
   async function signOut() {
     await supabase.auth.signOut();
     if (typeof window !== "undefined") localStorage.removeItem("sb_guest");
-    setEmail(null); setIsGuest(false); setAcctOpen(false);
+    setEmail(null); setAcctOpen(false);
     window.location.href = "/";
   }
 

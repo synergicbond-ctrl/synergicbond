@@ -1,6 +1,6 @@
 import React from "react";
 import ConcentrationTermsPart3 from "../part3";
-import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
+import { ConcentrationTermsLessonShell } from "../_lesson-helper";
 
 export const metadata = {
   title: "Concentration Terms — Topic 3: Gram/Litre Strength & Molarity — SYNERGIC BOND",
@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <SbcCoursePartFrame courseId="concentration-terms" part={3}>
+    <ConcentrationTermsLessonShell part={3}>
       <ConcentrationTermsPart3 />
-    </SbcCoursePartFrame>
+    </ConcentrationTermsLessonShell>
   );
 }

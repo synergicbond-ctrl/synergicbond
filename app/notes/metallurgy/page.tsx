@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./metallurgy.css";
+import { AppShell } from "@/components/AppShell";
 
 const parts = [
   { number: 1, slug: "part-1", title: "Foundations, Ores, Gangue & Physical Concentration", description: "Mineral, ore, gangue, gravity separation and magnetic separation" },
@@ -27,24 +27,39 @@ export const metadata = {
 
 export default function MetallurgyPage() {
   return (
-    <main className="metallurgy-shell">
-      <section className="metallurgy-hero">
-        <p className="eyebrow">INORGANIC CHEMISTRY · JEE ADVANCED</p>
-        <h1>Metallurgy</h1>
-        <img
-          className="metallurgy-cover-art"
-          src="/assets/metallurgy/restored-889e823/metallurgy-hero-dark-v4.webp"
-          alt="Extractive metallurgy elemental blueprint"
-        />
-      </section>
-      <section className="part-grid">
-        {parts.map(({ number, slug, title, description }) => (
-          <Link key={slug} href={`/notes/metallurgy/${slug}`} className="part-card">
-            <span>{String(number).padStart(2, "0")}</span>
-            <div><h2>{title}</h2><p>{description}</p></div>
-          </Link>
-        ))}
-      </section>
-    </main>
+    <AppShell
+      discipline="Inorganic Chemistry · JEE Advanced"
+      chapterTitle="Metallurgy"
+      chapterSlug="metallurgy"
+      description="Comprehensive metallurgy notes covering concentration, extraction, reduction, refining, iron, steel and reaction chemistry."
+      free={false}
+    >
+      <div className="mx-auto max-w-3xl">
+        <div className="mb-8 overflow-hidden rounded-lg border border-[var(--border)]">
+          <img
+            className="w-full object-cover"
+            src="/assets/metallurgy/restored-889e823/metallurgy-hero-dark-v4.webp"
+            alt="Extractive metallurgy elemental blueprint"
+          />
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {parts.map(({ number, slug, title, description }) => (
+            <Link
+              key={slug}
+              href={`/notes/metallurgy/${slug}`}
+              className="group flex items-start gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition hover:border-[var(--accent)]/40"
+            >
+              <span className="flex shrink-0 items-center justify-center rounded-lg bg-[var(--surface-2)] px-3 py-2 font-mono text-sm font-bold text-[var(--accent)]">
+                {String(number).padStart(2, "0")}
+              </span>
+              <div className="flex-1 min-w-0">
+                <h2 className="font-bold text-[var(--foreground)]">{title}</h2>
+                <p className="text-sm leading-relaxed text-[var(--text-muted)]">{description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </AppShell>
   );
 }

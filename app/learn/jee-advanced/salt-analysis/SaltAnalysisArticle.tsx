@@ -1,5 +1,5 @@
-import Link from "next/link";
 import katex from "katex";
+import { AppShell } from "@/components/AppShell";
 import { saltAnalysisParts } from "./index";
 import { SaltAnalysisStructure } from "./SaltAnalysisStructures";
 import { SaltAnalysisVisual } from "./SaltAnalysisVisuals";
@@ -12,74 +12,63 @@ type Metadata = {
   exam: string;
 };
 
-const sfProFont =
-  '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif';
-
+// Content-scale rotation. Chemistry notes are allowed the --chem-* semantic
+// scale (meaning only); chrome around them stays flat + single-accent. See
+// app/globals.css "Two colour layers" note. Rotation is kept (not collapsed
+// to one colour) so long-form structure still reads, but every stop is now
+// one of the five design-system content tokens instead of an arbitrary hue.
 const emphasisClasses = [
-  "font-semibold text-cyan-300",
-  "font-semibold text-sky-300",
-  "font-semibold text-indigo-300",
-  "font-semibold text-violet-300",
-  "font-semibold text-fuchsia-300",
-  "font-semibold text-rose-300",
-  "font-semibold text-orange-300",
-  "font-semibold text-amber-300",
-  "font-semibold text-lime-300",
-  "font-semibold text-emerald-300",
-  "font-semibold text-teal-300",
+  "font-semibold text-[var(--chem-bond)]",
+  "font-semibold text-[var(--chem-energy)]",
+  "font-semibold text-[var(--chem-orbital)]",
+  "font-semibold text-[var(--chem-rule)]",
+  "font-semibold text-[var(--chem-trap)]",
 ];
 
 const majorHeadingGradients = [
-  "from-cyan-300 via-sky-300 to-violet-400",
-  "from-emerald-300 via-cyan-300 to-blue-400",
-  "from-violet-300 via-fuchsia-300 to-rose-300",
-  "from-amber-300 via-orange-300 to-rose-300",
-  "from-lime-300 via-emerald-300 to-cyan-300",
-  "from-sky-300 via-indigo-300 to-fuchsia-300",
+  "text-[var(--chem-bond)]",
+  "text-[var(--chem-orbital)]",
+  "text-[var(--chem-rule)]",
+  "text-[var(--chem-energy)]",
 ];
 
 const minorHeadingGradients = [
-  "from-cyan-300 to-sky-300",
-  "from-emerald-300 to-lime-300",
-  "from-violet-300 to-fuchsia-300",
-  "from-amber-300 to-orange-300",
-  "from-rose-300 to-pink-300",
-  "from-teal-300 to-cyan-300",
+  "text-[var(--chem-bond)]",
+  "text-[var(--chem-orbital)]",
+  "text-[var(--chem-rule)]",
+  "text-[var(--chem-energy)]",
 ];
 
 const quoteThemes = [
-  "border-cyan-400/80 bg-cyan-950/25 shadow-cyan-950/30",
-  "border-violet-400/80 bg-violet-950/25 shadow-violet-950/30",
-  "border-amber-400/80 bg-amber-950/20 shadow-amber-950/30",
-  "border-emerald-400/80 bg-emerald-950/20 shadow-emerald-950/30",
-  "border-rose-400/80 bg-rose-950/20 shadow-rose-950/30",
+  "border-[var(--chem-bond)] bg-[var(--surface)]",
+  "border-[var(--chem-orbital)] bg-[var(--surface)]",
+  "border-[var(--chem-energy)] bg-[var(--surface)]",
+  "border-[var(--chem-rule)] bg-[var(--surface)]",
+  "border-[var(--chem-trap)] bg-[var(--surface)]",
 ];
 
 const markerThemes = [
-  "marker:text-cyan-400",
-  "marker:text-violet-400",
-  "marker:text-amber-400",
-  "marker:text-emerald-400",
-  "marker:text-rose-400",
-  "marker:text-sky-400",
+  "marker:text-[var(--chem-bond)]",
+  "marker:text-[var(--chem-orbital)]",
+  "marker:text-[var(--chem-energy)]",
+  "marker:text-[var(--chem-rule)]",
+  "marker:text-[var(--chem-trap)]",
 ];
 
 const tableHeaderThemes = [
-  "bg-cyan-950/60 text-cyan-200",
-  "bg-violet-950/60 text-violet-200",
-  "bg-amber-950/50 text-amber-200",
-  "bg-emerald-950/50 text-emerald-200",
-  "bg-rose-950/50 text-rose-200",
-  "bg-sky-950/60 text-sky-200",
+  "bg-[var(--surface-2)] text-[var(--chem-bond)]",
+  "bg-[var(--surface-2)] text-[var(--chem-orbital)]",
+  "bg-[var(--surface-2)] text-[var(--chem-energy)]",
+  "bg-[var(--surface-2)] text-[var(--chem-rule)]",
+  "bg-[var(--surface-2)] text-[var(--chem-trap)]",
 ];
 
 const tableCellHighlights = [
-  "text-cyan-200",
-  "text-violet-200",
-  "text-amber-200",
-  "text-emerald-200",
-  "text-rose-200",
-  "text-sky-200",
+  "text-[var(--chem-bond)]",
+  "text-[var(--chem-orbital)]",
+  "text-[var(--chem-energy)]",
+  "text-[var(--chem-rule)]",
+  "text-[var(--chem-trap)]",
 ];
 
 function colourIndex(value: string, size: number) {
@@ -173,18 +162,14 @@ function renderBlocks(markdown: string) {
       nodes.push(
         <div
           key={`equation-${blockIndex++}`}
-          className="my-5 rounded-lg bg-gradient-to-r from-cyan-400/60 via-violet-400/50 to-amber-400/60 p-px shadow-lg shadow-cyan-950/20"
-        >
-          <div
-            className="overflow-x-auto rounded-[15px] bg-[#050b14] px-4 py-3 text-center text-slate-50"
-            dangerouslySetInnerHTML={{
-              __html: katex.renderToString(latex, {
-                displayMode: true,
-                throwOnError: false,
-              }),
-            }}
-          />
-        </div>
+          className="my-5 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-center text-[var(--foreground)]"
+          dangerouslySetInnerHTML={{
+            __html: katex.renderToString(latex, {
+              displayMode: true,
+              throwOnError: false,
+            }),
+          }}
+        />
       );
       i++;
       continue;
@@ -210,11 +195,11 @@ function renderBlocks(markdown: string) {
               isMajor
                 ? "text-2xl font-extrabold tracking-tight sm:text-3xl"
                 : "text-lg font-bold sm:text-xl"
-            } bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}
+            } ${gradient}`}
             dangerouslySetInnerHTML={{ __html: inlineMarkup(label) }}
           />
           <div
-            className={`mt-2 h-[3px] rounded-full bg-gradient-to-r ${gradient} ${
+            className={`mt-2 h-[3px] rounded-full bg-current ${gradient} ${
               isMajor ? "w-28" : "w-16"
             }`}
           />
@@ -235,7 +220,7 @@ function renderBlocks(markdown: string) {
       nodes.push(
         <aside
           key={`quote-${blockIndex++}`}
-          className={`my-6 rounded-r-2xl border-l-4 px-5 py-4 text-slate-100 shadow-lg ${theme}`}
+          className={`my-6 rounded-r-lg border-l-4 px-5 py-4 text-[var(--text-body)] ${theme}`}
           dangerouslySetInnerHTML={{
             __html: inlineMarkup(quote.join(" ")),
           }}
@@ -260,16 +245,15 @@ function renderBlocks(markdown: string) {
       nodes.push(
         <div
           key={`table-${blockIndex++}`}
-          className="my-6 rounded-lg bg-gradient-to-r from-cyan-400/45 via-violet-400/40 to-amber-400/45 p-px shadow-xl shadow-black/20"
+          className="my-6 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--surface)]"
         >
-          <div className="overflow-x-auto rounded-[15px] bg-[#050a12]">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr>
                   {head?.map((cell, columnIndex) => (
                     <th
                       key={columnIndex}
-                      className={`border-b border-r border-slate-700/70 px-3 py-3 text-left font-bold last:border-r-0 ${
+                      className={`border-b border-r border-[var(--border)] px-3 py-3 text-left font-bold last:border-r-0 ${
                         tableHeaderThemes[
                           (currentTable + columnIndex) % tableHeaderThemes.length
                         ]
@@ -285,12 +269,12 @@ function renderBlocks(markdown: string) {
                 {rest.map((row, rowIndex) => (
                   <tr
                     key={rowIndex}
-                    className="border-b border-slate-800/80 bg-slate-950/35 odd:bg-slate-900/45 last:border-b-0 hover:bg-slate-800/45"
+                    className="border-b border-[var(--border)] odd:bg-[var(--surface-2)] last:border-b-0 hover:bg-[var(--surface-hover)]"
                   >
                     {row.map((cell, columnIndex) => (
                       <td
                         key={columnIndex}
-                        className={`border-r border-slate-800/80 px-3 py-3 align-top leading-6 last:border-r-0 ${
+                        className={`border-r border-[var(--border)] px-3 py-3 align-top leading-6 last:border-r-0 ${
                           columnIndex === 0
                             ? `font-semibold ${
                                 tableCellHighlights[
@@ -298,7 +282,7 @@ function renderBlocks(markdown: string) {
                                     tableCellHighlights.length
                                 ]
                               }`
-                            : "text-slate-200"
+                            : "text-[var(--text-body)]"
                         }`}
                         dangerouslySetInnerHTML={{
                           __html: inlineMarkup(cell),
@@ -309,7 +293,6 @@ function renderBlocks(markdown: string) {
                 ))}
               </tbody>
             </table>
-          </div>
         </div>
       );
       continue;
@@ -337,7 +320,7 @@ function renderBlocks(markdown: string) {
       nodes.push(
         <Tag
           key={`list-${blockIndex++}`}
-          className={`my-5 space-y-2.5 pl-6 leading-7 text-slate-200 ${
+          className={`my-5 space-y-2.5 pl-6 leading-7 text-[var(--text-body)] ${
             ordered ? "list-decimal" : "list-disc"
           } ${markerTheme}`}
         >
@@ -366,7 +349,7 @@ function renderBlocks(markdown: string) {
     nodes.push(
       <p
         key={`paragraph-${blockIndex++}`}
-        className="my-3.5 leading-7 text-slate-200 selection:bg-fuchsia-500/30 selection:text-white"
+        className="my-3.5 leading-7 text-[var(--text-body)]"
         dangerouslySetInnerHTML={{
           __html: inlineMarkup(para.join(" ")),
         }}
@@ -376,79 +359,6 @@ function renderBlocks(markdown: string) {
   return nodes;
 }
 
-function PartNavigation({
-  part,
-  position,
-}: {
-  part: number;
-  position: "top" | "bottom";
-}) {
-  const currentIndex = saltAnalysisParts.findIndex((item) => item.id === part);
-
-  const previousPart =
-    currentIndex > 0 ? saltAnalysisParts[currentIndex - 1] : null;
-
-  const nextPart =
-    currentIndex >= 0 && currentIndex < saltAnalysisParts.length - 1
-      ? saltAnalysisParts[currentIndex + 1]
-      : null;
-
-  const backHref =
-    previousPart?.href ?? "/learn/jee-advanced/salt-analysis";
-
-  const nextHref = nextPart?.href ?? "/learn/jee-advanced/salt-analysis";
-
-  const backTitle = previousPart
-    ? `Previous: ${previousPart.title}`
-    : "Salt Analysis overview";
-
-  const nextTitle = nextPart
-    ? `Next: ${nextPart.title}`
-    : "Salt Analysis overview";
-
-  const backLabel = previousPart
-    ? `← ${String(previousPart.id).padStart(2, "0")} · Back`
-    : "← Overview";
-
-  const nextLabel = nextPart
-    ? `Next · ${String(nextPart.id).padStart(2, "0")} →`
-    : "Overview →";
-
-  return (
-    <nav
-      aria-label={`${
-        position === "top" ? "Top" : "Bottom"
-      } Salt Analysis navigation`}
-      className={`${
-        position === "top"
-          ? "mb-5"
-          : "mt-9 border-t border-slate-700/60 pt-5"
-      } flex items-center justify-between gap-3`}
-    >
-      <Link
-        href={backHref}
-        title={backTitle}
-        aria-label={backTitle}
-        className="inline-flex w-fit items-center whitespace-nowrap rounded-full bg-gradient-to-r from-cyan-400/70 via-sky-400/60 to-indigo-400/70 p-px text-xs font-bold transition hover:scale-[1.02] sm:text-sm"
-      >
-        <span className="rounded-full bg-[#050a12] px-3 py-1.5 text-cyan-200 transition hover:bg-cyan-950/55 hover:text-white">
-          {backLabel}
-        </span>
-      </Link>
-
-      <Link
-        href={nextHref}
-        title={nextTitle}
-        aria-label={nextTitle}
-        className="inline-flex w-fit items-center whitespace-nowrap rounded-full bg-gradient-to-r from-violet-400/70 via-fuchsia-400/60 to-orange-400/70 p-px text-xs font-bold transition hover:scale-[1.02] sm:text-sm"
-      >
-        <span className="rounded-full bg-[#050a12] px-3 py-1.5 text-violet-200 transition hover:bg-violet-950/55 hover:text-white">
-          {nextLabel}
-        </span>
-      </Link>
-    </nav>
-  );
-}
 
 export function SaltAnalysisArticle({
   metadata,
@@ -457,45 +367,29 @@ export function SaltAnalysisArticle({
   metadata: Metadata;
   content: string;
 }) {
+  const currentIndex = saltAnalysisParts.findIndex((item) => item.id === metadata.part);
+  const previousPart = currentIndex > 0 ? saltAnalysisParts[currentIndex - 1] : null;
+  const nextPart =
+    currentIndex >= 0 && currentIndex < saltAnalysisParts.length - 1
+      ? saltAnalysisParts[currentIndex + 1]
+      : null;
+
   return (
-    <article
-      className="relative mx-auto max-w-6xl overflow-hidden bg-[#050910] px-5 py-8 text-slate-100 sm:px-8 sm:py-10"
-      style={{
-        fontFamily: sfProFont,
-        backgroundImage:
-          "radial-gradient(circle at 8% 0%, rgba(34,211,238,0.10), transparent 27%), radial-gradient(circle at 92% 5%, rgba(168,85,247,0.10), transparent 28%), radial-gradient(circle at 50% 100%, rgba(251,146,60,0.07), transparent 32%)",
-      }}
+    <AppShell
+      discipline={`${metadata.exam} · Inorganic Chemistry`}
+      chapterTitle="Salt Analysis"
+      chapterSlug="salt-analysis"
+      description="Systematic separation, selective reactions, confirmatory tests, ionic equilibria and analytical reasoning."
+      free={false}
+      lessonNumber={`Part ${String(metadata.part).padStart(2, "0")} of ${saltAnalysisParts.length}`}
+      lessonTitle={metadata.title}
+      hubRef={{ href: "/learn/jee-advanced/salt-analysis", label: "All parts" }}
+      prevRef={previousPart ? { href: previousPart.href, label: `Part ${String(previousPart.id).padStart(2, "0")}` } : undefined}
+      nextRef={nextPart ? { href: nextPart.href, label: `Part ${String(nextPart.id).padStart(2, "0")}` } : undefined}
     >
-      <header className="relative mb-7 border-b border-slate-700/70 pb-6">
-        <div className="mb-3 flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em]">
-          <span className="text-cyan-300">{metadata.exam}</span>
-          <span className="text-slate-600">•</span>
-          <span className="text-violet-300">{metadata.chapter}</span>
-          <span className="rounded-full border border-amber-400/25 bg-amber-950/25 px-2.5 py-1 text-amber-300">
-            Part {String(metadata.part).padStart(2, "0")}
-          </span>
-        </div>
-
-        <h1 className="max-w-5xl bg-clip-text text-3xl font-black leading-tight tracking-tight text-transparent sm:text-4xl lg:text-5xl"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, #67e8f9 0%, #7dd3fc 16%, #a5b4fc 32%, #c4b5fd 48%, #f0abfc 64%, #fda4af 80%, #fdba74 100%)",
-          }}>
-          {metadata.title}
-        </h1>
-
-        <div className="mt-4 h-1 w-40 rounded-full"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, #22d3ee, #60a5fa, #8b5cf6, #d946ef, #fb7185, #f59e0b)",
-          }} />
-      </header>
-
-      <PartNavigation part={metadata.part} position="top" />
-
-      <section className="relative">{renderBlocks(content)}</section>
-
-      <PartNavigation part={metadata.part} position="bottom" />
-    </article>
+      <article className="mx-auto max-w-3xl">
+        <section className="relative">{renderBlocks(content)}</section>
+      </article>
+    </AppShell>
   );
 }

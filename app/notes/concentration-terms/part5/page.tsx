@@ -1,6 +1,6 @@
 import React from "react";
 import ConcentrationTermsPart5 from "../part5";
-import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
+import { ConcentrationTermsLessonShell } from "../_lesson-helper";
 
 export const metadata = {
   title: "Concentration Terms — Topic 5: Normality & Equivalent Weight — SYNERGIC BOND",
@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <SbcCoursePartFrame courseId="concentration-terms" part={5}>
+    <ConcentrationTermsLessonShell part={5}>
       <ConcentrationTermsPart5 />
-    </SbcCoursePartFrame>
+    </ConcentrationTermsLessonShell>
   );
 }

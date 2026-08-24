@@ -1,10 +1,6 @@
 import { notFound } from "next/navigation";
-import {
-  ChapterLessonPager,
-  ChapterPartStrip,
-  ChapterShell,
-  type LessonRef,
-} from "@/components/notes/canonical";
+import { AppShell } from "@/components/AppShell";
+import type { LessonRef } from "@/components/notes/canonical";
 import { SOLID_STATE_PARTS } from "../parts";
 
 export function generateStaticParams() {
@@ -42,30 +38,25 @@ export default async function SolidStatePartRoute({ params }: { params: Promise<
   const loaded = await definition.load();
   const PartComponent = loaded.default;
 
+  const prevRef = lessonRef(currentIndex - 1);
+  const nextRef = lessonRef(currentIndex + 1);
+
   return (
-    <ChapterShell
-      kicker="JEE Advanced Physical Chemistry"
-      subtitle="Solid State"
-      headerTag="Complete sequence · 23 parts"
-      tabs={[{ label: "All 23 parts", href: "/learn/solid-state" }]}
-      bleed
+    <AppShell
+      discipline="JEE Advanced Physical Chemistry"
+      chapterTitle="Solid State"
+      chapterSlug="solid-state"
+      description="Complete sequence · 23 parts"
+      free={true}
+      lessonNumber={`Part ${String(number).padStart(2, "0")} of ${SOLID_STATE_PARTS.length}`}
+      lessonTitle={definition.title}
+      hubRef={{ href: "/learn/solid-state", label: "All 23 parts" }}
+      prevRef={prevRef ? { href: prevRef.href, label: prevRef.number } : undefined}
+      nextRef={nextRef ? { href: nextRef.href, label: nextRef.number } : undefined}
     >
-      <div className="sbnPartChrome">
-        <ChapterPartStrip
-          hubHref="/learn/solid-state"
-          hubLabel="Solid State — all parts"
-          positionLabel={`Part ${String(number).padStart(2, "0")} of ${SOLID_STATE_PARTS.length}`}
-        />
+      <div className="mx-auto max-w-3xl">
+        <PartComponent />
       </div>
-      <PartComponent />
-      <div className="sbnPartChrome">
-        <ChapterLessonPager
-          prev={lessonRef(currentIndex - 1)}
-          next={lessonRef(currentIndex + 1)}
-          hubHref="/learn/solid-state"
-          hubLabel="All 23 parts"
-        />
-      </div>
-    </ChapterShell>
+    </AppShell>
   );
 }

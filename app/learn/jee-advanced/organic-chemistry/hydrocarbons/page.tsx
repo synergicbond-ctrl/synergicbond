@@ -2,7 +2,6 @@ import {
   BulletList,
   Callout,
   ChapterIndex,
-  ChapterRail,
   DataTable,
   Formula,
   NumberedList,
@@ -11,6 +10,7 @@ import {
   SubHeading,
   type TermLexicon,
 } from "@/components/design";
+import { AppShell } from "@/components/AppShell";
 import { hydrocarbonBlocks, hydrocarbonChapterMap, type HydrocarbonBlock } from "./hydrocarbons-notes";
 
 export const metadata = {
@@ -66,38 +66,29 @@ function BlockView({ block }: { block: HydrocarbonBlock }) {
 
 export default function HydrocarbonsPage() {
   return (
-    <main className="px-5 py-10 sm:px-8 lg:px-12 xl:px-16">
-      <article className="mx-auto max-w-[1400px]">
-        <header className="pb-14 pt-5 sm:pt-10" style={{ borderBottom: "1px solid var(--border)" }}>
-          <h1 className="font-display mt-5 max-w-[22ch] text-[44px] font-semibold leading-[1.04] tracking-[-0.03em] text-[var(--foreground)] sm:text-[64px] lg:text-[72px]">
-            Hydrocarbons
-          </h1>
-          <p className="mt-6 max-w-[var(--measure)] text-[18px] leading-[1.7] text-[var(--text-body)] sm:text-[20px]">
-            Alkanes, alkenes, alkynes and aromatics — where the reactive intermediates and
-            electronic effects built in General Organic Chemistry turn into real reactions:
-            free-radical halogenation, elimination, electrophilic addition, oxidative
-            cleavage, and the five named electrophilic aromatic substitutions with their
-            directing-effect logic.
-          </p>
-          <Callout label="Central idea" tone="rule">
+    <AppShell
+      discipline="JEE Advanced · Organic Chemistry"
+      chapterTitle="Hydrocarbons"
+      chapterSlug="hydrocarbons"
+      description="Alkanes, alkenes, alkynes and aromatics — where the reactive intermediates and electronic effects built in General Organic Chemistry turn into real reactions: free-radical halogenation, elimination, electrophilic addition, oxidative cleavage, and the five named electrophilic aromatic substitutions with their directing-effect logic."
+      free={false}
+    >
+      <article className="mx-auto max-w-3xl">
+        <Callout label="Central idea" tone="rule">
             Every regiochemical outcome here — Markovnikov addition, Zaitsev elimination,
             ortho/para vs meta substitution — is the same underlying question asked
             repeatedly: which intermediate (carbocation, radical, or arenium ion) is more
             stable, and does the mechanism actually pass through that intermediate.
           </Callout>
-        </header>
 
         <ChapterIndex items={hydrocarbonChapterMap} />
 
-        <div className="grid gap-12 py-14 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-16 lg:py-20">
-          <ChapterRail items={hydrocarbonChapterMap} />
-          <div className="min-w-0 pb-24">
-            {hydrocarbonBlocks.map((block, index) => (
+        <div className="py-8">
+          {hydrocarbonBlocks.map((block, index) => (
               <BlockView key={`${block.kind}-${(block.text ?? "").slice(0, 64)}-${index}`} block={block} />
             ))}
-          </div>
         </div>
       </article>
-    </main>
+    </AppShell>
   );
 }

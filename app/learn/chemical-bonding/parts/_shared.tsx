@@ -1,14 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BlockMath, InlineMath } from "@/components/math/react-katex";
-import {
-  CanonicalNotesStyles,
-  ChapterIdentityHeader,
-  ChapterLessonPager,
-  ChapterContentsRail,
-  TopicHeader,
-  type LessonRef,
-} from "@/components/notes/canonical";
+import { AppShell } from "@/components/AppShell";
+import { type LessonRef } from "@/components/notes/canonical";
 
 export type ChemBondPartMeta = {
   part: number;
@@ -71,58 +65,26 @@ const RAIL_LESSONS = chemBondPartMeta.map((m) => ({ part: m.part, title: m.title
 export function ChemBondPartShell({ part, title, children }: { part: number; title: string; children: ReactNode }) {
   const currentIndex = chemBondPartMeta.findIndex((entry) => entry.part === part);
   const group = chemBondGroupForPart(part);
+  const prevRef = chemBondLessonRef(currentIndex - 1);
+  const nextRef = chemBondLessonRef(currentIndex + 1);
 
   return (
-    <>
-      <CanonicalNotesStyles />
-      {/* compact lesson bar */}
-      <div className="sbnLessonBar">
-        <div className="sbnLessonBarInner">
-          <Link href="/learn/chemical-bonding" className="sbnLessonBarBack">← Chemical Bonding</Link>
-          <span className="sbnLessonBarPos">
-            Part {String(part).padStart(2, "0")} / {chemBondPartMeta.length}
-          </span>
-        </div>
+    <AppShell
+      discipline="Physical Chemistry · JEE Advanced"
+      chapterTitle="Chemical Bonding & Molecular Structure"
+      chapterSlug="chemical-bonding"
+      description="From Kossel–Lewis to MOT — the 189-topic authoritative sequence covering every bond type, geometry, and concept tested in JEE Advanced."
+      free={false}
+      lessonNumber={`Part ${String(part).padStart(2, "0")} of ${chemBondPartMeta.length} · ${group.label.split(",")[0]}`}
+      lessonTitle={title}
+      hubRef={{ href: "/learn/chemical-bonding", label: "All parts" }}
+      prevRef={prevRef ? { href: prevRef.href, label: prevRef.number } : undefined}
+      nextRef={nextRef ? { href: nextRef.href, label: nextRef.number } : undefined}
+    >
+      <div className="mx-auto max-w-3xl space-y-10">
+        {children}
       </div>
-
-      {/* sidebar reading layout */}
-      <div className="sbnSidebarBody">
-        <article className="sbnCanvas" style={{ maxWidth: "720px" }}>
-          <ChapterIdentityHeader
-            subject="Physical Chemistry · JEE Advanced"
-            chapterName="Chemical Bonding & Molecular Structure"
-            descriptor="From Kossel–Lewis to MOT — the 189-topic authoritative sequence covering every bond type, geometry, and concept tested in JEE Advanced."
-            topicCount={chemBondPartMeta.length}
-            accentColor="var(--chem-bond)"
-          />
-
-          <TopicHeader
-            as="h1"
-            eyebrow={group.label.split(",")[0]}
-            title={title}
-            accentColor={group.accent}
-          />
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-            {children}
-          </div>
-
-          <ChapterLessonPager
-            prev={chemBondLessonRef(currentIndex - 1)}
-            next={chemBondLessonRef(currentIndex + 1)}
-            hubHref="/learn/chemical-bonding"
-            hubLabel="All parts"
-          />
-        </article>
-
-        <ChapterContentsRail
-          title="Chapter Contents"
-          groups={CHEM_BOND_GROUPS}
-          lessons={RAIL_LESSONS}
-          currentPart={part}
-        />
-      </div>
-    </>
+    </AppShell>
   );
 }
 

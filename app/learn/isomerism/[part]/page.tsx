@@ -1,5 +1,5 @@
 import { notFound, redirect } from "next/navigation";
-import { ChapterLessonPager, ChapterPartStrip, ChapterShell } from "@/components/notes/canonical";
+import { AppShell } from "@/components/AppShell";
 import {
   IsomerismPartView,
   isomerismLessonRef,
@@ -36,30 +36,26 @@ export default async function IsomerismPartRoute({ params }: { params: Promise<{
   const currentIndex = isomerismParts.findIndex((item) => item.number === number);
   if (currentIndex < 0) notFound();
 
+  const prevRef = isomerismLessonRef(currentIndex - 1);
+  const nextRef = isomerismLessonRef(currentIndex + 1);
+
   return (
-    <ChapterShell
-      kicker="JEE Organic Chemistry"
-      subtitle="Isomerism"
-      headerTag="40-part premium course"
+    <AppShell
+      discipline="JEE Organic Chemistry"
+      chapterTitle="Isomerism"
+      chapterSlug="isomerism"
+      description="40-part premium course on isomerism"
+      free={false}
       tabs={isomerismTabs(number)}
-      bleed
+      lessonNumber={`Part ${number} of ${isomerismParts.length}`}
+      hubRef={{
+        href: "/learn/isomerism",
+        label: "All 40 parts",
+      }}
+      prevRef={prevRef ? { href: prevRef.href, label: `Part ${prevRef.number}` } : undefined}
+      nextRef={nextRef ? { href: nextRef.href, label: `Part ${nextRef.number}` } : undefined}
     >
-      <div className="sbnPartChrome">
-        <ChapterPartStrip
-          hubHref="/learn/isomerism"
-          hubLabel="Isomerism — all parts"
-          positionLabel={`Part ${number} of ${isomerismParts.length}`}
-        />
-      </div>
       <IsomerismPartView number={number} />
-      <div className="sbnPartChrome">
-        <ChapterLessonPager
-          prev={isomerismLessonRef(currentIndex - 1)}
-          next={isomerismLessonRef(currentIndex + 1)}
-          hubHref="/learn/isomerism"
-          hubLabel="All 40 parts"
-        />
-      </div>
-    </ChapterShell>
+    </AppShell>
   );
 }

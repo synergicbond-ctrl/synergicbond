@@ -1,6 +1,6 @@
 import React from "react";
 import EudiometryPart3 from "../part3";
-import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
+import { EudiometryLessonShell } from "../_lesson-helper";
 
 export const metadata = {
   title: "Eudiometry — Module 3: Contraction & Residual Gas Analysis — SYNERGIC BOND",
@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <SbcCoursePartFrame courseId="eudiometry" part={3}>
+    <EudiometryLessonShell part={3}>
       <EudiometryPart3 />
-    </SbcCoursePartFrame>
+    </EudiometryLessonShell>
   );
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ChapterLessonGroups, ChapterShell, type LessonGroup } from "@/components/notes/canonical";
+import { ChapterLessonGroups, type LessonGroup } from "@/components/notes/canonical";
+import { AppShell } from "@/components/AppShell";
 import { SOLID_STATE_PARTS } from "./parts";
 
 export const metadata = {
@@ -31,10 +32,12 @@ export default function SolidStatePage() {
   }));
 
   return (
-    <ChapterShell
-      kicker="JEE Advanced Physical Chemistry"
-      subtitle="Solid State"
-      headerTag="Complete sequence · 23 parts"
+    <AppShell
+      discipline="JEE Advanced Physical Chemistry"
+      chapterTitle="Solid State"
+      chapterSlug="solid-state"
+      description="A structured sequence from crystalline and amorphous solids through crystal lattices, unit-cell geometry, Bravais systems, packing, voids, radius ratio, important structures, defects, electrical properties and magnetism."
+      free={true}
       tabs={[
         { label: "All 23 parts", href: "/learn/solid-state", active: true },
         ...GROUPS.map((group, index) => ({
@@ -43,14 +46,7 @@ export default function SolidStatePage() {
         })),
       ]}
     >
-      <section className="mb-8 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
-        <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--chem-energy)]">JEE Advanced only</p>
-        <h1 className="mt-2 text-3xl font-black tracking-tight text-[var(--foreground)] md:text-5xl">Solid State — Complete 23-Part Course</h1>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-[var(--text-muted)]">
-          A structured sequence from crystalline and amorphous solids through crystal lattices, unit-cell geometry,
-          Bravais systems, packing, voids, radius ratio, important structures, defects, electrical properties and magnetism.
-        </p>
-      </section>
+      <div className="mx-auto max-w-3xl">
       <section className="mb-8 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
         <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--text-muted)]">Complete single-page edition</p>
         <h2 className="mt-2 text-2xl font-black tracking-tight text-white md:text-3xl">89-Page Geometry Master + Advanced Extension</h2>
@@ -66,6 +62,7 @@ export default function SolidStatePage() {
         </Link>
       </section>
       <ChapterLessonGroups groups={groups} anchorPrefix="solid-group" />
-    </ChapterShell>
+      </div>
+    </AppShell>
   );
 }

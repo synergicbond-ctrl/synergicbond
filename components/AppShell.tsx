@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { CanonicalNotesStyles } from "@/components/notes/canonical";
 
 /**
  * UNIFIED APPLICATION SHELL
@@ -75,6 +76,7 @@ export function AppShell({
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <AppShellStyles />
+      <CanonicalNotesStyles />
 
       {/* CHAPTER HEADER */}
       <header className="border-b border-[var(--border)] bg-[var(--surface)] px-6 py-8 sm:px-8">

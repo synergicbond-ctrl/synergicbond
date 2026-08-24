@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/ThemeContext";
 import { LanguageProvider } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import GlobalEnhancements from "@/components/GlobalEnhancements";
-import UniversalChapterNavigator from "@/components/notes/UniversalChapterNavigator";
 
 // Three families, three jobs — see the typography block in globals.css.
 // Self-hosted at build time by next/font, so no external font requests and
@@ -81,7 +80,6 @@ export default function RootLayout({
         <ThemeProvider>
           <LanguageProvider>
             <Navbar />
-            <UniversalChapterNavigator />
             {children}
             <GlobalEnhancements />
           </LanguageProvider>

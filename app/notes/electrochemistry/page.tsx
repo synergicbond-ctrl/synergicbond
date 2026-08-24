@@ -1,7 +1,7 @@
-import React from "react";
 import { InlineMath, BlockMath } from "@/components/math/react-katex";
 import { getNotesChapter } from "@/lib/notesEngine";
-import { ChapterShell, ChapterLessonGroups } from "@/components/notes/canonical";
+import { ChapterLessonGroups } from "@/components/notes/canonical";
+import { AppShell } from "@/components/AppShell";
 import { electroLessonGroups, electroTabs } from "./_chapter";
 
 export const metadata = {
@@ -14,18 +14,15 @@ export default function ElectrochemistryNotesPage() {
   const chapter = getNotesChapter("electrochemistry");
 
   return (
-    <ChapterShell
-      kicker="JEE Physical Chemistry"
-      subtitle="Electrochemistry"
+    <AppShell
+      discipline="JEE Physical Chemistry"
+      chapterTitle="Electrochemistry"
+      chapterSlug="electrochemistry"
+      description="Complete foundation covering galvanic and electrolytic cells, standard electrode potentials, Nernst equation calculations, electrolytic conductance, Kohlrausch's law, and Faraday's laws of electrolysis — 24 authored lessons."
+      free={false}
       tabs={electroTabs()}
     >
-      <div className="space-y-12 text-white">
-        <p style={{ margin: "4px 0 0", maxWidth: 860, color: "#c3d1dd", fontSize: 14.5, lineHeight: 1.7 }}>
-          Complete foundation covering galvanic and electrolytic cells, standard electrode potentials, Nernst
-          equation calculations, electrolytic conductance, Kohlrausch&apos;s law, and Faraday&apos;s laws of
-          electrolysis — 24 authored lessons.
-        </p>
-
+      <div className="mx-auto max-w-3xl space-y-12">
         <section>
           <ChapterLessonGroups groups={electroLessonGroups()} />
         </section>
@@ -34,7 +31,7 @@ export default function ElectrochemistryNotesPage() {
         <section className="space-y-6">
           <div className="flex items-center justify-between border-b border-[var(--border)] pb-3">
             <h2 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-              <span className="inline-block h-2.5 w-2.5 rounded-full bg-cyan-400" />
+              <span className="inline-block h-2.5 w-2.5 rounded-full bg-[var(--accent)]" />
               Core Concepts Summary
             </h2>
             <span className="text-xs font-bold text-[var(--text-muted)]">Syllabus Reference</span>
@@ -42,7 +39,7 @@ export default function ElectrochemistryNotesPage() {
 
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 space-y-4">
-              <h3 className="text-xl font-black text-cyan-300">1. Galvanic Cells & Nernst Equation</h3>
+              <h3 className="text-xl font-black text-[var(--accent)]">1. Galvanic Cells & Nernst Equation</h3>
               <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 In a galvanic cell, chemical energy is converted to electrical energy via spontaneous redox reactions.
                 The standard cell potential is given by:
@@ -59,7 +56,7 @@ export default function ElectrochemistryNotesPage() {
             </div>
 
             <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 space-y-4">
-              <h3 className="text-xl font-black text-lime-300">2. Conductance & Kohlrausch&apos;s Law</h3>
+              <h3 className="text-xl font-black text-[var(--chem-bond)]">2. Conductance & Kohlrausch&apos;s Law</h3>
               <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 Molar conductivity (<InlineMath math="\Lambda_m" />) increases with dilution due to increased ionic mobility and dissociation:
               </p>
@@ -84,12 +81,12 @@ export default function ElectrochemistryNotesPage() {
             <div className="space-y-4">
               {chapter.solvedExamples.map((ex, idx) => (
                 <div key={idx} className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-5 space-y-3">
-                  <p className="text-sm font-bold text-cyan-300">Problem {idx + 1}: {ex.q}</p>
+                  <p className="text-sm font-bold text-[var(--accent)]">Problem {idx + 1}: {ex.q}</p>
                   <div className="text-xs text-[var(--text-muted)] bg-[var(--surface)] p-3 rounded-lg border border-[var(--border)] font-mono space-y-1">
                     {ex.steps.map((st, i) => (
                       <p key={i}>• {st}</p>
                     ))}
-                    <p className="font-bold text-lime-400 pt-1">Answer: {ex.answer}</p>
+                    <p className="font-bold text-[var(--chem-bond)] pt-1">Answer: {ex.answer}</p>
                   </div>
                 </div>
               ))}
@@ -97,6 +94,6 @@ export default function ElectrochemistryNotesPage() {
           </section>
         )}
       </div>
-    </ChapterShell>
+    </AppShell>
   );
 }

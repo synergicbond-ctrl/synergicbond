@@ -27,6 +27,10 @@ const eslintConfig = defineConfig([
     "public/**",
     // Exclude temporary Claude Code worktrees used during development.
     ".claude/worktrees/**",
+    // Disposable one-off content-generation scripts and their output
+    // artifacts (PDF/DOCX/HTML dumps) — never imported by the app, never
+    // deployed. Not first-party application source.
+    "scratchpad/**",
   ]),
 ]);
 

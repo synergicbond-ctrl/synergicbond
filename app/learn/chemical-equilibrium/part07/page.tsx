@@ -1,2 +1,10 @@
 import Part from "../_components/Part07";
-export default function Page() { return <Part />; }
+import { ChemicalEquilibriumLessonShell } from "../_lesson-helper";
+
+export default function Page() {
+  return (
+    <ChemicalEquilibriumLessonShell part="07">
+      <Part />
+    </ChemicalEquilibriumLessonShell>
+  );
+}

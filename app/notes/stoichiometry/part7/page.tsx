@@ -1,6 +1,6 @@
 import React from "react";
 import StoichiometryPart7 from "../part7";
-import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
+import { StoichiometryLessonShell } from "../_lesson-helper";
 
 export const metadata = {
   title: "Stoichiometry Part 7 (Pages 55–63) — SYNERGIC BOND",
@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <SbcCoursePartFrame courseId="stoichiometry" part={7}>
+    <StoichiometryLessonShell part={7}>
       <StoichiometryPart7 />
-    </SbcCoursePartFrame>
+    </StoichiometryLessonShell>
   );
 }

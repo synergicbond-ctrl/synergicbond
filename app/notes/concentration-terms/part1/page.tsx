@@ -1,6 +1,6 @@
 import React from "react";
 import ConcentrationTermsPart1 from "../part1";
-import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
+import { ConcentrationTermsLessonShell } from "../_lesson-helper";
 
 export const metadata = {
   title: "Concentration Terms — Topic 1: Solute vs Solvent & Percentage Solutions — SYNERGIC BOND",
@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <SbcCoursePartFrame courseId="concentration-terms" part={1}>
+    <ConcentrationTermsLessonShell part={1}>
       <ConcentrationTermsPart1 />
-    </SbcCoursePartFrame>
+    </ConcentrationTermsLessonShell>
   );
 }

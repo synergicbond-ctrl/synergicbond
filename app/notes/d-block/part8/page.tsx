@@ -545,6 +545,8 @@ export default function DBlockPart08() {
       lessonNumber="Part 8 of 10"
       lessonTitle="Chromium, Chromate and Dichromate Chemistry"
       hubRef={{ href: "/notes/d-block", label: "All 10 parts" }}
+      prevRef={{ href: "/notes/d-block/part7", label: "Part 7" }}
+      nextRef={{ href: "/notes/d-block/part9", label: "Part 9" }}
     >
       <DBlockVisualSystem />
       <div className="mx-auto max-w-3xl">

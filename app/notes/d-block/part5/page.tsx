@@ -456,6 +456,8 @@ export default function DBlockPart05() {
       lessonNumber="Part 5 of 10"
       lessonTitle="Complex Formation and Catalytic Properties"
       hubRef={{ href: "/notes/d-block", label: "All 10 parts" }}
+      prevRef={{ href: "/notes/d-block/part4", label: "Part 4" }}
+      nextRef={{ href: "/notes/d-block/part6", label: "Part 6" }}
     >
       <DBlockVisualSystem />
       <div className="mx-auto max-w-3xl">

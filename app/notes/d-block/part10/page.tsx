@@ -935,6 +935,7 @@ export default function DBlockPart10() {
       lessonNumber="Part 10 of 10"
       lessonTitle="Compounds of Silver, Zinc, Copper and Iron"
       hubRef={{ href: "/notes/d-block", label: "All 10 parts" }}
+      prevRef={{ href: "/notes/d-block/part9", label: "Part 9" }}
     >
       <DBlockVisualSystem />
       <div className="mx-auto max-w-3xl">

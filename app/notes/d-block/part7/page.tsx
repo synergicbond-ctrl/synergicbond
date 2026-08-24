@@ -407,6 +407,8 @@ export default function DBlockPart07() {
       lessonNumber="Part 7 of 10"
       lessonTitle="Alloys, Interstitial Compounds, Non-stoichiometry and Abundance"
       hubRef={{ href: "/notes/d-block", label: "All 10 parts" }}
+      prevRef={{ href: "/notes/d-block/part6", label: "Part 6" }}
+      nextRef={{ href: "/notes/d-block/part8", label: "Part 8" }}
     >
       <DBlockVisualSystem />
       <div className="mx-auto max-w-3xl">

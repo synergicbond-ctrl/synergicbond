@@ -412,6 +412,8 @@ export default function DBlockPart02() {
       lessonNumber="Part 2 of 10"
       lessonTitle="Atomic Size, Ionic Size and Density"
       hubRef={{ href: "/notes/d-block", label: "All 10 parts" }}
+      prevRef={{ href: "/notes/d-block/part1", label: "Part 1" }}
+      nextRef={{ href: "/notes/d-block/part3", label: "Part 3" }}
     >
       <DBlockVisualSystem />
       <div className="mx-auto max-w-3xl">

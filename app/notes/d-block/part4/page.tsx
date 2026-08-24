@@ -423,6 +423,8 @@ export default function DBlockPart04() {
       lessonNumber="Part 4 of 10"
       lessonTitle="Variable Oxidation States and Their Stability"
       hubRef={{ href: "/notes/d-block", label: "All 10 parts" }}
+      prevRef={{ href: "/notes/d-block/part3", label: "Part 3" }}
+      nextRef={{ href: "/notes/d-block/part5", label: "Part 5" }}
     >
       <DBlockVisualSystem />
       <div className="mx-auto max-w-3xl">

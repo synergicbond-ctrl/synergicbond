@@ -478,6 +478,7 @@ export default function DBlockPart01() {
       lessonNumber="Part 1 of 10"
       lessonTitle="Definition, Classification and Electronic Configuration"
       hubRef={{ href: "/notes/d-block", label: "All 10 parts" }}
+      nextRef={{ href: "/notes/d-block/part2", label: "Part 2" }}
     >
       <DBlockVisualSystem />
       <div className="mx-auto max-w-3xl">

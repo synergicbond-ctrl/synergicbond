@@ -470,6 +470,8 @@ export default function DBlockPart06() {
       lessonNumber="Part 6 of 10"
       lessonTitle="Colour and Magnetic Properties"
       hubRef={{ href: "/notes/d-block", label: "All 10 parts" }}
+      prevRef={{ href: "/notes/d-block/part5", label: "Part 5" }}
+      nextRef={{ href: "/notes/d-block/part7", label: "Part 7" }}
     >
       <DBlockVisualSystem />
       <div className="mx-auto max-w-3xl">

@@ -398,6 +398,8 @@ export default function DBlockPart03() {
       lessonNumber="Part 3 of 10"
       lessonTitle="Metallic Bonding, Melting Points, Ionisation and Reactivity"
       hubRef={{ href: "/notes/d-block", label: "All 10 parts" }}
+      prevRef={{ href: "/notes/d-block/part2", label: "Part 2" }}
+      nextRef={{ href: "/notes/d-block/part4", label: "Part 4" }}
     >
       <DBlockVisualSystem />
       <div className="mx-auto max-w-3xl">

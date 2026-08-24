@@ -581,6 +581,8 @@ export default function DBlockPart09() {
       lessonNumber="Part 9 of 10"
       lessonTitle="Manganese, Manganate and Permanganate Chemistry"
       hubRef={{ href: "/notes/d-block", label: "All 10 parts" }}
+      prevRef={{ href: "/notes/d-block/part8", label: "Part 8" }}
+      nextRef={{ href: "/notes/d-block/part10", label: "Part 10" }}
     >
       <DBlockVisualSystem />
       <div className="mx-auto max-w-3xl">

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { AppShell } from "@/components/AppShell";
+import { ChapterLessonGrid } from "@/components/notes/canonical";
 import { parts } from "./_content";
 import { ChapterStyles, Formula } from "./_components";
 import { partSlug } from "./_meta";
@@ -40,21 +40,14 @@ export default function GaseousStateHub() {
               <h2>Study in source order, with depth added inside each topic</h2>
               <p>No detached OCR archive, no filler appendix and no separate “reference summary.”</p>
             </header>
-            <div className="partGrid">
-              {parts.map((part) => (
-                <Link className="partCard" href={`/learn/gaseous-state/parts/${partSlug(part.number)}`} key={part.number}>
-                  <div className="partTopline">
-                    <span>{String(part.number).padStart(2, "0")}</span>
-                    <i>{part.kind}</i>
-                  </div>
-                  <h3>{part.title}</h3>
-                  <p>{part.subtitle}</p>
-                  <div className="partFoot">
-                    <b>Open part →</b>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <ChapterLessonGrid
+              lessons={parts.map((part) => ({
+                href: `/learn/gaseous-state/parts/${partSlug(part.number)}`,
+                number: `Lesson ${String(part.number).padStart(2, "0")}`,
+                title: part.title,
+                meta: part.subtitle,
+              }))}
+            />
           </section>
         </div>
       </div>

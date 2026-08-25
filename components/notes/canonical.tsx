@@ -768,3 +768,139 @@ export function ChapterContentsRail({
     </>
   );
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Multi-Mode Canonical Chapter System
+// ─────────────────────────────────────────────────────────────────────────────
+// Unified chapter container supporting three content modes:
+// - "lessons": discrete lesson cards (3-column responsive grid)
+// - "longform": section-based content (continuous reading)
+// - "interactive": specialized educational tool (Periodic Table, etc.)
+//
+// All modes share identical header, typography, spacing, borders, responsive rules.
+
+export interface CanonicalChapterPageProps {
+  mode: "lessons" | "longform" | "interactive";
+  discipline: string;
+  chapterTitle: string;
+  chapterSlug: string;
+  description?: string;
+  free?: boolean;
+  children: ReactNode;
+  tabs?: Array<{ label: string; href: string; active?: boolean }>;
+}
+
+export function CanonicalChapterPage({
+  mode,
+  discipline,
+  chapterTitle,
+  chapterSlug,
+  description,
+  free,
+  children,
+  tabs,
+}: CanonicalChapterPageProps) {
+  return (
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      {/* CANONICAL CHAPTER HEADER — identical across all modes */}
+      <header className="border-b border-[var(--border)] bg-[var(--surface)] px-6 py-8 sm:px-8">
+        <div className="mx-auto max-w-[1560px]">
+          <div className="mb-4 text-sm font-bold uppercase tracking-[0.15em] text-[var(--text-muted)]">
+            {discipline}
+          </div>
+
+          <div className="mb-6 flex items-start justify-between gap-4">
+            <div className="flex-1 min-w-0">
+              <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-5xl">
+                {chapterTitle}
+              </h1>
+              {description && (
+                <p className="mt-3 text-base leading-relaxed text-[var(--text-body)]">
+                  {description}
+                </p>
+              )}
+            </div>
+            {free !== undefined && (
+              <div className="flex shrink-0 items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--background)] px-4 py-2">
+                <span className="text-xs font-black uppercase tracking-widest text-[var(--text-muted)]">
+                  {free ? "FREE" : "PREMIUM"}
+                </span>
+              </div>
+            )}
+          </div>
+
+          {tabs && tabs.length > 0 && (
+            <nav className="flex flex-wrap gap-2">
+              {tabs.map((tab, idx) => (
+                <Link
+                  key={idx}
+                  href={tab.href}
+                  aria-current={tab.active ? "page" : undefined}
+                  className={`rounded-lg border px-4 py-2 text-sm font-bold transition ${
+                    tab.active
+                      ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--accent)]"
+                      : "border-[var(--border)] text-[var(--text-body)] hover:border-[var(--accent)]/50"
+                  }`}
+                >
+                  {tab.label}
+                </Link>
+              ))}
+            </nav>
+          )}
+        </div>
+      </header>
+
+      {/* MODE-SPECIFIC CONTENT AREA */}
+      <main className="mx-auto px-6 py-8 sm:px-8" style={{ maxWidth: "1480px" }}>
+        <div className="space-y-8">
+          {children}
+        </div>
+      </main>
+    </div>
+  );
+}
+
+/**
+ * Canonical section groups for longform mode.
+ * Renders section-based chapter content with canonical styling.
+ * Preserves existing educational section structure.
+ */
+
+export interface CanonicalSection {
+  title: string;
+  content: ReactNode;
+  id?: string;
+}
+
+export interface CanonicalSectionGroupsProps {
+  sections: CanonicalSection[];
+}
+
+export function CanonicalSectionGroups({ sections }: CanonicalSectionGroupsProps) {
+  return (
+    <div className="space-y-16">
+      {sections.map((section) => (
+        <section
+          key={section.id || section.title}
+          id={section.id}
+          className="border-t border-[var(--border)] pt-8"
+        >
+          <h2 className="mb-6 font-serif text-3xl font-black leading-tight text-[var(--foreground)]">
+            {section.title}
+          </h2>
+          <div className="max-w-3xl space-y-6 text-[var(--text-body)]">
+            {section.content}
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+}
+
+export function CanonicalSectionHeader({ children }: { children: ReactNode }) {
+  return (
+    <h3 className="mb-4 font-serif text-xl font-bold leading-tight text-[var(--foreground)]">
+      {children}
+    </h3>
+  );
+}

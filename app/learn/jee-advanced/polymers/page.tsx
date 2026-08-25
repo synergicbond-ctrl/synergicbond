@@ -1,7 +1,7 @@
 import katex from "katex";
 import "katex/dist/katex.min.css";
 import "katex/contrib/mhchem";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { polymerSections, type Block, type Tone } from "./polymer-content";
 import { PolymerChainVisual, PolymerVisualGallery } from "./polymer-visuals";
 
@@ -233,20 +233,21 @@ function BlockRenderer({ block }: { block: Block }) {
 
 export default function PolymersPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · JEE Main · NEET · Boards"
       chapterTitle="Polymers"
       chapterSlug="polymers"
       description="A complete structure–property chapter covering polymerisation mechanisms, molecular mass, stereochemistry, elastomers, fibres, plastics, thermosets, named polymers and biodegradable materials."
       free={false}
     >
-      <div className="mx-auto max-w-3xl mb-8 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] p-2">
+      <div className="mb-8 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] p-2">
         <PolymerChainVisual />
       </div>
 
       <PolymerVisualGallery />
 
-      <div className="relative z-10 mx-auto grid max-w-[1480px] gap-8 py-8 lg:grid-cols-[340px_minmax(0,1fr)]">
+      <div className="relative z-10 grid gap-8 py-8 lg:grid-cols-[340px_minmax(0,1fr)]">
         <aside className="h-fit lg:sticky lg:top-5">
           <nav className="overflow-hidden rounded-[28px] border border-slate-700/70 bg-[#070c16]/95 shadow-[0_24px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl">
             <div className="relative overflow-hidden border-b border-slate-800 px-5 py-5">
@@ -327,6 +328,6 @@ export default function PolymersPage() {
           ))}
         </article>
       </div>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

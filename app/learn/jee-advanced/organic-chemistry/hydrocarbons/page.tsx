@@ -10,7 +10,7 @@ import {
   SubHeading,
   type TermLexicon,
 } from "@/components/design";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { hydrocarbonBlocks, hydrocarbonChapterMap, type HydrocarbonBlock } from "./hydrocarbons-notes";
 
 export const metadata = {
@@ -66,14 +66,15 @@ function BlockView({ block }: { block: HydrocarbonBlock }) {
 
 export default function HydrocarbonsPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Organic Chemistry"
       chapterTitle="Hydrocarbons"
       chapterSlug="hydrocarbons"
       description="Alkanes, alkenes, alkynes and aromatics — where the reactive intermediates and electronic effects built in General Organic Chemistry turn into real reactions: free-radical halogenation, elimination, electrophilic addition, oxidative cleavage, and the five named electrophilic aromatic substitutions with their directing-effect logic."
       free={false}
     >
-      <article className="mx-auto max-w-3xl">
+      <article className="space-y-8">
         <Callout label="Central idea" tone="rule">
             Every regiochemical outcome here — Markovnikov addition, Zaitsev elimination,
             ortho/para vs meta substitution — is the same underlying question asked
@@ -83,12 +84,12 @@ export default function HydrocarbonsPage() {
 
         <ChapterIndex items={hydrocarbonChapterMap} />
 
-        <div className="py-8">
+        <div className="space-y-6">
           {hydrocarbonBlocks.map((block, index) => (
               <BlockView key={`${block.kind}-${(block.text ?? "").slice(0, 64)}-${index}`} block={block} />
             ))}
         </div>
       </article>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

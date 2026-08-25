@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import type { NoteBlock, SolutionPart, VisualKey } from "../_data/types";
 import {
   SolutionParticlesFigure,
@@ -177,19 +177,15 @@ export function SolutionsChapterShell({
   const next = currentIndex < parts.length - 1 ? parts[currentIndex + 1] : null;
 
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced Physical Chemistry"
       chapterTitle="Solution and Colligative Properties"
       chapterSlug="solutions"
       description="77-page source reconstructed with ≈27 pages of added reference depth and 65 descriptive solved questions."
       free={false}
-      lessonNumber={`Part ${String(part.number).padStart(2, "0")} of ${parts.length}`}
-      lessonTitle={part.title}
-      hubRef={{ href: "/learn/jee-advanced/solutions", label: `All ${parts.length} parts` }}
-      prevRef={previous ? { href: `/learn/jee-advanced/solutions/${previous.slug}`, label: previous.shortTitle } : undefined}
-      nextRef={next ? { href: `/learn/jee-advanced/solutions/${next.slug}`, label: next.shortTitle } : undefined}
     >
-      <div className="ls-page mx-auto max-w-3xl">
+      <div className="ls-page">
         <style>{styles}</style>
 
         <section className="ls-objectives">
@@ -204,7 +200,7 @@ export function SolutionsChapterShell({
           {part.blocks.map((block, index) => <Block key={`${block.kind}-${index}-${block.title}`} block={block} />)}
         </div>
       </div>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }
 

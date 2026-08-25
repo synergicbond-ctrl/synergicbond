@@ -10,7 +10,7 @@ import {
   SubHeading,
   type TermLexicon,
 } from "@/components/design";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { haloBlocks, haloChapterMap, type HaloBlock } from "./haloalkanes-haloarenes-notes";
 
 export const metadata = {
@@ -66,14 +66,15 @@ function BlockView({ block }: { block: HaloBlock }) {
 
 export default function HaloalkanesHaloarenesPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Organic Chemistry"
       chapterTitle="Haloalkanes and Haloarenes"
       chapterSlug="haloalkanes-haloarenes"
       description="SN1 and SN2 substitution, their full competition with E1 and E2 elimination, Grignard reagent chemistry, and the structural reasons a haloarene resists every mechanism that works cleanly on a haloalkane — until an activating group or a strong enough base opens two entirely different pathways."
       free={false}
     >
-      <article className="mx-auto max-w-3xl">
+      <article className="space-y-8">
         <Callout label="Central idea" tone="rule">
             SN1 versus SN2 is never a coin flip — it is decided every time by four factors
             working together: substrate class, nucleophile strength, solvent, and leaving
@@ -82,12 +83,12 @@ export default function HaloalkanesHaloarenesPage() {
 
         <ChapterIndex items={haloChapterMap} />
 
-        <div className="py-8">
+        <div className="space-y-6">
           {haloBlocks.map((block, index) => (
               <BlockView key={`${block.kind}-${(block.text ?? "").slice(0, 64)}-${index}`} block={block} />
             ))}
         </div>
       </article>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

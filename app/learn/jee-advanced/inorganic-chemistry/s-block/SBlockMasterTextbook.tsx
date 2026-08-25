@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { SBlockMarkdown } from "./_markdown";
 import { SBlockVisual } from "./visuals";
 import { S_BLOCK_SECTIONS } from "./content";
@@ -22,14 +22,15 @@ export default function SBlockMasterTextbook() {
   );
 
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced Chemistry"
       chapterTitle="s-Block Elements"
       chapterSlug="s-block"
       description="One continuous chapter, not a gallery of cards: Group 1 and Group 2 periodic trends, energetics, reactions, and industrial chemistry."
       free={false}
     >
-      <div className="mx-auto grid max-w-[1400px] gap-8 lg:grid-cols-[290px_minmax(0,1fr)]">
+      <div className="grid gap-8 lg:grid-cols-[290px_minmax(0,1fr)]">
         <aside className="lg:sticky lg:top-8 lg:h-[calc(100vh-4rem)] lg:overflow-y-auto">
           <input
             value={query}
@@ -78,6 +79,6 @@ export default function SBlockMasterTextbook() {
           ))}
         </article>
       </div>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

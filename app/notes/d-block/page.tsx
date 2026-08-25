@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { AppShell } from "@/components/AppShell";
+import { ChapterLessonGrid } from "@/components/notes/canonical";
 import DBlockVisualSystem from "./DBlockVisualSystem";
 
 export const metadata = {
@@ -39,24 +39,14 @@ export default function DBlockHubPage() {
 
         <DBlockVisualSystem />
 
-        <section className="grid gap-3 md:grid-cols-2">
-          {parts.map(([number, title, description]) => (
-            <Link
-              key={number}
-              href={`/notes/d-block/part${number}`}
-              className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition hover:-translate-y-0.5 hover:border-[var(--accent)]/50"
-            >
-              <div className="flex items-start gap-4">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[var(--accent)] text-base font-black text-[var(--background)]">{number}</span>
-                <div>
-                  <h2 className="text-lg font-black leading-6 text-[var(--foreground)] group-hover:text-[var(--accent)]">{title}</h2>
-                  <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{description}</p>
-                  <p className="mt-3 text-sm font-black text-[var(--accent)]">Open Part {number} →</p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </section>
+        <ChapterLessonGrid
+          lessons={parts.map(([number, title, description]) => ({
+            href: `/notes/d-block/part${number}`,
+            number: `Lesson ${String(number).padStart(2, "0")}`,
+            title,
+            meta: description,
+          }))}
+        />
       </div>
     </AppShell>
   );

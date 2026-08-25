@@ -10,7 +10,7 @@ import {
   SubHeading,
   type TermLexicon,
 } from "@/components/design";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { alcBlocks, alcChapterMap, type AlcBlock } from "./alcohols-phenols-ethers-notes";
 
 export const metadata = {
@@ -66,14 +66,15 @@ function BlockView({ block }: { block: AlcBlock }) {
 
 export default function AlcoholsPhenolsEthersPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Organic Chemistry"
       chapterTitle="Alcohols, Phenols and Ethers"
       chapterSlug="alcohols-phenols-ethers"
       description="Alcohols as both products and substrates of substitution and elimination, phenol&apos;s resonance-derived acidity applied to real substituted-phenol rankings and its unusually mild electrophilic substitution chemistry, and the Williamson synthesis with the disconnection logic that makes it reliable."
       free={false}
     >
-      <article className="mx-auto max-w-3xl">
+      <article className="space-y-8">
         <Callout label="Central idea" tone="rule">
             Almost every reaction and every distinguishing test in this chapter is the same
             carbocation-stability and resonance reasoning from earlier chapters, applied to
@@ -82,12 +83,12 @@ export default function AlcoholsPhenolsEthersPage() {
 
         <ChapterIndex items={alcChapterMap} />
 
-        <div className="py-8">
+        <div className="space-y-6">
           {alcBlocks.map((block, index) => (
               <BlockView key={`${block.kind}-${(block.text ?? "").slice(0, 64)}-${index}`} block={block} />
             ))}
         </div>
       </article>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

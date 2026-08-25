@@ -11,7 +11,7 @@ import {
   SubHeading,
   type TermLexicon,
 } from "@/components/design";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { gocBlocks, gocChapterMap, type GocBlock } from "./goc-notes";
 
 export const metadata = {
@@ -69,14 +69,15 @@ function BlockView({ block }: { block: GocBlock }) {
 
 export default function GeneralOrganicChemistryPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Organic Chemistry"
       chapterTitle="General Organic Chemistry"
       chapterSlug="goc"
       description="Every organic chapter that follows — hydrocarbons, haloalkanes, alcohols, carbonyls, amines — is written on top of five ideas built here: how a bond breaks, what the resulting intermediate looks like, and which of four electronic effects (inductive, resonance, hyperconjugation, electromeric) explains its stability, reactivity, and the acid or base strength of the molecule it sits in."
       free={false}
     >
-      <article className="mx-auto max-w-3xl">
+      <article className="space-y-8">
         <Callout label="Central idea" tone="rule">
           Every &quot;why is X more stable/acidic/basic than Y&quot; question in organic
           chemistry reduces to one of four electronic effects applied correctly. Learn to
@@ -86,12 +87,12 @@ export default function GeneralOrganicChemistryPage() {
 
         <ChapterIndex items={gocChapterMap} />
 
-        <div className="py-8">
+        <div className="space-y-6">
           {gocBlocks.map((block, index) => (
             <BlockView key={`${block.kind}-${(block.text ?? "").slice(0, 64)}-${index}`} block={block} />
           ))}
         </div>
       </article>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

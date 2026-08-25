@@ -9,7 +9,7 @@ import {
   SubHeading,
   type TermLexicon,
 } from "@/components/design";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { cielBlocks, cielChapterMap, type CielBlock } from "./chemistry-in-everyday-life-notes";
 
 export const metadata = {
@@ -63,14 +63,15 @@ function BlockView({ block }: { block: CielBlock }) {
 
 export default function ChemistryInEverydayLifePage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Organic Chemistry"
       chapterTitle="Chemistry in Everyday Life"
       chapterSlug="chemistry-in-everyday-life"
       description="Drug action as enzyme inhibition and receptor binding, aspirin&apos;s synthesis and mechanism traced directly back to earlier organic chemistry, food preservation as applied free-radical chemistry, and why soap fails in hard water while synthetic detergents don&apos;t."
       free={false}
     >
-      <article className="mx-auto max-w-3xl">
+      <article className="space-y-8">
         <Callout label="Central idea" tone="rule">
             Almost nothing here is a genuinely new mechanism — drug action, food chemistry,
             and cleansing agents are all applications of enzyme/receptor binding, resonance,
@@ -79,12 +80,12 @@ export default function ChemistryInEverydayLifePage() {
 
         <ChapterIndex items={cielChapterMap} />
 
-        <div className="py-8">
+        <div className="space-y-6">
           {cielBlocks.map((block, index) => (
               <BlockView key={`${block.kind}-${(block.text ?? "").slice(0, 64)}-${index}`} block={block} />
             ))}
         </div>
       </article>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

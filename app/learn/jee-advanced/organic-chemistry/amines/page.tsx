@@ -9,7 +9,7 @@ import {
   SubHeading,
   type TermLexicon,
 } from "@/components/design";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { amineBlocks, amineChapterMap, type AmineBlock } from "./amines-notes";
 
 export const metadata = {
@@ -63,14 +63,15 @@ function BlockView({ block }: { block: AmineBlock }) {
 
 export default function AminesPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Organic Chemistry"
       chapterTitle="Amines and Diazonium Chemistry"
       chapterSlug="amines"
       description="The Gabriel synthesis and Hofmann degradation as controlled alternatives to unselective direct alkylation, the Hinsberg test as an applied acidity argument, and the diazonium salt — the single most versatile synthetic handle in organic chemistry, turning a temporary amino group into almost any other substituent."
       free={false}
     >
-      <article className="mx-auto max-w-3xl">
+      <article className="space-y-8">
         <Callout label="Central idea" tone="rule">
             The amino group is unique in this sequence: strongly directing when installed,
             and cleanly removable or convertible via diazonium chemistry once it has served
@@ -79,12 +80,12 @@ export default function AminesPage() {
 
         <ChapterIndex items={amineChapterMap} />
 
-        <div className="py-8">
+        <div className="space-y-6">
           {amineBlocks.map((block, index) => (
               <BlockView key={`${block.kind}-${(block.text ?? "").slice(0, 64)}-${index}`} block={block} />
             ))}
         </div>
       </article>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

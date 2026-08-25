@@ -10,7 +10,7 @@ import {
   SubHeading,
   type TermLexicon,
 } from "@/components/design";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { carbonylBlocks, carbonylChapterMap, type CarbonylBlock } from "./carbonyls-notes";
 
 export const metadata = {
@@ -66,14 +66,15 @@ function BlockView({ block }: { block: CarbonylBlock }) {
 
 export default function CarbonylsPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Organic Chemistry"
       chapterTitle="Aldehydes, Ketones and Carboxylic Acids"
       chapterSlug="carbonyls"
       description="The carbonyl is the electrophile General Organic Chemistry introduced in the abstract — here it becomes real reaction chemistry: nucleophilic addition, aldol condensation, Cannizzaro and haloform disproportionation, and a carboxylic acid acidity table that closes the loop on every resonance and inductive argument built across this whole organic sequence."
       free={false}
     >
-      <article className="mx-auto max-w-3xl">
+      <article className="space-y-8">
         <Callout label="Central idea" tone="rule">
             Nearly every named reaction here is the same first step — a nucleophile adding
             to the electrophilic carbonyl carbon — followed by a different fate for the
@@ -82,12 +83,12 @@ export default function CarbonylsPage() {
 
         <ChapterIndex items={carbonylChapterMap} />
 
-        <div className="py-8">
+        <div className="space-y-6">
           {carbonylBlocks.map((block, index) => (
               <BlockView key={`${block.kind}-${(block.text ?? "").slice(0, 64)}-${index}`} block={block} />
             ))}
         </div>
       </article>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

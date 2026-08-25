@@ -1,4 +1,4 @@
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { SURFACE_CHEMISTRY_PARTS } from "./part-metadata";
 import { SurfaceVisual } from "./surface-chemistry-shared";
 
@@ -17,14 +17,15 @@ const STATS = [
 
 export default function SurfaceChemistryIndexPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Physical Chemistry"
       chapterTitle="Surface Chemistry"
       chapterSlug="surface-chemistry"
       description="Adsorption, catalysis and colloids developed from first principles with molecular-orbital explanations, quantitative derivations, original dark visuals, experiments, applications and JEE Advanced problem solving."
       free={false}
     >
-      <div className="mx-auto max-w-3xl space-y-8">
+      <div className="space-y-8">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map(([value, label]) => (
             <div key={label} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4">
@@ -55,6 +56,6 @@ export default function SurfaceChemistryIndexPage() {
           ))}
         </div>
       </div>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

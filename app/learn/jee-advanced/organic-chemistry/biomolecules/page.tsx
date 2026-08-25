@@ -9,7 +9,7 @@ import {
   SubHeading,
   type TermLexicon,
 } from "@/components/design";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { bioBlocks, bioChapterMap, type BioBlock } from "./biomolecules-notes";
 
 export const metadata = {
@@ -63,14 +63,15 @@ function BlockView({ block }: { block: BioBlock }) {
 
 export default function BiomoleculesPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Organic Chemistry"
       chapterTitle="Biomolecules"
       chapterSlug="biomolecules"
       description="Carbohydrate chemistry as applied carbonyl chemistry, the amino acid zwitterion that explains why proteins behave like ionic solids, the peptide bond&apos;s resonance-restricted rotation that makes secondary structure possible at all, and the hydrogen-bond counting that predicts DNA stability directly from base composition."
       free={false}
     >
-      <article className="mx-auto max-w-3xl">
+      <article className="space-y-8">
         <Callout label="Central idea" tone="rule">
             Biomolecules are not a new branch of chemistry — every reaction and structural
             argument here is carbonyl, amine, carboxylic acid, and hydrogen-bonding chemistry
@@ -79,12 +80,12 @@ export default function BiomoleculesPage() {
 
         <ChapterIndex items={bioChapterMap} />
 
-        <div className="py-8">
+        <div className="space-y-6">
           {bioBlocks.map((block, index) => (
               <BlockView key={`${block.kind}-${(block.text ?? "").slice(0, 64)}-${index}`} block={block} />
             ))}
         </div>
       </article>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

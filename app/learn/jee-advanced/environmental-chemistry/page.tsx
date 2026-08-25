@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { environmentalChemistryParts } from "./index";
 
 export const metadata = {
@@ -27,14 +27,15 @@ const lineThemes = [
 
 export default function EnvironmentalChemistryPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Environmental Chemistry"
       chapterTitle="Environmental Chemistry"
       chapterSlug="environmental-chemistry"
       description="Environmental Chemistry notes for JEE Advanced covering air, water and soil pollution, smog, acid rain, ozone depletion, waste management and green chemistry."
       free={false}
     >
-      <div className="mx-auto max-w-3xl">
+      <div>
         <div className="grid gap-4 sm:grid-cols-2">
           {environmentalChemistryParts.map((part, index) => (
             <Link
@@ -54,6 +55,6 @@ export default function EnvironmentalChemistryPage() {
           ))}
         </div>
       </div>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

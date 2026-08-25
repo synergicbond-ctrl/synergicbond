@@ -10,7 +10,7 @@ import {
   SubHeading,
   type TermLexicon,
 } from "@/components/design";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { coordBlocks, coordChapterMap, type CoordBlock } from "./coordination-compounds-notes";
 
 export const metadata = {
@@ -66,14 +66,15 @@ function BlockView({ block }: { block: CoordBlock }) {
 
 export default function CoordinationCompoundsPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Inorganic Chemistry"
       chapterTitle="Coordination Compounds"
       chapterSlug="coordination-compounds"
       description="From Werner&apos;s original separation of primary and secondary valence through crystal field theory&apos;s explanation of colour and magnetism — the d-orbital splitting that decides whether a complex is paramagnetic or diamagnetic, coloured or colourless, and why cisplatin works as a drug while its trans isomer does not."
       free={false}
     >
-      <article className="mx-auto max-w-3xl">
+      <article className="space-y-8">
         <Callout label="Central idea" tone="rule">
             Almost every physical property in this chapter — magnetism, colour, stability —
             traces back to one question: how does the ligand field split the five d orbitals,
@@ -82,12 +83,12 @@ export default function CoordinationCompoundsPage() {
 
         <ChapterIndex items={coordChapterMap} />
 
-        <div className="py-8">
+        <div className="space-y-6">
           {coordBlocks.map((block, index) => (
               <BlockView key={`${block.kind}-${(block.text ?? "").slice(0, 64)}-${index}`} block={block} />
             ))}
         </div>
       </article>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

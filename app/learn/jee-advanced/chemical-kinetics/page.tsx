@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { CHEMICAL_KINETICS_PARTS } from "./part-metadata";
 
 export const metadata: Metadata = {
@@ -10,14 +10,15 @@ export const metadata: Metadata = {
 
 export default function ChemicalKineticsIndexPage() {
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="longform"
       discipline="JEE Advanced · Physical Chemistry"
       chapterTitle="Chemical Kinetics"
       chapterSlug="chemical-kinetics"
       description="A forensic page-by-page reconstruction of the full 259-page source, organised into twenty sequential teaching parts. Thirty print-equivalent reference expansions are inserted inside the relevant topics, and every instructional page has a collapsible dark-background fidelity panel."
       free={false}
     >
-      <div className="mx-auto max-w-3xl space-y-8">
+      <div className="space-y-8">
         <div className="flex flex-wrap gap-2 text-sm text-[var(--text-muted)]">
           {['20 sequential content parts','259/259 source pages mapped','30 integrated reference pages','96 solved problems','258 dark page panels'].map((item)=><span key={item} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5">{item}</span>)}
         </div>
@@ -35,6 +36,6 @@ export default function ChemicalKineticsIndexPage() {
           ))}
         </div>
       </div>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

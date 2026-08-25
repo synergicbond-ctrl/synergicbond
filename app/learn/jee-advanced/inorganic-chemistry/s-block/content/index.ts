@@ -5,6 +5,7 @@ import { ANOMALIES_SECTIONS } from "./anomalies";
 import { APPLICATIONS_SECTIONS } from "./applications";
 import { USES_SECTIONS } from "./uses";
 import { ORDER_BANK_SECTIONS } from "./order-bank";
+import { ASSIGNMENTS_SECTIONS } from "./assignments";
 import type { SBlockSection } from "./types";
 
 export type { SBlockBlock, SBlockSection } from "./types";
@@ -12,7 +13,7 @@ export type { SBlockBlock, SBlockSection } from "./types";
 // Ordered so the chapter reads as one continuous narrative: foundations and
 // data first, then the full reaction chemistry, then the two first-member
 // anomalies (which lean on everything before them), then industrial salts,
-// then applications, uses, and finally the closing order bank.
+// then applications, uses, exam questions, and finally the assignments.
 export const S_BLOCK_SECTIONS: SBlockSection[] = [
   ...FOUNDATIONS_SECTIONS,
   ...REACTIONS_SECTIONS,
@@ -22,4 +23,5 @@ export const S_BLOCK_SECTIONS: SBlockSection[] = [
   ...APPLICATIONS_SECTIONS,
   ...USES_SECTIONS,
   ...ORDER_BANK_SECTIONS,
+  ...ASSIGNMENTS_SECTIONS,
 ];

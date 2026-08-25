@@ -1,5 +1,5 @@
 "use client";
-import { AppShell } from "@/components/AppShell";
+import { CanonicalChapterPage } from "@/components/notes/canonical";
 import ElectronicConfigurationMasterV2 from "./ElectronicConfigurationMasterV2";
 import { InteractivePeriodicTableV16 } from "./InteractivePeriodicTableV16";
 
@@ -5651,13 +5651,13 @@ export default function PeriodicTableMasterNotes() {
   };
 
   return (
-    <AppShell
+    <CanonicalChapterPage
+      mode="interactive"
       discipline="JEE Inorganic Chemistry"
       chapterTitle="Classification of Elements and Periodicity in Properties"
       chapterSlug="periodic-table"
       description="NCERT-first, JEE Advanced periodicity notes with data-backed animated SVGs, accessible equations, verified tables, worked examples and block-wise reference data."
       free={true}
-      fullWidth
     >
       <nav
         aria-label="Periodic table chapter sections"
@@ -5847,6 +5847,6 @@ export default function PeriodicTableMasterNotes() {
 }`}</style>
         </>
       </main>
-    </AppShell>
+    </CanonicalChapterPage>
   );
 }

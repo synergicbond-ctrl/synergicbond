@@ -1,7 +1,7 @@
 export const S_BLOCK_FOUNDATIONS = String.raw`
-# 1. S-block overview and governing principles
+# 1. S-block Overview & Governing Principles
 
-The s-block contains the highly electropositive metals of Groups 1 and 2. Their chemistry is governed mainly by valence-shell configuration, cation size, charge density, lattice enthalpy, hydration enthalpy and polarising power.
+The s-block contains the highly electropositive metals of Groups 1 and 2. Their chemistry is governed mainly by **charge density (q/r³)**, cation size, lattice enthalpy, hydration enthalpy, and polarising power. This master principle (charge density) explains ALL anomalies, solubility trends, and reactivity patterns observed in s-block chemistry.
 
 ## 1.1 Family overview
 

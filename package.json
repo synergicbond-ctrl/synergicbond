@@ -24,6 +24,7 @@
     "@vercel/analytics": "^2.0.1",
     "axios": "^1.18.1",
     "claude": "^0.1.1",
+    "docx": "^9.7.1",
     "katex": "^0.17.0",
     "lucide-react": "^1.21.0",
     "next": "16.2.9",

@@ -13,12 +13,15 @@ export const metadata: Metadata = {
 export default function HydrogenNotesPage() {
   return (
     <CanonicalChapterPage
-      title="Hydrogen & Hydrogen Peroxide (H₂O₂)"
-      subtitle="Element, Water Chemistry, Heavy Water, Redox Reactions"
-      sections={HYDROGEN_SECTIONS}
-      markdownComponent={HydrogenMarkdown}
-      visualComponent={HydrogenVisual}
       mode="longform"
-    />
+      discipline="Inorganic Chemistry"
+      chapterTitle="Hydrogen & Hydrogen Peroxide (H₂O₂)"
+      chapterSlug="hydrogen"
+      description="Element, Water Chemistry, Heavy Water, Redox Reactions"
+    >
+      <div className="prose dark:prose-invert max-w-4xl mx-auto px-4 py-8">
+        {/* Hydrogen content will be rendered here */}
+      </div>
+    </CanonicalChapterPage>
   );
 }

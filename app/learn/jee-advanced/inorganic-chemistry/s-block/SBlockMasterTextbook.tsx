@@ -6,6 +6,19 @@ import { SBlockMarkdown } from "./_markdown";
 import { SBlockVisual } from "./visuals";
 import { S_BLOCK_SECTIONS } from "./content";
 
+const ALKALINE_EARTH_SECTION_IDS = new Set([
+  "group2-data",
+  "beryllium-anomaly",
+  "calcium-magnesium",
+  "gypsum-cement",
+  "hardness",
+  "biology-uses",
+]);
+
+function isAlkalineEarthSection(id: string) {
+  return id.startsWith("aem-") || ALKALINE_EARTH_SECTION_IDS.has(id);
+}
+
 function H2({ id, children }: { id: string; children: React.ReactNode }) {
   return (
     <h2 id={id} className="scroll-mt-28 border-b border-[var(--border)] pb-4 pt-4 font-sans text-3xl font-black tracking-tight text-[var(--foreground)] sm:text-4xl">
@@ -40,11 +53,11 @@ export default function SBlockMasterTextbook() {
           />
           <nav className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3">
             <p className="px-3 pb-1 pt-2 text-xs font-black uppercase tracking-[0.16em] text-[var(--accent)]">Part A — Alkali Metals</p>
-            {filtered.filter((s) => !s.id.startsWith("aem-")).map((s) => (
+            {filtered.filter((s) => !isAlkalineEarthSection(s.id)).map((s) => (
               <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--foreground)]">{s.label}</a>
             ))}
             <p className="mt-3 border-t border-[var(--border)] px-3 pb-1 pt-4 text-xs font-black uppercase tracking-[0.16em] text-[var(--accent)]">Part B — Alkaline Earth Metals</p>
-            {filtered.filter((s) => s.id.startsWith("aem-")).map((s) => (
+            {filtered.filter((s) => isAlkalineEarthSection(s.id)).map((s) => (
               <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--foreground)]">{s.label}</a>
             ))}
           </nav>
@@ -62,7 +75,7 @@ export default function SBlockMasterTextbook() {
 
           <section aria-labelledby="part-a-alkali">
             <H2 id="part-a-alkali">Part A — Alkali Metals</H2>
-            {filtered.filter((section) => !section.id.startsWith("aem-")).map((section) => (
+            {filtered.filter((section) => !isAlkalineEarthSection(section.id)).map((section) => (
               <section key={section.id}>
                 <H2 id={section.id}>{section.label}</H2>
                 <div className="mt-5 space-y-6">{section.blocks.map((block, index) => block.kind === "md" ? <SBlockMarkdown key={index} markdown={block.text} /> : <SBlockVisual key={index} id={block.id} />)}</div>
@@ -71,7 +84,7 @@ export default function SBlockMasterTextbook() {
           </section>
           <section aria-labelledby="part-b-alkaline-earth">
             <H2 id="part-b-alkaline-earth">Part B — Alkaline Earth Metals</H2>
-            {filtered.filter((section) => section.id.startsWith("aem-")).map((section) => (
+            {filtered.filter((section) => isAlkalineEarthSection(section.id)).map((section) => (
               <section key={section.id}>
                 <H2 id={section.id}>{section.label}</H2>
                 <div className="mt-5 space-y-6">{section.blocks.map((block, index) => block.kind === "md" ? <SBlockMarkdown key={index} markdown={block.text} /> : <SBlockVisual key={index} id={block.id} />)}</div>

@@ -137,7 +137,7 @@ The tiny Be centre normally shows coordination number **4**: $\mathrm{BeF_2+2F^-
 
 The simple radius-ratio rule (predicting coordination number from the cation/anion radius ratio) correctly predicts the real monoxide structures for the small end of the group — $\mathrm{BeO}$ four-coordinate, $\mathrm{MgO}$ and $\mathrm{CaO}$ six-coordinate — but it *fails* for the two largest members: it predicts eight-coordination for $\mathrm{SrO}$ and $\mathrm{BaO}$, yet both are experimentally six-coordinate like $\mathrm{MgO}$ and $\mathrm{CaO}$. This is a genuinely useful, quantified example of the rule's known limitation (ionic radii are not perfectly fixed, hard spheres, and vary somewhat with coordination number themselves) rather than a reason to distrust it near the small, beryllium-dominated end of the group where it works well.
 
-## 19.6 Carbide distinction (cross-reference to Section 11.2)
+## 19.6 Carbide distinction
 
 Beryllium carbide is a methanide; calcium carbide is an acetylide — hydrolysis gives different hydrocarbons ($\mathrm{CH_4}$ versus $\mathrm{C_2H_2}$), making this a favourite identification test.
 

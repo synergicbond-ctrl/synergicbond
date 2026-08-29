@@ -4,7 +4,6 @@ import { REACTIONS_SECTIONS } from "./reactions";
 import { SALTS_INDUSTRY_SECTIONS } from "./salts-industry";
 import { ANOMALIES_SECTIONS } from "./anomalies";
 import { APPLICATIONS_SECTIONS } from "./applications";
-import { USES_SECTIONS } from "./uses";
 import type { SBlockSection } from "./types";
 
 export type { SBlockBlock, SBlockSection } from "./types";
@@ -22,6 +21,8 @@ export const S_BLOCK_SECTIONS: SBlockSection[] = [
   ...SALTS_INDUSTRY_SECTIONS.slice(0, 2), // carbonates, nitrates-sulphates
   ...ANOMALIES_SECTIONS,
   ...SALTS_INDUSTRY_SECTIONS.slice(2), // sodium-chemistry, carbonate-industry
-  ...APPLICATIONS_SECTIONS,
-  ...USES_SECTIONS,
+  // Keep the four explanatory application sections only. The trailing
+  // order-bank and worked-example blocks are question material reserved for
+  // the later question-bank release.
+  ...APPLICATIONS_SECTIONS.slice(0, 4),
 ];

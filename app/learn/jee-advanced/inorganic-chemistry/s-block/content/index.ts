@@ -5,8 +5,6 @@ import { SALTS_INDUSTRY_SECTIONS } from "./salts-industry";
 import { ANOMALIES_SECTIONS } from "./anomalies";
 import { APPLICATIONS_SECTIONS } from "./applications";
 import { USES_SECTIONS } from "./uses";
-import { ORDER_BANK_SECTIONS } from "./order-bank";
-import { JD_LEE_ENHANCEMENTS } from "./jd-lee-enhancements";
 import type { SBlockSection } from "./types";
 
 export type { SBlockBlock, SBlockSection } from "./types";
@@ -14,8 +12,9 @@ export type { SBlockBlock, SBlockSection } from "./types";
 // Ordered so the chapter reads as one continuous narrative: foundations and
 // data first, then comprehensive AEM notes, then the full reaction chemistry,
 // then the two first-member anomalies (which lean on everything before them),
-// then industrial salts, applications, uses, and J.D. Lee enhancements. Question-bank
-// material is intentionally reserved for a later release.
+// then industrial salts, applications, and uses. The legacy order-bank and
+// enhancement appendices are intentionally excluded: they duplicated the core
+// notes and are reserved for a later question-bank release.
 export const S_BLOCK_SECTIONS: SBlockSection[] = [
   ...FOUNDATIONS_SECTIONS,
   ...AEM_NOTES_SECTIONS,
@@ -25,6 +24,4 @@ export const S_BLOCK_SECTIONS: SBlockSection[] = [
   ...SALTS_INDUSTRY_SECTIONS.slice(2), // sodium-chemistry, carbonate-industry
   ...APPLICATIONS_SECTIONS,
   ...USES_SECTIONS,
-  ...ORDER_BANK_SECTIONS,
-  ...JD_LEE_ENHANCEMENTS,
 ];

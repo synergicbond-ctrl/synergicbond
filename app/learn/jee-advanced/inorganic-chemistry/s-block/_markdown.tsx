@@ -28,6 +28,17 @@ function normaliseMath(markdown: string) {
     .replace(/\\\(([^\n]*?)\\\)/g, (_match, expression: string) => `$${expression.trim()}$`);
 }
 
+// Worked examples belong in the future question bank, not in the concise
+// textbook. Remove the complete example paragraph (and any immediately
+// following display-equation paragraph) before Markdown rendering so no
+// worked-example prompt, answer, or orphaned calculation is shown.
+function removeWorkedExamples(markdown: string) {
+  return markdown.replace(
+    /\n?\*\*Worked example[^*]*\*\*[\s\S]*?(?=\n\n|$)(?:\n\n\$\$[\s\S]*?\$\$\s*)?/gi,
+    "",
+  );
+}
+
 const markdownComponents: Components = {
   h1: ({ children }) => {
     const text = flattenText(children);
@@ -77,7 +88,7 @@ export function SBlockMarkdown({ markdown }: { markdown: string }) {
         rehypePlugins={[[rehypeKatex, { throwOnError: false, strict: false }]]}
         components={markdownComponents}
       >
-        {normaliseMath(markdown)}
+        {normaliseMath(removeWorkedExamples(markdown))}
       </ReactMarkdown>
     </div>
   );

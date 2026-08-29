@@ -506,7 +506,7 @@ function HardnessVisual() {
     ["Ion exchange", "deionisation", "#f472b6"],
   ] as const;
   return (
-    <VisualFrame eyebrow="Water treatment" title="Choose the method from the ion that causes hardness">
+    <VisualFrame eyebrow="Water treatment" title="Methods for removing hardness">
       <div className="grid gap-3 md:grid-cols-5">
         {methods.map(([title, sub, tone], index) => (
           <div key={title} className="relative overflow-hidden rounded-lg border border-white/10 bg-[#08111c] p-4">

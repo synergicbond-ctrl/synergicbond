@@ -39,44 +39,45 @@ export default function SBlockMasterTextbook() {
             className="mb-3 w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm outline-none placeholder:text-[var(--text-muted)] focus:border-[var(--accent)]/50"
           />
           <nav className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3">
-            {filtered.map((s) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--foreground)]"
-              >
-                {s.label}
-              </a>
+            <p className="px-3 pb-1 pt-2 text-xs font-black uppercase tracking-[0.16em] text-[var(--accent)]">Part A — Alkali Metals</p>
+            {filtered.filter((s) => !s.id.startsWith("aem-")).map((s) => (
+              <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--foreground)]">{s.label}</a>
+            ))}
+            <p className="mt-3 border-t border-[var(--border)] px-3 pb-1 pt-4 text-xs font-black uppercase tracking-[0.16em] text-[var(--accent)]">Part B — Alkaline Earth Metals</p>
+            {filtered.filter((s) => s.id.startsWith("aem-")).map((s) => (
+              <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--foreground)]">{s.label}</a>
             ))}
           </nav>
         </aside>
 
         <article className="min-w-0 space-y-12">
           <section className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-10">
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[var(--text-muted)]">NCERT core · JD Lee · classroom problem banks · cross-verified</p>
             <h2 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">One continuous chapter, not a gallery of cards</h2>
             <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--text-body)]">
-              Every periodic trend, preparation, reaction, exception, structure, industrial process, biological role and JEE Advanced problem sits
-              inside the topic where it belongs — Group 1 and Group 2 built up from the same six governing principles (Section 1), so an exception
-              like lithium or beryllium reads as a consequence of those principles rather than a fact to memorise separately. All diagrams below are
-              original, hand-built figures, not screenshots or scans.
+              Every periodic trend, preparation, reaction, exception, structure, industrial process and biological role sits inside the topic where it
+              belongs. Group 1 and Group 2 are built from the same governing principles, so exceptions such as lithium and beryllium follow naturally
+              from the chemistry rather than appearing as isolated facts. Diagrams are clear, responsive and designed for study on any screen.
             </p>
           </section>
 
-          {filtered.map((section) => (
-            <section key={section.id}>
-              <H2 id={section.id}>{section.label}</H2>
-              <div className="mt-5 space-y-6">
-                {section.blocks.map((block, index) =>
-                  block.kind === "md" ? (
-                    <SBlockMarkdown key={index} markdown={block.text} />
-                  ) : (
-                    <SBlockVisual key={index} id={block.id} />
-                  ),
-                )}
-              </div>
-            </section>
-          ))}
+          <section aria-labelledby="part-a-alkali">
+            <H2 id="part-a-alkali">Part A — Alkali Metals</H2>
+            {filtered.filter((section) => !section.id.startsWith("aem-")).map((section) => (
+              <section key={section.id}>
+                <H2 id={section.id}>{section.label}</H2>
+                <div className="mt-5 space-y-6">{section.blocks.map((block, index) => block.kind === "md" ? <SBlockMarkdown key={index} markdown={block.text} /> : <SBlockVisual key={index} id={block.id} />)}</div>
+              </section>
+            ))}
+          </section>
+          <section aria-labelledby="part-b-alkaline-earth">
+            <H2 id="part-b-alkaline-earth">Part B — Alkaline Earth Metals</H2>
+            {filtered.filter((section) => section.id.startsWith("aem-")).map((section) => (
+              <section key={section.id}>
+                <H2 id={section.id}>{section.label}</H2>
+                <div className="mt-5 space-y-6">{section.blocks.map((block, index) => block.kind === "md" ? <SBlockMarkdown key={index} markdown={block.text} /> : <SBlockVisual key={index} id={block.id} />)}</div>
+              </section>
+            ))}
+          </section>
         </article>
       </div>
     </CanonicalChapterPage>

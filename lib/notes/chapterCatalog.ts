@@ -313,11 +313,22 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
   {
     id: "p-block-elements",
     syllabusId: "p-block-elements",
+    sectionLabel: "Full block",
     title: "P-block Elements",
     href: "/notes/p-block",
     lessonLabel: "20 lessons",
     premium: true,
     description: "JEE Advanced notes for Groups 13–18: trends, boron and carbon chemistry, nitrogen and sulphur oxoacids, halogens, interhalogens and xenon compounds.",
+  },
+  {
+    id: "boron-family",
+    syllabusId: "p-block-elements",
+    sectionLabel: "Group 13 deep dive",
+    title: "The Boron Family",
+    href: "/notes/boron-family",
+    lessonLabel: "14 lessons",
+    premium: true,
+    description: "Group 13 (B, Al, Ga, In, Tl) in full: periodic trends and anomalies, the inert-pair effect, electron-deficient and multicentre bonding, borax and boric acid, boron halides, boranes and borazine, aluminium chemistry, and an integrated Q1–Q90 question bank with answer key.",
   },
   // ── Organic Chemistry (JEE Advanced) ─────────────────────────────────────
   {
@@ -421,6 +432,11 @@ export const COURSE_GROUP_CARDS: Record<string, CourseGroupCard> = {
     href: "/notes/mole-concept",
     description:
       "One chapter in four sections — Mole Concept (free), Stoichiometry, Concentration Terms and Eudiometry: from the mole and Avogadro constant to limiting reagent, concentration units and gas-phase analysis.",
+  },
+  "p-block-elements": {
+    href: "/notes/p-block",
+    description:
+      "Two courses — the full P-block Elements route across Groups 13–18, plus a dedicated 14-lesson Boron Family deep dive (Group 13 trends, inert-pair effect, electron-deficient bonding, boranes, borazine, borax, boric acid, aluminium chemistry and a Q1–Q90 question bank).",
   },
 };
 

@@ -4,20 +4,7 @@ import { useMemo, useState } from "react";
 import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { SBlockMarkdown } from "./_markdown";
 import { SBlockVisual } from "./visuals";
-import { S_BLOCK_SECTIONS } from "./content";
-
-const ALKALINE_EARTH_SECTION_IDS = new Set([
-  "group2-data",
-  "beryllium-anomaly",
-  "calcium-magnesium",
-  "gypsum-cement",
-  "hardness",
-  "biology-uses",
-]);
-
-function isAlkalineEarthSection(id: string) {
-  return id.startsWith("aem-") || ALKALINE_EARTH_SECTION_IDS.has(id);
-}
+import { ALKALI_METAL_SECTIONS, ALKALINE_EARTH_METAL_SECTIONS } from "./content";
 
 function H2({ id, children }: { id: string; children: React.ReactNode }) {
   return (
@@ -29,8 +16,12 @@ function H2({ id, children }: { id: string; children: React.ReactNode }) {
 
 export default function SBlockMasterTextbook() {
   const [query, setQuery] = useState("");
-  const filtered = useMemo(
-    () => S_BLOCK_SECTIONS.filter((s) => s.label.toLowerCase().includes(query.toLowerCase())),
+  const filteredAlkali = useMemo(
+    () => ALKALI_METAL_SECTIONS.filter((section) => section.label.toLowerCase().includes(query.toLowerCase())),
+    [query],
+  );
+  const filteredAlkalineEarth = useMemo(
+    () => ALKALINE_EARTH_METAL_SECTIONS.filter((section) => section.label.toLowerCase().includes(query.toLowerCase())),
     [query],
   );
 
@@ -40,7 +31,7 @@ export default function SBlockMasterTextbook() {
       discipline="JEE Advanced Chemistry"
       chapterTitle="s-Block Elements"
       chapterSlug="s-block"
-      description="One continuous chapter, not a gallery of cards: Group 1 and Group 2 periodic trends, energetics, reactions, and industrial chemistry."
+      description="Two independent textbook parts: Alkali Metals and Alkaline Earth Metals."
       free={false}
     >
       <div className="grid gap-8 lg:grid-cols-[290px_minmax(0,1fr)]">
@@ -53,11 +44,11 @@ export default function SBlockMasterTextbook() {
           />
           <nav className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3">
             <p className="px-3 pb-1 pt-2 text-xs font-black uppercase tracking-[0.16em] text-[var(--accent)]">Part A — Alkali Metals</p>
-            {filtered.filter((s) => !isAlkalineEarthSection(s.id)).map((s) => (
+            {filteredAlkali.map((s) => (
               <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--foreground)]">{s.label}</a>
             ))}
             <p className="mt-3 border-t border-[var(--border)] px-3 pb-1 pt-4 text-xs font-black uppercase tracking-[0.16em] text-[var(--accent)]">Part B — Alkaline Earth Metals</p>
-            {filtered.filter((s) => isAlkalineEarthSection(s.id)).map((s) => (
+            {filteredAlkalineEarth.map((s) => (
               <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--foreground)]">{s.label}</a>
             ))}
           </nav>
@@ -65,17 +56,15 @@ export default function SBlockMasterTextbook() {
 
         <article className="min-w-0 space-y-12">
           <section className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-10">
-            <h2 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">One continuous chapter, not a gallery of cards</h2>
+            <h2 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">Two independent textbook parts</h2>
             <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--text-body)]">
-              Every periodic trend, preparation, reaction, exception, structure, industrial process and biological role sits inside the topic where it
-              belongs. Group 1 and Group 2 are built from the same governing principles, so exceptions such as lithium and beryllium follow naturally
-              from the chemistry rather than appearing as isolated facts. Diagrams are clear, responsive and designed for study on any screen.
+              Part A covers only the Alkali Metals. Part B covers only the Alkaline Earth Metals. Each part has its own contents and reading sequence.
             </p>
           </section>
 
           <section aria-labelledby="part-a-alkali">
             <H2 id="part-a-alkali">Part A — Alkali Metals</H2>
-            {filtered.filter((section) => !isAlkalineEarthSection(section.id)).map((section) => (
+            {filteredAlkali.map((section) => (
               <section key={section.id}>
                 <H2 id={section.id}>{section.label}</H2>
                 <div className="mt-5 space-y-6">{section.blocks.map((block, index) => block.kind === "md" ? <SBlockMarkdown key={index} markdown={block.text} /> : <SBlockVisual key={index} id={block.id} />)}</div>
@@ -84,7 +73,7 @@ export default function SBlockMasterTextbook() {
           </section>
           <section aria-labelledby="part-b-alkaline-earth">
             <H2 id="part-b-alkaline-earth">Part B — Alkaline Earth Metals</H2>
-            {filtered.filter((section) => isAlkalineEarthSection(section.id)).map((section) => (
+            {filteredAlkalineEarth.map((section) => (
               <section key={section.id}>
                 <H2 id={section.id}>{section.label}</H2>
                 <div className="mt-5 space-y-6">{section.blocks.map((block, index) => block.kind === "md" ? <SBlockMarkdown key={index} markdown={block.text} /> : <SBlockVisual key={index} id={block.id} />)}</div>

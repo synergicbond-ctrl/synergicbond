@@ -8,7 +8,7 @@ import { md, type SBlockSection } from "./types";
 
 export const JD_LEE_ENHANCEMENTS: SBlockSection[] = [
   {
-    id: "jd-lee-structures-metals",
+    id: "alkali-structures-metals",
     label: "Metal Structures & Cohesive Energy",
     blocks: [
       md(String.raw`
@@ -30,12 +30,11 @@ The cohesive energy is the force holding atoms or ions together in the solid —
 
 **Key insight:** The softness and low hardness of Group 1 metals are direct consequences of their low cohesive energy. As you descend the group, the cohesive energy decreases because each atom contributes only **one valence electron** to the metallic "sea," and this bonding becomes progressively weaker as the atoms grow larger.
 
-Compare with Group 2: the cohesive energies of Group 1 metals are about **half** those for Group 2 elements and **one-third** those for Group 13 elements — reflecting the difference in metallic bonding strength.
 `),
     ],
   },
   {
-    id: "jd-lee-flame-colors",
+    id: "alkali-flame-colors",
     label: "Flame Colours & Spectroscopic Data",
     blocks: [
       md(String.raw`
@@ -60,7 +59,7 @@ These characteristic flame colorations of the **emission spectra** are used for 
     ],
   },
   {
-    id: "jd-lee-reactions-summary",
+    id: "alkali-reactions-summary",
     label: "Comprehensive Reaction Summary",
     blocks: [
       md(String.raw`
@@ -115,7 +114,7 @@ Lithium has the **most negative standard electrode potential** of any element in
     ],
   },
   {
-    id: "jd-lee-oxides-detail",
+    id: "alkali-oxides-detail",
     label: "Oxides, Hydroxides, Peroxides & Superoxides",
     blocks: [
       md(String.raw`
@@ -192,7 +191,7 @@ Generally, **large atoms or ions form weaker bonds than small ones**. The **pero
     ],
   },
   {
-    id: "jd-lee-sulphides",
+    id: "alkali-sulphides",
     label: "Sulphides & Industrial Compounds",
     blocks: [
       md(String.raw`

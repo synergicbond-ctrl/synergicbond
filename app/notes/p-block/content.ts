@@ -360,6 +360,8 @@ Aluminium has a strongly negative electrode potential, but a thin adherent Al₂
 
 > **EXCEPTION.** Concentrated HNO₃ passivates aluminium by reinforcing the oxide film. Do not write H₂ evolution under ordinary conditions.
 
+**Anodising.** The natural Al₂O₃ film is only ~10⁻⁴–10⁻⁶ mm thick. **Anodising** deliberately thickens it: the article is made the **anode** in dilute H₂SO₄ (or chromic acid) and electrolysed, growing a hard porous oxide layer ~10⁻² mm thick that can be **dyed** and then sealed — used for decorative, corrosion-resistant aluminium fittings.
+
 ### 6.3 Gallium, indium and thallium — comparison
 
 - Gallium has an unusually low melting point because its solid structure contains paired Ga atoms and weak inter-pair interactions.
@@ -486,7 +488,28 @@ Boric acid is **monobasic but not a conventional proton donor**. It accepts OH�
 
 #### Polyhydric alcohol effect
 
-Glycerol or mannitol forms a chelated borate complex, increasing acidity and permitting titration with NaOH.
+A polyhydroxy compound chelates the [B(OH)₄]⁻ ion, pulls the equilibrium fully to the right and makes boric acid behave as a **strong monobasic acid** that can be sharply titrated against NaOH (phenolphthalein end point):
+
+\[
+\mathrm{B(OH)_3 + 2\,diol \rightarrow [B(diol)_2]^- + H_3O^+ + \text{...}}
+\]
+
+- The diol **must be *cis*** — OH groups on **adjacent carbons in the *cis* configuration** (a 1,2- or 1,3-*cis*-diol). Glycerol, mannitol, catechol (strongest), sugars and salicylic acid all work.
+- **Ethylene glycol is the classic exception** — it does *not* enhance the acidity (it forms only a weak 1:1 complex, not the stable bis-chelate), so it is *not* used for this titration.
+
+#### Boron–salicylic acid complex
+
+Boric acid reacts with **salicylic acid** to give a four-coordinate (tetrahedral) chelated **bis(salicylato)borate** anion. Because boron becomes a stereocentre with four different chelate environments, this complex is **optically active / resolvable** — the standard example of chirality at a boron centre.
+
+### 7.4 Qualitative analysis and flame tests for boron
+
+| Test | Procedure | Observation | Chemistry |
+|---|---|---|---|
+| **BF₃ flame test** | Heat the borate with **conc. H₂SO₄ + CaF₂ (fluorspar)** | **Green-edged flame** | CaF₂ + H₂SO₄ → 2HF; H₃BO₃ + 3HF → BF₃↑ + 3H₂O; volatile BF₃ colours the flame green |
+| **Trimethyl borate flame test** | Warm the borate with **CH₃OH + conc. H₂SO₄** in a dish and ignite the vapour | **Green flame** | H₃BO₃ + 3CH₃OH → B(OCH₃)₃↑ + 3H₂O (conc. H₂SO₄ removes water; the volatile ester burns green) |
+| **Turmeric (curcumin) paper** | Dip turmeric paper in acidified borate solution, dry | Paper turns **red / reddish-brown** (rosocyanine); moistening with NH₃ turns it **greenish-black** | Curcumin–boron chelate |
+
+> **JEE TRAP.** The green flame in both tests is due to a **volatile covalent boron compound** (BF₃ or B(OCH₃)₃), not to a boron *ion* — boron itself gives no ordinary atomic flame colour.
 
 > **WORKED EXAMPLE 7.1**
 >
@@ -567,6 +590,23 @@ The B₂O₃ forms a transparent glassy bead that dissolves coloured metal oxide
 \[
 \mathrm{Borax\xrightarrow{HCl}H_3BO_3\xrightarrow{\Delta}B_2O_3\xrightarrow{Mg,\Delta}B}
 \]
+
+### 8.5 Sodium peroxoborate (sodium perborate)
+
+Written commercially as **NaBO₃·4H₂O**, but its true structure is a dimeric anion with **two real peroxide (–O–O–) bridges** linking two tetrahedral boron centres:
+
+\[
+\mathrm{Na_2[(HO)_2B(\mu\text{-}O_2)_2B(OH)_2]\cdot6H_2O}
+\]
+
+| Point | Detail |
+|---|---|
+| **Preparation** | (i) electrolysis of a sodium borate + Na₂CO₃ solution; (ii) NaBO₂ + H₂O₂ (from borax + H₂O₂ + NaOH) |
+| **Key structural fact** | the "per-" is genuine — it contains covalent O–O peroxo linkages, *not* extra oxide |
+| **Active-oxygen use** | brightener / oxygen bleach in detergents and "biological" washing powders; in hot water (> 60–80 °C) the O–O bonds break to release **H₂O₂** |
+| **Redox** | in alkaline medium it supplies a peroxide-type oxidant: oxidises **Cr(III) → chromate CrO₄²⁻**, Mn(II) → MnO₄⁻ |
+
+> **JEE TRAP.** Distinguish **sodium metaborate NaBO₂** (no O–O), **sodium tetraborate / borax** (no O–O) and **sodium peroxoborate** (two O–O bridges). Only the last one gives H₂O₂ on warming and behaves as an oxidising agent.
 
 # 3. Group 13 — Boron Family: premium textbook, Parts 9–15
 
@@ -663,6 +703,8 @@ $$4\text{BF}_3 + 3\text{H}_2\text{O} \rightarrow \text{H}_3\text{BO}_3 + 3\text{
 
 Only **¼ mole** of H₃BO₃ per mole of BF₃. The rest is locked up as the very stable **fluoroboric acid [HBF₄]** complex.
 
+**Fluoroboric acid HBF₄** can also be made directly: H₃BO₃ + 4HF → HBF₄ + 3H₂O. It is a **strong acid** (comparable to HCl), exists only in solution/as salts, and contains the tetrahedral **[BF₄]⁻** ion — boron's coordination number 4, the textbook maximum for boron.
+
 **BCl₃, BBr₃, BI₃ — Complete hydrolysis:**
 
 $$\text{BCl}_3 + 3\text{H}_2\text{O} \rightarrow \text{H}_3\text{BO}_3 + 3\text{HCl}$$
@@ -724,7 +766,7 @@ This is a **3-centre-4-electron (3c-4e) bond**.
 | **InCl₃** | 6 | Mostly monomer | Polar covalent | Even larger In prefers CN 6 as monomer |
 | **TlF, TlCl, TlBr, TlI** | 8+ (simple ionic) | — (fully ionic) | Ionic, no dimers | Tl⁺ behaves like K⁺; simple cation |
 
-**Thallium's unique position:** Tl⁺ is only slightly larger than K⁺ (150 pm vs 138 pm), so Tl⁺ behaves like a simple alkali-metal cation.
+**Thallium's unique position:** Tl⁺ is only slightly larger than K⁺ (150 pm vs 138 pm), so Tl⁺ behaves like a simple alkali-metal cation (TlOH is a strong, water-soluble base like KOH). **Tl⁺ also mimics Ag⁺:** TlCl, TlBr and TlI are **sparingly soluble and photosensitive** (darken in light), and Tl₂S is black — so Tl⁺ shows a dual resemblance to **both K⁺ and Ag⁺**. Thallium compounds are cumulative poisons ("the poisoner's poison").
 
 ### 9.12 Important trap: TlI₃ is not Tl³⁺I₃⁻
 
@@ -857,24 +899,71 @@ BH₃ has only six electrons around boron. Two BH₃ units combine to form B₂H
 | Lewis-base adduct | B₂H₆ + 2CO → 2BH₃·CO | elevated pressure/temperature |
 | Borohydride formation | B₂H₆ + 2LiH → 2LiBH₄ | hydride addition |
 
-### 10.5 Diborane with ammonia
+### 10.4a Cleavage of diborane by Lewis bases
 
-The product depends strongly on temperature and stoichiometry. Low-temperature adducts and the diammoniate of diborane form first; controlled heating can produce borazine, while stronger heating ultimately gives BN.
+Every reaction of B₂H₆ with a donor **breaks the two B–H–B bridges**. Which way it breaks depends on the donor:
+
+**Symmetrical (homolytic) cleavage** → two identical neutral **L·BH₃** adducts. Given by **bulky or soft/strong donors** and by hydride:
+
+\[
+\mathrm{B_2H_6 + 2\,L \rightarrow 2\,L{\cdot}BH_3} \qquad (L = \mathrm{CO,\ NMe_3,\ PF_3,\ R_3P,\ THF,\ Et_2O})
+\]
+\[
+\mathrm{B_2H_6 + 2\,NaH \rightarrow 2\,Na^+[BH_4]^-} \quad(\text{hydride} = \text{symmetrical})
+\]
+
+**Unsymmetrical (heterolytic) cleavage** → an **ionic** product, one boron taking both donors and the other becoming [BH₄]⁻. Given by **small hard donors**: NH₃, MeNH₂, Me₂NH:
+
+\[
+\mathrm{B_2H_6 + 2\,NH_3 \xrightarrow{low\ T} [BH_2(NH_3)_2]^+[BH_4]^-}
+\]
+
+| Donor | Cleavage | Product |
+|---|---|---|
+| NH₃, CH₃NH₂, (CH₃)₂NH | **unsymmetrical** | [BH₂L₂]⁺[BH₄]⁻ |
+| (CH₃)₃N (bulky), CO, PF₃, R₃P, ethers | **symmetrical** | L·BH₃ |
+| NaH / LiH (H⁻) | symmetrical | M⁺[BH₄]⁻ |
+
+> **JEE TRAP.** The **"diammoniate of diborane"** is **not** a neutral B₂H₆·2NH₃ molecule — it is the *unsymmetrical*-cleavage salt **[BH₂(NH₃)₂]⁺[BH₄]⁻**.
+
+### 10.5 Diborane with ammonia — borazine
+
+Excess NH₃ and controlled heating of the diammoniate gives **borazine**; stronger heating ultimately gives BN.
 
 \[
 \mathrm{3B_2H_6+6NH_3\xrightarrow{\Delta}2B_3N_3H_6+12H_2}
 \]
 
-### 10.6 Borazine
+**Alternative route via B-trichloroborazine** (from a boron trihalide):
 
-Borazine, B₃N₃H₆, is planar and isoelectronic with benzene, but B–N bond polarity makes it less aromatic and more reactive toward polar reagents.
+\[
+\mathrm{3BCl_3 + 3NH_4Cl \xrightarrow{140\,^{\circ}C} B_3N_3H_3Cl_3 + 9HCl}
+\]
+\[
+\mathrm{B_3N_3H_3Cl_3 + 3NaBH_4 \rightarrow B_3N_3H_6 + 3NaCl + \tfrac{3}{2}B_2H_6}
+\]
+
+### 10.6 Borazine ("inorganic benzene")
+
+Borazine, B₃N₃H₆, is planar and isoelectronic with benzene, but B–N bond polarity makes it less aromatic and — unlike benzene — it **undergoes addition reactions** readily at the Bδ⁺···Nδ⁻ bonds:
+
+\[
+\mathrm{B_3N_3H_6 + 3HCl \rightarrow B_3N_3H_6(HCl)_3} \quad(\text{Cl adds to B, H adds to N})
+\]
+\[
+\mathrm{B_3N_3H_6 + 3H_2 \xrightarrow{\Delta} B_3N_3H_{12}}
+\]
+\[
+\mathrm{B_3N_3H_6 + 9H_2O \rightarrow 3H_3BO_3 + 3NH_3 + 3H_2}
+\]
 
 | Comparison | Benzene | Borazine |
 |---|---|---|
 | Ring atoms | C₆ | alternating B₃N₃ |
 | Bond polarity | low | Bδ⁺–Nδ⁻ |
 | Aromatic stabilisation | strong | weaker |
-| Hydrolysis | resistant | readily hydrolysed |
+| Addition (HCl, H₂) | resists | **adds readily** |
+| Hydrolysis | resistant | readily hydrolysed to H₃BO₃ + NH₃ |
 
 ### 10.7 Boron nitride
 

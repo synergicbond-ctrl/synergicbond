@@ -6,12 +6,31 @@ import type { SBlockSection } from "./types";
 
 export type { SBlockBlock, SBlockSection } from "./types";
 
+const lithiumSection = ANOMALIES_SECTIONS[0];
+const LITHIUM_ONLY_SECTION: SBlockSection = {
+  ...lithiumSection,
+  label: "Anomalous Behaviour of Lithium",
+  blocks: lithiumSection.blocks.slice(0, 3).map((block) =>
+    block.kind === "md"
+      ? {
+          ...block,
+          text: block.text
+            .split("## 18.7 Diagonal relationship: lithium and magnesium")[0]
+            .replace(
+              "## 18.3 Thermal behaviour: lithium salts decompose like Group 2, not Group 1",
+              "## 18.3 Thermal behaviour of lithium salts",
+            ),
+        }
+      : block,
+  ),
+};
+
 // Keep the two textbook parts independent. Part A contains only Group 1
 // material; Part B contains only Group 2 material. Question-bank and
 // worked-example sections remain excluded.
 export const ALKALI_METAL_SECTIONS: SBlockSection[] = [
   ...ALKALI_CORE_SECTIONS,
-  ...ANOMALIES_SECTIONS.slice(0, 1),
+  LITHIUM_ONLY_SECTION,
   ...SALTS_INDUSTRY_SECTIONS.slice(2),
 ];
 

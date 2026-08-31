@@ -330,6 +330,16 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     premium: true,
     description: "Group 13 (B, Al, Ga, In, Tl) in full: periodic trends and anomalies, the inert-pair effect, electron-deficient and multicentre bonding, borax and boric acid, boron halides, boranes and borazine, aluminium chemistry, and an integrated Q1–Q90 question bank with answer key.",
   },
+  {
+    id: "carbon-family",
+    syllabusId: "p-block-elements",
+    sectionLabel: "Group 14 deep dive",
+    title: "The Carbon Family",
+    href: "/notes/carbon-family",
+    lessonLabel: "18 lessons",
+    premium: true,
+    description: "Group 14 (C, Si, Ge, Sn, Pb) in full: periodic trends and the inert-pair effect, the carbon anomaly and catenation, allotropes and fullerenes, carbides, CO/CO₂ and metal carbonyls, silicon extraction, silica and the seven silicate classes, zeolites, glass and silicones, silanes, halides and complexes, and tin/lead redox chemistry — NCERT-first with a full reaction and structure atlas.",
+  },
   // ── Organic Chemistry (JEE Advanced) ─────────────────────────────────────
   {
     id: "general-organic-chemistry",

@@ -46,12 +46,16 @@ function makeComponents(accent: Accent): Components {
   const h1Text = accent === "cyan" ? "text-cyan-50" : "text-[var(--foreground)]";
   const h2Text = accent === "cyan" ? "text-cyan-100/95" : "text-[var(--foreground)]";
   const markerColor = accent === "cyan" ? "marker:text-cyan-300" : "marker:text-[var(--accent)]";
+  // The centred-textbook treatment (headings + tables) is Part B's identity;
+  // Part A keeps its original left-aligned layout untouched.
+  const headingAlign = accent === "cyan" ? "text-center" : "";
+  const tableAlign = accent === "cyan" ? "sm:mx-auto sm:w-fit sm:max-w-full" : "";
   return {
     h1: ({ children }) => {
       const text = flattenText(children);
       return (
         <section className="mt-12 first:mt-0">
-          <h2 id={slugify(text)} className={`scroll-mt-24 border-t ${sectionBorder} pt-10 text-center font-display text-3xl font-black leading-tight tracking-tight ${h1Text} sm:text-4xl`}>
+          <h2 id={slugify(text)} className={`scroll-mt-24 border-t ${sectionBorder} pt-10 ${headingAlign} font-display text-3xl font-black leading-tight tracking-tight ${h1Text} sm:text-4xl`}>
             {children}
           </h2>
         </section>
@@ -76,7 +80,7 @@ function makeComponents(accent: Accent): Components {
     ),
     hr: () => <hr className="my-10 border-[var(--border)]" />,
     table: ({ children }) => (
-      <div className="my-6 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--surface)] shadow-xl shadow-black/20 sm:mx-auto sm:w-fit sm:max-w-full">
+      <div className={`my-6 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--surface)] shadow-xl shadow-black/20 ${tableAlign}`}>
         <table className="min-w-full border-collapse text-left text-sm sm:text-[15px]">{children}</table>
       </div>
     ),
@@ -170,41 +174,60 @@ function Callout({ kind, body, accent }: { kind: CalloutKind; body: string; acce
 /*  condition sitting over a drawn arrow. No `[heat]` / pill badges.   */
 /* ------------------------------------------------------------------ */
 
-const STEP_LABEL_RE = /^(Route\s*\d+|Step\s*\d+|Calcination|Reduction|Overall|Net(?:\s+reaction)?|Anode|Cathode|Industrial|Preparation|Hydrolysis|Roasting)\s*:?\s*/i;
+// A leading "Some phrase: " before the equation, e.g. "Calcination:",
+// "Route 1:", "General carbothermic reduction (illustrative):".
+const STEP_LABEL_RE = /^([A-Z][^:\n→⇌⇋⟶]{1,60}):\s+(?=.*[→⇌⇋⟶])/;
 const ARROW_SPLIT_SOURCE = "\\s*(?:—\\(([^)]+)\\)→|⟶|→|⇌|⇋)\\s*";
+// Three consecutive lowercase words, or a comma followed by a lowercase
+// clause ⇒ this is prose, not an equation.
+const PROSE_RUN_RE = /[a-z]{3,}\s+[a-z]{3,}\s+[a-z]{3,}|,\s+[a-z]{3,}\s+[a-z]{3,}/;
 
 function hasArrow(line: string) {
   return /(?:→|⇌|⇋|⟶)/.test(line);
 }
 
-// A block counts as a reaction run only when every non-empty line is an
-// equation and none of them reads as prose (a mid-sentence ". " with a
-// following lowercase word, or an overly long line).
+// Peel a trailing " (note)" off the end of an equation line.
+function splitTrailingNote(text: string): { core: string; note: string | null } {
+  const match = text.match(/\s+\(([^()]+)\)\s*$/);
+  if (match && !/[→⇌⇋⟶]/.test(match[1])) {
+    return { core: text.slice(0, text.length - match[0].length).trim(), note: match[1].trim() };
+  }
+  return { core: text.trim(), note: null };
+}
+
+// The equation "core" of a line: after stripping a leading label and a
+// trailing parenthetical note.
+function equationCore(line: string): string {
+  return splitTrailingNote(line.replace(STEP_LABEL_RE, "")).core;
+}
+
+// The bare skeleton used for the prose / length tests: the equation core
+// with every "—(condition)→" reduced to a plain arrow, so multi-word
+// reaction conditions ("1150 °C, reduced pressure", "electric furnace")
+// are not mistaken for prose.
+function equationSkeleton(line: string): string {
+  return equationCore(line).replace(/—\([^)]*\)→/g, " → ");
+}
+
+// A block is a reaction run only when every non-empty line, reduced to its
+// equation skeleton, is a short arrow-bearing expression with no prose.
 function isReactionBlock(block: string) {
   const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
   if (lines.length === 0) return false;
   return lines.every((line) => {
-    const bare = line.replace(STEP_LABEL_RE, "");
-    if (!hasArrow(bare)) return false;
-    if (bare.length > 200) return false;
-    if (/[a-z]{2}\.\s+[a-z]/.test(bare)) return false;
+    if (!hasArrow(equationCore(line))) return false;
+    const skeleton = equationSkeleton(line);
+    if (skeleton.length > 150) return false;
+    if (PROSE_RUN_RE.test(skeleton)) return false;
     return true;
   });
 }
 
 function ReactionLine({ line }: { line: string }) {
   const labelMatch = line.match(STEP_LABEL_RE);
-  const label = labelMatch ? labelMatch[0].replace(/[:\s]+$/, "") : null;
-  const rest = labelMatch ? line.slice(labelMatch[0].length) : line;
-
-  // Trailing bare-parenthetical note, e.g. "(sodium beryllate)".
-  let note: string | null = null;
-  const noteMatch = rest.match(/\s+\(([^()]+)\)\s*$/);
-  let core = rest;
-  if (noteMatch && !/[→⇌⇋⟶]/.test(noteMatch[1])) {
-    note = noteMatch[1];
-    core = rest.slice(0, rest.length - noteMatch[0].length);
-  }
+  const label = labelMatch ? labelMatch[1].trim() : null;
+  const afterLabel = labelMatch ? line.slice(labelMatch[0].length) : line;
+  const { core, note } = splitTrailingNote(afterLabel);
 
   const species: string[] = [];
   const arrows: { condition: string | null; equilibrium: boolean }[] = [];
@@ -218,26 +241,26 @@ function ReactionLine({ line }: { line: string }) {
   species.push(core.slice(lastIndex).trim());
 
   return (
-    <div className="flex flex-wrap items-end justify-center gap-x-2 gap-y-1 text-center font-mono text-[14.5px] text-slate-100 sm:text-[15.5px]">
+    <div className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-2 text-center text-[15px] leading-relaxed text-slate-100 sm:text-[16.5px]">
       {label ? (
-        <span className="mb-1 mr-1 rounded bg-white/[0.06] px-1.5 py-0.5 font-sans text-[10px] font-bold uppercase tracking-wider text-slate-400">
+        <span className="mb-0.5 w-full text-center font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500">
           {label}
         </span>
       ) : null}
       {species.map((sp, i) => (
         <span key={`s-${i}`} className="contents">
-          <span className="whitespace-nowrap py-1">{sp}</span>
+          <span className="whitespace-nowrap">{sp}</span>
           {i < arrows.length ? (
-            <span className="inline-flex flex-col items-center px-1">
-              <span className="max-w-[16ch] text-[10px] leading-tight text-cyan-300/90 font-sans">
-                {arrows[i].condition ?? " "}
+            <span className="mx-1 inline-flex min-w-[2.5rem] flex-col items-center leading-none">
+              <span className="whitespace-nowrap pb-[3px] text-[11px] text-cyan-200/90">
+                {arrows[i].condition || null}
               </span>
-              <span className="text-lg leading-none text-slate-400">{arrows[i].equilibrium ? "⇌" : "⟶"}</span>
+              <span aria-hidden className="text-[19px] leading-none text-slate-300">{arrows[i].equilibrium ? "⇌" : "⟶"}</span>
             </span>
           ) : null}
         </span>
       ))}
-      {note ? <span className="w-full font-sans text-xs text-slate-400">({note})</span> : null}
+      {note ? <span className="mt-1 w-full text-center font-sans text-[12.5px] italic text-slate-400">{note}</span> : null}
     </div>
   );
 }
@@ -245,12 +268,10 @@ function ReactionLine({ line }: { line: string }) {
 function ReactionRun({ block }: { block: string }) {
   const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
   return (
-    <div className="my-6 rounded-xl border border-cyan-300/15 bg-[#07111d] px-4 py-5 shadow-lg shadow-black/20 sm:px-8">
-      <div className="space-y-4">
-        {lines.map((line, i) => (
-          <ReactionLine key={i} line={line} />
-        ))}
-      </div>
+    <div className="my-6 flex flex-col items-center gap-4 border-y border-white/[0.07] py-5">
+      {lines.map((line, i) => (
+        <ReactionLine key={i} line={line} />
+      ))}
     </div>
   );
 }
@@ -307,7 +328,16 @@ function segmentMarkdown(markdown: string): Segment[] {
       const kind = calloutKind(label);
       const firstBody = block.replace(CALLOUT_LABEL_RE, "").trim();
       const bodyParts = firstBody ? [firstBody] : [];
-      const titleLike = firstBody.length < 90 || /[?)]\s*$/.test(firstBody) || bodyParts.length === 0;
+      // The first line is a "lead-in" (follow-on paragraphs belong to the
+      // callout) only when it is empty, very short, a question, a colon
+      // lead-in, or a trailing parenthetical with no full sentence. A
+      // complete sentence ending in "." is the whole callout — take only
+      // its bullet list, never the surrounding section prose.
+      const titleLike =
+        bodyParts.length === 0 ||
+        firstBody.length < 46 ||
+        /[?:]\s*$/.test(firstBody) ||
+        (/\)\s*$/.test(firstBody) && !/\. /.test(firstBody));
       let paragraphsTaken = 0;
       let j = i + 1;
       for (; j < blocks.length; j += 1) {

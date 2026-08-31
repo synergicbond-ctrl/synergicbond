@@ -99,7 +99,9 @@ The actual crystal structures behind the "different lattice" explanation: Be and
 **Exam Note:** Reported values for E°(Be²⁺/Be) include −1.85 V and −1.97 V. For consistency in these notes, use −1.85 V; it also places Be close to Al (−1.66 V).
 
 ### 1.8 Flame Colours
-
+      `),
+      visual("flame"),
+      md(`
 | Metal | Ca | Sr | Ba | Be, Mg |
 |---|---|---|---|---|
 | Flame colour | Brick red | Crimson | Apple green | None |
@@ -158,6 +160,9 @@ Ca metal is obtained by electrolysis of fused CaCl₂ (from the Solvay-process w
 ### 1.11 Lattice Energy vs Hydration Energy — The Master Solubility Framework
 
 Solubility of Group 2 compounds departs from the usual "heavier = less soluble" intuition and is instead governed entirely by the competition between lattice energy and hydration energy as the cation grows down the group.
+      `),
+      visual("solubility"),
+      md(`
 
 | Lattice energy (kJ/mol) | Mg | Ca | Sr | Ba |
 |---|---|---|---|---|
@@ -222,6 +227,7 @@ Magnesium's E° (−2.37 V) is actually favourable for reaction, but Mg forms a 
 
 ### 2.3 Reactivity toward Dihydrogen — Hydrides
       `),
+      visual("hydride-family"),
       visual("beh2-polymer"),
       md(`
 Ca, Sr, Ba (and Mg, with more difficulty) react directly with H₂ on heating to give MH₂: Ca + H₂ → CaH₂. BeH₂ cannot be made this way and must instead be made indirectly, by two independent routes:
@@ -286,10 +292,11 @@ Anhydrous CaCl₂ is an excellent drying agent for gases and organic vapours —
 - Contrast: in Be(CH₃)₂ the bridge is a genuine 3-centre-2-electron bond spanning Be···CH₃···Be (like BeH₂), not simple lone-pair donation as in the chlorine bridges of (BeCl₂)ₙ — a subtle but real mechanistic difference between halide bridging (dative) and alkyl bridging (electron-deficient).
       `),
       visual("becl2-bridge-detail"),
+      visual("halide-lattice"),
       md(`
 **Covalency trend (Fajans' rules):** Covalent character: BeX₂ > MgX₂ > CaX₂ > SrX₂ > BaX₂ — the small, highly-charged Be²⁺ polarizes the anion's electron cloud strongly ("small highly charged ions tend to form covalent compounds"). For a fixed cation, covalency rises with anion polarizability: I⁻ > Br⁻ > Cl⁻ > F⁻.
 
-**Exam Note:** BeF₂ has the largest electronegativity difference of any Be halide, yet is still regarded as covalent when fused (very low melt conductivity) — high charge density beats electronegativity difference for Be specifically. BeF₂ is, unusually, very soluble in water (owing to the huge solvation energy that forms [Be(H₂O)₄]²⁺), even though heavier Group-2 fluorides are all almost insoluble — MF₂ (M = Mg, Ca, Sr, Ba) are white, insoluble, high-melting ionic solids. Hydration of halides decreases down the group: MgCl₂·6H₂O, CaCl₂·6H₂O, SrCl₂·6H₂O, but BaCl₂·2H₂O only.
+**Exam Note:** BeF₂ has the largest electronegativity difference of any Be halide, yet is still regarded as covalent when fused (very low melt conductivity) — high charge density beats electronegativity difference for Be specifically. BeF₂ is, unusually, very soluble in water (owing to the huge solvation energy that forms [Be(H₂O)₄]²⁺), even though heavier Group-2 fluorides are all almost insoluble — MF₂ (M = Mg, Ca, Sr, Ba) are white, insoluble, high-melting ionic solids. Hydration of halides decreases down the group: MgCl₂·6H₂O, CaCl₂·6H₂O, SrCl₂·6H₂O, but BaCl₂·2H₂O only. (For MgCl₂ the source is internally inconsistent — its halide-trends text gives MgCl₂·6H₂O while its halides table gives MgCl₂·8H₂O for the same salt; 6H₂O is the more common literature value, but expect 8H₂O if a question is lifted straight from the halides table.)
 
 **Chlorides, bromides, iodides — solubility and industrial uses**
 
@@ -326,7 +333,9 @@ Mg, Ca, Sr, Ba do not react with NaOH — they are purely basic metals.
 ## 3. Reducing Nature & Solutions in Liquid Ammonia
 
 The dilute deep-blue metal–ammonia solution is paramagnetic because the solvated electron is unpaired. As metal concentration increases, the solution can pass toward a bronze/metallic appearance; this concentrated state is distinct from the dilute blue solution.
-
+      `),
+      visual("solvated-electron"),
+      md(`
 Ca, Sr, Ba dissolve in liquid NH₃ to give deep blue solutions — identical phenomenon to Group 1 — due to ammoniated (solvated) electrons:
 
 M + (x+y)NH₃ → [M(NH₃)ₓ]²⁺ + 2[e(NH₃)_y]⁻
@@ -365,7 +374,9 @@ Be₃N₂ is comparatively volatile (greater covalent character of Be); the othe
 | Be₂C | C⁴⁻ ("methanide") | CH₄ | Antifluorite structure; Be₂C + 4H₂O → 2Be(OH)₂ + CH₄ |
 | Mg₂C₃ | C₃⁴⁻ ("allylide"/sesquicarbide) | CH₃–C≡CH (propyne) | Not on the acetylide pattern |
 | CaC₂, SrC₂, BaC₂ | C₂²⁻ ("acetylide") | C₂H₂ (ethyne) | Distorted NaCl-type lattice (C₂²⁻ is non-spherical) |
-
+      `),
+      visual("carbide"),
+      md(`
 **Exam Pattern:** Mg₂C₃ contains 42 electrons per formula unit: 2×12 + 3×6 = 42. This is useful only after identifying the correct carbide formula (allylide/sesquicarbide, not MgC₂).
 
 Be₂C is made by heating BeO with carbon at 1900–2000 °C; it is brick-red and adopts an antifluorite structure (C⁴⁻ replaces F⁻, Be²⁺ replaces Ca²⁺).
@@ -626,7 +637,9 @@ BeCO₃ is so unstable it can only be kept under a CO₂ atmosphere, and is stru
 CaCO₃ crystal chemistry: calcite (stable form, Ca²⁺ 6-coordinate, matching the CaO-type prediction) vs aragonite (metastable, only ~5 kJ/mol higher in energy but kinetically trapped, Ca²⁺ unusually 9-coordinate).
 
 ### 9.2 Bicarbonates & Hardness of Water
-
+      `),
+      visual("hardness"),
+      md(`
 Bicarbonates exist only in solution, never as isolable solids for Group 2:
 
 M²⁺ + 2HCO₃⁻ ⇌ M(HCO₃)₂(aq), practically formed as CaCO₃ + CO₂ + H₂O → Ca(HCO₃)₂(aq)
@@ -712,7 +725,9 @@ Many Group 2 oxalates are sparingly soluble. Their thermal decomposition can pro
     blocks: [
       md(`
 ## 11. Anomalous Behaviour of Beryllium
-
+      `),
+      visual("charge-density"),
+      md(`
 Illustrative Be structures: [Be(H₂O)₄]²⁺ (tetrahedral hydration complex, coordination number 4), basic beryllium acetate Be₄O(CH₃COO)₆ (central O²⁻, tetrahedral Be₄ core, six bridging μ-OAc groups on the six edges), and [Be(ox)₂]²⁻ (tetrahedral bis(oxalato)beryllate, two bidentate oxalate ligands, four O donors around Be).
       `),
       visual("be-hydrate"),
@@ -775,7 +790,9 @@ Be is just one instance of a completely general pattern called the "first-elemen
     blocks: [
       md(`
 ## 12. Diagonal Relationship: Be and Al
-
+      `),
+      visual("diagonal-map"),
+      md(`
 The Be–Al resemblance extends to strong Lewis-acid character of their chlorides and to bridged chloride structures. Both sets of halides show appreciable covalent character and can participate in Lewis-acid chemistry under suitable conditions.
 
 Be²⁺ (ionic radius ≈31 pm) and Al³⁺ (≈50 pm) are not close in raw size, but their charge densities (charge per unit surface area) are almost identical (Be²⁺ ≈2.36, Al³⁺ ≈2.50 in the same units) — this is the quantitative root of every diagonal relationship, not just Be–Al.
@@ -862,7 +879,9 @@ Additional industrial uses of lime (CaO):
 - To make slaked lime Ca(OH)₂, and to make calcium carbide CaC₂
 
 ### 14.2 Calcium Hydroxide — Slaked Lime, Ca(OH)₂
-
+      `),
+      visual("lime-cycle"),
+      md(`
 Whitewashing is a chemical-setting process: a suspension of Ca(OH)₂ is applied to the surface and atmospheric CO₂ slowly converts it into a hard CaCO₃ layer. A simplified representation of bleaching-powder formation is 2Ca(OH)₂ + 2Cl₂ → CaCl₂ + Ca(OCl)₂ + 2H₂O.
 
 Prepared as above; white amorphous powder, sparingly soluble. Aqueous solution = lime water; suspension of excess solid = milk of lime.
@@ -904,7 +923,9 @@ White fluffy powder, almost insoluble; decomposes at 1200 K to CaO + CO₂. Reac
 - Antacid, mild abrasive in toothpaste, constituent of chewing gum, filler in cosmetics
 
 ### 14.4 Calcium Sulphate System — Gypsum, Plaster of Paris, Anhydrite
-
+      `),
+      visual("plaster"),
+      md(`
 The formula CaSO₄·½H₂O is a stoichiometric formula: two CaSO₄ formula units correspond to one H₂O in the composition. It does not imply an isolated "half water molecule."
 
 When Plaster of Paris is mixed with the correct amount of water, gypsum crystals reform. Their growth and interlocking produce the hard set mass; the process is hydration followed by recrystallisation, not merely evaporation of water. Excess mixing water leaves pores after drying and therefore weakens the set material.
@@ -973,7 +994,9 @@ Chlorophyll a: Mg²⁺ is coordinated by four ring nitrogens in a chlorin-type m
       visual("chlorophyll-mg"),
       md(`
 6CO₂ + 6H₂O —(chlorophyll, sunlight)→ C₆H₁₂O₆ + 6O₂
-
+      `),
+      visual("biology"),
+      md(`
 Mg²⁺ is concentrated mainly inside animal cells, whereas Ca²⁺ is concentrated mainly in extracellular body fluids. Mg²⁺ complexes participate in ATP-dependent phosphate-transfer enzymes and the ion is central to chlorophyll. Ca²⁺ is essential to bone and tooth mineral, blood coagulation, muscle contraction and the maintenance of a regular heartbeat.
 
 Oxygenic photosynthesis converts CO₂ and H₂O into carbohydrate with O₂ as a by-product. A substantial fraction of global photosynthesis is carried out by algae as well as higher plants. Certain anaerobic photosynthetic bacteria use H₂S or other reduced substrates instead of H₂O and therefore do not evolve O₂ in the same way.

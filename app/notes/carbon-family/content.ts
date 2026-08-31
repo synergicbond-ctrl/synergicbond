@@ -1,1057 +1,1108 @@
-// Carbon Family (Group 14) master notes.
-// Source-grounded rewrite: NCERT Class XI p-block as primary baseline, with
-// J.D. Lee, Guha and Allen-style annotations for reaction and structural depth.
-// Phrasing is original; numerical values follow NCERT where editions differ.
+// Carbon Family (Group 14) — JEE Advanced master notes.
+// Source-grounded rewrite: NCERT Class XI Unit 11 as the primary exam baseline,
+// with J.D. Lee, Guha and Allen-style annotation depth for reactions, structures
+// and MOT discussion. Phrasing is original; numerical values follow NCERT where
+// editions differ, with the variant flagged.
 
 export const CARBON_FAMILY_MASTER_MARKDOWN = String.raw`
 
-# 1. Master identity and periodic trend map
+# 1. Group 14 identity, occurrence and periodic trend map
 
-> Source basis: NCERT Class XI p-block (primary exam baseline) with J.D. Lee, Guha and Allen-style annotations for reaction and structural depth. Where a source uses the classical vacant-d-orbital / pπ–dπ picture for expanded covalence or hydrolysis, that exam-facing convention is kept and labelled. If editions disagree on a number, the NCERT value is used and the variant is flagged.
+Group 14 (the carbon family) is C, Si, Ge, Sn, Pb. The valence-shell configuration is **ns² np²** for every member, so the group oxidation state is +4. The inner core is not the same for all of them — Ge, Sn and Pb sit after complete d (and, for Pb, f) subshells — and that poor inner shielding is behind almost every irregular trend in this group.
 
-## 1.1 Members, valence shell and occurrence
+## 1.1 Occurrence and physical character
+
+- **C** — 2s² 2p². Seventeenth most abundant element by mass in the crust. Free: graphite, diamond, coal. Combined: metal carbonates, CO₂ (about 0.03% of air), hydrocarbons. Natural carbon is ¹²C and ¹³C; trace radioactive **¹⁴C** (half-life 5770 y in NCERT) is used for radiocarbon dating.
+- **Si** — 3s² 3p². Second most abundant crustal element (about 27.7% by mass). Never free; occurs as silica (sand, quartz, flint) and as silicates. Basis of ceramics, glass, cement.
+- **Ge** — 4s² 4p². Present only in traces (in some Zn ores and coal). A metalloid; ultrapure Ge is a semiconductor.
+- **Sn** — 5s² 5p². Chief ore cassiterite, SnO₂.
+- **Pb** — 6s² 6p². Chief ore galena, PbS.
+- Ultrapure Si and Ge are used to make transistors and semiconductor devices.
 
-Group 14 (carbon family): C, Si, Ge, Sn, Pb. General valence-shell configuration = ns²np². The inner cores change markedly down the group and are responsible for several irregularities in radii and ionisation enthalpy.
+> **Trap – "carbon anomaly":** C and Si are non-metals, Ge is a metalloid, Sn and Pb are metals. Metallic character *increases* down the group — the reverse of a period trend.
 
-**Element • Outer configuration • Important occurrence / source fact**
+## 1.2 Master data table (NCERT values)
 
-- **C** — 2s²2p² — native graphite/diamond; coal, petroleum, carbonates
+| Property | C | Si | Ge | Sn | Pb |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| Atomic number | 6 | 14 | 32 | 50 | 82 |
+| Atomic mass / g mol⁻¹ | 12.01 | 28.09 | 72.60 | 118.71 | 207.2 |
+| Configuration | [He] 2s²2p² | [Ne] 3s²3p² | [Ar] 3d¹⁰4s²4p² | [Kr] 4d¹⁰5s²5p² | [Xe] 4f¹⁴5d¹⁰6s²6p² |
+| Covalent radius / pm | 77 | 118 | 122 | 140 | 146 |
+| Ionic radius M⁴⁺ / pm | – | 40 | 53 | 69 | 78 |
+| Ionic radius M²⁺ / pm | – | – | 73 | 118 | 119 |
+| ΔᵢH₁ / kJ mol⁻¹ | 1086 | 786 | 761 | 708 | 715 |
+| ΔᵢH₂ / kJ mol⁻¹ | 2352 | 1577 | 1537 | 1411 | 1450 |
+| ΔᵢH₃ / kJ mol⁻¹ | 4620 | 3228 | 3300 | 2942 | 3081 |
+| ΔᵢH₄ / kJ mol⁻¹ | 6220 | 4354 | 4409 | 3929 | 4082 |
+| Electronegativity (Pauling) | 2.5 | 1.8 | 1.8 | 1.8 | 1.9 |
+| Density / g cm⁻³ | 3.51 (diamond) | 2.34 | 5.32 | 7.26 | 11.34 |
+| Melting point / K | 4373 | 1693 | 1218 | 505 | 600 |
+| Boiling point / K | – | 3550 | 3123 | 2896 | 2024 |
 
-- **Si** — 3s²3p² — SiO₂ and silicates; 2nd most abundant crustal element
+*J.D. Lee / Guha covalent radii (Å) for order questions: C 0.77, Si 1.17, Ge 1.22, Sn 1.40, Pb 1.46.*
 
-- **Ge** — 4s²4p² — traces in ores/coal; semiconductor
+## 1.3 High-yield orders — learn every one
 
-- **Sn** — 5s²5p² — cassiterite, SnO₂
+- **Covalent radius:** C < Si < Ge < Sn < Pb
+- **First ionisation enthalpy:** C > Si > Ge > Pb > Sn
+- **Electronegativity:** C > Si ≈ Ge ≈ Sn ≈ Pb (Si→Pb almost constant)
+- **Metallic / electropositive character:** C < Si < Ge < Sn < Pb
+- **Melting point:** C > Si > Ge > Pb > Sn (Allen order; Sn and Pb are metals, so both are far lower than the covalent members)
+- **Catenation tendency:** C ≫ Si > Ge ≈ Sn ≫ Pb (Pb: nil)
+- **Stability of +2 state:** C < Si < Ge < Sn < Pb
+- **Stability of +4 state:** decreases down the group
+- **Acidic strength of dioxide MO₂:** CO₂ > SiO₂ > GeO₂ > SnO₂ > PbO₂
+- **Acidic strength of monoxide MO:** GeO > SnO ≈ PbO > CO (CO is neutral)
+- **Thermal / chemical stability of MX₄:** CX₄ > SiX₄ > GeX₄ > SnX₄ > PbX₄
+- **Thermal / chemical stability of MX₂:** CX₂ ≪ SiX₂ < GeX₂ < SnX₂ < PbX₂
 
-- **Pb** — 6s²6p² — galena, PbS
+## 1.4 Reading the irregular trends
 
-- Naturally occurring carbon: stable ¹²C and ¹³C; radioactive ¹⁴C is used in radiocarbon dating. NCERT/Allen source value for t½ = 5770 y.
+- **C → Si is a big jump** in size; **Si → Ge and Sn → Pb are unusually small** increases. Ge follows the 3d¹⁰ series and Pb follows 4f¹⁴ — the filled d/f electrons shield the added nuclear charge poorly, so the extra shell barely grows the atom.
+- **ΔᵢH₁** falls sharply C → Si, the decrease then flattens, and it rises slightly Sn → Pb (poor shielding by inner d/f electrons + increased Zₑff). So the order is C > Si > Ge > **Pb > Sn**.
+- The sum ΔᵢH₁ + ΔᵢH₂ + ΔᵢH₃ + ΔᵢH₄ is very large, so a bare M⁴⁺ ion is never formed: **+4 compounds are essentially covalent**.
 
-- Ultrapure Si and Ge are semiconductor materials. In J.D. Lee's source treatment, Group 15 doping gives n-type and Group 13 doping gives p-type material.
+> **JEE TRAP:** Do not write "ionisation enthalpy decreases regularly down Group 14." Pb > Sn. This single exception is asked directly ("how many Group 14 elements have ΔᵢH₁ higher than Pb?" — answer 3: C, Si, Ge).
 
-## 1.2 Radius, ionisation enthalpy, electronegativity and physical character
+# 2. Oxidation states and the inert-pair effect
 
-**Property • High-yield order / fact**
+## 2.1 The +4 / +2 / −4 picture
 
-- **Covalent radius** — C < Si < Ge < Sn < Pb
+- Common oxidation states: **+4 and +2**; carbon also shows negative states (−4 in CH₄, carbides).
+- Down the group the ns² pair becomes progressively **less available for bonding** ("inert-pair effect"), so **+2 becomes more stable and +4 less stable**.
+- **C, Si:** almost exclusively +4. **Ge:** +4 stable, a few +2 compounds. **Sn:** both; Sn(II) is a **reducing agent**. **Pb:** +2 is the normal state; **Pb(IV) is a strong oxidising agent**.
+- Lower states are more ionic: M²⁺ is larger and less polarising than M⁴⁺, so by **Fajans' rules** the +2 halides/oxides have more ionic character.
 
-- **IE₁** — C > Si > Ge > Pb > Sn
+> **REDOX ANCHOR (predicts dozens of reactions):** Ge(II) → reducing · Sn(II) → reducing · Pb(IV)/PbO₂ → oxidising. Everything in Sections 12–13 flows from this line.
 
-- **Metallic character** — C < Si < Ge < Sn < Pb
+## 2.2 Why the +4 state is "electron precise" for carbon
 
-- **Catenation** — C >> Si > Ge ≈ Sn >> Pb
+In a tetravalent carbon compound the central atom has exactly eight electrons around it and **no low-lying vacant orbital**. Carbon therefore neither accepts nor donates an extra electron pair — CCl₄ is not hydrolysed, and CF₄ is inert. The heavier members can use energetically accessible d orbitals to raise their coordination number from 4 to 6 (e.g. [SiF₆]²⁻, [GeCl₆]²⁻, [Sn(OH)₆]²⁻, sp³d²), which is why their halides *do* hydrolyse.
 
-- **+2 state stability** — C < Si < Ge < Sn < Pb
+> **MOT LENS — CO vs CO₂ vs C₂²⁻ bond orders.** Isoelectronic linear species built from C and O/N recur through this chapter:
+> - **CO** — isoelectronic with N₂ (14 e⁻), configuration σ²σ*²π⁴σ², **bond order 3**, one σ + two π, with a lone pair on C. That carbon lone pair makes CO a ligand (Section 7).
+> - **CO₂** — linear, sp on C; two localised σ(C–O) plus a **3-centre 4-electron π system** over O–C–O, giving each C–O an effective bond order 2 and a C–O length (115 pm) between double and triple.
+> - **C₂²⁻ (acetylide)** — isoelectronic with N₂ and CO, [–C≡C–]²⁻, **bond order 3**.
+> - **CO₃²⁻** — trigonal planar, sp² on C, one delocalised π MO over all four atoms; three equivalent C–O bonds of order ≈ 1.33.
+> - **CO₄⁴⁻ does not exist** (C is too small to hold four O and cannot expand its octet) even though **SiO₄⁴⁻** is the foundation of all silicate chemistry — the same reason NO₃⁻ exists but PO₄³⁻-type expansion needs the 3rd-period element.
 
-- **+4 state stability** — decreases down the group
+# 3. Anomalous behaviour of carbon; diagonal relationship
 
-- **Dioxide acidity** — CO₂ > SiO₂ > GeO₂ > SnO₂ > PbO₂
+## 3.1 Why carbon differs from the rest of its group
 
-The C→Si size jump is large. The increase Si→Ge and Sn→Pb is smaller than a simple shell argument predicts because filled d and f subshells shield poorly. This same poor shielding causes the small irregularities in IE₁, especially the slight increase Sn→Pb.
+- **Very small size** and the highest electronegativity in the group.
+- Only **2s and 2p** valence orbitals — no valence d — so the classical maximum covalence is **four**. Thus [BF₄]⁻-type limits: carbon gives CCl₄ but never [CCl₆]²⁻.
+- Excellent **2p–2p lateral overlap**, so carbon forms strong **pπ–pπ** multiple bonds: C=C, C≡C, C=O, C=S, C≡N. Heavier members have large diffuse p orbitals, poor pπ–pπ overlap, and instead use **pπ–dπ** bonding (Section 16). This is why **CO₂ is a discrete gas** but **SiO₂ is a giant covalent solid**.
 
-C and Si are non-metals, Ge is a metalloid / has some metallic properties, while Sn and Pb are metals. Melting points are high for the covalent-network forms and much lower for metallic Sn/Pb.
+| Feature | Carbon | Si, Ge, Sn, Pb |
+|:--|:--|:--|
+| Maximum covalence | 4 (octet cannot expand) | 4 and 6 (d orbitals available) |
+| Multiple bonding | strong pπ–pπ (C=C, C≡C, C=O) | weak/absent pπ–pπ; pπ–dπ instead |
+| Catenation | extensive (chains, rings, cages) | limited; negligible for Pb |
+| Tetrahalide hydrolysis | CCl₄ resists | SiCl₄ … hydrolyse readily |
+| Higher oxide | CO₂ molecular gas | SiO₂ 3-D network solid |
 
-> **DATA BANK:** Guha/J.D. Lee values (use for order-based questions): covalent radii Å = C 0.77, Si 1.17, Ge 1.22, Sn 1.40, Pb 1.46; IE₁ kJ mol⁻¹ = 1086, 786, 760, 707, 715 respectively.
+## 3.2 Higher coordination numbers of carbon (advanced)
 
-> **TRAP:** IE₁ does NOT decrease perfectly: Pb > Sn. Melting point order in the Allen sheet is C > Si > Ge > Pb > Sn.
+The "maximum covalence 4" rule is a first approximation. Multi-centre bonding gives carbon apparent coordination numbers above 4:
 
-## 1.3 Oxidation states and inert-pair effect
+| Compound | C coordination number |
+|:--|:--:|
+| Al₂(CH₃)₆ (methyl bridges) | 5 |
+| B₁₀C₂H₁₀R₂ (carborane) | 6 |
+| Li₄(CH₃)₄ (tetramer) | 7 |
+| [Co₈C(CO)₁₈]²⁻ (carbide cluster) | 8 |
 
-- Common oxidation states are +4 and +2; carbon also shows negative oxidation states. Because Σ(IE₁–IE₄) is very large, simple M⁴⁺ ions are not favoured and +4 compounds are generally covalent.
+## 3.3 Catenation — the evidence is the bond enthalpy
 
-- Down the group the ns² pair becomes less available for bonding: +2 becomes progressively more stable; +4 becomes less stable.
+Catenation is the self-linking of atoms into chains and rings. The decisive reason it collapses down the group is the fall in **M–M bond enthalpy**, together with increasing atomic size.
 
-- C, Si: mainly +4. Ge: +4 stable, +2 only limited. Sn: both +2 and +4; Sn(II) is reducing. Pb: +2 is stable/common; Pb(IV) is strongly oxidising.
+| Bond | Bond enthalpy / kJ mol⁻¹ | Longest chain in the source |
+|:--|:--:|:--|
+| C–C | 348 | effectively unlimited |
+| Si–Si | 297 | silanes to Si₈H₁₈; halides to Si₆Cl₁₄, Si₁₆F₃₄ |
+| Ge–Ge | 260 | germanes to Ge₅H₁₂ |
+| Sn–Sn | 240 | only Sn₂H₆ |
 
-- Lower oxidation states are more ionic: M²⁺ is larger and less polarising than M⁴⁺; this matches Fajans' rule.
+> **JEE TRAP:** Catenation is *not* explained just by "carbon is small". The examinable reason is the **high C–C bond enthalpy** (comparable to C–O), while Si–Si etc. are much weaker and also attacked by nucleophiles.
 
-> **REDOX ANCHOR:** Ge(II) → strong reducing; Sn(II) → strong reducing; Pb(IV) → strong oxidising. This single line predicts many reaction questions.
+## 3.4 Diagonal relationship of carbon with... nothing above; boron below
 
-## 1.4 Radiocarbon dating — J.D. Lee supplement
+Carbon's important diagonal partner is not in Group 14. The classic Group 13/14 diagonal link is **B ↔ Si**: comparable ionic potential, both form acidic oxides, giant covalent/network structures, volatile hydrolysable halides and weak binary hydrides. Within Group 14, carbon simply stands apart as the first-row anomaly.
 
-Cosmic-ray neutrons convert atmospheric ¹⁴N into radioactive ¹⁴C. The ¹⁴C enters CO₂, is fixed by photosynthesis and then enters living tissue through the food chain. While an organism is alive, continuous carbon exchange maintains an approximately steady activity; after death, intake stops and β-decay continues.
+# 4. Allotropes of carbon
 
-¹⁴N + n → ¹⁴C + ¹H
+Carbon has more allotropes than any other element: **diamond, α- and β-graphite, hexagonal diamond (lonsdaleite), fullerenes**, plus amorphous forms (coke, charcoal, carbon black — really microcrystalline graphite/fullerene).
 
-- Age is obtained from the residual ¹⁴C activity relative to a living/reference sample. J.D. Lee's older edition and NCERT/Allen print different historical half-life values; use the NCERT value 5770 y for this JEE note set.
+## 4.1 Diamond
 
-- The method is for once-living carbonaceous material; it is not a universal method for dating ordinary inorganic rocks.
+- Each C is **sp³**, bonded tetrahedrally to four others; **C–C = 154 pm**.
+- Rigid three-dimensional giant covalent network; cubic unit cell (rare hexagonal modification also known). Six-membered chair rings run through the lattice.
+- Consequences: hardest natural substance (Mohs 10), abnormally high melting point (about 4100 °C), electrical **insulator**, but thermal conductivity **greater than graphite**.
+- Density about 3.51 g cm⁻³. Most natural diamonds carry trace N; "blue" diamonds contain Al; industrial diamonds are often black.
+- **Uses:** abrasive for cutting/grinding/polishing, rock drills, dies for drawing wire; jewellery (1 carat = 200 mg).
 
-# 2. Why carbon is anomalous
+**Graphite → diamond (synthetic):**
 
-## 2.1 Origin of the anomaly
+C(graphite) [about 1600 °C, 50 000–60 000 atm; metal-solvent catalyst] ⟶ C(diamond)
 
-- Very small atomic size.
+## 4.2 Graphite
 
-- High ionisation enthalpy and relatively high electronegativity.
+- Flat hexagonal sheets; each C is **sp²**, σ-bonded to three neighbours; the fourth electron enters a **delocalised π system** spread over the sheet.
+- **C–C within a sheet = 141.5 pm**; **interlayer spacing = 340 pm** (more than twice the covalent radius → only weak van der Waals forces between sheets).
+- **α-graphite** stacking ABAB…; **β-graphite** ABCABC…. Heating β → α; grinding α → β.
+- Consequences: soft and slippery (sheets slide) → **dry lubricant**; good conductor **within** a sheet, poor **perpendicular** to sheets; electrical conductivity graphite > diamond. Density about 2.22 g cm⁻³ (lower than diamond — sheets are widely spaced).
+- **Graphite is thermodynamically more stable than diamond** at ordinary conditions (Δ_fH°: graphite 0, diamond +1.90 kJ mol⁻¹); diamond survives only because the conversion has a huge activation barrier.
+- **Uses:** electrodes (steel, Al electrolysis), high-temperature lubricant, "lead" in pencils, crucibles (inert to dilute acid/alkali), neutron moderator in some reactors, graphite-fibre composites (rackets, aircraft parts).
 
-- Only 2s and 2p valence orbitals in the classical source treatment; ordinary covalence is therefore limited to four.
+## 4.3 Fullerenes
 
-- Excellent 2p–2p lateral overlap gives strong pπ–pπ multiple bonds.
+- Made by striking an **electric arc between graphite electrodes in an inert (He/Ar) atmosphere**; the soot is extracted with an organic solvent to give a wine-red solution, then chromatographed. Major product **C₆₀**, with C₇₀, C₇₆, C₈₄ … (only even n; clusters up to about 350 C).
+- **C₆₀ (buckminsterfullerene, "bucky ball")** — soccer-ball cage: **20 six-membered + 12 five-membered rings**, **60 vertices**, every C sp² and three-coordinate, so the cage is **aromatic** in character. Two C–C lengths: **143.5 pm** (in a hexagon, single-bond-like) and **138.3 pm** (ring-fusion, double-bond-like). Each pentagon is fused only to hexagons; a hexagon fuses to hexagons and pentagons.
+- Fullerenes are **discrete molecules** — they dissolve in benzene/toluene, unlike diamond and graphite lattices. Discovered 1985 (Kroto, Smalley, Curl; Nobel Prize 1996).
+- Chemistry: C₆₀ is a good electron acceptor; **K₃C₆₀** is a superconductor below 18 K; C₆₀ + OsO₄ adds across one cage double bond; forms Pt complexes.
+- Δ_fH°(C₆₀) ≈ +38.1 kJ mol⁻¹, so stability order **graphite > diamond > C₆₀**.
 
-## 2.2 Multiple bonding
+> **DERIVED TOOL — fullerene topology.** For any closed fullerene Cₙ with every C three-coordinate:
+> - pentagons P = **12** (always)
+> - hexagons H = **n/2 − 10**   → C₆₀: 20; C₇₀: 25; C₈₄: 32
+> - C–C edges E = **3n/2**       → C₆₀: **90**
+> - faces F = **n/2 + 2**        → C₆₀: 32 (Euler check: 60 − 90 + 32 = 2 ✓)
 
-Carbon readily forms C=C, C≡C, C=O, C=S and C≡N. Down the group the p orbitals become larger and more diffuse, so effective pπ–pπ overlap becomes poor.
+## 4.4 Impure / amorphous carbon and its uses
 
-> **SOURCE MODEL:** The standard exam textbooks describe some heavier-element π bonding in terms of dπ–pπ / pπ–dπ participation. Example: N(SiH₃)₃ is treated as planar with N→Si π interaction, while N(CH₃)₃ is pyramidal.
+| Form | Origin | Key use |
+|:--|:--|:--|
+| **Coke** | high-temperature carbonisation of coal in absence of air | metallurgical reducing agent, fuel |
+| **Charcoal** | strong heating of wood without air | fuel; feed for activated carbon |
+| **Activated charcoal** | steam-activated charcoal, huge surface area | adsorption of poisonous gases and odours; decolourising; gas masks; water filters |
+| **Carbon black / lamp black** | incomplete combustion of hydrocarbons | tyre filler, black pigment (inks, paints) |
+| **Gas carbon** | deposited in coal-gas retorts | electrodes, arc-lamp rods |
 
-## 2.3 Catenation
+## 4.5 Graphite intercalation, oxide and fluoride (advanced)
 
-**Bond • Bond enthalpy (kJ mol⁻¹) • Consequence**
+Because graphite sheets are far apart and weakly held, atoms/ions/molecules can slip between them.
 
-- **C–C** — 348 — very long chains/rings
+- **Donor intercalation:** K/Rb/Cs vapour at about 300 °C gives bronze **C₈M**; further heating stages it to C₂₄M, C₃₆M, C₄₈M, C₆₀M. Charge transfer M → M⁺ + e⁻ **adds carriers** to the π system, so resistance **falls below** that of graphite.
+- **Acceptor intercalation:** halogens, FeCl₃-type halides remove π electron density, creating mobile **positive holes** — conductivity can again rise.
+- **Graphite oxide** (with hot HNO₃/KClO₃ or KMnO₄): puckered, non-stoichiometric layers bearing C–OH / C–O–C groups; π delocalisation is broken → **non-conducting**; interlayer spacing rises to about 6–7 Å.
+- **Graphite fluoride (CFₓ, x ≈ 0.7–1)** with F₂ at about 450 °C: buckled, sp³-like carbon layers; **non-conducting**, extremely unreactive, low-friction; spacing about 8 Å.
 
-- **Si–Si** — 297 — limited chains; silanes up to Si₈H₁₈ in source
+> **TRAP:** Intercalation that keeps flat sp² sheets can conduct **better** than graphite. Covalent oxidation/fluorination (which pulls C toward tetrahedral σ bonding) **destroys** the π system and the conductivity.
 
-- **Ge–Ge** — 260 — shorter chains
+# 5. Chemical reactivity of the elements
 
-- **Sn–Sn** — 240 — very weak catenation
+The elements are fairly unreactive; reactivity **increases** down the group. The +2 state becomes progressively more favoured, and Pb is often more noble (less reactive) than expected.
 
-Catenation decreases strongly down the group because E(M–M) decreases and atomic size increases. Lead is treated as essentially non-catenating in the exam sources.
+## 5.1 Air, oxygen, nitrogen
 
-> **ADVANCED EXCEPTION:** Classical "maximum coordination number 4" is not the whole story for carbon: J.D. Lee/Guha list multi-centre carbon compounds with apparent coordination numbers >4, e.g. Al₂(CH₃)₆ (5), B₁₀C₂H₁₀R₂ (6), Li₄(CH₃)₄ (7), [Co₈C(CO)₁₈]²⁻ (8).
+**Combustion / oxidation:**
 
-# 3. Structure and allotropy of the elements
+C + O₂ [excess O₂] ⟶ CO₂
 
-## 3.1 Elemental structures down Group 14
+2C + O₂ [limited O₂] ⟶ 2CO
 
-- C: diamond, α/β graphite, rare hexagonal diamond, fullerenes and other carbon forms.
+Si + O₂ [1173 K] ⟶ SiO₂
 
-- Si and Ge: diamond-type covalent lattice.
+3Si + 2N₂ [1673 K] ⟶ Si₃N₄
 
-- Sn: α-Sn (grey, diamond-type) and β-Sn (white, metallic).
+Sn + O₂ [strong heating, bright flame] ⟶ SnO₂
 
-- Pb: metallic form only in the source treatment.
+2Pb + O₂ [heating] ⟶ 2PbO
 
-- Ge is unusual because the liquid expands on freezing; J.D. Lee/Guha note this behaviour for Ga, Ge and Bi.
+- Diamond is very inert; graphite + O₂ (hot) burns to CO₂. Si and Ge burn only on strong heating. Sn burns to SnO₂; Pb only forms a surface film of PbO (then Pb₃O₄ on prolonged heating in air).
 
-## 3.2 Diamond
+## 5.2 Water and steam
 
-- Each C is sp³, tetrahedrally bonded to four C atoms; C–C = 1.54 Å (154 pm).
+- **C, Si, Ge:** not attacked by water.
+- **Sn:** attacked by **steam**:
 
-- Three-dimensional giant covalent network; cubic unit cell in ordinary diamond; rare hexagonal/wurtzite-like modification also noted.
+Sn + 2H₂O [steam, Δ] ⟶ SnO₂ + 2H₂
 
-- Strong directional bonds in all directions → extreme hardness and high melting point; electrical insulator.
+- **Pb:** unaffected by water — a protective film (PbO / basic carbonate / PbSO₄) forms. Soft water containing dissolved O₂ can slowly attack Pb (historic plumbosolvency).
 
-- Density ≈ 3.51 g cm⁻³. Diamond thermal conductivity > graphite in the Guha/J.D. Lee comparison.
+## 5.3 Acids
 
-## 3.3 Graphite
+- **C:** not attacked by non-oxidising acids; hot concentrated HNO₃ oxidises graphite to **mellitic acid**, C₆(COOH)₆.
+- **Si:** not attacked by acids **except** a hot HF/HNO₃ mixture (→ H₂SiF₆). Ordinary acids leave it untouched.
+- **Ge:** dissolves in hot concentrated H₂SO₄ and in HNO₃.
+- **Sn:**
 
-- Flat hexagonal sheets, each C sp² and σ-bonded to three neighbours; the fourth electron contributes to a delocalised π system.
+Sn + 2HCl [hot concentrated] ⟶ SnCl₂ + H₂
 
-- C–C within sheet ≈ 1.41 Å; interlayer distance ≈ 3.35 Å (Allen figure ≈ 340 pm).
+Sn + 4HNO₃ [hot concentrated] ⟶ SnO₂·xH₂O (metastannic acid) + 4NO₂ + H₂O
 
-- α-graphite stacking = ABAB…; β-graphite = ABCABC…. Heating converts β→α; grinding converts α→β.
+4Sn + 10HNO₃ [cold dilute] ⟶ 4Sn(NO₃)₂ + NH₄NO₃ + 3H₂O
 
-- Weak interlayer van der Waals forces → cleavage, softness and lubrication; density ≈ 2.22 g cm⁻³.
+- **Pb:** reacts slowly with dilute HCl (sparingly soluble PbCl₂ coat) and readily with dilute HNO₃ → Pb(NO₃)₂; **passivated by H₂SO₄** (insoluble PbSO₄ film); does not dissolve in concentrated HCl.
 
-- Electrical conduction is strong within sheets, poor perpendicular to sheets. Electrical conductivity graphite > diamond, while source states thermal conductivity diamond > graphite.
+## 5.4 Alkalis
 
-- Graphite is thermodynamically more stable than diamond at ordinary conditions by ~1.9 kJ mol⁻¹; diamond persists because conversion has a high activation barrier.
+- **C:** no reaction.
+- **Si:** attacked by hot aqueous NaOH:
 
-> **SYNTHETIC DIAMOND:** Guha/J.D. Lee: graphite can be converted to diamond under forcing conditions around 1600 °C and 50,000–60,000 atm.
+Si + 2NaOH + H₂O [hot] ⟶ Na₂SiO₃ + 2H₂
 
-## 3.4 Fullerenes: topology is a JEE goldmine
+- **Sn, Pb:** slowly attacked by cold alkali, rapidly by hot — both are **amphoteric**:
 
-- Produced in carbon soot by electric arc/spark between graphite electrodes in inert atmosphere; C₆₀ is major, with C₇₀ and other even-n clusters.
+Sn + 2NaOH + 2H₂O [hot] ⟶ Na₂[Sn(OH)₄] + H₂
 
-- Unlike diamond/graphite lattices, fullerenes are discrete molecular cages and dissolve in suitable organic solvents.
+Pb + 2NaOH + 2H₂O [hot] ⟶ Na₂[Pb(OH)₄] + H₂
 
-- C₆₀ (Buckminsterfullerene): soccer-ball cage; 12 pentagons + 20 hexagons; all C atoms are three-coordinate/sp² in the source treatment.
+## 5.5 Halogens
 
-- Source ring rule: every fullerene has exactly 12 five-membered rings. For Cₙ, number of six-membered rings = n/2 − 10.
+- Diamond is inert to halogens; graphite + F₂ (about 500 °C) → intercalation/graphite fluoride.
+- Si, Ge react readily → volatile **SiX₄ / GeX₄**.
+- Sn: with Cl₂/Br₂ in the cold and F₂/I₂ on warming → **SnX₄**.
+- Pb reflects the inert pair: **F₂ (cold) → PbF₂**, **Cl₂ (hot) → PbCl₂** (not PbCl₄ / PbBr₄ / PbI₄ directly).
 
-- C₆₀ accepts electrons; K₃C₆₀ is cited as superconducting below 18 K. C₆₀ reacts with OsO₄ by addition at a cage double bond and can form Pt complexes.
+Si + 2Cl₂ ⟶ SiCl₄
 
-> **DERIVED TOOL:** For a closed fullerene Cₙ with every C three-coordinate: edges (C–C linkages) E = 3n/2; pentagons P = 12; hexagons H = n/2 − 10; total faces = n/2 + 2. Thus C₆₀ has 90 C–C linkages.
+Sn + 2Cl₂ [dry, molten Sn] ⟶ SnCl₄
 
-> **THERMOCHEMISTRY:** Allen annotation: ΔfH°(graphite) = 0 by convention; diamond ≈ +1.90 kJ mol⁻¹; C₆₀ ≈ +38.1 kJ mol⁻¹.
+# 6. Carbides
 
-## 3.5 Carbon black, coke, charcoal and activated carbon
+Carbides are binary compounds of carbon with a **less electronegative** element (compounds with N, P, O, S and the halogens are excluded). All types are made by heating the metal or its oxide with C or a hydrocarbon at about 2000 °C. Three classes: **salt-like (ionic), interstitial (metallic), covalent**.
 
-- Carbon black: incomplete combustion of hydrocarbons; major use as tyre filler and black pigment.
+## 6.1 Salt-like carbides — the hydrolysis fingerprint
 
-- Coke: high-temperature carbonisation of coal in absence of air; fuel and metallurgical reducing agent.
+| Anion unit | Carbides | Hydrolysis product |
+|:--|:--|:--|
+| C⁴⁻ (methanide) | Be₂C, Al₄C₃ | CH₄ |
+| C₂²⁻ (acetylide/carbide ion) | CaC₂, BaC₂, SrC₂; M₂C₂ (Na, K); Cu₂C₂, Ag₂C₂; LnC₂ | C₂H₂ (ethyne) |
+| C₃⁴⁻ (allylenide, a C₃ unit) | Mg₂C₃ | CH₃–C≡CH (propyne) |
 
-- Charcoal: high-temperature heating of wood in absence of air.
+Be₂C + 4H₂O ⟶ 2Be(OH)₂ + CH₄
 
-- Activated charcoal: huge surface area; adsorption of poisonous gases/odours and purification/decolourisation.
+Al₄C₃ + 12H₂O ⟶ 4Al(OH)₃ + 3CH₄
 
-## 3.6 Graphite intercalation compounds — J.D. Lee advanced
+CaC₂ + 2H₂O ⟶ Ca(OH)₂ + C₂H₂
 
-Because graphite layers are far apart and weakly bound, atoms/ions/molecules can enter between sheets. If the carbon sheets remain sufficiently intact, their delocalised π system is retained; conductivity can increase dramatically.
+Mg₂C₃ + 4H₂O ⟶ 2Mg(OH)₂ + CH₃C≡CH
 
-- K/Rb/Cs vapour at ~300 °C forms a bronze first-stage compound approximately C₈M; on heating under reduced pressure, staged compounds such as C₂₄M, C₃₆M, C₄₈M, C₆₀M form as fewer layers are occupied.
+> **TRAP:** The gas evolved on hydrolysis names the carbon unit — CH₄ ⇒ C⁴⁻; C₂H₂ ⇒ C₂²⁻; propyne ⇒ C₃ unit (Mg₂C₃). Be₂C and Al₄C₃ are the only common methanides. Al₄C₃'s written formula is a convenient fiction — a 4Al³⁺·3C⁴⁻ charge separation is unrealistic; the structure is more complex.
 
-- In C₈K the layers are forced apart and electron transfer K → K⁺ + e⁻ adds carriers to the graphite π/conduction system; resistance is much lower than graphite.
+## 6.2 Calcium carbide and calcium cyanamide
 
-- Electron-acceptor intercalants (e.g. halogens or FeCl₃-type species) can remove electron density and create mobile positive holes; conductivity may also increase.
+CaO + 3C [about 2200 °C; Δ_rH ≈ +466 kJ mol⁻¹] ⟶ CaC₂ + CO
 
-- Graphite oxide: oxidised, puckered, non-stoichiometric layers containing C–O–C/C–OH type groups; π delocalisation is disrupted → non-conducting.
+CaC₂ + N₂ [about 1100 °C] ⟶ CaNCN + C
 
-- Graphite fluoride (CFₓ): formed with F₂ at high temperature; x roughly 0.7–0.98 in J.D. Lee, buckled tetrahedral C framework, non-conducting and very unreactive.
+CaC₂ was once the main industrial source of ethyne (oxy-acetylene welding). **Calcium cyanamide** ("nitrolim") is a nitrogenous fertiliser and a route to urea and melamine.
 
-> **TRAP:** Intercalation that preserves flat sp² sheets may conduct better than graphite; covalent oxidation/fluorination that converts C toward tetrahedral σ bonding destroys the mobile π system and conductivity.
+## 6.3 Interstitial carbides
 
-- J.D. Lee lists additional intercalants: Cl₂, Br₂, HF; halides such as FeCl₃/AlCl₃ and others; several oxides and sulphides. The key exam idea is donor versus acceptor intercalation, not memorising the entire inventory.
+- Formed by transition metals (and some lanthanoids/actinoids): small C atoms occupy **octahedral holes** in a close-packed metal lattice. If the metal radius exceeds about 1.35 Å the holes take C without distortion; complete filling gives **MC**.
+- They **keep** metallic lustre and electrical conductivity but become much **harder, denser** and less malleable/ductile; melting points are extreme (TaC about 3900 °C, WC used for cutting tools). Examples: TiC, ZrC, VC, WC, Fe₃C (cementite).
+- Generally unreactive; do not hydrolyse like ionic carbides; slowly attacked by hot concentrated HF/HNO₃.
 
-- Graphite oxide is described as pale lemon, non-stoichiometric and thermally unstable; interlayer spacing rises from ~3.35 Å in graphite to roughly 6–7 Å and can increase further on solvent uptake.
+> **TRAP:** "No chemical bond is present" is a memory slogan, not physics. For property questions use the observed behaviour: metallic conductivity/lustre **retained**, hardness/density **up**, malleability/ductility **down**.
 
-- Graphite fluoride CFₓ becomes lighter in colour as F content rises; the source gives interlayer spacing around 8 Å and tetrahedral/buckled carbon layers.
+## 6.4 Covalent carbides — SiC and B₄C
 
-# 4. Chemical reactivity of Group 14
+SiO₂ + 3C [2000–2500 °C, electric furnace] ⟶ SiC + 2CO
 
-## 4.1 Water, acids and alkalis
+Si + C [about 2500 °C] ⟶ SiC
 
-**Reagent • C / Si / Ge • Sn / Pb**
+- **SiC (carborundum)** — diamond/wurtzite-type tetrahedral network, each atom bonded to four of the other kind; **Mohs 9.5**, infusible, chemically almost inert. Pure SiC is pale yellow/colourless; commercial SiC is dark (Fe and other impurities). Used as an **abrasive** and refractory.
+- Attacked only by harsh reagents:
 
-- **H₂O** — C, Si, Ge unaffected — Sn + steam → SnO₂ + H₂; Pb protected
+SiC + 2NaOH + 2O₂ ⟶ Na₂SiO₃ + CO₂ + H₂O
 
-- **dilute acids** — C, Si, Ge largely unaffected — Sn dissolves in dil HNO₃; Pb reacts with dil HCl/HNO₃ but passivates in H₂SO₄
+SiC + 2Cl₂ [about 100 °C] ⟶ SiCl₄ + C
 
-- **alkali** — C unaffected; Si attacked esp. hot — Sn/Pb attacked esp. hot → hydroxo stannate/plumbate
+- **Boron carbide** — written **B₄C** for exams but its true stoichiometry (nearer B₁₃C₂) and structure are complex; even harder than SiC; abrasive and neutron shield.
 
-Sn + 2H₂O —(steam)→ SnO₂ + 2H₂
+# 7. Oxides and sulphides of carbon — CO
 
-SnO₂ + 2NaOH + 2H₂O → Na₂[Sn(OH)₆]
+Carbon forms more oxides than any other Group 14 element: the important ones are **CO** and **CO₂**; also the suboxide **C₃O₂**, and less stable C₅O₂, C₁₂O₉ (mellitic anhydride), graphite oxide.
 
-PbO₂ + 2NaOH + 2H₂O → Na₂[Pb(OH)₆]
+## 7.1 Carbon monoxide — preparation
 
-## 4.2 Halogen reactivity of the elements
+2C + O₂ [limited O₂, Δ] ⟶ 2CO
 
-- Diamond is very inert toward halogens; graphite + F₂ at ~500 °C gives intercalation products / graphite fluoride.
+HCOOH [conc. H₂SO₄, 373 K; dehydration] ⟶ CO + H₂O
 
-- Si and Ge react readily with halogens to form volatile tetrahalides SiX₄ / GeX₄.
+K₄[Fe(CN)₆] + 6H₂SO₄(conc.) + 6H₂O [Δ] ⟶ 2K₂SO₄ + FeSO₄ + 3(NH₄)₂SO₄ + 6CO
 
-- Sn reacts with Cl₂/Br₂ in cold and F₂/I₂ on warming in the source, giving SnX₄.
+> **TRAP:** Use **concentrated** H₂SO₄ with potassium ferrocyanide. With **dilute** H₂SO₄ the product is the far more poisonous **HCN**, not CO (via 6HCN → 6HCOOH → 6CO).
 
-- Pb reflects the inert pair effect: F₂ in cold gives PbF₂; Cl₂ on heating gives PbCl₂.
+**Water gas and producer gas:**
 
-## 4.3 Oxides: acidity/basicity map
+C + H₂O(g) [red-hot coke; Δ_rH ≈ +131 kJ mol⁻¹] ⟶ CO + H₂
 
-**Oxide level • Trend**
+2C + O₂ + 4N₂ [air over red-hot coke; overall exothermic] ⟶ 2CO + 4N₂
 
-- **MO₂** — CO₂, SiO₂, GeO₂ acidic → SnO₂, PbO₂ amphoteric
+- **Water gas (synthesis gas)** ≈ equimolar CO + H₂; **high calorific value** because both burn. Endothermic to make, so the coke cools and steam is alternated with an air blast.
+- **Producer gas** ≈ 70% N₂ + 25% CO + 4% CO₂ (Guha); **low calorific value** — the N₂ is inert ballast.
+- **Coal gas** (town gas): CO + H₂ + CH₄ + CO₂ from destructive distillation of coal.
 
-- **MO** — CO neutral; GeO distinctly acidic; SnO, PbO amphoteric
+> **JEE TRAP:** Water gas = CO + H₂ · Producer gas = CO + N₂ · Coal gas = CO + H₂ + CH₄. Do not interchange them. Calorific value: water gas > producer gas.
 
-- **General rule** — Higher oxidation state oxide is more acidic than lower oxidation state oxide
+## 7.2 CO — properties, detection, estimation
 
-> **TRAP:** SiO is only a high-temperature / doubtful ordinary-condition species in these sources; do not treat it like a normal stable monoxide analogous to CO.
+- Colourless, odourless, almost insoluble in water, **neutral oxide**, burns with a **blue flame**.
+- **Detection:** reduces PdCl₂ to black Pd metal; absorbed by ammoniacal/HCl solution of CuCl.
 
-# 5. Carbides
+CO + PdCl₂ + H₂O ⟶ CO₂ + Pd↓ + 2HCl
 
-## 5.1 Classification
+Cu₂Cl₂ + 2CO + 2H₂O ⟶ 2[CuCl(CO)(H₂O)]
 
-Carbides are compounds of carbon with less electronegative elements; the source chapter excludes N, P, O, S and halogen compounds from this classification. Three major classes: ionic/salt-like, interstitial/metallic, covalent.
+- **Estimation:** I₂O₅ oxidises CO quantitatively; the liberated I₂ is titrated with thiosulphate.
 
-**Type • Key examples • Hydrolysis / property**
+5CO + I₂O₅ ⟶ 5CO₂ + I₂
 
-- **Methanides (C unit)** — Be₂C, Al₄C₃ — give CH₄
+- **Toxicity:** CO binds haemoglobin as **carboxyhaemoglobin**, a complex about **300 times more stable** than oxyhaemoglobin, blocking O₂ transport → asphyxia. **Carbogen** (95% O₂ + 5% CO₂) is the antidote — it displaces CO and stimulates breathing.
 
-- **Acetylides (C₂²⁻)** — CaC₂, BaC₂, alkali acetylides — give C₂H₂
+## 7.3 CO as a reducing agent and as a ligand
 
-- **C₃ unit carbide** — Mg₂C₃ — gives propyne
+**Reduction of metal oxides (metallurgy):**
 
-- **Interstitial** — TiC, WC, TaC etc. — hard, high mp, metallic conduction
+Fe₂O₃ + 3CO [blast furnace] ⟶ 2Fe + 3CO₂
 
-- **Covalent** — SiC, B carbide — very hard, inert network solids
+ZnO + CO [Δ] ⟶ Zn + CO₂
 
-Be₂C + 4H₂O → 2Be(OH)₂ + CH₄
+CuO + CO ⟶ Cu + CO₂
 
-Al₄C₃ + 12H₂O → 4Al(OH)₃ + 3CH₄
+CO reduces the oxides of all metals **below** Al in reactivity (not the oxides of Na, K, Ca, Mg, Al).
 
-CaC₂ + 2H₂O → Ca(OH)₂ + HC≡CH
+**Metal carbonyls:**
 
-Mg₂C₃ + 4H₂O → 2Mg(OH)₂ + CH₃–C≡CH
+Ni + 4CO [about 50–80 °C, Mond process] ⟶ Ni(CO)₄
 
-## 5.2 Calcium carbide and calcium cyanamide
+Fe + 5CO [about 200 °C, pressure] ⟶ Fe(CO)₅
 
-CaO + 3C —(~2200 °C; strongly endothermic)→ CaC₂ + CO
+2Fe(CO)₅ [photolysis] ⟶ Fe₂(CO)₉ + CO
 
-CaC₂ + N₂ —(~1100 °C)→ Ca(NCN) + C
+CrCl₃ + 6Na + 6CO [pressure] ⟶ Cr(CO)₆ + 6NaCl
 
-CaC₂ contains the acetylide ion C₂²⁻ (–C≡C–). Commercial calcium carbide is a major source of acetylene; nitrogen fixation with CaC₂ gives calcium cyanamide.
+- First-row binary carbonyls: V(CO)₆, Cr(CO)₆, Mn₂(CO)₁₀, Fe(CO)₅, Fe₂(CO)₉, Fe₃(CO)₁₂, Co₂(CO)₈, Co₄(CO)₁₂, Ni(CO)₄.
 
-## 5.3 Interstitial carbides
+> **MOT LENS — synergic bonding in M–CO.** Two coupled donations: (1) **σ:** the carbon lone pair of CO donates into an empty metal orbital (M ← C≡O); (2) **π back-bonding:** a filled metal dπ orbital donates into the empty CO **π\*** (M → C≡O). Back-donation *strengthens* M–C and *weakens* the internal C–O bond, which is why the C–O stretching frequency **drops** on coordination. CO forms only weak σ-adducts with Lewis acids like BF₃ (no π back-bonding possible), but strong bonds to low-oxidation-state transition metals.
+>
+> **LIGAND ORDER (σ-donor strength):** CN⁻ > RNC > CO > NO⁺. **π-acceptor strength runs the reverse way.** CN⁻ is a stronger σ-donor than CO (negative charge) but a weaker π-acceptor.
+>
+> **Fe₂(CO)₉ structure:** 6 **terminal** CO (three on each Fe) + 3 **bridging** CO across the Fe–Fe bond. Each bridging CO makes two Fe–C contacts, so total Fe–C bonds = 6 + 2×3 = **12**.
 
-- Mostly transition, lanthanide and actinide carbides; small C atoms occupy interstitial (often octahedral) holes in a close-packed metal lattice.
+## 7.4 Other CO reactions
 
-- Retain metallic lustre and electrical conductivity but become harder, denser and less malleable/ductile than the parent metal.
+CO + ½O₂ ⟶ CO₂
 
-- J.D. Lee geometric rule: if the metal radius is large enough (~>1.35 Å in the source discussion), C can occupy octahedral holes without severe distortion; complete occupation gives an MC stoichiometry.
+CO + S [Δ] ⟶ COS
 
-> **TRAP:** "No chemical bond is present" is an oversimplified annotation mnemonic. For JEE property questions, use the source-observed behaviour: interstitial carbides retain metallic conductivity/lustre but have much greater hardness and high melting points.
+CO + Cl₂ [charcoal catalyst, sunlight] ⟶ COCl₂ (phosgene)
 
-## 5.4 Silicon carbide (carborundum)
+COCl₂ + H₂O ⟶ CO₂ + 2HCl
 
-SiO₂ + 2C —(2000–2500 °C)→ Si + 2CO
+COCl₂ + 4NH₃ ⟶ CO(NH₂)₂ + 2NH₄Cl
 
-Si + C —(~2500 °C)→ SiC
+Phosgene is extremely toxic (WWI war gas); now made in bulk for isocyanate/polyurethane manufacture.
 
-- Diamond-like / wurtzite-related tetrahedral network; ~9.5 Mohs in J.D. Lee, next only to diamond among common source materials.
+# 8. Carbon dioxide, carbonic acid, carbonates; C₃O₂ and CS₂
 
-- Used as abrasive and refractory; very inert. Guha/Allen note attack by strong alkaline oxidation and selected harsh reagents.
+## 8.1 CO₂ — preparation and recovery
 
-SiC + 2NaOH + 2O₂ → Na₂SiO₃ + CO₂ + H₂O
+C + O₂ [excess air, Δ] ⟶ CO₂
 
-SiC + 2Cl₂ —(~100 °C)→ SiCl₄ + C
+CH₄ + 2O₂ [Δ] ⟶ CO₂ + 2H₂O
 
-# 6. Oxygen and sulphur compounds of carbon
+CaCO₃ + 2HCl [laboratory] ⟶ CaCl₂ + CO₂ + H₂O
 
-## 6.1 Carbon monoxide — preparation, detection, fuel chemistry
+CaCO₃ [strong heat, lime kiln] ⟶ CaO + CO₂
 
-2C + O₂ —(limited O₂)→ 2CO
+C₆H₁₂O₆ [yeast, anaerobic; brewery] ⟶ 2C₂H₅OH + 2CO₂
 
-HCOOH —(conc. H₂SO₄, 373 K)→ CO + H₂O
+CO + H₂O(g) [industrial by-product of H₂ manufacture] ⇌ CO₂ + H₂
 
-K₄[Fe(CN)₆] + 6H₂SO₄ + 6H₂O —(conc. H₂SO₄)→ 2K₂SO₄ + FeSO₄ + 3(NH₄)₂SO₄ + 6CO
+**Recovery / scrubbing:**
 
-> **TRAP:** With dilute H₂SO₄, ferrocyanide gives HCN instead of CO in the Guha source.
+Na₂CO₃ + CO₂ + H₂O [cool] ⇌ 2NaHCO₃
 
-- CO is colourless, odourless, sparingly soluble in water and a neutral oxide. Burns with a blue flame.
+2HOCH₂CH₂NH₂ + CO₂ + H₂O [30–60 °C ⇌ 100–150 °C; Girbotol process] ⇌ (HOCH₂CH₂NH₃)₂CO₃
 
-- Detection: reduces PdCl₂ → black Pd; absorbed by CuCl suspension; quantitative estimation by I₂O₅: 5CO + I₂O₅ → 5CO₂ + I₂.
+## 8.2 CO₂ — properties, structure, uses
 
-- Toxicity: forms carboxyhaemoglobin; Guha/NCERT teaching emphasises a complex far more stable than oxyhaemoglobin (Guha gives ~300×).
+- Colourless, odourless, **acidic** oxide, about 1.5× denser than air, non-combustible. Low water solubility but great biological/geochemical importance.
+- **Solid CO₂ = "dry ice"**, sublimes at **−78 °C** (1 atm) without melting; refrigerant for ice-cream/frozen food, lab coolant, stage fog.
+- **Structure:** linear **O=C=O**, carbon **sp**; two σ(C–O) plus a delocalised π system so both C–O bonds are equal at **115 pm** (between C=O 122 and C≡O 113); **zero dipole moment**. Resonance:
 
-### Water gas vs producer gas
+O⁻–C≡O⁺ ↔ O=C=O ↔ ⁺O≡C–O⁻
 
-C + H₂O(g) —(red/white hot coke; ΔH° ≈ +131 kJ mol⁻¹)→ CO + H₂
+- Guha note: a clathrate hydrate **CO₂·8H₂O** crystallises near 0 °C under about 50 atm CO₂.
+- **Uses:** carbonating soft drinks, fire extinguishers (heavier than air, smothers flame), manufacture of urea and Na₂CO₃ (Solvay), inert atmosphere, supercritical-CO₂ solvent.
+- **Photosynthesis / respiration:**
 
-2C + O₂ —(producer-gas process; exothermic)→ 2CO
+6CO₂ + 6H₂O [sunlight, chlorophyll] ⟶ C₆H₁₂O₆ + 6O₂
 
-- Water gas / synthesis gas: approximately equimolar CO + H₂; high calorific value because both components burn.
+- **Greenhouse effect:** rising CO₂ from fossil-fuel combustion and limestone calcination traps outgoing IR → global warming.
 
-- Producer gas: mainly N₂ + CO (Guha approximate composition 70% N₂, 25% CO, ~4% CO₂ + traces). Lower calorific value because N₂ is inert ballast.
+## 8.3 Carbonic acid, carbonates and hydrogencarbonates
 
-## 6.2 CO as reducing agent and carbonyl ligand
+CO₂ + H₂O ⇌ H₂CO₃  (weak dibasic acid)
 
-Fe₂O₃ + 3CO —(blast furnace)→ 2Fe + 3CO₂
+H₂CO₃ + H₂O ⇌ HCO₃⁻ + H₃O⁺
 
-CuO + CO → Cu + CO₂
+HCO₃⁻ + H₂O ⇌ CO₃²⁻ + H₃O⁺
 
-- Binary first-row carbonyls highlighted by Guha/J.D. Lee: V(CO)₆, Cr(CO)₆, Mn₂(CO)₁₀, Fe(CO)₅, Fe₂(CO)₉, Fe₃(CO)₁₂, Co₂(CO)₈, Co₄(CO)₁₂, Co₆(CO)₁₆, Ni(CO)₄.
+- The **H₂CO₃ / HCO₃⁻ buffer** holds blood pH at **7.26–7.42** (NCERT: 7.26–7.42).
+- **CO₃²⁻** — trigonal planar, delocalised π MO over all four atoms (bond order ≈ 1.33). **CO₄⁴⁻ does not exist**; contrast SiO₄⁴⁻.
+- **Solubility:** Group 1 carbonates and (NH₄)₂CO₃ are soluble (Li₂CO₃ only slightly); Group 2 carbonates are sparingly soluble/insoluble; Ag₂CO₃ is yellow (Ag⁺ polarisation).
+- **Thermal stability:** Group 1 carbonates are heat-stable and melt undecomposed (except Li₂CO₃); Group 2 carbonates decompose, stability **rising down** the group.
 
-Ni + 4CO —(low temperature)→ Ni(CO)₄
+| Carbonate | Approx. decomposition T (Guha) |
+|:--|:--:|
+| BeCO₃ | < 100 °C |
+| MgCO₃ | 540 °C |
+| CaCO₃ | 900 °C |
+| SrCO₃ | 1290 °C |
+| BaCO₃ | 1360 °C |
 
-Fe + 5CO —(~200 °C, pressure)→ Fe(CO)₅
+- Solid **hydrogencarbonates** exist only for Group 1 and NH₄⁺; they are less stable than the carbonates and contain H-bonded chains of HCO₃⁻.
 
-2Fe(CO)₅ —(photolysis)→ Fe₂(CO)₉ + CO
+Ca(OH)₂ + CO₂ ⟶ CaCO₃↓ + H₂O
 
-CO bonding to transition metals is synergic: C-lone-pair σ donation M←CO plus metal dπ→CO π\* back-donation. Back-donation strengthens M–C and weakens internal C–O relative to purely σ-bound CO.
+CaCO₃ + CO₂ + H₂O [excess CO₂] ⟶ Ca(HCO₃)₂
 
-> **LIGAND ORDER:** Source σ-donor order: CN⁻ > RNC > CO > NO⁺. π-acceptor ability is stated in the reverse order.
+> **DETECTION TRAP:** CO₂ turns limewater/baryta water milky (CaCO₃/BaCO₃); **excess CO₂ clears** it as soluble Ca(HCO₃)₂. SO₂ also turns limewater milky — distinguish with acidified KMnO₄/K₂Cr₂O₇ (SO₂ decolourises; CO₂ does not).
 
-> **FE₂(CO)₉:** Structure has 6 terminal CO and 3 bridging CO. A bridge contributes two Fe–C contacts, so total Fe–C bonds = 6 + 2×3 = 12.
+## 8.4 Carbon suboxide, C₃O₂
 
-## 6.3 Other CO reactions
+HOOC–CH₂–COOH [P₄O₁₀, about 150 °C] ⟶ O=C=C=C=O + 2H₂O
 
-CO + ½O₂ → CO₂
+- Linear, foul-smelling gas, b.p. about 6 °C; stable at very low temperature, polymerises to yellow/red solids on warming.
 
-CO + S → COS
+C₃O₂ + 2HCl ⟶ CH₂(COCl)₂
 
-CO + Cl₂ —(phosgene)→ COCl₂
+C₃O₂ + 2NH₃ ⟶ CH₂(CONH₂)₂
 
-COCl₂ + H₂O → CO₂ + 2HCl
+## 8.5 Carbon disulphide, CS₂
 
-COCl₂ + 4NH₃ —(overall ammonia reaction)→ CO(NH₂)₂ + 2NH₄Cl
+CH₄ + 4S [about 600 °C, Al₂O₃ or silica-gel catalyst] ⟶ CS₂ + 2H₂S
 
-## 6.4 Carbon dioxide
+- Colourless, very volatile liquid (b.p. 46 °C), extremely flammable (flash point 30 °C, ignites at about 100 °C), poisonous (attacks the CNS). Pure CS₂ smells like ether; impure samples stink. **Linear**, like CO₂, but forms complexes more readily.
 
-- Colourless, odourless acidic oxide; industrially obtained from H₂ manufacture, fermentation, limestone calcination/flue gas and acid-carbonate reactions.
+3CS₂ + 6NaOH ⟶ Na₂CO₃ + 2Na₂CS₃ + 3H₂O
 
-CO + H₂O ⇌ CO₂ + H₂
+CS₂ + 2NH₃ ⟶ NH₄[H₂NCS₂]  (ammonium dithiocarbamate)
 
-CH₄ + 2H₂O → CO₂ + 4H₂
+CS₂ + cellulose–OH + NaOH ⟶ cellulose–O–C(=S)–SNa  (sodium cellulose xanthate → viscose rayon / cellophane)
 
-CaCO₃ —(strong heat)→ CaO + CO₂
+- Arc through CS₂ → **C₃S₂** (S=C=C=C=S). Uses: viscose/cellophane, manufacture of CCl₄, solvent for S in cold vulcanisation.
 
-C₆H₁₂O₆ —(yeast, anaerobic)→ 2C₂H₅OH + 2CO₂
+# 9. Silicon — extraction, purification and reactivity
 
-Recovery: reversible absorption in Na₂CO₃ as NaHCO₃ or in ethanolamine (Girbotol process). Solid CO₂ is dry ice and sublimes near −78 °C at 1 atm.
+## 9.1 Extraction and ultrapurification
 
-Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O
+SiO₂ + 2C [about 1800–2000 °C, electric furnace] ⟶ Si + 2CO
 
-CaCO₃ + CO₂ + H₂O —(excess CO₂)→ Ca(HCO₃)₂
+- Excess SiO₂ is used to suppress SiC formation. **Ferrosilicon** (Si + scrap Fe + coke) goes into steelmaking.
+- **Semiconductor-grade Si** — convert to a volatile halide, distil, reduce, then zone-refine:
 
-> **DETECTION TRAP:** Initial CO₂ gives milky CaCO₃/BaCO₃; excess CO₂ clears the milkiness by soluble bicarbonate formation.
+Si + 2Cl₂ ⟶ SiCl₄
 
-CO₂ is linear O=C=O. In the source MO treatment the π system is described as delocalised over O–C–O; both C–O bonds are equivalent, overall bond order ≈2.
+SiCl₄ + 2H₂ [Δ] ⟶ Si + 4HCl
 
-6CO₂ + 6H₂O —(sunlight / photosynthesis)→ C₆H₁₂O₆ + 6O₂
+SiHCl₃ + H₂ [Δ] ⟶ Si + 3HCl
 
-> **ADVANCED SOURCE FACT:** Guha records a CO₂·8H₂O hydrate crystallised near 0 °C under ~50 atm CO₂.
+Na₂[SiF₆] + 4Na ⟶ Si + 6NaF
 
-## 6.5 Carbon suboxides
+- **Zone refining:** a narrow molten zone is passed along a rod; impurities concentrate in the liquid and are swept to one end, which is cut off.
 
-HOOC–CH₂–COOH —(P₄O₁₀, ~150 °C)→ O=C=C=C=O + 2H₂O
+## 9.2 Elemental silicon — reactions
 
-- C₃O₂ (carbon suboxide) is linear, b.p. ~6 °C; stable at very low temperature but polymerises on warming.
+Si + O₂ [1173 K] ⟶ SiO₂
 
-C₃O₂ + 2HCl → CH₂(COCl)₂
+3Si + 2N₂ [1673 K] ⟶ Si₃N₄
 
-C₃O₂ + 2NH₃ → CH₂(CONH₂)₂
+Si + 2H₂O(g) [red heat] ⟶ SiO₂ + 2H₂
 
-- J.D. Lee/Guha also mention C₁₂O₉ as the anhydride of mellitic acid; C₅O₂ reports are described as disputed.
+Si + 2F₂ [room temperature; spontaneous] ⟶ SiF₄
 
-## 6.6 Carbonates and bicarbonates
+Si + 2X₂ [other halogens, high T] ⟶ SiX₄
 
-- CO₃²⁻ is trigonal planar with delocalised π bonding. CO₄⁴⁻ does not exist in the source comparison, whereas SiO₄⁴⁻ is fundamental to silicates.
+Si + C [about 2500 °C] ⟶ SiC
 
-- Group 1 and (NH₄)₂CO₃ are soluble; Li₂CO₃ only slightly soluble. Group 2 carbonates are sparingly soluble/insoluble.
+Si + 2NaOH + H₂O [hot] ⟶ Na₂SiO₃ + 2H₂
 
-- Group 1 carbonates are heat-stable; Group 2 carbonates decompose and their thermal stability increases down Group 2.
+- Silicon is very unreactive at room temperature toward everything **except F₂**.
+- **Uses:** semiconductor devices and chips; ferrosilicon and silicon steels (acid-resistant); Si–bronze alloys.
 
-**Carbonate • Approx. decomposition T (Guha)**
+# 10. Silicon dioxide (silica)
 
-- **BeCO₃** — <100 °C
+## 10.1 Structure and why it is not "SiO₂ gas"
 
-- **MgCO₃** — 540 °C
+- SiO₂ is a **giant three-dimensional covalent network**: every Si is **sp³**, bonded to four O; every O bridges two Si. Eight-membered Si–O rings run through the crystal.
+- CO₂ is molecular because carbon makes strong pπ–pπ C=O bonds. Silicon's 3p orbitals overlap p orbitals poorly, so Si prefers **four Si–O σ bonds** (reinforced by Si → O pπ–dπ donation) and polymerises into a lattice. Hence the huge Si–O lattice enthalpy and the very high melting point.
+- Polymorphs: **quartz, tridymite, cristobalite**, each with low/high-temperature forms; interconvert on heating. **α-quartz** is stable at room temperature; its SiO₄ tetrahedra form helices, so left- and right-handed (enantiomorphic) crystals occur. Cristobalite has the Si arranged like diamond with O between.
+- **Vitreous (fused) silica:** melt and quench → a disordered network; very low thermal expansion, UV-transparent → optical cells, high-temperature ware.
+- **Silica gel:** porous amorphous hydrated SiO₂ (about 4% H₂O) — desiccant, catalyst support, chromatographic adsorbent. **Kieselguhr:** fine SiO₂ powder — filtration aid, mild abrasive, absorbent (used in dynamite).
+- **Quartz is piezoelectric** — pressure generates a voltage and vice versa → oscillators, clocks, radio-frequency control.
 
-- **CaCO₃** — 900 °C
+## 10.2 Reactions of silica
 
-- **SrCO₃** — 1290 °C
+SiO₂ + 4HF ⟶ SiF₄ + 2H₂O
 
-- **BaCO₃** — 1360 °C
+SiF₄ + 2H₂O ⟶ SiO₂·2H₂O (or Si(OH)₄) + 4HF
 
-- Solid bicarbonates are characteristic of Group 1 and NH₄⁺; they are less thermally stable and contain H-bonded HCO₃⁻ chains in the source structures.
+SiO₂ + 2F₂ ⟶ SiF₄ + O₂
 
-## 6.7 Carbon disulphide and C₃S₂
+SiO₂ + 2NaOH [fused] ⟶ Na₂SiO₃ + H₂O
 
-CH₄ + 4S —(~600 °C, Al₂O₃/silica gel)→ CS₂ + 2H₂S
+SiO₂ + Na₂CO₃ [fused] ⟶ Na₂SiO₃ + CO₂
 
-- CS₂: colourless volatile liquid, b.p. ~46 °C; highly flammable, low flash point, poisonous; linear like CO₂ but forms complexes more readily.
+SiO₂ + CaO [Δ; blast-furnace slag] ⟶ CaSiO₃
 
-3CS₂ + 6NaOH → Na₂CO₃ + 2Na₂CS₃ + 3H₂O
+- SiO₂ is **acidic**: no reaction with ordinary acids (only HF), slow with aqueous alkali, fast with **fused** alkali/carbonates → silicates. This is why ground-glass stoppers seize in strong alkali.
 
-CS₂ + 2NH₃ → NH₄[H₂NCS₂]
+> **QUALITATIVE SILICATE TEST:** HF generated in situ (CaF₂ + conc. H₂SO₄) attacks SiO₂ to volatile SiF₄; brought to a drop of water it deposits white gelatinous hydrated silica / silicic acid.
 
-- Light can convert CS₂ toward reactive CS; electric arc through CS₂ gives C₃S₂, treated as linear S=C=C=C=S and polymerisable.
+# 11. Silicates — the full structural system
 
-# 7. Silicon — extraction, purification and elemental reactivity
+**About 95% of the crust** is silica, silicates and aluminosilicate clays. The three most abundant elements (O, Si, Al) make up about 81% of the crust — four of every five atoms.
 
-## 7.1 Extraction and purification — J.D. Lee / Allen
+## 11.1 The one building block and the master rule
 
-SiO₂ + 2C —(electric furnace / high T)→ Si + 2CO
+- Base unit: the **SiO₄⁴⁻ tetrahedron** (Si sp³, ∠O–Si–O ≈ 109.5°, Si–O ≈ 162 pm).
+- Classification depends **only** on how many of the four corner (bridging) oxygens each tetrahedron **shares** with its neighbours. Negative charge on the anion framework is balanced by external cations.
 
-Industrial silicon is obtained by carbothermic reduction of silica; excess silica is used to suppress SiC formation. Ferrosilicon is made by reducing SiO₂ with scrap iron and coke and is used in steelmaking.
+> **DERIVED FORMULA.** If each tetrahedron shares **x** of its 4 corners:
+> - effective O per Si = **4 − x/2**
+> - charge per Si = **−(4 − x)**
+> This generates almost every silicate formula: x = 0 → SiO₄⁴⁻; x = 1 → Si₂O₇⁶⁻; x = 2 → (SiO₃²⁻)ₙ; x = 3 → (Si₂O₅²⁻)ₙ; x = 4 → SiO₂ (neutral).
 
-Si + 2Cl₂ → SiCl₄
+**Soluble silicate ("water glass"):**
 
-SiCl₄ + 2Mg → Si + 2MgCl₂
+Na₂CO₃ + SiO₂ [about 1400 °C] ⟶ Na₂SiO₃ + CO₂
 
-- High-purity route: convert crude Si to a volatile halide (SiCl₄), purify by distillation, then reduce back to Si.
+Na₂SiO₃ ("water glass") — adhesive, detergent builder (keeps pH high), fireproofing, source of silica gel. Must not be used in hard water (Ca²⁺ → insoluble CaSiO₃).
 
-- Zone refining: a narrow molten zone is moved along a rod; impurities prefer the liquid and are swept to one end, which is removed.
+## 11.2 Master classification table
 
-Na₂[SiF₆] + 4Na → Si + 6NaF
+| Corners shared / Si | Class | Repeat / discrete anion | Charge per Si | Type minerals |
+|:--:|:--|:--:|:--:|:--|
+| 0 | **Ortho / neso**silicate | SiO₄⁴⁻ (island) | −4 | forsterite/olivine (Mg,Fe)₂SiO₄; zircon ZrSiO₄; phenacite Be₂SiO₄; willemite Zn₂SiO₄; garnets |
+| 1 | **Pyro / soro**silicate | Si₂O₇⁶⁻ (dimer) | −3 | thortveitite Sc₂Si₂O₇; hemimorphite Zn₄(OH)₂Si₂O₇·H₂O |
+| 2 (ring) | **Cyclic** silicate | (SiₙO₃ₙ)²ⁿ⁻; n = 3, 4, 6 | −2 | benitoite BaTiSi₃O₉; beryl Be₃Al₂Si₆O₁₈; tourmaline |
+| 2 (chain) | **Pyroxene** (single chain, inosilicate) | (SiO₃)ₙ²ⁿ⁻ | −2 | enstatite MgSiO₃; diopside CaMg(SiO₃)₂; spodumene LiAl(SiO₃)₂; jadeite NaAl(SiO₃)₂; wollastonite Ca₃(SiO₃)₃ |
+| 2½ (alternate 2 & 3) | **Amphibole** (double chain, inosilicate) | (Si₄O₁₁)ₙ⁶ⁿ⁻ | −3 per 2 Si | tremolite Ca₂Mg₅(Si₄O₁₁)₂(OH)₂; hornblende; crocidolite ("blue asbestos") Na₂Fe₃²⁺Fe₂³⁺(Si₄O₁₁)₂(OH)₂ |
+| 3 | **Sheet / phyllo**silicate | (Si₂O₅)ₙ²ⁿ⁻ | −2 per 2 Si | talc, pyrophyllite, kaolinite, micas, chrysotile |
+| 4 | **Framework / tecto**silicate | (SiO₂)ₙ neutral | 0 | quartz; feldspars; zeolites; ultramarines (with Al) |
 
-## 7.2 Elemental silicon reactions
+## 11.3 Ortho- and pyrosilicates
 
-Si + O₂ —(strong heating)→ SiO₂
+- **Orthosilicates:** discrete SiO₄⁴⁻ held together only by cation–O bonds. Structure varies with cation coordination: Zn/Be are 4-coordinate (willemite, phenacite); Mg is 6-coordinate (forsterite); Zr is 8-coordinate (zircon). The Al₂SiO₄(O,F,OH)₂ family includes topaz and the polymorphs kyanite/sillimanite/andalusite.
+- SiO₄⁴⁻ is the conjugate base of very weak **orthosilicic acid Si(OH)₄**, so it survives in solid minerals only with cations that give highly insoluble salts.
+- **Pyrosilicates:** one shared corner → Si₂O₇⁶⁻; rare. Some minerals (epidote, vesuvianite) carry **both** SiO₄⁴⁻ and Si₂O₇⁶⁻ units.
 
-Si + 2H₂O(g) —(red heat)→ SiO₂ + 2H₂
+## 11.4 Cyclic (ring) silicates
 
-Si + 2F₂ —(room temperature; spontaneous in F₂)→ SiF₄
+- Two shared O per tetrahedron closes a ring: **(SiₙO₃ₙ)²ⁿ⁻**. Common: 3-membered Si₃O₉⁶⁻ (benitoite BaTiSi₃O₉; and cyclic wollastonite-type Ca₃Si₃O₉) and 6-membered Si₆O₁₈¹²⁻ (**beryl** Be₃Al₂Si₆O₁₈).
+- In beryl the stacked Si₆O₁₈ rings enclose **open channels** along the c-axis that can host Na⁺, Li⁺, Cs⁺, He or H₂O. **Emerald** = beryl + 1–2% Cr³⁺ (green); **aquamarine** = Fe-tinted beryl.
 
-Si + 2X₂ —(other halogens, high T)→ SiX₄
+## 11.5 Chain silicates — pyroxenes and amphiboles
 
-Si + C —(~2500 °C)→ SiC
+- **Pyroxene (single chain):** two shared O per tetrahedron, repeat SiO₃²⁻, chain formula **(SiO₃)ₙ²ⁿ⁻**. The repeat length varies: every 2nd tetrahedron in enstatite/diopside; every 3rd in wollastonite (a **chain**, not a ring, despite the Si₃O₉ empirical unit). Parallel chains are bonded sideways by cations, so pyroxenes cleave along the chains at about **87°/93°**.
+- **Amphibole (double chain):** two pyroxene chains cross-linked by extra shared O; alternate tetrahedra share 2 and 3 corners → repeat **Si₄O₁₁⁶⁻**, chain formula **(Si₄O₁₁)ₙ⁶ⁿ⁻**. **OH⁻** groups sit in the ring cavities and belong to the cation part. Cleavage angles about **56°/124°** (a diagnostic difference from pyroxenes).
 
-- Silicon is slowly attacked by cold aqueous NaOH and more rapidly by hot alkali to give silicate/hydrogen chemistry in the source treatment.
+> **NOTE — same empirical formula, different structure.** A cyclic silicate and a single-chain silicate share the empirical formula **(SiO₃)ₙ²ⁿ⁻**: both are formal polymers of the metasilicate ion SiO₃²⁻. The ring is finite; the pyroxene chain is infinite. Single + double chain silicates together are the **inosilicates**.
 
-- Uses: semiconductor devices/computer chips; alloying/ferrosilicon; acid-resistant steels and silicon-containing alloys.
+## 11.6 Sheet silicates — clays, talc, micas, asbestos
 
-## 7.3 Germanium, tin and lead: source metallurgy snapshot
+- Three shared O per tetrahedron → infinite 2-D sheet, repeat Si₂O₅²⁻, sheet formula **(Si₂O₅)ₙ²ⁿ⁻**. Strong bonding **within** a sheet, weak **between** sheets → these minerals cleave into flakes, exactly like graphite.
+- **Building principle:** a silicate sheet condenses with a hydroxide sheet — **gibbsite** Al(OH)₃ or **brucite** Mg(OH)₂ — by sharing apical O atoms.
 
-- Germanium: J.D. Lee describes recovery from zinc-smelter flue dust / coal-derived materials, conversion to purified GeO₂ and reduction with H₂ around 500 °C, followed by zone refining for semiconductor grade material.
+| Layer type | Mineral | Comment |
+|:--|:--|:--|
+| 1 : 1 (one tetrahedral + one octahedral sheet) | **kaolinite** Al₂(OH)₄Si₂O₅ (China clay) | neutral layers, H-bonded; the bare "AlSiO₅(OH)₅" sometimes quoted is *wrong* — the balanced unit is Al₂Si₂O₅(OH)₄ |
+| 2 : 1 (octahedral sheet between two tetrahedral) | **pyrophyllite** Al₂(OH)₂(Si₂O₅)₂; **talc** Mg₃(OH)₂(Si₂O₅)₂ | layers electrically neutral → talc is extremely soft and slippery (Mohs 1; soapstone) |
+| 2 : 1 with substitution | **micas** — muscovite KAl₂(AlSi₃O₁₀)(OH)₂ (colourless), biotite K(Mg,Fe)₃(AlSi₃O₁₀)(OH)₂ (dark), lepidolite (Li) | Al³⁺-for-Si⁴⁺ substitution makes the layers negative; interlayer **K⁺** clamps them → harder than talc but still cleaves into elastic sheets |
+| 2 : 1 swelling clays | **montmorillonite / bentonite / Fuller's earth**; **vermiculite** (Mg + Al substitution in talc) | low layer charge, take up interlayer water and exchangeable cations → swelling, ion exchange, thixotropy |
+| rolled 1 : 1 | **chrysotile** Mg₃(OH)₄Si₂O₅ ("white asbestos") | sheet-tetrahedral / octahedral mismatch rolls the layers into fibrous tubes — structurally different from amphibole ("blue") asbestos |
 
-GeO₂ + 2H₂ —(~500 °C)→ Ge + 2H₂O
+> **SAFETY / EXAM NOTE:** The examinable point is structural — chrysotile is a *sheet* silicate; crocidolite is a *double-chain* (amphibole) silicate. Inhaled asbestos dust is a serious carcinogen; historical uses are context, not recommendations.
 
-- Tin: cassiterite SnO₂ is reduced with carbon at about 1200–1300 °C. Iron impurity can be oxidised preferentially and removed from molten tin. Major chemistry uses include tinplate/alloys and SnO₂ coatings/glazes.
+## 11.7 Framework silicates — feldspars, zeolites, ultramarines
 
-SnO₂ + 2C —(high T; simplified overall reduction)→ Sn + 2CO
+- Sharing all four corners gives neutral **(SiO₂)ₙ**. Replacing framework Si⁴⁺ by **Al³⁺** (as AlO₄⁵⁻) puts −1 on the framework per substitution, balanced by cations (Na⁺, K⁺, Ca²⁺, Ba²⁺) in the cavities → **aluminosilicates**. Only large cations fit; Fe³⁺, Cr³⁺, Mn²⁺ (common in chain/sheet silicates) are excluded.
 
-- Lead: galena PbS is concentrated by froth flotation. One route roasts PbS to PbO and then reduces the oxide; another uses partial oxidation followed by self-reduction.
+**Feldspars** (most abundant crustal minerals; two thirds of igneous rock):
 
-2PbS + 3O₂ —(roasting)→ 2PbO + 2SO₂
+| Class | Members |
+|:--|:--|
+| Orthoclase feldspars | orthoclase K[AlSi₃O₈]; celsian Ba[Al₂Si₂O₈] |
+| Plagioclase feldspars (solid solution) | albite Na[AlSi₃O₈] ⇌ anorthite Ca[Al₂Si₂O₈] |
 
-2PbO + PbS —(self-reduction)→ 3Pb + SO₂
+**Zeolites** — far more open frameworks; the anion skeleton is threaded by channels wide enough to exchange ions and adsorb small molecules without collapsing.
 
-- Lead's resistance/passivation and its toxicological history are important context in the old sources; current JEE chemistry should focus on oxidation states, oxides, halides and redox reactions rather than obsolete industrial uses.
+- **Water softening (Permutit):** Na-zeolite exchanges Na⁺ for hard-water Ca²⁺/Mg²⁺; the exhausted zeolite is regenerated with concentrated NaCl.
 
-# 8. Silicon dioxide, silicates, zeolites and glass
+Na₂Z(s) + Ca²⁺(aq) ⟶ CaZ(s) + 2Na⁺(aq)
 
-## 8.1 SiO₂ / silica
+CaZ(s) + 2NaCl(aq) [regeneration] ⟶ Na₂Z(s) + CaCl₂(aq)
 
-- SiO₂ is a giant 3D network rather than a discrete CO₂-like molecule. The sources explain this by poor Si pπ–pπ multiple bonding and strong Si–O single-bond networking.
+- **Molecular sieves:** adsorb H₂O, CO₂, NH₃, EtOH; separate straight-chain from branched hydrocarbons by pore size.
+- **Catalysis (NCERT):** **ZSM-5** converts methanol/alcohols directly into gasoline-range hydrocarbons; zeolites crack and isomerise hydrocarbons in petrochemical plants (shape-selective catalysis).
+- Natrolite: Na₂[Al₂Si₃O₁₀]·2H₂O — a natural ion exchanger. General framework formula Mₓ/ₙ[(AlO₂)ₓ(SiO₂)ᵧ]·zH₂O.
 
-- J.D. Lee lists many SiO₂ polymorphs; the principal families are quartz, tridymite and cristobalite, each with low- and high-temperature modifications. In every form Si is tetrahedrally surrounded by four O atoms and every O is shared between two Si centres.
+**Ultramarines** — coloured aluminosilicates with **no water** but enclosed anions (Cl⁻, SO₄²⁻, S₂⁻/S₃⁻). Lapis lazuli's blue is the polysulphide radical anion.
 
-- α-Quartz is the stable room-temperature form in the source. Its tetrahedra form helices; left- and right-handed helices give enantiomorphic crystals. Cristobalite has a Si arrangement analogous to diamond with O atoms between Si centres.
+| Ultramarine | Formula |
+|:--|:--|
+| ultramarine (blue) | Na₈[(AlSiO₄)₆]S₂ |
+| sodalite | Na₈[(AlSiO₄)₆]Cl₂ |
+| nosean | Na₈[(AlSiO₄)₆]SO₄ |
 
-- Heating silica to softening/melting and cooling can give vitreous (amorphous) silica: a disordered network of rings/chains/3D units rather than a periodic crystal lattice.
+# 12. Glass
 
-- Quartz is piezoelectric and is used in oscillator/timing applications. High-purity quartz can be grown hydrothermally from alkaline silica solution under pressure.
+- Pure fused silica has superb properties but needs a very high working temperature. Added oxides (network modifiers) lower the melting range.
+- Glass is an **amorphous supercooled liquid / solid solution** — no long-range order — so composition can vary continuously.
+- Common modifiers: Na₂O, K₂O, CaO, MgO, BaO, B₂O₃, Al₂O₃, PbO, ZnO.
 
-- Common natural forms: sand/quartz. Vitreous silica is glass-like; silica gel is porous amorphous hydrated silica (~4% H₂O in Guha) used as drying agent, catalyst and chromatographic adsorbent.
+| Glass | Composition family | Character / use |
+|:--|:--|:--|
+| **Soda-lime (crown) glass** | Na₂O·CaO·SiO₂ | windows, bottles, cheap labware; made by fusing Na₂CO₃ + CaCO₃ + SiO₂ |
+| **Potash glass** | K₂O·CaO·SiO₂ | higher softening point, "hard glass" (combustion tubes) |
+| **Lead (flint) glass** | K₂O·PbO·SiO₂ | high refractive index and density → lenses, prisms, decorative "crystal" |
+| **Borosilicate (Pyrex)** | Na₂O·B₂O₃·Al₂O₃·SiO₂ | low thermal expansion, chemically resistant → labware, ovenware |
+| **Silica (quartz) glass** | pure SiO₂ | UV-transparent, near-zero expansion → optics, high-temp ware |
 
-- Kieselguhr: fine SiO₂-rich powder used in filtration, abrasives and inert filling.
+- **Colouring:** Fe³⁺ yellow-brown; Fe²⁺ pale blue; Fe²⁺ + Fe³⁺ green; Co²⁺ deep blue; Cu²⁺ blue-green; colloidal Cu ruby-red; colloidal Au "purple of Cassius"; Mn³⁺ + Se decolourise ("physical" + "chemical" decolourising). **CaF₂** clouds glass → opal glass.
+- **Fining agents** (NaNO₃, As₂O₃) generate large bubbles that sweep out small ones.
 
-SiO₂ + 4HF → SiF₄ + 2H₂O
+# 13. Silicones
 
-SiF₄ + 2H₂O —(source qualitative-test representation)→ SiO₂·2H₂O / Si(OH)₄ + 4HF
+Silicones are synthetic **organosilicon polymers** with an **–Si–O–Si–O–** (siloxane) backbone and organic (usually methyl/phenyl) groups on Si. Repeating unit **(R₂SiO)ₙ**.
 
-> **QUALITATIVE SILICATE TEST:** HF generated from CaF₂/H₂SO₄ attacks SiO₂ to volatile SiF₄; contact with a water drop gives a white hydrated silica/silicic-acid deposit.
+## 13.1 Making the chlorosilanes
 
-SiO₂ + 2F₂ → SiF₄ + O₂
+**Rochow direct process (industrial):**
 
-SiO₂ is acidic: little/no reaction with ordinary acids except HF; reacts slowly with aqueous alkali and rapidly with fused alkali/carbonates to give silicates. This explains ground-glass stoppers sticking in strong alkali.
+2CH₃Cl + Si [Cu catalyst, about 570 K] ⟶ (CH₃)₂SiCl₂  (major, about 70%; also MeSiCl₃ 10%, Me₃SiCl 5%, Me₄Si, MeSiHCl₂)
 
-## 8.2 Silicate structural engine
+**Grignard / organolithium (laboratory):**
 
-Basic unit = tetrahedral SiO₄⁴⁻. Classification is controlled by how many corner oxygens are shared with neighbouring tetrahedra.
+SiCl₄ + CH₃MgCl ⟶ CH₃SiCl₃ + MgCl₂  (then stepwise to Me₂SiCl₂, Me₃SiCl, Me₄Si)
 
-**Shared O per Si • Class • Ideal anion / unit**
+4LiR + SiCl₄ ⟶ SiR₄ + 4LiCl
 
-- **0** — Neso / ortho — SiO₄⁴⁻
+Careful fractionation is essential — the boiling points are close (Me₃SiCl 57.7 °C, MeSiCl₃ 66.4 °C, Me₂SiCl₂ 69.6 °C).
 
-- **1** — Soro / pyro — Si₂O₇⁶⁻
+## 13.2 Hydrolysis and the functionality rule
 
-- **2** — Cyclic or single-chain — (SiO₃)ₙ²ⁿ⁻
+R₂SiCl₂ + 2H₂O ⟶ R₂Si(OH)₂ + 2HCl
 
-- **~2.5** — Double-chain amphibole — e.g. (Si₄O₁₁)ₙ⁶ⁿ⁻
+Silanols then **condense** (−H₂O) into the siloxane backbone.
 
-- **3** — Sheet / phyllo — (Si₂O₅)ₙ²ⁿ⁻
+| Monomer | Silanol on hydrolysis | Role in the polymer |
+|:--|:--|:--|
+| **R₃SiCl** (one OH) | R₃SiOH | **chain stopper / end-cap** — condenses to hexamethyldisiloxane, cannot extend |
+| **R₂SiCl₂** (two OH) | R₂Si(OH)₂ | **linear chain builder**; also cyclic (3-, 4-, 5-, 6-membered) siloxanes |
+| **RSiCl₃** (three OH) | RSi(OH)₃ | **cross-linker → 3-D resin network** |
 
-- **4** — 3D framework — SiO₂ (neutral framework)
+The **ratio of R₃SiCl : R₂SiCl₂ : RSiCl₃** in the feed sets the average chain length and cross-link density — this is the single most examined idea about silicones.
 
-> **DERIVED FORMULA:** If x corner O atoms per tetrahedron are shared, effective O per Si = 4 − x/2; ideal negative charge per Si = 4 − x. This instantly generates most silicate formulas.
+> **TRAP:** R₂Si(OH)₂ does **not** dehydrate to a "silicon ketone" R₂Si=O (Si makes no stable pπ–pπ). Instead the silanols condense to the polymeric silicone. (Bond-strength order C=O > Si=O; Si prefers Si–O–Si single bonds.)
 
-**Master classification table (shared corners → class → repeat unit → type mineral)**
+## 13.3 Properties and uses
 
-| Corners shared / Si | Class (Greek / mineral name) | Discrete or extended anion | Charge per Si | Representative mineral |
-|:--:|----|:--:|:--:|----|
-| 0 | Orthosilicate / nesosilicate | SiO₄⁴⁻ (island) | −4 | forsterite Mg₂SiO₄; zircon ZrSiO₄ |
-| 1 | Pyrosilicate / sorosilicate | Si₂O₇⁶⁻ (dimer) | −3 | thortveitite Sc₂Si₂O₇ |
-| 2 (ring) | Cyclic / ring silicate | (SiₙO₃ₙ)²ⁿ⁻, n = 3, 4, 6 | −2 | beryl Be₃Al₂Si₆O₁₈; benitoite BaTiSi₃O₉ |
-| 2 (chain) | Single-chain / pyroxene (inosilicate) | (SiO₃)ₙ²ⁿ⁻ | −2 | diopside CaMg(SiO₃)₂; wollastonite Ca₃(SiO₃)₃ |
-| 2.5 (alternating 2 and 3) | Double-chain / amphibole (inosilicate) | (Si₄O₁₁)ₙ⁶ⁿ⁻ | −3 per 2 Si | tremolite Ca₂Mg₅(Si₄O₁₁)₂(OH)₂ |
-| 3 | Sheet / phyllosilicate | (Si₂O₅)ₙ²ⁿ⁻ | −2 per 2 Si | talc, kaolinite, micas |
-| 4 | Framework / tectosilicate | (SiO₂)ₙ neutral | 0 | quartz; feldspars; zeolites (with Al) |
+- Backbone stability from a very strong **Si–O bond (about 502 kJ mol⁻¹)** plus a strong Si–C bond; organic groups point outward so the surface behaves like a hydrocarbon → **water-repellent**.
+- Heat-stable, oxidation- and chemical-resistant, excellent **electrical insulators**, non-stick, anti-foaming, non-toxic, physiologically inert.
+- **Forms:** fluids/oils, greases, elastomers (silicone rubber), resins.
+- **Uses:** water-repellent treatment of masonry/fabrics, car and shoe polish; transformer dielectric and hydraulic fluids; high- and low-temperature lubricants (gearbox grade needs phenyl groups); anti-foaming agents (sewage, fermentation, cooking oil); sealants; surgical and cosmetic implants.
+- **Silicone rubber:** long dimethylpolysiloxane chains (6 000–600 000 Si units) + finely divided SiO₂ filler; stays elastic from about **−90 °C to +250 °C** — far wider than natural rubber.
 
-> **NOTE (formula identity):** ring and single-chain silicates share the same empirical formula (SiO₃)ₙ²ⁿ⁻, so both are formally oligomers/polymers of the hypothetical metasilicate ion SiO₃²⁻; the ring is finite, the pyroxene chain is infinite. Single- and double-chain silicates together are called inosilicates.
+# 14. Hydrides of Group 14
 
-### Neso / orthosilicates
+## 14.1 Silanes
 
-- Discrete SiO₄⁴⁻ tetrahedra held together only through cation–oxygen bonds. Examples: phenacite Be₂SiO₄, willemite Zn₂SiO₄ (both with tetrahedral cations), forsterite/olivine (Mg,Fe)₂SiO₄ (octahedral cations), zircon ZrSiO₄ (Zr coordination number 8), garnets, and the Al₂SiO₄(O/F)₂ family (topaz).
+- Saturated series **SiₙH₂ₙ₊₂** (silanes), analogous to alkanes but far shorter — Si–Si catenation is weak. Straight/branched chains up to about Si₈H₁₈; **no** silicon analogues of alkenes/alkynes or aromatics in ordinary chemistry.
 
-- The SiO₄⁴⁻ ion is the conjugate base of very weak orthosilicic acid Si(OH)₄ and does not survive in aqueous solution, so orthosilicate minerals occur only with cations that give highly insoluble salts.
+**Preparation:**
 
-### Soro / pyrosilicates
+2Mg + Si [Δ, no air] ⟶ Mg₂Si
 
-- Exactly one shared corner links two tetrahedra to Si₂O₇⁶⁻; only a handful of minerals contain this ion. Examples: thortveitite Sc₂Si₂O₇; hemimorphite Zn₄(OH)₂[Si₂O₇]·H₂O. Some minerals (e.g. epidote, vesuvianite) contain both SiO₄⁴⁻ and Si₂O₇⁶⁻ units.
+Mg₂Si + H₂SO₄(dil.) ⟶ SiH₄ (about 40%) + Si₂H₆ (30%) + Si₃H₈ (15%) + Si₄H₁₀ (10%) + higher (5%)  [Guha distribution]
 
-### Cyclic silicates
+SiCl₄ + LiAlH₄ [ether, low T] ⟶ SiH₄ + AlCl₃ + LiCl  (better — single product, quantitative)
 
-- Two shared O per tetrahedron close a ring: (SiₙO₃ₙ)²ⁿ⁻. Three-membered Si₃O₉⁶⁻ (benitoite BaTiSi₃O₉) and six-membered Si₆O₁₈¹²⁻ (beryl Be₃Al₂Si₆O₁₈) are the common cases; four- and eight-membered rings also occur.
+Si₂Cl₆ + 6LiH ⟶ Si₂H₆ + 6LiCl
 
-- In beryl the Al is octahedral and the Be tetrahedral; the stacked Si₆O₁₈ rings enclose open channels along the c-axis that can host ions and small molecules. Emerald (green) is Cr³⁺/V³⁺-doped beryl; aquamarine (blue-green) is Fe-tinted beryl. Cordierite and tourmaline are further ring silicates.
+## 14.2 Why silanes out-react alkanes
 
-### Single-chain pyroxenes
+- **Bond polarity is reversed.** Pauling EN: **Si 1.8 < H 2.1 < C 2.5**, so Si–H is Si(δ+)–H(δ−) — the opposite of C(δ−)–H(δ+). The electrophilic Si centre is open to **nucleophilic attack**.
+- The larger Si atom is easier to approach; accessible d orbitals let a higher-coordinate intermediate form, lowering the activation energy.
+- Consequences: silanes are **spontaneously flammable in air**, explode with Cl₂, are **strong reducing agents**, and are hydrolysed by pure water in glassware (traces of alkali leached from the glass are enough):
 
-- Two shared O per tetrahedron give an infinite single chain, repeat unit SiO₃²⁻, so the chain formula is (SiO₃)ₙ²ⁿ⁻. Examples: enstatite MgSiO₃, diopside CaMg(SiO₃)₂, spodumene LiAl(SiO₃)₂ (a lithium ore), jadeite NaAl(SiO₃)₂, wollastonite Ca₃(SiO₃)₃ (a three-repeat single chain, not a ring). Parallel chains are bonded sideways through the metal cations, so pyroxenes cleave easily parallel to the chains (cleavage angle near 90°).
+Si₂H₆ + (4+n)H₂O [trace OH⁻] ⟶ 2SiO₂·nH₂O + 7H₂
 
-### Double-chain amphiboles
+**Hydrosilation** (route to silicones):
 
-- Two pyroxene chains are cross-linked by additional shared oxygens; alternate tetrahedra share 2 and 3 corners, giving the repeat unit Si₄O₁₁⁶⁻ and chain formula (Si₄O₁₁)ₙ⁶ⁿ⁻. OH⁻ groups sit in the ring cavities and belong to the cation part of the formula. Examples: tremolite Ca₂Mg₅(Si₄O₁₁)₂(OH)₂, actinolite, hornblende, and the fibrous amphibole crocidolite ("blue asbestos"). Amphibole cleavage angles are near 56°/124°.
+RCH=CH₂ + HSiCl₃ [Pt catalyst] ⟶ RCH₂CH₂SiCl₃
 
-### Sheet silicates
+## 14.3 Down the group
 
-- Three shared O per tetrahedron give an infinite two-dimensional sheet, repeat unit Si₂O₅²⁻, sheet formula (Si₂O₅)ₙ²ⁿ⁻. Bonding is strong within a sheet and weak (van der Waals or weak electrostatic) between sheets, so these minerals cleave into thin flakes just like graphite.
+- **Germanes** GeₙH₂ₙ₊₂ up to about Ge₅H₁₂; like silanes but less volatile/flammable and more resistant to water and acid/base.
+- **Stannane SnH₄** — much less stable, strongly reducing; only Sn₂H₆ beyond it.
+- **Plumbane PbH₄** — barely characterised; prepared only in trace amounts.
+- **Thermal stability of the tetrahydride:** CH₄ ≫ SiH₄ > GeH₄ > SnH₄ > PbH₄.
 
-- Structural building principle: a silicate sheet condenses with a "gibbsite" Al(OH)₃ or "brucite" Mg(OH)₂ hydroxide sheet by sharing the apical O atoms.
-  - 1:1 (two-layer) — kaolinite Al₂(OH)₄Si₂O₅ (China clay). One tetrahedral + one octahedral sheet per layer; layers are neutral, held by hydrogen bonding. (The bare formula "AlSiO₅(OH)₅" sometimes seen is incorrect; the balanced unit is Al₂Si₂O₅(OH)₄.)
-  - 2:1 (three-layer) — one octahedral sheet sandwiched between two tetrahedral sheets: pyrophyllite Al₂(OH)₂(Si₂O₅)₂ and talc Mg₃(OH)₂(Si₂O₅)₂. Layers are electrically neutral, so talc is extremely soft and slippery (main component of soapstone; Mohs 1).
+# 15. Halides of Group 14
 
-- Micas: partial isomorphous replacement of Si⁴⁺ by Al³⁺ in the tetrahedral sheet leaves the 2:1 layers negatively charged; interlayer K⁺ (or Ca²⁺) balances the charge and clamps the layers. This makes micas harder than talc but they still cleave into elastic transparent sheets. Muscovite KAl₂(AlSi₃O₁₀)(OH)₂ (colourless), biotite K(Mg,Fe)₃(AlSi₃O₁₀)(OH)₂ (dark), lepidolite (Li-mica), phlogopite.
+## 15.1 Tetrahalides MX₄
 
-- Clays: kaolinite, and the swelling 2:1 clays montmorillonite/bentonite which have low layer charge, take up interlayer water and exchangeable cations, show ion exchange and thixotropy. Chrysotile ("white asbestos", Mg₃(OH)₄Si₂O₅) is a sheet silicate in which mismatch between the tetrahedral and octahedral sheets rolls the layers into fibrous tubes — structurally distinct from the double-chain amphibole asbestos.
+- **All MX₄ are known except PbI₄.** Most are covalent, tetrahedral, volatile.
+- **Exceptions: SnF₄ and PbF₄** are three-dimensional, ionic-type, high-melting solids (SnF₄ sublimes 705 °C, PbF₄ m.p. 600 °C).
+- **Hydrolysis:** CX₄ resist; SiX₄ … PbX₄ hydrolyse — the heavier central atom accepts a lone pair from water into a d orbital.
 
-> **SAFETY CONTEXT:** J.D. Lee's old industrial discussion includes asbestos. The structural distinction is exam-relevant (amphibole double-chain vs chrysotile sheet silicate); inhaled asbestos dust is a serious health hazard, so historical uses are not presented as recommendations.
+SiCl₄ + 4H₂O ⟶ Si(OH)₄ + 4HCl
 
-### 3D framework silicates (tectosilicates) and aluminosilicates
+SiF₄ + 2HF ⟶ 2H⁺ + [SiF₆]²⁻
 
-- All four corners shared gives the neutral (SiO₂)ₙ framework — the silica polymorphs quartz, tridymite and cristobalite.
+> **MOT LENS — SiCl₄ hydrolysis mechanism.** Water's O lone pair attacks Si into a **five-coordinate (trigonal-bipyramidal) intermediate** using a 3d orbital; loss of HCl and repetition gives Si(OH)₄ with **inversion** at each step (SN2-like). CCl₄ has no such pathway — carbon has no accessible d orbital and cannot expand past four bonds — so CCl₄ is kinetically inert to water (only superheated steam forces CCl₄ + H₂O → COCl₂ + 2HCl).
+>
+> **[SiF₆]²⁻ exists, [SiCl₆]²⁻ does not** (NCERT Problem 11.6): (1) six large Cl⁻ cannot pack around the small Si⁴⁺; (2) Si–Cl donor interaction is much weaker than Si–F. The stable fluoro-complex is why SiO₂ dissolves in HF.
 
-- Replacing each framework Si⁴⁺ by Al³⁺ (as an AlO₄⁵⁻ tetrahedron) puts a −1 charge on the framework per substitution; this is balanced by cations (Na⁺, K⁺, Ca²⁺, Ba²⁺) sitting in the framework cavities. The result is a three-dimensional aluminosilicate.
+**Charge-transfer colour:** SnI₄ and GeI₄ are **orange**, unusual for a main-group halide. Absorption corresponds to transfer of an electron from I⁻ to the metal (temporary Sn(IV) → Sn(III)); it occurs only because I and Sn have similar orbital energies. Colourless with the lighter halides.
 
-- Feldspars (the most abundant minerals in the crust): orthoclase K[AlSi₃O₈], albite Na[AlSi₃O₈], anorthite Ca[Al₂Si₂O₈], celsian Ba[Al₂Si₂O₈]. The plagioclase series is a solid solution between albite and anorthite. Feldspathoids (nepheline, leucite, sodalite, ultramarine) are formed when there is not enough silica for a full feldspar framework.
+**PbI₄ does not exist:** Pb(IV) is a strong oxidant and I⁻ a reductant, so any Pb–I system relaxes to **PbI₂ + I₂**. (Equivalently: the Pb–I bond energy released is not enough to unpair and promote the 6s² electrons.)
 
-## 8.3 Zeolites
+## 15.2 Catenated silicon halides
 
-- Open 3D aluminosilicate framework with channels/cavities: molecular-sieve behaviour + ion exchange.
+Heating SiX₄ with Si gives lower/catenated halides. Longest chains: **Si₆Cl₁₄, Si₄Br₁₀, Si₁₆F₃₄**.
 
-- Natrolite source formula: Na₂[Al₂Si₃O₁₀]·2H₂O.
+SiCl₄ + Si [Δ] ⟶ Si₂Cl₆ + higher SiₙCl₂ₙ₊₂
 
-- Water softening: Na-zeolite exchanges Na⁺ for Ca²⁺/Mg²⁺; exhausted zeolite is regenerated by concentrated NaCl.
+## 15.3 Dihalides MX₂
 
-- Adsorption/separation: H₂O, CO₂, NH₃, alcohols; shape-selective separation of straight vs branched hydrocarbons.
+- Stability rises sharply: **CX₂ ≪ SiX₂ < GeX₂ < SnX₂ < PbX₂**.
+- **SiF₂** — made at high T, trapped cold; polymerises on warming.
+- **SnF₂, SnCl₂** — white solids; SnCl₂ partially hydrolyses to basic Sn(OH)Cl; both give halide complexes [SnF₃]⁻ (pK ≈ 1), [SnCl₃]⁻ (pK ≈ 2). SnCl₂ has a **bent** (V-shaped, about 95°) gas-phase structure — the Sn(II) lone pair is stereochemically active.
+- **PbX₂** far more stable than PbX₄; all four PbX₂ made from a soluble Pb²⁺ salt + halide ion.
 
-- NCERT adds catalytic importance; ZSM-5 is cited for converting alcohols into gasoline-range hydrocarbons.
+## 15.4 Carbon halides and fluorocarbons
 
-## 8.4 Glass
+CS₂ + 3Cl₂ [FeCl₃ catalyst] ⟶ CCl₄ + S₂Cl₂
 
-- Pure silica glass has excellent properties but requires very high processing temperature. Adding oxides lowers the melting/working temperature.
+CCl₄ + 2HF [SbCl₅/SbF₃ catalyst] ⟶ CCl₂F₂ + 2HCl  (a Freon)
 
-- Common modifiers in J.D. Lee/Guha: Na₂O/K₂O, CaO/MgO/BaO, B₂O₃, Al₂O₃, PbO, ZnO.
+CCl₄ + H₂O [superheated steam only] ⟶ COCl₂ + 2HCl
 
-- Soda-lime glass: Na₂O–CaO–SiO₂ family; potash glass uses K₂O. Lead glass has high refractive index. Borosilicate (Pyrex-type) has low thermal expansion and improved chemical resistance.
+- **CF₄** — exceptionally inert. **C₂F₄** polymerises to **PTFE (Teflon)** — chemically inert, low-friction, electrical insulator, withstands about 300 °C; non-stick cookware, gaskets. Catenated: (SiF₂)ₙ, (SiCl₂)ₙ silicon analogues exist; C forms only Teflon-type C chains.
+- **Freons / CFCs** (CFCl₃, CF₂Cl₂, CF₃Cl) — unreactive, non-toxic refrigerants/propellants, but potent greenhouse gases and **ozone destroyers**:
 
-- Glass colours: Fe³⁺ yellow-brown; Fe²⁺ light blue/with Fe³⁺ green; Co²⁺ deep blue; colloidal Cu ruby red. CaF₂ may be used to cloud/opalise glass in source text.
+CF₂Cl₂ [UV, upper atmosphere] ⟶ CF₂Cl• + Cl•
 
-# 9. Organosilicon compounds and silicones
+Cl• + O₃ ⟶ ClO• + O₂
 
-## 9.1 Making organochlorosilanes
+ClO• + O• ⟶ Cl• + O₂
 
-- Laboratory routes: stepwise Grignard/organolithium substitution on SiCl₄.
+**overall: 2O₃ ⟶ 3O₂**  (Cl• is a catalyst — one radical destroys many O₃)
 
-- Industrial Rochow direct process: methyl/aryl chloride + elemental silicon over Cu catalyst (~280–300 °C) gives a mixture dominated by R₂SiCl₂.
+## 15.5 Cyanides and cyanates (J.D. Lee carbon supplement)
 
-Si + 2CH₃Cl —(Cu catalyst, ~300 °C; major product)→ (CH₃)₂SiCl₂
+CN⁻ is the major carbon-based ligand. Beyond NCERT Group 14 core but useful for Advanced linkage.
 
-## 9.2 The functionality rule — memorize this
+Na + NH₃ ⟶ NaNH₂ + ½H₂
 
-**Monomer • Hydrolysis product role • Polymer effect**
+NaNH₂ + C [high T; Castner] ⟶ NaCN + H₂
 
-- **R₃SiCl** — R₃SiOH — chain stopper / end blocker
+CH₄ + NH₃ [about 1200 °C, Pt] ⟶ HCN + 3H₂
 
-- **R₂SiCl₂** — R₂Si(OH)₂ — linear chain builder; cyclics possible
+4Au + 8CN⁻ + O₂ + 2H₂O [cyanide leaching] ⟶ 4[Au(CN)₂]⁻ + 4OH⁻
 
-- **RSiCl₃** — RSi(OH)₃ — cross-linker / 3D network
+(CN)₂ + 2OH⁻ [alkaline disproportionation] ⟶ CN⁻ + NCO⁻ + H₂O
 
-R₂SiCl₂ + 2H₂O → R₂Si(OH)₂ + 2HCl
+- **HCN** — extremely poisonous, weakly acidic; high b.p. from H-bonded association. Like CO, CN⁻ is a σ-donor / π-acceptor; the negative charge makes it a **stronger** σ-donor but **weaker** π-acceptor than CO.
+- **Isoelectronic:** NCO⁻ (cyanate) and CO₂ — both linear (N=C=O, O=C=O).
 
-Condensation of silanols gives the siloxane backbone –Si–O–Si–O–. Controlled proportions of R₃SiCl/R₂SiCl₂/RSiCl₃ tune chain length and cross-link density.
+# 16. Complexes and internal pπ–dπ bonding
 
-> **TRAP:** R₂SiCl₂ is not a carbonyl analogue after hydrolysis: instead of a stable R₂Si=O "silicon ketone", the source chemistry proceeds by silanol condensation to silicones.
+## 16.1 Coordination expansion 4 → 6
 
-## 9.3 Silicone properties and uses
+Carbon (2nd period) has a maximum of 8 valence electrons and **cannot** exceed covalence 4, so carbon compounds do not act as donors/acceptors. Si, Ge, Sn, Pb use accessible d orbitals to reach coordination number 6:
 
-- Backbone stability derives from very strong Si–O bonds (Guha gives ~502 kJ mol⁻¹) plus strong Si–C bonds.
+SiF₄ + 2F⁻ ⟶ [SiF₆]²⁻   (sp³d², octahedral)
 
-- Resistant to heat, oxidation and many chemicals; water-repellent, electrically insulating, non-stick and anti-foaming.
+SnCl₄ + 2Cl⁻ ⟶ [SnCl₆]²⁻
 
-- Organic groups point outward, so the surface behaves hydrocarbon-like and repels water.
+GeCl₄ + 2Cl⁻ ⟶ [GeCl₆]²⁻
 
-- Forms: fluids/oils, greases, elastomers and resins. Uses include water repellents, polishes, transformer dielectric/hydraulic fluids, lubricants, sealants and electrical insulation.
+## 16.2 Trisilylamine vs trimethylamine — the classic MOT case
 
-- Guha/J.D. Lee silicone rubber: long dimethylpolysiloxane chains with filler (often finely divided SiO₂); broad useful elasticity range about −90 to +250 °C.
+> **MOT LENS — N(SiH₃)₃ is planar; N(CH₃)₃ is pyramidal.**
+> - In **N(CH₃)₃** nitrogen is sp³: three σ N–C bonds + one lone pair → **pyramidal**, and the lone pair makes it a good donor (basic).
+> - In **N(SiH₃)₃** nitrogen uses **sp²** for the three σ N–Si bonds; the "lone pair" sits in a pure **p orbital perpendicular to the NSi₃ plane** and is donated into empty **3d orbitals on Si (pπ–dπ)**. This π delocalisation flattens the molecule to **planar**, shortens the N–Si bonds, and removes the donor lone pair — so N(SiH₃)₃ is a **very weak base**.
+> - Carbon has no 3d orbital, so pπ–dπ is impossible in N(CH₃)₃ — hence pyramidal.
+> - About **200 compounds** are now thought to contain pπ–dπ bonds (also in SiF₄, the silicon halides, siloxanes, SiO₂). The same picture explains why **(SiH₃)₂O is nearly linear at O** while (CH₃)₂O is bent, and why silyl compounds are poorer donors than their carbon analogues.
 
-# 10. Hydrides of silicon and Group 14
+## 16.3 Lead tetraacetate — a Pb(IV) oxidant
 
-## 10.1 Silanes
+Pb₃O₄ + 8CH₃COOH [glacial] ⟶ Pb(CH₃COO)₄ + 2Pb(CH₃COO)₂ + 4H₂O
 
-- General saturated series SiₙH₂ₙ₊₂; much less extensive than carbon hydrocarbons because Si–Si catenation is weaker.
+Colourless, moisture-sensitive solid; a selective oxidant in organic chemistry, especially **cleavage of 1,2-diols (glycols)** to two carbonyl compounds (cf. periodic acid; important for carbohydrate structure work).
 
-- Source reports straight/branched silanes up to about eight Si atoms; ring analogues rare and ordinary alkene/alkyne analogues are not part of the classical chapter treatment.
+# 17. Tin chemistry — reaction map
 
-2Mg + Si —(heat, absence of air)→ Mg₂Si
+## 17.1 Oxides SnO and SnO₂
 
-Acid hydrolysis of Mg₂Si gives a mixture dominated by lower silanes. Guha source distribution: SiH₄ ~40%, Si₂H₆ ~30%, Si₃H₈ ~15%, Si₄H₁₀ ~10%, higher ~5%.
+- **SnO** grey; **SnO₂** white. **Both amphoteric.**
 
-SiCl₄ + LiAlH₄ → SiH₄ + AlCl₃ + LiCl
+SnC₂O₄ [Δ, no air] ⟶ SnO + CO₂ + CO
 
-Si₂Cl₆ + 6LiH → Si₂H₆ + 6LiCl
+SnC₂O₄ + O₂ [Δ, air] ⟶ SnO₂ + 2CO₂
 
-Si₃Cl₈ + 8NaH → Si₃H₈ + 8NaCl
+Sn(OH)₂ [Δ, no air] ⟶ SnO + H₂O
 
-## 10.2 Why silanes are more reactive than alkanes
+Sn + O₂ [strong heat] ⟶ SnO₂
 
-- Si–H polarity is opposite to C–H in the source electronegativity comparison: Si (1.8) < H (2.1) < C (2.5), so Si is δ⁺ and susceptible to nucleophilic attack.
+SnO + 2HCl ⟶ SnCl₂ + H₂O
 
-- Larger silicon centre is easier to approach.
+SnO₂ + 2H₂SO₄ [hot concentrated — the only acid that dissolves SnO₂; not even aqua regia] ⟶ Sn(SO₄)₂ + 2H₂O
 
-- Classical source explanation also invokes accessible d orbitals lowering activation energy through higher-coordinate intermediates.
+SnO + 2NaOH [cold] ⟶ Na₂[Sn(OH)₄]
 
-- Silanes are strong reducing agents, ignite in air and can explode with Cl₂; alkaline water hydrolyses them readily.
+2SnO + 2NaOH [hot; disproportionation] ⟶ Na₂SnO₃ + Sn + H₂O
 
-Si₂H₆ + (4+n)H₂O —(trace alkali)→ 2SiO₂·nH₂O + 7H₂
+SnO₂ + 2NaOH + 2H₂O ⟶ Na₂[Sn(OH)₆]
 
-RCH=CH₂ + HSiCl₃ —(Pt catalyst; hydrosilation)→ RCH₂CH₂SiCl₃
+## 17.2 SnCl₂ / SnCl₄ and the preservation trick
 
-## 10.3 Germanes, stannanes and plumbane — J.D. Lee advanced
+Sn + 2HCl [hot concentrated] ⟶ SnCl₂ + H₂
 
-- Germanes GeₙH₂ₙ₊₂ are reported up to about n = 5 in the source. They are analogous to silanes but less volatile/flammable and more resistant to water/aqueous acid/base.
+SnCl₂·2H₂O [Δ] ⟶ Sn(OH)Cl + HCl   (so anhydrous SnCl₂ cannot be made this way)
 
-GeCl₄ + LiAlH₄ —(schematic source reduction)→ GeH₄ + LiCl + AlCl₃
+- A **piece of tin metal is kept in SnCl₂ solution**: air slowly oxidises Sn(II) to Sn(IV), and the added Sn reduces it back:
 
-- Stannane SnH₄ is much less stable and strongly reducing; distannane Sn₂H₆ is known but still less stable. Higher stannanes are not part of the source series.
+6SnCl₂ + 2H₂O + O₂ ⟶ 2SnCl₄ + 4Sn(OH)Cl↓
 
-- Plumbane PbH₄ is even less stable and is described only in trace/low-concentration preparation and detection. Hydride stability therefore falls strongly Si → Ge → Sn → Pb.
+SnCl₄ + Sn ⟶ 2SnCl₂
 
-# 11. Complexes and halides
+SnCl₄ + 2HCl ⟶ H₂[SnCl₆]  (hexachlorostannic(IV) acid)
 
-## 11.1 Coordination expansion
+SnCl₄ + 2NH₄Cl ⟶ (NH₄)₂[SnCl₆]  ("pink salt", a calico-printing mordant)
 
-In the textbook convention, tetravalent carbon is electron-precise and does not normally accept extra donor pairs, whereas Si/Ge/Sn/Pb can increase coordination, commonly 4→6.
+- SnCl₄·5H₂O = "butter of tin" (mordant). Formation of SnCl₄: Sn + 2Cl₂ (excess, dry); 2HgCl₂ + SnCl₂ → SnCl₄ + Hg₂Cl₂; Sn + aqua regia.
 
-SiF₄ + 2F⁻ → [SiF₆]²⁻
+## 17.3 Sn(II) as a reducing agent — the named set
 
-SnCl₄ + 2Cl⁻ → [SnCl₆]²⁻
+SnCl₂ + 2FeCl₃ ⟶ SnCl₄ + 2FeCl₂
 
-**[SIF₆]²⁻ VS [SICL₆]²⁻:** NCERT asks this directly: [SiF₆]²⁻ is stable, whereas [SiCl₆]²⁻ is not favoured because six large Cl⁻ ions cannot be accommodated effectively around Si and Si–Cl donor interaction is weaker.
+SnCl₂ + 2CuCl₂ ⟶ SnCl₄ + 2CuCl↓  (white)
 
-## 11.2 Tetrahalides MX₄
+SnCl₂ + 2HgCl₂ ⟶ SnCl₄ + Hg₂Cl₂↓  (white)
 
-- All tetrahalides are cited except PbI₄. Most are covalent, tetrahedral and volatile.
+SnCl₂(excess) + Hg₂Cl₂ ⟶ SnCl₄ + 2Hg↓  (grey/black)
 
-- Exceptions: SnF₄ and PbF₄ are extended/ionic-type high-melting solids in NCERT/Guha.
+2Bi(OH)₃ + 3Na₂[Sn(OH)₄] ⟶ 2Bi↓ (black) + 3Na₂[Sn(OH)₆]
 
-- Hydrolysis trend: carbon tetrahalides resist normal hydrolysis; Si/Ge/Sn/Pb tetrahalides hydrolyse because the heavier central atom can accept donor attack in the source model.
+SnCl₂ + 2PhNO₂ + 6HCl ⟶ 2PhNH₂ + SnCl₄ + ...  (nitro → amine)
 
-SiCl₄ + 4H₂O → Si(OH)₄ + 4HCl
+K₂Cr₂O₇ + SnCl₂ + HCl ⟶ Cr³⁺ + SnCl₄ + KCl + H₂O
 
-SiF₄ + 2HF → 2H⁺ + [SiF₆]²⁻
+SnCl₂ + I₂ ⟶ SnCl₂I₂   (used to estimate tin)
 
-> **PBI₄:** It is not stable: Pb(IV) is strongly oxidising and I⁻ is reducing, so Pb(IV) oxidises iodide to I₂ while itself becoming Pb(II); PbI₂ is formed instead.
+> **ANALYTICAL TRAP (SnCl₂ + HgCl₂):** limited SnCl₂ → white Hg₂Cl₂; **excess** SnCl₂ → grey/black Hg metal. Also the basis of **"purple of Cassius"**: SnCl₂ reduces AuCl₃ to colloidal gold on a hydrated tin(IV) oxide carrier — a purple pigment/test for Au(III).
 
-## 11.3 Carbon halides & fluorocarbons
+## 17.4 Other tin facts
 
-- CF₄ is exceptionally inert. C₂F₄ polymerises to PTFE, a chemically inert, low-friction electrical insulator.
+- **Mosaic gold, SnS₂** — golden-yellow flaky solid, made by heating Sn/SnO₂ with S and NH₄Cl; used as a bronzing pigment ("gilding" cheap articles).
 
-CS₂ + 3Cl₂ —(FeCl₃ catalyst, source industrial route)→ CCl₄ + S₂Cl₂
+Sn + 2S ⟶ SnS₂
 
-CCl₄ resists normal hydrolysis in the classical treatment; with superheated steam it can form phosgene COCl₂ + HCl.
+- **Sn²⁺ vs Sn⁴⁺ test:** Sn²⁺ gives a brown/black precipitate with H₂S (SnS), reduces HgCl₂, and gives Prussian-blue with Fe³⁺/K₃[Fe(CN)₆]. Sn⁴⁺ gives yellow SnS₂ with H₂S.
+- **α-Sn (grey, diamond structure) ⇌ β-Sn (white, metallic)** at 13.2 °C — "tin pest"/"tin disease" in cold climates; a direct structure-vs-metallicity illustration.
+- **Ge liquid expands on freezing** (like Ga and Bi).
 
-CCl₄ + H₂O —(superheated steam)→ COCl₂ + 2HCl
+# 18. Lead chemistry — mixed oxides and Pb(IV) oxidation
 
-- Older source pages discuss CFC/Freon ozone chemistry: UV releases Cl radicals; catalytic cycle converts O₃ to O₂ with overall 2O₃ → 3O₂.
+## 18.1 The four oxides
 
-## 11.4 Silicon halides and catenated halides
+| Oxide | Colour / identity | Notes |
+|:--|:--|:--|
+| **PbO** | massicot (yellow) / litharge (red) | amphoteric; Pb(II) |
+| **PbO₂** | dark brown | Pb(IV), strong oxidant, amphoteric |
+| **Pb₂O₃** | reddish-yellow (sesquioxide) | mixed oxide **PbO·PbO₂** |
+| **Pb₃O₄** | bright red ("red lead", "minium") | mixed oxide **2PbO·PbO₂** |
 
-- SiX₄ formed from Si/SiC + halogen; readily hydrolysed.
+## 18.2 Preparations
 
-- SiCl₄ is used for high-purity Si chemistry and high-temperature hydrolysis to ultrafine SiO₂.
+2Pb(NO₃)₂ [Δ] ⟶ 2PbO + 4NO₂ + O₂
 
-- Heating SiX₄ with Si can generate lower/catenated silicon halides. Longest chains quoted: Si₁₆F₃₄, Si₆Cl₁₄, Si₄Br₁₀.
+PbO₂ / Pb₃O₄ / Pb₂O₃ [above 600 °C] ⟶ PbO + O₂
 
-SiCl₄ + Si → Si₂Cl₆ + higher SiₙCl₂ₙ₊₂
+6PbO + O₂ [about 350 °C ⇌ 500 °C] ⇌ 2Pb₃O₄
 
-## 11.5 Dihalides MX₂
+2PbO + NaOCl [limited, hot alkaline] ⟶ Pb₂O₃ + NaCl
 
-Thermal/chemical stability of dihalides increases sharply down the group: CX₂ << SiX₂ < GeX₂ < SnX₂ < PbX₂.
+Pb₃O₄ + 4HNO₃ [cold dilute] ⟶ 2Pb(NO₃)₂ + PbO₂↓ + 2H₂O
 
-- SiF₂ can be generated at high T and trapped at low T; on warming it polymerises to higher fluorosilicon species.
+Pb(CH₃COO)₂ + Ca(OCl)Cl + H₂O ⟶ PbO₂↓ + CaCl₂ + 2CH₃COOH
 
-- SnF₂ and SnCl₂ are white solids. SnCl₂ partially hydrolyses to basic Sn(OH)Cl and forms halide complexes [SnF₃]⁻ / [SnCl₃]⁻.
+## 18.3 Mixed-oxide proof and PbO amphoterism
 
-- PbX₂ compounds are much more stable than PbX₄, consistent with inert-pair effect.
+> **MIXED-OXIDE PROOF:** Dilute HNO₃ dissolves only the **PbO** part of Pb₃O₄ / Pb₂O₃, leaving insoluble **brown PbO₂**. Pb₃O₄ + 4HNO₃ → 2Pb(NO₃)₂ + PbO₂↓ + 2H₂O confirms Pb₃O₄ = 2PbO·PbO₂. Pb₂O₃ + 2HNO₃ → Pb(NO₃)₂ + PbO₂↓ + H₂O confirms Pb₂O₃ = PbO·PbO₂.
 
-## 11.6 Cyanides and cyanates — J.D. Lee carbon supplement
+PbO + 2HNO₃ ⟶ Pb(NO₃)₂ + H₂O
 
-J.D. Lee places cyanide chemistry in the Group 14 chapter because the cyanide ion is a major carbon-based ligand. This is beyond NCERT Group 14 core but useful for Advanced linkage questions.
+PbO + 2NaOH + H₂O ⟶ Na₂[Pb(OH)₄]
 
-Na + NH₃ → NaNH₂ + ½H₂
+PbO + C [Δ] ⟶ Pb + CO   (PbO easily reduced by C or H₂)
 
-NaNH₂ + C —(high T; Castner source route)→ NaCN + H₂
+## 18.4 PbO₂ — amphoteric but a powerful oxidant
 
-CH₄ + NH₃ —(high T, Pt; source industrial route)→ HCN + 3H₂
+PbO₂ + 4HCl [hot] ⟶ PbCl₂ + Cl₂ + 2H₂O
 
-- HCN is extremely poisonous and weakly acidic; its relatively high boiling point is attributed to intermolecular association/hydrogen bonding in the source.
+PbO₂ + 4HCl [ice-cold, saturated with Cl₂] ⟶ PbCl₄ + 2H₂O
 
-- CN⁻ forms very stable transition-metal complexes. Like CO, it is a σ donor and π acceptor; its negative charge makes it a stronger σ donor than CO but a weaker π acceptor.
+PbCl₄ + 2HCl ⟶ H₂[PbCl₆]
 
-4Au + 8CN⁻ + O₂ + 2H₂O —(cyanide leaching, net ionic)→ 4[Au(CN)₂]⁻ + 4OH⁻
+2PbO₂ + 2H₂SO₄ [hot concentrated] ⟶ 2PbSO₄ + O₂ + 2H₂O
 
-2Cu²⁺ + 4CN⁻ —(redox + complex chemistry)→ 2CuCN + (CN)₂
+PbO₂ + 2NaOH + 2H₂O ⟶ Na₂[Pb(OH)₆]
 
-(CN)₂ + 2OH⁻ —(alkaline disproportionation)→ CN⁻ + NCO⁻ + H₂O
+PbO₂ + SO₂ ⟶ PbSO₄  (spontaneous)
 
-> **ISOELECTRONIC LINK:** NCO⁻ (cyanate) and CO₂ are treated as isoelectronic linear species in J.D. Lee: N=C=O and O=C=O.
+PbO₂ + H₂C₂O₄ + 2HNO₃ ⟶ Pb(NO₃)₂ + 2CO₂ + 2H₂O
 
-## 11.7 SnCl₂ / SnCl₄ source extras
+5PbO₂ + 2Mn(NO₃)₂ + 6HNO₃ ⟶ 5Pb(NO₃)₂ + 2HMnO₄ + 2H₂O  (colourless → purple; the classic Mn test)
 
-Sn + 2HCl —(hot conc. HCl)→ SnCl₂ + H₂
+> **CORE REDOX IDEA:** Pb(IV) oxidises any oxidisable anion. **With HCl** → Cl₂; **with hot conc. H₂SO₄** → O₂; **with HNO₃** → no reaction (NO₃⁻ cannot be oxidised, and Pb(IV) is already highest) — so PbO₂ **survives** the HNO₃ test as the brown residue. The Mn(II) → MnO₄⁻ and oxalate tests must use HNO₃, not HCl/H₂SO₄, or Pb(IV) is consumed first.
 
-- A piece of metallic Sn is kept in SnCl₂ solution in the Allen notes because air oxidation produces Sn(IV); added Sn reduces Sn(IV) back to Sn(II): SnCl₄ + Sn → 2SnCl₂.
+## 18.5 Lead(IV) chloride and tetraethyllead
 
-SnCl₄ + Sn → 2SnCl₂
+- PbCl₄ — yellow oil, exists only in cold conc. Cl⁻; decomposes to PbCl₂ + Cl₂ on warming; stabilised as H₂[PbCl₆] / (NH₄)₂[PbCl₆].
 
-SnCl₄ + 2HCl → H₂[SnCl₆]
+4Na–Pb (alloy, 10% Na) + 4C₂H₅Cl [vapour] ⟶ Pb(C₂H₅)₄ + 4NaCl
 
-SnCl₄ + 2NH₄Cl → (NH₄)₂SnCl₆
+**Tetraethyllead** — historic petrol "anti-knock" additive; a toxic, now-banned organolead compound. Treat as historical chemistry.
 
-- (NH₄)₂SnCl₆ is labelled Pink's salt in the annotation source. SnCl₄·5H₂O is labelled butter of tin and used historically as a mordant.
+# 19. One-page reaction networks
 
-# 12. Tin chemistry — reaction map
+## 19.1 Carbon / CO / CO₂
 
-## 12.1 SnO and SnO₂
+C ─(limited O₂)→ CO ─(O₂)→ CO₂ ─(Ca(OH)₂)→ CaCO₃ ─(excess CO₂ + H₂O)→ Ca(HCO₃)₂
 
-- SnO = grey; SnO₂ = white. Both amphoteric.
+CO ─(Cl₂, sunlight)→ COCl₂ ─(H₂O)→ CO₂ + HCl
 
-SnC₂O₄ —(heat, absence of air)→ SnO + CO₂ + CO
+CO ─(S)→ COS ; CO ─(metal oxide)→ metal + CO₂ ; CO ─(Ni, Δ)→ Ni(CO)₄
 
-SnC₂O₄ + O₂ —(heat, air)→ SnO₂ + 2CO₂
+HCOOH ─(conc. H₂SO₄)→ CO ; K₄[Fe(CN)₆] ─(conc. H₂SO₄)→ CO
 
-Sn(OH)₂ —(heat, absence of air)→ SnO + H₂O
+## 19.2 Silicon
 
-Sn + O₂ —(strong heat)→ SnO₂
+SiO₂ ─(C, high T)→ Si ─(Cl₂)→ SiCl₄ ─(H₂O)→ Si(OH)₄ / SiO₂·xH₂O
 
-SnO + 2HCl → SnCl₂ + H₂O
+Si ─(C, 2500 °C)→ SiC ; Si ─(2NaOH + H₂O)→ Na₂SiO₃ + H₂ ; Si ─(2F₂)→ SiF₄
 
-SnO₂ + 2H₂SO₄ —(hot conc. H₂SO₄)→ Sn(SO₄)₂ + 2H₂O
+SiCl₄ ─(LiAlH₄)→ SiH₄ ; SiF₄ ─(2HF)→ H₂[SiF₆]
 
-SnO + 2NaOH + H₂O —(cold)→ Na₂[Sn(OH)₄]
+R₂SiCl₂ ─(H₂O)→ R₂Si(OH)₂ ─(condensation)→ silicone
 
-2SnO + 2NaOH —(hot)→ Na₂SnO₃ + Sn + H₂O
+SiO₂ ─(Na₂CO₃, fused)→ Na₂SiO₃ (water glass) ; SiO₂ ─(4HF)→ SiF₄
 
-SnO₂ + 2NaOH + 2H₂O → Na₂[Sn(OH)₆]
+## 19.3 Tin
 
-## 12.2 Sn(II) is a reducing agent — named reaction set
+Sn ─(hot conc. HCl)→ SnCl₂ ─(oxidants: Fe³⁺, Cu²⁺, Hg²⁺, Cr₂O₇²⁻)→ SnCl₄
 
-SnCl₂ + 2FeCl₃ → SnCl₄ + 2FeCl₂
+Sn ─(hot conc. HNO₃)→ metastannic acid (SnO₂·xH₂O)
 
-SnCl₂ + 2CuCl₂ → SnCl₄ + 2CuCl↓
+SnO ─(acid)→ Sn²⁺ ; SnO ─(cold NaOH)→ [Sn(OH)₄]²⁻ ; SnO₂ ─(NaOH/H₂O)→ [Sn(OH)₆]²⁻
 
-SnCl₂ + 2HgCl₂ → SnCl₄ + Hg₂Cl₂↓
+Sn ─(S, NH₄Cl, Δ)→ SnS₂ (mosaic gold)
 
-SnCl₂(excess) + Hg₂Cl₂ → SnCl₄ + 2Hg↓
+## 19.4 Lead
 
-Bi(OH)₃ + [Sn(OH)₄]²⁻ → Bi↓ + [Sn(OH)₆]²⁻
+PbO ─(O₂, 350 °C)→ Pb₃O₄ ─(>500 °C)→ PbO + O₂
 
-- Sn(II) also reduces Fe(III), dichromate, Au(III), nitro compounds etc. The direction is always Sn²⁺ → Sn⁴⁺.
+Pb₃O₄ ─(dil. HNO₃)→ Pb(NO₃)₂ + PbO₂↓
 
-> **ANALYTICAL TRAP:** With HgCl₂: limited SnCl₂ gives white Hg₂Cl₂; excess SnCl₂ reduces further to black/grey Hg metal.
+PbO₂ ─(HCl)→ PbCl₂ + Cl₂ ; PbO₂ ─(hot conc. H₂SO₄)→ PbSO₄ + O₂ ; PbO₂ ─(HNO₃)→ no reaction
 
-## 12.3 Tin halide/source facts
+Pb₃O₄ ─(glacial CH₃COOH)→ Pb(OAc)₄ ─(glycols)→ 2 carbonyl compounds
 
-- Sn(IV) is more stable than Sn(II) compared with lead chemistry; SnI₄ is a bright orange solid in J.D. Lee/Guha and is discussed as a charge-transfer colour.
+# 20. JEE Advanced traps and derived tools
 
-- SnCl₄ hydrolyses, but hydrolysis is suppressed by added HCl; excess Cl⁻ can form [SnCl₆]²⁻.
+1. **ΔᵢH₁** order is C > Si > Ge > **Pb > Sn** — not a smooth decrease.
+2. Size jump is large **C → Si**; small **Si → Ge** (3d¹⁰) and **Sn → Pb** (4f¹⁴).
+3. Down the group **+2 stability rises**, but read the redox role: **Sn(II) reducing, Pb(IV) oxidising**.
+4. **CCl₄ resists hydrolysis** (no d orbital, no 5-coordinate path); **SiCl₄ hydrolyses fast** via a 5-coordinate intermediate.
+5. **PbI₄ does not exist** → the self-consistent products are **PbI₂ + I₂**.
+6. **SnF₄ and PbF₄** are ionic solids — exceptions to "MX₄ is volatile covalent".
+7. **Diamond** is kinetically stable but **thermodynamically less stable than graphite** (Δ_fH° diamond +1.90 kJ mol⁻¹).
+8. Graphite conducts **within** sheets; the weak interlayer contact does **not** conduct perpendicular.
+9. **Fullerene Cₙ:** 12 pentagons always; hexagons **n/2 − 10**; C–C edges **3n/2**. C₆₀ → 90 C–C bonds, 20 hexagons.
+10. Donor/acceptor **intercalation** can raise graphite's conductivity; **graphite oxide / fluoride** lose it (π system destroyed).
+11. **Carbide hydrolysis identifies the anion:** CH₄ ⇒ C⁴⁻; C₂H₂ ⇒ C₂²⁻; propyne ⇒ C₃ unit (Mg₂C₃).
+12. **Interstitial carbides:** metallic lustre/conductivity retained; hardness/density up; malleability/ductility down.
+13. **CO neutral, CO₂ acidic;** dioxide acidity falls down the group; SnO₂/PbO₂ amphoteric; **GeO acidic**, SnO/PbO amphoteric, CO neutral.
+14. **CO₂ into limewater:** milky first, **clears in excess** (Ca(HCO₃)₂). SO₂ also does this — separate by acidified KMnO₄.
+15. **Water gas = CO + H₂; producer gas = CO + N₂; coal gas = CO + H₂ + CH₄.** Do not swap.
+16. **M–CO bond** needs **both** σ-donation and π back-donation; back-donation weakens C–O (lower IR stretch).
+17. **Fe₂(CO)₉:** count each bridging CO twice → 12 Fe–C bonds; 6 terminal + 3 bridging.
+18. **SiO₄⁴⁻ tetrahedral; CO₃²⁻ planar; CO₄⁴⁻ does not exist.** Silicate charge shortcut: x shared O ⇒ O/Si = 4 − x/2, charge/Si = −(4 − x).
+19. **Cyclic and single-chain silicates share formula (SiO₃)ₙ²ⁿ⁻** — ring finite, chain infinite. Wollastonite Ca₃(SiO₃)₃ is a **chain**, not a ring.
+20. **R₃SiCl** stopper · **R₂SiCl₂** builder · **RSiCl₃** cross-linker. R₂Si(OH)₂ condenses — it does **not** give R₂Si=O.
+21. **Silanes > alkanes in reactivity;** Si is **δ+** in Si–H because EN(Si) < EN(H); silanes pyrophoric and hydrolysed by trace base.
+22. **[SiF₆]²⁻ exists, [SiCl₆]²⁻ does not** — size crowding + weak Si–Cl donor interaction.
+23. **N(SiH₃)₃ planar** (N sp², lone pair → Si 3d, pπ–dπ); **N(CH₃)₃ pyramidal** (no d orbital on C). N(SiH₃)₃ is a weak base.
+24. **Pb₂O₃ = PbO·PbO₂; Pb₃O₄ = 2PbO·PbO₂** — proven by HNO₃ leaving brown PbO₂.
+25. **PbO₂:** with HCl → Cl₂; with hot conc. H₂SO₄ → O₂; with HNO₃ → no reaction (survives as brown solid).
+26. **α/β graphite:** ABAB vs ABCABC. Heating β→α; grinding α→β.
+27. **SnI₄ / GeI₄ orange** — charge-transfer absorption; exception to "main-group halides are colourless".
+28. **Catenation** reason = high **C–C bond enthalpy** (348), not merely "carbon is small".
+29. **A piece of Sn** is kept in SnCl₂ solution because air oxidises Sn(II); Sn + SnCl₄ → 2SnCl₂ regenerates it.
+30. **GeX₄ > GeX₂** in stability, but **PbX₂ > PbX₄** (inert-pair effect crosses over between Ge and Pb).
+31. **SnO₂ dissolves only in hot conc. H₂SO₄** — not in HCl, HNO₃, or even aqua regia.
+32. The older texts use **"vacant d-orbital"** language for expanded covalence and hydrolysis. In a source-aligned answer, use that model consistently rather than mixing pictures.
 
-# 13. Lead chemistry — mixed oxides and Pb(IV) oxidation
+# 21. Ultra-fast final revision
 
-## 13.1 Four important lead oxides
+**C** — small, pπ–pπ multiple bonds, catenation, allotropy, electron-precise +4. **Si** — network SiO₂, silicates (7 classes), silicones, silanes, hydrolysable SiCl₄. **Ge** — metalloid bridge, +4 stable, GeX₄ > GeX₂. **Sn** — +2 and +4, Sn²⁺ reducing, SnO/SnO₂ amphoteric, tin pest. **Pb** — +2 dominant, Pb⁴⁺/PbO₂ oxidising, mixed oxides, strong passivation.
 
-**Oxide • Colour / identity**
+| Recall trigger | Answer |
+|:--|:--|
+| ΔᵢH₁ order | C > Si > Ge > Pb > Sn |
+| Dioxide acidity | CO₂ > SiO₂ > GeO₂ > SnO₂ > PbO₂ |
+| Catenation | C ≫ Si > Ge ≈ Sn; Pb nil |
+| Stable Pb state | +2 |
+| Strong reductant | Sn(II) |
+| Strong oxidant | Pb(IV) / PbO₂ |
+| Non-hydrolysed tetrahalide | CCl₄ (normal conditions) |
+| Absent tetrahalide | PbI₄ |
+| Ionic MX₄ | SnF₄, PbF₄ |
+| Fullerene pentagons | 12 (always) |
+| Silicate base unit | SiO₄⁴⁻ tetrahedron |
+| Silicone chain builder | R₂SiCl₂ |
+| Carbide → propyne | Mg₂C₃ |
+| CO₂ test | limewater milkiness, clears in excess |
+| CO antidote | carbogen (95% O₂ + 5% CO₂) |
+| Graphite in-layer C–C / interlayer | 141.5 pm / 340 pm |
+| ¹⁴C half-life (NCERT) | 5770 y |
+| Blood buffer pH | 7.26–7.42 |
+| Planar silyl amine | N(SiH₃)₃ (pπ–dπ) |
+| Only acid that dissolves SnO₂ | hot conc. H₂SO₄ |
 
-- **PbO** — massicot yellow; litharge red/reddish-yellow
+# 22. Low-frequency but source-testable facts
 
-- **PbO₂** — dark brown; Pb(IV), strong oxidant
+- Natural diamonds usually contain trace N; "blue" diamonds contain Al; industrial diamonds are often black.
+- Graphite was used as a neutron moderator in gas-cooled reactors.
+- Very pure Ge is IR-transparent → IR optics.
+- α-Sn (grey, diamond-type) ⇌ β-Sn (white, metallic) at 13.2 °C — "tin pest".
+- Vitreous silica: very low thermal expansion, transmits UV → quartz optical cells.
+- Opal = hydrated amorphous silica; agate, onyx, carnelian, jasper, flint = silica-rich microcrystalline forms coloured by impurities.
+- SnI₄ orange from charge-transfer absorption — an exception to the "main-group halides are colourless" heuristic.
+- Boron carbide is written **B₄C** for exams; true stoichiometry (near B₁₃C₂) and structure are more complex.
+- TaC has one of the highest known melting points (about 3900 °C); WC is a key cutting-tool carbide — both show why interstitial carbides are refractory.
+- Pb sheet lined the floor of the Hanging Gardens of Babylon (to hold water) — lead has been worked since before Biblical times.
 
-- **Pb₂O₃** — reddish-yellow; PbO·PbO₂ mixed oxide
+# 23. Source coverage checklist
 
-- **Pb₃O₄** — red lead; 2PbO·PbO₂ mixed oxide
+This chapter consolidates the Group 14 content of the four standard exam sources; what each contributes:
 
-## 13.2 PbO and mixed oxides
-
-Pb(NO₃)₂ —(heat)→ PbO + 2NO₂ + ½O₂
-
-PbO + 2HCl → PbCl₂ + H₂O
-
-PbO + 2NaOH + H₂O → Na₂[Pb(OH)₄]
-
-2PbO + NaOCl —(hot alkaline medium; limited oxidant)→ Pb₂O₃ + NaCl
-
-Pb₂O₃ + 2HNO₃ → Pb(NO₃)₂ + PbO₂↓ + H₂O
-
-> **MIXED-OXIDE PROOF:** HNO₃ dissolves the PbO component while PbO₂ remains brown. This behaviour demonstrates Pb₂O₃ = PbO·PbO₂ and Pb₃O₄ = 2PbO·PbO₂.
-
-6PbO + O₂ ⇌ 2Pb₃O₄
-
-Pb₃O₄ + 4HNO₃ → 2Pb(NO₃)₂ + PbO₂↓ + 2H₂O
-
-Pb₃O₄ + 8HCl → 3PbCl₂ + Cl₂ + 4H₂O
-
-2Pb₃O₄ + 6H₂SO₄ → 6PbSO₄ + O₂ + 6H₂O
-
-## 13.3 PbO₂: amphoteric but strongly oxidising
-
-PbO₂ + 2NaOH + 2H₂O → Na₂[Pb(OH)₆]
-
-PbO₂ + 4HCl —(hot)→ PbCl₂ + Cl₂ + 2H₂O
-
-2PbO₂ + 2H₂SO₄ —(hot conc.)→ 2PbSO₄ + O₂ + 2H₂O
-
-PbO₂ + SO₂ —(spontaneous)→ PbSO₄
-
-- PbO₂ does not dissolve in HNO₃ in the Guha/Allen reaction scheme; this is why it survives as the brown residue in nitric-acid tests of mixed lead oxides.
-
-- In cold concentrated chloride medium, source schemes show PbCl₄ / H₂[PbCl₆] formation before the familiar hot-HCl reduction to PbCl₂ + Cl₂.
-
-> **CORE REDOX IDEA:** Every acid containing an oxidisable anion/reductant can consume Pb(IV). With HCl, Cl⁻ is oxidised to Cl₂. PbO₂ therefore behaves very differently in HNO₃ versus HCl.
-
-## 13.4 Pb halides and organolead historical source fact
-
-- Pb(II) halides are the stable family; PbI₄ is not known/stable.
-
-- Older J.D. Lee/Guha sources discuss tetraethyl lead PbEt₄ as an anti-knock petrol additive; the same sources explicitly note lead toxicity and phase-out/banning. Treat this as historical chemistry, not a current-use recommendation.
-
-# 14. One-page reaction networks
-
-## 14.1 Carbon / CO / CO₂ network
-
-C —limited O₂→ CO —O₂→ CO₂ —Ca(OH)₂→ CaCO₃ —CO₂/H₂O→ Ca(HCO₃)₂
-
-CO —Cl₂→ COCl₂ —H₂O→ CO₂ + HCl
-
-CO —S→ COS
-
-CO —metal oxides→ CO₂ + metal
-
-## 14.2 Silicon network
-
-SiO₂ —C/high T→ Si —Cl₂→ SiCl₄ —H₂O→ Si(OH)₄ / SiO₂·xH₂O
-
-Si —C/high T→ SiC
-
-SiCl₄ —LiAlH₄→ SiH₄
-
-R₂SiCl₂ —H₂O→ R₂Si(OH)₂ —condensation→ silicone
-
-## 14.3 Tin network
-
-Sn(II) —oxidation/reduction of other species→ Sn(IV)
-
-SnO —acid→ Sn²⁺ salts; SnO —cold NaOH→ [Sn(OH)₄]²⁻
-
-SnO₂ —strong acid→ Sn(IV) salts; SnO₂ —NaOH/H₂O→ [Sn(OH)₆]²⁻
-
-## 14.4 Lead network
-
-PbO —O₂, 350 °C→ Pb₃O₄ —500 °C→ PbO + O₂
-
-Pb₃O₄ —HNO₃→ Pb(NO₃)₂ + PbO₂
-
-PbO₂ —HCl→ PbCl₂ + Cl₂; PbO₂ —H₂SO₄→ PbSO₄ + O₂
-
-# 15. JEE Advanced traps and derived tools
-
-**1.** Do not write "IE decreases regularly down Group 14." Correct IE₁ order: C > Si > Ge > Pb > Sn.
-
-**2.** +2 stability increases down the group, but reducing/oxidising character must be read carefully: Sn(II) reducing; Pb(IV) oxidising.
-
-**3.** CCl₄ is not normally hydrolysed in the textbook model, whereas SiCl₄ is rapidly hydrolysed.
-
-**4.** PbI₄ is absent because Pb(IV) oxidises I⁻; the chemically self-consistent product is PbI₂ + I₂.
-
-**5.** SnF₄/PbF₄ are exceptions to the usual volatile covalent tetrahalide picture.
-
-**6.** Diamond is kinetically stable but thermodynamically less stable than graphite under ordinary conditions.
-
-**7.** Graphite conducts within layers; weak interlayer contact does not mean good conduction perpendicular to layers.
-
-**8.** Fullerene Cₙ: 12 pentagons always; H = n/2 − 10; C–C edges = 3n/2.
-
-**9.** C₆₀ is a molecular solid/cage; diamond and graphite are extended lattices.
-
-**10.** Intercalation compounds can increase graphite conductivity; graphite oxide/fluoride lose conductivity because π delocalisation is disrupted.
-
-**11.** Carbide hydrolysis identifies the carbon unit: C → CH₄; C₂²⁻ → C₂H₂; C₃ unit (Mg₂C₃) → propyne.
-
-**12.** Interstitial carbides: metallic lustre/conductivity persist, but hardness/density rise and malleability/ductility fall.
-
-**13.** CO is neutral; CO₂ acidic. The dioxides become less acidic down the group; SnO₂/PbO₂ are amphoteric.
-
-**14.** CO₂ passed into limewater: precipitate first, then dissolves in excess CO₂.
-
-**15.** Water gas = CO + H₂; producer gas = CO + N₂. Do not interchange them.
-
-**16.** CO carbonyl bonding requires both σ donation and π backbonding for the strong transition-metal bond.
-
-**17.** Fe₂(CO)₉: count bridging ligands twice for Fe–C bond count.
-
-**18.** SiO₄⁴⁻ is tetrahedral; carbonate CO₃²⁻ is planar. CO₄⁴⁻ is not the silicate analogue.
-
-**19.** Silicate formula shortcut: x shared O per Si → O/Si = 4 − x/2 and charge/Si = −(4 − x).
-
-**20.** R₃SiCl is chain stopper; R₂SiCl₂ chain builder; RSiCl₃ cross-linker.
-
-**21.** Silanes are more reactive than alkanes; Si is δ⁺ in Si–H because EN(Si) < EN(H).
-
-**22.** [SiF₆]²⁻ exists while [SiCl₆]²⁻ is disfavoured: size/crowding + weaker interaction, per NCERT.
-
-**23.** SnCl₂ + HgCl₂: white Hg₂Cl₂ first; excess SnCl₂ gives Hg metal.
-
-**24.** Pb₂O₃ and Pb₃O₄ are mixed-valence/mixed oxides; HNO₃ leaves PbO₂ residue.
-
-**25.** PbO₂ with HCl evolves Cl₂; with hot H₂SO₄ evolves O₂; with HNO₃ it remains as brown PbO₂ in the source reaction scheme.
-
-**26.** Graphite α/β stacking: ABAB versus ABCABC. Heating β→α; grinding α→β.
-
-**27.** Catenation is not just "because carbon is small"; the decisive source evidence is high C–C bond enthalpy.
-
-**28.** Use NCERT t½(¹⁴C) = 5770 y for this exam sheet; older J.D. Lee edition text gives a different historical value.
-
-**29.** SnI₄ is coloured (bright orange) despite many main-group halides being colourless; J.D. Lee explains it by charge-transfer absorption.
-
-**30.** The older sources use "vacant d orbital" language for hydrolysis/expanded covalence. When answering a source-aligned textbook question, reproduce the expected model rather than mixing models mid-answer.
-
-# 16. Ultra-fast final revision
-
-C = small, multiple bonds, catenation, allotropy. Si = network SiO₂, silicates, silicones, silanes, hydrolysable halides. Ge = bridge from nonmetal to metal, +4 stable. Sn = +2/+4, Sn²⁺ reducing, amphoteric SnO/SnO₂. Pb = +2 dominant, Pb⁴⁺ oxidising, mixed oxides and strong passivation chemistry.
-
-**Recall trigger • Answer**
-
-- **IE₁ order** — C > Si > Ge > Pb > Sn
-
-- **Dioxide acidity** — CO₂ > SiO₂ > GeO₂ > SnO₂ > PbO₂
-
-- **Catenation** — C >> Si > Ge ≈ Sn; Pb negligible
-
-- **Stable Pb state** — +2
-
-- **Strong reductant** — Sn(II)
-
-- **Strong oxidant** — Pb(IV) / PbO₂
-
-- **Non-hydrolysed tetrahalide** — CCl₄ (normal conditions)
-
-- **Fullerene pentagons** — 12
-
-- **Silicate base unit** — SiO₄⁴⁻ tetrahedron
-
-- **Silicone chain builder** — R₂SiCl₂
-
-- **Carbide → propyne** — Mg₂C₃
-
-- **CO₂ test** — limewater milkiness; clears in excess
-
-# 17. Low-frequency but source-testable facts
-
-- Diamond trace impurities: J.D. Lee notes many natural diamonds contain nitrogen; coloured diamonds may contain other impurities. Industrial diamonds are often dark.
-
-- Graphite was used as a neutron moderator in gas-cooled nuclear reactors because it slows neutrons; this is an old J.D. Lee application fact.
-
-- Very pure Ge is transparent in the infrared and was used for IR optical components in the source.
-
-- α-Sn is grey/non-metallic diamond-type; β-Sn is white metallic. This allotropy is a direct structure-versus-metallicity illustration.
-
-- Vitreous silica has a low thermal-expansion coefficient and transmits UV better than ordinary silicate glass, hence quartz/silica optical cells.
-
-- Opal is described as hydrated/amorphous silica; agate, onyx, carnelian, jasper and flint are silica-rich microcrystalline/amorphous materials with colours from impurities.
-
-- SnI₄'s orange colour is explained in J.D. Lee/Guha by charge-transfer absorption; it is an exception to the "main-group compounds are often colourless/white" heuristic.
-
-- Covalent-network B carbide is written B₄C in simplified notes, while J.D. Lee warns that boron carbide stoichiometry/structure is more complex; treat B₄C as the common exam formula unless the question specifies structural detail.
-
-- The source gives TaC an exceptionally high melting point and WC as an important cutting-tool carbide; these illustrate why interstitial carbides are refractory.
-
-- CO₂ can act as a ligand in some complexes in J.D. Lee, but this is a low-priority extension compared with CO carbonyl chemistry.
-
-# 18. Source coverage checklist
-
-This chapter consolidates the Group 14 content of the standard exam sources. What each contributes:
-
-- NCERT XI: general p-block trend basis; Group 14 periodic properties; oxidation-state trends; reactivity toward O₂/H₂O/halogens; carbon anomaly; allotropes; CO/CO₂; SiO₂; silicones; silicates and zeolites.
-
-- J.D. Lee: occurrence/extraction/uses; carbon allotrope energetics; carbon dating; graphite intercalation/oxide/fluoride; carbides; CO carbonyl chemistry; CO₂/suboxides/carbonates/CS₂; silicon oxides/silicates/glass/silicones/hydrides; complexes; tetra-/dihalides; organometallic/historical lead chemistry.
-
-- Guha: reaction-level Group 14 chemistry; numerical/trend data; tin and lead oxides; silicate classification; carbonyls; silicone structural logic; JEE-style exception patterns.
-
-- Allen annotations: NCERT-aligned trend orders plus reaction-heavy additions for carbides, CO/CO₂, silicon preparation, silicones, tin/lead chemistry and exam-oriented exceptions.
-
-- Dedicated silicate reference: full seven-class structural treatment (ortho → pyro → cyclic → single chain → double chain → sheet → framework) with verified mineral formulae in Section 8.
+- **NCERT Class XI Unit 11:** trend basis; Group 14 atomic/physical data table; oxidation-state trends and inert-pair effect; carbon anomaly, pπ–pπ, catenation table; allotropes (diamond, graphite, C₆₀ topology, Δ_fH° values); reactivity to O₂/H₂O/halogens; CO/CO₂ (structure, resonance, carbonyl, haemoglobin, buffer); SiO₂ (3-D structure, HF/NaOH); silicones (repeating unit, chain control); silicates (SiO₄⁴⁻, sharing rule, ring/chain/sheet/3-D); zeolites and ZSM-5; SiCl₄ hydrolysis; [SiF₆]²⁻ vs [SiCl₆]²⁻; PbI₄ absence; GeX₄ > GeX₂ vs PbX₂ > PbX₄.
+- **J.D. Lee:** occurrence/extraction/zone refining; carbon allotrope energetics; graphite intercalation/oxide/fluoride; carbides (all three classes, geometric rule); CO carbonyl chemistry (Mond, Fe₂(CO)₉, ligand order); CO₂/suboxides/carbonates/CS₂; full silicate classification with cleavage angles and sheet sub-structures; feldspars/zeolites/ultramarines; glass modifiers and colours; silicone functionality; silanes/germanes; tetra-/di-halides; charge-transfer colour; **pπ–dπ / N(SiH₃)₃**; lead tetraacetate; Freon/ozone cycle; PTFE.
+- **Guha:** reaction-level Group 14 chemistry; numerical trend data; SnO/SnO₂ and PbO/PbO₂/Pb₂O₃/Pb₃O₄ preparations and reactions; Sn(II) reducing set; SnCl₂ preservation; mixed-oxide proofs; silicone structural logic; question-bank patterns.
+- **Allen annotations:** NCERT-aligned trend orders; reaction-heavy additions for carbides, CO/CO₂ (detection/estimation/absorbers), silicon preparation, silicones (linear/cyclic/cross-linked), the full tin reaction map (dilute vs conc. vs hot HNO₃), mosaic gold, purple of Cassius, lead oxides and PbO₂ oxidations, tetraethyllead, exam exceptions.
+- **Dedicated silicate treatment:** all seven classes (ortho → pyro → cyclic → single chain → double chain → sheet → framework) with verified mineral formulae in Section 11, plus glass (Section 12) and silicones (Section 13).
 `;

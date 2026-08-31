@@ -338,12 +338,12 @@ function Part6Visual() {
 
 /* =========================== PART 8 — silicates ========================== */
 
-function tetra(cx: number, cy: number, s = 26, color: string = COL.Si) {
+function tetra(cx: number, cy: number, s = 26, color: string = COL.Si, key?: string | number) {
   const a = { x: cx, y: cy - s };
   const b = { x: cx - s * 0.87, y: cy + s * 0.5 };
   const c = { x: cx + s * 0.87, y: cy + s * 0.5 };
   return (
-    <g>
+    <g key={key}>
       <path d={`M${a.x} ${a.y} L${b.x} ${b.y} L${c.x} ${c.y} Z`} fill={color} opacity={0.28} stroke={color} strokeWidth={2} />
       <circle cx={cx} cy={cy - 2} r={3.5} fill={color} />
       {[a, b, c].map((p, i) => (
@@ -359,42 +359,42 @@ function SilicateAtlas() {
       <T x={310} y={22} size={13} weight={800} fill="#c9d6df">Seven silicate classes — corners shared per SiO₄ tetrahedron</T>
 
       {/* 0 shared - ortho */}
-      {tetra(70, 80)}
+      {tetra(70, 80, 26, COL.Si, "o0")}
       <T x={70} y={125} size={10.5}>0 → SiO₄⁴⁻</T>
       <T x={70} y={140} size={9.5} fill="#8fa4b4">ortho (olivine)</T>
 
       {/* 1 shared - pyro */}
-      {tetra(190, 80)}
-      {tetra(232, 80)}
+      {tetra(190, 80, 26, COL.Si, "py0")}
+      {tetra(232, 80, 26, COL.Si, "py1")}
       <T x={211} y={125} size={10.5}>1 → Si₂O₇⁶⁻</T>
       <T x={211} y={140} size={9.5} fill="#8fa4b4">pyro (thortveitite)</T>
 
       {/* 2 shared - cyclic ring */}
-      {tetra(360, 70, 20)}
-      {tetra(392, 92, 20)}
-      {tetra(360, 114, 20)}
-      {tetra(328, 92, 20)}
+      {tetra(360, 70, 20, COL.Si, "cy0")}
+      {tetra(392, 92, 20, COL.Si, "cy1")}
+      {tetra(360, 114, 20, COL.Si, "cy2")}
+      {tetra(328, 92, 20, COL.Si, "cy3")}
       <T x={360} y={140} size={10.5}>2 → (SiₙO₃ₙ)²ⁿ⁻ ring</T>
       <T x={360} y={155} size={9.5} fill="#8fa4b4">cyclic (beryl Si₆O₁₈)</T>
 
       {/* 2 shared - single chain */}
-      {[0, 1, 2, 3].map((k) => tetra(490 + k * 30, k % 2 ? 90 : 72, 18))}
+      {[0, 1, 2, 3].map((k) => tetra(490 + k * 30, k % 2 ? 90 : 72, 18, COL.Si, `sc${k}`))}
       <T x={535} y={140} size={10.5}>2 → (SiO₃)ₙ²ⁿ⁻ chain</T>
       <T x={535} y={155} size={9.5} fill="#8fa4b4">pyroxene (diopside)</T>
 
       {/* double chain */}
-      {[0, 1, 2, 3, 4].map((k) => tetra(70 + k * 26, k % 2 ? 250 : 232, 16))}
-      {[0, 1, 2, 3, 4].map((k) => tetra(70 + k * 26, k % 2 ? 286 : 304, 16))}
+      {[0, 1, 2, 3, 4].map((k) => tetra(70 + k * 26, k % 2 ? 250 : 232, 16, COL.Si, `dcA${k}`))}
+      {[0, 1, 2, 3, 4].map((k) => tetra(70 + k * 26, k % 2 ? 286 : 304, 16, COL.Si, `dcB${k}`))}
       <T x={130} y={335} size={10.5}>2.5 → (Si₄O₁₁)ₙ⁶ⁿ⁻</T>
       <T x={130} y={350} size={9.5} fill="#8fa4b4">amphibole (tremolite)</T>
 
       {/* sheet */}
-      {[0, 1, 2, 3].map((r) => [0, 1, 2, 3].map((c) => tetra(300 + c * 24 + (r % 2 ? 12 : 0), 232 + r * 24, 13)))}
+      {[0, 1, 2, 3].flatMap((r) => [0, 1, 2, 3].map((c) => tetra(300 + c * 24 + (r % 2 ? 12 : 0), 232 + r * 24, 13, COL.Si, `sh${r}-${c}`)))}
       <T x={340} y={345} size={10.5}>3 → (Si₂O₅)ₙ²ⁿ⁻ sheet</T>
       <T x={340} y={360} size={9.5} fill="#8fa4b4">phyllo (talc, mica, clay)</T>
 
       {/* framework */}
-      {[0, 1, 2].map((r) => [0, 1, 2].map((c) => tetra(470 + c * 26, 232 + r * 26, 12, r % 2 ? "#4f6f8c" : COL.Si)))}
+      {[0, 1, 2].flatMap((r) => [0, 1, 2].map((c) => tetra(470 + c * 26, 232 + r * 26, 12, r % 2 ? "#4f6f8c" : COL.Si, `fw${r}-${c}`)))}
       <T x={512} y={330} size={10.5}>4 → (SiO₂)ₙ neutral</T>
       <T x={512} y={345} size={9.5} fill="#8fa4b4">tecto (quartz, feldspar, zeolite)</T>
 
@@ -563,23 +563,62 @@ function MixedOxide() {
   );
 }
 
+/* ===================== PART 16 — pπ–dπ / trisilylamine ================= */
+
+function Trisilylamine() {
+  return (
+    <Svg h={300} w={600}>
+      {/* N(CH3)3 pyramidal */}
+      <T x={150} y={26} size={12.5} fill="#c9d6df" weight={800}>N(CH₃)₃ — pyramidal</T>
+      <Atom x={150} y={120} label="N" stroke={COL.green} fill="#12291f" r={15} />
+      <Bond x1={150} y1={120} x2={95} y2={165} w={2.4} />
+      <Bond x1={150} y1={120} x2={205} y2={165} w={2.4} />
+      <Bond x1={150} y1={120} x2={150} y2={185} w={2.4} />
+      {[[90, 172], [210, 172], [150, 193]].map(([x, y], i) => (
+        <Atom key={i} x={x} y={y} label="CH₃" stroke={COL.C} fill={COL.Cfill} r={13} fs={8.5} />
+      ))}
+      <Bond x1={150} y1={120} x2={150} y2={82} color={COL.amber} w={3} dash="3 3" />
+      <T x={150} y={72} size={10} fill={COL.amber}>lone pair (sp³)</T>
+      <T x={150} y={230} size={10.5} fill="#8fa4b4">N is sp³ · lone pair localised · good donor (basic)</T>
+
+      {/* N(SiH3)3 planar */}
+      <T x={440} y={26} size={12.5} fill="#c9d6df" weight={800}>N(SiH₃)₃ — planar</T>
+      <Atom x={440} y={140} label="N" stroke={COL.green} fill="#12291f" r={15} />
+      {[[380, 110], [500, 110], [440, 200]].map(([x, y], i) => (
+        <g key={i}>
+          <Bond x1={440} y1={140} x2={x} y2={y} w={2.4} />
+          <Atom x={x} y={y} label="SiH₃" stroke={COL.Si} fill={COL.Sifill} r={13} fs={8.5} />
+        </g>
+      ))}
+      <ellipse cx={440} cy={110} rx={16} ry={9} fill="none" stroke={COL.amber} strokeWidth={2} />
+      <ellipse cx={440} cy={170} rx={16} ry={9} fill="none" stroke={COL.amber} strokeWidth={2} />
+      <T x={440} y={95} size={9.5} fill={COL.amber}>N p orbital → empty Si 3d (pπ–dπ)</T>
+      <T x={440} y={245} size={10.5} fill="#8fa4b4">N is sp² · p-lone pair delocalised onto Si · weak base</T>
+      <T x={300} y={285} size={10.5} fill={COL.red}>carbon has no 3d orbital, so pπ–dπ is impossible → N(CH₃)₃ stays pyramidal</T>
+    </Svg>
+  );
+}
+
 /* =============================== registry =============================== */
 
 type Fig = { id: string; el: ReactNode };
 
 const FIGURES: Record<number, Fig[]> = {
-  1: [{ id: "trend", el: <Frame key="t" title="Group 14 trend ribbon" caption="The single most examined lines: the +4→+2 stability switch (inert-pair effect), the non-metal→metal drift, the collapse of catenation past carbon, and the irregular first ionisation enthalpy where lead exceeds tin because of poor d/f shielding."><TrendRibbon /></Frame> }],
-  2: [{ id: "caten", el: <Frame key="c" title="Catenation follows bond enthalpy" caption="Carbon catenates because the C–C bond is strong (≈ 348 kJ mol⁻¹). Down the group the M–M bond weakens and the atoms grow, so chains shorten rapidly; lead is effectively non-catenating."><CatenationBars /></Frame> }],
-  3: [{ id: "p3", el: <Part3Visual key="p3" /> }],
-  5: [{ id: "carb", el: <Frame key="c5" title="Carbide hydrolysis map" caption="The gas released on hydrolysis reveals the carbon anion: methanides give methane, acetylides give ethyne, and Mg₂C₃ (a C₃ unit) gives propyne. Interstitial and covalent carbides are hydrolytically inert."><CarbideMap /></Frame> }],
-  6: [{ id: "p6", el: <Part6Visual key="p6" /> }],
-  8: [{ id: "p8", el: <Part8Visual key="p8" /> }],
-  9: [{ id: "sili", el: <Frame key="s9" title="Silicone functionality rule" caption="Hydrolysis of a chlorosilane gives a silanol that condenses into an –Si–O–Si– backbone. Mono-, di- and tri-chlorosilanes act as end-cap, chain builder and cross-linker respectively, so their ratio sets chain length and network density."><SiliconeFunctionality /></Frame> }],
-  10: [{ id: "sil", el: <Frame key="s10" title="Why silanes out-react alkanes" caption="Because silicon is less electronegative than hydrogen, the Si–H bond is polarised Si(δ+)–H(δ−) — the reverse of C–H. The electrophilic, larger silicon centre is readily attacked by nucleophiles and by oxygen, so silanes ignite in air and hydrolyse in trace base."><SilanevsAlkane /></Frame> }],
-  11: [{ id: "hal", el: <Frame key="h11" title="Halide and complex geometry" caption="[SiF₆]²⁻ forms because six small fluorides fit around silicon; the chloride analogue does not. Sn(II) halides are bent and reducing because of the stereochemically active lone pair, while Sn(IV) halides are tetrahedral, covalent and hydrolyse readily."><HalideGeometry /></Frame> }],
-  13: [
-    { id: "mox", el: <Frame key="m13" title="Pb₃O₄ is a genuine mixed oxide" caption="Nitric acid dissolves the PbO component of red lead and leaves the PbO₂ component as an insoluble brown residue — direct chemical proof that Pb₃O₄ behaves as 2PbO·PbO₂."><MixedOxide /></Frame> },
-    { id: "fork", el: <Frame key="f13" title="PbO₂ reacts differently with each acid" caption="Lead(IV) oxide is amphoteric but strongly oxidising: with hot HCl it liberates chlorine, with hot concentrated sulphuric acid it liberates oxygen, and with nitric acid — whose anion cannot be oxidised — it does not dissolve."><PbO2Fork /></Frame> },
+  1: [{ id: "trend", el: <Frame key="t" title="Group 14 trend ribbon" caption="The most examined lines: the +4→+2 stability switch (inert-pair effect), the non-metal→metal drift, the collapse of catenation past carbon, and the irregular first ionisation enthalpy where lead exceeds tin because of poor d/f shielding."><TrendRibbon /></Frame> }],
+  3: [{ id: "caten", el: <Frame key="c" title="Catenation follows bond enthalpy" caption="Carbon catenates because the C–C bond is strong (≈ 348 kJ mol⁻¹, close to C–O). Down the group the M–M bond weakens and the atoms grow, so chains shorten rapidly; lead is effectively non-catenating."><CatenationBars /></Frame> }],
+  4: [{ id: "p4", el: <Part3Visual key="p4" /> }],
+  6: [{ id: "carb", el: <Frame key="c6" title="Carbide hydrolysis map" caption="The gas released on hydrolysis reveals the carbon anion: methanides (Be₂C, Al₄C₃) give methane, acetylides (CaC₂ …) give ethyne, and Mg₂C₃ (a C₃ unit) gives propyne. Interstitial and covalent carbides are hydrolytically inert."><CarbideMap /></Frame> }],
+  7: [{ id: "p7", el: <Part6Visual key="p7" /> }],
+  8: [{ id: "co2", el: <Frame key="co2" title="Carbon–oxygen bonding at a glance" caption="CO₂ is linear with two equivalent C–O bonds (115 pm); CO₃²⁻ is trigonal planar with a delocalised π system over three equivalent C–O bonds. CO binds metals synergically — σ-donation from the C lone pair plus π back-donation into CO π*."><COxides /></Frame> }],
+  10: [{ id: "sio4", el: <Frame key="sio4" title="The SiO₄ tetrahedron — the one building block" caption="Silicon is tetrahedrally surrounded by four oxygens (Si sp³, ∠O–Si–O ≈ 109.5°, Si–O ≈ 162 pm). In silica every corner O is shared between two Si, giving a giant 3-D network — the reason SiO₂ is a solid while CO₂ is a gas."><SiO4Unit /></Frame> }],
+  11: [{ id: "atlas", el: <Frame key="atlas" title="Seven silicate classes from one sharing rule" caption="From isolated ions to infinite frameworks: ortho (0 shared) → pyro (1) → cyclic ring and single chain (2) → double-chain amphibole (2½) → sheet (3) → 3-D framework (4). The number of shared corners fixes both the O:Si ratio and the charge per silicon."><SilicateAtlas /></Frame> }],
+  13: [{ id: "sili", el: <Frame key="s13" title="Silicone functionality rule" caption="Hydrolysis of a chlorosilane gives a silanol that condenses into an –Si–O–Si– backbone. R₃SiCl end-caps, R₂SiCl₂ builds the linear chain, RSiCl₃ cross-links into a 3-D resin — so the monomer ratio sets chain length and network density."><SiliconeFunctionality /></Frame> }],
+  14: [{ id: "sil", el: <Frame key="s14" title="Why silanes out-react alkanes" caption="Because silicon is less electronegative than hydrogen, Si–H is polarised Si(δ+)–H(δ−) — the reverse of C–H. The electrophilic, larger silicon centre is open to nucleophilic and oxygen attack, so silanes ignite in air and hydrolyse in trace base."><SilanevsAlkane /></Frame> }],
+  15: [{ id: "hal", el: <Frame key="h15" title="Halide and complex geometry" caption="[SiF₆]²⁻ forms because six small fluorides fit around silicon and Si–F donation is strong; [SiCl₆]²⁻ does not. Sn(II) halides are bent and reducing (stereochemically active lone pair); Sn(IV) halides are tetrahedral, covalent and readily hydrolysed."><HalideGeometry /></Frame> }],
+  16: [{ id: "psa", el: <Frame key="psa" title="Internal pπ–dπ bonding: N(SiH₃)₃ vs N(CH₃)₃" caption="Trimethylamine is pyramidal with a localised lone pair (good base). In trisilylamine nitrogen goes sp² and its p-lone pair is donated into empty Si 3d orbitals (pπ–dπ), flattening the molecule to planar and destroying its donor power. Carbon has no accessible d orbital, so N(CH₃)₃ cannot do this."><Trisilylamine /></Frame> }],
+  18: [
+    { id: "mox", el: <Frame key="m18" title="Pb₃O₄ is a genuine mixed oxide" caption="Dilute nitric acid dissolves the PbO component of red lead and leaves the PbO₂ component as an insoluble brown residue — direct chemical proof that Pb₃O₄ behaves as 2PbO·PbO₂ (and Pb₂O₃ as PbO·PbO₂)."><MixedOxide /></Frame> },
+    { id: "fork", el: <Frame key="f18" title="PbO₂ reacts differently with each acid" caption="Lead(IV) oxide is amphoteric but strongly oxidising: with hot HCl it liberates Cl₂, with hot concentrated H₂SO₄ it liberates O₂, and with HNO₃ — whose anion cannot be oxidised — it does not dissolve, which is why it survives as the brown residue in the mixed-oxide test."><PbO2Fork /></Frame> },
   ],
 };
 

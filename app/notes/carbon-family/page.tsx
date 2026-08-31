@@ -23,9 +23,9 @@ export default function CarbonFamilyHub() {
     >
       <div className="mx-auto max-w-3xl space-y-8">
         <div className="flex flex-wrap gap-3 text-xs font-bold text-[var(--text-muted)]">
-          <span className="rounded-xl bg-[var(--surface)] px-3 py-2">18 lessons · Group 14</span>
+          <span className="rounded-xl bg-[var(--surface)] px-3 py-2">24 lessons · Group 14</span>
           <span className="rounded-xl bg-[var(--surface)] px-3 py-2">C · Si · Ge · Sn · Pb</span>
-          <span className="rounded-xl bg-[var(--surface)] px-3 py-2">NCERT-first · reaction &amp; structure atlas</span>
+          <span className="rounded-xl bg-[var(--surface)] px-3 py-2">NCERT-first · reaction &amp; structure atlas · question bank</span>
         </div>
         <CarbonFamilyVisual part={1} heroOnly />
         <ChapterLessonGrid

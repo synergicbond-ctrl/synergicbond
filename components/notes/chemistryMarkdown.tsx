@@ -28,6 +28,10 @@ const C = {
   violet: "#a98cff",
   blue: "#5b9dff",
   line: "rgba(255,255,255,0.09)",
+  // reaction palette — deliberately NOT textbook blue/green:
+  rxn: "#ecd9ac", // warm champagne — reactant + product formulae
+  rxnProduct: "#f6e6b6", // a touch brighter for the product side
+  rxnArrow: "#ff8f5e", // coral-orange arrows & conditions
 } as const;
 
 /** translucent tint of a hex colour, for call-out / card backgrounds */
@@ -118,7 +122,7 @@ function EqSegment({ seg, hue }: { seg: string; hue: string }) {
             <span
               key={j}
               className="rounded-md px-2 py-0.5 text-[12px] font-bold"
-              style={{ background: tint(C.gold, 0.16), border: `1px solid ${tint(C.gold, 0.35)}`, color: C.gold }}
+              style={{ background: tint(C.rxnArrow, 0.14), border: `1px solid ${tint(C.rxnArrow, 0.35)}`, color: C.rxnArrow }}
             >
               {m[1].trim()}
             </span>
@@ -150,19 +154,19 @@ function Equation({ raw }: { raw: string }) {
     <div
       className="my-5 overflow-x-auto rounded-xl px-4 py-3.5"
       style={{
-        background: `linear-gradient(135deg, ${tint(C.teal, 0.1)}, ${tint(C.cyan, 0.06)})`,
-        border: `1px solid ${tint(C.teal, 0.32)}`,
+        background: `linear-gradient(135deg, ${tint(C.rxn, 0.09)}, ${tint(C.rxnArrow, 0.05)})`,
+        border: `1px solid ${tint(C.rxn, 0.28)}`,
       }}
     >
-      <div className="flex flex-wrap items-center gap-x-1.5 gap-y-2 font-mono text-[15px] leading-relaxed sm:text-[15.5px]" style={{ color: C.ink }}>
+      <div className="flex flex-wrap items-center gap-x-1.5 gap-y-2 font-mono text-[15px] leading-relaxed sm:text-[15.5px]" style={{ color: C.rxn }}>
         {parts.map((seg, i) =>
           ARROWS.test(seg) ? (
-            <span key={i} className="mx-1.5 text-xl font-black" style={{ color: C.gold }}>
+            <span key={i} className="mx-1.5 text-xl font-black" style={{ color: C.rxnArrow }}>
               {seg}
             </span>
           ) : (
             <Fragment key={i}>
-              <EqSegment seg={seg} hue={firstArrow >= 0 && i > firstArrow ? C.lime : C.cyan} />
+              <EqSegment seg={seg} hue={firstArrow >= 0 && i > firstArrow ? C.rxnProduct : C.rxn} />
             </Fragment>
           ),
         )}
@@ -356,7 +360,7 @@ function normaliseMath(markdown: string) {
 
 export function ChemistryMarkdown({ markdown }: { markdown: string }) {
   return (
-    <div className="space-y-4 [&_.katex]:text-[var(--chem-bond,#3fd0ee)] [&_tr>td:first-child]:font-semibold [&_tr>td:first-child]:text-[#f5f8fc]">
+    <div className="space-y-4 [&_.katex-display]:my-4 [&_.katex-display]:overflow-x-auto [&_.katex-display]:rounded-xl [&_.katex-display]:border [&_.katex-display]:border-[#ecd9ac]/25 [&_.katex-display]:bg-[#ecd9ac]/[0.06] [&_.katex-display]:px-4 [&_.katex-display]:py-3 [&_.katex]:text-[#ecd9ac] [&_.katex_.mrel]:text-[#ff8f5e] [&_tr>td:first-child]:font-semibold [&_tr>td:first-child]:text-[#f5f8fc]">
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkMath]}
         rehypePlugins={[[rehypeKatex, { throwOnError: false, strict: false }]]}

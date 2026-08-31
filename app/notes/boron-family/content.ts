@@ -1562,11 +1562,7 @@ BR3 + 3CH3COOH [gentle heat] ⟶ 3RH + B(OOCCH3)3
 
 ## 10.5 Tetrahydridoborates and aluminium hydrides
 
-The most important tetrahydridoborate is NaBH₄. It can be prepared industrially from trimethyl borate and NaH under elevated temperature and pressure in THF. NaBH₄ is an ionic solid containing tetrahedral [BH₄]⁻ ions.
-
-4B(OCH3)3 + 4NaH ⟶ NaBH4 + 3NaB(OCH3)4
-
-*Industrial preparation:*
+The most important tetrahydridoborate is NaBH₄. It can be prepared industrially from trimethyl borate and NaH under elevated temperature and pressure in THF (equation below). NaBH₄ is an ionic solid containing tetrahedral [BH₄]⁻ ions.
 
 Water stability changes markedly across alkali-metal borohydrides: LiBH₄ reacts violently with water; NaBH₄ can persist in cold aqueous media with only slow decomposition; KBH₄ is still more resistant. All are reducing agents, but NaBH₄ is especially convenient in aqueous/alcoholic media.
 
@@ -1578,19 +1574,21 @@ Not all borohydrides are ionic. Be(BH₄)₂ and Al(BH₄)₃ are more covalent 
 
 **Sodium borohydride, industrial:**
 
-4NaH(s) + B(OCH3)3(l) [about 250-270 °C] ⟶ NaBH4(s) + 3NaOCH3(s)
+4NaH(s) + B(OCH3)3(l) [~250-270 °C] ⟶ NaBH4(s) + 3NaOCH3(s)
 
 **Textbook high-pressure THF route:**
 
-4B(OCH3)3 + 4NaH [THF] ⟶ [about 250 °C, high pressure] NaBH4 + 3Na[B(OCH3)4]
+4B(OCH3)3 + 4NaH [THF] ⟶ [~250 °C, high pressure] NaBH4 + 3Na[B(OCH3)4]
 
 **From diborane:**
 
-2MH(s) + B2H6(g) [dry diethyl ether] ⟶ [M = Li or Na] 2M+[BH4]-(ether/solid)
+2MH(s) + B2H6(g) [dry Et2O] ⟶ 2M[BH4](ether/solid)
+
+(M = Li or Na.)
 
 **Lithium borohydride:**
 
-NaBH4(s) + LiCl(s) [dry ether/THF] ⟶ [metathesis] LiBH4 + NaCl(s)
+NaBH4(s) + LiCl(s) [dry ether / THF] ⟶ LiBH4 + NaCl(s)
 
 **Calcium borohydride:**
 
@@ -1606,9 +1604,9 @@ BeCl2 + 2LiBH4 [dry ether] ⟶ [low temperature] Be(BH4)2 + 2LiCl
 
 **Aluminium hydride:**
 
-3LiAlH4 + AlCl3 [dry ether] ⟶ [low temperature] 4AlH3(ether)
+3LiAlH4 + AlCl3 [dry ether] ⟶ [low temperature] 4AlH3(ether) + 3LiCl(s)
 
-removal of ether gives polymeric (AlH₃)n
+Removing the ether leaves polymeric (AlH₃)ₙ.
 
 **Aluminium borohydride:**
 

@@ -1902,7 +1902,9 @@ The AlCl₃ vapour is condensed downstream; the exact temperature depends on the
 
 **Monomerisation:**
 
-Al2Cl6(g) [high temperature] ⟶ [about 800 °C; trigonal planar] 2AlCl3(g)
+Al2Cl6(g) [high temperature, ~800 °C] ⟶ 2AlCl3(g)
+
+The monomer is trigonal planar (aluminium coordination number 3).
 
 **Hydration/ionisation:**
 

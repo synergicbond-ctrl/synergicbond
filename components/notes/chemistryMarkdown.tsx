@@ -67,11 +67,25 @@ const SUB: Record<string, string> = { "0": "₀", "1": "₁", "2": "₂", "3": "
 const toSup = (s: string) => s.replace(/./g, (c) => SUP[c] ?? c);
 const toSub = (s: string) => s.replace(/\d/g, (c) => SUB[c] ?? c);
 
+const CHARGE_END = /(?=$|[\s,;.()[\]]|·|⟶|→|⇌|↔|\+|"|'|—)/.source;
+/** monatomic cations written with an explicit charge magnitude (Al3+, Ca2+, Tl3+) —
+ *  as opposed to polyatomic anions where a lone digit is a subscript (HCO3-, NO3-) */
+const CATION = "Al|Ga|In|Tl|Be|Mg|Ca|Sr|Ba|Li|Na|K|Rb|Cs|Fe|Cr|Mn|Co|Ni|Cu|Zn|Cd|Hg|Ag|Pb|Sn|Ti|Sc|La|Ce";
 function formatChem(text: string): string {
   let t = text;
   t = t.replace(/([)\]A-Za-z0-9])\.(\s?\d*\s?[A-Z(])/g, "$1·$2"); // hydrate dot
-  t = t.replace(/([)\]]|[A-Z][a-z]?)(\d{0,2})([+-])(?=$|[\s,;.)\]]|·|⟶|→|⇌|↔|\+|"|'|—)/g, (_m, base, digits, sign) => base + toSup((digits || "") + sign)); // charges
-  t = t.replace(/([A-Za-z)\]])(\d+)/g, (_m, base, digits) => base + toSub(digits)); // subscripts
+  // 1. charge after a closing bracket — [AlF6]3-, [BF4]-, [Al(H2O)6]3+  (digits = magnitude)
+  t = t.replace(new RegExp(/(\])(\d{0,2})([+-])/.source + CHARGE_END, "g"), (_m, b, d, s) => b + toSup((d || "") + s));
+  // 2. monatomic cation with magnitude — Al3+, Ca2+, Tl3+
+  t = t.replace(new RegExp("\\b(" + CATION + ")(\\d)([+-])" + CHARGE_END, "g"), (_m, b, d, s) => b + toSup(d + s));
+  // 3. sign after subscript digits — SO42- (4 sub, 2 charge), Cr2O72-  (last digit = magnitude, rest = subscript)
+  t = t.replace(new RegExp(/([A-Za-z])(\d)(\d)([+-])/.source + CHARGE_END, "g"), (_m, b, sub, mag, s) => b + toSub(sub) + toSup(mag + s));
+  // 4. single digit then sign after ) or symbol — B(OH)4-, HCO3-, NO3-  (digit = subscript, sign only = charge)
+  t = t.replace(new RegExp(/([)A-Za-z])(\d)([+-])/.source + CHARGE_END, "g"), (_m, b, d, s) => b + toSub(d) + toSup(s));
+  // 5. bare sign — Na+, OH-, H3O+, F-
+  t = t.replace(new RegExp(/([)\]A-Za-z])([+-])/.source + CHARGE_END, "g"), (_m, b, s) => b + toSup(s));
+  // 6. remaining digit runs are subscripts
+  t = t.replace(/([A-Za-z)\]])(\d+)/g, (_m, base, digits) => base + toSub(digits));
   return t;
 }
 
@@ -234,7 +248,7 @@ function Equation({ raw }: { raw: string }) {
   // equation; anything else (a stray observation / scope note) drops to a prose
   // line beneath the equation. Nothing is ever left as an inline pill.
   const trailingNotes: string[] = [];
-  const looksLikeFormula = (t: string) => !/\s/.test(t) && /[A-Za-z]/.test(t) && /^[A-Za-z0-9()[\]·.,'’+−-]+$/.test(t);
+  const looksLikeFormula = (t: string) => !/\s/.test(t) && /[A-Za-z]/.test(t) && /^[A-Za-z0-9()[\]·.,'’+−\-µμΔ]+$/.test(t);
   for (let i = 0; i < parts.length; i++) {
     if (ARROWS.test(parts[i]) || !parts[i]) continue;
     parts[i] = parts[i].replace(COND_RE, (full, inner) => {

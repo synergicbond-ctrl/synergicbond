@@ -99,9 +99,7 @@ The actual crystal structures behind the "different lattice" explanation: Be and
 **Exam Note:** Reported values for E°(Be²⁺/Be) include −1.85 V and −1.97 V. For consistency in these notes, use −1.85 V; it also places Be close to Al (−1.66 V).
 
 ### 1.8 Flame Colours
-      `),
-      visual("flame"),
-      md(`
+
 | Metal | Ca | Sr | Ba | Be, Mg |
 |---|---|---|---|---|
 | Flame colour | Brick red | Crimson | Apple green | None |
@@ -292,7 +290,6 @@ Anhydrous CaCl₂ is an excellent drying agent for gases and organic vapours —
 - Contrast: in Be(CH₃)₂ the bridge is a genuine 3-centre-2-electron bond spanning Be···CH₃···Be (like BeH₂), not simple lone-pair donation as in the chlorine bridges of (BeCl₂)ₙ — a subtle but real mechanistic difference between halide bridging (dative) and alkyl bridging (electron-deficient).
       `),
       visual("becl2-bridge-detail"),
-      visual("halide-lattice"),
       md(`
 **Covalency trend (Fajans' rules):** Covalent character: BeX₂ > MgX₂ > CaX₂ > SrX₂ > BaX₂ — the small, highly-charged Be²⁺ polarizes the anion's electron cloud strongly ("small highly charged ions tend to form covalent compounds"). For a fixed cation, covalency rises with anion polarizability: I⁻ > Br⁻ > Cl⁻ > F⁻.
 
@@ -542,7 +539,9 @@ Down the group, M²⁺ becomes larger and less polarising, so the M–O interact
 All burn in O₂ to give MO. BeO is usually made instead by igniting gelatinous Be(OH)₂; the other oxides are usually obtained by thermal decomposition of the carbonates, sulphates, or nitrates — all of which are less thermally stable than the corresponding Group 1 oxosalts, precisely because the Group 2 metals and their hydroxides are less strongly basic than those of Group 1.
 
 BeO is covalent (4:4 zinc-blende/wurtzite structure); MgO, CaO, SrO, BaO are ionic (6:6 rock-salt/NaCl structure). Basic strength rises steadily: BeO (amphoteric) < MgO (weakly basic) < CaO < SrO < BaO (increasingly strongly basic).
-
+      `),
+      visual("halide-lattice"),
+      md(`
 **Bonding Insight:** Why does MO + H₂O → M(OH)₂ happen at all? (mechanistic picture)
 
 The O²⁻ ion in the ionic lattice is an extremely strong Brønsted base / nucleophile — far too reactive to survive in water. When water contacts the oxide surface, O²⁻ simply rips a proton off H₂O: O²⁻ + H₂O → 2OH⁻. This single proton-transfer step is the real mechanism behind every "basic oxide + water → hydroxide" reaction in this chapter, and it is also exactly why free O²⁻ cannot exist in aqueous solution at all.

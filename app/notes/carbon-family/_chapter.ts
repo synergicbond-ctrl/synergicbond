@@ -14,20 +14,21 @@ export function carbonFamilyLessonRef(number: number): LessonRef | undefined {
 }
 
 const CARBON_FAMILY_NAV_GROUPS = [
-  { label: "Trends & anomaly", first: 1, last: 3 },
-  { label: "Carbon: allotropes & carbides", first: 4, last: 6 },
-  { label: "Oxides of carbon, CS₂", first: 7, last: 8 },
-  { label: "Silicon, silica, silicates", first: 9, last: 11 },
-  { label: "Glass, silicones, hydrides", first: 12, last: 14 },
-  { label: "Halides, complexes, pπ–dπ", first: 15, last: 16 },
-  { label: "Tin & lead", first: 17, last: 18 },
-  { label: "Maps & revision", first: 19, last: 23 },
-  { label: "Question bank", first: 24, last: 24 },
+  { label: "Trends & anomaly", first: 1, last: 5 },
+  { label: "Reactivity, allotropes, carbides", first: 6, last: 8 },
+  { label: "Oxides of carbon, CS₂", first: 9, last: 11 },
+  { label: "Silicon, silica, silicates", first: 12, last: 14 },
+  { label: "Glass, silicones, hydrides", first: 15, last: 17 },
+  { label: "Halides, complexes, pπ–dπ", first: 18, last: 19 },
+  { label: "Tin & lead", first: 20, last: 21 },
+  { label: "Uses & p-block map", first: 22, last: 23 },
+  { label: "Maps, traps, revision", first: 24, last: 28 },
+  { label: "Question bank", first: 29, last: 29 },
 ] as const;
 
 export function carbonFamilyTabs(currentPart?: number): ChapterTab[] {
   return [
-    { label: "All 24 lessons", href: "/notes/carbon-family", active: currentPart === undefined },
+    { label: "All 29 lessons", href: "/notes/carbon-family", active: currentPart === undefined },
     ...CARBON_FAMILY_NAV_GROUPS.map((group) => ({
       label: group.label,
       href: carbonFamilyHref(group.first),

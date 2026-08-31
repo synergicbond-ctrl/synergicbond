@@ -23,11 +23,11 @@ export default function CarbonFamilyHub() {
     >
       <div className="mx-auto max-w-3xl space-y-8">
         <div className="flex flex-wrap gap-3 text-xs font-bold text-[var(--text-muted)]">
-          <span className="rounded-xl bg-[var(--surface)] px-3 py-2">24 lessons · Group 14</span>
+          <span className="rounded-xl bg-[var(--surface)] px-3 py-2">29 lessons · Group 14</span>
           <span className="rounded-xl bg-[var(--surface)] px-3 py-2">C · Si · Ge · Sn · Pb</span>
-          <span className="rounded-xl bg-[var(--surface)] px-3 py-2">NCERT-first · reaction &amp; structure atlas · question bank</span>
+          <span className="rounded-xl bg-[var(--surface)] px-3 py-2">NCERT-first · MOT lenses · reaction &amp; structure atlas · 60+ questions</span>
         </div>
-        <CarbonFamilyVisual part={1} heroOnly />
+        <CarbonFamilyVisual part={7} heroOnly />
         <ChapterLessonGrid
           lessons={CARBON_FAMILY_PARTS.map((part) => ({
             href: carbonFamilyHref(part.number),

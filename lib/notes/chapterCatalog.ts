@@ -336,9 +336,9 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     sectionLabel: "Group 14 deep dive",
     title: "The Carbon Family",
     href: "/notes/carbon-family",
-    lessonLabel: "24 lessons",
+    lessonLabel: "29 lessons",
     premium: true,
-    description: "Group 14 (C, Si, Ge, Sn, Pb) in full: periodic trends and the inert-pair effect, the carbon anomaly and catenation, allotropes and fullerenes, carbides, CO/CO₂, carbonates and metal carbonyls, silicon extraction, silica and all seven silicate classes, zeolites, glass and silicones, hydrides, halides, pπ–dπ complexes, and tin/lead reaction maps — NCERT-first with reaction/structure atlas, MOT lenses and a full question bank.",
+    description: "Group 14 (C, Si, Ge, Sn, Pb) at Boron-Family depth: every property with full increasing/decreasing/note order blocks, a MOT lens or JEE trap on each key species, energetics of the inert-pair effect, the carbon anomaly and catenation, allotropes and fullerene topology, carbides, CO/CO₂/carbonates and metal carbonyls, silicon extraction, silica, the full seven-class silicate system, glass, silicones, hydrides, halides, pπ–dπ complexes, tin/lead reaction maps, an NCERT-focused uses section, and 60+ questions with worked answers.",
   },
   // ── Organic Chemistry (JEE Advanced) ─────────────────────────────────────
   {

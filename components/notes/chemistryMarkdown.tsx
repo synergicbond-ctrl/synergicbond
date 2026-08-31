@@ -77,10 +77,22 @@ function isEquation(text: string): boolean {
   const t = text.trim();
   if (!/(⟶|→|⇌|↔|⇋)/.test(t)) return false;
   if (t.length > 260) return false;
+  if (/\\[a-zA-Z]|[{}]|\$/.test(t)) return false; //  contains LaTeX — leave it to KaTeX
   if (/\.\s+[A-Z]/.test(t)) return false; //  "...⟶ X.  In these ions..."  => prose
   const stripped = t.replace(/\[[^\]]*\]/g, " ");
   if (STOPWORDS.test(stripped)) return false;
   return true;
+}
+
+/** Only intercept a paragraph as a plain-text reaction when it has NO child
+ *  elements (a KaTeX span, a link, …) — otherwise flattenText would blend in
+ *  hidden MathML annotations and produce garbage. */
+function pureText(children: ReactNode): string | null {
+  if (typeof children === "string") return children;
+  if (Array.isArray(children) && children.every((c) => typeof c === "string" || typeof c === "number")) {
+    return children.join("");
+  }
+  return null;
 }
 
 const ARROWS = /(⟶|→|⇌|↔|⇋)/;
@@ -248,8 +260,8 @@ const components: Components = {
     </h5>
   ),
   p: ({ children }) => {
-    const text = flattenText(children);
-    if (isEquation(text)) return <Equation raw={text} />;
+    const raw = pureText(children);
+    if (raw !== null && isEquation(raw)) return <Equation raw={raw} />;
     return (
       <p className="max-w-[74ch] text-[16px] leading-[1.85]" style={{ color: C.body }}>
         {children}
@@ -267,11 +279,11 @@ const components: Components = {
     </ol>
   ),
   li: ({ children }) => {
-    const text = flattenText(children);
-    if (isEquation(text)) {
+    const raw = pureText(children);
+    if (raw !== null && isEquation(raw)) {
       return (
         <li className="list-none">
-          <Equation raw={text} />
+          <Equation raw={raw} />
         </li>
       );
     }
@@ -309,8 +321,11 @@ const components: Components = {
     </th>
   ),
   td: ({ children }) => {
-    const text = flattenText(children);
-    const content = ARROWS.test(text) && !/[a-z]{4}/.test(text.replace(/\[[^\]]*\]/g, "")) ? formatChem(text) : children;
+    const raw = pureText(children);
+    const content =
+      raw !== null && ARROWS.test(raw) && !/\\[a-zA-Z]|[{}$]/.test(raw) && !/[a-z]{4}/.test(raw.replace(/\[[^\]]*\]/g, ""))
+        ? formatChem(raw)
+        : children;
     return (
       <td className="px-3.5 py-2.5 align-top leading-6" style={{ borderBottom: `1px solid ${C.line}`, color: C.body }}>
         {content}

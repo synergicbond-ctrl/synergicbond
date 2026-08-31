@@ -8,7 +8,7 @@ import { ALKALI_METAL_SECTIONS, ALKALINE_EARTH_METAL_SECTIONS } from "./content"
 
 function H2({ id, children }: { id: string; children: React.ReactNode }) {
   return (
-    <h2 id={id} className="scroll-mt-28 border-b border-[var(--border)] pb-4 pt-4 font-sans text-3xl font-black tracking-tight text-[var(--foreground)] sm:text-4xl">
+    <h2 id={id} className="scroll-mt-28 border-b border-[var(--border)] pb-4 pt-4 font-sans text-3xl font-black tracking-tight text-transparent bg-clip-text bg-[linear-gradient(90deg,#fbbf24,#22d3ee,#a78bfa)] sm:text-4xl">
       {children}
     </h2>
   );
@@ -43,20 +43,20 @@ export default function SBlockMasterTextbook() {
             className="mb-3 w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm outline-none placeholder:text-[var(--text-muted)] focus:border-[var(--accent)]/50"
           />
           <nav className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3">
-            <p className="px-3 pb-1 pt-2 text-xs font-black uppercase tracking-[0.16em] text-[var(--accent)]">Part A — Alkali Metals</p>
+            <p className="px-3 pb-1 pt-2 text-xs font-black uppercase tracking-[0.16em] text-transparent bg-clip-text bg-[linear-gradient(90deg,#fbbf24,#fb7185)]">Part A — Alkali Metals</p>
             {filteredAlkali.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--foreground)]">{s.label}</a>
+              <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-slate-300 transition hover:bg-[var(--surface-2)] hover:text-cyan-200">{s.label}</a>
             ))}
-            <p className="mt-3 border-t border-[var(--border)] px-3 pb-1 pt-4 text-xs font-black uppercase tracking-[0.16em] text-[var(--accent)]">Part B — Alkaline Earth Metals</p>
+            <p className="mt-3 border-t border-[var(--border)] px-3 pb-1 pt-4 text-xs font-black uppercase tracking-[0.16em] text-transparent bg-clip-text bg-[linear-gradient(90deg,#22d3ee,#a78bfa)]">Part B — Alkaline Earth Metals</p>
             {filteredAlkalineEarth.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--foreground)]">{s.label}</a>
+              <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-slate-300 transition hover:bg-[var(--surface-2)] hover:text-violet-200">{s.label}</a>
             ))}
           </nav>
         </aside>
 
         <article className="min-w-0 space-y-12">
           <section className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-10">
-            <h2 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">Two independent textbook parts</h2>
+            <h2 className="mt-3 text-3xl font-black leading-tight text-transparent bg-clip-text bg-[linear-gradient(90deg,#fbbf24,#22d3ee,#a78bfa)] sm:text-4xl">Two independent textbook parts</h2>
             <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--text-body)]">
               Part A covers only the Alkali Metals. Part B covers only the Alkaline Earth Metals. Each part has its own contents and reading sequence.
             </p>

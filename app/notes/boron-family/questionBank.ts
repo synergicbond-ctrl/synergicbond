@@ -2287,9 +2287,403 @@ R. Aluminium extraction — Hall-Héroult electrode reactions
 
 ------------------------------------------------------------------------
 
+**Quick answer key (Q1–Q90)**
+
+**NCERT core — Q1–Q16**
+
+| Q | Ans | Q | Ans | Q | Ans | Q | Ans |
+|---|---|---|---|---|---|---|---|
+| Q1 | 13 | Q5 | 12 | Q9 | 15 | Q13 | 14 — all statements correct |
+| Q2 | 14 | Q6 | 12 | Q10 | 11 | Q14 | 15 |
+| Q3 | 18 | Q7 | 11 | Q11 | 11 | Q15 | 13 |
+| Q4 | 14 | Q8 | 12 | Q12 | 11 | Q16 | 13 |
+
+**Single-correct objective — Q17–Q31**
+
+| Q | Ans | Q | Ans | Q | Ans | Q | Ans |
+|---|---|---|---|---|---|---|---|
+| Q17 | B | Q21 | A | Q25 | B | Q29 | B |
+| Q18 | D | Q22 | D | Q26 | D | Q30 | D |
+| Q19 | A | Q23 | A | Q27 | A | Q31 | C |
+| Q20 | C | Q24 | C | Q28 | C | | |
+
+**One-or-more-correct — Q32–Q37**
+
+| Q | Ans | Q | Ans | Q | Ans |
+|---|---|---|---|---|---|
+| Q32 | A, B, C, D | Q34 | A, B, C, D, E | Q36 | A, B, C, D, E |
+| Q33 | A, B, C, D, E | Q35 | A, B, C, D, E | Q37 | A, B, C, D |
+
+**Match the columns — Q38–Q47**
+
+| Q | Answer |
+|---|---|
+| Q38 | A-S, B-Q, C-R, D-P |
+| Q39 | A-Q, B-P, C-R/S, D-Q |
+| Q40 | A-P, B-Q, C-R, D-S |
+| Q41 | A-P/S, B-Q/S, C-Q/S, D-R |
+| Q42 | A-P, B-Q, C-R, D-S |
+| Q43 | A-P,R,S; B-P,Q,S; C-P,Q,S; D-P,R,S |
+| Q44 | Set I: A-S, B-T, C-R, D-P; Set II: A-S, B-R, C-P, D-Q |
+| Q45 | Set I: A-P,Q; B-R,T; C-P,S; D-P,Q. Set II: A-Q; B-R; C-S; D-P |
+| Q46 | A-Q,R,T; B-P,S,T; C-Q,R,S,T; D-P,R,S,T |
+| Q47 | Set I: A-Q,S; B-P; C-S; D-Q. Set II: A-R; B-P; C-S; D-T; E-Q |
+
+**Count the correct statements — Q48–Q54**
+
+| Q | Ans | Q | Ans | Q | Ans | Q | Ans |
+|---|---|---|---|---|---|---|---|
+| Q48 | 10 | Q50 | 10 | Q52 | 10 | Q54 | 3; correct statements: 1, 2, 4 |
+| Q49 | 10 | Q51 | 10 | Q53 | 11 | | |
+
+**Numerical response — Q55–Q74**
+
+| Q | Ans | Q | Ans | Q | Ans | Q | Ans |
+|---|---|---|---|---|---|---|---|
+| Q55 | 6 | Q60 | 2 | Q65 | 12 | Q70 | 3 mol |
+| Q56 | 4 | Q61 | 5 | Q66 | 1.5 mol | Q71 | 6 mol |
+| Q57 | 2 | Q62 | 14 | Q67 | 6 mol | Q72 | 6 |
+| Q58 | 12 | Q63 | 8 | Q68 | 2 mol | Q73 | 3 |
+| Q59 | 2 | Q64 | 6 | Q69 | 2 mol | Q74 | 2 |
+
+**Integrated type questions — Q75–Q85**
+
+| Q | Answer |
+|---|---|
+| Q75 | C |
+| Q76 | B |
+| Q77 | D |
+| Q78 | A |
+| Q79 | C |
+| Q80 | A, B, C, D |
+| Q81 | 5 |
+| Q82 | 7 |
+| Q83 | 13 |
+| Q84 | (a) D; (b) 0 |
+| Q85 | (a) A = [BH2(NH3)2]+[BH4]−, B = B3N3H6, C = H2; atomic number = 1; NH3 in the cation = 2. (b) Lewis acids = 3; Lewis bases = 9 |
+
+**Extended statement count — Q86–Q90**
+
+| Q | Ans | Q | Ans | Q | Ans |
+|---|---|---|---|---|---|
+| Q86 | 9 | Q88 | 10 | Q90 | 9 |
+| Q87 | 9 | Q89 | 10 | | |
 
 ------------------------------------------------------------------------
 
+**SECTION 9 — REACTION ANSWER KEY**
+
+*Products for the 155 reactions of Section 9, in the same order.*
+
+> 1. Na2B4O7·10H2O(aq) + H2SO4(aq) ⟶ 4H3BO3(s) + Na2SO4(aq) + 5H2O(l)
+>
+> 2. Ca2B6O11 + 4SO2 + 11H2O ⟶ 2Ca(HSO3)2 + 6H3BO3
+>
+> 3. 2H3BO3 Δ ⟶ B2O3 + 3H2O
+>
+> 4. B2O3 + 3Mg Δ ⟶ 2B + 3MgO
+>
+> 5. B2O3 + 6Na Δ ⟶ 2B + 3Na2O
+>
+> 6. B2O3 + 6K Δ ⟶ 2B + 3K2O
+>
+> 7. B2O3 + 2Al Δ ⟶ 2B + Al2O3
+>
+> 8. 2BCl3(g) + 3H2(g) hot W/Ta ⟶ 2B(s) + 6HCl(g)
+>
+> 9. 2BI3(g) hot filament ⟶ 2B(s) + 3I2(g)
+>
+> 10. B2H6(g) Δ (pyrolysis) ⟶ 2B(s) + 3H2(g)
+>
+> 11. 4B + 3O2 Δ ⟶ 2B2O3
+>
+> 12. 2B + 3Na2O2 fusion ⟶ 2Na3BO3
+>
+> 13. 2B + N2 very high T ⟶ 2BN
+>
+> 14. 2B + 2NH3 very high T ⟶ 2BN + 3H2
+>
+> 15. 2B + 3Cl2 Δ ⟶ 2BCl3
+>
+> 16. 2B + 3S 1200 °C ⟶ B2S3
+>
+> 17. 4B + C Δ ⟶ B4C
+>
+> 18. 2B + 3Mg Δ ⟶ Mg3B2
+>
+> 19. 2B + 6NaOH(l) fused ⟶ 2Na3BO3 + 3H2
+>
+> 20. 4B + 4NaOH + 3O2 fused, air ⟶ 4NaBO2 + 2H2O
+>
+> 21. B + 3HNO3(conc.) ⟶ H3BO3 + 3NO2
+>
+> 22. 2B + 3H2SO4(conc.) ⟶ 2H3BO3 + 3SO2
+>
+> 23. 4Al + 3O2 ⟶ 2Al2O3
+>
+> 24. 2Al + N2 Δ ⟶ 2AlN
+>
+> 25. AlN + 3H2O ⟶ Al(OH)3 + NH3
+>
+> 26. 2Al + 6H2O (hot, oxide film removed) ⟶ 2Al(OH)3 + 3H2
+>
+> 27. 2Al + 3H2O(g) steam ⟶ Al2O3 + 3H2
+>
+> 28. 2Al + 6HCl(aq) ⟶ 2AlCl3(aq) + 3H2
+>
+> 29. 2Al + 3H2SO4(dil.) ⟶ Al2(SO4)3 + 3H2
+>
+> 30. 2Al + 6H2SO4(conc.) Δ ⟶ Al2(SO4)3 + 3SO2 + 6H2O
+>
+> 31. 2Al + 2NaOH + 6H2O ⟶ 2Na[Al(OH)4] + 3H2
+>
+> 32. 2Al + 2NaOH + 2H2O fused ⟶ 2NaAlO2 + 3H2
+>
+> 33. 2Al + 3Cl2 dry, Δ ⟶ 2AlCl3 (⟶ Al2Cl6)
+>
+> 34. 4Al + 3C Δ ⟶ Al4C3
+>
+> 35. Al4C3 + 12H2O ⟶ 4Al(OH)3 + 3CH4
+>
+> 36. 2Ga + 2NaOH + 6H2O ⟶ 2Na[Ga(OH)4] + 3H2
+>
+> 37. 3GaX(aq) disproportionation ⟶ 2Ga + GaX3(aq)
+>
+> 38. 3InX(aq) disproportionation ⟶ 2In + InX3(aq)
+>
+> 39. GaCl3(l) + Ga(s) ⟶ 2GaCl2 (i.e. Ga+[GaCl4]−)
+>
+> 40. In + 2HCl(g) ⟶ InCl2 + H2 (i.e. In+[InCl4]−)
+>
+> 41. TlI + I2 ⟶ Tl+[I3]−
+>
+> 42. TlF + F2 ⟶ TlF3
+>
+> 43. 2[Tl3+] + reducing I−: Tl3+ + 2e− ⇌ Tl+ (E° ≈ +1.26 V)
+>
+> 44. B2O3 + 3H2O ⟶ 2H3BO3
+>
+> 45. B2O3 + 3CaO ⟶ Ca3(BO3)2
+>
+> 46. B2O3 + CaO ⟶ Ca(BO2)2
+>
+> 47. B2O3 + 2NaOH(l) ⟶ 2NaBO2 + H2O
+>
+> 48. B2O3 + P2O5 ⟶ 2BPO4
+>
+> 49. B2O3(l) + CuO(s) bead ⟶ Cu(BO2)2 (blue glass)
+>
+> 50. Al2O3 + 6HCl ⟶ 2AlCl3 + 3H2O
+>
+> 51. Al2O3 + 2NaOH + 3H2O ⟶ 2Na[Al(OH)4]
+>
+> 52. Al(OH)3 + 3H+ ⟶ Al3+ + 3H2O
+>
+> 53. Al(OH)3 + OH− ⟶ [Al(OH)4]−
+>
+> 54. Al3+(aq) + 3NH3 + 3H2O ⟶ Al(OH)3 + 3NH4+
+>
+> 55. [Al(OH)4]− + CO2 ⟶ Al(OH)3 + HCO3−
+>
+> 56. 2Al(OH)3 Δ ⟶ Al2O3 + 3H2O
+>
+> 57. Al2(SO4)3 strong Δ ⟶ Al2O3 + 3SO3
+>
+> 58. (NH4)2SO4·Al2(SO4)3·24H2O Δ ⟶ Al2O3 + 2NH3 + 4SO3 + 25H2O
+>
+> 59. B(OH)3 + 2H2O ⇌ [B(OH)4]− + H3O+
+>
+> 60. BX3 + 3H2O ⟶ H3BO3 + 3HX
+>
+> 61. BH3 + 3H2O ⟶ H3BO3 + 3H2
+>
+> 62. H3BO3 ≈370 K ⟶ HBO2 + H2O
+>
+> 63. 4HBO2 Δ ⟶ H2B4O7 + H2O
+>
+> 64. H2B4O7 red heat ⟶ 2B2O3 + H2O
+>
+> 65. H3BO3 + 4HF ⟶ HBF4 + 3H2O
+>
+> 66. B(OH)3 + 3CH3OH ⇌ B(OCH3)3 + 3H2O
+>
+> 67. H3BO3 + 3C2H5OH conc. H2SO4 ⟶ B(OC2H5)3 + 3H2O
+>
+> 68. 2H3BO3 + Na2CO3(hot) ⟶ Na2B4O7 + 6H2O + CO2 (write as 4H3BO3 + Na2CO3)
+>
+> 69. Ca2B6O11·5H2O + 2Na2CO3 + 5H2O ⟶ Na2B4O7·10H2O + 2NaBO2 + 2CaCO3
+>
+> 70. 4NaBO2 + CO2 ⟶ Na2B4O7 + Na2CO3
+>
+> 71. Na2B4O7 + 7H2O hydrolysis ⟶ 2NaOH + 4H3BO3
+>
+> 72. [B4O5(OH)4]2− + 5H2O ⇌ 2B(OH)3 + 2[B(OH)4]−
+>
+> 73. Na2B4O7·10H2O + 2HCl ⟶ 4H3BO3 + 2NaCl + 5H2O
+>
+> 74. Na2B4O7·10H2O heat, −H2O ⟶ Na2B4O7·5H2O + 5H2O
+>
+> 75. Na2B4O7 strong heat ⟶ 2NaBO2 + B2O3
+>
+> 76. Na2B4O7 + 6CaF2 + 7H2SO4 ⟶ 4BF3 + 6CaSO4 + Na2SO4 + 7H2O
+>
+> 77. CoO + B2O3 bead ⟶ Co(BO2)2 (blue)
+>
+> 78. 2NaBO2 + 2H2O2 + 6H2O ⟶ Na2[(OH)2B(O–O)2B(OH)2]·6H2O
+>
+> 79. NaBO3·4H2O(aq) ≈80 °C ⟶ NaBO2 + H2O2 + 3H2O
+>
+> 80. B2O3 + 3CaF2 + 3H2SO4(conc.) ⟶ 2BF3 + 3CaSO4 + 3H2O
+>
+> 81. B2O3 + 6NH4BF4 Δ ⟶ 8BF3 + 6NH3 + 3H2O
+>
+> 82. NH4BF4 Δ ⟶ BF3 + NH3 + HF
+>
+> 83. B2O3 + 3C + 3Cl2 Δ ⟶ 2BCl3 + 3CO
+>
+> 84. BF3 + NH3 ⟶ F3B←NH3
+>
+> 85. BF3 + (C2H5)2O ⟶ BF3·O(C2H5)2 (etherate)
+>
+> 86. BF3 + F− ⟶ [BF4]−
+>
+> 87. BCl3 + NH3 ⟶ Cl3B←NH3
+>
+> 88. BCl3 + AsH3 selective ⟶ Cl3B←AsH3
+>
+> 89. 4BF3 + 3H2O ⟶ H3BO3 + 3HBF4
+>
+> 90. BCl3 + 3H2O ⟶ H3BO3 + 3HCl
+>
+> 91. BF3 + BCl3 redistribution ⟶ BF2Cl + BFCl2
+>
+> 92. H3BO3 + 3HF ⟶ BF3 + 3H2O
+>
+> 93. Mg3B2 + 6H3PO4 ⟶ B2H6 + 3Mg(H2PO4)2
+>
+> 94. 2BF3 + 6NaH 450 K ⟶ B2H6 + 6NaF
+>
+> 95. 4BF3·OEt2 + 3LiAlH4 dry ether ⟶ 2B2H6 + 3LiAlF4 + 4OEt2
+>
+> 96. 4BCl3 + 3LiAlH4 ether ⟶ 2B2H6 + 3LiCl + 3AlCl3
+>
+> 97. 2NaBH4 + I2 diglyme ⟶ B2H6 + 2NaI + H2
+>
+> 98. 3NaBH4 + 4BF3·OEt2 ⟶ 2B2H6 + 3NaBF4 + 4OEt2
+>
+> 99. 2BCl3 + 6H2 electric discharge ⟶ B2H6 + 6HCl
+>
+> 100. B2O3 + 2Al + 3H2 Δ ⟶ B2H6 + Al2O3
+>
+> 101. B2H6 + 3O2 ⟶ B2O3 + 3H2O
+>
+> 102. B2H6 + 6H2O ⟶ 2H3BO3 + 6H2
+>
+> 103. B2H6 + 6NaOH ⟶ 2Na3BO3 + 6H2
+>
+> 104. B2H6 + 6CH3OH ⟶ 2B(OCH3)3 + 6H2
+>
+> 105. B2H6 + 3Cl2 ⟶ 2BCl3 + 6HCl
+>
+> 106. B2H6 + HCl ⟶ B2H5Cl + H2
+>
+> 107. B2H6 + 2LiH ⟶ 2LiBH4
+>
+> 108. 2B2H6 + 2Na ⟶ NaBH4 + NaB3H8
+>
+> 109. B2H6 + 2CO Δ, p ⟶ 2BH3·CO (symmetrical cleavage)
+>
+> 110. B2H6 + 2PF3 ⟶ 2BH3·PF3
+>
+> 111. B2H6 + 2P(CH3)3 ⟶ 2BH3·P(CH3)3
+>
+> 112. B2H6 + 2N(CH3)3 ⟶ 2BH3·N(CH3)3 (symmetrical, bulky donor)
+>
+> 113. B2H6 + 2Et2O ⟶ 2BH3·OEt2
+>
+> 114. B2H6 + 2Et2S ⟶ 2BH3·SEt2
+>
+> 115. B2H6 + 2NH3 low T ⟶ [BH2(NH3)2]+[BH4]− (unsymmetrical cleavage)
+>
+> 116. 3B2H6 + 6NH3 Δ ⟶ 2B3N3H6 + 12H2
+>
+> 117. 4NaH + B(OCH3)3 ≈250 °C ⟶ NaBH4 + 3NaOCH3
+>
+> 118. 2MH + B2H6 ether (M = Li, Na) ⟶ 2M[BH4]
+>
+> 119. NaBH4 + LiCl ⟶ LiBH4 + NaCl
+>
+> 120. BeCl2 + 2LiBH4 ⟶ Be(BH4)2 + 2LiCl
+>
+> 121. 3LiBH4 + AlCl3 ⟶ Al(BH4)3 + 3LiCl
+>
+> 122. 4LiH + AlCl3 dry ether ⟶ LiAlH4 + 3LiCl
+>
+> 123. LiBH4 + 2H2O ⟶ LiBO2 + 4H2
+>
+> 124. 3NH4Cl + 3NaBH4 Δ ⟶ B3N3H6 + 3NaCl + 9H2
+>
+> 125. 3BCl3 + 3NH4Cl 140 °C ⟶ B3N3H3Cl3 + 9HCl
+>
+> 126. B3N3H3Cl3 + 3NaBH4 ⟶ B3N3H6 + 3NaCl + (BH3-derived products)
+>
+> 127. B3N3H6 + 3HCl ⟶ B3N3H9Cl3 (ring addition)
+>
+> 128. B3N3H6 + 9H2O ⟶ 3H3BO3 + 3NH3 + 3H2
+>
+> 129. B3N3H6 strong Δ ⟶ 3BN + 3H2
+>
+> 130. B2O3 + 2NH3 Δ ⟶ 2BN + 3H2O
+>
+> 131. BCl3 + NH3 Δ ⟶ BN + 3HCl
+>
+> 132. 2B2O3 + 7C ≈2500 °C ⟶ B4C + 6CO
+>
+> 133. Fe2O3 + 2Al Δ ⟶ Al2O3 + 2Fe + heat
+>
+> 134. Cr2O3 + 2Al Δ ⟶ Al2O3 + 2Cr
+>
+> 135. 3Mn3O4 + 8Al Δ ⟶ 4Al2O3 + 9Mn
+>
+> 136. Al2O3 + 3C + 3Cl2 Δ ⟶ 2AlCl3 + 3CO
+>
+> 137. 2AlCl3(g) ⇌ Al2Cl6 (dimer; reverse at high T)
+>
+> 138. Al2Cl6 + 12H2O ⟶ 2[Al(H2O)6]3+ + 6Cl−
+>
+> 139. 2Al + 6HCl(aq) + 12H2O ⟶ 2AlCl3·6H2O + 3H2
+>
+> 140. Al(OH)3 + 3HCl + 3H2O ⟶ AlCl3·6H2O
+>
+> 141. 2AlCl3·6H2O Δ ⟶ Al2O3 + 6HCl + 9H2O
+>
+> 142. AlCl3 + 6NH3 ⟶ AlCl3·6NH3
+>
+> 143. AlCl3(aq) + 3NH4OH ⟶ Al(OH)3 + 3NH4Cl
+>
+> 144. Al(OH)3 + NaOH ⟶ NaAlO2 + 2H2O
+>
+> 145. [Al(H2O)6]3+ + H2O ⇌ [Al(H2O)5OH]2+ + H3O+
+>
+> 146. 2Al(OH)3 + 3H2SO4 ⟶ Al2(SO4)3 + 6H2O
+>
+> 147. Al2(SO4)3 + K2SO4 + 24H2O ⟶ K2SO4·Al2(SO4)3·24H2O
+>
+> 148. KAl(SO4)2·12H2O(s) dissolve ⟶ K+ + Al3+ + 2SO42− + 12H2O
+>
+> 149. KAl(SO4)2·12H2O Δ (burnt alum) ⟶ KAl(SO4)2 + 12H2O
+>
+> 150. Cathode: Al3+ + 3e− ⟶ Al(l)
+>
+> 151. Anode: C + 2O2− ⟶ CO2 + 4e−
+>
+> 152. Overall: 2Al2O3 + 3C ⟶ 4Al + 3CO2
+>
+> 153. Bayer: Al2O3 + 2NaOH + 3H2O ⟶ 2Na[Al(OH)4]
+>
+> 154. Bayer: Na[Al(OH)4] seeding/dilution ⟶ Al(OH)3↓ + NaOH
+>
+> 155. 2Al(OH)3 calcination ⟶ Al2O3 + 3H2O
 
 ------------------------------------------------------------------------
 

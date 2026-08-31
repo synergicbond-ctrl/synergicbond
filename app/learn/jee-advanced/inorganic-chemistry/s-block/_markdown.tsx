@@ -44,7 +44,15 @@ const markdownComponents: Components = {
     const text = flattenText(children);
     return (
       <section className="mt-12 first:mt-0">
-        <h2 id={slugify(text)} className="scroll-mt-24 border-t-2 border-amber-300 pt-10 font-display text-3xl font-black leading-tight tracking-tight text-amber-300 sm:text-4xl">
+        <h2
+          id={slugify(text)}
+          className="scroll-mt-24 border-t-2 pt-10 font-display text-3xl font-black leading-tight tracking-tight sm:text-4xl"
+          style={{
+            color: "#fbbf24",
+            borderColor: "#fbbf24",
+            textShadow: "0 0 20px rgba(251,191,36,.35)",
+          }}
+        >
           {children}
         </h2>
       </section>
@@ -52,15 +60,53 @@ const markdownComponents: Components = {
   },
   h2: ({ children }) => {
     const text = flattenText(children);
-    return <h3 id={slugify(text)} className="scroll-mt-24 pt-7 font-display text-2xl font-black leading-tight text-cyan-300 drop-shadow-[0_0_10px_rgba(34,211,238,.35)] sm:text-[28px]">{children}</h3>;
+    return (
+      <h3
+        id={slugify(text)}
+        className="scroll-mt-24 pt-7 font-display text-2xl font-black leading-tight sm:text-[28px]"
+        style={{
+          color: "#67e8f9",
+          textShadow: "0 0 16px rgba(103,232,249,.34)",
+        }}
+      >
+        {children}
+      </h3>
+    );
   },
-  h3: ({ children }) => <h4 className="pt-4 font-display text-xl font-black leading-tight text-fuchsia-300 drop-shadow-[0_0_10px_rgba(232,121,249,.35)] sm:text-[22px]">{children}</h4>,
-  h4: ({ children }) => <h5 className="pt-2 font-display text-base font-black text-violet-300 drop-shadow-[0_0_10px_rgba(196,181,253,.25)] sm:text-lg">{children}</h5>,
+  h3: ({ children }) => (
+    <h4
+      className="pt-4 font-display text-xl font-black leading-tight sm:text-[22px]"
+      style={{
+        color: "#f472b6",
+        textShadow: "0 0 14px rgba(244,114,182,.33)",
+      }}
+    >
+      {children}
+    </h4>
+  ),
+  h4: ({ children }) => (
+    <h5
+      className="pt-2 font-display text-base font-black sm:text-lg"
+      style={{
+        color: "#c084fc",
+        textShadow: "0 0 12px rgba(192,132,252,.25)",
+      }}
+    >
+      {children}
+    </h5>
+  ),
   p: ({ children }) => <p className="max-w-[94ch] text-[15.5px] leading-[1.86] text-slate-300 sm:text-[16.5px]">{children}</p>,
   ul: ({ children }) => <ul className="ml-5 max-w-[94ch] list-disc space-y-2.5 text-slate-300 marker:text-[var(--accent)]">{children}</ul>,
   ol: ({ children }) => <ol className="ml-6 max-w-[94ch] list-decimal space-y-2.5 text-slate-300 marker:font-black marker:text-amber-300">{children}</ol>,
   li: ({ children }) => <li className="pl-1 text-[15.5px] leading-7 sm:text-base">{children}</li>,
-  strong: ({ children }) => <strong className="font-black text-amber-300 drop-shadow-[0_0_8px_rgba(251,191,36,.28)]">{children}</strong>,
+  strong: ({ children }) => (
+    <strong
+      className="font-black"
+      style={{ color: "#fde68a", textShadow: "0 0 8px rgba(253,230,138,.25)" }}
+    >
+      {children}
+    </strong>
+  ),
   em: ({ children }) => <em className="text-[var(--text-faint)]">{children}</em>,
   blockquote: ({ children }) => (
     <blockquote className="my-5 rounded-lg border border-[var(--border)] border-l-4 border-l-[var(--accent)] bg-[var(--surface-2)] px-5 py-4 text-[var(--foreground)] shadow-lg shadow-black/10">
@@ -76,7 +122,11 @@ const markdownComponents: Components = {
   thead: ({ children }) => <thead className="bg-[var(--surface-2)] text-[var(--foreground)]">{children}</thead>,
   th: ({ children }) => <th className="border-b border-[var(--border)] px-4 py-3.5 font-black">{children}</th>,
   td: ({ children }) => <td className="border-b border-white/[.07] px-4 py-3.5 align-top leading-6 text-slate-300">{children}</td>,
-  a: ({ href, children }) => <a href={href} className="font-bold text-fuchsia-300 underline decoration-fuchsia-300/30 underline-offset-4 hover:text-amber-300">{children}</a>,
+  a: ({ href, children }) => (
+    <a href={href} className="font-bold underline underline-offset-4" style={{ color: "#f472b6", textDecorationColor: "rgba(244,114,182,.35)" }}>
+      {children}
+    </a>
+  ),
   code: ({ children }) => <code className="rounded-md border border-[var(--border)] bg-[var(--surface-2)] px-1.5 py-0.5 font-mono text-[0.9em] text-[var(--foreground)]">{children}</code>,
 };
 

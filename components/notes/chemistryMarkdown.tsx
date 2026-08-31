@@ -2,32 +2,42 @@ import type { CSSProperties, ReactNode } from "react";
 import { Fragment } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
 
 /* ------------------------------------------------------------------ *
  * Shared chemistry notes renderer (p-block, boron-family, …).
  *
- * Restrained accent system — every colour has ONE job:
- *   ink / body  neutral reading text (bright, not grey)
- *   sky         section headings, links, "Key Point"
- *   sand        sub-headings, reaction arrows, emphasis
- *   iris        deep-theory sub-sub-headings, "MOT Lens"
- *   mint        "Note" / "Summary" call-outs, equation edge
- *   coral       "JEE Trap"
- * Applied inline so the global `h1..h6 { color }` rule can't flatten it.
+ * Vivid multi-colour system — a curated 8-hue palette applied boldly
+ * across headings, call-outs, equations and tables. Colours are set
+ * inline so the app's global `h1..h6 { color }` rule can't flatten
+ * them, and every tinted surface uses the matching hue.
  * ------------------------------------------------------------------ */
 
 const C = {
-  ink: "#f5f8fc",
-  body: "#d9e2ee",
-  faint: "#9fb0c4",
-  sky: "#6cc8ec",
-  sand: "#e6c079",
-  iris: "#b79bf0",
-  mint: "#5fd1a8",
-  coral: "#f18a6d",
-  line: "rgba(255,255,255,0.10)",
-  panel: "rgba(255,255,255,0.035)",
+  ink: "#f6f9fd",
+  body: "#dde5f0",
+  faint: "#9db0c6",
+  cyan: "#3fd0ee",
+  teal: "#2fd9a6",
+  lime: "#a3e14e",
+  gold: "#f5b93c",
+  coral: "#ff7a6b",
+  pink: "#f472c0",
+  violet: "#a98cff",
+  blue: "#5b9dff",
+  line: "rgba(255,255,255,0.09)",
 } as const;
+
+/** translucent tint of a hex colour, for call-out / card backgrounds */
+const tint = (hex: string, pct: number) => {
+  const n = parseInt(hex.slice(1), 16);
+  const r = (n >> 16) & 255;
+  const g = (n >> 8) & 255;
+  const b = n & 255;
+  return `rgba(${r}, ${g}, ${b}, ${pct})`;
+};
 
 function flattenText(node: ReactNode): string {
   if (typeof node === "string" || typeof node === "number") return String(node);
@@ -85,56 +95,65 @@ function isConditionLabel(inner: string): boolean {
   return /^[a-zΔµμ°]/.test(s); //  fusion, excess, warm, Δ
 }
 
+function EqSegment({ seg, hue }: { seg: string; hue: string }) {
+  const bits = seg.split(/(\[[^\]]+\])/).filter(Boolean);
+  return (
+    <>
+      {bits.map((b, j) => {
+        const m = /^\[([^\]]+)\]$/.exec(b);
+        if (m && isConditionLabel(m[1])) {
+          return (
+            <span
+              key={j}
+              className="rounded-md px-2 py-0.5 text-[12px] font-bold"
+              style={{ background: tint(C.gold, 0.16), border: `1px solid ${tint(C.gold, 0.35)}`, color: C.gold }}
+            >
+              {m[1].trim()}
+            </span>
+          );
+        }
+        const prev = bits[j - 1] ?? "";
+        if (/^\d{0,2}[+−-]$/.test(b.trim()) && /[)\]]$/.test(prev.trim())) {
+          return (
+            <span key={j} className="font-semibold" style={{ color: hue }}>
+              {toSup(b.trim())}
+            </span>
+          );
+        }
+        const s = formatChem(b).replace(/\s+/g, " ").trim();
+        return s ? (
+          <span key={j} className="font-semibold" style={{ color: hue }}>
+            {s}
+          </span>
+        ) : null;
+      })}
+    </>
+  );
+}
+
 function Equation({ raw }: { raw: string }) {
   const parts = raw.trim().split(ARROWS);
+  const firstArrow = parts.findIndex((p) => ARROWS.test(p));
   return (
     <div
-      className="my-5 overflow-x-auto rounded-lg px-4 py-3"
-      style={{ background: C.panel, borderLeft: `3px solid ${C.mint}` }}
+      className="my-5 overflow-x-auto rounded-xl px-4 py-3.5"
+      style={{
+        background: `linear-gradient(135deg, ${tint(C.teal, 0.1)}, ${tint(C.cyan, 0.06)})`,
+        border: `1px solid ${tint(C.teal, 0.32)}`,
+      }}
     >
       <div className="flex flex-wrap items-center gap-x-1.5 gap-y-2 font-mono text-[15px] leading-relaxed sm:text-[15.5px]" style={{ color: C.ink }}>
-        {parts.map((seg, i) => {
-          if (ARROWS.test(seg)) {
-            return (
-              <span key={i} className="mx-1.5 text-lg font-black" style={{ color: C.sand }}>
-                {seg}
-              </span>
-            );
-          }
-          const bits = seg.split(/(\[[^\]]+\])/).filter(Boolean);
-          return (
+        {parts.map((seg, i) =>
+          ARROWS.test(seg) ? (
+            <span key={i} className="mx-1.5 text-xl font-black" style={{ color: C.gold }}>
+              {seg}
+            </span>
+          ) : (
             <Fragment key={i}>
-              {bits.map((b, j) => {
-                const m = /^\[([^\]]+)\]$/.exec(b);
-                if (m && isConditionLabel(m[1])) {
-                  return (
-                    <span
-                      key={j}
-                      className="rounded px-1.5 py-0.5 text-[12px] font-semibold"
-                      style={{ background: "rgba(255,255,255,0.06)", border: `1px solid ${C.line}`, color: C.faint }}
-                    >
-                      {m[1].trim()}
-                    </span>
-                  );
-                }
-                const prev = bits[j - 1] ?? "";
-                if (/^\d{0,2}[+−-]$/.test(b.trim()) && /[)\]]$/.test(prev.trim())) {
-                  return (
-                    <span key={j} className="font-medium">
-                      {toSup(b.trim())}
-                    </span>
-                  );
-                }
-                const s = formatChem(b).replace(/\s+/g, " ").trim();
-                return s ? (
-                  <span key={j} className="font-medium">
-                    {s}
-                  </span>
-                ) : null;
-              })}
+              <EqSegment seg={seg} hue={firstArrow >= 0 && i > firstArrow ? C.lime : C.cyan} />
             </Fragment>
-          );
-        })}
+          ),
+        )}
       </div>
     </div>
   );
@@ -142,23 +161,23 @@ function Equation({ raw }: { raw: string }) {
 
 /* ---------- typed call-out boxes ---------------------------------- */
 
-type Variant = { key: string; label: string; accent: string };
+type Variant = { key: string; label: string; icon: string; accent: string };
 const VARIANTS: Variant[] = [
-  { key: "jee trap", label: "JEE Trap", accent: C.coral },
-  { key: "mot lens", label: "MOT Lens", accent: C.iris },
-  { key: "key point", label: "Key Point", accent: C.sky },
-  { key: "big picture", label: "Big Picture", accent: C.sky },
-  { key: "continuity map", label: "Continuity", accent: C.sky },
-  { key: "structural summary", label: "Summary", accent: C.iris },
-  { key: "analytical note", label: "Analytical Note", accent: C.mint },
-  { key: "hydration note", label: "Note", accent: C.mint },
-  { key: "chemical note", label: "Note", accent: C.mint },
-  { key: "oxide-character note", label: "Note", accent: C.mint },
-  { key: "passivation", label: "Conditions", accent: C.sand },
-  { key: "ordinary conditions", label: "Conditions", accent: C.sand },
-  { key: "note", label: "Note", accent: C.mint },
+  { key: "jee trap", label: "JEE Trap", icon: "⚠", accent: C.coral },
+  { key: "mot lens", label: "MOT Lens", icon: "◎", accent: C.violet },
+  { key: "key point", label: "Key Point", icon: "★", accent: C.cyan },
+  { key: "big picture", label: "Big Picture", icon: "◆", accent: C.blue },
+  { key: "continuity map", label: "Continuity", icon: "▸", accent: C.blue },
+  { key: "structural summary", label: "Summary", icon: "▤", accent: C.violet },
+  { key: "analytical note", label: "Analytical Note", icon: "✎", accent: C.teal },
+  { key: "hydration note", label: "Note", icon: "•", accent: C.teal },
+  { key: "chemical note", label: "Note", icon: "•", accent: C.teal },
+  { key: "oxide-character note", label: "Note", icon: "•", accent: C.teal },
+  { key: "passivation", label: "Conditions", icon: "⚗", accent: C.gold },
+  { key: "ordinary conditions", label: "Conditions", icon: "⚗", accent: C.gold },
+  { key: "note", label: "Note", icon: "•", accent: C.teal },
 ];
-const DEFAULT_VARIANT: Variant = { key: "", label: "Note", accent: C.mint };
+const DEFAULT_VARIANT: Variant = { key: "", label: "Note", icon: "•", accent: C.teal };
 
 function pickVariant(text: string): Variant {
   const head = text.trim().toLowerCase().replace(/^[*\s]+/, "").slice(0, 40);
@@ -169,10 +188,11 @@ function Callout({ children }: { children: ReactNode }) {
   const v = pickVariant(flattenText(children));
   return (
     <div
-      className="my-5 rounded-lg p-4 pl-4"
-      style={{ borderLeft: `3px solid ${v.accent}`, background: C.panel }}
+      className="my-5 rounded-xl p-4 pl-5"
+      style={{ borderLeft: `4px solid ${v.accent}`, background: tint(v.accent, 0.1) }}
     >
-      <p className="mb-1.5 text-[10.5px] font-black uppercase tracking-[0.2em]" style={{ color: v.accent }}>
+      <p className="mb-1.5 flex items-center gap-1.5 text-[11px] font-black uppercase tracking-[0.18em]" style={{ color: v.accent }}>
+        <span aria-hidden className="text-[13px] leading-none">{v.icon}</span>
         {v.label}
       </p>
       <div className="space-y-2 text-[15px] leading-[1.75]" style={{ color: C.body }}>
@@ -193,8 +213,15 @@ const components: Components = {
       <section className="mt-14 first:mt-0">
         <h2
           id={slugify(text)}
-          className="pt-7 font-sans text-[1.85rem] font-black leading-tight tracking-tight sm:text-[2.15rem]"
-          style={h({ color: C.ink, borderTop: `1px solid ${C.line}` })}
+          className="w-fit pt-7 font-sans text-[1.9rem] font-black leading-tight tracking-tight sm:text-[2.25rem]"
+          style={h({
+            color: C.cyan,
+            backgroundImage: `linear-gradient(100deg, ${C.cyan}, ${C.violet} 55%, ${C.pink})`,
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            borderTop: `2px solid ${tint(C.cyan, 0.35)}`,
+          })}
         >
           {children}
         </h2>
@@ -202,17 +229,21 @@ const components: Components = {
     );
   },
   h2: ({ children }) => (
-    <h3 id={slugify(flattenText(children))} className="pt-8 font-sans text-[1.4rem] font-black leading-tight" style={h({ color: C.sky })}>
+    <h3
+      id={slugify(flattenText(children))}
+      className="mt-2 inline-block border-b-2 pb-1 pt-8 font-sans text-[1.45rem] font-black leading-tight"
+      style={h({ color: C.cyan, borderColor: tint(C.cyan, 0.4) })}
+    >
       {children}
     </h3>
   ),
   h3: ({ children }) => (
-    <h4 className="pt-5 font-sans text-[1.15rem] font-black leading-tight" style={h({ color: C.sand })}>
+    <h4 className="pt-5 font-sans text-[1.15rem] font-black leading-tight" style={h({ color: C.gold })}>
       {children}
     </h4>
   ),
   h4: ({ children }) => (
-    <h5 className="pt-3 font-sans text-[13px] font-black uppercase tracking-[0.14em]" style={h({ color: C.faint })}>
+    <h5 className="pt-3 font-sans text-[13px] font-black uppercase tracking-[0.16em]" style={h({ color: C.pink })}>
       {children}
     </h5>
   ),
@@ -220,18 +251,18 @@ const components: Components = {
     const text = flattenText(children);
     if (isEquation(text)) return <Equation raw={text} />;
     return (
-      <p className="max-w-[72ch] text-[16px] leading-[1.85]" style={{ color: C.body }}>
+      <p className="max-w-[74ch] text-[16px] leading-[1.85]" style={{ color: C.body }}>
         {children}
       </p>
     );
   },
   ul: ({ children }) => (
-    <ul className="my-3 ml-5 max-w-[72ch] list-disc space-y-2 marker:text-[#6cc8ec]" style={{ color: C.body }}>
+    <ul className="my-3 ml-5 max-w-[74ch] list-disc space-y-2 marker:text-[#3fd0ee]" style={{ color: C.body }}>
       {children}
     </ul>
   ),
   ol: ({ children }) => (
-    <ol className="my-3 ml-6 max-w-[72ch] list-decimal space-y-2 marker:font-black marker:text-[#e6c079]" style={{ color: C.body }}>
+    <ol className="my-3 ml-6 max-w-[74ch] list-decimal space-y-2 marker:font-black marker:text-[#f5b93c]" style={{ color: C.body }}>
       {children}
     </ol>
   ),
@@ -247,28 +278,33 @@ const components: Components = {
     return <li className="pl-1 text-[15.5px] leading-[1.75]">{children}</li>;
   },
   strong: ({ children }) => (
-    <strong className="font-bold" style={{ color: C.ink }}>
+    <strong className="font-black" style={{ color: C.gold }}>
       {children}
     </strong>
   ),
   em: ({ children }) => (
-    <em className="font-semibold not-italic" style={{ color: C.sand }}>
+    <em className="font-semibold not-italic" style={{ color: C.violet }}>
       {children}
     </em>
   ),
   blockquote: ({ children }) => <Callout>{children}</Callout>,
-  hr: () => <hr className="my-10 h-px border-0" style={{ background: C.line }} />,
+  hr: () => (
+    <hr
+      className="my-10 h-[2px] border-0"
+      style={{ background: `linear-gradient(to right, ${tint(C.cyan, 0.5)}, ${tint(C.violet, 0.5)}, ${tint(C.pink, 0.4)}, transparent)` }}
+    />
+  ),
   table: ({ children }) => (
-    <div className="my-6 overflow-x-auto rounded-lg" style={{ border: `1px solid ${C.line}` }}>
+    <div className="my-6 overflow-x-auto rounded-xl" style={{ border: `1px solid ${tint(C.cyan, 0.22)}` }}>
       <table className="min-w-full border-collapse text-left text-[14px]">{children}</table>
     </div>
   ),
   thead: ({ children }) => (
-    <thead style={{ background: "rgba(255,255,255,0.04)" }}>{children}</thead>
+    <thead style={{ background: `linear-gradient(135deg, ${tint(C.cyan, 0.18)}, ${tint(C.violet, 0.14)})` }}>{children}</thead>
   ),
-  tbody: ({ children }) => <tbody className="[&>tr:nth-child(even)]:bg-white/[0.02]">{children}</tbody>,
+  tbody: ({ children }) => <tbody className="[&>tr:nth-child(even)]:bg-white/[0.025]">{children}</tbody>,
   th: ({ children }) => (
-    <th className="px-3.5 py-2.5 font-black" style={{ borderBottom: `1px solid ${C.line}`, color: C.sky }}>
+    <th className="px-3.5 py-2.5 font-black" style={{ borderBottom: `1px solid ${tint(C.cyan, 0.3)}`, color: C.cyan }}>
       {children}
     </th>
   ),
@@ -282,7 +318,7 @@ const components: Components = {
     );
   },
   a: ({ href, children }) => (
-    <a href={href} className="font-semibold underline underline-offset-4" style={{ color: C.sky, textDecorationColor: "rgba(108,200,236,0.4)" }}>
+    <a href={href} className="font-bold underline underline-offset-4" style={{ color: C.cyan, textDecorationColor: tint(C.cyan, 0.45) }}>
       {children}
     </a>
   ),
@@ -296,11 +332,22 @@ const components: Components = {
   ),
 };
 
+/** `\[ … \]` → `$$ … $$` and `\( … \)` → `$ … $` so KaTeX picks them up. */
+function normaliseMath(markdown: string) {
+  return markdown
+    .replace(/\\\[\s*([\s\S]*?)\s*\\\]/g, (_m, e: string) => `\n$$\n${e.trim()}\n$$\n`)
+    .replace(/\\\(([^\n]*?)\\\)/g, (_m, e: string) => `$${e.trim()}$`);
+}
+
 export function ChemistryMarkdown({ markdown }: { markdown: string }) {
   return (
-    <div className="space-y-4 [&_tr>td:first-child]:font-semibold [&_tr>td:first-child]:text-[#f5f8fc]">
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
-        {markdown}
+    <div className="space-y-4 [&_.katex]:text-[var(--chem-bond,#3fd0ee)] [&_tr>td:first-child]:font-semibold [&_tr>td:first-child]:text-[#f5f8fc]">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[[rehypeKatex, { throwOnError: false, strict: false }]]}
+        components={components}
+      >
+        {normaliseMath(markdown)}
       </ReactMarkdown>
     </div>
   );

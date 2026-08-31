@@ -58,7 +58,7 @@ Down heavier p-block groups, the valence ns² electron pair increasingly resists
 
 This lesson covers periodic trends, oxidation-state logic, elemental boron, aluminium, the oxides, boric acid and borax. [Continue: halides, hydrides, boranes, aluminium compounds and revision](/notes/p-block/part3).
 
-## Part 1 — Position, members, occurrence and chapter map
+## 1 · Position, members, occurrence and chapter map
 
 ### 1.1 Position and valence-shell configuration
 
@@ -99,7 +99,7 @@ Boron does not occur free because of its strong affinity for oxygen. Aluminium i
 
 ---
 
-## Part 2 — Master trends and orders of Group 13
+## 2 · Master trends and orders of Group 13
 
 ### 2.1 Verified numerical data
 
@@ -175,7 +175,7 @@ The 3d¹⁰ electrons in Ga shield the nucleus poorly. The 4s and 4p electrons t
 
 ---
 
-## Part 3 — Oxidation states, inert-pair effect and bonding logic
+## 3 · Oxidation states, inert-pair effect and bonding logic
 
 ### 3.1 The +3 and +1 oxidation states
 
@@ -248,7 +248,7 @@ Disproportionation of unstable monohalides:
 
 ---
 
-## Part 4 — Anomalous behaviour of boron and B–Si diagonal relationship
+## 4 · Anomalous behaviour of boron and B–Si diagonal relationship
 
 ### 4.1 Why boron is anomalous
 
@@ -280,7 +280,7 @@ Both are hard covalent elements; their oxides are acidic; their halides hydrolys
 
 ---
 
-## Part 5 — Elemental boron: preparation, structure and reactions
+## 5 · Elemental boron: preparation, structure and reactions
 
 ### 5.1 Preparation of amorphous boron
 
@@ -341,7 +341,7 @@ Boron allotropes are built from **B₁₂ icosahedra**. Strong intra- and inter-
 
 ---
 
-## Part 6 — Aluminium, gallium, indium and thallium
+## 6 · Aluminium, gallium, indium and thallium
 
 ### 6.1 Aluminium: apparent inertness and real reactivity
 
@@ -417,7 +417,7 @@ Al₂O₃ is dissolved in molten cryolite; CaF₂ may be added to improve fluidi
 
 ---
 
-## Part 7 — Oxides, hydroxides and boric acid
+## 7 · Oxides, hydroxides and boric acid
 
 ### 7.1 Acid–base gradation
 
@@ -521,7 +521,7 @@ Boric acid reacts with **salicylic acid** to give a four-coordinate (tetrahedral
 
 ---
 
-## Part 8 — Borax, borates and borax-bead chemistry
+## 8 · Borax, borates and borax-bead chemistry
 
 ### 8.1 Formula and structure
 
@@ -612,7 +612,7 @@ Written commercially as **NaBO₃·4H₂O**, but its true structure is a dimeric
 
 > **CONTINUITY MAP.** The previous lesson established periodic trends, oxidation-state logic, elemental boron, aluminium, the oxides, boric acid and borax. This lesson applies those principles to halides, hydrides, boranes, complex hydrides, aluminium compounds and revision synthesis.
 
-## Part 9 — Halides: Lewis acidity, bonding and hydrolysis
+## 9 · Halides: Lewis acidity, bonding and hydrolysis
 
 ### 9.1 Master Trends in Group 13 Halides
 
@@ -861,7 +861,7 @@ Thallium(I) tri-iodide, containing the linear [I₃]⁻ complex ion.
 
 ---
 
-## Part 10 — Boranes, diborane, borazine and boron nitride
+## 10 · Boranes, diborane, borazine and boron nitride
 
 ### 10.1 Why BH₃ does not remain monomeric
 
@@ -1003,7 +1003,7 @@ This material should be treated as advanced extension after core diborane chemis
 
 ---
 
-## Part 11 — Borohydrides and complex hydrides
+## 11 · Borohydrides and complex hydrides
 
 ### 11.1 Sodium borohydride
 
@@ -1034,7 +1034,7 @@ LiAlH₄ contains tetrahedral AlH₄⁻. The Al–H bond is more hydridic than B
 
 ---
 
-## Part 12 — Important aluminium compounds
+## 12 · Important aluminium compounds
 
 ### 12.1 Aluminium chloride
 
@@ -1066,7 +1066,7 @@ Aluminium sulphate/alum hydrolyses to gelatinous Al(OH)₃, which traps suspende
 
 ---
 
-## Part 13 — Complexes and organometallic compounds
+## 13 · Complexes and organometallic compounds
 
 ### 13.1 Important complexes
 
@@ -1098,7 +1098,7 @@ Al₂(CH₃)₆ contains terminal and bridging methyl groups. The bridge is elec
 
 ---
 
-## Part 14 — Applications and modern materials
+## 14 · Applications and modern materials
 
 | Material/compound | Chemistry behind the use | Application |
 |---|---|---|
@@ -1117,7 +1117,7 @@ Al₂(CH₃)₆ contains terminal and bridging methyl groups. The bridge is elec
 
 ---
 
-## Part 15 — Examination consolidation
+## 15 · Examination consolidation
 
 ### 15.1 One-page master map
 

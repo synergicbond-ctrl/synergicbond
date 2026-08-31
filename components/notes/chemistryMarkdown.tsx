@@ -107,6 +107,7 @@ function isConditionLabel(inner: string): boolean {
   if (!s) return false;
   if (/\(/.test(s)) return false; //  [Al(OH)4]
   if (/[a-z]{3,}/.test(s)) return true; //  a real word: "furnace", "about 2000 °C", "crystalline"
+  if (/°|\d\s?K\b|\d\s?atm\b|\d\s?bar\b/.test(s)) return true; //  "900-1200 °C", "about 1273 K", "5 atm"
   if (/\d/.test(s) && /[A-Z]/.test(s)) return false; //  [BF4] [GaCl4] [I3]
   if (/\s/.test(s)) return true; //  "hot concentrated", "dry ether"
   return /^[a-zΔµμ°]/.test(s); //  fusion, excess, warm, Δ

@@ -97,13 +97,13 @@ A new shell is added down the group, but Ga is smaller than Al because the inter
 > Decreasing order: Tl > In > Al > Ga > B\
 > Note: The exact Ga value depends on whether closest-approach/metallic or tabulated radius is used; the invariant exam point is Ga < Al.
 >
-> **M³⁺ ionic radius Increasing order: B(estimated) < Al < Ga < In < Tl\
+> **M³⁺ ionic radius.** Increasing order: B(estimated) < Al < Ga < In < Tl\
 > Decreasing order: Tl > In > Ga > Al > B(estimated)\
-> Note: B³⁺ is not a normal isolable aqueous ion.**
+> Note: B³⁺ is not a normal isolable aqueous ion.
 >
-> **M⁺ ionic radius Increasing order: Ga⁺ < In⁺ < Tl⁺\
+> **M⁺ ionic radius.** Increasing order: Ga⁺ < In⁺ < Tl⁺\
 > Decreasing order: Tl⁺ > In⁺ > Ga⁺\
-> Note: No comparable normal B⁺ or Al⁺ aqueous radii are used in the table.**
+> Note: No comparable normal B⁺ or Al⁺ aqueous radii are used in the table.
 >
 > **Shielding efficiency within a shell** Increasing order: f < d < p < s\
 > Decreasing order: s > p > d > f\
@@ -125,9 +125,9 @@ A new shell is added down the group, but Ga is smaller than Al because the inter
 > Decreasing order: B > Tl > Ga > Al > In\
 > Note: B ⟶ Al decreases with size; Al ⟶ Ga and In ⟶ Tl show small rises from poor d/f shielding.
 >
-> **Sum of the first three ionisation enthalpies Increasing order: In < Al < Tl < Ga < B\
+> **Sum of the first three ionisation enthalpies.** Increasing order: In < Al < Tl < Ga < B\
 > Decreasing order: B > Ga > Tl > Al > In\
-> Note: For every element IE₁ < IE₂ < IE₃; the very high three-electron cost favours covalency.**
+> Note: For every element IE₁ < IE₂ < IE₃; the very high three-electron cost favours covalency.
 
 ## 3.3 Electronegativity, electropositive and metallic character
 
@@ -347,11 +347,9 @@ GaF3 + 3F- ⟶ [GaF6]3-
 
 InF₃ + 3F⁻ ⟶ [InF₆]³⁻. In these ions Ga and In have coordination number 6.
 
-> **Lewis acidity within BX₃ Increasing order: BF₃ < BCl₃ < BBr₃ < BI₃ Decreasing order: BI₃ > BBr₃ > BCl₃ > BF₃ Note: F→B π donation is strongest in BF₃. The exact order can vary with donor identity, solvent and aggregation.\
-> **
+> **Lewis acidity within BX₃.** Increasing order: BF₃ < BCl₃ < BBr₃ < BI₃. Decreasing order: BI₃ > BBr₃ > BCl₃ > BF₃. Note: F→B π donation is strongest in BF₃. The exact order can vary with donor identity, solvent and aggregation.
 >
-> **Lewis acidity across Group 13 trihalides for a comparable hard donor (general trend) Increasing order: InX₃ < GaX₃ < AlX₃ < BX₃ Decreasing order: BX₃ > AlX₃ > GaX₃ > InX₃ Note: The preference can change with softer donors and with the halogen, solvent and aggregation state.\
-> **
+> **Lewis acidity across Group 13 trihalides** for a comparable hard donor (general trend). Increasing order: InX₃ < GaX₃ < AlX₃ < BX₃. Decreasing order: BX₃ > AlX₃ > GaX₃ > InX₃. Note: The preference can change with softer donors and with the halogen, solvent and aggregation state.
 
 ## 4.4 Hydrolysis, aquo ions and oxide/hydroxide character
 
@@ -359,15 +357,13 @@ The trichlorides, bromides and iodides are largely covalent and undergo hydrolys
 
 **Thallium(I) oxide/hydroxide:** TlOH is a soluble strong base, while Tl₂O is strongly basic and forms TlOH with water. This is consistent with the alkali-metal-like character of Tl(I).
 
-AlCl3 + 6H2O ⟶ [acidified aqueous medium] [Al(H2O)6]3+ + 3Cl-
+AlCl3 + 6H2O [acidic aqueous solution] ⟶ [Al(H2O)6]3+ + 3Cl-
 
-AlCl3 + 6H2O ⟶ [acidic aqueous solution] [Al(H2O)6]3+ + 3Cl-
+[Al(H2O)6]3+ + H2O [stepwise hydrolysis] ⇌ [Al(H2O)5OH]2+ + H3O+
 
-[Al(H2O)6]3+ + H2O ⇌ [stepwise hydrolysis] [Al(H2O)5OH]2+ + H3O+
+Al(OH)3 + OH- [strongly alkaline solution] ⟶ [Al(OH)4]-
 
-Al(OH)3 + OH- ⟶ [strongly alkaline solution] [Al(OH)4]-
-
-actual speciation depends on pH)
+The actual speciation depends on pH.
 
 > **JEE TRAP: Anhydrous AlCl₃ gives white fumes in moist air because atmospheric water partially hydrolyses it and liberates HCl; the moist HCl appears as visible white fumes.**
 >
@@ -833,8 +829,7 @@ Orthoborate examples also include lanthanide orthoborates, LnBO₃, which contai
 >
 > • The structural formula shows that four H atoms occur as –OH groups in the borate anion and eight H₂O molecules are present as water of crystallisation.
 
-| **Key Point** Do not treat borax as merely “Na₂B₄O₇·10H₂O” when a structure-based question is asked. Remember: 2 trigonal B centres + 2 tetrahedral B centres in [B₄O₅(OH)₄]²⁻. |
-|----|
+> **Key Point:** Do not treat borax as merely "Na₂B₄O₇·10H₂O" when a structure-based question is asked. Remember: 2 trigonal B centres + 2 tetrahedral B centres in [B₄O₅(OH)₄]²⁻.
 
 #### 8.3.2 Solubility and alkaline nature
 
@@ -910,7 +905,7 @@ The titration reaction is:
 
 Na₂B₄O₇·10H₂O + 2HCl → 4H₃BO₃ + 2NaCl + 5H₂O
 
-Molar mass of Na₂B₄O₇·10H2O ≈ 381.37 g mol−1; hence its acid-base equivalent mass is ≈ 190.69 g equiv−1.
+Molar mass of Na₂B₄O₇·10H₂O ≈ 381.37 g mol−1; hence its acid-base equivalent mass is ≈ 190.69 g equiv−1.
 
 Methyl orange or screened methyl orange is suitable. The ordinary methyl-orange transition range is approximately pH 3.1–4.4.
 
@@ -918,8 +913,7 @@ The product B(OH)₃ is a very weak acid and does not consume additional strong 
 
 Borax should not be strongly heated before weighing because dehydration changes its composition and therefore its effective formula mass.
 
-| **Key Point** Acid-base stoichiometry: one mole of borax consumes exactly two moles of a monoprotic strong acid. |
-|----|
+> **Key Point:** Acid-base stoichiometry: one mole of borax consumes exactly two moles of a monoprotic strong acid.
 
 #### 8.3.7 Action of heat
 
@@ -1113,9 +1107,9 @@ The anion is [(OH)₂B(mu-O-O)₂B(OH)₂]²⁻, containing two peroxide bridges
 | BBr₃ | Colourless to pale fuming liquid | Monomeric trigonal planar | Stronger Lewis acid; cleaves ethers |
 | BI₃ | White/reactive solid | Monomeric molecules in molecular solid | Weakest back-donation; strongest BX₃ Lewis acid |
 
-> **Molar mass and boiling tendency of BX₃ Increasing order: BF₃ < BCl₃ < BBr₃ < BI₃\
+> **Molar mass and boiling tendency of BX₃.** Increasing order: BF₃ < BCl₃ < BBr₃ < BI₃\
 > Decreasing order: BI₃ > BBr₃ > BCl₃ > BF₃\
-> Note: The actual physical states reflect intermolecular forces; BI₃ can decompose/react before a routine boiling-point measurement.**
+> Note: The actual physical states reflect intermolecular forces; BI₃ can decompose/react before a routine boiling-point measurement.
 >
 > **B-X bond length** Increasing order: B-F < B-Cl < B-Br < B-I\
 > Decreasing order: B-I > B-Br > B-Cl > B-F
@@ -1123,9 +1117,9 @@ The anion is [(OH)₂B(mu-O-O)₂B(OH)₂]²⁻, containing two peroxide bridges
 > **B-X bond strength (general)** Increasing order: B-I < B-Br < B-Cl < B-F\
 > Decreasing order: B-F > B-Cl > B-Br > B-I
 >
-> **Lewis acidity toward a common hard base Increasing order: BF₃ < BCl₃ < BBr₃ < BI₃\
+> **Lewis acidity toward a common hard base.** Increasing order: BF₃ < BCl₃ < BBr₃ < BI₃\
 > Decreasing order: BI₃ > BBr₃ > BCl₃ > BF₃\
-> Note: Back-donation decreases down the series; experimental orders can depend on donor, solvent and aggregation.**
+> Note: Back-donation decreases down the series; experimental orders can depend on donor, solvent and aggregation.
 
 ## 9.2 Preparation and bonding of BF₃/BCl₃
 
@@ -1656,13 +1650,13 @@ Figure 9. Covalent borohydride bonding in Al(BH₄)₃ and polymeric Be(BH₄)�
 | LiAlH₄ | Dry ether/THF only; reacts violently with protic solvents | Powerful: acids, esters, amides, nitriles and carbonyls |
 | Al(BH₄)₃ | Volatile molecular liquid, electron-deficient | Reactive hydride-transfer reagent |
 
-> **Common hydride reducing power (broad synthetic order) Increasing order: NaBH₄ < LiBH₄ < LiAlH₄\
+> **Common hydride reducing power (broad synthetic order).** Increasing order: NaBH₄ < LiBH₄ < LiAlH₄\
 > Decreasing order: LiAlH₄ > LiBH₄ > NaBH₄\
-> Note: Substrate, solvent and additives can change practical selectivity.**
+> Note: Substrate, solvent and additives can change practical selectivity.
 >
-> **Reaction of alkali-metal BH₄ salts with water Increasing order: KBH₄ < NaBH₄ < LiBH₄\
+> **Reaction of alkali-metal BH₄ salts with water.** Increasing order: KBH₄ < NaBH₄ < LiBH₄\
 > Decreasing order: LiBH₄ > NaBH₄ > KBH₄\
-> Note: LiBH₄ reacts vigorously; NaBH₄ can be recrystallised from cold water with slight decomposition; KBH₄ is still more water-stable.**
+> Note: LiBH₄ reacts vigorously; NaBH₄ can be recrystallised from cold water with slight decomposition; KBH₄ is still more water-stable.
 
 **Acid hydrolysis of borohydride:**
 
@@ -1904,8 +1898,7 @@ Al(OH)3(s) + OH-(aq) [excess strong alkali] ⟶ [Al(OH)4]-(aq)
 
 [Al(OH)4]-(aq) + CO2(g) [pass CO2 at room temperature] ⟶ Al(OH)3(s) + HCO3-(aq)
 
-> **Hardness of common materials (qualitative) Increasing order: glass < corundum (Al₂O₃) < cubic BN ≈ diamond Decreasing order: diamond ≈ cubic BN > corundum > glass Note: The exact ranking of c-BN and diamond depends on the hardness definition and crystal direction.\
-> **
+> **Hardness of common materials (qualitative).** Increasing order: glass < corundum (Al₂O₃) < cubic BN ≈ diamond Decreasing order: diamond ≈ cubic BN > corundum > glass Note: The exact ranking of c-BN and diamond depends on the hardness definition and crystal direction.\
 
 Uses of alumina include refractory bricks and furnace linings, abrasives and polishing materials, high-alumina cement, ceramics and electrical insulation, chromatographic adsorbents and catalyst supports, synthetic ruby/sapphire, and watch or instrument bearings.
 
@@ -2167,9 +2160,9 @@ Organoaluminium compounds can undergo repeated alkene insertion into Al–C bond
 | GaH₃/InH₃ | Very unstable monomers, known chiefly as low-temperature donor adducts/derivatives | Stability falls down the group |
 | TlH | No ordinary stable bulk hydride under normal conditions | Inert-pair/weak M-H bonding dominates |
 
-> **Stability of simple heavier Group 13 hydrides (qualitative) Increasing order: TlH < InH₃ < GaH₃ < AlH₃\
+> **Stability of simple heavier Group 13 hydrides (qualitative).** Increasing order: TlH < InH₃ < GaH₃ < AlH₃\
 > Decreasing order: AlH₃ > GaH₃ > InH₃ > TlH\
-> Note: BH₃ is excluded because it dimerises/adducts rather than existing as a comparable simple bulk MH₃.**
+> Note: BH₃ is excluded because it dimerises/adducts rather than existing as a comparable simple bulk MH₃.
 
 In the low-temperature model, GaH₃ dimerises as Ga₂H₆ with terminal and bridging H atoms, whereas InH₃ is represented as a polymer containing In-H-In bridges in both condensed and low-temperature vapour descriptions. These species are far less stable than diborane and must not be treated as ordinary bottle-stable hydrides.
 

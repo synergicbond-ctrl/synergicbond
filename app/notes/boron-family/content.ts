@@ -1008,11 +1008,7 @@ Boric acid cannot normally be titrated sharply with NaOH. Polyhydroxy compounds 
 
 > Analytical Note: polyols with suitable neighbouring oxygen donor groups increase the apparent acidity of boric acid by complex formation. Mannitol and sorbitol are particularly effective; glycerol also works. Ethylene glycol does form borate complexes, but its enhancement is weaker and less analytically useful, so it should not be described as a complete exception that fails to complex.
 
-H3BO3 [above about 370 K] ⟶ HBO2
-
-HBO2 [further heat] ⟶ B2O3
-
-On progressive heating, boric acid undergoes stepwise dehydration: H₃BO₃ → HBO₂ (metaboric acid) → H₂B₄O₇ (tetraboric acid) → B₂O₃ (glassy mass).
+On progressive heating, boric acid undergoes stepwise dehydration: H₃BO₃ → HBO₂ (metaboric acid) → H₂B₄O₇ (tetraboric acid) → B₂O₃ (glassy mass). The individual balanced steps are given below.
 
 In crystalline boric acid, planar B(OH)₃ units are joined by hydrogen bonds to form approximately hexagonal two-dimensional sheets. The interlayer separation is about 3.18 Å, and the weak forces between layers allow easy cleavage into fine particles.
 
@@ -1028,25 +1024,27 @@ pKa about 9.25 at 25 °C
 
 From borax:
 
-Na2B4O7.10H2O(aq) + H2SO4(aq) [dilute; below about 60 °C, cool] ⟶ 4H3BO3(s) + Na2SO4(aq) + 5H2O(l)
+Na2B4O7.10H2O(aq) + H2SO4(aq, dil.) [below ~60 °C] ⟶ 4H3BO3(s) + Na2SO4(aq) + 5H2O(l)
 
 **From boron trihalides:**
 
-BX3 + 3H2O [X = Cl, Br or I] ⟶ [controlled hydrolysis] B(OH)3 + 3HX
+BX3 + 3H2O ⟶ B(OH)3 + 3HX
+
+(X = Cl, Br, I; the trihalides hydrolyse vigorously and completely.)
 
 **From borane monomer/adduct representation:**
 
-BH3 + 3H2O [hydrolysis] ⟶ B(OH)3 + 3H2
+BH3 + 3H2O ⟶ B(OH)3 + 3H2
 
 in practice free BH₃ is generated as diborane or a donor adduct.
 
 **At about 100 °C:**
 
-H3BO3(s) [about 100 °C] ⟶ [metaboric acid] HBO2(s) + H2O(g)
+H3BO3(s) [~100 °C] ⟶ HBO2(s) + H2O(g)
 
 **At about 140-160 °C:**
 
-4HBO2(s) [about 140-160 °C] ⟶ [depending on heating history/source convention; tetraboric acid] H2B4O7(s) + H2O(g)
+4HBO2(s) [~140-160 °C] ⟶ H2B4O7(s) + H2O(g)
 
 Heating of boric acid proceeds stepwise: H₃BO₃ → HBO₂ → H₂B₄O₇ → B₂O₃. Exact transition temperatures depend on experimental conditions; the sequence is the important point.
 
@@ -1056,27 +1054,27 @@ H2B4O7(s) [red heat] ⟶ 2B2O3(l) + H2O(g)
 
 Fluoroboric acid:
 
-H3BO3(aq) + 4HF(aq) [concentrated] ⟶ HBF4(aq) + 3H2O(l)
+H3BO3(aq) + 4HF(aq, conc.) ⟶ HBF4(aq) + 3H2O(l)
 
 Fluoroboric acid, HBF₄, is a strong acid and is commonly handled as an aqueous solution; commercial solutions are often about 40% HBF₄.
 
 **Volatile ester test:**
 
-H3BO3(s/aq) + 3C2H5OH(l) [concentrated H2SO4] ⟶ [warm] B(OC2H5)3(g) + 3H2O(l)
+H3BO3(s/aq) + 3C2H5OH(l) [conc. H2SO4, warm] ⟶ B(OC2H5)3(g) + 3H2O(l)
 
-vapour burns green
+Observation: the ethyl borate vapour burns with a green-edged flame.
 
 **Methyl-borate flame test:**
 
-B(OH)3 + 3CH3OH [concentrated H2SO4] ⟶ [warm] B(OCH3)3 + 3H2O
+B(OH)3 + 3CH3OH [conc. H2SO4, warm] ⟶ B(OCH3)3 + 3H2O
 
 concentrated H₂SO₄ removes water and the volatile ester burns with a green flame.
 
 Stepwise fluoride test:
 
-CaF2 + H2SO4(concentrated) ⟶ CaSO4 + 2HF
+CaF2(s) + H2SO4(l, conc.) ⟶ CaSO4(s) + 2HF(g)
 
-H3BO3 + 3HF ⟶ BF3(g) + 3H2O.
+H3BO3(s) + 3HF(g) ⟶ BF3(g) + 3H2O(l)
 
 > **Polyborate acidity: At higher boric-acid concentration, condensation gives polyborate species with an apparent pK near 6.84. This equilibrium is distinct from the dilute B(OH)₃ equilibrium with pKₐ about 9.25.**
 
@@ -1104,21 +1102,19 @@ Commercial sodium perborate is more accurately described as a peroxoborate hydra
 
 **Exact dimeric peroxide route:**
 
-2NaBO2(aq) + 2H2O2(aq) + 6H2O(l) [cold alkaline crystallisation] ⟶ Na2[(OH)2B(O-O)2B(OH)2].6H2O(s)
+2NaBO2(aq) + 2H2O2(aq) + 6H2O(l) [cold alkaline solution] ⟶ Na2[(OH)2B(O-O)2B(OH)2].6H2O(s)
 
 **Common empirical shorthand:**
 
-NaBO2(aq) + H2O2(aq) + 3H2O(l) [cool crystallisation] ⟶ NaBO3.4H2O(s)
+NaBO2(aq) + H2O2(aq) + 3H2O(l) [cold] ⟶ NaBO3.4H2O(s)
 
 **Electrolytic route:**
 
-Na2B4O7/Na2CO3 solution [electrolysis] ⟶ [cold alkaline medium] sodium peroxoborate hydrate
-
-sodium peroxoborate hydrate crystallises at anode region
+Electrolysis of a cold alkaline Na₂B₄O₇ / Na₂CO₃ solution deposits sodium peroxoborate hydrate in the anode region.
 
 **Active oxygen release:**
 
-NaBO3.4H2O(aq) [water] ⟶ [warmed to about 60-80 °C] NaBO2(aq) + H2O2(aq) + 3H2O(l)
+NaBO3.4H2O(aq) [~60-80 °C] ⟶ NaBO2(aq) + H2O2(aq) + 3H2O(l)
 
 The anion is [(OH)₂B(mu-O-O)₂B(OH)₂]²⁻, containing two peroxide bridges. Uses: oxygen bleach/brightener in washing powders, mild disinfectant, and oxidising agent. It is compatible with enzymes used in many biological washing powders; above about 80 °C peroxide linkages break down and active H₂O₂ is released. The oxygen-release function—not a single rigid molecular NaBO₃ unit—is the chemical point.
 
@@ -1149,9 +1145,7 @@ The anion is [(OH)₂B(mu-O-O)₂B(OH)₂]²⁻, containing two peroxide bridges
 
 ## 9.2 Preparation and bonding of BF₃/BCl₃
 
-BF₃ is a colourless gas with a boiling point near −101 °C. It can be prepared on a large scale from B₂O₃/CaF₂/concentrated H₂SO₄ and by routes involving NH₄BF₄. BF₃ etherate is an important commercial Lewis-acid reagent.
-
-B2O3 + 3CaF2 + 3H2SO4(conc.) ⟶ 2BF3 + 3CaSO4 + 3H2O
+BF₃ is a colourless gas with a boiling point near −101 °C. It can be prepared on a large scale from B₂O₃/CaF₂/concentrated H₂SO₄ (equation below) and by routes involving NH₄BF₄. BF₃ etherate is an important commercial Lewis-acid reagent.
 
 The B–F distance in free BF₃ is about 1.30 Å, shorter than a simple single-bond estimate, and the B–F bond is unusually strong. This is consistent with appreciable delocalised pπ–pπ donation from fluorine into the empty boron p orbital.
 
@@ -1163,31 +1157,27 @@ On Lewis-base coordination, the boron centre becomes tetrahedral and the delocal
 
 **Laboratory BF₃:**
 
-B2O3(s) + 3CaF2(s) + 3H2SO4(l) [Δ] ⟶ [concentrated] 2BF3(g) + 3CaSO4(s) + 3H2O(g)
+B2O3(s) + 3CaF2(s) + 3H2SO4(l, conc.) [Δ] ⟶ 2BF3(g) + 3CaSO4(s) + 3H2O(g)
 
 **From ammonium tetrafluoroborate:**
 
 NH4BF4(s) [Δ] ⟶ BF3(g) + NH3(g) + HF(g)
 
-**Alternative BF₃ preparation:**
-
-B2O3 + 6NH4BF4 [Δ] ⟶ 8BF3 + 6NH3 + 3H2O
-
-**Boron oxide/ammonium tetrafluoroborate route:**
+**Boron oxide / ammonium tetrafluoroborate route:**
 
 B2O3(s) + 6NH4BF4(s) [Δ] ⟶ 8BF3(g) + 6NH3(g) + 3H2O(g)
 
 **From borax:**
 
-Na2B4O7(s) + 6CaF2(s) + 7H2SO4(l) [Δ] ⟶ [concentrated] 4BF3(g) + 6CaSO4(s) + Na2SO4(s) + 7H2O(g)
+Na2B4O7(s) + 6CaF2(s) + 7H2SO4(l, conc.) [Δ] ⟶ 4BF3(g) + 6CaSO4(s) + Na2SO4(s) + 7H2O(g)
 
 **Boron trichloride:**
 
-B2O3(s) + 3 C(s) + 3Cl2(g) [red heat/electric furnace] ⟶ 2BCl3(g) + 3CO(g)
+B2O3(s) + 3C(s) + 3Cl2(g) [red heat / electric furnace] ⟶ 2BCl3(g) + 3CO(g)
 
 **Direct combination:**
 
-2B(s) + 3Cl2(g) [about 400 °C] ⟶ 2BCl3(g)
+2B(s) + 3Cl2(g) [~400 °C] ⟶ 2BCl3(g)
 
 
 ::figure bf3::
@@ -1214,7 +1204,7 @@ BF3(g) + NH3(g) [dry conditions] ⟶ F3B←NH3(s)
 
 **Etherate:**
 
-BF3(g) + (C2H5)2O(l) [dry ether] ⟶ [cool] BF3.O(C2H5)2(l)
+BF3(g) + (C2H5)2O(l) [dry ether, cool] ⟶ BF3.O(C2H5)2(l)
 
 *BF3 etherate is a commercially available viscous liquid and a convenient Lewis-acid reagent.*
 
@@ -1232,7 +1222,7 @@ HF capture by boric acid:
 
 **Net BF₃ hydrolysis:**
 
-4BF3(g) + 3H2O(l) [room temperature] ⟶ H3BO3(aq) + 3HBF4(aq)
+4BF3(g) + 3H2O(l) ⟶ H3BO3(aq) + 3HBF4(aq)
 
 Why BF₃ and BCl₃ differ in water: strong delocalised B-F pπ–pπ bonding and the stability of fluoride-containing adduct/fluoroborate species make BF₃ hydrolysis incomplete. B-Cl and B-Br bonds are more readily cleaved; formation of strong B-O bonds drives complete hydrolysis to B(OH)₃ and HX.
 
@@ -1240,7 +1230,7 @@ BF₃ fumes in moist air and is only partially hydrolysed in excess water. BCl�
 
 **BCl₃ hydrolysis:**
 
-BCl3(g/l) + 3H2O(l) [moisture] ⟶ [room temperature] H3BO3(aq) + 3HCl(aq)
+BCl3(g/l) + 3H2O(l) ⟶ H3BO3(aq) + 3HCl(aq)
 
 BF₃ forms adducts with donors such as Et₂O, NH₃, NMe₃ and F⁻, as well as many O-, N-, P- and S-donor ligands. Adduct formation depends on donor strength and reaction conditions.
 
@@ -1252,37 +1242,27 @@ BF₃ forms adducts with donors such as Et₂O, NH₃, NMe₃ and F⁻, as well 
 
 Borates treated with HF, or with concentrated H₂SO₄ plus CaF₂, generate volatile BF₃. Introduction of the boron fluoride vapour into a flame gives a characteristic green coloration.
 
-CaF2 + H2SO4(conc.) ⟶ CaSO4 + 2HF
+CaF2(s) + H2SO4(l, conc.) ⟶ CaSO4(s) + 2HF(g)
 
-H3BO3 + 3HF ⟶ BF3 + 3H2O
+H3BO3(s) + 3HF(g) ⟶ BF3(g) + 3H2O(l)
 
 An alternative is the methyl-borate test. The borate is converted to boric acid, warmed with methanol in the presence of concentrated H₂SO₄, and the volatile methyl borate burns with a green flame.
 
 B(OH)3 + 3CH3OH ⇌ B(OCH3)3 + 3H2O
 
-H3BO3 + 4HF ⟶ H+ + [BF4]- + 3H2O (fluoroboric acid
+H3BO3 + 4HF ⟶ H+ + [BF4]- + 3H2O
 
-[BF₄]⁻ is tetrahedral)
+The product is fluoroboric acid, HBF₄; the [BF₄]⁻ ion is tetrahedral.
 
 Mixed boron halides undergo rapid redistribution, especially in the presence of Lewis acids/halides. The equilibrium distribution is statistical only when bond-energy preferences and steric effects are negligible.
 
 **Redistribution example:**
 
-BF3(g) + BCl3(g) [heat or Lewis-acid/halide catalyst] ⟶ BF2Cl(g) + BFCl2(g)
+BF3(g) + BCl3(g) [heat or Lewis-acid / halide catalyst] ⇌ BF2Cl(g) + BFCl2(g)
 
-equilibrium mixture
+**Three-halogen redistribution:** mixing BF₃, BCl₃ and BBr₃ at room temperature gives a near-statistical equilibrium mixture of all the mixed boron halides — BFClBr, BF₂Cl, BF₂Br, BFCl₂, BFBr₂ — together with the parent trihalides.
 
-**Three-halogen redistribution:**
-
-BF3 + BCl3 + BBr3 [mix] ⟶ [room temperature/equilibrate] mixed halides
-
-statistical mixture including BFClBr, BF₂Cl, BF₂Br, BFCl₂, BFBr₂ and parent halides
-
-**Qualitative fluoride route:**
-
-3CaF2(s) + B2O3(s) + 3H2SO4(l) [Δ] ⟶ [concentrated] 2BF3(g) + 3CaSO4(s) + 3H2O(g)
-
-alcohol flame may appear green after ester formation
+**Qualitative fluoride route:** a borate with CaF₂ and concentrated H₂SO₄ generates BF₃ on warming (equation in §9.2); introduced into a flame it gives a green colour, and after methyl or ethyl borate formation the alcohol flame is edged with green.
 
 BCl₃ is used as a Lewis-acid catalyst, chlorinating reagent and precursor for high-purity boron. BF₃ and its etherate catalyse alkylation, polymerisation and rearrangement reactions; HBF₄ and tetrafluoroborates provide weakly coordinating anions in synthesis.
 

@@ -5,19 +5,28 @@ import remarkGfm from "remark-gfm";
 
 /* ------------------------------------------------------------------ *
  * Shared chemistry notes renderer (p-block, boron-family, …).
- * Bright body text + a six-colour accent system. Colours are applied
- * with inline styles so the app's global `h1..h6 { color }` rule and
- * other cascade wins cannot flatten them back to one tone.
+ *
+ * Restrained accent system — every colour has ONE job:
+ *   ink / body  neutral reading text (bright, not grey)
+ *   sky         section headings, links, "Key Point"
+ *   sand        sub-headings, reaction arrows, emphasis
+ *   iris        deep-theory sub-sub-headings, "MOT Lens"
+ *   mint        "Note" / "Summary" call-outs, equation edge
+ *   coral       "JEE Trap"
+ * Applied inline so the global `h1..h6 { color }` rule can't flatten it.
  * ------------------------------------------------------------------ */
 
 const C = {
-  ink: "var(--foreground, #f1f5f9)",
-  body: "#dce4ef",
-  cyan: "var(--chem-bond)", //  #37c8f4
-  amber: "var(--chem-energy)", // #e3b341
-  violet: "var(--chem-orbital)", // #b376ff
-  green: "var(--chem-rule)", // #50dc7b
-  red: "var(--chem-trap)", // #ff775d
+  ink: "#f5f8fc",
+  body: "#d9e2ee",
+  faint: "#9fb0c4",
+  sky: "#6cc8ec",
+  sand: "#e6c079",
+  iris: "#b79bf0",
+  mint: "#5fd1a8",
+  coral: "#f18a6d",
+  line: "rgba(255,255,255,0.10)",
+  panel: "rgba(255,255,255,0.035)",
 } as const;
 
 function flattenText(node: ReactNode): string {
@@ -80,14 +89,14 @@ function Equation({ raw }: { raw: string }) {
   const parts = raw.trim().split(ARROWS);
   return (
     <div
-      className="my-5 overflow-x-auto rounded-xl px-4 py-3.5"
-      style={{ border: `1px solid color-mix(in srgb, ${C.green} 32%, transparent)`, background: `color-mix(in srgb, ${C.green} 7%, transparent)` }}
+      className="my-5 overflow-x-auto rounded-lg px-4 py-3"
+      style={{ background: C.panel, borderLeft: `3px solid ${C.mint}` }}
     >
-      <div className="flex flex-wrap items-center gap-x-1.5 gap-y-2 font-mono text-[15px] leading-relaxed sm:text-base" style={{ color: C.ink }}>
+      <div className="flex flex-wrap items-center gap-x-1.5 gap-y-2 font-mono text-[15px] leading-relaxed sm:text-[15.5px]" style={{ color: C.ink }}>
         {parts.map((seg, i) => {
           if (ARROWS.test(seg)) {
             return (
-              <span key={i} className="mx-1 text-lg font-black" style={{ color: C.amber }}>
+              <span key={i} className="mx-1.5 text-lg font-black" style={{ color: C.sand }}>
                 {seg}
               </span>
             );
@@ -101,25 +110,24 @@ function Equation({ raw }: { raw: string }) {
                   return (
                     <span
                       key={j}
-                      className="rounded-md px-2 py-0.5 text-[12.5px] font-semibold"
-                      style={{ background: `color-mix(in srgb, ${C.amber} 16%, transparent)`, color: C.amber }}
+                      className="rounded px-1.5 py-0.5 text-[12px] font-semibold"
+                      style={{ background: "rgba(255,255,255,0.06)", border: `1px solid ${C.line}`, color: C.faint }}
                     >
                       {m[1].trim()}
                     </span>
                   );
                 }
-                // a charge stranded after a "]" or ")" split boundary
                 const prev = bits[j - 1] ?? "";
                 if (/^\d{0,2}[+−-]$/.test(b.trim()) && /[)\]]$/.test(prev.trim())) {
                   return (
-                    <span key={j} className="font-semibold" style={{ color: C.cyan }}>
+                    <span key={j} className="font-medium">
                       {toSup(b.trim())}
                     </span>
                   );
                 }
                 const s = formatChem(b).replace(/\s+/g, " ").trim();
                 return s ? (
-                  <span key={j} className="font-semibold" style={{ color: C.cyan }}>
+                  <span key={j} className="font-medium">
                     {s}
                   </span>
                 ) : null;
@@ -136,22 +144,21 @@ function Equation({ raw }: { raw: string }) {
 
 type Variant = { key: string; label: string; accent: string };
 const VARIANTS: Variant[] = [
-  { key: "jee trap", label: "JEE Trap", accent: C.red },
-  { key: "mot lens", label: "MOT Lens", accent: C.violet },
-  { key: "key point", label: "Key Point", accent: C.cyan },
-  { key: "analytical note", label: "Analytical Note", accent: C.green },
-  { key: "hydration note", label: "Note", accent: C.green },
-  { key: "chemical note", label: "Note", accent: C.green },
-  { key: "oxide-character note", label: "Note", accent: C.green },
-  { key: "structural summary", label: "Summary", accent: C.violet },
-  { key: "big picture", label: "Big Picture", accent: C.cyan },
-  { key: "continuity map", label: "Continuity", accent: C.cyan },
-  { key: "note", label: "Note", accent: C.amber },
-  { key: "passivation", label: "Conditions", accent: C.amber },
-  { key: "ordinary conditions", label: "Conditions", accent: C.amber },
-  { key: "hydrogen", label: "Note", accent: C.cyan },
+  { key: "jee trap", label: "JEE Trap", accent: C.coral },
+  { key: "mot lens", label: "MOT Lens", accent: C.iris },
+  { key: "key point", label: "Key Point", accent: C.sky },
+  { key: "big picture", label: "Big Picture", accent: C.sky },
+  { key: "continuity map", label: "Continuity", accent: C.sky },
+  { key: "structural summary", label: "Summary", accent: C.iris },
+  { key: "analytical note", label: "Analytical Note", accent: C.mint },
+  { key: "hydration note", label: "Note", accent: C.mint },
+  { key: "chemical note", label: "Note", accent: C.mint },
+  { key: "oxide-character note", label: "Note", accent: C.mint },
+  { key: "passivation", label: "Conditions", accent: C.sand },
+  { key: "ordinary conditions", label: "Conditions", accent: C.sand },
+  { key: "note", label: "Note", accent: C.mint },
 ];
-const DEFAULT_VARIANT: Variant = { key: "", label: "Note", accent: C.amber };
+const DEFAULT_VARIANT: Variant = { key: "", label: "Note", accent: C.mint };
 
 function pickVariant(text: string): Variant {
   const head = text.trim().toLowerCase().replace(/^[*\s]+/, "").slice(0, 40);
@@ -162,10 +169,10 @@ function Callout({ children }: { children: ReactNode }) {
   const v = pickVariant(flattenText(children));
   return (
     <div
-      className="my-5 rounded-xl p-4 pl-5"
-      style={{ borderLeft: `4px solid ${v.accent}`, background: `color-mix(in srgb, ${v.accent} 9%, transparent)` }}
+      className="my-5 rounded-lg p-4 pl-4"
+      style={{ borderLeft: `3px solid ${v.accent}`, background: C.panel }}
     >
-      <p className="mb-1.5 text-[11px] font-black uppercase tracking-[0.18em]" style={{ color: v.accent }}>
+      <p className="mb-1.5 text-[10.5px] font-black uppercase tracking-[0.2em]" style={{ color: v.accent }}>
         {v.label}
       </p>
       <div className="space-y-2 text-[15px] leading-[1.75]" style={{ color: C.body }}>
@@ -186,8 +193,8 @@ const components: Components = {
       <section className="mt-14 first:mt-0">
         <h2
           id={slugify(text)}
-          className="pt-8 font-sans text-[2rem] font-black leading-tight tracking-tight sm:text-[2.4rem]"
-          style={h({ color: C.ink, borderTop: `2px solid color-mix(in srgb, ${C.cyan} 30%, transparent)` })}
+          className="pt-7 font-sans text-[1.85rem] font-black leading-tight tracking-tight sm:text-[2.15rem]"
+          style={h({ color: C.ink, borderTop: `1px solid ${C.line}` })}
         >
           {children}
         </h2>
@@ -195,17 +202,17 @@ const components: Components = {
     );
   },
   h2: ({ children }) => (
-    <h3 id={slugify(flattenText(children))} className="pt-8 font-sans text-[1.55rem] font-black leading-tight" style={h({ color: C.violet })}>
+    <h3 id={slugify(flattenText(children))} className="pt-8 font-sans text-[1.4rem] font-black leading-tight" style={h({ color: C.sky })}>
       {children}
     </h3>
   ),
   h3: ({ children }) => (
-    <h4 className="pt-5 font-sans text-xl font-black leading-tight" style={h({ color: C.amber })}>
+    <h4 className="pt-5 font-sans text-[1.15rem] font-black leading-tight" style={h({ color: C.sand })}>
       {children}
     </h4>
   ),
   h4: ({ children }) => (
-    <h5 className="pt-3 font-sans text-[15px] font-black uppercase tracking-wide" style={h({ color: C.green })}>
+    <h5 className="pt-3 font-sans text-[13px] font-black uppercase tracking-[0.14em]" style={h({ color: C.faint })}>
       {children}
     </h5>
   ),
@@ -219,12 +226,12 @@ const components: Components = {
     );
   },
   ul: ({ children }) => (
-    <ul className="my-3 ml-5 max-w-[72ch] list-disc space-y-2" style={{ color: C.body }}>
+    <ul className="my-3 ml-5 max-w-[72ch] list-disc space-y-2 marker:text-[#6cc8ec]" style={{ color: C.body }}>
       {children}
     </ul>
   ),
   ol: ({ children }) => (
-    <ol className="my-3 ml-6 max-w-[72ch] list-decimal space-y-2 marker:font-black" style={{ color: C.body }}>
+    <ol className="my-3 ml-6 max-w-[72ch] list-decimal space-y-2 marker:font-black marker:text-[#e6c079]" style={{ color: C.body }}>
       {children}
     </ol>
   ),
@@ -240,30 +247,28 @@ const components: Components = {
     return <li className="pl-1 text-[15.5px] leading-[1.75]">{children}</li>;
   },
   strong: ({ children }) => (
-    <strong className="font-black" style={{ color: C.ink }}>
+    <strong className="font-bold" style={{ color: C.ink }}>
       {children}
     </strong>
   ),
   em: ({ children }) => (
-    <em className="font-semibold not-italic" style={{ color: C.violet }}>
+    <em className="font-semibold not-italic" style={{ color: C.sand }}>
       {children}
     </em>
   ),
   blockquote: ({ children }) => <Callout>{children}</Callout>,
-  hr: () => (
-    <hr className="my-10 h-px border-0" style={{ background: `linear-gradient(to right, transparent, color-mix(in srgb, ${C.cyan} 45%, transparent), transparent)` }} />
-  ),
+  hr: () => <hr className="my-10 h-px border-0" style={{ background: C.line }} />,
   table: ({ children }) => (
-    <div className="my-6 overflow-x-auto rounded-xl" style={{ border: "1px solid var(--border-strong)", background: "var(--surface)" }}>
-      <table className="min-w-full border-collapse text-left text-[14.5px]">{children}</table>
+    <div className="my-6 overflow-x-auto rounded-lg" style={{ border: `1px solid ${C.line}` }}>
+      <table className="min-w-full border-collapse text-left text-[14px]">{children}</table>
     </div>
   ),
   thead: ({ children }) => (
-    <thead style={{ background: `color-mix(in srgb, ${C.cyan} 13%, transparent)`, color: C.ink }}>{children}</thead>
+    <thead style={{ background: "rgba(255,255,255,0.04)" }}>{children}</thead>
   ),
   tbody: ({ children }) => <tbody className="[&>tr:nth-child(even)]:bg-white/[0.02]">{children}</tbody>,
   th: ({ children }) => (
-    <th className="px-4 py-3 font-black" style={{ borderBottom: "1px solid var(--border-strong)", color: C.cyan }}>
+    <th className="px-3.5 py-2.5 font-black" style={{ borderBottom: `1px solid ${C.line}`, color: C.sky }}>
       {children}
     </th>
   ),
@@ -271,20 +276,20 @@ const components: Components = {
     const text = flattenText(children);
     const content = ARROWS.test(text) && !/[a-z]{4}/.test(text.replace(/\[[^\]]*\]/g, "")) ? formatChem(text) : children;
     return (
-      <td className="px-4 py-3 align-top leading-6 first:font-semibold" style={{ borderBottom: "1px solid var(--border)", color: C.body }}>
+      <td className="px-3.5 py-2.5 align-top leading-6" style={{ borderBottom: `1px solid ${C.line}`, color: C.body }}>
         {content}
       </td>
     );
   },
   a: ({ href, children }) => (
-    <a href={href} className="font-bold underline underline-offset-4" style={{ color: C.cyan, textDecorationColor: `color-mix(in srgb, ${C.cyan} 45%, transparent)` }}>
+    <a href={href} className="font-semibold underline underline-offset-4" style={{ color: C.sky, textDecorationColor: "rgba(108,200,236,0.4)" }}>
       {children}
     </a>
   ),
   code: ({ children }) => (
     <code
-      className="rounded-md px-1.5 py-0.5 font-mono text-[0.9em]"
-      style={{ border: `1px solid color-mix(in srgb, ${C.cyan} 28%, transparent)`, background: `color-mix(in srgb, ${C.cyan} 11%, transparent)`, color: C.cyan }}
+      className="rounded px-1.5 py-0.5 font-mono text-[0.88em]"
+      style={{ border: `1px solid ${C.line}`, background: "rgba(255,255,255,0.05)", color: C.ink }}
     >
       {formatChem(flattenText(children))}
     </code>
@@ -293,7 +298,7 @@ const components: Components = {
 
 export function ChemistryMarkdown({ markdown }: { markdown: string }) {
   return (
-    <div className="space-y-4 [&_td:first-child]:text-[var(--chem-energy)]">
+    <div className="space-y-4 [&_tr>td:first-child]:font-semibold [&_tr>td:first-child]:text-[#f5f8fc]">
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
         {markdown}
       </ReactMarkdown>

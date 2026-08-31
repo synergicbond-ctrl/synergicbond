@@ -599,6 +599,131 @@ function Trisilylamine() {
   );
 }
 
+/* ================= extra source-matched structural figures ============= */
+
+function SilicaNetwork() {
+  const xs = [90, 180, 270, 360, 450];
+  const ys = [70, 145, 220];
+  return (
+    <Svg h={280} w={560}>
+      {ys.map((y, r) =>
+        xs.map((x, c) => (
+          <g key={`si-${r}-${c}`}>
+            {c < xs.length - 1 && <Bond x1={x + 13} y1={y} x2={xs[c + 1] - 13} y2={y} color={COL.O} w={2.6} />}
+            {r < ys.length - 1 && <Bond x1={x} y1={y + 13} x2={x} y2={ys[r + 1] - 13} color={COL.O} w={2.6} />}
+            {c < xs.length - 1 && <circle cx={(x + xs[c + 1]) / 2} cy={y} r={5} fill={COL.Ofill} stroke={COL.O} strokeWidth={1.8} />}
+            {r < ys.length - 1 && <circle cx={x} cy={(y + ys[r + 1]) / 2} r={5} fill={COL.Ofill} stroke={COL.O} strokeWidth={1.8} />}
+          </g>
+        )),
+      )}
+      {ys.map((y, r) => xs.map((x, c) => <Atom key={`a-${r}-${c}`} x={x} y={y} label="Si" stroke={COL.Si} fill={COL.Sifill} r={13} fs={9.5} />))}
+      <T x={280} y={258} size={11.5}>SiO₂ — each Si sp³ bonded to 4 O; each O bridges 2 Si (giant 3-D network)</T>
+      <T x={280} y={26} size={12.5} fill="#c9d6df" weight={800}>Why silica is a solid and CO₂ a gas</T>
+    </Svg>
+  );
+}
+
+function ChainSilicates() {
+  const tri = (cx: number, cy: number, up: boolean, s: number, key: string) => {
+    const d = up
+      ? `M${cx} ${cy - s} L${cx - s * 0.9} ${cy + s * 0.5} L${cx + s * 0.9} ${cy + s * 0.5} Z`
+      : `M${cx} ${cy + s} L${cx - s * 0.9} ${cy - s * 0.5} L${cx + s * 0.9} ${cy - s * 0.5} Z`;
+    return <path key={key} d={d} fill={COL.Si} opacity={0.3} stroke={COL.Si} strokeWidth={2} />;
+  };
+  return (
+    <Svg h={330} w={560}>
+      <T x={280} y={22} size={12.5} weight={800} fill="#c9d6df">Chain silicates — corner-sharing along a line</T>
+      {/* single chain */}
+      {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 80, k % 2 === 0, 22, `sc${k}`))}
+      <T x={70} y={125} anchor="start" size={11}>Single chain (pyroxene): repeat SiO₃²⁻ → (SiO₃)ₙ²ⁿ⁻ · e.g. diopside CaMg(SiO₃)₂ · cleavage ≈ 87°/93°</T>
+      {/* double chain */}
+      {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 190, k % 2 === 0, 20, `dcA${k}`))}
+      {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 232, k % 2 === 1, 20, `dcB${k}`))}
+      <T x={70} y={272} anchor="start" size={11}>Double chain (amphibole): repeat Si₄O₁₁⁶⁻ · OH in ring cavities · e.g. tremolite · cleavage ≈ 56°/124°</T>
+      <T x={280} y={310} size={10.5} fill="#8fa4b4">shaded triangle = one SiO₄ tetrahedron seen end-on · shared corners join neighbours</T>
+    </Svg>
+  );
+}
+
+function FrameworkSilicate() {
+  const pts: Array<[number, number]> = [];
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) pts.push([90 + c * 90 + (r % 2 ? 45 : 0), 70 + r * 55]);
+  return (
+    <Svg h={300} w={560}>
+      <T x={280} y={24} size={12.5} weight={800} fill="#c9d6df">3-D framework (tectosilicate): all 4 corners shared</T>
+      {pts.map(([x, y], i) => (
+        <g key={i}>
+          {pts.map(([x2, y2], j) => {
+            const d = Math.hypot(x - x2, y - y2);
+            return j > i && d < 100 ? <Bond key={j} x1={x} y1={y} x2={x2} y2={y2} color={COL.O} w={2} /> : null;
+          })}
+        </g>
+      ))}
+      {pts.map(([x, y], i) => (
+        <circle key={`t${i}`} cx={x} cy={y} r={7} fill={i % 7 === 3 ? "#3a5570" : COL.Sifill} stroke={i % 7 === 3 ? "#7cc4ff" : COL.Si} strokeWidth={2} />
+      ))}
+      <circle cx={270} cy={150} r={12} fill="#2a2410" stroke={COL.amber} strokeWidth={2.4} />
+      <text x={270} y={154} textAnchor="middle" fontSize={9} fontWeight={800} fill="#eef6ff">K⁺</text>
+      <T x={280} y={262} size={11}>Replace one Si⁴⁺ by Al³⁺ → framework charge −1, balanced by a cavity cation (Na⁺, K⁺, Ca²⁺)</T>
+      <T x={280} y={280} size={10.5} fill="#8fa4b4">feldspar K[AlSi₃O₈] · zeolite (open channels) · ultramarine (enclosed S₃⁻)</T>
+    </Svg>
+  );
+}
+
+function COmoDiagram() {
+  const lvl = (y: number, label: string, occ: number) => (
+    <g>
+      <Bond x1={250} y1={y} x2={310} y2={y} color="#c9d6df" w={2.4} />
+      <T x={330} y={y + 4} anchor="start" size={10.5} fill="#c9d6df">{label}</T>
+      {occ >= 1 && <text x={264} y={y + 4} fontSize={11} fill={COL.amber}>↑</text>}
+      {occ >= 2 && <text x={288} y={y + 4} fontSize={11} fill={COL.amber}>↓</text>}
+    </g>
+  );
+  return (
+    <Svg h={310} w={560}>
+      <T x={280} y={22} size={12.5} weight={800} fill="#c9d6df">CO molecular-orbital picture — isoelectronic with N₂</T>
+      {/* C AO */}
+      <T x={90} y={50} size={11} fill={COL.C}>C 2p</T>
+      {[[80, 90], [110, 90], [140, 90]].map(([x, y], i) => <Bond key={i} x1={x - 12} y1={y} x2={x + 12} y2={y} color={COL.C} w={2} />)}
+      <T x={90} y={175} size={11} fill={COL.C}>C 2s</T>
+      <Bond x1={78} y1={160} x2={102} y2={160} color={COL.C} w={2} />
+      {/* O AO */}
+      <T x={470} y={70} size={11} fill={COL.O}>O 2p</T>
+      {[[450, 110], [480, 110], [510, 110]].map(([x, y], i) => <Bond key={i} x1={x - 12} y1={y} x2={x + 12} y2={y} color={COL.O} w={2} />)}
+      <T x={470} y={210} size={11} fill={COL.O}>O 2s</T>
+      <Bond x1={458} y1={195} x2={482} y2={195} color={COL.O} w={2} />
+      {/* MOs */}
+      {lvl(55, "σ*2p (LUMO region → accepts M dπ, π*)", 0)}
+      {lvl(85, "σ2p  ← HOMO: lone pair mostly on C", 2)}
+      {lvl(115, "π2p (×2)", 4)}
+      {lvl(175, "σ*2s", 2)}
+      {lvl(205, "σ2s", 2)}
+      <T x={280} y={245} size={11.5} fill={COL.green}>bond order = (8 − 2)/2 = 3   ·   one σ + two π</T>
+      <T x={280} y={266} size={10.5} fill="#8fa4b4">the C-centred σ HOMO is the ligand lone pair; the empty π* accepts metal back-donation</T>
+    </Svg>
+  );
+}
+
+function GasProcesses() {
+  return (
+    <Svg h={250} w={560}>
+      <T x={280} y={24} size={12.5} weight={800} fill="#c9d6df">Three industrial fuel gases from coke</T>
+      {[
+        ["Water gas", "C + H₂O(g) →", "CO + H₂", "high — both burn", COL.green],
+        ["Producer gas", "2C + O₂ + 4N₂ →", "2CO + 4N₂", "low — N₂ is ballast", COL.amber],
+        ["Coal gas", "coal, destructive distillation →", "CO + H₂ + CH₄ + CO₂", "moderate–high", COL.C],
+      ].map(([name, lhs, rhs, cv, col], i) => (
+        <g key={i}>
+          <T x={40} y={70 + i * 55} anchor="start" size={12} weight={800} fill={col as string}>{name}</T>
+          <T x={40} y={88 + i * 55} anchor="start" size={10.5}>{lhs} <tspan fill={col as string}>{rhs}</tspan></T>
+          <T x={40} y={104 + i * 55} anchor="start" size={9.5} fill="#8fa4b4">calorific value: {cv}</T>
+        </g>
+      ))}
+      <T x={280} y={240} size={10.5} fill={COL.red}>do not interchange: water gas = CO+H₂ · producer gas = CO+N₂</T>
+    </Svg>
+  );
+}
+
 /* =============================== registry =============================== */
 
 type Fig = { id: string; el: ReactNode };
@@ -608,10 +733,21 @@ const FIGURES: Record<number, Fig[]> = {
   5: [{ id: "caten", el: <Frame key="c" title="Catenation follows bond enthalpy" caption="Carbon catenates because the C–C bond is strong (≈ 348 kJ mol⁻¹, close to C–O). Down the group the M–M bond weakens and the atoms grow, so chains shorten rapidly; lead is effectively non-catenating."><CatenationBars /></Frame> }],
   7: [{ id: "p7", el: <Part3Visual key="p7" /> }],
   8: [{ id: "carb", el: <Frame key="c8" title="Carbide hydrolysis map" caption="The gas released on hydrolysis reveals the carbon anion: methanides (Be₂C, Al₄C₃) give methane, acetylides (CaC₂ …) give ethyne, and Mg₂C₃ (a C₃ unit) gives propyne. Interstitial and covalent carbides are hydrolytically inert."><CarbideMap /></Frame> }],
-  9: [{ id: "p9", el: <Part6Visual key="p9" /> }],
+  9: [
+    { id: "p9", el: <Part6Visual key="p9" /> },
+    { id: "como", el: <Frame key="como" title="CO molecular-orbital picture" caption="CO is isoelectronic with N₂: filling the MOs gives bond order 3 (one σ + two π). The highest occupied orbital is a σ orbital concentrated on carbon — this is the lone pair that lets CO act as a ligand — and the empty π* accepts π back-donation from a metal."><COmoDiagram /></Frame> },
+    { id: "gas", el: <Frame key="gas" title="Water gas, producer gas and coal gas" caption="Blowing steam through red-hot coke gives water gas (CO + H₂, high calorific value); blowing air gives producer gas (CO + N₂, low value because the nitrogen is inert ballast); destructive distillation of coal gives coal gas (CO + H₂ + CH₄ + CO₂)."><GasProcesses /></Frame> },
+  ],
   10: [{ id: "co2", el: <Frame key="co2" title="Carbon–oxygen bonding at a glance" caption="CO₂ is linear with two equivalent C–O bonds (115 pm); CO₃²⁻ is trigonal planar with a delocalised π system over three equivalent C–O bonds. CO binds metals synergically — σ-donation from the C lone pair plus π back-donation into CO π*."><COxides /></Frame> }],
-  13: [{ id: "sio4", el: <Frame key="sio4" title="The SiO₄ tetrahedron — the one building block" caption="Silicon is tetrahedrally surrounded by four oxygens (Si sp³, ∠O–Si–O ≈ 109.5°, Si–O ≈ 162 pm). In silica every corner O is shared between two Si, giving a giant 3-D network — the reason SiO₂ is a solid while CO₂ is a gas."><SiO4Unit /></Frame> }],
-  14: [{ id: "atlas", el: <Frame key="atlas" title="Seven silicate classes from one sharing rule" caption="From isolated ions to infinite frameworks: ortho (0 shared) → pyro (1) → cyclic ring and single chain (2) → double-chain amphibole (2½) → sheet (3) → 3-D framework (4). The number of shared corners fixes both the O:Si ratio and the charge per silicon."><SilicateAtlas /></Frame> }],
+  13: [
+    { id: "sio4", el: <Frame key="sio4" title="The SiO₄ tetrahedron — the one building block" caption="Silicon is tetrahedrally surrounded by four oxygens (Si sp³, ∠O–Si–O ≈ 109.5°, Si–O ≈ 162 pm). In silica every corner O is shared between two Si, giving a giant 3-D network — the reason SiO₂ is a solid while CO₂ is a gas."><SiO4Unit /></Frame> },
+    { id: "sinet", el: <Frame key="sinet" title="Silica is a giant 3-D network" caption="A two-dimensional slice of quartz: every silicon (sp³) is joined to four oxygens and every oxygen bridges two silicons through single Si–O σ bonds. Carbon instead forms pπ–pπ double bonds, so CO₂ is a small discrete molecule while SiO₂ is an infinite solid with a very high melting point."><SilicaNetwork /></Frame> },
+  ],
+  14: [
+    { id: "atlas", el: <Frame key="atlas" title="Seven silicate classes from one sharing rule" caption="From isolated ions to infinite frameworks: ortho (0 shared) → pyro (1) → cyclic ring and single chain (2) → double-chain amphibole (2½) → sheet (3) → 3-D framework (4). The number of shared corners fixes both the O:Si ratio and the charge per silicon."><SilicateAtlas /></Frame> },
+    { id: "chains", el: <Frame key="chains" title="Chain silicates — pyroxenes and amphiboles" caption="Sharing two corners per tetrahedron gives an infinite single chain (pyroxene, repeat SiO₃²⁻); cross-linking two chains through extra shared oxygens gives a double chain (amphibole, repeat Si₄O₁₁⁶⁻). The different cleavage angles (≈ 90° vs ≈ 56°/124°) tell the two apart in hand specimen."><ChainSilicates /></Frame> },
+    { id: "framework", el: <Frame key="framework" title="Framework silicates — feldspars, zeolites, ultramarines" caption="Sharing all four corners gives a neutral SiO₂ framework. Replacing a framework Si⁴⁺ by Al³⁺ puts −1 on the framework, balanced by a cation (Na⁺, K⁺, Ca²⁺) in a cavity. Zeolites have wide channels for ion exchange and molecular sieving; ultramarines trap coloured anions such as S₃⁻."><FrameworkSilicate /></Frame> },
+  ],
   16: [{ id: "sili", el: <Frame key="s16" title="Silicone functionality rule" caption="Hydrolysis of a chlorosilane gives a silanol that condenses into an –Si–O–Si– backbone. R₃SiCl end-caps, R₂SiCl₂ builds the linear chain, RSiCl₃ cross-links into a 3-D resin — so the monomer ratio sets chain length and network density."><SiliconeFunctionality /></Frame> }],
   17: [{ id: "sil", el: <Frame key="s17" title="Why silanes out-react alkanes" caption="Because silicon is less electronegative than hydrogen, Si–H is polarised Si(δ+)–H(δ−) — the reverse of C–H. The electrophilic, larger silicon centre is open to nucleophilic and oxygen attack, so silanes ignite in air and hydrolyse in trace base."><SilanevsAlkane /></Frame> }],
   18: [{ id: "hal", el: <Frame key="h18" title="Halide and complex geometry" caption="[SiF₆]²⁻ forms because six small fluorides fit around silicon and Si–F donation is strong; [SiCl₆]²⁻ does not. Sn(II) halides are bent and reducing (stereochemically active lone pair); Sn(IV) halides are tetrahedral, covalent and readily hydrolysed."><HalideGeometry /></Frame> }],

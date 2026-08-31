@@ -3,6 +3,7 @@ import { AppShell } from "@/components/AppShell";
 import { BORON_FAMILY_PARTS, boronFamilyPartBySlug, boronFamilyPartMarkdown } from "../parts";
 import { boronFamilyLessonRef, boronFamilyTabs, sectionLabel } from "../_chapter";
 import { BoronFamilyMarkdown } from "../_markdown";
+import { BoronFamilyVisual } from "../visuals";
 
 export const dynamic = "force-dynamic";
 
@@ -42,6 +43,7 @@ export default async function BoronFamilyPartPage({ params }: { params: Promise<
       nextRef={nextRef ? { href: nextRef.href, label: nextRef.number } : undefined}
     >
       <article className="mx-auto max-w-3xl space-y-6">
+        <BoronFamilyVisual part={part.number} />
         <div className="space-y-5">
           <BoronFamilyMarkdown markdown={boronFamilyPartMarkdown(part)} />
         </div>

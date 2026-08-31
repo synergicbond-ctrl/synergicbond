@@ -56,6 +56,14 @@ Boron is a hard non-metal. Aluminium is metallic but retains several chemical si
 
 ## 2.1 Occurrence, abundance, isotopes and minerals
 
+**Table of boron and aluminium group elements — occurrence and sources**
+
+| Member | Occurrence / abundance | Important sources and notes |
+|----|----|----|
+| B | Fairly rare; crustal abundance below about 0.0001% by mass in one table | Orthoboric acid / sassolite H₃BO₃; borax / tincal Na₂B₄O₇·10H₂O; kernite Na₂B₄O₇·4H₂O; colemanite Ca₂B₆O₁₁·5H₂O; boracite 2Mg₃B₈O₁₅·MgCl₂; boronatrocalcite and ulexite-type borates |
+| B isotopes | ¹⁰B about 19%; ¹¹B about 81% | ¹⁰B absorbs neutrons strongly |
+| Al | Most abundant metal and third most abundant crustal element, about 8.1–8.3% by mass | Bauxite Al₂O₃·2H₂O, cryolite Na₃AlF₆; aluminosilicates / mica are widespread |
+| Ga, In, Tl | Much less abundant | Recovered largely as minor constituents / by-products of other ores |
 
 *Approximate crustal mass percentages are O 45.5–46.6%, Si 27.7%, Al 8.1–8.3%, Fe 5.0%, Ca 3.6%, Na 2.8%, K 2.6% and Mg 2.1%.*
 
@@ -701,6 +709,44 @@ In the Moissan route, the crude product is washed successively to remove MgO and
 
 ## 7.2 Allotropes and properties
 
+Boron occurs in several allotropes. Crystalline boron is built from B₁₂ icosahedral units linked by multicentre B–B bonding. The structures are not made of conventional localised two-centre bonds alone: multicentre bonding compensates for electron deficiency.
+
+- **Amorphous boron** is a brown powder, more reactive, and is obtained by chemical reduction.
+- **Crystalline boron** is black, lustrous, extraordinarily hard and a poor conductor at room temperature whose conductivity rises with temperature.
+- **α-Rhombohedral boron** is built from B₁₂ icosahedra.
+- **β-Rhombohedral boron** is more complex and contains larger B₈₄-type assemblies / interstitial atoms.
+
+### The B₁₂ icosahedron
+
+The B₁₂ icosahedron has 12 vertices and 20 triangular faces. It can be visualised as two pentagonal pyramids sharing a common **staggered** pentagonal belt:
+
+- top pentagonal pyramid — 1 apex + 5 ring atoms,
+- staggered pentagonal belt — two pentagonal rings, offset by 36° about the fivefold axis,
+- bottom pentagonal pyramid — 1 apex + 5 ring atoms.
+
+The two pentagonal rings are rotated by 36° relative to each other about the fivefold axis; together they give the B₁₂ icosahedron.
+
+### α-Rhombohedral boron
+
+- Built from B₁₂ icosahedral units.
+- The B₁₂ units are arranged in a rhombohedral lattice.
+- Neighbouring icosahedra are joined by intericosahedral B–B bonds.
+- Each icosahedron has six nearest neighbours.
+- The extended three-dimensional network gives α-boron its high hardness and high melting point.
+
+### β-Rhombohedral boron and the B₈₄ building unit
+
+β-Rhombohedral boron is more complex and contains larger B₈₄-type assemblies and interstitial atoms. The principal β-boron building unit is B₈₄, constructed from inside out:
+
+1. Central B₁₂ icosahedron.
+2. Twelve additional B atoms attached outside the central icosahedron (at the centres of its faces).
+3. Outer B₆₀ cage — a truncated-icosahedron-like shell — covalently bonded to the twelve atoms.
+
+These subunits together form the B₈₄ unit that repeats within the extended β-boron lattice:
+
+B₈₄ = B₁₂ (central) + 12 exterior atoms + B₆₀ cage
+
+> **Note:** The bonding in boron is dominated by multicentre bonds (three-centre, two-electron and higher), which stabilise the electron-deficient framework. Notation: B₁₂ = dodecaboron (12 atoms); B₆₀ and B₈₄ denote boron clusters with 60 and 84 atoms, respectively.
 
 # 8. Boron-oxygen compounds
 
@@ -792,14 +838,37 @@ Orthoborate examples also include lanthanide orthoborates, LnBO₃, which contai
 
 #### 8.3.2 Solubility and alkaline nature
 
+Borax is sparingly soluble in cold water but appreciably more soluble in hot water. Consequently, it can be purified by crystallisation from a concentrated hot solution.
+
+In water, the structurally meaningful tetraborate species undergoes hydrolysis:
+
+[B₄O₅(OH)₄]²⁻ + 5H₂O ⇌ 2B(OH)₃ + 2[B(OH)₄]⁻
+
+Thus, borax solution contains boric acid and tetrahydroxyborate in equal stoichiometric amounts. This weak-acid/conjugate-base pair allows borax solution to act as a buffer.
+
+The overall hydrolysis responsible for its alkaline nature is:
+
+[B₄O₅(OH)₄]²⁻ + 5H₂O ⇌ 4B(OH)₃ + 2OH⁻
+
 #### 8.3.3 Preparation from orthoboric acid
 
 Orthoboric acid is neutralised with a calculated amount of sodium carbonate. The hot solution is then concentrated and cooled to crystallise borax decahydrate.
+
+4H₃BO₃ + Na₂CO₃ —heat→ Na₂B₄O₇ + CO₂↑ + 6H₂O
+
+The resulting hot solution is concentrated and cooled to obtain borax decahydrate:
+
+Na₂B₄O₇(aq) + 10H₂O —cool; crystallise→ Na₂B₄O₇·10H₂O(s)
+
+The complete crystallisation reaction may also be written as:
+
+4H₃BO₃ + Na₂CO₃ + 4H₂O → Na₂B₄O₇·10H₂O + CO₂↑
 
 #### 8.3.4 Industrial preparation from colemanite
 
 Finely powdered colemanite is boiled with aqueous sodium carbonate. Calcium is precipitated as CaCO₃, while soluble sodium borates remain in the filtrate.
 
+Ca₂B₆O₁₁·5H₂O(s) + 2Na₂CO₃(aq) —boil→ Na₂B₄O₇(aq) + 2NaBO₂(aq) + 2CaCO₃(s)↓ + 5H₂O
 
 > • Boil powdered colemanite with Na₂CO₃ solution.
 >
@@ -809,13 +878,37 @@ Finely powdered colemanite is boiled with aqueous sodium carbonate. Calcium is p
 >
 > • The mother liquor contains sodium metaborate. Passing CO₂ converts metaborate into additional tetraborate:
 >
+> • 4NaBO₂(aq) + CO₂(g) → Na₂B₄O₇(aq) + Na₂CO₃(aq)
+>
 > • Concentrate and cool again to obtain an additional crop of borax crystals.
 
 Thus, the industrial method is a sequence of reaction, filtration, crystallisation and recovery rather than a single crystallisation step.
 
 #### 8.3.5 Reaction with acids
 
+Acidification of borax produces orthoboric acid:
+
+Na₂B₄O₇·10H₂O + 2HCl → 4H₃BO₃ + 2NaCl + 5H₂O
+
+The corresponding ionic equation is:
+
+[B₄O₅(OH)₄]²⁻ + 2H⁺ + 3H₂O → 4B(OH)₃
+
 #### 8.3.6 Borax as a primary standard in acidimetry
+
+Pure borax decahydrate can be used as a primary standard for standardising strong acids. One mole of borax consumes two moles of a monoprotic strong acid.
+
+Tetraborate hydrolysis produces two B(OH)₃ and two [B(OH)₄]⁻ units. Only the two tetrahydroxyborate ions consume hydronium ions:
+
+[B(OH)₄]⁻ + H₃O⁺ → B(OH)₃ + 2H₂O
+
+Hence:
+
+1 mol borax ≡ 2 mol HCl
+
+The titration reaction is:
+
+Na₂B₄O₇·10H₂O + 2HCl → 4H₃BO₃ + 2NaCl + 5H₂O
 
 Molar mass of Na₂B₄O₇·10H2O ≈ 381.37 g mol−1; hence its acid-base equivalent mass is ≈ 190.69 g equiv−1.
 
@@ -830,7 +923,39 @@ Borax should not be strongly heated before weighing because dehydration changes 
 
 #### 8.3.7 Action of heat
 
+On heating, borax first loses its water of crystallisation and swells to form a porous mass.
+
+**Overall dehydration:**
+
+Na₂B₄O₇·10H₂O —Δ→ Na₂B₄O₇ + 10H₂O↑
+
+Dehydration may occur in stages through the pentahydrate:
+
+Na₂B₄O₇·10H₂O —gentle heat→ Na₂B₄O₇·5H₂O + 5H₂O↑
+
+Na₂B₄O₇·5H₂O —further heat→ Na₂B₄O₇ + 5H₂O↑
+
+On strong heating, anhydrous sodium tetraborate decomposes to sodium metaborate and boric oxide:
+
+Na₂B₄O₇ —strong heat→ 2NaBO₂ + B₂O₃
+
+The molten mixture solidifies on cooling to form a **clear, glassy borax bead**.
+
+**Sequence:** Na₂B₄O₇·10H₂O → Na₂B₄O₇·5H₂O → Na₂B₄O₇ → 2NaBO₂ + B₂O₃
+
 #### 8.3.8 Borax-bead test
+
+When borax is strongly heated, it forms a transparent glassy bead containing B₂O₃. On fusion, B₂O₃ dissolves many metallic oxides and converts them into **coloured metaborates**. The characteristic colour of the bead is useful for the qualitative identification of certain metal ions.
+
+For a divalent metal oxide:
+
+MO + B₂O₃ —fusion→ M(BO₂)₂
+
+For cobalt(II) oxide:
+
+CoO + B₂O₃ —fusion→ Co(BO₂)₂
+
+Cobalt metaborate, Co(BO₂)₂, gives a **deep-blue borax bead**.
 
 **Characteristic borax-bead colours (standard qualitative-analysis observations)**
 
@@ -2015,7 +2140,21 @@ Ca₃Al₂O₆ is conventionally called tricalcium aluminate; Ca₉[Al₆O₁₈
 
 Group 13 ions form complexes more readily than the s-block because of their higher charge density. Besides tetrahedral hydride/halide complexes, aluminium forms stable chelates with acetylacetone, oxalate and 8-hydroxyquinoline; the 8-hydroxyquinoline complex has been used in gravimetric determination of aluminium.
 
-AlCl3 + 3CH3MgI ⟶ [schematic Grignard alkylation] Al(CH3)3 + 3MgICl
+**1. Preparation of methylaluminium sesquichloride**
+
+2Al + 3CH₃Cl —activated Al; 80–120 °C→ (CH₃)₃Al₂Cl₃
+
+**2. Preparation of trimethylaluminium from methylaluminium sesquichloride**
+
+2(CH₃)₃Al₂Cl₃ + 6Na —dry hydrocarbon; controlled temperature→ Al₂(CH₃)₆ + 2Al + 6NaCl
+
+**3. Preparation of trimethylaluminium by Grignard reagent**
+
+AlCl₃ + 3CH₃MgI —dry ether; low temperature→ Al(CH₃)₃ + 3MgICl
+
+**4. Preparation of trialkylborane from boron trifluoride**
+
+BF₃·OEt₂ + 3C₂H₅MgI —dry ether; low temperature→ B(C₂H₅)₃ + 3MgFI + Et₂O
 
 Trialkylaluminium compounds such as Al₂(CH₃)₆ are electron deficient and dimerise through bridging alkyl groups. The Al-C-Al bridges are multicentre bonds analogous in electron-counting spirit to the B-H-B bridges of diborane.
 
@@ -2099,6 +2238,15 @@ Al₂(CH₃)₆ is electron-deficient and dimeric, with two bridging methyl grou
 
 Bauxite is first purified to alumina by exploiting the amphoteric character of aluminium oxide/hydroxide. In the Bayer process, hot concentrated NaOH dissolves aluminium as aluminate while many iron-rich impurities remain insoluble; after clarification, Al(OH)₃ is precipitated (commonly by seeding) and calcined to Al₂O₃.
 
+Al₂O₃·2H₂O —2NaOH→ 2NaAlO₂ —4H₂O→ 2Al(OH)₃ —Δ→ Al₂O₃ + 3H₂O
+
+Stepwise:
+
+Al₂O₃·2H₂O + 2NaOH → 2NaAlO₂ + 3H₂O
+
+2NaAlO₂ + 4H₂O → 2Al(OH)₃↓ + 2NaOH
+
+2Al(OH)₃ —Δ→ Al₂O₃ + 3H₂O
 
 Hall-Heroult electrolysis dissolves Al₂O₃ in molten cryolite, Na₃AlF₆. Cryolite lowers the operating temperature and improves ionic conductivity. Liquid aluminium forms at the cathode; carbon anodes are consumed by oxide-derived oxygen, giving mainly CO₂.
 

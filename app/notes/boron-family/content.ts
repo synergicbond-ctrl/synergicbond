@@ -1733,15 +1733,17 @@ B2O3(s) + 2NH3(g) [900-1200 °C] ⟶ 2BN(s) + 3H2O(g)
 
 **From boron trichloride/ammonia:**
 
-BCl3(g) + NH3(g) [high temperature] ⟶ [via adduct/aminolysis] BN(s) + 3HCl(g)
+BCl3(g) + NH3(g) [high temperature] ⟶ BN(s) + 3HCl(g)
+
+This proceeds through the BCl₃·NH₃ adduct and successive aminolysis.
 
 **Boron carbide:**
 
-2B2O3(s) + 7 C(s) [electric furnace] ⟶ [about 2000-2500 °C] B4C(s) + 6CO(g)
+2B2O3(s) + 7C(s) [electric furnace, ~2000-2500 °C] ⟶ B4C(s) + 6CO(g)
 
 **B₄C coating on carbon fibre:**
 
-4BCl3(g) + C(fibre) + 6H2(g) [chemical-vapour deposition] ⟶ [about 1700-1800 °C] B4C-coated fibre + 12HCl(g)
+4BCl3(g) + C(fibre) + 6H2(g) [chemical-vapour deposition, ~1700-1800 °C] ⟶ B4C-coated fibre + 12HCl(g)
 
 Hexagonal BN has alternating B and N atoms in planar six-membered rings. Representative data are B-N about 145 pm, interlayer separation about 330 pm and an average B-N bond order near 1.33; the unequal B/N electronegativities make the layers electronically different from graphite even though the topology is analogous.
 
@@ -1769,15 +1771,11 @@ The protective Al₂O₃ film on aluminium is exceptionally thin, about 10⁻⁴
 
 Anodising deliberately thickens the oxide film by electrolysis with aluminium as the anode in dilute H₂SO₄. The resulting oxide layer may be of order 10⁻² mm and can take up pigments to produce a durable decorative finish.
 
-2Al(s) + 3/2 O2(g) ⟶ Al2O3(s)
+4Al(s) + 3O2(g) ⟶ 2Al2O3(s)
 
-ΔH° approximately -1670 kJ mol⁻¹
+ΔfH°(Al₂O₃) ≈ −1670 kJ mol⁻¹
 
-The large negative enthalpy of formation of Al₂O₃ underlies aluminothermic reductions (thermite chemistry).
-
-8Al + 3Mn3O4 ⟶ 4Al2O3 + 9Mn
-
-2Al + Cr2O3 ⟶ Al2O3 + 2Cr
+The large negative enthalpy of formation of Al₂O₃ underlies aluminothermic reductions (thermite chemistry); the balanced examples with ignition conditions are given in §11.1 below.
 
 25. Aluminium is bright silvery-white, light (density about 2.70 g cm⁻³), malleable and ductile, with high tensile strength when alloyed and high thermal/electrical conductivity.
 
@@ -1789,7 +1787,9 @@ The large negative enthalpy of formation of Al₂O₃ underlies aluminothermic r
 
 **Thermite/iron welding:**
 
-Fe2O3(s) + 2Al(s) [ignite with Mg ribbon] ⟶ [thermite mixture] Al2O3(l) + 2Fe(l) + heat
+Fe2O3(s) + 2Al(s) [ignite with Mg ribbon] ⟶ Al2O3(l) + 2Fe(l)
+
+Strongly exothermic — the thermite reaction, which produces molten iron for on-site rail welding.
 
 **Chromium extraction:**
 
@@ -1801,7 +1801,7 @@ Cr2O3(s) + 2Al(s) [ignition] ⟶ Al2O3(s) + 2Cr(l/s)
 
 **Carbide hydrolysis:**
 
-Al4C3(s) + 12H2O(l) [room temperature/warm] ⟶ 4Al(OH)3(s) + 3CH4(g)
+Al4C3(s) + 12H2O(l) [warm] ⟶ 4Al(OH)3(s) + 3CH4(g)
 
 > **Aluminothermy A metal oxide can be reduced by Al when formation of Al₂O₃ provides the larger thermodynamic driving force. The ignition barrier is high, after which the reaction can generate molten metal.**
 
@@ -1811,15 +1811,9 @@ Alumina occurs principally as alpha-Al₂O₃ (corundum) and gamma-Al₂O₃, wi
 
 Gamma-Al₂O₃ is a high-surface-area form useful as an adsorbent/catalyst support and in chromatography. Heating hydrated aluminium oxide ultimately converts it toward the thermodynamically stable alpha form.
 
-2Al(OH)3 [Δ] ⟶ Al2O3 + 3H2O
-
-Al2(SO4)3 [Δ] ⟶ Al2O3 + 3SO3
+On heating, Al(OH)₃ and Al₂(SO₄)₃ both dehydrate/decompose toward Al₂O₃; the balanced steps with temperatures are given in §11.2 below.
 
 Al(OH)₃ is amphoteric: it reacts with acid to give hydrated Al³⁺ and with excess NaOH to give tetrahydroxoaluminate(III). Passing CO₂ through an aluminate solution can reprecipitate Al(OH)₃ because its acidic character is weak.
-
-Al(OH)3 + OH- ⟶ [Al(OH)4]-
-
-[Al(OH)4]- + CO2 ⟶ [schematic aqueous form] Al(OH)3(s) + HCO3-
 
 > **JEE TRAP: At strongly alkaline pH, [Al(OH)₄]⁻ is the key mononuclear species. Do not treat 'NaAlO₂' and 'Na[Al(OH)₄]' as unrelated products; they are alternative formula conventions for hydrated aluminate chemistry.**
 
@@ -1834,7 +1828,7 @@ Al(OH)3 + OH- ⟶ [Al(OH)4]-
 
 **Hydroxide calcination:**
 
-2Al(OH)3(s) [about 300 °C then stronger calcination] ⟶ Al2O3(s) + 3H2O(g)
+2Al(OH)3(s) [~300 °C, then stronger calcination] ⟶ Al2O3(s) + 3H2O(g)
 
 **Sulfate decomposition:**
 
@@ -1844,9 +1838,7 @@ Al2(SO4)3(s) [strong heat] ⟶ Al2O3(s) + 3SO3(g)
 
 (NH4)2SO4.Al2(SO4)3.24H2O(s) [strong heat] ⟶ Al2O3(s) + 2NH3(g) + 4SO3(g) + 25H2O(g)
 
-**Ruby synthesis:**
-
-Al2O3(s) + trace Cr2O3(s) [oxyhydrogen flame/very high temperature] ⟶ synthetic ruby crystal
+**Ruby synthesis:** fusing Al₂O₃ with a trace of Cr₂O₃ in an oxyhydrogen flame (Verneuil process) grows boules of synthetic ruby.
 
 **Acidic reaction:**
 
@@ -1858,7 +1850,9 @@ Al2O3(s) + 2OH-(aq) + 3H2O(l) [hot concentrated alkali] ⟶ 2[Al(OH)4]-(aq)
 
 **Hydroxide precipitation:**
 
-Al3+(aq) + 3OH-(aq) [limited aqueous NaOH/NH3] ⟶ [white gelatinous] Al(OH)3(s)
+Al3+(aq) + 3OH-(aq) [limited NaOH or NH3] ⟶ Al(OH)3(s)
+
+Observation: a white gelatinous precipitate.
 
 **Hydroxide redissolution:**
 
@@ -1866,7 +1860,7 @@ Al(OH)3(s) + OH-(aq) [excess strong alkali] ⟶ [Al(OH)4]-(aq)
 
 **Reprecipitation by CO₂:**
 
-[Al(OH)4]-(aq) + CO2(g) [pass CO2 at room temperature] ⟶ Al(OH)3(s) + HCO3-(aq)
+[Al(OH)4]-(aq) + CO2(g) [room temperature] ⟶ Al(OH)3(s) + HCO3-(aq)
 
 > **Hardness of common materials (qualitative).** Increasing order: glass < corundum (Al₂O₃) < cubic BN ≈ diamond Decreasing order: diamond ≈ cubic BN > corundum > glass Note: The exact ranking of c-BN and diamond depends on the hardness definition and crystal direction.\
 
@@ -1880,11 +1874,7 @@ Phase transformation: γ-Al₂O₃ is a metastable transition alumina formed by 
 
 ## 11.3 Aluminium halides, especially AlCl₃
 
-Anhydrous AlCl₃ is deliquescent, fumes in moist air, and sublimes at about 180 °C. It is substantially covalent and dimeric as Al₂Cl₆ in the vapour/non-polar-solvent picture, with halogen bridges completing the octet at aluminium.
-
-2Al + 6HCl(g) [dry] ⟶ 2AlCl3 + 3H2
-
-Al2O3 + 3C + 3Cl2 [high T] ⟶ 2AlCl3(g) + 3CO
+Anhydrous AlCl₃ is deliquescent, fumes in moist air, and sublimes at about 180 °C. It is substantially covalent and dimeric as Al₂Cl₆ in the vapour/non-polar-solvent picture, with halogen bridges completing the octet at aluminium. The preparative routes (direct chlorination, dry HCl, carbochlorination) are given with conditions in §11.3 below.
 
 In Friedel-Crafts alkylation/acylation, simple textbook stoichiometries often consume AlCl₃ by formation of [AlCl₄]⁻. Thus it is safer to describe AlCl₃ as a Lewis-acid promoter/catalyst system whose regeneration depends on the full reaction/work-up, rather than assuming every equation is a perfect catalytic cycle.
 
@@ -1894,23 +1884,21 @@ AlF₃ is predominantly ionic, high-melting and polymeric. Anhydrous AlCl₃/AlB
 
 **Direct chlorination:**
 
-2Al(s) + 3Cl2(g) [dry chlorine] ⟶ [initiate gently then control heat] 2AlCl3(s/vapour)
+2Al(s) + 3Cl2(g) [dry chlorine, warm] ⟶ 2AlCl3(s/vapour)
 
 **Dry HCl route:**
 
-2Al(s) + 6HCl(g) [high temperature] ⟶ [overheated; dry] 2AlCl3(g) + 3H2(g)
+2Al(s) + 6HCl(g) [dry HCl gas, high temperature] ⟶ 2AlCl3(g) + 3H2(g)
 
 **Carbochlorination:**
 
-Al2O3 + 3C + 3Cl2(g) [high temperature, about 1000-1500 °C depending source/process] ⟶ [condense AlCl3 vapour; dry] 2AlCl3 + 3CO
+Al2O3 + 3C + 3Cl2(g) [~1000-1500 °C, dry] ⟶ 2AlCl3 + 3CO
 
-*Dry high-temperature carbochlorination is followed by condensation of AlCl₃.*
-
-the robust point is dry high-temperature carbochlorination followed by condensation.
+The AlCl₃ vapour is condensed downstream; the exact temperature depends on the process.
 
 **Dimerisation:**
 
-2AlCl3(g) [cool vapour/non-polar solvent] ⟶ Al2Cl6
+2AlCl3(g) [cool, non-polar solvent] ⟶ Al2Cl6
 
 **Monomerisation:**
 

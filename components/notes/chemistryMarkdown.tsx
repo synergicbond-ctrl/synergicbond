@@ -101,15 +101,24 @@ function pureText(children: ReactNode): string | null {
 
 const ARROWS = /(⟶|→|⇌|↔|⇋)/;
 
-/** A bracketed segment is a *condition label*, not a chemical formula. */
+/** A bracketed segment is a *condition label* (goes on the arrow), not a
+ *  chemical formula and not a prose aside. Definitions, procedural narration,
+ *  observations and product descriptors are NOT conditions — they belong in a
+ *  note below the whole equation, so they are rejected here. */
+const NON_CONDITION =
+  /[=]|\b(?:many metals|as feasible|schematic|net comparison|major volatile fraction|cautious aqueous work-?up|then\b.*work-?up|deposits? at|evolv\w* at|burns? brilliantly|product is a|see (?:section|above|below)|crystalline|amorphous|high purity|high-purity)\b/i;
+const CONDITION_SIGNAL =
+  /°|\b\d+\s?K\b|\b\d+(?:\s?[–-]\s?\d+)?\s?atm\b|\bbar\b|\bpressure\b|\b(?:silent )?electric discharge\b|\bdischarge\b|\bfilament\b|\bfurnace\b|\belectrolysis\b|\bfusion\b|\bignition\b|\bcatalyst\b|\bhν\b|\bΔ\b|\breflux\b|\bamalgam\w*\b/i;
+
 function isConditionLabel(inner: string): boolean {
   const s = inner.trim();
   if (!s) return false;
+  if (NON_CONDITION.test(s)) return false; //  "E = B, Al…", "filter …", "crystalline"
+  if (CONDITION_SIGNAL.test(s)) return true; //  "450–750 atm", "hot W/Ta filament", "1273 K"
   if (/\(/.test(s)) return false; //  [Al(OH)4]
-  if (/[a-z]{3,}/.test(s)) return true; //  a real word: "furnace", "about 2000 °C", "crystalline"
-  if (/°|\d\s?K\b|\d\s?atm\b|\d\s?bar\b/.test(s)) return true; //  "900-1200 °C", "about 1273 K", "5 atm"
+  if (/[a-z]{3,}/.test(s)) return true; //  a real word: "furnace", "dry ether", "warm"
   if (/\d/.test(s) && /[A-Z]/.test(s)) return false; //  [BF4] [GaCl4] [I3]
-  if (/\s/.test(s)) return true; //  "hot concentrated", "dry ether"
+  if (/\s/.test(s)) return true; //  "hot concentrated"
   return /^[a-zΔµμ°]/.test(s); //  fusion, excess, warm, Δ
 }
 
@@ -188,6 +197,13 @@ function stripEdgeCondition(seg: string, side: "before" | "after"): { seg: strin
   return { seg };
 }
 
+/** Solvent, reaction medium, atmosphere → always sits BELOW the arrow (textbook
+ *  convention), no matter which side of the arrow it was written on. */
+const MEDIUM_RE =
+  /\b(?:dry|anhydrous|aqueous|ether|Et2O|OEt2|diglyme|glyme|THF|hydrocarbon|benzene|toluene|melt|molten|solution|suspension|atmosphere|vacuum|inert|N2 atmosphere|amalgam\w*)\b/i;
+const slotFor = (label: string, fallback: "above" | "below"): "above" | "below" =>
+  MEDIUM_RE.test(label) && !/°|\bK\b|\batm\b|\bbar\b|catalyst|filament|discharge/i.test(label) ? "below" : fallback;
+
 function Equation({ raw }: { raw: string }) {
   const parts = raw.trim().split(ARROWS);
   const arrowIdx = parts.map((p, i) => (ARROWS.test(p) ? i : -1)).filter((i) => i >= 0);
@@ -197,23 +213,33 @@ function Equation({ raw }: { raw: string }) {
   for (const i of arrowIdx) {
     if (i > 0 && parts[i - 1] != null) {
       const { seg, label } = stripEdgeCondition(parts[i - 1], "before");
-      if (label) { parts[i - 1] = seg; meta[i].above.push(label); }
+      if (label) { parts[i - 1] = seg; meta[i][slotFor(label, "above")].push(label); }
     }
     if (parts[i + 1] != null) {
       const { seg, label } = stripEdgeCondition(parts[i + 1], "after");
-      if (label) { parts[i + 1] = seg; meta[i].below.push(label); }
+      if (label) { parts[i + 1] = seg; meta[i][slotFor(label, "below")].push(label); }
     }
   }
-  // Pass 2 — any remaining bracketed condition anywhere: attach to the nearest
-  // arrow (before → above, after → below). Nothing is ever left as a pill.
+  // Pass 2 — any remaining bracketed segment: a real condition attaches to the
+  // nearest arrow (before → above, after → below); a formula ion stays in the
+  // equation; anything else (a stray observation / scope note) drops to a prose
+  // line beneath the equation. Nothing is ever left as an inline pill.
+  const trailingNotes: string[] = [];
+  const looksLikeFormula = (t: string) => !/\s/.test(t) && /[A-Za-z]/.test(t) && /^[A-Za-z0-9()[\]·.,'’+−-]+$/.test(t);
   for (let i = 0; i < parts.length; i++) {
     if (ARROWS.test(parts[i]) || !parts[i]) continue;
     parts[i] = parts[i].replace(COND_RE, (full, inner) => {
-      if (!isConditionLabel(inner)) return full;
-      let best = arrowIdx[0] ?? -1;
-      for (const a of arrowIdx) if (Math.abs(a - i) < Math.abs(best - i)) best = a;
-      if (best < 0) return full;
-      (i < best ? meta[best].above : meta[best].below).push(inner.trim());
+      const label = inner.trim();
+      if (isConditionLabel(label)) {
+        let best = arrowIdx[0] ?? -1;
+        for (const a of arrowIdx) if (Math.abs(a - i) < Math.abs(best - i)) best = a;
+        if (best >= 0) {
+          meta[best][slotFor(label, i < best ? "above" : "below")].push(label);
+          return " ";
+        }
+      }
+      if (looksLikeFormula(label)) return full; //  [BF4]-, [Al(H2O)6]3+ — a species
+      trailingNotes.push(label);
       return " ";
     });
   }
@@ -235,6 +261,11 @@ function Equation({ raw }: { raw: string }) {
           ) : null,
         )}
       </div>
+      {trailingNotes.length > 0 && (
+        <p className="mt-1.5 text-[13.5px] leading-relaxed" style={{ color: C.faint }}>
+          {trailingNotes.join("; ")}
+        </p>
+      )}
     </div>
   );
 }

@@ -299,13 +299,13 @@ The apparent Ga(II) chloride is better represented as Ga⁺[GaCl₄]⁻; it ther
 
 **Mixed-valence indium chloride:**
 
-In + 2HCl(g) [heated indium] ⟶ [dry HCl] InCl2 + H2
+In(s) + 2HCl(g) [heat] ⟶ [dry HCl gas] InCl2 + H2
 
 The product is better represented as In⁺[InCl₄]⁻ and contains In(I) and In(III), not a simple In(II) ion.
 
 **Gallium(I) tetrachloroaluminate example:**
 
-2Ga + GaCl3 + 3AlCl3 [molten chloride medium] ⟶ [controlled temperature] 3Ga+[AlCl4]-
+2Ga(s) + GaCl3 + 3AlCl3 [warm] ⟶ [molten chloride melt] 3Ga+[AlCl4]-
 
 This chloroaluminate medium stabilises gallium in the +1 oxidation state.
 
@@ -369,13 +369,13 @@ The trichlorides, bromides and iodides are largely covalent and undergo hydrolys
 
 **Thallium(I) oxide/hydroxide:** TlOH is a soluble strong base, while Tl₂O is strongly basic and forms TlOH with water. This is consistent with the alkali-metal-like character of Tl(I).
 
-AlCl3 + 6H2O [acidic aqueous solution] ⟶ [Al(H2O)6]3+ + 3Cl-
+AlCl3(s) + 6H2O(l) ⟶ [Al(H2O)6]3+(aq) + 3Cl-(aq)
 
-[Al(H2O)6]3+ + H2O [stepwise hydrolysis] ⇌ [Al(H2O)5OH]2+ + H3O+
+[Al(H2O)6]3+ + H2O ⇌ [Al(H2O)5(OH)]2+ + H3O+
 
-Al(OH)3 + OH- [strongly alkaline solution] ⟶ [Al(OH)4]-
+Al(OH)3(s) + OH-(aq) ⟶ [Al(OH)4]-(aq)
 
-The actual speciation depends on pH.
+Hydrolysis of the hexaaqua ion proceeds stepwise, which is why aqueous Al³⁺ salts are acidic; in strongly alkaline solution the amphoteric hydroxide redissolves as tetrahydroxoaluminate. The actual speciation depends on pH.
 
 > **JEE TRAP: Anhydrous AlCl₃ gives white fumes in moist air because atmospheric water partially hydrolyses it and liberates HCl; the moist HCl appears as visible white fumes.**
 >
@@ -435,7 +435,9 @@ Boron is comparatively unreactive at ordinary temperature because its covalent l
 
 **Aluminium in oxygen:**
 
-4Al(s) + 3O2(g) [ignition] ⟶ [powder burns brilliantly] 2Al2O3(s)
+4Al(s) + 3O2(g) [ignition] ⟶ 2Al2O3(s)
+
+Observation: finely divided aluminium burns in oxygen with a brilliant white flame.
 
 **Aluminium in nitrogen:**
 
@@ -511,7 +513,7 @@ In the presence of air, O₂ acts as the oxidising agent and sodium metaborate i
 
 **Condensed aluminate notation:**
 
-2Al(s) + 2NaOH(aq) + 2H2O(l) [Δ] ⟶ [concentrated] 2NaAlO2(aq) + 3H2(g)
+2Al(s) + 2NaOH(conc.) + 2H2O(l) [Δ] ⟶ 2NaAlO2(aq) + 3H2(g)
 
 **Gallium in aqueous alkali:**
 
@@ -523,19 +525,17 @@ The [Al(OH)₄]⁻ equation is the preferred aqueous description. NaAlO₂ is a 
 
 > **Key Point: Group 13 elements react with halogens to form trihalides, with the important exception TlI₃. 'TlI₃' is better represented as Tl⁺[I₃]⁻; the metal remains in the +1 oxidation state rather than forming true Tl(III) iodide.**
 
-Amorphous boron also forms B₂S₃ with sulphur at high temperature, BN with nitrogen, and refractory borides with many metals. Representative reactions are collected below.
+Amorphous boron also forms B₂S₃ with sulphur at high temperature, BN with nitrogen, and refractory borides with many metals. Representative reactions are collected below (B₂S₃ and BN are given in full in their own blocks).
 
-2B + 3S [about 1200 °C in the advanced note] ⟶ B2S3
+xB(s) + yM(s) [Δ] ⟶ MyBx
 
-2B + N2 [very high temperature] ⟶ 2BN
-
-B + M ⟶ [many metals] MxBy
-
-borides are often hard, refractory and non-stoichiometric)
+Many metals combine directly with boron to give borides that are typically very hard, refractory and often non-stoichiometric or interstitial.
 
 **General trihalide formation:**
 
-2E(s) + 3X2 [Δ] ⟶ [E = B, Al, Ga, In; X = F, Cl, Br, I as feasible] 2EX3
+2E(s) + 3X2 [Δ] ⟶ 2EX3
+
+Here E = B, Al, Ga, In and X = F, Cl, Br, I where feasible; recall that "TlI₃" is really Tl⁺[I₃]⁻, so thallium(III) iodide is not obtained this way.
 
 **Boron sulfide:**
 
@@ -543,7 +543,7 @@ borides are often hard, refractory and non-stoichiometric)
 
 **Boron carbide:**
 
-4B(s) + C(s) [electric furnace] ⟶ [about 2000 °C] B4C(s)
+4B(s) + C(s) [electric furnace, ~2000 °C] ⟶ B4C(s)
 
 **Magnesium boride:**
 
@@ -551,7 +551,7 @@ borides are often hard, refractory and non-stoichiometric)
 
 **Aluminium carbide:**
 
-4Al(s) + 3 C(s) [high temperature] ⟶ Al4C3(s)
+4Al(s) + 3C(s) [high temperature] ⟶ Al4C3(s)
 
 Metal amides:
 
@@ -561,7 +561,7 @@ No universal direct reaction of metallic Group 13 elements with NH3 should be me
 
 **Tl(I) halide solubility:** Aqueous solubility decreases sharply in the order TlF >> TlCl > TlBr > TlI. TlF is readily soluble, TlCl is sparingly soluble, and TlBr/TlI are very slightly soluble.
 
-TlI(s) + I2(s) [in iodide-rich solution] ⟶ Tl+[I3]-(s/aq)
+TlI(s) + I2(s) ⟶ [iodide-rich solution] Tl+[I3]-(s/aq)
 
 Many metal borides are very hard, refractory and non-stoichiometric/interstitial phases, so a single simple formula may not describe the whole composition range. Binary alkali-metal borides do exist, particularly in the Li-B system and for some Na-B compositions. However, borates and borohydrides are much more prominent in elementary aqueous/main-group chemistry; binary alkali-metal borides should therefore not be dismissed as nonexistent.
 
@@ -620,7 +620,9 @@ Si + 2Mg [Δ] ⟶ Mg2Si
 
 4BCl3 + 3LiAlH4 [dry ether] ⟶ 2B2H6 + 3LiCl + 3AlCl3
 
-SiCl4 + LiAlH4 [dry ether] ⟶ [schematic net comparison] SiH4 + LiCl + AlCl3
+SiCl4 + LiAlH4 [dry ether] ⟶ SiH4 + LiCl + AlCl3
+
+Both equations are written as schematic net comparisons; the boron case is the standard laboratory diborane preparation.
 
 Acid comparison: dilute boric acid has Ka of order 6 x 10⁻¹⁰ (pKa about 9.25); the diagonal-comparison page places silicic acid in the same very-weak-acid range. Exact silicic-acid constants depend strongly on hydration and polymerisation.
 
@@ -634,11 +636,11 @@ SiO2(s) + 2NaOH(l) [fusion] ⟶ Na2SiO3(s) + H2O(g)
 
 **Halide hydrolysis:**
 
-BCl3(l) + 3H2O(l) [room temperature] ⟶ H3BO3(aq) + 3HCl(aq)
+BCl3(l) + 3H2O(l) ⟶ H3BO3(aq) + 3HCl(aq)
 
 **Silicon tetrachloride hydrolysis:**
 
-SiCl4(l) + 2H2O(l) [room temperature] ⟶ [moisture] SiO2.xH2O(s) + 4HCl(aq)
+SiCl4(l) + 2H2O(l) ⟶ SiO2.xH2O(s) + 4HCl(aq)
 
 Fluoro-complex:
 
@@ -646,7 +648,7 @@ BF3(g) + F-(solvated) ⟶ [BF4]-(solvated)
 
 Silica with HF:
 
-SiO2(s) + 6HF(aq) [concentrated] ⟶ H2SiF6(aq) + 2H2O(l)
+SiO2(s) + 6HF(aq, conc.) ⟶ H2SiF6(aq) + 2H2O(l)
 
 > **Limits of the analogy B normally reaches maximum covalence 4, whereas Si commonly reaches 6 in [SiF₆]²⁻. B forms trihalides; Si forms tetrahalides. Boron is oxidised by hot concentrated HNO₃/H₂SO₄, while Si is notably attacked by HF. A diagonal relationship is a set of similarities, not identity.**
 
@@ -665,13 +667,15 @@ Natural boron occurs only in combined form. Borax or colemanite is first convert
 
 From borax to boric acid:
 
-Na2B4O7.10H2O(aq) + H2SO4(aq) [dilute; cool/crystallise] ⟶ 4H3BO3(s) + Na2SO4(aq) + 5H2O(l)
+Na2B4O7.10H2O(aq) + H2SO4(aq, dil.) ⟶ 4H3BO3(s) + Na2SO4(aq) + 5H2O(l)
+
+Cooling the acidified liquor crystallises the sparingly soluble boric acid.
 
 **Colemanite/sulfurous-acid route:**
 
-Ca2B6O11 + 4SO2 + 11H2O [pass SO2 through aqueous suspension] ⟶ [filter calcium bisulfite solution] 2Ca(HSO3)2 + 6H3BO3
+Ca2B6O11 + 4SO2 + 11H2O ⟶ 2Ca(HSO3)2 + 6H3BO3
 
-Hydration water in natural colemanite changes the bookkeeping but not the conversion principle.
+Sulfur dioxide is passed through an aqueous suspension of the ground mineral; the soluble calcium hydrogensulfite is filtered off, leaving boric acid in solution. Hydration water in natural colemanite changes the bookkeeping but not the conversion principle.
 
 From natural tincal: dissolve the crude mineral in hot water, remove sand/clay and other insoluble impurities by filtration, concentrate the clear solution and cool to crystallise purified borax decahydrate.
 
@@ -683,37 +687,37 @@ Natural tincal is crude borax mixed with sand and clay and may contain roughly o
 
 **Sodium reduction:**
 
-B2O3(s) + 6Na(s) [strong heating] ⟶ [inert atmosphere; amorphous] 2B(s) + 3Na2O(s)
+B2O3(s) + 6Na(s) [strong heating] ⟶ [inert atmosphere] 2B(s) + 3Na2O(s)
 
 **Potassium reduction:**
 
-B2O3(s) + 6K(s) [strong heating] ⟶ [inert atmosphere; amorphous] 2B(s) + 3K2O(s)
+B2O3(s) + 6K(s) [strong heating] ⟶ [inert atmosphere] 2B(s) + 3K2O(s)
 
 **Magnesium reduction/Moissan process:**
 
-B2O3(s) + 3Mg(s) [ignition] ⟶ [amorphous] 2B(s) + 3MgO(s)
+B2O3(s) + 3Mg(s) [ignition] ⟶ 2B(s) + 3MgO(s)
+
+The metal-reduction routes above all give amorphous (brown) boron; the crude product is washed to remove the oxide and any borides.
 
 **Aluminium reduction:**
 
 B2O3(l) + 2Al(s) [high temperature] ⟶ 2B(s) + Al2O3(s)
 
-**Electrolytic route:**
-
-B2O3-MgO melt [electrolysis] ⟶ [about 1343 K] B deposits at cathode
-
-**O₂ evolves at anode**
+**Electrolytic route:** electrolysis of a molten B₂O₃–MgO mixture near 1343 K deposits boron at the cathode (reduction of B³⁺ to B) while oxygen is evolved at the anode. The product is amorphous.
 
 **Hydrogen reduction of trichloride:**
 
-2BCl3(g) + 3H2(g) [hot W/Ta filament] ⟶ [about 1273 K; crystalline] 2B(s) + 6HCl(g)
+2BCl3(g) + 3H2(g) [hot W/Ta filament, ~1273 K] ⟶ 2B(s) + 6HCl(g)
+
+Filament deposition from the volatile halide gives crystalline boron of high purity.
 
 **Van Arkel-type iodide purification:**
 
-2BI3(g) [hot W/Ta filament] ⟶ [crystalline] 2B(s) + 3I2(g)
+2BI3(g) [hot W/Ta filament] ⟶ 2B(s) + 3I2(g)
 
 **Diborane pyrolysis:**
 
-B2H6(g) [red heat/hot filament] ⟶ [high purity] 2B(s) + 3H2(g)
+B2H6(g) [red heat / hot filament] ⟶ 2B(s) + 3H2(g)
 
 In the Moissan route, the crude product is washed successively to remove MgO and borides. It remains amorphous and impure compared with filament-deposited crystalline boron.
 
@@ -774,7 +778,7 @@ B₂O₃ is also called boron sesquioxide: "sesqui" indicates an oxygen-to-boron
 
 **Hygroscopic hydration:**
 
-B2O3 + 3H2O [moist air/water] ⟶ 2H3BO3
+B2O3(s) + 3H2O(l) ⟶ 2H3BO3(aq)
 
 Thus B₂O₃ is the acid anhydride of orthoboric acid.
 
@@ -788,9 +792,9 @@ Thus B₂O₃ is the acid anhydride of orthoboric acid.
 
 **With basic oxide:**
 
-B2O3(l) + CuO(s) [borax-bead flame] ⟶ Cu(BO2)2(glass
+B2O3(l) + CuO(s) [borax-bead flame] ⟶ Cu(BO2)2(s)
 
-blue-green)
+Observation: a blue-green glassy bead (the basis of the borax-bead test for copper).
 
 **With alkali:**
 
@@ -806,9 +810,9 @@ B2O3(s) + As2O5(s) [strong heating] ⟶ 2BAsO4(s)
 
 *B₂O₃ is predominantly an acidic oxide and reacts readily with basic oxides and alkalies to form borates. Reactions in which B₂O₃ behaves as a basic component toward very strongly acidic oxides are specialised and should not be used as the general description of its oxide character.*
 
-B2O3 + 3SO3 ⟶ B2(SO4)3
+B2O3(s) + 3SO3(g) ⟶ B2(SO4)3(s)
 
-its formally balanced version is B₂O₃ + 3SO₃ ⟶ B₂(SO₄)₃, but this is not treated as a routine reaction because boron sulfate is not an ordinary stable product under standard classroom conditions.
+This equation balances formally, but it is not a routine reaction: boron sulfate is not an ordinary stable product under standard classroom conditions.
 
 > Oxide-character note: Al2O3 is amphoteric, whereas B2O3 and SiO2 are acidic network oxides. A fixed universal ranking of the acidic character of B2O3 versus SiO2 is not used here because the comparison depends on the criterion and reaction considered. For this treatment, retain the classifications rather than an unsupported exact order.
 

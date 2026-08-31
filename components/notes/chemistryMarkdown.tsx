@@ -112,37 +112,27 @@ function isConditionLabel(inner: string): boolean {
   return /^[a-zΔµμ°]/.test(s); //  fusion, excess, warm, Δ
 }
 
+/** Render one side of a reaction (a run of species + operators), splitting on
+ *  ` + ` so each chemical species stays unbreakable. */
 function EqSegment({ seg, hue }: { seg: string; hue: string }) {
-  const bits = seg.split(/(\[[^\]]+\])/).filter(Boolean);
+  const species = formatChem(seg).replace(/\s+/g, " ").trim().split(/\s(?=\+)|(?<=\+)\s/);
   return (
     <>
-      {bits.map((b, j) => {
-        const m = /^\[([^\]]+)\]$/.exec(b);
-        if (m && isConditionLabel(m[1])) {
+      {species.map((sp, j) => {
+        const t = sp.trim();
+        if (!t) return null;
+        if (t === "+") {
           return (
-            <span
-              key={j}
-              className="rounded-md px-2 py-0.5 text-[12px] font-bold"
-              style={{ background: tint(C.rxnArrow, 0.14), border: `1px solid ${tint(C.rxnArrow, 0.35)}`, color: C.rxnArrow }}
-            >
-              {m[1].trim()}
+            <span key={j} className="mx-1 opacity-70" style={{ color: hue }}>
+              +
             </span>
           );
         }
-        const prev = bits[j - 1] ?? "";
-        if (/^\d{0,2}[+−-]$/.test(b.trim()) && /[)\]]$/.test(prev.trim())) {
-          return (
-            <span key={j} className="font-semibold" style={{ color: hue }}>
-              {toSup(b.trim())}
-            </span>
-          );
-        }
-        const s = formatChem(b).replace(/\s+/g, " ").trim();
-        return s ? (
-          <span key={j} className="font-semibold" style={{ color: hue }}>
-            {s}
+        return (
+          <span key={j} className="whitespace-nowrap font-semibold" style={{ color: hue }}>
+            {t}
           </span>
-        ) : null;
+        );
       })}
     </>
   );
@@ -158,17 +148,17 @@ function longArrow(sym: string): string {
  *  below (temperature / medium) — proper chemical-equation notation. */
 function RxnArrow({ symbol, above, below }: { symbol: string; above?: string; below?: string }) {
   return (
-    <span className="mx-1.5 inline-flex flex-col items-center justify-center self-center leading-none">
+    <span className="mx-1 inline-flex shrink-0 flex-col items-center justify-center self-center px-1 leading-none">
       {above ? (
-        <span className="max-w-[16rem] pb-[3px] text-center text-[10.5px] font-bold leading-tight" style={{ color: C.rxnArrow }}>
+        <span className="pb-[2px] text-center text-[10px] font-bold uppercase leading-tight tracking-wide" style={{ color: C.rxnArrow, maxWidth: "11rem" }}>
           {formatChem(above)}
         </span>
       ) : null}
-      <span className="text-[19px] font-black leading-none" style={{ color: C.rxnArrow, transform: "scaleX(1.7)" }}>
+      <span className="text-[17px] font-black leading-none" style={{ color: C.rxnArrow, transform: "scaleX(2)" }}>
         {longArrow(symbol)}
       </span>
       {below ? (
-        <span className="max-w-[16rem] pt-[3px] text-center text-[10.5px] font-semibold leading-tight" style={{ color: tint(C.rxnArrow, 0.85) }}>
+        <span className="pt-[2px] text-center text-[10px] font-medium leading-tight" style={{ color: tint(C.rxnArrow, 0.82), maxWidth: "11rem" }}>
           {formatChem(below)}
         </span>
       ) : null}
@@ -176,10 +166,12 @@ function RxnArrow({ symbol, above, below }: { symbol: string; above?: string; be
   );
 }
 
-/** Pull a condition label off the side of a species segment that touches an
- *  arrow: `A [fusion] ⟶ [Δ] B`  →  "fusion" above, "Δ" below. Also accepts the
- *  dashed shorthand `A −strong heat ⟶ B`. Returns the trimmed segment. */
-function stripCondition(seg: string, side: "before" | "after"): { seg: string; label?: string } {
+const COND_RE = /\[([^\]]+)\]/g;
+
+/** Pull the condition label that touches an arrow off a species segment.
+ *  `A [fusion] ⟶ [Δ] B` → "fusion" above, "Δ" below; also the dashed
+ *  shorthand `A −strong heat ⟶ B`. */
+function stripEdgeCondition(seg: string, side: "before" | "after"): { seg: string; label?: string } {
   if (side === "after") {
     const m = /^\s*\[([^\]]+)\]\s*/.exec(seg);
     if (m && isConditionLabel(m[1])) return { seg: seg.slice(m[0].length), label: m[1].trim() };
@@ -189,44 +181,52 @@ function stripCondition(seg: string, side: "before" | "after"): { seg: string; l
   if (mBracket && isConditionLabel(mBracket[1])) {
     return { seg: seg.slice(0, mBracket.index), label: mBracket[1].trim() };
   }
-  const mDash = /\s[–—−-]\s?((?:[Δδ]|[a-z][A-Za-z ]*?))\s*$/.exec(seg);
+  // dashed shorthand: `… −Δ ⟶` / `… —dry hydrocarbon; controlled temp ⟶`
+  const mDash = /\s[–—−](\s?(?:[Δδ]|[a-z][^[\]⟶→⇌↔]*?))\s*$/.exec(seg);
   if (mDash) return { seg: seg.slice(0, mDash.index), label: mDash[1].trim() };
   return { seg };
 }
 
 function Equation({ raw }: { raw: string }) {
   const parts = raw.trim().split(ARROWS);
-  const meta: { above?: string; below?: string }[] = parts.map(() => ({}));
-  for (let i = 0; i < parts.length; i++) {
-    if (!ARROWS.test(parts[i])) continue;
+  const arrowIdx = parts.map((p, i) => (ARROWS.test(p) ? i : -1)).filter((i) => i >= 0);
+  const meta: { above: string[]; below: string[] }[] = parts.map(() => ({ above: [], below: [] }));
+
+  // Pass 1 — conditions directly touching an arrow.
+  for (const i of arrowIdx) {
     if (i > 0 && parts[i - 1] != null) {
-      const { seg, label } = stripCondition(parts[i - 1], "before");
-      if (label) {
-        parts[i - 1] = seg;
-        meta[i].above = label;
-      }
+      const { seg, label } = stripEdgeCondition(parts[i - 1], "before");
+      if (label) { parts[i - 1] = seg; meta[i].above.push(label); }
     }
     if (parts[i + 1] != null) {
-      const { seg, label } = stripCondition(parts[i + 1], "after");
-      if (label) {
-        parts[i + 1] = seg;
-        meta[i].below = label;
-      }
+      const { seg, label } = stripEdgeCondition(parts[i + 1], "after");
+      if (label) { parts[i + 1] = seg; meta[i].below.push(label); }
     }
   }
-  const firstArrow = parts.findIndex((p) => ARROWS.test(p));
+  // Pass 2 — any remaining bracketed condition anywhere: attach to the nearest
+  // arrow (before → above, after → below). Nothing is ever left as a pill.
+  for (let i = 0; i < parts.length; i++) {
+    if (ARROWS.test(parts[i]) || !parts[i]) continue;
+    parts[i] = parts[i].replace(COND_RE, (full, inner) => {
+      if (!isConditionLabel(inner)) return full;
+      let best = arrowIdx[0] ?? -1;
+      for (const a of arrowIdx) if (Math.abs(a - i) < Math.abs(best - i)) best = a;
+      if (best < 0) return full;
+      (i < best ? meta[best].above : meta[best].below).push(inner.trim());
+      return " ";
+    });
+  }
+
+  const firstArrow = arrowIdx[0] ?? -1;
+  const plain = raw.replace(/\[[^\]]*\]/g, "").replace(/\s+/g, " ").trim();
+  const size = plain.length > 130 ? "text-[11.5px] sm:text-[12.5px]" : plain.length > 90 ? "text-[13px] sm:text-[13.5px]" : "text-[14.5px] sm:text-[15px]";
+
   return (
-    <div
-      className="my-5 overflow-x-auto rounded-xl px-4 py-3.5"
-      style={{
-        background: `linear-gradient(135deg, ${tint(C.rxn, 0.09)}, ${tint(C.rxnArrow, 0.05)})`,
-        border: `1px solid ${tint(C.rxn, 0.28)}`,
-      }}
-    >
-      <div className="flex flex-wrap items-center gap-x-1.5 gap-y-2 font-mono text-[15px] leading-relaxed sm:text-[15.5px]" style={{ color: C.rxn }}>
+    <div className="my-4 overflow-x-auto py-1" style={{ borderLeft: `2px solid ${tint(C.rxnArrow, 0.4)}`, paddingLeft: "0.85rem" }}>
+      <div className={`flex flex-wrap items-center gap-x-1 gap-y-1.5 font-mono leading-relaxed ${size}`} style={{ color: C.rxn }}>
         {parts.map((seg, i) =>
           ARROWS.test(seg) ? (
-            <RxnArrow key={i} symbol={seg} above={meta[i].above} below={meta[i].below} />
+            <RxnArrow key={i} symbol={seg} above={meta[i].above.join(" · ") || undefined} below={meta[i].below.join(" · ") || undefined} />
           ) : seg.trim() ? (
             <Fragment key={i}>
               <EqSegment seg={seg} hue={firstArrow >= 0 && i > firstArrow ? C.rxnProduct : C.rxn} />
@@ -285,7 +285,9 @@ function Callout({ children }: { children: ReactNode }) {
 
 const h = (style: CSSProperties): CSSProperties => ({ scrollMarginTop: "6rem", ...style });
 
-const components: Components = {
+const FIGURE_RE = /^::figure\s+([\w:-]+)::$/;
+
+const makeComponents = (figureFor?: (key: string) => ReactNode): Components => ({
   h1: ({ children }) => {
     const text = flattenText(children);
     return (
@@ -328,7 +330,14 @@ const components: Components = {
   ),
   p: ({ children }) => {
     const raw = pureText(children);
-    if (raw !== null && isEquation(raw)) return <Equation raw={raw} />;
+    if (raw !== null) {
+      const fig = FIGURE_RE.exec(raw.trim());
+      if (fig) {
+        const node = figureFor?.(fig[1]);
+        return node ? <div className="my-6">{node}</div> : null;
+      }
+      if (isEquation(raw)) return <Equation raw={raw} />;
+    }
     return (
       <p className="max-w-[74ch] text-[16px] leading-[1.85]" style={{ color: C.body }}>
         {children}
@@ -412,7 +421,7 @@ const components: Components = {
       {formatChem(flattenText(children))}
     </code>
   ),
-};
+});
 
 /** `\[ … \]` → `$$ … $$` and `\( … \)` → `$ … $` so KaTeX picks them up. */
 function normaliseMath(markdown: string) {
@@ -421,7 +430,15 @@ function normaliseMath(markdown: string) {
     .replace(/\\\(([^\n]*?)\\\)/g, (_m, e: string) => `$${e.trim()}$`);
 }
 
-export function ChemistryMarkdown({ markdown }: { markdown: string }) {
+export function ChemistryMarkdown({
+  markdown,
+  figureFor,
+}: {
+  markdown: string;
+  /** Resolve a `::figure KEY::` marker line to an inline visual. */
+  figureFor?: (key: string) => ReactNode;
+}) {
+  const components = makeComponents(figureFor);
   return (
     <div className="space-y-4 [&_.katex-display]:my-4 [&_.katex-display]:overflow-x-auto [&_.katex-display]:rounded-xl [&_.katex-display]:border [&_.katex-display]:border-[#ecd9ac]/25 [&_.katex-display]:bg-[#ecd9ac]/[0.06] [&_.katex-display]:px-4 [&_.katex-display]:py-3 [&_.katex]:text-[#ecd9ac] [&_.katex_.mrel]:text-[#ff8f5e] [&_tr>td:first-child]:font-semibold [&_tr>td:first-child]:text-[#f5f8fc]">
       <ReactMarkdown

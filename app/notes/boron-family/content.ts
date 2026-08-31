@@ -14,6 +14,8 @@ Non-metallic character generally decreases down a group, so the heavier members 
 
 ## 1.2 First-member anomaly, covalence and pi bonding
 
+::figure covalence-cap::
+
 The first member of a p-block group differs strongly from the heavier members because of its very small size. For second-period elements, the valence shell contains only 2s and 2p orbitals; therefore boron normally shows a maximum covalence of four. Thus [BF₄]⁻ exists, whereas aluminium can form six-coordinate [AlF₆]³⁻.
 
 Second-period p orbitals overlap efficiently with other 2p orbitals. Therefore p-p pi bonding is comparatively effective for the first-row p-block elements. With heavier atoms, larger and more diffuse orbitals and poorer energy/size matching make ordinary p-p pi overlap less effective.
@@ -83,6 +85,8 @@ B and Al have noble-gas cores; Ga and In additionally contain filled d¹⁰ core
 
 ## 3.1 Atomic and ionic radii
 
+::figure radii::
+
 A new shell is added down the group, but Ga is smaller than Al because the intervening 3d¹⁰ electrons shield poorly (d-block contraction). Tl is only slightly larger than In because 4f electrons shield still more poorly (lanthanoid contraction). The approximate M³⁺ radius for B is only an estimate because a normal B³⁺ ion does not exist.
 
 | **Element** | **Atomic/metallic radius / pm** | **M³⁺ radius / pm** | **M⁺ radius / pm** | **Interpretation** |
@@ -110,6 +114,8 @@ A new shell is added down the group, but Ga is smaller than Al because the inter
 > Note: Poor d/f shielding increases effective nuclear attraction.
 
 ## 3.2 Ionisation enthalpy
+
+::figure ie1::
 
 | **Element** | **IE₁** | **IE₂** | **IE₃** | **Sum of Three IE** |
 |:--:|:--:|:--:|:--:|:--:|
@@ -305,6 +311,8 @@ This chloroaluminate medium stabilises gallium in the +1 oxidation state.
 
 ## 4.3 Electron deficiency, Lewis acidity and coordination
 
+::figure lewis-adduct::
+
 > Key Point: A trivalent Group 13 centre such as B in BF₃ has only six electrons around the central atom and is electron deficient. It can accept a lone pair and behaves as a Lewis acid:
 
 BCl3 + :NH3 ⟶ BCl3.NH3
@@ -352,6 +360,10 @@ InF₃ + 3F⁻ ⟶ [InF₆]³⁻. In these ions Ga and In have coordination numb
 > **Lewis acidity across Group 13 trihalides** for a comparable hard donor (general trend). Increasing order: InX₃ < GaX₃ < AlX₃ < BX₃. Decreasing order: BX₃ > AlX₃ > GaX₃ > InX₃. Note: The preference can change with softer donors and with the halogen, solvent and aggregation state.
 
 ## 4.4 Hydrolysis, aquo ions and oxide/hydroxide character
+
+::figure aquo-ions::
+
+::figure oxide-trend::
 
 The trichlorides, bromides and iodides are largely covalent and undergo hydrolysis in water. Tetrahedral [M(OH)₄]⁻ and octahedral [M(H₂O)₆]³⁺ species occur in aqueous media for the heavier members; boron is exceptional and does not form a normal aquated B³⁺ ion.
 
@@ -576,6 +588,8 @@ Boron differs sharply from Al-Tl because it is very small, has high ionisation e
 
 ## 6.2 Diagonal similarity between boron and silicon
 
+::figure diagonal::
+
 A formal ionic-potential comparison gives z/r ≈ 0.073 e pm⁻¹ for B³⁺ and ≈ 0.074 e pm⁻¹ for Si⁴⁺. The close values illustrate similar polarising power, but B³⁺ is not a stable free aqueous ion; this is only a formal size-charge comparison.
 
 15. Both are hard, high-melting, low-conductivity covalent solids and are semiconducting/metalloidal rather than typical metals.
@@ -705,6 +719,12 @@ In the Moissan route, the crude product is washed successively to remove MgO and
 
 ## 7.2 Allotropes and properties
 
+::figure icosahedron::
+
+::figure icosa-construction::
+
+::figure alpha-rhombohedral::
+
 Boron occurs in several allotropes. Crystalline boron is built from B₁₂ icosahedral units linked by multicentre B–B bonding. The structures are not made of conventional localised two-centre bonds alone: multicentre bonding compensates for electron deficiency.
 
 - **Amorphous boron** is a brown powder, more reactive, and is obtained by chemical reduction.
@@ -801,7 +821,7 @@ Structural summary: (1) monomeric BO₃ units can polymerise by sharing oxygen a
 > **JEE TRAP: Do not assign one hybridisation to every boron atom in a borate. In the tetraborate ion of borax, two boron centres are trigonal and two are tetrahedral.**
 
 
-Figure 3. Condensed borate motifs and the hydrogen-bonded sheet structure of crystalline boric acid.
+::figure borate-units::
 
 | **Class** | **Representative formula/species** | **Structural idea** |
 |----|----|----|
@@ -1065,9 +1085,11 @@ Positional-diol comparison: catechol has adjacent OH groups and forms a favourab
 In crystalline H₃BO₃ the hydrogen-bonded molecular sheets are separated by about 3.18 Å. Weak forces between these widely separated layers account for easy cleavage into fine, soft flakes and the greasy/soapy feel.
 
 
-Figure 4. Cis-diol complexation of borate: five-membered O–B–O chelate formation increases the apparent acidity of boric acid.
+::figure cis-diol::
 
 ## 8.5 Sodium peroxoborate (perborate)
+
+::figure peroxoborate::
 
 Sodium peroxoborate can be prepared either electrochemically from a sodium-borate solution or by oxidising boric acid/sodium metaborate with H₂O₂. The peroxide O-O linkage is the chemically important feature.
 
@@ -1164,7 +1186,9 @@ B2O3(s) + 3 C(s) + 3Cl2(g) [red heat/electric furnace] ⟶ 2BCl3(g) + 3CO(g)
 2B(s) + 3Cl2(g) [about 400 °C] ⟶ 2BCl3(g)
 
 
-Figure 5. BF₃ is trigonal planar; F→B pπ–pπ donation gives partial π character to the three B–F bonds.
+::figure bf3::
+
+::figure bf3-mo::
 
 21. Each BX₃ molecule is sp²/trigonal planar with a nominally vacant perpendicular B 2p orbital.
 
@@ -1289,7 +1313,7 @@ B2Cl4(l) + 6H2O(l) [cold] ⟶ [controlled addition] 2H3BO3(aq) + 4HCl(aq) + H2(g
 balanced limiting representation, with polymeric lower chlorides possible
 
 
-Figure 6. B₂Cl₄ conformations and schematic cage projections of B₄Cl₄, B₈Cl₈ and B₉Cl₉.
+::figure b2cl4-cages::
 
 > **Chemical note: Thermal decomposition of B₂Cl₄ is condition-dependent and may produce polymeric lower chlorides; it should not be represented by a single universal product equation.**
 
@@ -1339,7 +1363,7 @@ Several neutral boranes are known. When a simple name is ambiguous, the hydrogen
 | nido | BₙHₙ₊₄ | B₂H₆, B₅H₉, B₆H₁₀, B₁₀H₁₄ |
 | arachno | BₙHₙ₊₆ | B₄H₁₀, B₅H₁₁, B₆H₁₂, B₈H₁₄ |
 
-Figure 7. Classification of selected boranes; pyrolysis products are condition-dependent rather than following a single clean interconversion sequence.
+::figure borane-classes::
 
 ### Lipscomb STYX notation
 
@@ -1412,7 +1436,9 @@ Representative structural values are: terminal B-H about 119 pm, bridge B-H abou
 > **JEE TRAP:** The bridge B-H bonds are longer than terminal B-H bonds because one electron pair is shared over three centres. Do not assign a normal single-bond order of 1 to each B-H segment in a bridge.
 
 
-Figure 8. Diborane contains four terminal B–H 2c–2e bonds and two B–H–B 3c–2e bridge bonds.
+::figure diborane::
+
+::figure 3c2e-mo::
 
 Diborane electron count: B₂H₆ contains twelve valence electrons--three from each B atom and one from each of six H atoms. Twelve electrons cannot provide ordinary two-centre two-electron bonds for every adjacent B-H/B-B connection, which necessitates the two three-centre two-electron B-H-B bridges.
 
@@ -1641,7 +1667,7 @@ NaBH₄ is an ionic white solid containing tetrahedral [BH₄]⁻ ions. At ambie
 NaBH₄ selectivity: it is a nucleophilic hydride reagent and attacks sites of low electron density, so aldehydes and ketones are readily reduced whereas isolated C=C, COOH and NO₂ groups are not normally attacked under its usual mild conditions. LiAlH₄ is substantially stronger, generally leaves an isolated C=C bond unchanged, and cannot be used in aqueous solution because it reacts violently with water.
 
 
-Figure 9. Covalent borohydride bonding in Al(BH₄)₃ and polymeric Be(BH₄)₂, with a polymeric AlH₃ bridge motif.
+::figure borohydride-bridges::
 
 | **Reagent** | **Typical medium/stability** | **Reducing behaviour** |
 |----|----|----|
@@ -1683,10 +1709,10 @@ B3N3H6 + 9H2O [slow hydrolysis on heating] ⟶ 3NH3 + 3H3BO3 + 3H2
 > **JEE TRAP:** Borazine is planar and delocalised, but B-N bonds are polar. Do not transfer benzene's equal C-C electron distribution or low addition reactivity directly to borazine.
 
 
-Figure 10. Borazine and layered hexagonal boron nitride: alternating B/N frameworks with polar B–N bonds.
+::figure borazine::
 
 
-Figure 11. Borazine p-orbital overlap and a representative charge-separated resonance contributor.
+::figure borazine-mo::
 
 Borazine ('inorganic benzene') is a colourless liquid with a planar six-membered alternating B-N ring. It is isoelectronic with benzene, but B-N bonds are polar (B delta+, N delta-) and pi delocalisation is unequal, so it is much more reactive toward addition and hydrolysis.
 
@@ -1737,7 +1763,7 @@ B3N3H6(l) [high-temperature pyrolysis] ⟶ [inert atmosphere] 3BN(s) + 3H2(g)
 In B₃N₃H₃Cl₃ and B₃N₃H₃(CH₃)₃, the Cl or CH₃ substituents occupy the three boron sites while each nitrogen retains H. Borazine can also coordinate metal carbonyl fragments through its π system.
 
 
-Figure 12. Chloroborazine, trimethylborazine, HCl-addition product and a schematic borazine–Cr(CO)₃ π-complex.
+::figure borazine-derivatives::
 
 > **Aromatic character (qualitative)** Increasing order: borazine < benzene\
 > Decreasing order: benzene > borazine\
@@ -1975,7 +2001,7 @@ Al2Cl6 + 12NH3 [dry NH3] ⟶ [cool] 2AlCl3·6NH3
 2AlCl3.6H2O(s) [strong heating] ⟶ Al2O3(s) + 6HCl(g) + 9H2O(g)
 
 
-Figure 13. Al₂Cl₆ contains two μ-Cl bridges; each aluminium centre is approximately tetrahedral.
+::figure al2cl6::
 
 | **State/medium** | **Predominant description** | **Geometry/data** |
 |----|----|----|
@@ -2116,7 +2142,7 @@ High-alumina cement is produced from limestone and bauxite with small amounts of
 > **JEE TRAP: Gypsum is added to retard the setting of ordinary Portland cement. Controlled setting improves the final strength.**
 
 
-Figure 14. Tricalcium aluminate ring motif: six AlO₄ tetrahedra share corners in the Ca₉[Al₆O₁₈] structural representation.
+::figure aluminate-ring::
 
 | **Feature** | **Portland cement** | **High-alumina cement** |
 |----|----|----|
@@ -2195,7 +2221,7 @@ Ga2H6 [above about 253 K] ⟶ 2Ga + 3H2
 > Hydride chemistry is strongly condition-dependent; temperature, donor and stoichiometry can change the product.
 
 
-Figure 15. Electron-deficient multicentre bonding: dimeric Al₂(CH₃)₆ and representative hydride-bridge motifs.
+::figure al2me6::
 
 | **Species** | **Geometry/structure** | **Significance** |
 |----|----|----|
@@ -2207,7 +2233,7 @@ Figure 15. Electron-deficient multicentre bonding: dimeric Al₂(CH₃)₆ and r
 | Al(⁸-hydroxyquinolinate)₃ | Octahedral chelate | Analytical precipitation/extraction |
 
 
-Figure 16. Octahedral aluminium chelates formed by three bidentate ligands: acetylacetonate, oxalate and 8-hydroxyquinolinate.
+::figure al-chelates::
 
 The aluminium 8-hydroxyquinolinate (oxinate) complex is used for the selective precipitation and gravimetric determination of aluminium.
 
@@ -2228,6 +2254,8 @@ Al(CH3)3 + N(CH3)3 [dry hydrocarbon] ⟶ [low temperature] (CH3)3Al←N(CH3)3
 Al₂(CH₃)₆ is electron-deficient and dimeric, with two bridging methyl groups and four terminal methyl groups, conceptually analogous to halide-bridged Al₂Cl₆. Trialkylaluminium compounds are pyrophoric and are used as alkylating/co-catalyst reagents, notably in olefin polymerisation.
 
 ## 11.7 Aluminium extraction — Bayer purification and Hall–Héroult electrolysis
+
+::figure bayer-hall::
 
 Bauxite is first purified to alumina by exploiting the amphoteric character of aluminium oxide/hydroxide. In the Bayer process, hot concentrated NaOH dissolves aluminium as aluminate while many iron-rich impurities remain insoluble; after clarification, Al(OH)₃ is precipitated (commonly by seeding) and calcined to Al₂O₃.
 
@@ -2260,6 +2288,8 @@ The molten Hall–Héroult bath is dominated by cryolite and contains dissolved 
 > JEE TRAP: In the Hall–Héroult process, alumina supplies aluminium, while cryolite acts mainly as the molten solvent and electrolyte modifier.
 
 ## 11.8 Aluminium qualitative analysis and materials chemistry
+
+::figure al-qual::
 
 Al(OH)₃ forms a white gelatinous precipitate from Al³⁺ solutions on controlled addition of base. It dissolves in excess NaOH because of its amphoteric character. The aluminon reagent gives a characteristic red lake associated with aluminium hydroxide.
 
@@ -2352,6 +2382,8 @@ B, C, N, O and F are all small, have unusually high ionisation enthalpy and elec
 The heavier congeners in each group are larger, have accessible d orbitals (from n = 3 onward, though the “d-orbital participation” language is now understood loosely as orbital availability/hybridisation convenience rather than literal d-orbital bonding) and commonly show higher coordination numbers (6 for Al, Si, S, Cl in typical complexes/oxoanions vs 3–4 for B, C, N, O).
 
 ## 13.4 Inert-pair effect across the heavier p-block
+
+::figure oxstate-map::
 
 Down heavier p-block groups, the valence ns² electron pair increasingly resists participating in bonding and instead stays as a stereochemically distorting lone pair on the atom in its lower oxidation state. Consequently, **lower oxidation states become progressively more stable down a group**: Tl(I) is more stable than Tl(III); Pb(II) is more stable than Pb(IV); Bi(III) is more stable than Bi(V). PbO₂ is therefore a strong oxidising agent (it “wants” to fall to Pb²⁺), while Tl³⁺ is a good oxidising agent (it “wants” to fall to Tl⁺). This is a **relative-stability trend rooted in poor shielding and relativistic contraction of the 6s orbital for the sixth-period elements**, not a claim that the higher oxidation state cannot exist or is never encountered in a question.
 

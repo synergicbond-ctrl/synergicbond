@@ -1,1 +1,1 @@
-export { HydrogenMarkdown as PBlockMarkdown } from "../hydrogen/_markdown";
+export { ChemistryMarkdown as PBlockMarkdown } from "@/components/notes/chemistryMarkdown";

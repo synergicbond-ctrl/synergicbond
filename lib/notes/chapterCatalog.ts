@@ -446,7 +446,7 @@ export const COURSE_GROUP_CARDS: Record<string, CourseGroupCard> = {
   "p-block-elements": {
     href: "/notes/p-block",
     description:
-      "Two courses — the full P-block Elements route across Groups 13–18, plus a dedicated 14-lesson Boron Family deep dive (Group 13 trends, inert-pair effect, electron-deficient bonding, boranes, borazine, borax, boric acid, aluminium chemistry and a Q1–Q90 question bank).",
+      "Three courses — the full P-block Elements route across Groups 13–18, a 14-lesson Boron Family deep dive (Group 13), and a 27-lesson Carbon Family deep dive (Group 14: trends and the inert-pair effect, allotropes and fullerenes, carbides, carbon oxide and carbonate chemistry, silicon, silica and the seven silicate classes, glass, silicones, halides, pπ–dπ complexes, and tin/lead reaction maps).",
   },
 };
 

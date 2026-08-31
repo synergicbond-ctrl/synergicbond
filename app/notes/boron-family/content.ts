@@ -1268,9 +1268,7 @@ BCl₃ is used as a Lewis-acid catalyst, chlorinating reagent and precursor for 
 
 ## 9.4 Boron dihalides, B₂X₄
 
-B₂Cl₄ can be produced by low-pressure electric discharge of BCl₃ in the presence of mercury. The B-B bond allows rotation; the gas/liquid prefers a non-eclipsed conformation, whereas crystal packing makes the solid more nearly planar.
-
-2BCl3 + 2Hg [electric discharge] ⟶ [low pressure] B2Cl4 + Hg2Cl2
+B₂Cl₄ can be produced by low-pressure electric discharge of BCl₃ in the presence of mercury (equation below). The B-B bond allows rotation; the gas/liquid prefers a non-eclipsed conformation, whereas crystal packing makes the solid more nearly planar.
 
 Apparent Ga(II) and In(II) chlorides are commonly mixed-valence compounds rather than true M(II) species: GaCl₂ is better represented as Ga⁺[GaCl₄]⁻ and the analogous indium compound contains In(I) and In(III).
 
@@ -1288,13 +1286,13 @@ B₂F₄ (diboron tetrafluoride) is the fluoride analogue of B₂Cl₄ and conta
 
 **Hydrolysis:**
 
-B2Cl4(l) + 6H2O(l) [cold] ⟶ [controlled addition] 2H3BO3(aq) + 4HCl(aq) + H2(g)
+B2Cl4(l) + 6H2O(l) [cold] ⟶ 2H3BO3(aq) + 4HCl(aq) + H2(g)
 
 **Disproportionation:**
 
-3B2Cl4(l) [standing/heat] ⟶ 4BCl3(g) + 2B(s)
+3B2Cl4(l) [standing / heat] ⟶ 4BCl3(g) + 2B(s)
 
-balanced limiting representation, with polymeric lower chlorides possible
+This is a limiting representation; polymeric lower chlorides are also formed.
 
 
 ::figure b2cl4-cages::
@@ -1357,17 +1355,13 @@ In the STYX description, s = number of B-H-B bridges, t = number of three-centre
 
 **From magnesium boride:**
 
-Mg3B2(s) + 6H3PO4(l) [warm] ⟶ [product is a borane mixture, B2H6 major volatile fraction] B2H6(g) + 3Mg(H2PO4)2(s/aq)
+Mg3B2(s) + 6H3PO4(l) [warm] ⟶ B2H6(g) + 3Mg(H2PO4)2(s/aq)
 
-**Acid route:**
-
-Mg3B2 + dilute HCl [controlled low temperature] ⟶ borane mixture
-
-This route gives a mixture of volatile boranes including B₂H₆, B₄H₁₀ and B₅H₉ together with magnesium chloride; it is not a clean single-product preparation.
+Warming magnesium boride with a non-oxidising acid (dilute H₃PO₄ or HCl) liberates a mixture of volatile boranes — B₂H₆ as the major fraction, with B₄H₁₀ and B₅H₉ — together with the magnesium salt. It is not a clean single-product preparation.
 
 **High-pressure reduction:**
 
-B2O3(s) + 2Al(s) + 3H2(g) [about 150 °C] ⟶ [very high H2 pressure (about 450-750 atm)] B2H6(g) + Al2O3(s)
+B2O3(s) + 2Al(s) + 3H2(g) [~150 °C] ⟶ [~450-750 atm H2] B2H6(g) + Al2O3(s)
 
 Preparation conditions: Reduction is carried out under very high hydrogen pressure near 150 °C; the exact pressure depends on the preparative method.
 
@@ -1377,37 +1371,33 @@ Preparation conditions: Reduction is carried out under very high hydrogen pressu
 
 **Lithium aluminium hydride:**
 
-4BCl3(g/ether) + 3LiAlH4(ether) [dry ether] ⟶ [low temperature] 2B2H6(g) + 3LiCl(s) + 3AlCl3(ether)
+4BCl3(ether) + 3LiAlH4(ether) [dry ether, low temperature] ⟶ 2B2H6(g) + 3LiCl(s) + 3AlCl3(ether)
 
-**Exact BF³-etherate/LAH route:**
+**BF₃ etherate / LiAlH₄ route:**
 
-4Et2O.BF3 + 3LiAlH4 [dry ether] ⟶ [controlled low temperature] 2B2H6 + 3LiAlF4 + 4Et2O
-
-**BF₃ etherate/LiAlH₄ route:**
-
-4BF3.OEt2 + 3LiAlH4 [dry ether] ⟶ [controlled low temperature] 2B2H6 + 3LiAlF4 + 4Et2O
+4BF3.OEt2 + 3LiAlH4 [dry ether, low temperature] ⟶ 2B2H6 + 3LiAlF4 + 4Et2O
 
 **Borohydride/iodine:**
 
-2NaBH4(s) + I2(s) [diglyme] ⟶ [about 0-25 °C] B2H6(g) + 2NaI(s) + H2(g)
+2NaBH4(s) + I2(s) [diglyme, 0-25 °C] ⟶ B2H6(g) + 2NaI(s) + H2(g)
 
 Diglyme is bis(2-methoxyethyl) ether, a coordinating polyether with formula CH₃OCH₂CH₂OCH₂CH₂OCH₃. It dissolves ionic hydride reagents and permits controlled generation of diborane.
 
 **Borohydride/BF₃ etherate:**
 
-3NaBH4(s) + 4BF3.OEt2(l) [diglyme/ether] ⟶ [controlled addition] 2B2H6(g) + 3NaBF4(s) + 4Et2O(l)
+3NaBH4(s) + 4BF3.OEt2(l) [diglyme] ⟶ 2B2H6(g) + 3NaBF4(s) + 4Et2O(l)
 
 **Tetraborane decomposition:**
 
-B4H10(g) [about 100 °C] ⟶ B2H6(g) + higher boranes + H2(g)
+B4H10(g) [~100 °C] ⟶ B2H6(g) + higher boranes + H2(g)
 
-product mixture, so no unique simple stoichiometry
+This is a product mixture, so no unique simple stoichiometry applies.
 
 **Electric-discharge route:**
 
 2BCl3(g) + 6H2(g) [silent electric discharge] ⟶ [low pressure] B2H6(g) + 6HCl(g)
 
-low-yield mixture
+The yield is low and the product is a mixture of boranes.
 
 > **Preparative caution: Boranes are toxic, volatile and pyrophoric. Several preparative routes give mixtures of boranes, which require separation by low-temperature fractionation.**
 

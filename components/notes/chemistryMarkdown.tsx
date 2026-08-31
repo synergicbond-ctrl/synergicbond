@@ -200,9 +200,18 @@ function stripEdgeCondition(seg: string, side: "before" | "after"): { seg: strin
 /** Solvent, reaction medium, atmosphere → always sits BELOW the arrow (textbook
  *  convention), no matter which side of the arrow it was written on. */
 const MEDIUM_RE =
-  /\b(?:dry|anhydrous|aqueous|ether|Et2O|OEt2|diglyme|glyme|THF|hydrocarbon|benzene|toluene|melt|molten|solution|suspension|atmosphere|vacuum|inert|N2 atmosphere|amalgam\w*)\b/i;
-const slotFor = (label: string, fallback: "above" | "below"): "above" | "below" =>
-  MEDIUM_RE.test(label) && !/°|\bK\b|\batm\b|\bbar\b|catalyst|filament|discharge/i.test(label) ? "below" : fallback;
+  /\b(?:dry|anhydrous|aqueous|ether|Et2O|OEt2|diglyme|glyme|THF|hydrocarbon|benzene|toluene|melt|molten|solution|suspension|atmosphere|vacuum|inert|amalgam\w*)\b/i;
+const HARD_RE =
+  /°|\b\d+\s?K\b|\batm\b|\bbar\b|\bpressure\b|catalyst|filament|discharge|\bΔ\b|\bheat\b|heating|ignition|reflux|fusion|hν|electrolysis|red heat/i;
+/** Solvent / medium / atmosphere → BELOW the arrow; heat / catalyst / pressure /
+ *  light → ABOVE; a mixed or unclassifiable label stays where it was written. */
+const slotFor = (label: string, fallback: "above" | "below"): "above" | "below" => {
+  const medium = MEDIUM_RE.test(label);
+  const hard = HARD_RE.test(label);
+  if (hard && !medium) return "above";
+  if (medium && !hard) return "below";
+  return fallback;
+};
 
 function Equation({ raw }: { raw: string }) {
   const parts = raw.trim().split(ARROWS);

@@ -2132,27 +2132,29 @@ In the low-temperature model, GaH₃ dimerises as Ga₂H₆ with terminal and br
 
 **Ammonia ion-pair adduct:**
 
-Ga2H6 + 2NH3 [about 195 K] ⟶ [(NH3)2GaH2]+[GaH4]-
+Ga2H6 + 2NH3 [~195 K] ⟶ [(NH3)2GaH2]+[GaH4]-
 
 **Trimethylamine cleavage:**
 
-Ga2H6 + 2NMe3 [about 178 K] ⟶ 2NMe3.GaH3
+Ga2H6 + 2NMe3 [~178 K] ⟶ 2NMe3.GaH3
 
 **Phosphine cleavage:**
 
-Ga2H6 + 2PH3 [about 20 K] ⟶ 2PH3.GaH3
+Ga2H6 + 2PH3 [~20 K] ⟶ 2PH3.GaH3
 
 **Complete chlorination by HCl:**
 
-Ga2H6 + 6HCl [about 178 K] ⟶ Ga2Cl6 + 6H2
+Ga2H6 + 6HCl [~178 K] ⟶ Ga2Cl6 + 6H2
 
 **Hydrogallation of ethene:**
 
-Ga2H6 + 4CH2=CH2 [about 243 K] ⟶ [often associated/polymeric] 2[(C2H5)2GaH]
+Ga2H6 + 4CH2=CH2 [~243 K] ⟶ 2[(C2H5)2GaH]
+
+The diethylgallane product is usually associated or polymeric.
 
 **Thermal decomposition:**
 
-Ga2H6 [above about 253 K] ⟶ 2Ga + 3H2
+Ga2H6 [above ~253 K] ⟶ 2Ga + 3H2
 
 > Hydride chemistry is strongly condition-dependent; temperature, donor and stoichiometry can change the product.
 
@@ -2195,15 +2197,13 @@ Al₂(CH₃)₆ is electron-deficient and dimeric, with two bridging methyl grou
 
 Bauxite is first purified to alumina by exploiting the amphoteric character of aluminium oxide/hydroxide. In the Bayer process, hot concentrated NaOH dissolves aluminium as aluminate while many iron-rich impurities remain insoluble; after clarification, Al(OH)₃ is precipitated (commonly by seeding) and calcined to Al₂O₃.
 
-Al₂O₃·2H₂O —2NaOH→ 2NaAlO₂ —4H₂O→ 2Al(OH)₃ —Δ→ Al₂O₃ + 3H₂O
+The Bayer sequence in three balanced steps:
 
-Stepwise:
+Al2O3·2H2O(s) + 2NaOH(aq) [hot concentrated] ⟶ 2NaAlO2(aq) + 3H2O(l)
 
-Al₂O₃·2H₂O + 2NaOH → 2NaAlO₂ + 3H₂O
+2NaAlO2(aq) + 4H2O(l) [dilute, seed with Al(OH)3] ⟶ 2Al(OH)3(s) + 2NaOH(aq)
 
-2NaAlO₂ + 4H₂O → 2Al(OH)₃↓ + 2NaOH
-
-2Al(OH)₃ —Δ→ Al₂O₃ + 3H₂O
+2Al(OH)3(s) [Δ] ⟶ Al2O3(s) + 3H2O(g)
 
 Hall-Heroult electrolysis dissolves Al₂O₃ in molten cryolite, Na₃AlF₆. Cryolite lowers the operating temperature and improves ionic conductivity. Liquid aluminium forms at the cathode; carbon anodes are consumed by oxide-derived oxygen, giving mainly CO₂.
 

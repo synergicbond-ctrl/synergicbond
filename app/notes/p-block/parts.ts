@@ -1,14 +1,19 @@
 import "server-only";
 import { P_BLOCK_MASTER_MARKDOWN } from "./content";
+import { BORON_FAMILY_MASTER_MARKDOWN } from "../boron-family/content";
 
 export interface PBlockPartDef { slug: string; number: number; title: string; fromSection: number; toSection: number; }
 
 export const P_BLOCK_PARTS: PBlockPartDef[] = [
   // Ordered group by group — foundations then deep dive within each group,
   // Groups 13 → 18, closing with the cross-group synthesis lesson.
+  //
+  // Parts 2–3 (Group 13) render the faithful "Boron Family" master notes
+  // (the same content as /notes/boron-family, split across two lessons);
+  // fromSection/toSection there refer to the BORON_FAMILY_MASTER_MARKDOWN.
   { slug: "part1", number: 1, title: "P-block map, trends & first-element anomaly", fromSection: 1, toSection: 1 },
-  { slug: "part2", number: 2, title: "Group 13 — Boron family: trends, bonding, boron & borates", fromSection: 2, toSection: 2 },
-  { slug: "part3", number: 3, title: "Group 13 — Boron family: halides, boranes, aluminium & mastery", fromSection: 3, toSection: 3 },
+  { slug: "part2", number: 2, title: "Group 13 — Boron family: trends, elemental boron & bonding", fromSection: 1, toSection: 7 },
+  { slug: "part3", number: 3, title: "Group 13 — Boron family: B–O compounds, halides, boranes & aluminium", fromSection: 8, toSection: 13 },
   { slug: "part4", number: 4, title: "Group 14 — Carbon, silicon & the inert-pair effect", fromSection: 4, toSection: 4 },
   { slug: "part5", number: 5, title: "Group 14 — Allotropes, carbon oxides & silicon materials", fromSection: 5, toSection: 5 },
   { slug: "part6", number: 6, title: "Group 14 — Silicates, zeolites & silicones", fromSection: 6, toSection: 6 },
@@ -28,8 +33,8 @@ export const P_BLOCK_PARTS: PBlockPartDef[] = [
   { slug: "part20", number: 20, title: "JEE Advanced synthesis & revision", fromSection: 20, toSection: 20 },
 ];
 
-function sections() {
-  const lines = P_BLOCK_MASTER_MARKDOWN.split("\n");
+function splitSections(markdown: string) {
+  const lines = markdown.split("\n");
   const preamble: string[] = []; const result: { num: number; text: string }[] = [];
   let current: { num: number; lines: string[] } | undefined;
   for (const line of lines) {
@@ -41,9 +46,24 @@ function sections() {
   return { preamble: preamble.join("\n"), result };
 }
 
+function slice(markdown: string, from: number, to: number) {
+  return splitSections(markdown).result
+    .filter((item) => item.num >= from && item.num <= to)
+    .map((item) => item.text)
+    .join("\n");
+}
+
 export function pBlockPartMarkdown(part: PBlockPartDef) {
-  const split = sections();
-  const body = split.result.filter((item) => item.num >= part.fromSection && item.num <= part.toSection).map((item) => item.text).join("\n");
+  // Group 13 lessons draw from the faithful Boron Family master notes.
+  if (part.number === 2 || part.number === 3) {
+    return slice(BORON_FAMILY_MASTER_MARKDOWN, part.fromSection, part.toSection);
+  }
+  const split = splitSections(P_BLOCK_MASTER_MARKDOWN);
+  const body = split.result
+    .filter((item) => item.num >= part.fromSection && item.num <= part.toSection)
+    .map((item) => item.text)
+    .join("\n");
   return part.number === 1 ? `${split.preamble}\n${body}` : body;
 }
+
 export function pBlockPartBySlug(slug: string) { return P_BLOCK_PARTS.find((part) => part.slug === slug); }

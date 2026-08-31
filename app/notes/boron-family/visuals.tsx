@@ -732,6 +732,133 @@ function OxStateMap() {
   );
 }
 
+/** A small B12 icosahedron centred at (cx,cy); `s` scales it. */
+function MiniIcosa({ cx, cy, s = 1, dim = false }: { cx: number; cy: number; s?: number; dim?: boolean }) {
+  const outer = 34 * s;
+  const inner = 18 * s;
+  const cap = 46 * s;
+  const stroke = dim ? "#3f5a74" : COL.B;
+  const pent = (r: number, off: number) =>
+    Array.from({ length: 5 }, (_, i) => {
+      const a = ((i * 72 + off - 90) * Math.PI) / 180;
+      return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
+    });
+  const O = pent(outer, 0);
+  const I = pent(inner, 36);
+  const top = { x: cx, y: cy - cap };
+  const bot = { x: cx, y: cy + cap };
+  const r = 5 * s;
+  return (
+    <g opacity={dim ? 0.5 : 1}>
+      {O.map((p, i) => (
+        <Bond key={`o${i}`} x1={p.x} y1={p.y} x2={O[(i + 1) % 5].x} y2={O[(i + 1) % 5].y} color={stroke} w={1.7 * s} />
+      ))}
+      {I.map((p, i) => (
+        <Bond key={`i${i}`} x1={p.x} y1={p.y} x2={I[(i + 1) % 5].x} y2={I[(i + 1) % 5].y} color={stroke} w={1.5 * s} dash="4 3" />
+      ))}
+      {O.map((p, i) => (
+        <g key={`b${i}`}>
+          <Bond x1={p.x} y1={p.y} x2={top.x} y2={top.y} color="#3f5a74" w={1.2 * s} />
+          <Bond x1={p.x} y1={p.y} x2={bot.x} y2={bot.y} color="#3f5a74" w={1.2 * s} />
+          <Bond x1={p.x} y1={p.y} x2={I[i].x} y2={I[i].y} color="#3f5a74" w={1.2 * s} />
+          <Bond x1={p.x} y1={p.y} x2={I[(i + 4) % 5].x} y2={I[(i + 4) % 5].y} color="#3f5a74" w={1.2 * s} />
+        </g>
+      ))}
+      {[top, bot, ...O, ...I].map((p, i) => (
+        <circle key={i} cx={p.x} cy={p.y} r={r} fill={COL.Bfill} stroke={stroke} strokeWidth={1.6} />
+      ))}
+    </g>
+  );
+}
+
+/** Pentagonal-pyramid construction of the B12 icosahedron. */
+function IcosaFromPyramids() {
+  return (
+    <Svg h={220}>
+      {/* top pyramid */}
+      {(() => {
+        const cx = 70, cy = 120, apex = { x: cx, y: cy - 48 };
+        const ring = Array.from({ length: 5 }, (_, i) => {
+          const a = ((i * 72 - 90) * Math.PI) / 180;
+          return { x: cx + 30 * Math.cos(a), y: cy + 14 * Math.sin(a) };
+        });
+        return (
+          <g>
+            {ring.map((p, i) => (
+              <Bond key={i} x1={p.x} y1={p.y} x2={ring[(i + 1) % 5].x} y2={ring[(i + 1) % 5].y} color={COL.B} w={2} dash="4 3" />
+            ))}
+            {ring.map((p, i) => <Bond key={`a${i}`} x1={p.x} y1={p.y} x2={apex.x} y2={apex.y} color="#3f5a74" w={1.6} />)}
+            {[apex, ...ring].map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={5} fill={COL.Bfill} stroke={COL.B} strokeWidth={1.8} />)}
+            <text x={cx} y={cy + 44} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">apex + 5-ring</text>
+          </g>
+        );
+      })()}
+      <text x={140} y={124} textAnchor="middle" fontSize="20" fill={COL.amber}>+</text>
+      {/* staggered belt: two pentagons rotated 36 deg */}
+      {(() => {
+        const cx = 210, cy = 110;
+        const p = (r: number, off: number) => Array.from({ length: 5 }, (_, i) => {
+          const a = ((i * 72 + off - 90) * Math.PI) / 180;
+          return { x: cx + r * Math.cos(a), y: cy + 16 * Math.sin(a) + (off ? 26 : -26) };
+        });
+        const a = p(30, 0), b = p(30, 36);
+        return (
+          <g>
+            {a.map((q, i) => <Bond key={`a${i}`} x1={q.x} y1={q.y} x2={a[(i + 1) % 5].x} y2={a[(i + 1) % 5].y} color={COL.B} w={2} />)}
+            {b.map((q, i) => <Bond key={`b${i}`} x1={q.x} y1={q.y} x2={b[(i + 1) % 5].x} y2={b[(i + 1) % 5].y} color={COL.B} w={2} />)}
+            {a.map((q, i) => <Bond key={`x${i}`} x1={q.x} y1={q.y} x2={b[i].x} y2={b[i].y} color="#3f5a74" w={1.4} />)}
+            {[...a, ...b].map((q, i) => <circle key={i} cx={q.x} cy={q.y} r={5} fill={COL.Bfill} stroke={COL.B} strokeWidth={1.8} />)}
+            <text x={cx} y={cy + 54} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">staggered belt · 36°</text>
+          </g>
+        );
+      })()}
+      <text x={290} y={124} textAnchor="middle" fontSize="20" fill={COL.amber}>+</text>
+      {/* bottom pyramid */}
+      {(() => {
+        const cx = 350, cy = 110, apex = { x: cx, y: cy + 48 };
+        const ring = Array.from({ length: 5 }, (_, i) => {
+          const a = ((i * 72 - 90) * Math.PI) / 180;
+          return { x: cx + 30 * Math.cos(a), y: cy + 14 * Math.sin(a) };
+        });
+        return (
+          <g>
+            {ring.map((p, i) => (
+              <Bond key={i} x1={p.x} y1={p.y} x2={ring[(i + 1) % 5].x} y2={ring[(i + 1) % 5].y} color={COL.B} w={2} dash="4 3" />
+            ))}
+            {ring.map((p, i) => <Bond key={`a${i}`} x1={p.x} y1={p.y} x2={apex.x} y2={apex.y} color="#3f5a74" w={1.6} />)}
+            {[apex, ...ring].map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={5} fill={COL.Bfill} stroke={COL.B} strokeWidth={1.8} />)}
+          </g>
+        );
+      })()}
+      <text x={418} y={124} textAnchor="middle" fontSize="20" fill={COL.amber}>=</text>
+      <MiniIcosa cx={468} cy={110} s={1.15} />
+      <text x={210} y={205} textAnchor="middle" fontSize="11" fill="#8fa4b4">
+        two pentagonal pyramids sharing a staggered pentagonal belt → 12 vertices, 20 triangular faces
+      </text>
+    </Svg>
+  );
+}
+
+/** alpha-rhombohedral boron: icosahedra joined by inter-icosahedral B-B bonds. */
+function AlphaRhombLattice() {
+  const centres = [
+    { x: 120, y: 80 }, { x: 260, y: 60 }, { x: 400, y: 80 },
+    { x: 190, y: 175 }, { x: 330, y: 175 }, { x: 260, y: 250 },
+  ];
+  const links: [number, number][] = [[0, 1], [1, 2], [0, 3], [1, 3], [1, 4], [2, 4], [3, 4], [3, 5], [4, 5]];
+  return (
+    <Svg h={280}>
+      {links.map(([a, b], i) => (
+        <Bond key={i} x1={centres[a].x} y1={centres[a].y} x2={centres[b].x} y2={centres[b].y} color={COL.amber} w={2.2} dash="1 5" />
+      ))}
+      {centres.map((c, i) => <MiniIcosa key={i} cx={c.x} cy={c.y} s={0.72} dim={i > 0} />)}
+      <text x={260} y={272} textAnchor="middle" fontSize="11" fill="#8fa4b4">
+        each B₁₂ has 6 nearest-neighbour icosahedra · dotted = 2c–2e inter-icosahedral B–B bonds
+      </text>
+    </Svg>
+  );
+}
+
 /* ------------------------------ dispatcher ------------------------------- */
 
 export function BoronFamilyVisual({ part }: { part: number }) {
@@ -801,9 +928,17 @@ export function BoronFamilyVisual({ part }: { part: number }) {
       );
     case 7:
       return (
-        <Frame title="Elemental boron — the B₁₂ icosahedron" caption="Crystalline boron is built from B₁₂ icosahedra (12 vertices, 20 faces) — two staggered pentagons capped by an apex atom top and bottom — linked by multicentre intericosahedral B–B bonds.">
-          <IcosahedronB12 />
-        </Frame>
+        <div className="space-y-6">
+          <Frame title="Elemental boron — the B₁₂ icosahedron" caption="Crystalline boron is built from B₁₂ icosahedra (12 vertices, 20 triangular faces) — two staggered pentagons capped by an apex atom top and bottom — linked by multicentre inter-icosahedral B–B bonds. Multicentre bonding compensates for boron's electron deficiency.">
+            <IcosahedronB12 />
+          </Frame>
+          <Frame title="Construction of the B₁₂ icosahedron from pentagonal pyramids" caption="Top pentagonal pyramid (1 apex + 5-ring) + a staggered pentagonal belt (two pentagons offset by 36° about the fivefold axis) + bottom pentagonal pyramid = the 12-vertex icosahedron.">
+            <IcosaFromPyramids />
+          </Frame>
+          <Frame title="α-rhombohedral boron — a lattice of linked icosahedra" caption="B₁₂ units sit on a rhombohedral lattice; neighbouring icosahedra are joined by 2c–2e inter-icosahedral B–B bonds and each icosahedron has six nearest neighbours. The extended 3-D network gives α-boron its extreme hardness and high melting point. β-rhombohedral boron is more complex, built from larger B₈₄ units (central B₁₂ + 12 exterior atoms + an outer B₆₀ cage) with interstitial atoms.">
+            <AlphaRhombLattice />
+          </Frame>
+        </div>
       );
     case 8:
       return (

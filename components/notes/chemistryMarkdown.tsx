@@ -106,6 +106,7 @@ function isConditionLabel(inner: string): boolean {
   const s = inner.trim();
   if (!s) return false;
   if (/\(/.test(s)) return false; //  [Al(OH)4]
+  if (/[a-z]{3,}/.test(s)) return true; //  a real word: "furnace", "about 2000 °C", "crystalline"
   if (/\d/.test(s) && /[A-Z]/.test(s)) return false; //  [BF4] [GaCl4] [I3]
   if (/\s/.test(s)) return true; //  "hot concentrated", "dry ether"
   return /^[a-zΔµμ°]/.test(s); //  fusion, excess, warm, Δ
@@ -147,8 +148,72 @@ function EqSegment({ seg, hue }: { seg: string; hue: string }) {
   );
 }
 
+/** Long arrow glyph for a given arrow symbol (keep equilibrium arrows intact). */
+function longArrow(sym: string): string {
+  if (sym === "⇌" || sym === "⇋" || sym === "↔") return sym;
+  return "⟶";
+}
+
+/** A reaction arrow with conditions stacked above (reagents / catalyst) and
+ *  below (temperature / medium) — proper chemical-equation notation. */
+function RxnArrow({ symbol, above, below }: { symbol: string; above?: string; below?: string }) {
+  return (
+    <span className="mx-1.5 inline-flex flex-col items-center justify-center self-center leading-none">
+      {above ? (
+        <span className="max-w-[16rem] pb-[3px] text-center text-[10.5px] font-bold leading-tight" style={{ color: C.rxnArrow }}>
+          {formatChem(above)}
+        </span>
+      ) : null}
+      <span className="text-[19px] font-black leading-none" style={{ color: C.rxnArrow, transform: "scaleX(1.7)" }}>
+        {longArrow(symbol)}
+      </span>
+      {below ? (
+        <span className="max-w-[16rem] pt-[3px] text-center text-[10.5px] font-semibold leading-tight" style={{ color: tint(C.rxnArrow, 0.85) }}>
+          {formatChem(below)}
+        </span>
+      ) : null}
+    </span>
+  );
+}
+
+/** Pull a condition label off the side of a species segment that touches an
+ *  arrow: `A [fusion] ⟶ [Δ] B`  →  "fusion" above, "Δ" below. Also accepts the
+ *  dashed shorthand `A −strong heat ⟶ B`. Returns the trimmed segment. */
+function stripCondition(seg: string, side: "before" | "after"): { seg: string; label?: string } {
+  if (side === "after") {
+    const m = /^\s*\[([^\]]+)\]\s*/.exec(seg);
+    if (m && isConditionLabel(m[1])) return { seg: seg.slice(m[0].length), label: m[1].trim() };
+    return { seg };
+  }
+  const mBracket = /\s*\[([^\]]+)\]\s*$/.exec(seg);
+  if (mBracket && isConditionLabel(mBracket[1])) {
+    return { seg: seg.slice(0, mBracket.index), label: mBracket[1].trim() };
+  }
+  const mDash = /\s[–—−-]\s?((?:[Δδ]|[a-z][A-Za-z ]*?))\s*$/.exec(seg);
+  if (mDash) return { seg: seg.slice(0, mDash.index), label: mDash[1].trim() };
+  return { seg };
+}
+
 function Equation({ raw }: { raw: string }) {
   const parts = raw.trim().split(ARROWS);
+  const meta: { above?: string; below?: string }[] = parts.map(() => ({}));
+  for (let i = 0; i < parts.length; i++) {
+    if (!ARROWS.test(parts[i])) continue;
+    if (i > 0 && parts[i - 1] != null) {
+      const { seg, label } = stripCondition(parts[i - 1], "before");
+      if (label) {
+        parts[i - 1] = seg;
+        meta[i].above = label;
+      }
+    }
+    if (parts[i + 1] != null) {
+      const { seg, label } = stripCondition(parts[i + 1], "after");
+      if (label) {
+        parts[i + 1] = seg;
+        meta[i].below = label;
+      }
+    }
+  }
   const firstArrow = parts.findIndex((p) => ARROWS.test(p));
   return (
     <div
@@ -161,14 +226,12 @@ function Equation({ raw }: { raw: string }) {
       <div className="flex flex-wrap items-center gap-x-1.5 gap-y-2 font-mono text-[15px] leading-relaxed sm:text-[15.5px]" style={{ color: C.rxn }}>
         {parts.map((seg, i) =>
           ARROWS.test(seg) ? (
-            <span key={i} className="mx-1.5 text-xl font-black" style={{ color: C.rxnArrow }}>
-              {seg}
-            </span>
-          ) : (
+            <RxnArrow key={i} symbol={seg} above={meta[i].above} below={meta[i].below} />
+          ) : seg.trim() ? (
             <Fragment key={i}>
               <EqSegment seg={seg} hue={firstArrow >= 0 && i > firstArrow ? C.rxnProduct : C.rxn} />
             </Fragment>
-          ),
+          ) : null,
         )}
       </div>
     </div>

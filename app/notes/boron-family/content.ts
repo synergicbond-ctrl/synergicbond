@@ -1442,53 +1442,41 @@ Diborane is a colourless, highly toxic gas with an unpleasant odour. It ignites 
 
 ### Additional reactions of diborane and borane
 
-B2H6 + 6CH3OH ⟶ 2B(OCH3)3 + 6H2
+Diborane also reacts with methanol, diethyl sulfide, lithium hydride, sodium, hydrogen chloride and chlorine; each of these is given with its proper conditions in the blocks below.
 
-B2H6 + 2Et2S ⟶ 2Et2S.BH3
-
-B2H6 + 2LiH ⟶ 2LiBH4
-
-2B2H6 + 2Na [slow] ⟶ NaBH4 + NaB3H8
-
-B2H6 + HCl ⟶ B2H5Cl + H2
-
-B2H6 + 3Cl2 ⟶ 2BCl3 + 6HCl
-
-Hydroboration proceeds under mild conditions, adds B and H syn across C=C/C#C systems, and for unsymmetrical alkenes places boron preferentially at the less substituted carbon. Oxidation of the organoborane with alkaline H₂O₂ gives the anti-Markovnikov alcohol while retaining the overall syn addition relationship.
+Hydroboration proceeds under mild conditions, adds B and H syn across C=C / C≡C systems, and for unsymmetrical alkenes places boron preferentially at the less substituted carbon. Oxidation of the organoborane with alkaline H₂O₂ gives the anti-Markovnikov alcohol while retaining the overall syn addition relationship.
 
 **Combustion:**
 
 B2H6(g) + 3O2(g) [ignition] ⟶ B2O3(s) + 3H2O(g)
 
-strongly exothermic
-
-Combustion note: The balanced combustion reaction forms one mole of B₂O₃ per mole of B₂H₆ and is strongly exothermic.
+Combustion note: the reaction forms one mole of B₂O₃ per mole of B₂H₆ and is strongly exothermic.
 
 **Hydrolysis:**
 
-B2H6(g) + 6H2O(l) [room temperature] ⟶ 2H3BO3(aq) + 6H2(g)
+B2H6(g) + 6H2O(l) ⟶ 2H3BO3(aq) + 6H2(g)
 
 **Methanolysis:**
 
-B2H6(g) + 6CH3OH(l) [dry methanol] ⟶ [controlled low temperature] 2B(OCH3)3(l) + 6H2(g)
+B2H6(g) + 6CH3OH(l) [dry methanol] ⟶ [low temperature] 2B(OCH3)3(l) + 6H2(g)
 
 **Alkaline decomposition:**
 
-B2H6(g) + 6NaOH(aq) [aqueous alkali] ⟶ [room temperature] 2Na3BO3(aq) + 6H2(g)
+B2H6(g) + 6NaOH(aq) ⟶ 2Na3BO3(aq) + 6H2(g)
 
 **Oxidation by halogen:**
 
-B2H6(g) + 3Cl2(g) [dry chlorine] ⟶ [controlled photochemical/thermal reaction] 2BCl3(g) + 6HCl(g)
+B2H6(g) + 3Cl2(g) [dry chlorine, hν or Δ] ⟶ 2BCl3(g) + 6HCl(g)
 
 **Chlorodiborane substitution:**
 
-B2H6(g) + HCl(g) [dry HCl] ⟶ [AlCl3 catalyst, low temperature] B2H5Cl(g) + H2(g)
+B2H6(g) + HCl(g) [AlCl3 catalyst, low temperature] ⟶ B2H5Cl(g) + H2(g)
 
 **General hydrogen-halide substitution:**
 
-B2H6 + HX [dry conditions, suitable Lewis-acid catalyst/controlled low temperature] ⟶ [X = Cl, Br or I] B2H5X + H2
+B2H6 + HX [Lewis-acid catalyst, low temperature] ⟶ B2H5X + H2
 
-Further substitution can occur if HX is not limited.
+Here X = Cl, Br or I, with dry conditions throughout; further substitution occurs if HX is not limited.
 
 **Thermal decomposition:**
 
@@ -1510,13 +1498,11 @@ Further symmetrical-cleavage donors include NEt₃, SEt₂, PMe₃, CO and THF. 
 
 **Phosphorus trifluoride adduct:**
 
-B2H6(g) + 2PF3(g) [dry] ⟶ [low temperature] 2BH3.PF3
-
-donor-adduct formation
+B2H6(g) + 2PF3(g) [dry, low temperature] ⟶ 2BH3.PF3
 
 **Carbonyl adduct:**
 
-B2H6(g) + 2CO(g) [about 470 K] ⟶ [about 20 bar] 2BH3.CO
+B2H6(g) + 2CO(g) [~470 K, ~20 bar] ⟶ 2BH3.CO
 
 Bonding in OC⁻>BH₃: the outward carbon lone pair/HOMO of CO donates into the vacant acceptor orbital of BH₃ and completes the boron octet. A weaker interaction can donate electron density from a B-H bond into the CO LUMO through hyperconjugation. The dominant interaction is CO⁻>BH₃ donation.
 
@@ -1526,7 +1512,7 @@ B2H6(g) + 2LiH(s) [dry Et2O] ⟶ 2LiBH4(ether/solid)
 
 **Sodium-amalgam reduction:**
 
-2B2H6(g) + 2Na(Hg) [sodium amalgam] ⟶ [slow, dry ether] NaBH4 + NaB3H8
+2B2H6(g) + 2Na(Hg) ⟶ [dry ether] NaBH4 + NaB3H8
 
 **Symmetrical cleavage by amine:**
 
@@ -1552,33 +1538,25 @@ Diborane cleavage depends on donor strength, steric size, stoichiometry and temp
 
 **Hydroboration:**
 
-B2H6(g) + 6RCH=CH2 [dry ether/THF] ⟶ [0-25 °C] 2B(CH2CH2R)3
+B2H6(g) + 6RCH=CH2 [dry ether / THF] ⟶ [0-25 °C] 2B(CH2CH2R)3
 
-syn addition, B to less substituted C
+Syn addition places boron on the less substituted carbon.
 
 **Alkyne hydroboration:**
 
-B2H6(g) + 6RC#CR&#39; [dry ether/THF] ⟶ [N2 atmosphere, low temperature] 2B(RC=CHR&#39;)3
+B2H6(g) + 6RC≡CR' [dry ether / THF] ⟶ [N2 atmosphere, low temperature] 2B(RC=CHR')3
 
-syn addition gives vinylboranes
+Syn addition gives vinylboranes.
 
 **Oxidative work-up:**
 
-B(CH2CH2R)3 + 3H2O2 + OH- [aqueous alkaline peroxide] ⟶ [0-25 °C then warm] 3RCH2CH2OH + B(OH)4-
+B(CH2CH2R)3 + 3H2O2 + OH- [aqueous alkali] ⟶ [0-25 °C, then warm] 3RCH2CH2OH + B(OH)4-
 
-**Protonolysis:**
+**Protonolysis:** a carboxylic acid cleaves the C–B bonds on gentle heating, replacing boron with hydrogen. With acetic acid:
 
-B(CH2CH2R)3 [R&#39;CO2H] ⟶ [gentle heat] hydrocarbons after C-B protonolysis
+BR3 + 3CH3COOH [gentle heat] ⟶ 3RH + B(OOCCH3)3
 
-**Acetic-acid example:**
-
-BR3 + 3CH3COOH [gentle heat] ⟶ 3RH + B(OCOCH3)3
-
-**Chromic-acid oxidation:**
-
-R3B [H2CrO4] ⟶ [aqueous acidic medium, controlled temperature] oxidation products
-
-ketone(s) from secondary alkyl groups or carboxylic acid(s) under stronger oxidation; product depends on organoborane structure
+**Chromic-acid oxidation:** H₂CrO₄ in acidic aqueous medium oxidises the trialkylborane — to ketones from secondary alkyl groups, or to carboxylic acids under more forcing conditions. The product depends on the organoborane structure.
 
 > Hydroboration conditions and significance: reactions are carried out in rigorously dry ether/THF under N₂ because diborane and the organoborane products are highly reactive. Trialkylboranes BR₃ are usually used in situ rather than isolated. The method is valuable because the initial hydride addition is mild and different reagents that cleave the B-C bond furnish hydrocarbons, alcohols, ketones or carboxylic acids. Hydroboration-oxidation gives anti-Markovnikov hydration with overall syn addition (the earlier descriptions call the outcome cis-hydrogenation/cis-hydration); steric and electronic effects place B on the less substituted carbon.
 

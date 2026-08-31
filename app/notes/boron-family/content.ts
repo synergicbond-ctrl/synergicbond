@@ -1910,23 +1910,23 @@ Al2Cl6 + 12H2O(l) [dissolution] ⟶ 2[Al(H2O)6]3+(aq) + 6Cl-(aq)
 
 **Hydrated chloride from aluminium:**
 
-2Al(s) + 6HCl(aq) + 12H2O(l) [dissolve] ⟶ [filter, concentrate/cool; dilute] 2AlCl3.6H2O(s) + 3H2(g)
+2Al(s) + 6HCl(aq) + 12H2O(l) ⟶ 2AlCl3.6H2O(s) + 3H2(g)
 
 **Hydrated chloride from alumina:**
 
-Al2O3(s) + 6HCl(aq) + 9H2O(l) [warm] ⟶ [filter, concentrate/cool; dilute] 2AlCl3.6H2O(s)
+Al2O3(s) + 6HCl(aq) + 9H2O(l) [warm] ⟶ 2AlCl3.6H2O(s)
 
 **Hydrated chloride from hydroxide:**
 
-Al(OH)3(s) + 3HCl(aq) + 3H2O(l) [warm] ⟶ [concentrate/cool; dilute] AlCl3.6H2O(s)
+Al(OH)3(s) + 3HCl(aq) + 3H2O(l) [warm] ⟶ AlCl3.6H2O(s)
+
+In each case the hydrated chloride is recovered by filtering, concentrating and cooling the solution to crystallise.
 
 **Ammonia addition compound:**
 
-AlCl3(s) + 6NH3(g) [dry NH3] ⟶ [cool; anhydrous; white] AlCl3.6NH3(s)
+AlCl3(s) + 6NH3(g) [dry NH3] ⟶ AlCl3.6NH3(s)
 
-Equivalent equation using the dimeric formula of aluminium chloride:
-
-Al2Cl6 + 12NH3 [dry NH3] ⟶ [cool] 2AlCl3·6NH3
+Observation: a white anhydrous solid. Using the dimeric formula, Al₂Cl₆ + 12 NH₃ ⟶ 2 AlCl₃·6NH₃.
 
 **Overall hydrolysis on heating hydrate:**
 
@@ -1969,23 +1969,25 @@ Friedel–Crafts note: AlCl₃ may be consumed or remain strongly bound to the p
 
 **Friedel-Crafts alkylation:**
 
-C6H6 + RCl + AlCl3 [anhydrous conditions] ⟶ [0-80 °C depending on RCl] C6H5R + HCl
+C6H6 + RCl + AlCl3 [anhydrous, 0-80 °C] ⟶ C6H5R + HCl
 
-[AlCl₄]⁻ intermediate
+The reaction goes through an [AlCl₄]⁻ intermediate.
 
 **Friedel-Crafts acylation:**
 
-C6H6 + RCOCl + AlCl3 [anhydrous solvent] ⟶ [controlled temperature] C6H5COR + HCl
+C6H6 + RCOCl + AlCl3 [anhydrous solvent] ⟶ C6H5COR + HCl
 
-hydrolytic work-up
+An aqueous work-up follows to release the ketone from its AlCl₃ complex.
 
 **Ethyl bromide manufacture:**
 
-CH2=CH2(g) + HBr(g) [AlCl3/AlBr3 catalyst] ⟶ [controlled temperature] C2H5Br
+CH2=CH2(g) + HBr(g) [AlCl3 or AlBr3 catalyst] ⟶ C2H5Br
 
 **Al³⁺ qualitative precipitate:**
 
-Al3+(aq) + 3NH3(aq) + 3H2O(l) [room temperature] ⟶ [white] Al(OH)3(s) + 3NH4+(aq)
+Al3+(aq) + 3NH3(aq) + 3H2O(l) ⟶ Al(OH)3(s) + 3NH4+(aq)
+
+Observation: a white gelatinous precipitate that does not redissolve in excess ammonia.
 
 Aquo-ion hydrolysis:
 
@@ -1993,23 +1995,23 @@ Aquo-ion hydrolysis:
 
 **Hydroxo-bridged dimer:**
 
-2[Al(H2O)5OH]2+(aq) [condensation in mildly acidic solution] ⟶ [(H2O)4Al(mu-OH)2Al(H2O)4]4+(aq) + 2H2O(l)
+2[Al(H2O)5OH]2+(aq) [mildly acidic solution] ⟶ [(H2O)4Al(μ-OH)2Al(H2O)4]4+(aq) + 2H2O(l)
 
-**Aluminon confirmation:**
-
-Al3+(aq) + aluminon reagent [ammoniacal buffer] ⟶ [warm] red lake on Al(OH)3
+**Aluminon confirmation:** in an ammoniacal buffer, Al³⁺ adsorbs the aluminon dye onto freshly precipitated Al(OH)₃ to give a bright red lake — a sensitive confirmatory test for aluminium.
 
 Qualitative distinction with NaOH: Al³⁺ first gives white gelatinous Al(OH)₃, which dissolves in excess NaOH as [Al(OH)₄]⁻. The hydroxides of Mg²⁺, Ca²⁺, Sr²⁺ and Ba²⁺ do not show this amphoteric redissolution under the same test conditions. Distinction from Zn²⁺ with excess NH₄OH: Al(OH)₃ remains insoluble, whereas Zn(OH)₂ dissolves through ammine-complex formation, commonly represented as [Zn(NH₃)₄]²⁺.
 
 **Molecular precipitation from aluminium chloride:**
 
-AlCl3(aq) + 3NH4OH(aq) [room temperature] ⟶ [limited reagent; white gelatinous] Al(OH)3(s) + 3NH4Cl(aq)
+AlCl3(aq) + 3NH4OH(aq) ⟶ Al(OH)3(s) + 3NH4Cl(aq)
+
+Observation: white gelatinous Al(OH)₃ with a limited amount of the reagent.
 
 Redissolution in excess alkali, condensed notation:
 
-Al(OH)3(s) + NaOH(aq) [excess] ⟶ NaAlO2(aq) + 2H2O(l)
+Al(OH)3(s) + NaOH(aq, excess) ⟶ NaAlO2(aq) + 2H2O(l)
 
-aqueous-species notation: Al(OH)₃ + OH- ⟶ [Al(OH)₄]⁻.
+In aqueous-species notation this is Al(OH)₃ + OH⁻ ⟶ [Al(OH)₄]⁻.
 
 Analytical meaning: excess NaOH dissolves Al(OH)₃ but not the hydroxides of Mg²⁺, Ca²⁺, Sr²⁺ or Ba²⁺ under this test. Excess NH₄OH leaves Al(OH)₃ undissolved, whereas Zn(OH)₂ dissolves by forming soluble tetraamminezinc(II), [Zn(NH₃)₄]²⁺.
 
@@ -2027,19 +2029,21 @@ Uses of aluminium sulfate and alums include water and sewage treatment as coagul
 
 **Aluminium sulfate from bauxite/hydroxide:**
 
-2Al(OH)3(s) + 3H2SO4(aq) [Δ] ⟶ [concentrate/crystallise] Al2(SO4)3(aq/s) + 6H2O(l)
+2Al(OH)3(s) + 3H2SO4(aq) [Δ] ⟶ Al2(SO4)3(aq) + 6H2O(l)
 
 **Potash alum crystallisation:**
 
-Al2(SO4)3(aq) + K2SO4(aq) + 24H2O(l) [hot solution] ⟶ [cool slowly] K2SO4.Al2(SO4)3.24H2O(s)
+Al2(SO4)3(aq) + K2SO4(aq) + 24H2O(l) [hot solution, then cool slowly] ⟶ K2SO4.Al2(SO4)3.24H2O(s)
 
 **Ionic dissolution:**
 
-KAl(SO4)2.12H2O(s) [water] ⟶ K+(aq) + Al3+(aq) + 2SO42-(aq) + 12H2O(l)
+KAl(SO4)2.12H2O(s) ⟶ K+(aq) + Al3+(aq) + 2SO42-(aq) + 12H2O(l)
 
 **Puffed/burnt alum:**
 
-KAl(SO4)2.12H2O(s) [gentle then stronger heating] ⟶ [porous/puffed alum] KAl(SO4)2(s) + 12H2O(g)
+KAl(SO4)2.12H2O(s) [gentle, then stronger heating] ⟶ KAl(SO4)2(s) + 12H2O(g)
+
+The residue is a light, porous mass ("burnt alum").
 
 An alum is a double sulfate M(I)M(III)(SO₄)₂.12H₂O, equivalently M₂SO₄.M'₂(SO₄)₃.24H₂O. The crystals are usually octahedral and dissociate into their constituent ions in water; a double salt is therefore distinct from a persistent complex ion.
 

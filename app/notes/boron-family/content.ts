@@ -1528,11 +1528,7 @@ B2H6(g) + 2NH3(g) [low temperature] ⟶ [BH2(NH3)2]+[BH4]-(s)
 
 L = NH₃, RNH₂ or R₂NH.
 
-Ammonia condition map: excess NH₃ at low temperature favours the ionic diborane-ammonia adduct; excess NH₃ at higher temperature favours (BN)x; a 2NH₃:₁B₂H₆ ratio at higher temperature favours borazine. Temperature and reactant ratio therefore control the condensation product.
-
-**Borazine formation:**
-
-3B2H6(g) + 6NH3(g) [about 450 K] ⟶ 2B3N3H6(l) + 12H2(g)
+Ammonia condition map: excess NH₃ at low temperature favours the ionic diborane-ammonia adduct; excess NH₃ at higher temperature favours (BN)ₓ; a 2 NH₃ : 1 B₂H₆ ratio at higher temperature favours borazine (equation in §10.6). Temperature and reactant ratio therefore control the condensation product.
 
 Diborane cleavage depends on donor strength, steric size, stoichiometry and temperature. Bulky tertiary donors such as NMe₃/NEt₃ and donors such as Et₂O, Et₂S, PMe₃, PF₃, CO and THF commonly give symmetrical cleavage into two BH₃.L adducts. Small primary/secondary nitrogen donors such as NH₃, MeNH₂ and Me₂NH can stabilise the asymmetric ion pair [L₂BH₂]⁺[BH₄]⁻. On heating, ammonia-derived adducts dehydrogenate and condense toward borazine or BN, depending on ratio and temperature.
 
@@ -1640,21 +1636,21 @@ BH4-(aq) + H+(aq) + 3H2O(l) [acidic water] ⟶ H3BO3(aq) + 4H2(g)
 
 **Carbonyl reduction:**
 
-R2C=O + NaBH4 [methanol/ethanol, 0-25 °C] ⟶ [then H3O+] R2CHOH
+R2C=O + NaBH4 [methanol / ethanol, 0-25 °C] ⟶ R2CHOH
+
+(followed by acidic aqueous work-up.)
 
 **Ester reduction:**
 
-RCOOR&#39; + LiAlH4 [dry ether] ⟶ [then cautious aqueous work-up] RCH2OH + R&#39;OH
+RCOOR' + LiAlH4 [dry ether] ⟶ RCH2OH + R'OH
+
+(followed by cautious aqueous work-up.)
 
 ## 10.6 Borazine, B₃N₃H₆
 
 > **MOT LENS – borazine vs benzene:** Six ring p orbitals combine into delocalised pi molecular orbitals, but the B and N atomic orbital energies are not equal. Occupied pi orbitals are polarised toward electronegative N, while low-lying acceptor character is greater at B. Consequently the B-N bonds have partial pi character but the ring is less electronically uniform and less aromatic than benzene; borazine is therefore more reactive toward addition/hydrolysis.
 
-Because electron density is higher at nitrogen, protonation by HCl occurs preferentially at N rather than B. This polarity is a useful way to remember why 'inorganic benzene' is a structural analogy, not a claim of identical aromatic stability.
-
-B3N3H6 + 3HCl ⟶ B3N3H9Cl3
-
-B3N3H6 + 9H2O [slow hydrolysis on heating] ⟶ 3NH3 + 3H3BO3 + 3H2
+Because electron density is higher at nitrogen, protonation by HCl occurs preferentially at N rather than B. This polarity is a useful way to remember why 'inorganic benzene' is a structural analogy, not a claim of identical aromatic stability. Borazine adds HCl and is hydrolysed by water — both reactions are given with conditions below.
 
 > **JEE TRAP:** Borazine is planar and delocalised, but B-N bonds are polar. Do not transfer benzene's equal C-C electron distribution or low addition reactivity directly to borazine.
 
@@ -1674,23 +1670,21 @@ Aromaticity cannot be assigned a single universal percentage. Borazine is less a
 
 **From diborane/ammonia:**
 
-3B2H6(g) + 6NH3(g) [about 450 K] ⟶ 2B3N3H6(l) + 12H2(g)
+3B2H6(g) + 6NH3(g) [~450 K] ⟶ 2B3N3H6(l) + 12H2(g)
 
-**From ammonium chloride/borohydride:**
+**From ammonium chloride / borohydride:**
 
 3NH4Cl(s) + 3NaBH4(s) [diglyme] ⟶ [reflux] B3N3H6(l) + 3NaCl(s) + 9H2(g)
 
 **Chloroborazine intermediate:**
 
-3BCl3 + 3NH4Cl [chlorobenzene] ⟶ [about 140 °C] B3N3H3Cl3 + 9HCl
+3BCl3 + 3NH4Cl [chlorobenzene, ~140 °C] ⟶ B3N3H3Cl3 + 9HCl
 
-cyclocondensation representation
+This is a cyclocondensation; the chloroborazine (B-trichloroborazine) is the isolable intermediate.
 
 **Reduction of chloroborazine:**
 
-B3N3H3Cl3 + 3NaBH4 [dry ether] ⟶ [controlled addition] B3N3H6 + 3NaCl + 3BH3-derived products
-
-simplified teaching conversion
+2B3N3H3Cl3 + 6NaBH4 [dry ether] ⟶ 2B3N3H6 + 6NaCl + 3B2H6
 
 **Methyl substitution:**
 
@@ -1698,17 +1692,17 @@ B3N3H3Cl3 + 3CH3MgBr [dry ether] ⟶ [low temperature] B3N3H3(CH3)3 + 3MgBrCl
 
 **Hydrolysis:**
 
-B3N3H6(l) + 9H2O(l) [room temperature] ⟶ 3H3BO3(aq) + 3NH3(aq) + 3H2(g)
+B3N3H6(l) + 9H2O(l) [slow at room temperature, faster on warming] ⟶ 3H3BO3(aq) + 3NH3(aq) + 3H2(g)
 
 **Hydrogen chloride addition:**
 
-B3N3H6 + 3HCl [dry ether] ⟶ [low temperature; ring addition product] B3N3H9Cl3
+B3N3H6 + 3HCl [dry ether, low temperature] ⟶ B3N3H9Cl3
 
 In HCl addition to borazine, protonation occurs at nitrogen because the polar B-N ring has greater electron density on the more electronegative N atoms; chloride then adds at electron-poor boron.
 
 **Pyrolysis to BN:**
 
-B3N3H6(l) [high-temperature pyrolysis] ⟶ [inert atmosphere] 3BN(s) + 3H2(g)
+B3N3H6(l) [pyrolysis, high temperature] ⟶ [inert atmosphere] 3BN(s) + 3H2(g)
 
 In B₃N₃H₃Cl₃ and B₃N₃H₃(CH₃)₃, the Cl or CH₃ substituents occupy the three boron sites while each nitrogen retains H. Borazine can also coordinate metal carbonyl fragments through its π system.
 

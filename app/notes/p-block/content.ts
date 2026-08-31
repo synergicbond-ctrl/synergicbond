@@ -56,7 +56,6 @@ Down heavier p-block groups, the valence ns² electron pair increasingly resists
 
 > **BIG PICTURE — Why is boron unlike every other member?**  Four ideas organise the whole chapter: **(i)** the energy cost of making B³⁺ is prohibitively high, **(ii)** Group 13 has only three valence electrons and therefore forms electron-deficient compounds, **(iii)** the +1 oxidation state becomes progressively more stable down the group because of the inert-pair effect, and **(iv)** boron solves electron deficiency by multicentre bonding. Every trend, structure and reaction below should be connected back to one of these four ideas.
 
-This lesson covers periodic trends, oxidation-state logic, elemental boron, aluminium, the oxides, boric acid and borax. [Continue: halides, hydrides, boranes, aluminium compounds and revision](/notes/p-block/part3).
 
 ## 1 · Position, members, occurrence and chapter map
 
@@ -609,8 +608,6 @@ Written commercially as **NaBO₃·4H₂O**, but its true structure is a dimeric
 > **JEE TRAP.** Distinguish **sodium metaborate NaBO₂** (no O–O), **sodium tetraborate / borax** (no O–O) and **sodium peroxoborate** (two O–O bridges). Only the last one gives H₂O₂ on warming and behaves as an oxidising agent.
 
 # 3. Group 13 — Boron family: halides, boranes, aluminium and revision
-
-> **CONTINUITY MAP.** The previous lesson established periodic trends, oxidation-state logic, elemental boron, aluminium, the oxides, boric acid and borax. This lesson applies those principles to halides, hydrides, boranes, complex hydrides, aluminium compounds and revision synthesis.
 
 ## 9 · Halides: Lewis acidity, bonding and hydrolysis
 

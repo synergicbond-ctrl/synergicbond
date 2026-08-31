@@ -66,7 +66,7 @@ function PositionVisual() {
         <text x="630" y="160" textAnchor="middle" fill="#94a3b8" fontSize="24" fontWeight="700">d-block</text>
         <text x="760" y="318" textAnchor="middle" fill="#64748b" fontSize="20">p-block continues →</text>
         <path d="M130 402 C245 370 316 370 428 402" fill="none" stroke="#fbbf24" strokeWidth="3" strokeDasharray="8 7" />
-        <text x="279" y="414" textAnchor="middle" fill="#fde68a" fontSize="14" fontWeight="800">Li–Mg diagonal link</text>
+        <text x="279" y="414" textAnchor="middle" fill="#fde68a" fontSize="14" fontWeight="800">Lithium first-member effect</text>
       </svg>
     </VisualFrame>
   );
@@ -597,9 +597,9 @@ function DiagonalMapVisual() {
         <path d="M290 206 L300 220 L280 224" fill="none" stroke="#fbbf24" strokeWidth="4" />
         <path d="M380 120 L510 220" fill="none" stroke="#fbbf24" strokeWidth="4" strokeDasharray="9 6" />
         <path d="M500 206 L510 220 L490 224" fill="none" stroke="#fbbf24" strokeWidth="4" />
-        <text x="196" y="184" fill="#fde68a" fontSize="15" fontWeight="800">Li–Mg</text>
-        <text x="406" y="184" fill="#fde68a" fontSize="15" fontWeight="800">Be–Al</text>
-        <text x="450" y="300" textAnchor="middle" fill="#cbd5e1" fontSize="16">+1 nuclear charge (right) is offset by +1 shell (down) → similar charge/radius</text>
+        <text x="184" y="184" fill="#fde68a" fontSize="15" fontWeight="800">Group 1 first-member effect</text>
+        <text x="388" y="184" fill="#fde68a" fontSize="15" fontWeight="800">Group 2 first-member effect</text>
+        <text x="450" y="300" textAnchor="middle" fill="#cbd5e1" fontSize="16">A larger shell can offset a higher nuclear charge, creating selective first-member similarities</text>
       </svg>
     </VisualFrame>
   );

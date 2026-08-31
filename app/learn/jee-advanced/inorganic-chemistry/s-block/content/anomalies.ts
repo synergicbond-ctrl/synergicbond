@@ -3,7 +3,7 @@ import { md, visual, type SBlockSection } from "./types";
 export const ANOMALIES_SECTIONS: SBlockSection[] = [
   {
     id: "lithium-anomaly",
-    label: "18. Anomalous Lithium & the Li–Mg Diagonal",
+    label: "18. Anomalous Lithium",
     blocks: [
       md(String.raw`
 Lithium differs from the rest of Group 1 because Li and $\mathrm{Li^+}$ are exceptionally small, lithium has the group's highest ionisation enthalpy and electronegativity, and $\mathrm{Li^+}$ has by far the greatest polarising power and hydration enthalpy in the group. Almost every "anomaly" below is a direct consequence of just these facts.
@@ -62,38 +62,20 @@ $\mathrm{LiH}$ is the least ionic of the alkali-metal hydrides, yet it still beh
 
 **Worked example 18.1.** *Which salt releases $\mathrm{NO_2}$ on heating: $\mathrm{LiNO_3}$ or $\mathrm{NaNO_3}$?* $\mathrm{LiNO_3}$ — it follows the Group-2-like pattern and decomposes to $\mathrm{Li_2O}$, $\mathrm{NO_2}$ and $\mathrm{O_2}$, whereas $\mathrm{NaNO_3}$ stops at the nitrite.
 
-## 18.7 Diagonal relationship: lithium and magnesium
+## 18.7 Limits of lithium's special behaviour
 
-Diagonal similarity arises because moving one place **right** across a period increases nuclear charge/ionic charge, while moving one place **down** a group increases size — the two effects partly cancel, so the charge-density ($z/r$) of Li and Mg end up unusually close:
+The last-member exceptions in Group 1 still have a single common root: the unusually small size of lithium and the unusually high polarising power of $\mathrm{Li^+}$. That is enough to explain why lithium alone behaves in several ways that resemble a small, highly charged cation:
 
-$$r(\mathrm{Li})\approx152\text{ pm},\ r(\mathrm{Mg})\approx160\text{ pm}\qquad\qquad r(\mathrm{Li^+})\approx76\text{ pm},\ r(\mathrm{Mg^{2+}})\approx72\text{ pm}$$
+- it favours the oxide over peroxide/superoxide formation,
+- it forms a stable nitride directly,
+- several lithium salts decompose to the oxide on heating,
+- and lithium salts are often more covalent or more strongly hydrated than their heavier Group 1 analogues.
 
-`),
-      visual("diagonal-map"),
-      md(String.raw`
-| Shared behaviour | Lithium | Magnesium |
-|---|---|---|
-| Harder than the rest of its own group | yes | yes |
-| Reacts comparatively slowly with water | Li slower than Na/K | Mg slow with cold water |
-| Direct nitride formation | $\mathrm{Li_3N}$ | $\mathrm{Mg_3N_2}$ |
-| Normal oxide favoured | $\mathrm{Li_2O}$ | $\mathrm{MgO}$ |
-| Carbonate decomposes on heating | $\mathrm{Li_2CO_3\rightarrow Li_2O+CO_2}$ | $\mathrm{MgCO_3\rightarrow MgO+CO_2}$ |
-| Nitrate gives oxide + $\mathrm{NO_2}$ + $\mathrm{O_2}$ | yes | yes |
-| Hydroxide decomposes on heating | $\mathrm{LiOH}$ | $\mathrm{Mg(OH)_2}$ |
-| Solid bicarbonate not isolable | $\mathrm{LiHCO_3}$ | $\mathrm{Mg(HCO_3)_2}$ |
-| Chloride deliquescent, alcohol-soluble | $\mathrm{LiCl}$ | $\mathrm{MgCl_2}$ |
-| Fluoride/carbonate/phosphate poorly soluble | characteristic | characteristic |
+The point of this section is not to merge lithium into Group 2 chemistry; it is to show that lithium is the first-member exception within Group 1, and its behaviour follows from charge density alone.
 
-## 18.8 Limits of the Li–Mg analogy
+> **JEE focus.** Treat lithium as an alkali metal with unusually strong first-member effects, not as a hidden Group 2 element.
 
-- Lithium stays monovalent; magnesium is divalent — the analogy is about charge *density*, not identical valence chemistry.
-- $\mathrm{LiOH}$ is considerably more soluble and more basic than $\mathrm{Mg(OH)_2}$.
-- Magnesium readily forms many six-coordinate aqua and ligand complexes; lithium's coordination preferences run lower (typically four-coordinate, Section 13).
-- Magnesium is not an alkali metal and does not reproduce Group 1's oxide/peroxide/superoxide sequence.
-
-> **JEE focus.** A diagonal relationship predicts a *selected list* of real similarities — it is not a claim of identical chemistry, and exam questions routinely test exactly where the analogy breaks.
-
-**Worked example 18.2.** *Why do both $\mathrm{LiNO_3}$ and $\mathrm{Mg(NO_3)_2}$ release brown gas on heating?* Their small, strongly polarising cations both destabilise the nitrate ion toward oxide formation, so both release $\mathrm{NO_2}$ rather than stopping at a nitrite.
+**Worked example 18.2.** *Why do lithium salts often follow Group-2-like decomposition patterns?* Because $\mathrm{Li^+}$ is so small and polarising that it stabilises compact oxide formation and weakens the corresponding anion enough for thermal decomposition to proceed readily.
 `),
     ],
   },

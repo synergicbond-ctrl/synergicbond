@@ -12,7 +12,7 @@ Uses questions are asked directly and as distractors inside assertion–reason a
 
 | Metal | Principal uses |
 |-------|---|
-| **Lithium** | Li–Pb white-metal bearing alloys; Li–Al alloys for aircraft parts; Li–Mg armour plate; anode in high-energy-density Li-ion and Li-primary batteries; thermonuclear (fusion) fuel as ⁶Li; lithium carbonate in psychiatric medicine to treat bipolar disorder. |
+| **Lithium** | Li–Pb white-metal bearing alloys; Li–Al alloys for aircraft parts; anode in high-energy-density Li-ion and Li-primary batteries; thermonuclear (fusion) fuel as ⁶Li; lithium carbonate in psychiatric medicine to treat bipolar disorder. |
 | **Sodium** | Reducing agent in extraction of Ti, Zr (Na-reduction route); Na–Pb alloy historically made PbEt₄/PbMe₄ antiknock petrol additives; liquid Na coolant in fast-breeder nuclear reactors; sodium-vapour lamps for street lighting; laboratory drying agent (Na wire) for inert solvents. |
 | **Potassium** | Essential macronutrient — KCl and K₂SO₄ are major fertilisers; KOH manufactures soft soap and absorbs CO₂/acid gases; K and Na together maintain nerve/muscle electrophysiology. |
 | **Rubidium / Caesium** | Very low ionisation enthalpy makes Cs (with K) the classic photoelectric-cell metal; ¹³³Cs defines the SI second in atomic clocks. |

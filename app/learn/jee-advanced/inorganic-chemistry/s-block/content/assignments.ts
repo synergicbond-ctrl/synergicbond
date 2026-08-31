@@ -155,15 +155,15 @@ Each question contains a numbered statement. Choose the one option that gives th
 **(C) 1, 2, 4 and 5 only**
 **(D) 1, 2, 3 and 4 only**
 
-### Q11: Li–Mg Diagonal Relationship
+### Q11: Lithium First-Member Effects
 
 **Statement Analysis:**
-1. Li and Mg have comparable ionic sizes/charge-density effects that underlie the diagonal resemblance.
-2. Both are lighter and lighter than the other members of their respective groups.
-3. Both reach comparatively slowly with water.
-4. Both form nitrides by direct combination with nitrogen.
-5. Their carbonates decompose on heating to the oxides and CO₂.
-6. Li₂O and MgO readily form stable superoxides on further oxidation.
+1. Lithium is the smallest alkali metal and its cation has unusually high polarising power.
+2. Lithium reacts less violently with water than sodium or potassium.
+3. Lithium forms a stable nitride by direct combination with nitrogen.
+4. Lithium carbonate decomposes on heating to the oxide and CO₂.
+5. Lithium nitrate gives the oxide, NO₂ and O₂ on heating.
+6. Lithium compounds are often more covalent or more highly hydrated than those of heavier Group 1 members.
 
 **(A) 1, 2, 3, 4 and 6 only**
 **(B) 1, 2, 4 and 6 only**

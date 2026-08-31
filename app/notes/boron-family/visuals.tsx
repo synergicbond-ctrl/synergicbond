@@ -30,6 +30,9 @@ const COL = {
   Al: "#9db8ff",
   Alfill: "#161d33",
   metal: "#e58f8f",
+  amber: "#e3b341",
+  red: "#ff775d",
+  green: "#50dc7b",
 } as const;
 
 function Atom({ x, y, label, stroke, fill, r = 15 }: { x: number; y: number; label: string; stroke: string; fill: string; r?: number }) {
@@ -500,10 +503,302 @@ function B2Cl4() {
   );
 }
 
+/* -------------------- trend charts & concept diagrams -------------------- */
+
+function Bars({ data, unit, note }: { data: { k: string; v: number; tag?: string }[]; unit: string; note: string }) {
+  const max = Math.max(...data.map((d) => d.v));
+  const W = 520;
+  const bw = 62;
+  const gap = (W - 60 - data.length * bw) / (data.length - 1);
+  return (
+    <Svg h={250}>
+      {data.map((d, i) => {
+        const x = 40 + i * (bw + gap);
+        const hgt = (d.v / max) * 150;
+        return (
+          <g key={d.k}>
+            <rect x={x} y={200 - hgt} width={bw} height={hgt} rx={4} fill={COL.B} opacity={0.28} stroke={COL.B} strokeWidth={1.6} />
+            <text x={x + bw / 2} y={200 - hgt - 8} textAnchor="middle" fontSize="11.5" fontWeight="800" fill="#cfe7ff">
+              {d.v}
+            </text>
+            <text x={x + bw / 2} y={218} textAnchor="middle" fontSize="13" fontWeight="800" fill="#eef6ff">
+              {d.k}
+            </text>
+            {d.tag ? (
+              <text x={x + bw / 2} y={234} textAnchor="middle" fontSize="9.5" fill={COL.amber ?? "#e3b341"}>
+                {d.tag}
+              </text>
+            ) : null}
+          </g>
+        );
+      })}
+      <text x={W / 2} y={20} textAnchor="middle" fontSize="11.5" fill="#8fa4b4">
+        {unit}
+      </text>
+      <text x={W / 2} y={248} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">
+        {note}
+      </text>
+    </Svg>
+  );
+}
+
+function CovalenceCap() {
+  return (
+    <Svg h={230}>
+      <g>
+        <Bond x1={130} y1={120} x2={130} y2={70} color={COL.O} />
+        <Bond x1={130} y1={120} x2={85} y2={150} color={COL.O} />
+        <Bond x1={130} y1={120} x2={175} y2={150} color={COL.O} />
+        <Bond x1={130} y1={120} x2={130} y2={170} color={COL.O} />
+        <Atom x={130} y={120} label="B" stroke={COL.B} fill={COL.Bfill} />
+        {[[130, 62], [78, 156], [182, 156], [130, 178]].map(([x, y], i) => (
+          <Atom key={i} x={x} y={y} label="F" stroke={COL.O} fill={COL.Ofill} r={12} />
+        ))}
+        <text x={130} y={210} textAnchor="middle" fontSize="12" fill="#c9d6df">[BF₄]⁻ — max covalence 4 (2s + 2p only)</text>
+      </g>
+      <g transform="translate(250,0)">
+        <Atom x={130} y={120} label="Al" stroke={COL.Al} fill={COL.Alfill} r={17} />
+        {[0, 60, 120, 180, 240, 300].map((deg, i) => {
+          const a = ((deg - 90) * Math.PI) / 180;
+          const x = 130 + 60 * Math.cos(a);
+          const y = 120 + 60 * Math.sin(a);
+          return (
+            <g key={i}>
+              <Bond x1={130} y1={120} x2={x} y2={y} color={COL.O} w={2} />
+              <Atom x={x} y={y} label="F" stroke={COL.O} fill={COL.Ofill} r={11} />
+            </g>
+          );
+        })}
+        <text x={130} y={210} textAnchor="middle" fontSize="12" fill="#c9d6df">[AlF₆]³⁻ — CN 6 from Al onward</text>
+      </g>
+    </Svg>
+  );
+}
+
+function LewisAdduct() {
+  return (
+    <Svg h={210}>
+      <Bond x1={110} y1={110} x2={110} y2={62} color={COL.O} />
+      <Bond x1={110} y1={110} x2={68} y2={140} color={COL.O} />
+      <Bond x1={110} y1={110} x2={152} y2={140} color={COL.O} />
+      <Atom x={110} y={110} label="B" stroke={COL.B} fill={COL.Bfill} />
+      {[[110, 54], [60, 146], [160, 146]].map(([x, y], i) => (
+        <Atom key={i} x={x} y={y} label="F" stroke={COL.O} fill={COL.Ofill} r={11} />
+      ))}
+      <text x={110} y={186} textAnchor="middle" fontSize="11" fill="#c9d6df">planar BF₃ (sp²)</text>
+      <text x={260} y={110} textAnchor="middle" fontSize="20" fontWeight="900" fill={COL.amber ?? "#e3b341"}>+ :NH₃ →</text>
+      <g transform="translate(320,0)">
+        <Bond x1={110} y1={112} x2={110} y2={60} color={COL.N} />
+        <Bond x1={110} y1={112} x2={68} y2={92} color={COL.O} />
+        <Bond x1={110} y1={112} x2={152} y2={92} color={COL.O} />
+        <Bond x1={110} y1={112} x2={110} y2={160} color={COL.O} />
+        <Atom x={110} y={112} label="B" stroke={COL.B} fill={COL.Bfill} />
+        <Atom x={110} y={52} label="N" stroke={COL.N} fill={COL.Nfill} />
+        {[[62, 86], [158, 86], [110, 168]].map(([x, y], i) => (
+          <Atom key={i} x={x} y={y} label="F" stroke={COL.O} fill={COL.Ofill} r={11} />
+        ))}
+        <text x={110} y={190} textAnchor="middle" fontSize="11" fill="#c9d6df">tetrahedral F₃B←NH₃ (sp³)</text>
+      </g>
+    </Svg>
+  );
+}
+
+function OxideTrend() {
+  const items = [
+    { k: "B₂O₃", t: "acidic", c: COL.red },
+    { k: "Al₂O₃", t: "amphoteric", c: COL.amber },
+    { k: "Ga₂O₃", t: "amphoteric", c: COL.amber },
+    { k: "In₂O₃", t: "weakly amph. → basic", c: COL.green },
+    { k: "Tl₂O", t: "strongly basic", c: COL.green },
+  ];
+  return (
+    <Svg h={190}>
+      <line x1={40} y1={100} x2={480} y2={100} stroke="#3f5a74" strokeWidth={2} />
+      {items.map((it, i) => {
+        const x = 60 + i * 95;
+        return (
+          <g key={it.k}>
+            <circle cx={x} cy={100} r={7} fill={it.c ?? "#888"} />
+            <text x={x} y={78} textAnchor="middle" fontSize="13" fontWeight="800" fill="#eef6ff">
+              {it.k}
+            </text>
+            <text x={x} y={128} textAnchor="middle" fontSize="10" fill="#c9d6df">
+              {it.t}
+            </text>
+          </g>
+        );
+      })}
+      <text x={40} y={165} fontSize="11" fill={COL.red ?? "#f66"}>← acidic</text>
+      <text x={480} y={165} textAnchor="end" fontSize="11" fill={COL.green ?? "#5d5"}>basic →</text>
+      <text x={260} y={30} textAnchor="middle" fontSize="11.5" fill="#8fa4b4">non-metal → metal down Group 13</text>
+    </Svg>
+  );
+}
+
+function AquoIons() {
+  return (
+    <Svg h={220}>
+      <g transform="translate(20,0)">
+        <Atom x={120} y={110} label="Al" stroke={COL.Al} fill={COL.Alfill} r={17} />
+        {[0, 60, 120, 180, 240, 300].map((deg, i) => {
+          const a = ((deg - 90) * Math.PI) / 180;
+          const x = 120 + 62 * Math.cos(a);
+          const y = 110 + 62 * Math.sin(a);
+          return (
+            <g key={i}>
+              <Bond x1={120} y1={110} x2={x} y2={y} color={COL.O} w={2} dash="4 3" />
+              <Atom x={x} y={y} label="OH₂" stroke={COL.O} fill={COL.Ofill} r={13} />
+            </g>
+          );
+        })}
+        <text x={120} y={200} textAnchor="middle" fontSize="11.5" fill="#c9d6df">[Al(H₂O)₆]³⁺ octahedral (acidic)</text>
+      </g>
+      <text x={300} y={112} textAnchor="middle" fontSize="16" fontWeight="900" fill={COL.amber ?? "#e3b341"}>+ OH⁻ ⇌</text>
+      <g transform="translate(360,0)">
+        <Bond x1={110} y1={112} x2={110} y2={60} color={COL.O} />
+        <Bond x1={110} y1={112} x2={66} y2={92} color={COL.O} />
+        <Bond x1={110} y1={112} x2={154} y2={92} color={COL.O} />
+        <Bond x1={110} y1={112} x2={110} y2={162} color={COL.O} />
+        <Atom x={110} y={112} label="Al" stroke={COL.Al} fill={COL.Alfill} />
+        {[[110, 52], [58, 86], [162, 86], [110, 170]].map(([x, y], i) => (
+          <Atom key={i} x={x} y={y} label="OH" stroke={COL.O} fill={COL.Ofill} r={11} />
+        ))}
+        <text x={110} y={200} textAnchor="middle" fontSize="11.5" fill="#c9d6df">[Al(OH)₄]⁻ tetrahedral (alkaline)</text>
+      </g>
+    </Svg>
+  );
+}
+
+function DiagonalBSi() {
+  const rows = [
+    ["Oxide", "B₂O₃ acidic, glassy", "SiO₂ acidic, network"],
+    ["Halide", "BCl₃ covalent, hydrolyses", "SiCl₄ covalent, hydrolyses"],
+    ["Hydride", "boranes, readily hydrolysed", "silanes, hydrolyse (slower)"],
+    ["Acid", "H₃BO₃ very weak (pKa≈9.2)", "silicic acid very weak"],
+    ["Fluoro ion", "[BF₄]⁻", "[SiF₆]²⁻"],
+    ["z/r (formal)", "≈ 0.073 e pm⁻¹", "≈ 0.074 e pm⁻¹"],
+  ];
+  return (
+    <Svg h={260}>
+      <text x={175} y={22} textAnchor="middle" fontSize="13" fontWeight="900" fill={COL.B}>Boron</text>
+      <text x={410} y={22} textAnchor="middle" fontSize="13" fontWeight="900" fill={COL.green}>Silicon</text>
+      {rows.map((r, i) => {
+        const y = 40 + i * 34;
+        return (
+          <g key={r[0]}>
+            <rect x={10} y={y} width={500} height={30} rx={5} fill={i % 2 ? "#0d1826" : "#101d2d"} stroke="#1f3447" />
+            <text x={20} y={y + 20} fontSize="10.5" fontWeight="800" fill={COL.amber ?? "#e3b341"}>
+              {r[0]}
+            </text>
+            <text x={100} y={y + 20} fontSize="11" fill="#dce8f2">
+              {r[1]}
+            </text>
+            <text x={300} y={y + 20} fontSize="11" fill="#dce8f2">
+              {r[2]}
+            </text>
+          </g>
+        );
+      })}
+    </Svg>
+  );
+}
+
+function OxStateMap() {
+  return (
+    <Svg h={230}>
+      {["B", "Al", "Ga", "In", "Tl"].map((el, i) => {
+        const x = 60 + i * 100;
+        const p3 = [96, 88, 70, 46, 20][i];
+        const p1 = [4, 12, 30, 54, 80][i];
+        return (
+          <g key={el}>
+            <rect x={x - 26} y={60} width={52} height={p3} rx={4} fill={COL.B} opacity={0.3} stroke={COL.B} strokeWidth={1.4} />
+            <rect x={x - 26} y={60 + p3} width={52} height={p1} rx={4} fill={COL.amber ?? "#e3b341"} opacity={0.35} stroke={COL.amber ?? "#e3b341"} strokeWidth={1.4} />
+            <text x={x} y={186} textAnchor="middle" fontSize="13" fontWeight="800" fill="#eef6ff">
+              {el}
+            </text>
+          </g>
+        );
+      })}
+      <rect x={430} y={62} width={12} height={12} fill={COL.B} opacity={0.35} />
+      <text x={448} y={72} fontSize="11" fill="#cfe7ff">+3 state</text>
+      <rect x={430} y={82} width={12} height={12} fill={COL.amber ?? "#e3b341"} opacity={0.4} />
+      <text x={448} y={92} fontSize="11" fill="#f0dca8">+1 state</text>
+      <text x={230} y={210} textAnchor="middle" fontSize="11" fill="#8fa4b4">
+        inert-pair effect: +1 grows, +3 shrinks down the group; Tl(I) dominant
+      </text>
+      <text x={230} y={40} textAnchor="middle" fontSize="11.5" fill="#8fa4b4">relative stability of oxidation states</text>
+    </Svg>
+  );
+}
+
 /* ------------------------------ dispatcher ------------------------------- */
 
 export function BoronFamilyVisual({ part }: { part: number }) {
   switch (part) {
+    case 1:
+      return (
+        <Frame title="First-member anomaly — why boron caps at covalence 4" caption="A period-2 atom has only 2s + 2p valence orbitals, so boron's maximum covalence is 4 ([BF₄]⁻). From aluminium onward, higher coordination numbers such as 6 ([AlF₆]³⁻) become accessible.">
+          <CovalenceCap />
+        </Frame>
+      );
+    case 3:
+      return (
+        <div className="space-y-6">
+          <Frame title="Atomic / metallic radius across Group 13" caption="A new shell is added down the group, but Ga is smaller than Al (poor 3d¹⁰ shielding — d-block contraction) and Tl is only marginally larger than In (4f¹⁴ — lanthanoid contraction). Invariant exam point: Ga < Al.">
+            <Bars
+              data={[
+                { k: "B", v: 88 },
+                { k: "Al", v: 143 },
+                { k: "Ga", v: 135, tag: "d-block" },
+                { k: "In", v: 167 },
+                { k: "Tl", v: 170, tag: "4f" },
+              ]}
+              unit="atomic / metallic radius · pm"
+              note="order: B < Ga < Al < In < Tl"
+            />
+          </Frame>
+          <Frame title="First ionisation enthalpy" caption="IE₁ falls from B to Al with size, then rises slightly at Ga and again at Tl because poorly shielding d and f electrons hold the outer electrons more tightly.">
+            <Bars
+              data={[
+                { k: "B", v: 801 },
+                { k: "Al", v: 577 },
+                { k: "Ga", v: 579 },
+                { k: "In", v: 558 },
+                { k: "Tl", v: 589 },
+              ]}
+              unit="IE₁ · kJ mol⁻¹"
+              note="order: In < Al < Ga < Tl < B"
+            />
+          </Frame>
+        </div>
+      );
+    case 4:
+      return (
+        <div className="space-y-6">
+          <Frame title="Electron deficiency → Lewis acidity" caption="A trivalent Group 13 centre has only six electrons around it. Accepting a lone pair converts planar sp² BF₃ into a tetrahedral sp³ adduct such as F₃B←NH₃.">
+            <LewisAdduct />
+          </Frame>
+          <Frame title="Aquo ion ⇌ hydroxo ion" caption="Heavier Group 13 ions give octahedral [M(H₂O)₆]³⁺ (acidic through hydrolysis) and, in strong alkali, tetrahedral [M(OH)₄]⁻. Boron forms no normal aquated B³⁺ ion.">
+            <AquoIons />
+          </Frame>
+          <Frame title="Oxide / hydroxide character down the group" caption="Oxide character tracks metallic character: acidic B₂O₃ → amphoteric Al₂O₃ / Ga₂O₃ → predominantly basic In₂O₃ → strongly basic Tl₂O and TlOH.">
+            <OxideTrend />
+          </Frame>
+        </div>
+      );
+    case 6:
+      return (
+        <Frame title="The boron–silicon diagonal relationship" caption="B and Si sit on a periodic-table diagonal and share polarising power (z/r) and covalent, network, weakly acidic behaviour — a set of similarities, not identity (B caps at covalence 4, Si reaches 6).">
+          <DiagonalBSi />
+        </Frame>
+      );
+    case 13:
+      return (
+        <Frame title="Group 13 master map — oxidation-state stability" caption="Down the group the ns² pair is held back (inert-pair effect): the +1 state becomes progressively more stable while +3 becomes strongly oxidising, so Tl(I) is the dominant thallium state.">
+          <OxStateMap />
+        </Frame>
+      );
     case 7:
       return (
         <Frame title="Elemental boron — the B₁₂ icosahedron" caption="Crystalline boron is built from B₁₂ icosahedra (12 vertices, 20 faces) — two staggered pentagons capped by an apex atom top and bottom — linked by multicentre intericosahedral B–B bonds.">

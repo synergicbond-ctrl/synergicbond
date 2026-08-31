@@ -52,11 +52,11 @@ Down heavier p-block groups, the valence ns² electron pair increasingly resists
 
 **Worked example 1.1.** *Arrange in order of increasing first ionisation enthalpy: B, Be, C, N, O.* Reasoning: Be (fully filled 2s²) > B (2s²2p¹, easy to lose the single p electron) but B's IE is still higher than expected only relative to its own period trend continuing upward; the accepted JEE order is B < Be < C < O < N, because Be and N both benefit from extra stability (filled and half-filled subshells respectively) that momentarily reverses the raw periodic increase.
 
-# 2. Group 13 — Boron Family: premium textbook, Parts 1–8
+# 2. Group 13 — Boron family: trends, bonding, boron and borates
 
 > **BIG PICTURE — Why is boron unlike every other member?**  Four ideas organise the whole chapter: **(i)** the energy cost of making B³⁺ is prohibitively high, **(ii)** Group 13 has only three valence electrons and therefore forms electron-deficient compounds, **(iii)** the +1 oxidation state becomes progressively more stable down the group because of the inert-pair effect, and **(iv)** boron solves electron deficiency by multicentre bonding. Every trend, structure and reaction below should be connected back to one of these four ideas.
 
-This page contains Parts 1–8. [Continue to Parts 9–15: halides, hydrides, aluminium compounds and examination](/notes/p-block/part3).
+This lesson covers periodic trends, oxidation-state logic, elemental boron, aluminium, the oxides, boric acid and borax. [Continue: halides, hydrides, boranes, aluminium compounds and revision](/notes/p-block/part3).
 
 ## Part 1 — Position, members, occurrence and chapter map
 
@@ -608,9 +608,9 @@ Written commercially as **NaBO₃·4H₂O**, but its true structure is a dimeric
 
 > **JEE TRAP.** Distinguish **sodium metaborate NaBO₂** (no O–O), **sodium tetraborate / borax** (no O–O) and **sodium peroxoborate** (two O–O bridges). Only the last one gives H₂O₂ on warming and behaves as an oxidising agent.
 
-# 3. Group 13 — Boron Family: premium textbook, Parts 9–15
+# 3. Group 13 — Boron family: halides, boranes, aluminium and revision
 
-> **CONTINUITY MAP.** Parts 1–8 established periodic trends, oxidation-state logic, elemental boron, aluminium, oxides, boric acid and borax. Parts 9–15 now apply those principles to halides, hydrides, boranes, complex hydrides, aluminium compounds and examination synthesis.
+> **CONTINUITY MAP.** The previous lesson established periodic trends, oxidation-state logic, elemental boron, aluminium, the oxides, boric acid and borax. This lesson applies those principles to halides, hydrides, boranes, complex hydrides, aluminium compounds and revision synthesis.
 
 ## Part 9 — Halides: Lewis acidity, bonding and hydrolysis
 

@@ -39,6 +39,38 @@ function removeWorkedExamples(markdown: string) {
   );
 }
 
+type CalloutKind = "core" | "exam" | "insight" | "trap" | "key" | "uses" | "reaction" | "trend" | "bonding";
+
+function getCallout(text: string): { kind: CalloutKind; label: string; body: string } | null {
+  const patterns: Array<[RegExp, CalloutKind, string]> = [
+    [/^\s*\*\*Core Focus:\*\*\s*([\s\S]+)$/i, "core", "Core Focus"],
+    [/^\s*\*\*Exam Note:\*\*\s*([\s\S]+)$/i, "exam", "Exam Note"],
+    [/^\s*\*\*Bonding Insight:\*\*\s*([\s\S]+)$/i, "insight", "Bonding Insight"],
+    [/^\s*\*\*JEE Trap:\*\*\s*([\s\S]+)$/i, "trap", "JEE Trap"],
+    [/^\s*\*\*Key Point:\*\*\s*([\s\S]+)$/i, "key", "Key Point"],
+    [/^\s*\*\*Uses:\*\*\s*([\s\S]+)$/i, "uses", "Uses"],
+    [/^\s*\*\*Reaction:\*\*\s*([\s\S]+)$/i, "reaction", "Reaction"],
+    [/^\s*\*\*Trend:\*\*\s*([\s\S]+)$/i, "trend", "Trend"],
+  ];
+  for (const [re, kind, label] of patterns) {
+    const match = text.match(re);
+    if (match) return { kind, label, body: match[1].trim() };
+  }
+  return null;
+}
+
+const calloutStyles: Record<CalloutKind, { border: string; bg: string; label: string; text: string }> = {
+  core: { border: "#fbbf24", bg: "rgba(251,191,36,.08)", label: "#fbbf24", text: "#fde68a" },
+  exam: { border: "#67e8f9", bg: "rgba(34,211,238,.08)", label: "#67e8f9", text: "#cffafe" },
+  insight: { border: "#c084fc", bg: "rgba(192,132,252,.08)", label: "#c084fc", text: "#e9d5ff" },
+  trap: { border: "#fb7185", bg: "rgba(251,113,133,.08)", label: "#fb7185", text: "#fecdd3" },
+  key: { border: "#34d399", bg: "rgba(52,211,153,.08)", label: "#34d399", text: "#d1fae5" },
+  uses: { border: "#f59e0b", bg: "rgba(245,158,11,.08)", label: "#f59e0b", text: "#fef3c7" },
+  reaction: { border: "#22c55e", bg: "rgba(34,197,94,.08)", label: "#22c55e", text: "#dcfce7" },
+  trend: { border: "#a78bfa", bg: "rgba(167,139,250,.08)", label: "#a78bfa", text: "#ede9fe" },
+  bonding: { border: "#38bdf8", bg: "rgba(56,189,248,.08)", label: "#38bdf8", text: "#e0f2fe" },
+};
+
 const markdownComponents: Components = {
   h1: ({ children }) => {
     const text = flattenText(children);
@@ -95,9 +127,26 @@ const markdownComponents: Components = {
       {children}
     </h5>
   ),
-  p: ({ children }) => <p className="max-w-[94ch] text-[15.5px] leading-[1.86] text-slate-300 sm:text-[16.5px]">{children}</p>,
-  ul: ({ children }) => <ul className="ml-5 max-w-[94ch] list-disc space-y-2.5 text-slate-300 marker:text-[var(--accent)]">{children}</ul>,
-  ol: ({ children }) => <ol className="ml-6 max-w-[94ch] list-decimal space-y-2.5 text-slate-300 marker:font-black marker:text-amber-300">{children}</ol>,
+  p: ({ children }) => {
+    const text = flattenText(children).trim();
+    const callout = getCallout(text);
+    if (callout) {
+      const style = calloutStyles[callout.kind];
+      return (
+        <div className="my-5 rounded-2xl border px-5 py-4 shadow-xl shadow-black/20" style={{ borderColor: style.border, background: style.bg }}>
+          <div className="mb-2 text-[11px] font-black uppercase tracking-[0.22em]" style={{ color: style.label }}>
+            {callout.label}
+          </div>
+          <p className="max-w-none text-[15.5px] leading-[1.86] text-slate-200 sm:text-[16.5px]" style={{ color: style.text }}>
+            {callout.body}
+          </p>
+        </div>
+      );
+    }
+    return <p className="max-w-[108ch] text-[15.5px] leading-[1.86] text-slate-300 sm:text-[16.5px]">{children}</p>;
+  },
+  ul: ({ children }) => <ul className="ml-5 max-w-[108ch] list-disc space-y-2.5 text-slate-300 marker:text-fuchsia-300">{children}</ul>,
+  ol: ({ children }) => <ol className="ml-6 max-w-[108ch] list-decimal space-y-2.5 text-slate-300 marker:font-black marker:text-amber-300">{children}</ol>,
   li: ({ children }) => <li className="pl-1 text-[15.5px] leading-7 sm:text-base">{children}</li>,
   strong: ({ children }) => (
     <strong
@@ -115,7 +164,7 @@ const markdownComponents: Components = {
   ),
   hr: () => <hr className="my-10 border-[var(--border)]" />,
   table: ({ children }) => (
-    <div className="my-6 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--surface)] shadow-xl shadow-black/20">
+    <div className="my-6 overflow-x-auto rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl shadow-black/20">
       <table className="min-w-full border-collapse text-left text-sm sm:text-[15px]">{children}</table>
     </div>
   ),

@@ -1,11 +1,10 @@
 // The Carbon Family — JEE question bank (single/multiple correct, comprehension,
 // assertion-reasoning, integer, matrix-match) with a consolidated answer key.
-// Original SYNERGIC BOND item set. NOT YET WIRED INTO THE SHIPPED CHAPTER — the
-// parts registry stops at lesson 27; add a part entry here when it is ready.
+// Original SYNERGIC BOND item set. Shipped as lesson 29 of the chapter.
 
 export const CARBON_FAMILY_QUESTION_BANK_MARKDOWN = String.raw`
 
-# 24. JEE question bank — all patterns with answer key
+# 29. JEE question bank — all patterns with answer key
 
 Work each section first, then check against the key at the end. Reasoning notes are given for the trickier items.
 

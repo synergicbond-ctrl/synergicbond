@@ -1514,4 +1514,84 @@ Attempt each before reading the answer.
 
 **27.30** Explain why the first ionisation enthalpy of lead is greater than that of tin.
 **Answer:** Lead follows the lanthanoids; the poorly shielding 4f¹⁴ (and 5d¹⁰) electrons let the effective nuclear charge felt by the 6p electron rise, so it is held more tightly than the 5p electron of tin - the same d/f-contraction effect that keeps Pb barely larger than Sn.
+
+
+# 28. Chapter coverage checklist
+
+Use this as a last-night revision sweep — for each line, recall the reasoning, not just the fact. Every point is developed earlier in the chapter (section numbers in brackets).
+
+## 28.1 Trends and the anomaly
+
+- Electron configuration ns²np²; group oxidation state +4; the +2 state and its rise down the group [2, 4].
+- Uneven size increase: big C→Si jump, small Si→Ge (d-block contraction) and Sn→Pb (lanthanoid contraction) steps [3.1].
+- ΔᵢH₁ order **C > Si > Ge > Pb > Sn** — and why Pb > Sn [3.2].
+- Electronegativity and metallic/electropositive character down the group [3.3].
+- Physical state, allotropy, melting and boiling point orders; density [3.4].
+- Why every M(IV) compound is covalent — sum of the first four ionisation enthalpies [4.1].
+- Inert-pair effect: cause, and its redox consequence (Sn(II) reducing, Pb(IV) oxidising) [4.2].
+- Why PbI₄ does not exist — the energetics argument → PbI₂ + I₂ [4.3].
+- The three roots of carbon's anomaly: covalence capped at 4, strong pπ–pπ, strong C–C bond [5.1–5.3].
+- Catenation tracks the M–M bond enthalpy; the B ↔ Si diagonal link [5.2, 5.4].
+
+## 28.2 The elements and the allotropes
+
+- Element reactivity toward air, water/steam, acids, alkalis, halogens, and other non-metals — with conditions [6].
+- Diamond: structure, hardness, insulator, thermal conductivity, C–C 154 pm, synthesis [7.1].
+- Graphite: sheet structure, 141.5 pm in-plane vs 340 pm between, anisotropic conduction, thermodynamically the stable allotrope, α/β stacking [7.2].
+- Fullerenes: preparation, C₆₀ topology (12 pentagons always, hexagons n/2 − 10, edges 3n/2), reactivity [7.3].
+- Coke, charcoal, activated charcoal, carbon black, gas carbon — all impure microcrystalline forms [7.4].
+- Graphite intercalation (conductivity up), graphite oxide and fluoride (conductivity destroyed) [7.5].
+
+## 28.3 Carbon compounds
+
+- Carbides: the three classes; hydrolysis identifies the carbon anion (CH₄ / C₂H₂ / propyne); interstitial-carbide property changes [8].
+- CO: preparations (including from methanoic acid and from the hexacyanoferrate(II)); water / producer / coal gas; detection and estimation; the MO picture and bond order 3; toxicity and carbogen [9.1, 9.2].
+- CO as a reducing agent (blast furnace) and as a ligand — synergic σ-donation + π back-donation; C–O stretch drops on coordination; Fe₂(CO)₉ has 12 Fe–C bonds [9.3].
+- COCl₂, COS, CS₂, C₃O₂; CS₂ → xanthate → viscose rayon [9.4, 11].
+- CO₂: linear structure, zero dipole, resonance; carbonic acid, the blood buffer, the greenhouse effect; uses [10.1, 10.2].
+- Carbonates and hydrogencarbonates: two salt series, solubility, thermal-stability trend, the limewater test (clears in excess CO₂) [10.3].
+- CO₃²⁻ is planar and CO₄⁴⁻ cannot exist; contrast SiO₄⁴⁻ [10.3].
+
+## 28.4 Silicon, silica and the silicates
+
+- Silicon extraction, ultrapurification (halide route + zone refining), reactivity — unreactive except toward fluorine [12].
+- Silica: the giant network, polymorphs, vitreous silica, silica gel, kieselguhr, piezoelectricity; why SiO₂ is a solid but CO₂ a gas; reactions with HF and with fused alkali [13].
+- The silicate master rule: classification by shared corners per SiO₄ tetrahedron; O:Si = 4 − x/2, charge/Si = −(4 − x) [14.1].
+- The seven classes with type minerals: ortho, pyro, cyclic, single chain, double chain, sheet, framework [14.2–14.7].
+- A ring and a single chain share the empirical formula (SiO₃)ₙ²ⁿ⁻; pyroxene vs amphibole cleavage angles [14.4, 14.5].
+- Sheet silicates: 1:1 vs 2:1 layers, Al-for-Si substitution and interlayer cations, swelling clays, chrysotile vs crocidolite [14.6].
+- Framework silicates: aluminosilicates, feldspars, zeolites (ion exchange, molecular sieves, shape-selective catalysis), ultramarines [14.7].
+- Water glass — preparation and uses [14.1].
+
+## 28.5 Glass, silicones, hydrides, halides, complexes
+
+- Glass as a supercooled solution; the common families (soda-lime, potash, lead, borosilicate, silica); network modifiers; colouring agents [15].
+- Silicones: chlorosilane synthesis; the functionality rule (R₃SiCl caps, R₂SiCl₂ builds, RSiCl₃ cross-links); why no Si=O; properties and uses; silicone rubber [16].
+- Silanes: preparation; why they are far more reactive than alkanes (reversed Si–H polarity, accessible d orbitals); thermal-stability order down the group [17].
+- Tetrahalides: all MX₄ except PbI₄; SnF₄ and PbF₄ are ionic solids; the SiCl₄ vs CCl₄ hydrolysis mechanism; charge-transfer colour of SnI₄/GeI₄; catenated silicon halides [18.1, 18.2].
+- Dihalides: stability rises down the group; bent gas-phase SnCl₂ [18.3].
+- Fluorocarbons: PTFE; the Freon–ozone catalytic cycle [18.4].
+- Cyanides and cyanates as carbon-based ligands; isoelectronic NCO⁻ / CO₂ [18.5].
+- Coordination-number expansion 4 → 6 for the heavier elements ([SiF₆]²⁻, [GeCl₆]²⁻, [Sn(OH)₆]²⁻) [19.1].
+- N(SiH₃)₃ planar vs N(CH₃)₃ pyramidal — the pπ–dπ explanation [19.2].
+- Lead(IV) acetate — a selective oxidant, glycol cleavage [19.3].
+
+## 28.6 Tin and lead
+
+- SnO / SnO₂ — both amphoteric; preparations and reactions [20.1].
+- SnCl₂ and SnCl₄ — hydrolysis, why anhydrous SnCl₂ cannot be got by evaporation, why a tin bar is kept in the solution; hexachlorostannate, pink salt, butter of tin [20.2].
+- Sn(II) as a reducing agent — the full named set (Fe³⁺, Cu²⁺, Hg²⁺, Cr₂O₇²⁻, Bi(III), nitro → amine); purple of Cassius; mosaic gold [20.3, 20.4].
+- The four lead oxides; PbO amphoterism; the mixed-oxide proof for Pb₃O₄ and Pb₂O₃ (dilute HNO₃ leaves brown PbO₂) [21.1–21.3].
+- PbO₂: amphoteric but strongly oxidising — HCl → Cl₂, hot conc. H₂SO₄ → O₂, HNO₃ → no reaction; the Mn²⁺ → MnO₄⁻ test must use HNO₃ [21.4].
+- PbCl₄ and tetraethyllead as historical chemistry [21.5].
+
+## 28.7 Synthesis and revision layers
+
+- Uses of every element and compound [22].
+- p-block first-member anomaly and inert-pair effect across the whole block; the complete high-yield order set; the structure recall gallery [23].
+- One-page reaction networks for carbon, silicon, tin and lead [24].
+- The JEE-trap list and the derived tools (fullerene topology, the silicate charge shortcut) [25].
+- The ultra-fast final-revision table [26].
+- The 30 worked review questions [27].
+
 `;

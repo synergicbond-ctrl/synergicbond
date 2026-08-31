@@ -1,17 +1,15 @@
 import "server-only";
 import { CARBON_FAMILY_MASTER_MARKDOWN } from "./content";
+import { CARBON_FAMILY_QUESTION_BANK_MARKDOWN } from "./questionBank";
 
 export interface CarbonFamilyPartDef {
   slug: string;
   number: number;
   title: string;
-  /** Master-markdown section number. */
-  section: number;
+  /** Master-markdown section number, or "qbank" for the question-bank lesson. */
+  section: number | "qbank";
 }
 
-// NOTE: the question bank (questionBank.ts) is authored but NOT shipped yet.
-// When it is ready, append a part here and restore the qbank branch in
-// carbonFamilyPartMarkdown.
 export const CARBON_FAMILY_PARTS: CarbonFamilyPartDef[] = [
   { slug: "part1", number: 1, title: "p-Block foundation and the place of Group 14", section: 1 },
   { slug: "part2", number: 2, title: "Group 14 identity and electronic configuration", section: 2 },
@@ -40,6 +38,8 @@ export const CARBON_FAMILY_PARTS: CarbonFamilyPartDef[] = [
   { slug: "part25", number: 25, title: "JEE Advanced traps and derived tools", section: 25 },
   { slug: "part26", number: 26, title: "Ultra-fast final revision", section: 26 },
   { slug: "part27", number: 27, title: "Chapter review questions (with worked answers)", section: 27 },
+  { slug: "part28", number: 28, title: "Chapter coverage checklist", section: 28 },
+  { slug: "part29", number: 29, title: "JEE question bank — all patterns with answer key", section: "qbank" },
 ];
 
 function sections() {
@@ -60,6 +60,7 @@ function sections() {
 }
 
 export function carbonFamilyPartMarkdown(part: CarbonFamilyPartDef) {
+  if (part.section === "qbank") return CARBON_FAMILY_QUESTION_BANK_MARKDOWN;
   const found = sections().find((item) => item.num === part.section);
   return found ? found.text : "";
 }

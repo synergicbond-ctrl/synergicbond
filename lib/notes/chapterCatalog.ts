@@ -336,9 +336,9 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     sectionLabel: "Group 14 deep dive",
     title: "The Carbon Family",
     href: "/notes/carbon-family",
-    lessonLabel: "27 lessons",
+    lessonLabel: "29 lessons",
     premium: true,
-    description: "Group 14 (C, Si, Ge, Sn, Pb) in full: every property with increasing/decreasing/note order blocks, a MOT lens or JEE trap on each key species, energetics of the inert-pair effect, the carbon anomaly and catenation, allotropes and fullerene topology, carbides, CO/CO₂/carbonates and metal carbonyls, silicon extraction, silica, the full seven-class silicate system, glass, silicones, hydrides, halides, pπ–dπ complexes, tin/lead reaction maps, a uses section, and 30 review questions with worked answers.",
+    description: "Group 14 (C, Si, Ge, Sn, Pb) in full: every property with increasing/decreasing/note order blocks, a MOT lens or JEE trap on each key species, energetics of the inert-pair effect, the carbon anomaly and catenation, allotropes and fullerene topology, carbides, CO/CO₂/carbonates and metal carbonyls, silicon extraction, silica, the full seven-class silicate system, glass, silicones, hydrides, halides, pπ–dπ complexes, tin/lead reaction maps, a uses section, a coverage checklist, 30 review questions with worked answers, and a full JEE question bank with answer key.",
   },
   // ── Organic Chemistry (JEE Advanced) ─────────────────────────────────────
   {
@@ -446,7 +446,7 @@ export const COURSE_GROUP_CARDS: Record<string, CourseGroupCard> = {
   "p-block-elements": {
     href: "/notes/p-block",
     description:
-      "Three courses — the full P-block Elements route across Groups 13–18, a 14-lesson Boron Family deep dive (Group 13), and a 27-lesson Carbon Family deep dive (Group 14: trends and the inert-pair effect, allotropes and fullerenes, carbides, carbon oxide and carbonate chemistry, silicon, silica and the seven silicate classes, glass, silicones, halides, pπ–dπ complexes, and tin/lead reaction maps).",
+      "Three courses — the full P-block Elements route across Groups 13–18, a 14-lesson Boron Family deep dive (Group 13), and a 29-lesson Carbon Family deep dive (Group 14: trends and the inert-pair effect, allotropes and fullerenes, carbides, carbon oxide and carbonate chemistry, silicon, silica and the seven silicate classes, glass, silicones, halides, pπ–dπ complexes, tin/lead reaction maps, a coverage checklist and a full question bank).",
   },
 };
 

@@ -75,7 +75,6 @@ Hydrate formation is favoured by high cation charge density: $\mathrm{LiCl\cdot2
 
 > **JEE trap.** "All nitrates give nitrites on heating" is false — it only holds for Group 1 salts other than lithium. "All Group 2 sulfates are insoluble" is also false: Mg and Be sulfates are freely soluble.
 `),
-      visual("solubility"),
     ],
   },
   {
@@ -146,7 +145,6 @@ $\mathrm{Na_2CO_3}$: softening hard water, manufacture of glass/soap/borax/caust
 > **JEE trap.** Heating $\mathrm{NaHCO_3}$ never gives NaOH — it gives $\mathrm{Na_2CO_3}$.
 
 `),
-      visual("lime-cycle"),
       md(String.raw`
 ## 21.3 Potassium carbonate and the historical Leblanc process
 

@@ -159,7 +159,6 @@ Ca metal is obtained by electrolysis of fused CaCl₂ (from the Solvay-process w
 
 Solubility of Group 2 compounds departs from the usual "heavier = less soluble" intuition and is instead governed entirely by the competition between lattice energy and hydration energy as the cation grows down the group.
       `),
-      visual("solubility"),
       md(`
 
 | Lattice energy (kJ/mol) | Mg | Ca | Sr | Ba |
@@ -225,7 +224,6 @@ Magnesium's E° (−2.37 V) is actually favourable for reaction, but Mg forms a 
 
 ### 2.3 Reactivity toward Dihydrogen — Hydrides
       `),
-      visual("hydride-family"),
       visual("beh2-polymer"),
       md(`
 Ca, Sr, Ba (and Mg, with more difficulty) react directly with H₂ on heating to give MH₂: Ca + H₂ → CaH₂. BeH₂ cannot be made this way and must instead be made indirectly, by two independent routes:
@@ -372,7 +370,6 @@ Be₃N₂ is comparatively volatile (greater covalent character of Be); the othe
 | Mg₂C₃ | C₃⁴⁻ ("allylide"/sesquicarbide) | CH₃–C≡CH (propyne) | Not on the acetylide pattern |
 | CaC₂, SrC₂, BaC₂ | C₂²⁻ ("acetylide") | C₂H₂ (ethyne) | Distorted NaCl-type lattice (C₂²⁻ is non-spherical) |
       `),
-      visual("carbide"),
       md(`
 **Exam Pattern:** Mg₂C₃ contains 42 electrons per formula unit: 2×12 + 3×6 = 42. This is useful only after identifying the correct carbide formula (allylide/sesquicarbide, not MgC₂).
 
@@ -540,7 +537,6 @@ All burn in O₂ to give MO. BeO is usually made instead by igniting gelatinous 
 
 BeO is covalent (4:4 zinc-blende/wurtzite structure); MgO, CaO, SrO, BaO are ionic (6:6 rock-salt/NaCl structure). Basic strength rises steadily: BeO (amphoteric) < MgO (weakly basic) < CaO < SrO < BaO (increasingly strongly basic).
       `),
-      visual("halide-lattice"),
       md(`
 **Bonding Insight:** Why does MO + H₂O → M(OH)₂ happen at all? (mechanistic picture)
 
@@ -637,7 +633,6 @@ CaCO₃ crystal chemistry: calcite (stable form, Ca²⁺ 6-coordinate, matching 
 
 ### 9.2 Bicarbonates & Hardness of Water
       `),
-      visual("hardness"),
       md(`
 Bicarbonates exist only in solution, never as isolable solids for Group 2:
 
@@ -725,7 +720,6 @@ Many Group 2 oxalates are sparingly soluble. Their thermal decomposition can pro
       md(`
 ## 11. Anomalous Behaviour of Beryllium
       `),
-      visual("charge-density"),
       md(`
 Illustrative Be structures: [Be(H₂O)₄]²⁺ (tetrahedral hydration complex, coordination number 4), basic beryllium acetate Be₄O(CH₃COO)₆ (central O²⁻, tetrahedral Be₄ core, six bridging μ-OAc groups on the six edges), and [Be(ox)₂]²⁻ (tetrahedral bis(oxalato)beryllate, two bidentate oxalate ligands, four O donors around Be).
       `),
@@ -790,7 +784,6 @@ Be is just one instance of a completely general pattern called the "first-elemen
       md(`
 ## 12. Diagonal Relationship: Be and Al
       `),
-      visual("diagonal-map"),
       md(`
 The Be–Al resemblance extends to strong Lewis-acid character of their chlorides and to bridged chloride structures. Both sets of halides show appreciable covalent character and can participate in Lewis-acid chemistry under suitable conditions.
 
@@ -879,7 +872,6 @@ Additional industrial uses of lime (CaO):
 
 ### 14.2 Calcium Hydroxide — Slaked Lime, Ca(OH)₂
       `),
-      visual("lime-cycle"),
       md(`
 Whitewashing is a chemical-setting process: a suspension of Ca(OH)₂ is applied to the surface and atmospheric CO₂ slowly converts it into a hard CaCO₃ layer. A simplified representation of bleaching-powder formation is 2Ca(OH)₂ + 2Cl₂ → CaCl₂ + Ca(OCl)₂ + 2H₂O.
 
@@ -923,7 +915,6 @@ White fluffy powder, almost insoluble; decomposes at 1200 K to CaO + CO₂. Reac
 
 ### 14.4 Calcium Sulphate System — Gypsum, Plaster of Paris, Anhydrite
       `),
-      visual("plaster"),
       md(`
 The formula CaSO₄·½H₂O is a stoichiometric formula: two CaSO₄ formula units correspond to one H₂O in the composition. It does not imply an isolated "half water molecule."
 
@@ -994,7 +985,6 @@ Chlorophyll a: Mg²⁺ is coordinated by four ring nitrogens in a chlorin-type m
       md(`
 6CO₂ + 6H₂O —(chlorophyll, sunlight)→ C₆H₁₂O₆ + 6O₂
       `),
-      visual("biology"),
       md(`
 Mg²⁺ is concentrated mainly inside animal cells, whereas Ca²⁺ is concentrated mainly in extracellular body fluids. Mg²⁺ complexes participate in ATP-dependent phosphate-transfer enzymes and the ion is central to chlorophyll. Ca²⁺ is essential to bone and tooth mineral, blood coagulation, muscle contraction and the maintenance of a regular heartbeat.
 

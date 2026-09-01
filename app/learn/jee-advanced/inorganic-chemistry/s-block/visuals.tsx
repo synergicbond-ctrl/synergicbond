@@ -10,12 +10,12 @@ function VisualFrame({
   children: ReactNode;
 }) {
   return (
-    <section className="overflow-hidden rounded-lg border border-cyan-300/15 bg-[#07111d] shadow-2xl shadow-black/30">
-      <div className="border-b border-white/[.07] bg-[linear-gradient(100deg,rgba(34,211,238,.12),rgba(139,92,246,.10),rgba(251,191,36,.08))] px-5 py-4 sm:px-7">
-        <p className="text-[10px] font-black uppercase tracking-[.22em] text-cyan-300">{eyebrow}</p>
-        <h2 className="mt-1 text-xl font-black text-white sm:text-2xl">{title}</h2>
+    <section className="mx-auto my-6 max-w-[600px] overflow-hidden rounded-lg border border-cyan-300/15 bg-[#07111d] shadow-xl shadow-black/25">
+      <div className="border-b border-white/[.07] bg-[linear-gradient(100deg,rgba(34,211,238,.12),rgba(139,92,246,.10),rgba(251,191,36,.08))] px-4 py-3 sm:px-5">
+        <p className="text-[10px] font-black uppercase tracking-[.2em] text-cyan-300">{eyebrow}</p>
+        <h2 className="mt-1 text-base font-black text-white sm:text-lg">{title}</h2>
       </div>
-      <div className="p-3 sm:p-5">{children}</div>
+      <div className="overflow-x-auto p-3 sm:p-4">{children}</div>
     </section>
   );
 }
@@ -25,7 +25,7 @@ function PositionVisual() {
   const g2 = ["Be", "Mg", "Ca", "Sr", "Ba", "Ra"];
   return (
     <VisualFrame eyebrow="Periodic architecture" title="Two columns, two valence patterns">
-      <svg viewBox="0 0 920 430" className="h-auto w-full" role="img" aria-label="S-block Groups 1 and 2 in a dark periodic table visual">
+      <svg viewBox="0 0 920 430" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="S-block Groups 1 and 2 in a dark periodic table visual">
         <defs>
           <linearGradient id="posBg" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#071827" />
@@ -83,7 +83,7 @@ function TrendVisual() {
   return (
     <VisualFrame eyebrow="Trend engine" title="What changes on descending an s-block group">
       <div className="grid gap-3 lg:grid-cols-[1fr_.85fr]">
-        <svg viewBox="0 0 620 430" className="h-auto w-full rounded-lg bg-[#050b13]" role="img" aria-label="Trend ladder down an s-block group">
+        <svg viewBox="0 0 620 430" className="mx-auto block h-auto w-full max-w-[540px] rounded-lg bg-[#050b13]" role="img" aria-label="Trend ladder down an s-block group">
           <defs>
             <linearGradient id="trendArrow" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#22d3ee" />
@@ -124,7 +124,7 @@ function TrendVisual() {
 function EnergyCycleVisual() {
   return (
     <VisualFrame eyebrow="Thermochemical logic" title="Why lithium wins in aqueous reducing power">
-      <svg viewBox="0 0 920 420" className="h-auto w-full" role="img" aria-label="Atomisation ionisation hydration cycle for lithium">
+      <svg viewBox="0 0 920 420" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Atomisation ionisation hydration cycle for lithium">
         <defs>
           <marker id="energyArrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
             <path d="M0 0 L0 6 L8 3 Z" fill="#67e8f9" />
@@ -171,7 +171,7 @@ function FlameVisual() {
   ];
   return (
     <VisualFrame eyebrow="Emission fingerprint" title="Flame lines are energy gaps made visible">
-      <svg viewBox="0 0 900 390" className="h-auto w-full" role="img" aria-label="Emission wavelengths for alkali metals">
+      <svg viewBox="0 0 900 390" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Emission wavelengths for alkali metals">
         <rect x="8" y="8" width="884" height="374" rx="26" fill="#03070d" stroke="#233247" />
         <line x1="74" y1="290" x2="832" y2="290" stroke="#64748b" strokeWidth="3" />
         <text x="76" y="330" fill="#94a3b8" fontSize="16">shorter wavelength · higher photon energy</text>
@@ -201,7 +201,7 @@ function ChargeDensityVisual() {
   ];
   return (
     <VisualFrame eyebrow="First-member anomalies" title="Charge packed into a small radius changes everything">
-      <svg viewBox="0 0 900 390" className="h-auto w-full" role="img" aria-label="Charge density comparison of s-block ions">
+      <svg viewBox="0 0 900 390" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Charge density comparison of s-block ions">
         <rect x="8" y="8" width="884" height="374" rx="26" fill="#07101a" stroke="#24374b" />
         {items.map((item) => (
           <g key={item.label}>
@@ -228,7 +228,7 @@ function OxygenSpeciesVisual() {
   ];
   return (
     <VisualFrame eyebrow="Oxygen-species decoder" title="Li → oxide, Na → peroxide, K/Rb/Cs → superoxide">
-      <svg viewBox="0 0 900 430" className="h-auto w-full" role="img" aria-label="Oxide peroxide and superoxide comparison">
+      <svg viewBox="0 0 900 430" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Oxide peroxide and superoxide comparison">
         <rect x="8" y="8" width="884" height="414" rx="26" fill="#06101a" stroke="#24364a" />
         {species.map((item) => (
           <g key={item.title}>
@@ -263,7 +263,7 @@ function ReactionAtlasVisual() {
   ] as const;
   return (
     <VisualFrame eyebrow="Reaction atlas" title="One metal centre, six high-frequency reaction paths">
-      <svg viewBox="0 0 900 430" className="h-auto w-full" role="img" aria-label="Reaction atlas for s-block metals">
+      <svg viewBox="0 0 900 430" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Reaction atlas for s-block metals">
         <rect x="8" y="8" width="884" height="414" rx="26" fill="#06101a" stroke="#24364a" />
         <circle cx="450" cy="210" r="82" fill="#0e7490" fillOpacity=".24" stroke="#22d3ee" strokeWidth="4" />
         <text x="450" y="202" textAnchor="middle" fill="#f8fafc" fontSize="31" fontWeight="900">s-block</text>
@@ -287,7 +287,7 @@ function SolvatedElectronVisual() {
   ] as const;
   return (
     <VisualFrame eyebrow="Liquid ammonia" title="The blue colour belongs to a solvated electron">
-      <svg viewBox="0 0 900 420" className="h-auto w-full" role="img" aria-label="Solvated electron cavity in liquid ammonia">
+      <svg viewBox="0 0 900 420" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Solvated electron cavity in liquid ammonia">
         <defs>
           <radialGradient id="electronGlow">
             <stop offset="0%" stopColor="#dbeafe" />
@@ -321,7 +321,7 @@ function SolvatedElectronVisual() {
 function BeCl2Visual() {
   return (
     <VisualFrame eyebrow="Phase-dependent structure" title="BeCl₂ is not “always linear”">
-      <svg viewBox="0 0 920 420" className="h-auto w-full" role="img" aria-label="Solid polymer dimer and monomer structures of beryllium chloride">
+      <svg viewBox="0 0 920 420" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Solid polymer dimer and monomer structures of beryllium chloride">
         <rect x="8" y="8" width="904" height="404" rx="26" fill="#06101a" stroke="#24364a" />
         <text x="160" y="54" textAnchor="middle" fill="#22d3ee" fontSize="20" fontWeight="900">SOLID · POLYMER</text>
         {[0, 1, 2].map((index) => {
@@ -376,7 +376,7 @@ function BeCl2Visual() {
 function SolubilityVisual() {
   return (
     <VisualFrame eyebrow="Opposing solubility trends" title="Hydroxides rise; sulphates fall">
-      <svg viewBox="0 0 900 420" className="h-auto w-full" role="img" aria-label="Opposite solubility trends of Group 2 hydroxides and sulphates">
+      <svg viewBox="0 0 900 420" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Opposite solubility trends of Group 2 hydroxides and sulphates">
         <rect x="8" y="8" width="884" height="404" rx="26" fill="#06101a" stroke="#24364a" />
         <line x1="92" y1="330" x2="824" y2="330" stroke="#64748b" strokeWidth="3" />
         <line x1="92" y1="330" x2="92" y2="70" stroke="#64748b" strokeWidth="3" />
@@ -410,7 +410,7 @@ function ProcessVisual() {
   ] as const;
   return (
     <VisualFrame eyebrow="Sodium industry" title="One feedstock, three industrial pathways">
-      <svg viewBox="0 0 920 380" className="h-auto w-full" role="img" aria-label="Industrial pathways from sodium chloride">
+      <svg viewBox="0 0 920 380" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Industrial pathways from sodium chloride">
         <defs>
           <marker id="processArrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
             <path d="M0 0 L0 6 L8 3 Z" fill="#94a3b8" />
@@ -438,7 +438,7 @@ function ProcessVisual() {
 function LimeCycleVisual() {
   return (
     <VisualFrame eyebrow="Calcium reaction loop" title="Limestone → quicklime → slaked lime → limestone">
-      <svg viewBox="0 0 900 420" className="h-auto w-full" role="img" aria-label="Calcium carbonate lime cycle">
+      <svg viewBox="0 0 900 420" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Calcium carbonate lime cycle">
         <defs>
           <marker id="limeArrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
             <path d="M0 0 L0 6 L8 3 Z" fill="#67e8f9" />
@@ -470,7 +470,7 @@ function LimeCycleVisual() {
 function PlasterVisual() {
   return (
     <VisualFrame eyebrow="Controlled hydration" title="Plaster works because dehydration is deliberately incomplete">
-      <svg viewBox="0 0 920 400" className="h-auto w-full" role="img" aria-label="Gypsum plaster of Paris hydration cycle and cement gypsum role">
+      <svg viewBox="0 0 920 400" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Gypsum plaster of Paris hydration cycle and cement gypsum role">
         <rect x="8" y="8" width="904" height="384" rx="26" fill="#06101a" stroke="#24364a" />
         <rect x="54" y="106" width="240" height="126" rx="24" fill="#22d3ee" fillOpacity=".08" stroke="#22d3ee" />
         <text x="174" y="148" textAnchor="middle" fill="#e0f2fe" fontSize="24" fontWeight="900">Gypsum</text>
@@ -523,7 +523,7 @@ function HardnessVisual() {
 function BiologyVisual() {
   return (
     <VisualFrame eyebrow="Ionic geography of a cell" title="Na⁺ outside, K⁺ inside; Mg²⁺ and Ca²⁺ do specialised work">
-      <svg viewBox="0 0 920 420" className="h-auto w-full" role="img" aria-label="Biological distribution of sodium potassium magnesium and calcium">
+      <svg viewBox="0 0 920 420" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Biological distribution of sodium potassium magnesium and calcium">
         <rect x="8" y="8" width="904" height="404" rx="26" fill="#06101a" stroke="#24364a" />
         <ellipse cx="460" cy="214" rx="250" ry="145" fill="#0f172a" stroke="#60a5fa" strokeWidth="5" />
         <ellipse cx="460" cy="214" rx="220" ry="118" fill="#0b1320" stroke="#1e3a8a" strokeWidth="2" strokeDasharray="8 7" />
@@ -584,7 +584,7 @@ function DiagonalMapVisual() {
   ] as const;
   return (
     <VisualFrame eyebrow="Why “diagonal”" title="One step right, one step down: charge density converges">
-      <svg viewBox="0 0 900 340" className="h-auto w-full" role="img" aria-label="Periodic-table diagonal relationship map for lithium magnesium beryllium and aluminium">
+      <svg viewBox="0 0 900 340" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Periodic-table diagonal relationship map for lithium magnesium beryllium and aluminium">
         <rect x="8" y="8" width="884" height="324" rx="26" fill="#06101a" stroke="#24364a" />
         <text x="450" y="46" textAnchor="middle" fill="#94a3b8" fontSize="16">Period 2 (top row) · Period 3 (bottom row)</text>
         {cells.map((c) => (
@@ -608,7 +608,7 @@ function DiagonalMapVisual() {
 function CarbideVisual() {
   return (
     <VisualFrame eyebrow="Hydrolysis identifies the carbide" title="Methanide gives methane; acetylide gives ethyne">
-      <svg viewBox="0 0 900 360" className="h-auto w-full" role="img" aria-label="Comparison of methanide and acetylide carbide hydrolysis">
+      <svg viewBox="0 0 900 360" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Comparison of methanide and acetylide carbide hydrolysis">
         <rect x="8" y="8" width="884" height="344" rx="26" fill="#06101a" stroke="#24364a" />
         <rect x="50" y="60" width="360" height="240" rx="22" fill="#22d3ee" fillOpacity=".07" stroke="#22d3ee" strokeOpacity=".6" />
         <text x="230" y="100" textAnchor="middle" fill="#67e8f9" fontSize="19" fontWeight="900">METHANIDE</text>
@@ -636,7 +636,7 @@ function HydrideFamilyVisual() {
   ] as const;
   return (
     <VisualFrame eyebrow="Three hydride families" title="Same H⁻ role, three very different structures">
-      <svg viewBox="0 0 900 320" className="h-auto w-full" role="img" aria-label="Comparison of saline covalent and complex metal hydrides">
+      <svg viewBox="0 0 900 320" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Comparison of saline covalent and complex metal hydrides">
         <rect x="8" y="8" width="884" height="304" rx="26" fill="#06101a" stroke="#24364a" />
         {families.map((f) => (
           <g key={f.title}>
@@ -657,7 +657,7 @@ function HydrideFamilyVisual() {
 function HalideLatticeVisual() {
   return (
     <VisualFrame eyebrow="Two packing choices" title="6:6 rock-salt versus 8:8 caesium-chloride coordination">
-      <svg viewBox="0 0 900 360" className="h-auto w-full" role="img" aria-label="NaCl type and CsCl type crystal lattice coordination comparison">
+      <svg viewBox="0 0 900 360" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="NaCl type and CsCl type crystal lattice coordination comparison">
         <rect x="8" y="8" width="884" height="344" rx="26" fill="#06101a" stroke="#24364a" />
         <text x="230" y="50" textAnchor="middle" fill="#67e8f9" fontSize="19" fontWeight="900">NaCl TYPE · 6:6</text>
         {[0, 1, 2].map((row) =>
@@ -690,7 +690,7 @@ function BeH2PolymerVisual() {
   const units = [0, 1, 2];
   return (
     <VisualFrame eyebrow="Electron-deficient bridging" title="Polymeric BeH₂ — a chain of Be–H–Be 3c–2e bonds">
-      <svg viewBox="0 0 920 360" className="h-auto w-full" role="img" aria-label="Polymeric beryllium hydride chain with bridging hydrogen atoms">
+      <svg viewBox="0 0 920 360" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Polymeric beryllium hydride chain with bridging hydrogen atoms">
         <rect x="8" y="8" width="904" height="344" rx="26" fill="#06101a" stroke="#24364a" />
         <text x="460" y="52" textAnchor="middle" fill="#94a3b8" fontSize="15">chain continues both directions →</text>
         {units.map((index) => {
@@ -726,7 +726,7 @@ function BeH2PolymerVisual() {
 function BeCl2StructureCompactVisual() {
   return (
     <VisualFrame eyebrow="Cl-bridged network" title="BeCl₂ bridging: lone-pair donation, not a 3c–2e bond">
-      <svg viewBox="0 0 900 260" className="h-auto w-full" role="img" aria-label="Beryllium chloride bridging bond detail">
+      <svg viewBox="0 0 900 260" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Beryllium chloride bridging bond detail">
         <rect x="8" y="8" width="884" height="244" rx="22" fill="#06101a" stroke="#24364a" />
         <circle cx="300" cy="130" r="24" fill="#0e7490" stroke="#67e8f9" strokeWidth="2.5" />
         <text x="300" y="138" textAnchor="middle" fill="#ecfeff" fontSize="17" fontWeight="900">Be</text>
@@ -768,7 +768,7 @@ function Be4OCluster({
   ];
   return (
     <VisualFrame eyebrow="Be₄O-core cluster" title={`${formula} — tetrahedral Be₄ core, six bridging ligands`}>
-      <svg viewBox="0 0 900 460" className="h-auto w-full" role="img" aria-label={`${formula} structural diagram with central oxide and four beryllium atoms`}>
+      <svg viewBox="0 0 900 460" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label={`${formula} structural diagram with central oxide and four beryllium atoms`}>
         <rect x="8" y="8" width="884" height="444" rx="26" fill="#06101a" stroke="#24364a" />
         <text x="450" y="48" textAnchor="middle" fill={tone} fontSize="20" fontWeight="900">{formula}</text>
         {edges.map(([a, b], index) => {
@@ -824,7 +824,7 @@ function EdtaChelationVisual() {
   ] as const;
   return (
     <VisualFrame eyebrow="Hexadentate chelation" title="[Ca(EDTA)]²⁻ — 5 five-membered chelate rings">
-      <svg viewBox="0 0 900 500" className="h-auto w-full" role="img" aria-label="EDTA chelating calcium ion with two nitrogen and four oxygen donors">
+      <svg viewBox="0 0 900 500" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="EDTA chelating calcium ion with two nitrogen and four oxygen donors">
         <rect x="8" y="8" width="884" height="404" rx="26" fill="#06101a" stroke="#24364a" />
         <circle cx="450" cy="230" r="34" fill="#fbbf24" fillOpacity=".2" stroke="#fbbf24" strokeWidth="3" />
         <text x="450" y="238" textAnchor="middle" fill="#fef3c7" fontSize="18" fontWeight="900">Ca²⁺</text>
@@ -868,7 +868,7 @@ function CrownEtherVisual() {
   });
   return (
     <VisualFrame eyebrow="Macrocyclic ligand" title="18-crown-6 — six ether oxygens face the ring centre">
-      <svg viewBox="0 0 900 420" className="h-auto w-full" role="img" aria-label="18-crown-6 macrocyclic ether coordinating a Group 2 cation">
+      <svg viewBox="0 0 900 420" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="18-crown-6 macrocyclic ether coordinating a Group 2 cation">
         <rect x="8" y="8" width="884" height="384" rx="26" fill="#06101a" stroke="#24364a" />
         {points.map((p, index) => {
           const next = points[(index + 1) % n];
@@ -908,7 +908,7 @@ function ChlorophyllMgVisual() {
   const R = 110;
   return (
     <VisualFrame eyebrow="Photosynthetic pigment" title="Chlorophyll a — Mg²⁺ in a chlorin (porphyrin-type) N₄ macrocycle">
-      <svg viewBox="0 0 900 460" className="h-auto w-full" role="img" aria-label="Chlorophyll magnesium coordinated by four pyrrole nitrogens">
+      <svg viewBox="0 0 900 460" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Chlorophyll magnesium coordinated by four pyrrole nitrogens">
         <rect x="8" y="8" width="884" height="404" rx="26" fill="#06101a" stroke="#24364a" />
         <circle cx={cx} cy={cy} r="170" fill="none" stroke="#34d399" strokeOpacity=".35" strokeWidth="3" strokeDasharray="10 8" />
         <circle cx={cx} cy={cy} r="32" fill="#34d399" fillOpacity=".2" stroke="#34d399" strokeWidth="3" />
@@ -943,7 +943,7 @@ function ChlorophyllMgVisual() {
 function GrignardCenterVisual() {
   return (
     <VisualFrame eyebrow="Solvated organometallic centre" title="Tetrahedral Mg in solid Grignard reagents">
-      <svg viewBox="0 0 900 340" className="h-auto w-full" role="img" aria-label="Representative ether-solvated tetrahedral Grignard magnesium centre">
+      <svg viewBox="0 0 900 340" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Representative ether-solvated tetrahedral Grignard magnesium centre">
         <rect x="8" y="8" width="884" height="304" rx="26" fill="#06101a" stroke="#24364a" />
         <circle cx="450" cy="170" r="30" fill="#0e7490" fillOpacity=".22" stroke="#67e8f9" strokeWidth="3" />
         <text x="450" y="178" textAnchor="middle" fill="#ecfeff" fontSize="18" fontWeight="900">Mg</text>
@@ -968,7 +968,7 @@ function GrignardCenterVisual() {
 function PidgeonProcessVisual() {
   return (
     <VisualFrame eyebrow="Mg from dolomite" title="Pidgeon process — calcined dolomite reduced by ferrosilicon">
-      <svg viewBox="0 0 900 320" className="h-auto w-full" role="img" aria-label="Pidgeon process for magnesium extraction from dolomite">
+      <svg viewBox="0 0 900 320" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Pidgeon process for magnesium extraction from dolomite">
         <defs>
           <marker id="pidgeonArrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
             <path d="M0 0 L0 6 L8 3 Z" fill="#67e8f9" />
@@ -1000,7 +1000,7 @@ function PidgeonProcessVisual() {
 function DowProcessVisual() {
   return (
     <VisualFrame eyebrow="Mg from seawater / brine" title="Dow processes — two routes to MgCl₂ feedstock for electrolysis">
-      <svg viewBox="0 0 920 420" className="h-auto w-full" role="img" aria-label="Dow sea water and Dow natural brine processes for magnesium extraction">
+      <svg viewBox="0 0 920 420" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Dow sea water and Dow natural brine processes for magnesium extraction">
         <defs>
           <marker id="dowArrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
             <path d="M0 0 L0 6 L8 3 Z" fill="#94a3b8" />
@@ -1050,7 +1050,7 @@ function DowProcessVisual() {
 function CyanamideNetworkVisual() {
   return (
     <VisualFrame eyebrow="Nitrogen-fixation chemistry" title="Calcium cyanamide — full reaction network">
-      <svg viewBox="0 0 920 720" className="h-auto w-full" role="img" aria-label="Calcium cyanamide full reaction network from CaC2 to melamine resins">
+      <svg viewBox="0 0 920 720" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Calcium cyanamide full reaction network from CaC2 to melamine resins">
         <defs>
           <marker id="cyanArrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
             <path d="M0 0 L0 6 L8 3 Z" fill="#67e8f9" />
@@ -1194,7 +1194,7 @@ function EdtaFreeLigandVisual() {
   const nFor = [n1, n1, n2, n2];
   return (
     <VisualFrame eyebrow="Free ligand (not a metal complex)" title="EDTA — ethylenediaminetetraacetic acid">
-      <svg viewBox="0 0 900 440" className="h-auto w-full" role="img" aria-label="Free EDTA ligand structure showing two amine nitrogens joined by an ethylenediamine backbone, each bearing two carboxymethyl arms">
+      <svg viewBox="0 0 900 440" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Free EDTA ligand structure showing two amine nitrogens joined by an ethylenediamine backbone, each bearing two carboxymethyl arms">
         <rect x="8" y="8" width="884" height="424" rx="26" fill="#06101a" stroke="#24364a" />
         {/* ethylenediamine backbone */}
         <line x1={n1.x} y1={n1.y} x2="400" y2="210" stroke="#a3e635" strokeWidth="3" />
@@ -1245,7 +1245,7 @@ function BeHydrateVisual() {
   ];
   return (
     <VisualFrame eyebrow="Tetrahedral hydration complex" title="[Be(H₂O)₄]²⁺ — coordination number 4">
-      <svg viewBox="0 0 900 420" className="h-auto w-full" role="img" aria-label="Tetrahedral hydrated beryllium ion with four water ligands and overall 2 plus charge">
+      <svg viewBox="0 0 900 420" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Tetrahedral hydrated beryllium ion with four water ligands and overall 2 plus charge">
         <rect x="8" y="8" width="884" height="384" rx="26" fill="#06101a" stroke="#24364a" />
         {ligands.map((lig, index) => {
           if (lig.bond === "plain") {
@@ -1328,7 +1328,7 @@ function BeOxalateVisual() {
   );
   return (
     <VisualFrame eyebrow="Tetrahedral bis-chelate" title="[Be(ox)₂]²⁻ — bis(oxalato)beryllate">
-      <svg viewBox="0 0 900 400" className="h-auto w-full" role="img" aria-label="Beryllium coordinated by two bidentate oxalate ligands through four oxygen donors, overall 2 minus charge">
+      <svg viewBox="0 0 900 400" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Beryllium coordinated by two bidentate oxalate ligands through four oxygen donors, overall 2 minus charge">
         <rect x="8" y="8" width="884" height="384" rx="26" fill="#06101a" stroke="#24364a" />
         {oxalate(left)}
         {oxalate(right)}

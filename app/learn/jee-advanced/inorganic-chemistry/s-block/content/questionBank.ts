@@ -1,15 +1,28 @@
-// Faithful reproduction of the authored source assignments — content
-// unchanged. Alkali Metals: "Alkali Metals Assignment-1" (Sections A-G,
-// Q1-60, full answer key + detailed solutions). Alkaline Earth Metals:
-// "s Block Assignment-2" (Sections A-J, full answer key + detailed
-// solutions) with the supplementary "Alkaline Earth Metals 80Q" set
-// appended in full beneath it.
+// Faithful reproduction of the authored source assignments. The only
+// changes to the source text are format conversion (pandoc -> GFM pipe
+// tables, pandoc backslash-escapes removed, heading levels shifted down
+// one) plus the transcription notes below.
 //
-// Source Word-embedded reaction-scheme images in the Alkali Metals doc
+// Alkali Metals: "Alkali Metals Assignment-1" -- Sections A-G, Q1-60,
+// full answer key + detailed solutions.
+// Alkaline Earth Metals: "s Block Assignment-2" -- Sections A-J, full
+// answer key + detailed solutions -- with the supplementary "Alkaline
+// Earth Metals 80Q" set appended in full beneath it.
+//
+// Word-embedded reaction-scheme images in the Alkali Metals source
 // (Q29-Q30, Q35-Q40 and the Q43 78-equation sweep) were OCR-transcribed
-// from the source PDF into the shared \`A [condition] ⟶ B\` equation
-// syntax. A few Group-2 structure/bonding diagrams (AEM Section H) could
-// not be reproduced as text and are marked in place of the image.
+// from the source PDF into the shared "A [condition] -> B" equation
+// syntax. Three coefficient/symbol transcription slips were corrected
+// against the source PDF: Q39 transformation A (2P, not 4P), Q43 #8
+// (2M + 2ROH), Q43 #34 (>=373 K). The Q43 sweep intentionally keeps the
+// four authored trap entries (#11, #17, #77, #78) that the doc's own
+// solution flags as incorrect.
+//
+// ~15 Group-2 structure diagrams (AEM Section H; 80Q Section D) are
+// decorative illustrations -- every associated question stem fully
+// describes the structure or names a standard species, and the answer
+// keys confirm the answers are standard structural facts. Each image is
+// marked in place; none is required to answer its question.
 
 export const ALKALI_METALS_QUESTION_BANK_MARKDOWN = String.raw`
 **ALKALI METALS**
@@ -280,8 +293,8 @@ lithium. Which option gives the complete set of correct statements?
 >
 > **(D)** 2, 3, 4, 5 and 6 only
 
-**11.** Consider the Li–Mg diagonal relationship. Which option gives the
-complete set of correct statements?
+**11.** Consider the Li–Mg diagonal relationship. Which option gives
+the complete set of correct statements?
 
 > **1.** Li and Mg have comparable ionic sizes/charge-density effects
 > that underlie their diagonal resemblance.
@@ -493,8 +506,8 @@ numbers are all correct.
 **19.** Six precipitation/solubility statements are given. Select every
 option whose listed statement numbers are all correct.
 
-> **1.** In the ammonia–soda process, NaHCO₃ separates from the reaction
-> mixture as a crystalline solid.
+> **1.** In the ammonia–soda process, NaHCO₃ separates from the
+> reaction mixture as a crystalline solid.
 >
 > **2.** The analogous potassium route fails because KHCO₃ is too
 > soluble to precipitate efficiently.
@@ -599,42 +612,42 @@ every option whose listed statement numbers are all correct.
 wavelength.
 
 | **Column I** | **Column II** |
-|--------------|---------------|
-| A. Li        | P. 670.8 nm   |
-| B. Na        | Q. 589.2 nm   |
-| C. K         | R. 766.5 nm   |
-| D. Rb        | S. 780.0 nm   |
-| E. Cs        | T. 455.5 nm   |
+|---|---|
+| A. Li | P. 670.8 nm |
+| B. Na | Q. 589.2 nm |
+| C. K | R. 766.5 nm |
+| D. Rb | S. 780.0 nm |
+| E. Cs | T. 455.5 nm |
 
 **24.** Match each potassium/sodium oxygen compound with all applicable
 characteristics.
 
-| **Column I** | **Column II**    |
-|--------------|------------------|
-| A. K₂O       | P. Contains O²⁻  |
-| B. K₂O₂      | Q. Contains O₂²⁻ |
-| C. KO₂       | R. Contains O₂⁻  |
-| D. KO₃       | S. Contains O₃⁻  |
-| E. Na₂O₂     | T. Diamagnetic   |
-|              | U. Paramagnetic  |
+| **Column I** | **Column II** |
+|---|---|
+| A. K₂O | P. Contains O²⁻ |
+| B. K₂O₂ | Q. Contains O₂²⁻ |
+| C. KO₂ | R. Contains O₂⁻ |
+| D. KO₃ | S. Contains O₃⁻ |
+| E. Na₂O₂ | T. Diamagnetic |
+|  | U. Paramagnetic |
 
 **25.** Match each compound with all products/observations obtained on
 strong heating.
 
-| **Column I** | **Column II**                     |
-|--------------|-----------------------------------|
-| A. LiNO₃     | P. Metal oxide is a solid product |
-| B. NaNO₃     | Q. Nitrite is a solid product     |
-| C. Li₂CO₃    | R. Carbonate is a solid product   |
-| D. NaHCO₃    | S. NO₂ is evolved                 |
-|              | T. CO₂ is evolved                 |
-|              | U. O₂ is evolved                  |
-|              | V. H₂O is evolved                 |
+| **Column I** | **Column II** |
+|---|---|
+| A. LiNO₃ | P. Metal oxide is a solid product |
+| B. NaNO₃ | Q. Nitrite is a solid product |
+| C. Li₂CO₃ | R. Carbonate is a solid product |
+| D. NaHCO₃ | S. NO₂ is evolved |
+|  | T. CO₂ is evolved |
+|  | U. O₂ is evolved |
+|  | V. H₂O is evolved |
 
 **26.** Match each halide with the characteristic feature(s).
 
 | **Column I** | **Column II** |
-|----|----|
+|---|---|
 | A. LiF | P. Low water-solubility mainly because of high lattice enthalpy |
 | B. LiCl | Q. Low water-solubility mainly because of small hydration enthalpy |
 | C. LiI | R. Soluble in ethanol, acetone and ethyl acetate |
@@ -644,7 +657,7 @@ strong heating.
 **27.** Match each metal with all applicable properties.
 
 | **Column I** | **Column II** |
-|----|----|
+|---|---|
 | A. Li | P. Forms nitride by direct combination with N₂ |
 | B. Mg | Q. Reacts comparatively slowly with water |
 | C. K | R. Forms superoxide as the characteristic major oxygen product |
@@ -654,18 +667,19 @@ strong heating.
 **28.** Match each reagent/condition with the principal product(s)
 obtained with NaOH.
 
-| **Column I**             | **Column II**     |
-|--------------------------|-------------------|
-| A. CO₂, limited          | P. Na₂CO₃         |
-| B. NO₂                   | Q. NaNO₂ + NaNO₃  |
-| C. NH₄Cl                 | R. NH₃↑           |
-| D. Si + H₂O              | S. Na₂SiO₃ + H₂↑  |
-| E. P₄ + H₂O              | T. PH₃↑ + NaH₂PO₂ |
-| F. Cl₂, cold/dilute      | U. NaCl + NaClO   |
-| G. Cl₂, hot/concentrated | V. NaCl + NaClO₃  |
-| H. Al₂O₃                 | W. NaAlO₂         |
+| **Column I** | **Column II** |
+|---|---|
+| A. CO₂, limited | P. Na₂CO₃ |
+| B. NO₂ | Q. NaNO₂ + NaNO₃ |
+| C. NH₄Cl | R. NH₃↑ |
+| D. Si + H₂O | S. Na₂SiO₃ + H₂↑ |
+| E. P₄ + H₂O | T. PH₃↑ + NaH₂PO₂ |
+| F. Cl₂, cold/dilute | U. NaCl + NaClO |
+| G. Cl₂, hot/concentrated | V. NaCl + NaClO₃ |
+| H. Al₂O₃ | W. NaAlO₂ |
 
-## #@ SECTION D — COMPREHENSION + REACTION-SEQUENCE 
+
+## SECTION D — COMPREHENSION + REACTION-SEQUENCE 
 
 *Questions integrate identification, stoichiometry and reaction
 sequences.*
@@ -831,7 +845,7 @@ Al₂O₃ + 2NaOH [fusion] ⟶ P₁₈
 a colourless gas rapidly oxidised by O₂; R is a colourless paramagnetic
 gas. Other identities are hidden.
 
-A. 4LiNO₃ [Δ] ⟶ 4P + 4Q↑ + R↑
+A. 4LiNO₃ [Δ] ⟶ 2P + 4Q↑ + R↑
 
 B. 2NaNO₃ [≈500 °C] ⟶ 2S + R↑
 
@@ -936,7 +950,7 @@ correct as written, including the stated conditions?
 
 7. 2M + X₂ [suitable conditions] ⟶ 2MX
 
-8. M + 2ROH [dry alcohol] ⟶ 2MOR + H₂↑
+8. 2M + 2ROH [dry alcohol] ⟶ 2MOR + H₂↑
 
 9. 2M + 2NH₃ [gaseous NH₃; warm] ⟶ 2MNH₂ + H₂↑
 
@@ -988,7 +1002,7 @@ correct as written, including the stated conditions?
 
 33. Na₂CO₃·10H₂O [≈375 K] ⟶ Na₂CO₃·H₂O + 9H₂O
 
-34. Na₂CO₃·H₂O [>373 K] ⟶ Na₂CO₃ + H₂O
+34. Na₂CO₃·H₂O [≥373 K] ⟶ Na₂CO₃ + H₂O
 
 35. CO₃²⁻ + H₂O [aqueous equilibrium] ⇌ HCO₃⁻ + OH⁻
 
@@ -1420,7 +1434,7 @@ uses.*
 **ANSWER KEY**
 
 | **1** | A | **16** | A, B, C | **31** | A | **46** | 56.6 |
-|----|----|----|----|----|----|----|----|
+|---|---|---|---|---|---|---|---|
 | **2** | D | **17** | B, C, D | **32** | 448 | **47** | 8 |
 | **3** | C | **18** | A, C, D | **33** | B | **48** | 3 |
 | **4** | B | **19** | A, B, D | **34** | 64 | **49** | 2 |
@@ -1524,11 +1538,11 @@ false: Li₂O and MgO do not form stable superoxides on further oxidation.
 
 **Q12. Answer: A**
 
-Statements 1–5 are correct. Causticisation and the ferrite route prepare
-NaOH; diaphragm-cell cathodic reduction is of water; the mercury cathode
-gives Na(Hg); and NaHCO₃ precipitates in the ammonia–soda process.
-Statement 6 is false because KHCO₃ is too soluble to precipitate
-efficiently.
+Statements 1–5 are correct. Causticisation and the ferrite route
+prepare NaOH; diaphragm-cell cathodic reduction is of water; the mercury
+cathode gives Na(Hg); and NaHCO₃ precipitates in the ammonia–soda
+process. Statement 6 is false because KHCO₃ is too soluble to
+precipitate efficiently.
 
 **Q13. Answer: A, B, D**
 
@@ -1601,8 +1615,8 @@ from aqueous brine. Hence A, B and D.
 
 **Q23. Answer: A–P; B–Q; C–R; D–S; E–T**
 
-Direct flame matching: Li–670.8 nm (P), Na–589.2 nm (Q), K–766.5 nm (R),
-Rb–780.0 nm (S), Cs–455.5 nm (T).
+Direct flame matching: Li–670.8 nm (P), Na–589.2 nm (Q), K–766.5 nm
+(R), Rb–780.0 nm (S), Cs–455.5 nm (T).
 
 **Q24. Answer: A–P,T; B–Q,T; C–R,U; D–S,U; E–Q,T**
 
@@ -1838,8 +1852,8 @@ gives NaClO₃, as in statement 11. Total = 11.
 
 **Q60. Answer: 11**
 
-Statements 1–11 are correct. Statement 12 is false because NaHCO₃ reacts
-with NaOH: NaHCO₃ + NaOH ⟶ Na₂CO₃ + H₂O. Total = 11.
+Statements 1–11 are correct. Statement 12 is false because NaHCO₃
+reacts with NaOH: NaHCO₃ + NaOH ⟶ Na₂CO₃ + H₂O. Total = 11.
 `;
 
 export const ALKALINE_EARTH_METALS_QUESTION_BANK_MARKDOWN = String.raw`
@@ -2744,8 +2758,8 @@ donor solvents.
 7. BeF₂ is unusually water-soluble, whereas fluorides of the heavier
 members are high-melting and poorly soluble.
 
-8. The chlorides, bromides and iodides of Mg–Ba are predominantly ionic
-and generally water-soluble.
+8. The chlorides, bromides and iodides of Mg–Ba are predominantly
+ionic and generally water-soluble.
 
 9. Hydrate-forming tendency of the halides increases from Mg to Ba.
 
@@ -2760,7 +2774,7 @@ prepared indirectly.
 2. BeH₂ and MgH₂ are covalent/polymeric; CaH₂, SrH₂ and BaH₂ are
 predominantly ionic hydrides.
 
-3. The Be–H–Be bridge is a three-centre–two-electron unit, not a
+3. The Be–H--Be bridge is a three-centre–two-electron unit, not a
 localised H⁻ bridge.
 
 4. Group-2 hydrides are reducing agents and hydrolyse with water or
@@ -2960,58 +2974,112 @@ C01. Complete the five metal combustion and initial water reactions
 below. Balance each equation and place every condition on the reaction
 arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) 2Be + O₂ | *ignition* **⟶** | ________________ |
+| (b) 3Be + N₂ | *ignition* **⟶** | ________________ |
+| (c) 2Mg + O₂ | *burning* **⟶** | ________________ |
+| (d) 3Mg + N₂ | *burning* **⟶** | ________________ |
+| (e) Ca + 2H₂O | *cold* **⟶** | ________________ |
 
 C02. Complete the five water, acid and halogen reactions below. Balance
 each equation and place every condition on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) Mg + H₂O(g) | *steam* **⟶** | ________________ |
+| (b) Sr + 2H₂O | *cold* **⟶** | ________________ |
+| (c) Ba + 2H₂O | *cold* **⟶** | ________________ |
+| (d) M + X₂ | *elevated T* **⟶** | ________________ |
+| (e) M + 2HCl | *dilute* **⟶** | ________________ |
 
 C03. Complete the five hydride, ammonia and amphoteric-oxide chemistry
 below. Balance each equation and place every condition on the reaction
 arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) Ca + H₂ | *heat* **⟶** | ________________ |
+| (b) 2BeCl₂ + LiAlH₄ | *ether* **⟶** | ________________ |
+| (c) M + (x+y)NH₃ | *liq. NH₃* **⟶** | ________________ |
+| (d) MO + H₂O | **⟶** | ________________ |
+| (e) Be(OH)₂ + 2OH⁻ | *excess alkali* **⟶** | ________________ |
 
 C04. Complete the five carbonate and nitrate salt transformations below.
 Balance each equation and place every condition on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) Be(OH)₂ + 2HCl + 2H₂O | **⟶** | ________________ |
+| (b) MCl₂ + Na₂CO₃ | *aq.* **⟶** | ________________ |
+| (c) MCO₃ | *Δ* **⟶** | ________________ |
+| (d) MCO₃ + 2HNO₃ | *dilute* **⟶** | ________________ |
+| (e) 2M(NO₃)₂ | *Δ* **⟶** | ________________ |
 
 C05. Complete the five limestone, lime and calcium building chemistry
 below. Balance each equation and place every condition on the reaction
 arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) CaCO₃ | *1070-1270 K* **⟶** | ________________ |
+| (b) CaO + H₂O | *slaking* **⟶** | ________________ |
+| (c) CaO + CO₂ | **⟶** | ________________ |
+| (d) CaO + SiO₂ | *high T* **⟶** | ________________ |
+| (e) 6CaO + P₄O₁₀ | *high T* **⟶** | ________________ |
 
 C06. Complete the five lime-water, bleaching and acid reactions below.
 Balance each equation and place every condition on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) Ca(OH)₂ + CO₂ | *limited CO₂* **⟶** | ________________ |
+| (b) CaCO₃ + CO₂ + H₂O | *excess CO₂* **⟶** | ________________ |
+| (c) 2Ca(OH)₂ + 2Cl₂ | *milk of lime* **⟶** | ________________ |
+| (d) Ca(OH)₂ + 2HCl | **⟶** | ________________ |
+| (e) Ca(OH)₂ + H₂SO₄ | **⟶** | ________________ |
 
 C07. Complete the five carbonate preparation, decomposition and acid
 reactions below. Balance each equation and place every condition on the
 reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) Ca(OH)₂ + CO₂ | *preparation* **⟶** | ________________ |
+| (b) CaCl₂ + Na₂CO₃ | *aq.* **⟶** | ________________ |
+| (c) CaCO₃ | *1200 K* **⟶** | ________________ |
+| (d) CaCO₃ + 2HCl | *dilute* **⟶** | ________________ |
+| (e) CaCO₃ + H₂SO₄ | *dilute* **⟶** | ________________ |
 
 C08. Complete the five gypsum, plaster and hydration-state changes
 below. Balance each equation and place every condition on the reaction
 arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) 2CaSO₄·2H₂O | *393 K* **⟶** | ________________ |
+| (b) CaSO₄·½H₂O + 3/2H₂O | *setting* **⟶** | ________________ |
+| (c) CaSO₄·2H₂O | *above 393 K* **⟶** | ________________ |
+| (d) CaSO₄·½H₂O | *strong heating* **⟶** | ________________ |
+| (e) CaSO₄·2H₂O | *controlled dehydration* **⟶** | ________________ |
 
 C09. Complete the five cement-clinker and nitrate transformations below.
 Balance each equation and place every condition on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) 2CaO + SiO₂ | *kiln* **⟶** | ________________ |
+| (b) 3CaO + SiO₂ | *kiln* **⟶** | ________________ |
+| (c) 3CaO + Al₂O₃ | *kiln* **⟶** | ________________ |
+| (d) 2Ca(NO₃)₂ | *Δ* **⟶** | ________________ |
+| (e) Mg + air | *ignition* **⟶** | ________________ |
 
 C10. Complete the five beryllium amphoterism and carbide hydrolysis
 below. Balance each equation and place every condition on the reaction
 arrow.
 
 | **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
-|:--:|:--:|:--:|
+|---|---|---|
 | (a) Be + 2OH⁻ + 2H₂O | **⟶** | ________________ |
 | (b) BeO + 2HCl | **⟶** | ________________ |
 | (c) BeO + 2OH⁻ + H₂O | **⟶** | ________________ |
@@ -3022,67 +3090,133 @@ C11. Complete the five beryllium fluoride/chloride preparation and
 hydrate heating below. Balance each equation and place every condition
 on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) (NH₄)₂BeF₄ | *Δ* **⟶** | ________________ |
+| (b) BeO + C + Cl₂ | *600-800 K* **⟶** | ________________ |
+| (c) [Be(H₂O)₄]Cl₂ | *heat* **⟶** | ________________ |
+| (d) MgCl₂·6H₂O | *heat* **⟶** | ________________ |
+| (e) CaCl₂·6H₂O | *controlled heat* **⟶** | ________________ |
 
 C12. Complete the five hardness removal, EDTA and soap scum below.
 Balance each equation and place every condition on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) Ca²⁺ + [H₂EDTA]²⁻ | *buffer* **⟶** | ________________ |
+| (b) Ca(HCO₃)₂ | *boiling* **⟶** | ________________ |
+| (c) Mg(HCO₃)₂ + 2Ca(OH)₂ | **⟶** | ________________ |
+| (d) CaSO₄ + Na₂CO₃ | *washing soda* **⟶** | ________________ |
+| (e) 2C₁₇H₃₅COO⁻ + Ca²⁺ | **⟶** | ________________ |
 
 C13. Complete the five liquid-ammonia electron and amide chemistry
 below. Balance each equation and place every condition on the reaction
 arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) 2NH₃ + 2e⁻ | *liq. NH₃* **⟶** | ________________ |
+| (b) M(NH₃)₆ | *slow decomposition* **⟶** | ________________ |
+| (c) Ca + 2NH₃ | *high T* **⟶** | ________________ |
+| (d) Sr + 2NH₃ | *high T* **⟶** | ________________ |
+| (e) Ba + 2NH₃ | *high T* **⟶** | ________________ |
 
 C14. Complete the five oxide-peroxide preparation and decomposition
 below. Balance each equation and place every condition on the reaction
 arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) 2BaO + O₂ | *~500°C/air* **⟶** | ________________ |
+| (b) Mg(OH)₂ + H₂O₂ | **⟶** | ________________ |
+| (c) Ca(OH)₂ + H₂O₂ | **⟶** | ________________ |
+| (d) BaO₂ + 2HCl | *dilute* **⟶** | ________________ |
+| (e) 2BaO₂ | *Δ* **⟶** | ________________ |
 
 C15. Complete the five sulphate reduction/decomposition and hardness
 removal below. Balance each equation and place every condition on the
 reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) MgSO₄ | *strong heat* **⟶** | ________________ |
+| (b) BaSO₄ + 4C | *high T* **⟶** | ________________ |
+| (c) Ca(HCO₃)₂ + Ca(OH)₂ | **⟶** | ________________ |
+| (d) CaSO₄ + Na₂CO₃ | **⟶** | ________________ |
+| (e) Ca²⁺ + [H₂EDTA]²⁻ | **⟶** | ________________ |
 
 C16. Complete the five beryllium and calcium hydride chemistry below.
 Balance each equation and place every condition on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) 2BeCl₂ + LiAlH₄ | *ether* **⟶** | ________________ |
+| (b) BeCl₂ + 2LiBH₄ | **⟶** | ________________ |
+| (c) BeB₂H₈ + 2PPh₃ | *sealed/heat* **⟶** | ________________ |
+| (d) CaH₂ + 2H₂O | **⟶** | ________________ |
+| (e) CaH₂ + 2HCl | **⟶** | ________________ |
 
 C17. Complete the five beryllium-halide and fluoro-complex chemistry
 below. Balance each equation and place every condition on the reaction
 arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) [Be(H₂O)₄]Cl₂ | *heat* **⟶** | ________________ |
+| (b) (NH₄)₂[BeF₄] | *heat* **⟶** | ________________ |
+| (c) 2BeO + CCl₄ | *~800°C* **⟶** | ________________ |
+| (d) CaF₂ + H₂SO₄ | *conc./heat* **⟶** | ________________ |
+| (e) BeF₂ + 2F⁻ | **⟶** | ________________ |
 
 C18. Complete the five nitride and carbide hydrolysis below. Balance
 each equation and place every condition on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) Ca₃N₂ + 6H₂O | **⟶** | ________________ |
+| (b) Be₂C + 4H₂O | **⟶** | ________________ |
+| (c) Ca + 2C | *~1100°C* **⟶** | ________________ |
+| (d) CaO + 3C | *~2000°C* **⟶** | ________________ |
+| (e) CaC₂ + 2H₂O | **⟶** | ________________ |
 
 C19. Complete the five carbide formation and cyanamide chemistry below.
 Balance each equation and place every condition on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) 2MgC₂ | *heat* **⟶** | ________________ |
+| (b) Mg₂C₃ + 4H₂O | **⟶** | ________________ |
+| (c) CaC₂ + N₂ | *~1100°C* **⟶** | ________________ |
+| (d) CaNCN + 5H₂O | *slow hydrolysis* **⟶** | ________________ |
+| (e) BaC₂ + N₂ | *high T* **⟶** | ________________ |
 
 C20. Complete the five cyanamide conversion to nitrogen products below.
 Balance each equation and place every condition on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) CaNCN + H₂SO₄ | **⟶** | ________________ |
+| (b) CaNCN + CO₂ + H₂O | **⟶** | ________________ |
+| (c) H₂NCN + H₂O | *pH<2 or >12* **⟶** | ________________ |
+| (d) H₂NCN + H₂S | **⟶** | ________________ |
+| (e) 3H₂NCN | *condensation/pyrolysis* **⟶** | ________________ |
 
 C21. Complete the five beryllium complex formation below. Balance each
 equation and place every condition on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) BeO + 2NH₃ + 4HF | **⟶** | ________________ |
+| (b) BeF₂ + 2F⁻ | **⟶** | ________________ |
+| (c) 4Be(OH)₂ + 6CH₃COOH | *evaporation* **⟶** | ________________ |
+| (d) Be²⁺ + 2ox²⁻ | **⟶** | ________________ |
+| (e) BeCl₂ + donor ether (D) | **⟶** | ________________ |
 
 C22. Complete the five nitride, carbide and amphoteric hydrolysis below.
 Balance each equation and place every condition on the reaction arrow.
 
 | **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
-|:--:|:--:|:--:|
+|---|---|---|
 | (a) Be₂C + 4H₂O | **⟶** | ________________ |
 | (b) Al₄C₃ + 12H₂O | **⟶** | ________________ |
 | (c) Be₃N₂ + 6H₂O | **⟶** | ________________ |
@@ -3093,33 +3227,69 @@ C23. Complete the five magnesium redox and fluoride transformations
 below. Balance each equation and place every condition on the reaction
 arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) 2Mg + CO₂ | *burning* **⟶** | ________________ |
+| (b) Mg₃N₂ + 6H₂O | **⟶** | ________________ |
+| (c) CaF₂ + H₂SO₄ | **⟶** | ________________ |
+| (d) HF + KF | **⟶** | ________________ |
+| (e) 2KHF₂ | *electrolysis* **⟶** | ________________ |
 
 C24. Complete the five magnesium-chloride heating and cyanamide
 formation below. Balance each equation and place every condition on the
 reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) MgCl₂·6H₂O | *Δ* **⟶** | ________________ |
+| (b) Mg(OH)Cl | *Δ* **⟶** | ________________ |
+| (c) CaC₂ + N₂ | **⟶** | ________________ |
+| (d) CaNCN + H₂SO₄ | **⟶** | ________________ |
+| (e) BaSO₄ + 4C | **⟶** | ________________ |
 
 C25. Complete the extraction and industrial-calcium transformations.
 Place every reagent and operating condition on the reaction arrow.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) CaCl₂(l) | *electrolysis* **⟶** *fused CaCl₂ + CaF₂* | ________________ |
+| (b) MgCl₂(l) | *electrolysis* **⟶** *fused, anhydrous* | ________________ |
+| (c) Mg(OH)₂ + 2HCl | *acidification* **⟶** *aqueous* | ________________ |
+| (d) CaO + 2NH₄Cl | *Solvay NH₃ recovery* **⟶** *heat* | ________________ |
+| (e) Ca₃(PO₄)₂ + 2H₂SO₄ | *superphosphate preparation* **⟶** *controlled acidulation* | ________________ |
 
 C26. Complete the magnesium-specific redox and organometallic
 transformations.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) 2Mg + CO₂ | *burning Mg* **⟶** *CO₂ atmosphere* | ________________ |
+| (b) 2Mg + SO₂ | *ignition* **⟶** *SO₂ atmosphere* | ________________ |
+| (c) Mg + 2H₂O | *hot water* **⟶** *oxide film disrupted* | ________________ |
+| (d) Mg + H₂O(g) | *steam* **⟶** *high temperature* | ________________ |
+| (e) Mg + R–X | *anhydrous ether* **⟶** *exclude moisture* | ________________ |
 
 C27. Complete the qualitative-analysis and hardness-related
 precipitations.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) Ca²⁺ + C₂O₄²⁻ | *aqueous* **⟶** *neutral/weakly acidic* | ________________ |
+| (b) Ba²⁺ + CrO₄²⁻ | *aqueous* **⟶** *yellow precipitate* | ________________ |
+| (c) Ba²⁺ + SO₄²⁻ | *aqueous* **⟶** *white precipitate* | ________________ |
+| (d) Mg²⁺ + NH₄⁺ + HPO₄²⁻ + OH⁻ | *NH₄Cl/NH₄OH buffer* **⟶** *phosphate test* | ________________ |
+| (e) Mg²⁺ + 2OH⁻ | *alkaline medium* **⟶** *precipitation* | ________________ |
 
 C28. Complete the remaining nitride, imide, sulphate and biological
 transformations.
 
-[TABLE]
+| **Reactant(s)** | **condition above / below arrow** | **Product(s)** |
+|---|---|---|
+| (a) Ca₃P₂ + 6H₂O | *hydrolysis* **⟶** *room temperature* | ________________ |
+| (b) CaNH + 2H₂O | *hydrolysis* **⟶** *warm* | ________________ |
+| (c) 2BaSO₄ | *very strong heat* **⟶** *thermal decomposition* | ________________ |
+| (d) BaCO₃ + 2HCl | *dilute acid* **⟶** *gas evolution* | ________________ |
+| (e) 6CO₂ + 6H₂O | *sunlight* **⟶** *chlorophyll* | ________________ |
 
 ## SECTION D — Multiple-Correct and Matrix Match
 
@@ -3296,7 +3466,7 @@ D08. Match each class/trend in List I with all applicable descriptions
 in List II.
 
 | **LIST I** | **LIST II** |
-|----|----|
+|---|---|
 | (A) Mg(OH)₂ → Ba(OH)₂ | (P) solubility increases down group |
 | (B) MgCO₃ → BaCO₃ | (Q) solubility decreases down group |
 | (C) MgSO₄ → BaSO₄ | (R) thermal stability increases down group |
@@ -3306,62 +3476,62 @@ in List II.
 
 D09. Match each oxide/hydroxide with all appropriate properties.
 
-| **LIST I**    | **LIST II**                                        |
-|---------------|----------------------------------------------------|
-| (A) BeO     | (P) amphoteric                                   |
-| (B) MgO     | (Q) predominantly ionic                          |
-| (C) CaO     | (R) refractory/high-melting material             |
-| (D) Ba(OH)₂ | (S) gives/contains a strongly basic hydroxide    |
-|               | (T) reacts readily with water                    |
-|               | (U) least basic member among listed basic oxides |
+| **LIST I** | **LIST II** |
+|---|---|
+| (A) BeO | (P) amphoteric |
+| (B) MgO | (Q) predominantly ionic |
+| (C) CaO | (R) refractory/high-melting material |
+| (D) Ba(OH)₂ | (S) gives/contains a strongly basic hydroxide |
+|  | (T) reacts readily with water |
+|  | (U) least basic member among listed basic oxides |
 
 D10. Match each hydride/carbide with all applicable statements.
 
-| **LIST I** | **LIST II**                                  |
-|------------|----------------------------------------------|
-| (A) BeH₂ | (P) covalent polymer                       |
-| (B) CaH₂ | (Q) contains hydride ion                   |
-| (C) Be₂C | (R) liberates H₂ on hydrolysis             |
-| (D) CaC₂ | (S) gives CH₄ on hydrolysis                |
-|            | (T) gives C₂H₂ on hydrolysis               |
-|            | (U) electron-deficient/multicentre bonding |
-|            | (V) carbide                                |
-|            | (W) gives a hydrocarbon on hydrolysis      |
+| **LIST I** | **LIST II** |
+|---|---|
+| (A) BeH₂ | (P) covalent polymer |
+| (B) CaH₂ | (Q) contains hydride ion |
+| (C) Be₂C | (R) liberates H₂ on hydrolysis |
+| (D) CaC₂ | (S) gives CH₄ on hydrolysis |
+|  | (T) gives C₂H₂ on hydrolysis |
+|  | (U) electron-deficient/multicentre bonding |
+|  | (V) carbide |
+|  | (W) gives a hydrocarbon on hydrolysis |
 
 D11. Match each Be/Ca complex or cluster with all valid structural
 descriptors.
 
-| **LIST I**           | **LIST II**                                     |
-|----------------------|-------------------------------------------------|
-| (A) [BeF₄]²⁻     | (P) tetrahedral Be environment                |
-| (B) [Be(ox)₂]²⁻  | (Q) chelate ring formation                    |
-| (C) Be₄O(OAc)₆     | (R) central Be₄O cluster                      |
-| (D) [Ca(EDTA)]²⁻ | (S) 1:1 metal:ligand complex                  |
-|                      | (T) oxygen-donor ligands                      |
-|                      | (U) six donor atoms available from one ligand |
-|                      | (V) anionic complex                           |
+| **LIST I** | **LIST II** |
+|---|---|
+| (A) [BeF₄]²⁻ | (P) tetrahedral Be environment |
+| (B) [Be(ox)₂]²⁻ | (Q) chelate ring formation |
+| (C) Be₄O(OAc)₆ | (R) central Be₄O cluster |
+| (D) [Ca(EDTA)]²⁻ | (S) 1:1 metal:ligand complex |
+|  | (T) oxygen-donor ligands |
+|  | (U) six donor atoms available from one ligand |
+|  | (V) anionic complex |
 
 D12. Match each calcium compound with all appropriate descriptions.
 
-| **LIST I**       | **LIST II**                                           |
-|------------------|-------------------------------------------------------|
-| (A) CaO        | (P) used in building/construction chemistry         |
-| (B) Ca(OH)₂    | (Q) reacts with CO₂                                 |
-| (C) CaCO₃      | (R) gives CO₂ with dilute acid                      |
-| (D) CaSO₄·½H₂O | (S) sets with water                                 |
-|                  | (T) prepared directly from limestone by calcination |
-|                  | (U) involved in whitewashing                        |
+| **LIST I** | **LIST II** |
+|---|---|
+| (A) CaO | (P) used in building/construction chemistry |
+| (B) Ca(OH)₂ | (Q) reacts with CO₂ |
+| (C) CaCO₃ | (R) gives CO₂ with dilute acid |
+| (D) CaSO₄·½H₂O | (S) sets with water |
+|  | (T) prepared directly from limestone by calcination |
+|  | (U) involved in whitewashing |
 
 D13. Match each substance/ion with all applicable roles or facts.
 
-| **LIST I**  | **LIST II**                                |
-|-------------|--------------------------------------------|
-| (A) Mg²⁺  | (P) ATP-associated enzyme chemistry      |
-| (B) Ca²⁺  | (Q) chlorophyll                          |
+| **LIST I** | **LIST II** |
+|---|---|
+| (A) Mg²⁺ | (P) ATP-associated enzyme chemistry |
+| (B) Ca²⁺ | (Q) chlorophyll |
 | (C) CaCl₂ | (R) bones/coagulation/neuromuscular role |
-| (D) BaSO₄ | (S) desiccant/refrigeration brine        |
-|             | (T) X-ray contrast material              |
-|             | (U) can be titrated with EDTA            |
+| (D) BaSO₄ | (S) desiccant/refrigeration brine |
+|  | (T) X-ray contrast material |
+|  | (U) can be titrated with EDTA |
 
 ## SECTION E — Comprehension Passages
 
@@ -3838,9 +4008,9 @@ stability).
 
 F20. Let a be the number of Group-2 chlorides BeCl₂–BaCl₂ that give a
 characteristic flame colour; b the number of correct pairings among
-Be—no colour, Mg—no colour, Ca—brick red, Sr—crimson and Ba—apple green;
-c the number of hydrated chlorides of Be/Mg/Ca/Sr/Ba that
-characteristically hydrolyse on direct heating; and d the number of
+Be—no colour, Mg—no colour, Ca—brick red, Sr—crimson and
+Ba—apple green; c the number of hydrated chlorides of Be/Mg/Ca/Sr/Ba
+that characteristically hydrolyse on direct heating; and d the number of
 Group-2 metals with no ordinary flame colour. Find a+b+c+d.
 
 F21. One mole of gypsum is heated only to plaster of Paris. Let a be the
@@ -3889,10 +4059,10 @@ nearest integer to CaO/(SiO₂+Al₂O₃+Fe₂O₃) for good cement; d the
 hydration number of gypsum used to control setting; and e the number of
 clinker phases C₃S, C₂S, C₃A and C₄AF. Find a+b+c+d+e.
 
-F27. Let a be the sum of centres and electrons in one Be–H–Be bridge; b
-be the number of the three regimes solid BeCl₂, vapour dimer Be₂Cl₄ and
-hot monomer BeCl₂ that is polymeric; c be the Be coordination number in
-basic beryllium acetate; d the number of bridging acetate groups in
+F27. Let a be the sum of centres and electrons in one Be–H--Be bridge;
+b be the number of the three regimes solid BeCl₂, vapour dimer Be₂Cl₄
+and hot monomer BeCl₂ that is polymeric; c be the Be coordination number
+in basic beryllium acetate; d the number of bridging acetate groups in
 Be₄O(OAc)₆; e the number of edges of its Be₄ tetrahedron; and f the Be
 coordination number in hot monomeric BeCl₂. Find a+b+c+d+e+f.
 
@@ -4140,7 +4310,11 @@ H01. Each of the six nitrate groups bridges one edge of the Be₄
 tetrahedron in basic beryllium nitrate, and the central O is bonded to
 all four Be centres. The total number of Be-O contacts is
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure be4o-acetate::
+
+
 
 > (A) 10
 >
@@ -4153,7 +4327,11 @@ all four Be centres. The total number of Be-O contacts is
 H02. Which statement best describes the bonding in polymeric BeH₂ shown
 in the figure?
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure beh2-chain::
+
+
 
 > (A) Only localized 2c-2e Be-H bonds are present.
 >
@@ -4203,32 +4381,52 @@ four-coordinate Be.
 H05. Draw/describe solid BeCl₂, vapour-phase Be₂Cl₄ and high-temperature
 monomeric BeCl₂. State the coordination and bonding change.
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure becl2-phases::
+
+
 
 H06. Compare [BeF₄]²⁻, [Be(OH)₄]²⁻ and [Be(ox)₂]²⁻ with respect to
 coordination number, geometry, ligand denticity and chelation.
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure be-ox2::
+
+
 
 H07. Basic beryllium acetate has formula Be₄O(OAc)₆. Count Be atoms,
 acetate bridges and Be–O(central) contacts; describe the Be₄O core.
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure be4o-acetate::
+
+
 
 H08. Basic beryllium nitrate contains a Be₄O core and six bidentate
 nitrate bridges. Count the total Be–O contacts counted as 12 bridge
 contacts plus central contacts, and explain the geometry.
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure be4o-nitrate::
+
+
 
 H09. Give four structural consequences of Be²⁺ being small, highly
 charged and restricted to 2s/2p valence orbitals.
 
 H10. Extended solid BeH₂ contains bridging hydrogen. Which
-electron-counting description is correct for a Be–H–Be bridge, and why
+electron-counting description is correct for a Be–H--Be bridge, and why
 is a free H⁻ lattice model inappropriate?
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure beh2-chain::
+
+
 
 > (A) Localised 2c–2e only
 >
@@ -4243,25 +4441,41 @@ Count the Be–H contacts at an interior Be, identify the multicentre
 bond, and explain why the drawing is not a chain of ordinary two-centre
 Be–H bonds.
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure beh2-chain::
+
+
 
 H12. Using the corrected phase diagram, state the Be coordination number
 and chloride type in (i) solid BeCl₂, (ii) vapour Be₂Cl₄ and (iii) hot
 monomer BeCl₂.
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure becl2-phases::
+
+
 
 H13. Compare the two Be₄O clusters and the bis(oxalato)beryllate ion.
 For each, identify the central/core motif, ligand denticity, number of
 bridges or chelate rings, and Be coordination number.
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure be4o-bridges::
+
+
 
 H14. The coordination sketches show the donor set around chlorophyll Mg
 and the free EDTA ligand. Count the explicitly marked donor atoms and
 state the metal:ligand stoichiometry in a Ca/Mg hardness titration.
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure donor-maps::
+
+
 
 ## SECTION I — Identification and Reaction Chains
 
@@ -4271,7 +4485,14 @@ I01. Integrated calcium industrial cycle
 > electric-furnace carbide formation and the cyanamide nitrogen-fixation
 > process.*
 
-[TABLE]
+| **Step / starting species** | **reagent and condition** | **product / unknown** |
+|---|---|---|
+| Step 1 CaCO₃ | *Δ* **⟶** *calcination* | A |
+| Step 2 A | *H₂O* **⟶** *slaking* | B |
+| Step 3 B | *CO₂* **⟶** *limited* | C |
+| Step 4 C | *CO₂ + H₂O* **⟶** *excess* | D |
+| Step 5 CaO + 3C | *2000 °C* **⟶** *electric furnace* | E + CO |
+| Step 6 E + N₂ | *1100 °C* **⟶** *nitrogen fixation* | F + C |
 
 1. Identify A-F.
 
@@ -4286,7 +4507,13 @@ I02. Gypsum, plaster and cement manufacture
 > tracks controlled dehydration and setting; the other tracks
 > calcination and high-temperature clinker formation.*
 
-[TABLE]
+| **Step / starting species** | **reagent and condition** | **product / unknown** |
+|---|---|---|
+| Step 1 CaSO₄·2H₂O | *393 K* **⟶** *controlled heating* | A |
+| Step 2 A | *H₂O* **⟶** *setting* | B |
+| Step 3 A | *strong heat* **⟶** *dehydration* | C |
+| Step 4 CaCO₃ | *kiln* **⟶** *CO₂ removed* | D |
+| Step 5 D + SiO₂/Al₂O₃ | *kiln* **⟶** *high temperature* | E |
 
 1. Identify A-E with hydration states.
 
@@ -4326,7 +4553,11 @@ I05. Calcium cyanamide and downstream nitrogen products
 > carbide. Acidification releases cyanamide, which is routed to three
 > commercially important nitrogen compounds.*
 
-[TABLE]
+| **Step / starting species** | **reagent and condition** | **product / unknown** |
+|---|---|---|
+| Step 1 CaC₂ | *N₂* **⟶** *1100 °C* | CaNCN |
+| Step 2 CaNCN | *H₂SO₄ or CO₂/H₂O* **⟶** *acidification* | H₂NCN |
+| Step 3 H₂NCN | *H₂O / H₂S / heat* **⟶** *selected route* | urea / thiourea / melamine |
 
 1. Fill every missing reagent or product.
 
@@ -4341,7 +4572,11 @@ I06. Barium carbonate-peroxide analytical sequence
 > the oxide gives a peroxide from which hydrogen peroxide is prepared
 > using an acid that removes Ba²⁺ as an insoluble salt.*
 
-[TABLE]
+| **Step / starting species** | **reagent and condition** | **product / unknown** |
+|---|---|---|
+| Step 1 A | *Δ* **⟶** *apple-green flame salt* | BaO |
+| Step 2 2BaO + O₂ | *air* **⟶** *about 500 °C* | 2BaO₂ |
+| Step 3 BaO₂ | *dil. H₂SO₄* **⟶** *cold* | H₂O₂ |
 
 1. Identify A and every product.
 
@@ -4368,7 +4603,10 @@ I08. Why hydrated MgCl₂ cannot be dried by simple heating
 > During heating, hydrolysis competes with dehydration and the material
 > passes through a basic chloride.*
 
-[TABLE]
+| **Step / starting species** | **reagent and condition** | **product / unknown** |
+|---|---|---|
+| Step 1 MgCl₂·6H₂O | *Δ* **⟶** *air* | A |
+| Step 2 A | *further Δ* **⟶** *air* | B |
 
 1. Identify A and B.
 
@@ -4383,7 +4621,12 @@ I09. Magnesium identification network
 > white light, reduces CO₂ and forms a chloride hexahydrate that
 > hydrolyses during heating.*
 
-[TABLE]
+| **Step / starting species** | **reagent and condition** | **product / unknown** |
+|---|---|---|
+| Step 1 Mg | *air* **⟶** *ignition* | A + B |
+| Step 2 A | *H₂O* **⟶** *slow* | C |
+| Step 3 B | *H₂O* **⟶** *hydrolysis* | C + NH₃ |
+| Step 4 MgCl₂·6H₂O | *Δ* **⟶** *air* | D |
 
 1. Identify the metal and A-D.
 
@@ -4399,7 +4642,12 @@ I10. Beryllium aqua-ion amphoterism
 > complex. Heating the chloride hydrate regenerates hydrolysis
 > products.*
 
-[TABLE]
+| **Step / starting species** | **reagent and condition** | **product / unknown** |
+|---|---|---|
+| Step 1 [Be(H₂O)₄]²⁺ | *OH⁻* **⟶** *limited* | A |
+| Step 2 A | *OH⁻* **⟶** *excess* | B |
+| Step 3 A | *2H⁺* **⟶** *acid* | C |
+| Step 4 [Be(H₂O)₄]Cl₂ | *Δ* **⟶** *hydrolysis* | A + HCl + H₂O |
 
 1. Identify A-C.
 
@@ -4412,7 +4660,11 @@ I11. Barium mineral-to-contrast-agent cycle
 > *Insoluble barium sulphate is reduced with carbon, converted into a
 > soluble chloride and then reprecipitated as the radiopaque sulphate.*
 
-[TABLE]
+| **Step / starting species** | **reagent and condition** | **product / unknown** |
+|---|---|---|
+| Step 1 BaSO₄ | *4C* **⟶** *high temperature* | A |
+| Step 2 A | *2HCl* **⟶** *aqueous* | B + H₂S |
+| Step 3 B | *Na₂SO₄* **⟶** *aqueous* | C |
 
 1. Identify A-C.
 
@@ -4427,7 +4679,11 @@ I12. Hardness diagnosis, removal and measurement
 > permanent chloride/sulphate hardness. Boiling, washing soda and
 > buffered EDTA answer different analytical questions.*
 
-[TABLE]
+| **Step / starting species** | **reagent and condition** | **product / unknown** |
+|---|---|---|
+| Step 1 Ca(HCO₃)₂ | *boiling* **⟶** *temporary hardness* | CaCO₃ |
+| Step 2 CaSO₄ | *Na₂CO₃* **⟶** *washing soda* | CaCO₃ |
+| Step 3 Ca²⁺/Mg²⁺ | *EDTA* **⟶** *buffered pH* | 1:1 chelate |
 
 1. Identify which salts each treatment removes or measures.
 
@@ -4494,7 +4750,7 @@ observations per element.
 ## ANSWER KEY
 
 | **ID** | **Answer** | **ID** | **Answer** | **ID** | **Answer** | **ID** | **Answer** |
-|:--:|----|:--:|----|:--:|----|:--:|----|
+|---|---|---|---|---|---|---|---|
 | **A01** | B | **C04** | All 5 | **E06** | 1-4; 2-A; 3-A; 4-5; 5-B | **G06** | A |
 | **A02** | D | **C05** | All 5 | **F01** | 10 | **G07** | A |
 | **A03** | A | **C06** | All 5 | **F02** | 2 | **G08** | A |
@@ -4510,7 +4766,7 @@ observations per element.
 | **B03** | 10 | **C16** | All 5 | **F12** | 8 | **H08** | 16 |
 | **B04** | 11 | **C17** | All 5 | **F13** | 7 | **H09** | Covalency, hydrolysis, CN≈4, bridging/complex formation |
 | **B05** | 11 | **C18** | All 5 | **F14** | 2 | **H10** | B |
-| **B06** | 10 | **C19** | All 5 | **F15** | 21 | **H11** | Four Be–H contacts; 3c–2e Be–H–Be bridges |
+| **B06** | 10 | **C19** | All 5 | **F15** | 21 | **H11** | Four Be–H contacts; 3c–2e Be–H--Be bridges |
 | **B07** | 10 | **C20** | All 5 | **F16** | 3 | **H12** | 4 with bridging Cl; 3 with one terminal and two bridging Cl; 2 with terminal Cl |
 | **B08** | 11 | **C21** | All 5 | **F17** | 56 | **H13** | See soln. |
 | **B09** | 10 | **C22** | All 5 | **F18** | 12 | **H14** | 4 N donors around chlorophyll Mg; 6 EDTA donors; 1:1 metal:EDTA |
@@ -4553,20 +4809,20 @@ S1: True — successive electron shells increase size down the group,
 while M²⁺ is smaller than the isoelectronic/period-matched M⁺ ion
 because of greater nuclear charge.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S3: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
-S4: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S4: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
-S5: True — greater size and shielding lower ionisation enthalpy down the
-group; Group-2 first ionisation remains above the period-matched Group-1
-value.
+S5: True — greater size and shielding lower ionisation enthalpy down
+the group; Group-2 first ionisation remains above the period-matched
+Group-1 value.
 
 S6: False — Melting and boiling points are irregular because crystal
 structures and metallic bonding do not change monotonically.
@@ -4575,22 +4831,22 @@ Therefore the correct response is B.
 
 A02 — Answer: D
 
-S1: True — greater size and shielding lower ionisation enthalpy down the
-group; Group-2 first ionisation remains above the period-matched Group-1
-value.
+S1: True — greater size and shielding lower ionisation enthalpy down
+the group; Group-2 first ionisation remains above the period-matched
+Group-1 value.
 
-S2: True — greater size and shielding lower ionisation enthalpy down the
-group; Group-2 first ionisation remains above the period-matched Group-1
-value.
+S2: True — greater size and shielding lower ionisation enthalpy down
+the group; Group-2 first ionisation remains above the period-matched
+Group-1 value.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: False — Be is not the strongest aqueous reducing metal; its E° is
 much less negative than those of Ca, Sr and Ba.
@@ -4610,11 +4866,11 @@ S3: True — excitation/emission energies give Ca brick-red, Sr crimson
 and Ba apple-green; Be/Mg transitions fall outside the useful
 visible-flame response.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: False — Calcium is sufficiently electropositive to reduce several
 refractory metal oxides and to serve as an oxygen/nitrogen getter.
@@ -4626,11 +4882,11 @@ A04 — Answer: C
 S1: True — a coherent surface oxide slows otherwise favourable bulk
 reaction.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S4: True — hydrolysis/product identity follows the anionic unit (H⁻,
 N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
@@ -4645,20 +4901,20 @@ Therefore the correct response is C.
 
 A05 — Answer: B
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S2: False — BeH₂ is not formed readily by direct combination; it is
 prepared by hydride-transfer or borohydride routes.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S4: True — hydrolysis/product identity follows the anionic unit (H⁻,
 N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: True — a coherent surface oxide slows otherwise favourable bulk
 reaction.
@@ -4670,17 +4926,17 @@ A06 — Answer: D
 S1: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S4: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: False — Peroxide stability increases down the group as the larger
 M²⁺ ions better stabilise O₂²⁻.
@@ -4694,11 +4950,11 @@ S1: True — Be²⁺ has exceptional charge density and polarising power.
 S2: True — electron deficiency and the small Be centre favour
 bridging/coordinate bonding, usually with coordination number four.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S5: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
@@ -4710,20 +4966,20 @@ Therefore the correct response is A.
 
 A08 — Answer: C
 
-S1: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S1: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S2: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S2: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
 S3: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S5: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
 S6: False — Group-2 nitrates give MO + NO₂ + O₂, not nitrite + O₂.
 
@@ -4731,9 +4987,9 @@ Therefore the correct response is C.
 
 A09 — Answer: B
 
-S1: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S1: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
 S2: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
@@ -4741,11 +4997,11 @@ chemistry and soluble beryllate complexes in excess base.
 S3: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: False — BeCl₂ is substantially covalent, electron-deficient and
 polymeric in the solid state.
@@ -4754,20 +5010,20 @@ Therefore the correct response is B.
 
 A10 — Answer: D
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S3: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S4: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S4: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S5: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S5: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
 S6: False — Dead-burnt plaster is anhydrous CaSO₄ and lacks the rapid
 rehydration/setting behaviour of POP.
@@ -4778,25 +5034,25 @@ Therefore the correct response is D.
 
 B01 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S2: True — successive electron shells increase size down the group,
 while M²⁺ is smaller than the isoelectronic/period-matched M⁺ ion
 because of greater nuclear charge.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — greater size and shielding lower ionisation enthalpy down the
-group; Group-2 first ionisation remains above the period-matched Group-1
-value.
+S4: True — greater size and shielding lower ionisation enthalpy down
+the group; Group-2 first ionisation remains above the period-matched
+Group-1 value.
 
 S5: True — hydration magnitude follows charge density and therefore
 decreases as M²⁺ grows.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S7: False — The melting/boiling trends are irregular.
 
@@ -4808,14 +5064,14 @@ S9: True — excitation/emission energies give Ca brick-red, Sr crimson
 and Ba apple-green; Be/Mg transitions fall outside the useful
 visible-flame response.
 
-S10: False — Group-2 metals are generally harder than the corresponding
-alkali metals.
+S10: False — Group-2 metals are generally harder than the
+corresponding alkali metals.
 
-S11: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S11: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S12: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S12: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 Therefore the correct response is 10.
 
@@ -4824,36 +5080,36 @@ B02 — Answer: 10
 S1: True — a coherent surface oxide slows otherwise favourable bulk
 reaction.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S4: True — kinetic protection weakens down the group, so water
 reactivity rises; Mg requires hot water/steam.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S7: False — Be does not combine directly and readily with H₂.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S9: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S9: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S10: False — Be has a much less negative E° than Ca/Sr/Ba.
 
-S11: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S11: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S12: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S12: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 Therefore the correct response is 10.
 
@@ -4862,26 +5118,26 @@ B03 — Answer: 10
 S1: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: False — BeO is predominantly covalent (wurtzite-type), not a normal
-rock-salt ionic oxide.
+S5: False — BeO is predominantly covalent (wurtzite-type), not a
+normal rock-salt ionic oxide.
 
-S6: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S6: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S7: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S7: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S9: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
@@ -4889,11 +5145,11 @@ less, so carbonate/nitrate-derived trends follow polarising power.
 S10: True — larger M²⁺ ions stabilise the large peroxide ion more
 effectively down the group.
 
-S11: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S11: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S12: False — Peroxide stability rises down the group; BaO₂ is among the
-most stable.
+S12: False — Peroxide stability rises down the group; BaO₂ is among
+the most stable.
 
 Therefore the correct response is 10.
 
@@ -4907,29 +5163,29 @@ bridging/coordinate bonding, usually with coordination number four.
 S3: True — electron deficiency and the small Be centre favour
 bridging/coordinate bonding, usually with coordination number four.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S7: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S9: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S9: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
 S10: True — hydration magnitude follows charge density and therefore
 decreases as M²⁺ grows.
 
-S11: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S11: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S12: False — Direct heating of MgCl₂·6H₂O in air causes hydrolysis;
 anhydrous MgCl₂ needs protected dehydration (for example dry HCl/NH₄Cl
@@ -4939,32 +5195,32 @@ Therefore the correct response is 11.
 
 B05 — Answer: 11
 
-S1: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S1: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S2: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S2: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
 S3: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S6: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S7: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S7: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S8: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S8: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S9: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S9: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S10: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
@@ -4978,31 +5234,31 @@ Therefore the correct response is 11.
 
 B06 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S2: True — Be²⁺ has exceptional charge density and polarising power.
 
 S3: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S7: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S7: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S9: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S9: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S10: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
@@ -5016,35 +5272,35 @@ Therefore the correct response is 10.
 
 B07 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S4: True — kinetic protection weakens down the group, so water
 reactivity rises; Mg requires hot water/steam.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S7: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S7: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S9: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S9: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S10: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S10: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S11: False — CaO is a strongly basic oxide.
 
@@ -5054,50 +5310,50 @@ Therefore the correct response is 10.
 
 B08 — Answer: 11
 
-S1: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S1: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S5: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S7: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S7: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S9: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S9: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S10: False — CaCO₃ is practically insoluble in pure water.
 
-S11: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S11: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S12: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S12: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 Therefore the correct response is 11.
 
 B09 — Answer: 10
 
-S1: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S1: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S3: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
@@ -5105,20 +5361,20 @@ less, so carbonate/nitrate-derived trends follow polarising power.
 S4: True — hydration magnitude follows charge density and therefore
 decreases as M²⁺ grows.
 
-S5: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S5: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S7: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S7: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S8: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S8: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S9: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S9: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S10: True — hydration magnitude follows charge density and therefore
 decreases as M²⁺ grows.
@@ -5134,27 +5390,27 @@ B10 — Answer: 10
 S1: True — this is the established biological role: Mg is central to
 chlorophyll/ATP enzymes, while Ca is structural and regulatory.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S3: True — EDTA forms 1:1 chelates with Ca²⁺ and Mg²⁺ under
 hardness-titration conditions.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S5: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S7: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S7: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S9: True — hydrolysis/product identity follows the anionic unit (H⁻,
 N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
@@ -5170,19 +5426,19 @@ Therefore the correct response is 10.
 
 B11 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S2: True — successive electron shells increase size down the group,
 while M²⁺ is smaller than the isoelectronic/period-matched M⁺ ion
 because of greater nuclear charge.
 
-S3: True — greater size and shielding lower ionisation enthalpy down the
-group; Group-2 first ionisation remains above the period-matched Group-1
-value.
+S3: True — greater size and shielding lower ionisation enthalpy down
+the group; Group-2 first ionisation remains above the period-matched
+Group-1 value.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S5: True — hydration magnitude follows charge density and therefore
 decreases as M²⁺ grows.
@@ -5200,11 +5456,11 @@ visible-flame response.
 S9: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
 
-S10: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S10: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S11: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S11: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S12: False — Be is much less negative than Ca/Sr/Ba
 
@@ -5215,8 +5471,8 @@ B12 — Answer: 10
 S1: True — a coherent surface oxide slows otherwise favourable bulk
 reaction.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S3: True — kinetic protection weakens down the group, so water
 reactivity rises; Mg requires hot water/steam.
@@ -5224,24 +5480,24 @@ reactivity rises; Mg requires hot water/steam.
 S4: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S6: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S7: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S7: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S8: False — Ba(OH)₂ is more basic
 
 S9: False — BeO is not attacked by water
 
-S10: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S10: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S11: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S11: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S12: True — larger M²⁺ ions stabilise the large peroxide ion more
 effectively down the group.
@@ -5250,11 +5506,11 @@ Hence 10 statements are correct.
 
 B13 — Answer: 10
 
-S1: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S1: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S2: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S2: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
 S3: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
@@ -5262,11 +5518,11 @@ less, so carbonate/nitrate-derived trends follow polarising power.
 S4: True — hydration magnitude follows charge density and therefore
 decreases as M²⁺ grows.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S6: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
 S7: False — BaSO₄ is useful because it is extremely insoluble
 
@@ -5288,37 +5544,37 @@ Hence 10 statements are correct.
 
 B14 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S7: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S7: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S8: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S8: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S9: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S9: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
 S10: False — gypsum retards/controls setting
 
-S11: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S11: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
 S12: False — setting involves hydration and rearrangement
 
@@ -5338,25 +5594,25 @@ chlorophyll/ATP enzymes, while Ca is structural and regulatory.
 S4: True — this is the established biological role: Mg is central to
 chlorophyll/ATP enzymes, while Ca is structural and regulatory.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: True — EDTA forms 1:1 chelates with Ca²⁺ and Mg²⁺ under
 hardness-titration conditions.
 
 S7: False — BaSO₄ is used because it is insoluble
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S9: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S9: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S10: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S10: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S11: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S11: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S12: False — Be compounds are highly toxic and must never be tasted
 
@@ -5364,15 +5620,15 @@ Hence 10 statements are correct.
 
 B16 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — greater size and shielding lower ionisation enthalpy down the
-group; Group-2 first ionisation remains above the period-matched Group-1
-value.
+S3: True — greater size and shielding lower ionisation enthalpy down
+the group; Group-2 first ionisation remains above the period-matched
+Group-1 value.
 
 S4: True — hydration magnitude follows charge density and therefore
 decreases as M²⁺ grows.
@@ -5383,16 +5639,16 @@ less, so carbonate/nitrate-derived trends follow polarising power.
 S6: True — hydrolysis/product identity follows the anionic unit (H⁻,
 N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
 
-S7: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S7: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S8: False — except Li₂CO₃, alkali carbonates are strongly heat-stable
 
 S9: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
 
-S10: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S10: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S11: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
@@ -5403,35 +5659,35 @@ Hence 10 statements are correct.
 
 B17 — Answer: 8
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S3: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S7: False — they occur as compounds, not as free metals
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S9: False — water is reduced in aqueous solution; fused anhydrous MgCl₂
-is required
+S9: False — water is reduced in aqueous solution; fused anhydrous
+MgCl₂ is required
 
-S10: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S10: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
 Hence 8 statements are correct.
 
@@ -5443,29 +5699,29 @@ bridging/coordinate bonding, usually with coordination number four.
 S2: True — electron deficiency and the small Be centre favour
 bridging/coordinate bonding, usually with coordination number four.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: True — Be²⁺ has exceptional charge density and polarising power.
 
 S7: False — the hydrate hydrolyses to Be(OH)₂ with HCl and water on
 heating
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S9: False — Be is normally four-coordinate and does not complex
 appreciably with hexadentate EDTA
 
-S10: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S10: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
 Hence 8 statements are correct.
 
@@ -5475,33 +5731,33 @@ S1: True — successive electron shells increase size down the group,
 while M²⁺ is smaller than the isoelectronic/period-matched M⁺ ion
 because of greater nuclear charge.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S3: True — hydration magnitude follows charge density and therefore
 decreases as M²⁺ grows.
 
-S4: True — greater size and shielding lower ionisation enthalpy down the
-group; Group-2 first ionisation remains above the period-matched Group-1
-value.
+S4: True — greater size and shielding lower ionisation enthalpy down
+the group; Group-2 first ionisation remains above the period-matched
+Group-1 value.
 
-S5: True — greater size and shielding lower ionisation enthalpy down the
-group; Group-2 first ionisation remains above the period-matched Group-1
-value.
+S5: True — greater size and shielding lower ionisation enthalpy down
+the group; Group-2 first ionisation remains above the period-matched
+Group-1 value.
 
-S6: False — metallic structures make density and melting-point sequences
-irregular
+S6: False — metallic structures make density and melting-point
+sequences irregular
 
-S7: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S7: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
-S8: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S8: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
-S9: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S9: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S10: False — first ionisation enthalpy generally decreases
 
@@ -5509,17 +5765,17 @@ Hence 8 statements are correct.
 
 B20 — Answer: 9
 
-S1: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S1: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S3: True — kinetic protection weakens down the group, so water
 reactivity rises; Mg requires hot water/steam.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S5: False — oxide basicity increases down the group
 
@@ -5529,8 +5785,8 @@ effectively down the group.
 S7: True — larger M²⁺ ions stabilise the large peroxide ion more
 effectively down the group.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S9: True — larger M²⁺ ions stabilise the large peroxide ion more
 effectively down the group.
@@ -5545,20 +5801,20 @@ B21 — Answer: 9
 S1: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
 
-S2: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S2: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S3: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S3: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S6: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
 S7: False — Ba(OH)₂ is more soluble and more strongly basic
 
@@ -5575,26 +5831,26 @@ Hence 9 statements are correct.
 
 B22 — Answer: 8
 
-S1: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S1: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S4: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: True — hydration magnitude follows charge density and therefore
 decreases as M²⁺ grows.
 
-S7: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S7: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
 S8: False — sulphate thermal stability increases as the metal becomes
 more basic down the group
@@ -5609,14 +5865,14 @@ Hence 8 statements are correct.
 
 B23 — Answer: 8
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S2: False — the hydrated nitrate decomposes rather than furnishing a
 clean anhydrous nitrate
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S4: True — electron deficiency and the small Be centre favour
 bridging/coordinate bonding, usually with coordination number four.
@@ -5624,17 +5880,18 @@ bridging/coordinate bonding, usually with coordination number four.
 S5: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
 
-S6: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S6: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S7: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S7: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
-S8: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S8: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S9: False — hydrate-forming tendency generally decreases down the group
+S9: False — hydrate-forming tendency generally decreases down the
+group
 
 S10: True — electron deficiency and the small Be centre favour
 bridging/coordinate bonding, usually with coordination number four.
@@ -5661,11 +5918,11 @@ N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
 S6: True — hydrolysis/product identity follows the anionic unit (H⁻,
 N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
 
-S7: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S7: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S9: False — magnesium also forms Mg₃N₂
 
@@ -5678,20 +5935,20 @@ B25 — Answer: 9
 S1: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S7: True — hydrolysis/product identity follows the anionic unit (H⁻,
 N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
@@ -5714,14 +5971,14 @@ bridging/coordinate bonding, usually with coordination number four.
 S2: True — electron deficiency and the small Be centre favour
 bridging/coordinate bonding, usually with coordination number four.
 
-S3: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S3: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: True — this is the established biological role: Mg is central to
 chlorophyll/ATP enzymes, while Ca is structural and regulatory.
@@ -5741,45 +5998,46 @@ Hence 9 statements are correct.
 
 B27 — Answer: 9
 
-S1: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S1: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S4: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S7: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S7: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S9: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S9: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S10: False — MgO is refractory and is used for high-temperature linings
+S10: False — MgO is refractory and is used for high-temperature
+linings
 
 Hence 9 statements are correct.
 
 B28 — Answer: 8
 
-S1: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S1: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S2: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S2: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
 S3: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
@@ -5787,8 +6045,8 @@ less, so carbonate/nitrate-derived trends follow polarising power.
 S4: True — larger, less polarising cations destabilise the oxoanion
 less, so carbonate/nitrate-derived trends follow polarising power.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: True — Be²⁺ has exceptional charge density and polarising power.
 
@@ -5805,30 +6063,30 @@ Hence 8 statements are correct.
 
 B29 — Answer: 9
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S2: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S2: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S3: True — the observed solubility is the net result of lattice enthalpy
-and hydration enthalpy, not ionic size alone.
+S3: True — the observed solubility is the net result of lattice
+enthalpy and hydration enthalpy, not ionic size alone.
 
-S4: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S4: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
 S5: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S7: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S7: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S9: True — EDTA forms 1:1 chelates with Ca²⁺ and Mg²⁺ under
 hardness-titration conditions.
@@ -5840,14 +6098,14 @@ Hence 9 statements are correct.
 
 B30 — Answer: 8
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S2: True — hydrolysis/product identity follows the anionic unit (H⁻,
 N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S4: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
@@ -5855,16 +6113,17 @@ chemistry and soluble beryllate complexes in excess base.
 S5: True — small, strongly polarising Be produces covalent/amphoteric
 chemistry and soluble beryllate complexes in excess base.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S7: True — electron deficiency and the small Be centre favour
 bridging/coordinate bonding, usually with coordination number four.
 
-S8: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S8: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S9: False — the relationship is a limited chemical analogy, not identity
+S9: False — the relationship is a limited chemical analogy, not
+identity
 
 S10: False — Be compounds are often substantially covalent and both
 elements show mixed bonding
@@ -5875,147 +6134,277 @@ Hence 8 statements are correct.
 
 C01 — Answer: All five equations in the solution
 
-[TABLE]
+| 2Be + O₂ | *ignition* **⟶** | 2BeO |
+|---|---|---|
+| 3Be + N₂ | *ignition* **⟶** | Be₃N₂ |
+| 2Mg + O₂ | *burning* **⟶** | 2MgO |
+| 3Mg + N₂ | *burning* **⟶** | Mg₃N₂ |
+| Ca + 2H₂O | *cold* **⟶** | Ca(OH)₂ + H₂ |
 
 C02 — Answer: All five equations in the solution
 
-[TABLE]
+| Mg + H₂O(g) | *steam* **⟶** | MgO + H₂ |
+|---|---|---|
+| Sr + 2H₂O | *cold* **⟶** | Sr(OH)₂ + H₂ |
+| Ba + 2H₂O | *cold* **⟶** | Ba(OH)₂ + H₂ |
+| M + X₂ | *elevated T* **⟶** | MX₂ |
+| M + 2HCl | *dilute* **⟶** | MCl₂ + H₂ |
 
 C03 — Answer: All five equations in the solution
 
-[TABLE]
+| Ca + H₂ | *heat* **⟶** | CaH₂ |
+|---|---|---|
+| 2BeCl₂ + LiAlH₄ | *ether* **⟶** | 2BeH₂ + LiCl + AlCl₃ |
+| M + (x+y)NH₃ | *liq. NH₃* **⟶** | [M(NH₃)x]²⁺ + 2[e(NH₃)y]⁻ |
+| MO + H₂O | **⟶** | M(OH)₂ |
+| Be(OH)₂ + 2OH⁻ | *excess alkali* **⟶** | [Be(OH)₄]²⁻ |
 
 C04 — Answer: All five equations in the solution
 
-[TABLE]
+| Be(OH)₂ + 2HCl + 2H₂O | **⟶** | [Be(OH)₄]Cl₂ |
+|---|---|---|
+| MCl₂ + Na₂CO₃ | *aq.* **⟶** | MCO₃↓ + 2NaCl |
+| MCO₃ | *Δ* **⟶** | MO + CO₂ |
+| MCO₃ + 2HNO₃ | *dilute* **⟶** | M(NO₃)₂ + CO₂ + H₂O |
+| 2M(NO₃)₂ | *Δ* **⟶** | 2MO + 4NO₂ + O₂ |
 
 C05 — Answer: All five equations in the solution
 
-[TABLE]
+| CaCO₃ | *1070-1270 K* **⟶** | CaO + CO₂ |
+|---|---|---|
+| CaO + H₂O | *slaking* **⟶** | Ca(OH)₂ |
+| CaO + CO₂ | **⟶** | CaCO₃ |
+| CaO + SiO₂ | *high T* **⟶** | CaSiO₃ |
+| 6CaO + P₄O₁₀ | *high T* **⟶** | 2Ca₃(PO₄)₂ |
 
 C06 — Answer: All five equations in the solution
 
-[TABLE]
+| Ca(OH)₂ + CO₂ | *limited CO₂* **⟶** | CaCO₃↓ + H₂O |
+|---|---|---|
+| CaCO₃ + CO₂ + H₂O | *excess CO₂* **⟶** | Ca(HCO₃)₂ |
+| 2Ca(OH)₂ + 2Cl₂ | *milk of lime* **⟶** | CaCl₂ + Ca(OCl)₂ + 2H₂O (simplified constituent representation) |
+| Ca(OH)₂ + 2HCl | **⟶** | CaCl₂ + 2H₂O |
+| Ca(OH)₂ + H₂SO₄ | **⟶** | CaSO₄ + 2H₂O |
 
 C07 — Answer: All five equations in the solution
 
-[TABLE]
+| Ca(OH)₂ + CO₂ | *preparation* **⟶** | CaCO₃↓ + H₂O |
+|---|---|---|
+| CaCl₂ + Na₂CO₃ | *aq.* **⟶** | CaCO₃↓ + 2NaCl |
+| CaCO₃ | *1200 K* **⟶** | CaO + CO₂ |
+| CaCO₃ + 2HCl | *dilute* **⟶** | CaCl₂ + H₂O + CO₂ |
+| CaCO₃ + H₂SO₄ | *dilute* **⟶** | CaSO₄ + H₂O + CO₂ |
 
 C08 — Answer: All five equations in the solution
 
-[TABLE]
+| 2CaSO₄·2H₂O | *393 K* **⟶** | 2CaSO₄·½H₂O + 3H₂O |
+|---|---|---|
+| CaSO₄·½H₂O + 3/2H₂O | *setting* **⟶** | CaSO₄·2H₂O |
+| CaSO₄·2H₂O | *above 393 K* **⟶** | CaSO₄ + 2H₂O |
+| CaSO₄·½H₂O | *strong heating* **⟶** | CaSO₄ + ½H₂O |
+| CaSO₄·2H₂O | *controlled dehydration* **⟶** | CaSO₄·½H₂O + 3/2H₂O (per formula unit) |
 
 C09 — Answer: All five equations in the solution
 
-[TABLE]
+| 2CaO + SiO₂ | *kiln* **⟶** | Ca₂SiO₄ |
+|---|---|---|
+| 3CaO + SiO₂ | *kiln* **⟶** | Ca₃SiO₅ |
+| 3CaO + Al₂O₃ | *kiln* **⟶** | Ca₃Al₂O₆ |
+| 2Ca(NO₃)₂ | *Δ* **⟶** | 2CaO + 4NO₂ + O₂ |
+| Mg + air | *ignition* **⟶** | MgO + Mg₃N₂ (mixture; stoichiometry depends on air supply) |
 
 C10 — Answer: All five equations in the solution
 
 | Be + 2OH⁻ + 2H₂O | **⟶** | [Be(OH)₄]²⁻ + H₂ |
-|:----------------:|:-----:|:------------------:|
-|    BeO + 2HCl    | **⟶** |    BeCl₂ + H₂O     |
-| BeO + 2OH⁻ + H₂O | **⟶** |   [Be(OH)₄]²⁻    |
-|  Be(OH)₂ + 2OH⁻  | **⟶** |   [Be(OH)₄]²⁻    |
-|  Al₄C₃ + 12H₂O   | **⟶** |  4Al(OH)₃ + 3CH₄   |
+|---|---|---|
+| BeO + 2HCl | **⟶** | BeCl₂ + H₂O |
+| BeO + 2OH⁻ + H₂O | **⟶** | [Be(OH)₄]²⁻ |
+| Be(OH)₂ + 2OH⁻ | **⟶** | [Be(OH)₄]²⁻ |
+| Al₄C₃ + 12H₂O | **⟶** | 4Al(OH)₃ + 3CH₄ |
 
 C11 — Answer: All five equations in the solution
 
-[TABLE]
+| (NH₄)₂BeF₄ | *Δ* **⟶** | BeF₂ + 2NH₄F |
+|---|---|---|
+| BeO + C + Cl₂ | *600-800 K* **⟶** | BeCl₂ + CO |
+| [Be(H₂O)₄]Cl₂ | *heat* **⟶** | Be(OH)₂ + 2HCl + 2H₂O |
+| MgCl₂·6H₂O | *heat* **⟶** | Mg(OH)Cl + HCl + 5H₂O (then MgO + HCl) |
+| CaCl₂·6H₂O | *controlled heat* **⟶** | CaCl₂ + 6H₂O removed; anhydrous CaCl₂ obtainable |
 
 C12 — Answer: All five equations in the solution
 
-[TABLE]
+| Ca²⁺ + [H₂EDTA]²⁻ | *buffer* **⟶** | [Ca(EDTA)]²⁻ + 2H⁺ |
+|---|---|---|
+| Ca(HCO₃)₂ | *boiling* **⟶** | CaCO₃↓ + CO₂ + H₂O |
+| Mg(HCO₃)₂ + 2Ca(OH)₂ | **⟶** | Mg(OH)₂↓ + 2CaCO₃↓ + 2H₂O |
+| CaSO₄ + Na₂CO₃ | *washing soda* **⟶** | CaCO₃↓ + Na₂SO₄ |
+| 2C₁₇H₃₅COO⁻ + Ca²⁺ | **⟶** | (C₁₇H₃₅COO)₂Ca↓ |
 
 C13 — Answer: All five equations in the solution
 
-[TABLE]
+| 2NH₃ + 2e⁻ | *liq. NH₃* **⟶** | 2NH₂⁻ + H₂ |
+|---|---|---|
+| M(NH₃)₆ | *slow decomposition* **⟶** | M(NH₂)₂ + 4NH₃ + H₂ |
+| Ca + 2NH₃ | *high T* **⟶** | Ca(NH₂)₂ + H₂ |
+| Sr + 2NH₃ | *high T* **⟶** | Sr(NH₂)₂ + H₂ |
+| Ba + 2NH₃ | *high T* **⟶** | Ba(NH₂)₂ + H₂ |
 
 C14 — Answer: All five equations in the solution
 
-[TABLE]
+| 2BaO + O₂ | *~500°C/air* **⟶** | 2BaO₂ |
+|---|---|---|
+| Mg(OH)₂ + H₂O₂ | **⟶** | MgO₂ + 2H₂O (after isolation/dehydration depending conditions) |
+| Ca(OH)₂ + H₂O₂ | **⟶** | CaO₂ + 2H₂O (after isolation/dehydration depending conditions) |
+| BaO₂ + 2HCl | *dilute* **⟶** | BaCl₂ + H₂O₂ |
+| 2BaO₂ | *Δ* **⟶** | 2BaO + O₂ |
 
 C15 — Answer: All five equations in the solution
 
-[TABLE]
+| MgSO₄ | *strong heat* **⟶** | MgO + SO₃ |
+|---|---|---|
+| BaSO₄ + 4C | *high T* **⟶** | BaS + 4CO |
+| Ca(HCO₃)₂ + Ca(OH)₂ | **⟶** | 2CaCO₃↓ + 2H₂O |
+| CaSO₄ + Na₂CO₃ | **⟶** | CaCO₃↓ + Na₂SO₄ |
+| Ca²⁺ + [H₂EDTA]²⁻ | **⟶** | [Ca(EDTA)]²⁻ + 2H⁺ |
 
 C16 — Answer: All five equations in the solution
 
-[TABLE]
+| 2BeCl₂ + LiAlH₄ | *ether* **⟶** | 2BeH₂ + LiCl + AlCl₃ |
+|---|---|---|
+| BeCl₂ + 2LiBH₄ | **⟶** | BeB₂H₈ + 2LiCl |
+| BeB₂H₈ + 2PPh₃ | *sealed/heat* **⟶** | BeH₂ + 2Ph₃PBH₃ |
+| CaH₂ + 2H₂O | **⟶** | Ca(OH)₂ + 2H₂ |
+| CaH₂ + 2HCl | **⟶** | CaCl₂ + 2H₂ |
 
 C17 — Answer: All five equations in the solution
 
-[TABLE]
+| [Be(H₂O)₄]Cl₂ | *heat* **⟶** | Be(OH)₂ + 2HCl + 2H₂O |
+|---|---|---|
+| (NH₄)₂[BeF₄] | *heat* **⟶** | BeF₂ + 2NH₄F |
+| 2BeO + CCl₄ | *~800°C* **⟶** | 2BeCl₂ + CO₂ |
+| CaF₂ + H₂SO₄ | *conc./heat* **⟶** | 2HF + CaSO₄ |
+| BeF₂ + 2F⁻ | **⟶** | [BeF₄]²⁻ |
 
 C18 — Answer: All five equations in the solution
 
-[TABLE]
+| Ca₃N₂ + 6H₂O | **⟶** | 3Ca(OH)₂ + 2NH₃ |
+|---|---|---|
+| Be₂C + 4H₂O | **⟶** | 2Be(OH)₂ + CH₄ |
+| Ca + 2C | *~1100°C* **⟶** | CaC₂ |
+| CaO + 3C | *~2000°C* **⟶** | CaC₂ + CO |
+| CaC₂ + 2H₂O | **⟶** | Ca(OH)₂ + C₂H₂ |
 
 C19 — Answer: All five equations in the solution
 
-[TABLE]
+| 2MgC₂ | *heat* **⟶** | Mg₂C₃ + C |
+|---|---|---|
+| Mg₂C₃ + 4H₂O | **⟶** | 2Mg(OH)₂ + CH₃C≡CH |
+| CaC₂ + N₂ | *~1100°C* **⟶** | CaNCN + C |
+| CaNCN + 5H₂O | *slow hydrolysis* **⟶** | CaCO₃ + 2NH₄OH |
+| BaC₂ + N₂ | *high T* **⟶** | Ba(CN)₂ |
 
 C20 — Answer: All five equations in the solution
 
-[TABLE]
+| CaNCN + H₂SO₄ | **⟶** | H₂NCN + CaSO₄ |
+|---|---|---|
+| CaNCN + CO₂ + H₂O | **⟶** | H₂NCN + CaCO₃ |
+| H₂NCN + H₂O | *pH<2 or >12* **⟶** | NH₂CONH₂ (urea) |
+| H₂NCN + H₂S | **⟶** | NH₂CSNH₂ (thiourea) |
+| 3H₂NCN | *condensation/pyrolysis* **⟶** | C₃N₆H₆ (melamine) |
 
 C21 — Answer: All five equations in the solution
 
-[TABLE]
+| BeO + 2NH₃ + 4HF | **⟶** | (NH₄)₂[BeF₄] + H₂O |
+|---|---|---|
+| BeF₂ + 2F⁻ | **⟶** | [BeF₄]²⁻ |
+| 4Be(OH)₂ + 6CH₃COOH | *evaporation* **⟶** | Be₄O(OAc)₆ + 7H₂O |
+| Be²⁺ + 2ox²⁻ | **⟶** | [Be(ox)₂]²⁻ |
+| BeCl₂ + donor ether (D) | **⟶** | BeCl₂·D₂ donor complex |
 
 C22 — Answer: All five equations in the solution
 
-|   Be₂C + 4H₂O    | **⟶** |   2Be(OH)₂ + CH₄   |
-|:----------------:|:-----:|:------------------:|
-|  Al₄C₃ + 12H₂O   | **⟶** |  4Al(OH)₃ + 3CH₄   |
-|   Be₃N₂ + 6H₂O   | **⟶** |  3Be(OH)₂ + 2NH₃   |
-|    AlN + 3H₂O    | **⟶** |   Al(OH)₃ + NH₃    |
+| Be₂C + 4H₂O | **⟶** | 2Be(OH)₂ + CH₄ |
+|---|---|---|
+| Al₄C₃ + 12H₂O | **⟶** | 4Al(OH)₃ + 3CH₄ |
+| Be₃N₂ + 6H₂O | **⟶** | 3Be(OH)₂ + 2NH₃ |
+| AlN + 3H₂O | **⟶** | Al(OH)₃ + NH₃ |
 | Be + 2OH⁻ + 2H₂O | **⟶** | [Be(OH)₄]²⁻ + H₂ |
 
 C23 — Answer: All five equations in the solution
 
-[TABLE]
+| 2Mg + CO₂ | *burning* **⟶** | 2MgO + C |
+|---|---|---|
+| Mg₃N₂ + 6H₂O | **⟶** | 3Mg(OH)₂ + 2NH₃ |
+| CaF₂ + H₂SO₄ | **⟶** | 2HF + CaSO₄ |
+| HF + KF | **⟶** | KHF₂ |
+| 2KHF₂ | *electrolysis* **⟶** | 2KF + H₂ + F₂ |
 
 C24 — Answer: All five equations in the solution
 
-[TABLE]
+| MgCl₂·6H₂O | *Δ* **⟶** | Mg(OH)Cl + HCl + 5H₂O |
+|---|---|---|
+| Mg(OH)Cl | *Δ* **⟶** | MgO + HCl |
+| CaC₂ + N₂ | **⟶** | CaNCN + C |
+| CaNCN + H₂SO₄ | **⟶** | H₂NCN + CaSO₄ |
+| BaSO₄ + 4C | **⟶** | BaS + 4CO |
 
 C25 — Answer: All five equations in the solution
 
-[TABLE]
+| CaCl₂(l) | *electrolysis* **⟶** *fused CaCl₂ + CaF₂* | Ca(l) + Cl₂(g) |
+|---|---|---|
+| MgCl₂(l) | *electrolysis* **⟶** *fused, anhydrous* | Mg(l) + Cl₂(g) |
+| Mg(OH)₂ + 2HCl | *aqueous* **⟶** | MgCl₂ + 2H₂O |
+| CaO + 2NH₄Cl | *heat* **⟶** *Solvay NH₃ recovery* | CaCl₂ + 2NH₃ + H₂O |
+| Ca₃(PO₄)₂ + 2H₂SO₄ | *controlled acidulation* **⟶** | Ca(H₂PO₄)₂ + 2CaSO₄ |
 
 C26 — Answer: All five equations in the solution
 
-[TABLE]
+| 2Mg + CO₂ | *burning* **⟶** *CO₂ atmosphere* | 2MgO + C |
+|---|---|---|
+| 2Mg + SO₂ | *ignition* **⟶** *SO₂ atmosphere* | 2MgO + S |
+| Mg + 2H₂O | *hot water* **⟶** | Mg(OH)₂ + H₂ |
+| Mg + H₂O(g) | *steam* **⟶** *high temperature* | MgO + H₂ |
+| Mg + R–X | *anhydrous ether* **⟶** *exclude moisture* | R–Mg–X |
 
 C27 — Answer: All five equations in the solution
 
-[TABLE]
+| Ca²⁺ + C₂O₄²⁻ | *aqueous* **⟶** | CaC₂O₄(s) |
+|---|---|---|
+| Ba²⁺ + CrO₄²⁻ | *aqueous* **⟶** | BaCrO₄(s), yellow |
+| Ba²⁺ + SO₄²⁻ | *aqueous* **⟶** | BaSO₄(s), white |
+| Mg²⁺ + NH₄⁺ + HPO₄²⁻ + OH⁻ | *NH₄Cl/NH₄OH buffer* **⟶** | MgNH₄PO₄(s) + H₂O |
+| Mg²⁺ + 2OH⁻ | *alkaline medium* **⟶** | Mg(OH)₂(s) |
 
 C28 — Answer: All five equations in the solution
 
-[TABLE]
+| Ca₃P₂ + 6H₂O | *hydrolysis* **⟶** | 3Ca(OH)₂ + 2PH₃ |
+|---|---|---|
+| CaNH + 2H₂O | *hydrolysis* **⟶** | Ca(OH)₂ + NH₃ |
+| 2BaSO₄ | *very strong heat* **⟶** | 2BaO + 2SO₂ + O₂ |
+| BaCO₃ + 2HCl | *dilute acid* **⟶** | BaCl₂ + CO₂ + H₂O |
+| 6CO₂ + 6H₂O | *sunlight* **⟶** *chlorophyll* | C₆H₁₂O₆ + 6O₂ |
 
 ### SECTION D — Multiple-Correct and Matrix Match
 
 D01 — Answer: C
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S6: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S6: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 Therefore the correct response is C.
 
@@ -6027,14 +6416,14 @@ bridging/coordinate bonding, usually with coordination number four.
 S2: True — hydrolysis/product identity follows the anionic unit (H⁻,
 N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: False — the stated generalisation is not valid.
 
@@ -6042,20 +6431,20 @@ Therefore the correct response is A.
 
 D03 — Answer: D
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S2: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S2: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S4: True — electron deficiency and the small Be centre favour
 bridging/coordinate bonding, usually with coordination number four.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: False — the stated generalisation is not valid.
 
@@ -6075,8 +6464,8 @@ chlorophyll/ATP enzymes, while Ca is structural and regulatory.
 S4: True — this is the established biological role: Mg is central to
 chlorophyll/ATP enzymes, while Ca is structural and regulatory.
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: True — EDTA forms 1:1 chelates with Ca²⁺ and Mg²⁺ under
 hardness-titration conditions.
@@ -6085,20 +6474,20 @@ Therefore the correct response is B.
 
 D05 — Answer: C
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S2: True — hydrolysis/product identity follows the anionic unit (H⁻,
 N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S4: True — hydrolysis/product identity follows the anionic unit (H⁻,
 N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
 
-S5: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S5: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S6: False — the stated generalisation is not valid.
 
@@ -6106,18 +6495,18 @@ Therefore the correct response is C.
 
 D06 — Answer: A
 
-S1: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S1: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S2: True — the statement follows the tabulated data; unlike simple size
-trends, metallic structure makes several physical-property sequences
-irregular.
+S2: True — the statement follows the tabulated data; unlike simple
+size trends, metallic structure makes several physical-property
+sequences irregular.
 
-S3: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S3: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
-S4: True — this agrees with the verified chemical fact and the balanced
-chemistry used elsewhere in the bank.
+S4: True — this agrees with the verified chemical fact and the
+balanced chemistry used elsewhere in the bank.
 
 S5: True — EDTA forms 1:1 chelates with Ca²⁺ and Mg²⁺ under
 hardness-titration conditions.
@@ -6128,20 +6517,20 @@ Therefore the correct response is A.
 
 D07 — Answer: D
 
-S1: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S1: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S2: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S2: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
-S3: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S3: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
 S4: True — hydration magnitude follows charge density and therefore
 decreases as M²⁺ grows.
 
-S5: True — the hydration state and clinker hydration chemistry give the
-stated identity or application.
+S5: True — the hydration state and clinker hydration chemistry give
+the stated identity or application.
 
 S6: False — the stated generalisation is not valid.
 
@@ -6207,8 +6596,8 @@ setting.
 
 E02 — Answer: 1-4; 2-B; 3-C; 4-4; 5-2
 
-Q1: 4 — Four water ligands surround Be in the tetrahedral textbook aqua
-ion.
+Q1: 4 — Four water ligands surround Be in the tetrahedral textbook
+aqua ion.
 
 Q2: B — Be(OH)₂ + 2OH⁻ → [Be(OH)₄]²⁻.
 
@@ -6244,15 +6633,15 @@ Q2: B — Mg + H₂O(g) → MgO + H₂.
 
 Q3: B — Solvated electrons absorb visible light and transport charge.
 
-Q4: A — Hydrolysis competes with dehydration and produces basic chloride
-plus HCl.
+Q4: A — Hydrolysis competes with dehydration and produces basic
+chloride plus HCl.
 
 Q5: 2 — Mg₃N₂ + 6H₂O → 3Mg(OH)₂ + 2NH₃.
 
 E05 — Answer: 1-A; 2-A; 3-C; 4-3; 5-B
 
-Q1: A — The methanide, acetylide and allylenide-type carbides give CH₄,
-C₂H₂ and propyne, respectively.
+Q1: A — The methanide, acetylide and allylenide-type carbides give
+CH₄, C₂H₂ and propyne, respectively.
 
 Q2: A — At about 1100 °C, CaC₂ + N₂ → CaNCN + C.
 
@@ -6275,8 +6664,8 @@ Q3: A — Dissolved Ca(HCO₃)₂ and Mg(HCO₃)₂ cause temporary hardness.
 Q4: 5 — EDTA used = 0.02500×0.0200 = 0.000500 mol; in 0.1000 L this is
 5.00 mmol L⁻¹.
 
-Q5: B — Ca²⁺ and Mg²⁺ precipitate long-chain carboxylates as scum before
-lather forms.
+Q5: B — Ca²⁺ and Mg²⁺ precipitate long-chain carboxylates as scum
+before lather forms.
 
 ### SECTION F — Integer and Numerical Response
 
@@ -6467,8 +6856,8 @@ Total = 2+5+2+2+4 = 15.
 
 F27 — Answer: 24
 
-A Be–H–Be bridge is a 3-centre–2-electron bond, so a=3+2=5. Only solid
-BeCl₂ is polymeric among the three regimes, so b=1.
+A Be–H--Be bridge is a 3-centre–2-electron bond, so a=3+2=5. Only
+solid BeCl₂ is polymeric among the three regimes, so b=1.
 
 Each Be in basic beryllium acetate is four-coordinate (c=4); six
 acetates bridge the six tetrahedral edges, so d=6 and e=6.
@@ -6737,18 +7126,18 @@ adduct formation.
 
 H10 — Answer: B
 
-A Be–H–Be bridge shares one electron pair across three centres: a
+A Be–H--Be bridge shares one electron pair across three centres: a
 3-centre–2-electron bond.
 
 BeH₂ is a covalent, electron-deficient polymer; it is not an ionic
 lattice containing freely mobile H⁻ ions.
 
-H11 — Answer: Four Be–H contacts; 3c–2e Be–H–Be bridges
+H11 — Answer: Four Be–H contacts; 3c–2e Be–H--Be bridges
 
 An interior Be is linked through four bridging H atoms in the
 illustrated network fragment.
 
-Each bridge shares one electron pair over Be–H–Be and is therefore a
+Each bridge shares one electron pair over Be–H--Be and is therefore a
 3-centre–2-electron bond.
 
 The drawing is a connectivity projection of an extended
@@ -6764,8 +7153,8 @@ four-coordinate and the displayed chlorides bridge.
 Vapour dimer: each Be is three-coordinate, with one terminal and two
 bridging chlorides.
 
-Hot monomer: linear Cl–Be–Cl, coordination number two; association falls
-as temperature rises.
+Hot monomer: linear Cl–Be–Cl, coordination number two; association
+falls as temperature rises.
 
 H13 — Answer: See solution
 
@@ -6793,10 +7182,17 @@ stoichiometry is 1:1.
 
 ### SECTION I — Identification and Reaction Chains
 
-I01 — Answer: A CaO; B Ca(OH)₂; C CaCO₃; D Ca(HCO₃)₂; E CaC₂; F CaNCN +
-C
+I01 — Answer: A CaO; B Ca(OH)₂; C CaCO₃; D Ca(HCO₃)₂; E CaC₂; F
+CaNCN + C
 
-[TABLE]
+| **Solved step** | **reagent and condition** | **balanced product side** |
+|---|---|---|
+| Step 1 CaCO₃ | *Δ* **⟶** *calcination* | CaO + CO₂ |
+| Step 2 CaO | *H₂O* **⟶** *slaking* | Ca(OH)₂ |
+| Step 3 Ca(OH)₂ + CO₂ | *limited CO₂* **⟶** *lime-water test* | CaCO₃ + H₂O |
+| Step 4 CaCO₃ + CO₂ + H₂O | *excess CO₂* **⟶** *aqueous* | Ca(HCO₃)₂ |
+| Step 5 CaO + 3C | *2000 °C* **⟶** *electric furnace* | CaC₂ + CO |
+| Step 6 CaC₂ + N₂ | *1100 °C* **⟶** *nitrogen fixation* | CaNCN + C |
 
 CaCO₃ → CaO + CO₂; CaO + H₂O → Ca(OH)₂.
 
@@ -6807,7 +7203,13 @@ CaO + 3C → CaC₂ + CO; CaC₂ + N₂ → CaNCN + C.
 I02 — Answer: A POP; B gypsum; C anhydrous CaSO₄; D CaO; E cement
 clinker silicates/aluminate
 
-[TABLE]
+| **Solved step** | **reagent and condition** | **balanced product side** |
+|---|---|---|
+| Step 1 2CaSO₄·2H₂O | *393 K* **⟶** *controlled heating* | 2CaSO₄·½H₂O + 3H₂O |
+| Step 2 CaSO₄·½H₂O + 3/2H₂O | *setting* **⟶** *rehydration* | CaSO₄·2H₂O |
+| Step 3 CaSO₄·½H₂O | *strong heat* **⟶** *dehydration* | CaSO₄ + ½H₂O |
+| Step 4 CaCO₃ | *kiln* **⟶** *CO₂ removed* | CaO + CO₂ |
+| Step 5 CaO + SiO₂/Al₂O₃ | *kiln* **⟶** *high temperature* | clinker silicates/aluminate |
 
 2CaSO₄·2H₂O → 2CaSO₄·½H₂O + 3H₂O; POP rehydrates to gypsum.
 
@@ -6831,7 +7233,13 @@ Ca₃N₂ + 6H₂O → 3Ca(OH)₂ + 2NH₃.
 
 I05 — Answer: N₂; H₂SO₄ or CO₂/H₂O; H₂O / H₂S / condensation
 
-[TABLE]
+| **Solved step** | **reagent and condition** | **balanced product side** |
+|---|---|---|
+| Step 1 CaC₂ + N₂ | *1100 °C* **⟶** *nitrogen fixation* | CaNCN + C |
+| Step 2 CaNCN + H₂SO₄ | *acidification* **⟶** *aqueous* | H₂NCN + CaSO₄ |
+| Step 3 H₂NCN + H₂O | *hydrolysis* **⟶** *controlled pH* | NH₂CONH₂ |
+| Step 4 H₂NCN + H₂S | *addition* **⟶** *aqueous* | NH₂CSNH₂ |
+| Step 5 3H₂NCN | *condensation* **⟶** *heat* | C₃N₆H₆ |
 
 CaC₂ + N₂ → CaNCN + C.
 
@@ -6841,7 +7249,11 @@ H₂NCN + H₂O → NH₂CONH₂; H₂NCN + H₂S → NH₂CSNH₂; 3H₂NCN →
 
 I06 — Answer: A = BaCO₃
 
-[TABLE]
+| **Solved step** | **reagent and condition** | **balanced product side** |
+|---|---|---|
+| Step 1 BaCO₃ | *Δ* **⟶** *strong heat* | BaO + CO₂ |
+| Step 2 2BaO + O₂ | *air* **⟶** *about 500 °C* | 2BaO₂ |
+| Step 3 BaO₂ + H₂SO₄ | *dilute acid* **⟶** *cold* | BaSO₄ + H₂O₂ |
 
 BaCO₃ + 2HCl → BaCl₂ + CO₂ + H₂O; BaCO₃ → BaO + CO₂.
 
@@ -6859,7 +7271,10 @@ BeF₂ + 2F⁻ → [BeF₄]²⁻; BeO + 2OH⁻ + H₂O → [Be(OH)₄]²⁻.
 
 I08 — Answer: Mg(OH)Cl then MgO
 
-[TABLE]
+| **Solved step** | **reagent and condition** | **balanced product side** |
+|---|---|---|
+| Step 1 MgCl₂·6H₂O | *Δ* **⟶** *air* | Mg(OH)Cl + HCl + 5H₂O |
+| Step 2 Mg(OH)Cl | *further Δ* **⟶** *air* | MgO + HCl |
 
 MgCl₂·6H₂O → Mg(OH)Cl + HCl + 5H₂O.
 
@@ -6871,28 +7286,46 @@ HCl/NH₄Cl-type routes is needed.
 
 I09 — Answer: Mg; see scheme
 
-[TABLE]
+| **Solved step** | **reagent and condition** | **balanced product side** |
+|---|---|---|
+| Step 1 Mg | *air* **⟶** *ignition* | MgO + Mg₃N₂ |
+| Step 2 MgO | *H₂O* **⟶** *slow* | Mg(OH)₂ |
+| Step 3 Mg₃N₂ + 6H₂O | *hydrolysis* **⟶** *aqueous* | 3Mg(OH)₂ + 2NH₃ |
+| Step 4 MgCl₂·6H₂O | *Δ* **⟶** *air* | Mg(OH)Cl + HCl + 5H₂O |
 
 The metal is Mg. Its oxide film explains kinetic protection, while its
 strong oxygen affinity explains burning in CO₂/SO₂.
 
 I10 — Answer: A Be(OH)₂; B [Be(OH)₄]²⁻; C Be²⁺ salt; B tetrahedral
 
-[TABLE]
+| **Solved step** | **reagent and condition** | **balanced product side** |
+|---|---|---|
+| Step 1 [Be(H₂O)₄]²⁺ + 2OH⁻ | *limited OH⁻* **⟶** *aqueous* | Be(OH)₂ + 4H₂O |
+| Step 2 Be(OH)₂ + 2OH⁻ | *excess OH⁻* **⟶** *aqueous* | [Be(OH)₄]²⁻ |
+| Step 3 Be(OH)₂ + 2H⁺ | *acid* **⟶** *aqueous* | Be²⁺ + 2H₂O |
+| Step 4 [Be(H₂O)₄]Cl₂ | *Δ* **⟶** *hydrolysis* | Be(OH)₂ + 2HCl + 2H₂O |
 
 B is tetrahedral and four-coordinate; the sequence demonstrates
 amphoterism and aqua-ion hydrolysis.
 
 I11 — Answer: BaSO₄ → BaS → BaCl₂ → BaSO₄
 
-[TABLE]
+| **Solved step** | **reagent and condition** | **balanced product side** |
+|---|---|---|
+| Step 1 BaSO₄ + 4C | *high temperature* **⟶** *reduction* | BaS + 4CO |
+| Step 2 BaS + 2HCl | *aqueous* **⟶** *acidification* | BaCl₂ + H₂S |
+| Step 3 BaCl₂ + Na₂SO₄ | *aqueous* **⟶** *precipitation* | BaSO₄ + 2NaCl |
 
 C is insoluble BaSO₄, used as an X-ray contrast material because it is
 both insoluble and radiopaque.
 
 I12 — Answer: Temporary HCO₃⁻ salts; permanent SO₄²⁻/Cl⁻ salts
 
-[TABLE]
+| **Solved step** | **reagent and condition** | **balanced product side** |
+|---|---|---|
+| Step 1 Ca(HCO₃)₂ | *boiling* **⟶** *temporary hardness* | CaCO₃ + CO₂ + H₂O |
+| Step 2 CaSO₄ + Na₂CO₃ | *washing soda* **⟶** *aqueous* | CaCO₃ + Na₂SO₄ |
+| Step 3 M²⁺ + H₂Y²⁻ | *EDTA* **⟶** *buffered pH* | MY²⁻ + 2H⁺ |
 
 Hydrogencarbonates cause temporary hardness; Ca/Mg chlorides and
 sulphates cause permanent hardness. Insoluble Ca/Mg soaps cause scum.
@@ -7435,7 +7868,8 @@ may be correct.
 > 2. BeCl₂ vapour contains bridged dimer and, at sufficiently high
 > temperature, linear monomer.
 >
-> 3. Polymeric BeH₂ contains three-centre two-electron Be–H–Be bridges.
+> 3. Polymeric BeH₂ contains three-centre two-electron Be–H--Be
+> bridges.
 >
 > 4. Advanced reference describes BeO as a 4:4 wurtzite/zinc-sulphide
 > type covalent lattice.
@@ -7677,18 +8111,18 @@ two lists are printed directly opposite each other.
 
 **25. Oxides and hydroxides**
 
-| **LIST I** | **LIST II**                                 |
-|------------|---------------------------------------------|
-| (A) BeO  | (P) amphoteric                            |
-| (B) MgO  | (Q) predominantly ionic rock-salt type    |
-| (C) CaO  | (R) refractory/high-m.p. oxide            |
-| (D) BaO  | (S) forms hydroxide with water            |
-|            | (T) strongest basic character among these |
+| **LIST I** | **LIST II** |
+|---|---|
+| (A) BeO | (P) amphoteric |
+| (B) MgO | (Q) predominantly ionic rock-salt type |
+| (C) CaO | (R) refractory/high-m.p. oxide |
+| (D) BaO | (S) forms hydroxide with water |
+|  | (T) strongest basic character among these |
 
 **26. Halides and hydrides**
 
 | **LIST I** | **LIST II** |
-|----|----|
+|---|---|
 | (A) BeCl₂(s) | (P) polymeric/bridged structure |
 | (B) BeH₂(s) | (Q) electron-deficient 3c–2e bonding |
 | (C) MgCl₂·6H₂O | (R) hydrolyses on heating rather than clean dehydration |
@@ -7697,52 +8131,64 @@ two lists are printed directly opposite each other.
 
 **27. Oxo-salts and sulphates**
 
-| **LIST I**  | **LIST II**                                    |
-|-------------|------------------------------------------------|
-| (A) BeCO₃ | (P) unusually unstable carbonate             |
-| (B) MgSO₄ | (Q) readily soluble sulphate                 |
-| (C) CaSO₄ | (R) sparingly soluble sulphate               |
-| (D) BaSO₄ | (S) practically insoluble sulphate           |
-|             | (T) sulphate used as X-ray contrast material |
+| **LIST I** | **LIST II** |
+|---|---|
+| (A) BeCO₃ | (P) unusually unstable carbonate |
+| (B) MgSO₄ | (Q) readily soluble sulphate |
+| (C) CaSO₄ | (R) sparingly soluble sulphate |
+| (D) BaSO₄ | (S) practically insoluble sulphate |
+|  | (T) sulphate used as X-ray contrast material |
 
 **28. Important calcium compounds: reactions and uses**
 
-| **LIST I**       | **LIST II**                            |
-|------------------|----------------------------------------|
-| (A) CaO        | (P) used in cement/building industry |
-| (B) Ca(OH)₂    | (Q) reacts with CO₂                  |
-| (C) CaCO₃      | (R) used in whitewash/mortar         |
-| (D) CaSO₄·½H₂O | (S) gives CO₂ with dilute acid       |
-|                  | (T) used for casts/moulds            |
+| **LIST I** | **LIST II** |
+|---|---|
+| (A) CaO | (P) used in cement/building industry |
+| (B) Ca(OH)₂ | (Q) reacts with CO₂ |
+| (C) CaCO₃ | (R) used in whitewash/mortar |
+| (D) CaSO₄·½H₂O | (S) gives CO₂ with dilute acid |
+|  | (T) used for casts/moulds |
 
 **29. Beryllium structure recognition**
 
-| **LIST I**          | **LIST II**                           |
-|---------------------|---------------------------------------|
-| (A) BeH₂ polymer  | (P) Be₄O core                       |
-| (B) Be₄O(NO₃)₆    | (Q) six bridging anionic groups     |
-| (C) Be₄O(OAc)₆    | (R) 3c–2e bridges                   |
+| **LIST I** | **LIST II** |
+|---|---|
+| (A) BeH₂ polymer | (P) Be₄O core |
+| (B) Be₄O(NO₃)₆ | (Q) six bridging anionic groups |
+| (C) Be₄O(OAc)₆ | (R) 3c–2e bridges |
 | (D) [Be(ox)₂]²⁻ | (S) two bidentate chelating ligands |
-|                     | (T) Be is four-coordinate           |
+|  | (T) Be is four-coordinate |
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure be4o-acetate::
+
+
+
+::figure be-ox2::
+
+
 
 Textbook reference: basic beryllium acetate and beryllium oxalate
 complex.
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure donor-maps::
+
+
 
 Textbook reference: chlorophyll a and EDTA donor framework.
 
 **30. Carbide–cyanamide network**
 
-| **LIST I**  | **LIST II**                                  |
-|-------------|----------------------------------------------|
-| (A) CaC₂  | (P) gives C₂H₂ on hydrolysis               |
+| **LIST I** | **LIST II** |
+|---|---|
+| (A) CaC₂ | (P) gives C₂H₂ on hydrolysis |
 | (B) CaNCN | (Q) fixes N₂ to a nitrogenous intermediate |
-| (C) H₂NCN | (R) gives urea/thiourea derivatives        |
-| (D) BaC₂  | (S) produces Ba(CN)₂ with N₂               |
-|             | (T) contains/produces linear NCN framework |
+| (C) H₂NCN | (R) gives urea/thiourea derivatives |
+| (D) BaC₂ | (S) produces Ba(CN)₂ with N₂ |
+|  | (T) contains/produces linear NCN framework |
 
 **SECTION D — COMPREHENSION / STRUCTURE-BASED PROBLEMS (Q31–Q38)**
 
@@ -7753,7 +8199,15 @@ chapter. Basic beryllium nitrate contains a Be₄O core with six bridging
 nitrate groups; polymeric BeH₂ contains electron-deficient hydrogen
 bridges.**
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+::figure be4o-nitrate::
+
+
+
+::figure beh2-chain::
+
+
 
 Textbook structural reference: basic beryllium nitrate and polymeric
 BeH₂.
@@ -7798,7 +8252,8 @@ beryllium acetate is most defensible?**
 
 > (A) Be CN = 2; classical 2c–2e Be–H bonds only; ionic H⁻ lattice
 >
-> (B) Be CN ≈ 4; bridging H atoms are shared; Be–H–Be units are 3c–2e
+> (B) Be CN ≈ 4; bridging H atoms are shared; Be–H--Be units are
+> 3c–2e
 >
 > (C) Be CN = 6; H acts as terminal ligand only; metallic bonding
 > dominates
@@ -7809,7 +8264,25 @@ beryllium acetate is most defensible?**
 emphasise the linear cyanamide ion [N=C=N]²⁻. Its downstream cyanamide
 chemistry is shown below.**
 
-*(source structure diagram — not reproduced in this text edition)*
+
+
+**Downstream chemistry of calcium cyanamide (CaNCN):**
+
+CaC₂ + N₂ [≈1100 °C] ⟶ CaNCN + C
+
+CaNCN + H₂SO₄ ⟶ H₂NCN (cyanamide) + CaSO₄
+
+CaNCN + CO₂ + H₂O ⟶ H₂NCN + CaCO₃
+
+H₂NCN + H₂O [pH < 2 or > 12] ⟶ H₂N·CO·NH₂ (urea)
+
+H₂NCN + H₂S ⟶ H₂N·CS·NH₂ (thiourea)
+
+3 H₂NCN [pyrolysis] ⟶ C₃N₆H₆ (melamine)
+
+BaC₂ + N₂ ⟶ Ba(CN)₂ — the barium exception: a cyanide, not a cyanamide.
+
+
 
 Textbook reaction network: CaNCN → cyanamide → urea / thiourea /
 melamine; BaC₂ gives cyanide with N₂.
@@ -8263,102 +8736,102 @@ prompts; write every product and balance the equation.
 
 **61. Air, nitrogen and water**
 
-|     | **Reactant(s)** | **Condition** | **Write product(s)**             |
-|:---:|-----------------|:-------------:|----------------------------------|
-| 1. | 2Be + O₂        |   ignition    | ________________ |
-| 2. | 3Be + N₂        |   ignition    | ________________ |
-| 3. | 2Mg + O₂        |    burning    | ________________ |
-| 4. | 3Mg + N₂        |    burning    | ________________ |
-| 5. | Ca + 2H₂O       |  cold water   | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | 2Be + O₂ | ignition | ________________ |
+| 2. | 3Be + N₂ | ignition | ________________ |
+| 3. | 2Mg + O₂ | burning | ________________ |
+| 4. | 3Mg + N₂ | burning | ________________ |
+| 5. | Ca + 2H₂O | cold water | ________________ |
 
 **62. Water, halogen, hydrogen and acid**
 
-|     | **Reactant(s)** | **Condition** | **Write product(s)**             |
-|:---:|-----------------|:-------------:|----------------------------------|
-| 1. | Sr + 2H₂O       |  cold water   | ________________ |
-| 2. | Ba + 2H₂O       |  cold water   | ________________ |
-| 3. | M + X₂          |  elevated T   | ________________ |
-| 4. | Ca + H₂         |     heat      | ________________ |
-| 5. | Mg + 2HCl       |  dilute acid  | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | Sr + 2H₂O | cold water | ________________ |
+| 2. | Ba + 2H₂O | cold water | ________________ |
+| 3. | M + X₂ | elevated T | ________________ |
+| 4. | Ca + H₂ | heat | ________________ |
+| 5. | Mg + 2HCl | dilute acid | ________________ |
 
 **63. Beryllium halide/hydride preparation and liquid NH₃**
 
-|     | **Reactant(s)** |   **Condition**   | **Write product(s)**             |
-|:---:|-----------------|:-----------------:|----------------------------------|
-| 1. | (NH₄)₂BeF₄      |         Δ         | ________________ |
-| 2. | BeO + C + Cl₂   |     600–800 K     | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | (NH₄)₂BeF₄ | Δ | ________________ |
+| 2. | BeO + C + Cl₂ | 600–800 K | ________________ |
 | 3. | 2BeCl₂ + LiAlH₄ | ether / reduction | ________________ |
-| 4. | M + 2HCl        |      dilute       | ________________ |
-| 5. | M + (x+y)NH₃    |     liq. NH₃      | ________________ |
+| 4. | M + 2HCl | dilute | ________________ |
+| 5. | M + (x+y)NH₃ | liq. NH₃ | ________________ |
 
 **64. Oxides, hydroxides and beryllate chemistry**
 
-|     | **Reactant(s)**       |  **Condition**   | **Write product(s)**             |
-|:---:|-----------------------|:----------------:|----------------------------------|
-| 1. | 2M + O₂               |     burning      | ________________ |
-| 2. | MO + H₂O              |        —         | ________________ |
-| 3. | Be(OH)₂ + 2OH⁻        |  excess alkali   | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | 2M + O₂ | burning | ________________ |
+| 2. | MO + H₂O | — | ________________ |
+| 3. | Be(OH)₂ + 2OH⁻ | excess alkali | ________________ |
 | 4. | Be(OH)₂ + 2HCl + 2H₂O | acid; NCERT form | ________________ |
-| 5. | BeO + 2HCl            |       acid       | ________________ |
+| 5. | BeO + 2HCl | acid | ________________ |
 
 **65. Oxo-salts**
 
-|     | **Reactant(s)** | **Condition** | **Write product(s)**             |
-|:---:|-----------------|:-------------:|----------------------------------|
-| 1. | MCl₂ + Na₂CO₃   |      aq.      | ________________ |
-| 2. | MCO₃            |       Δ       | ________________ |
-| 3. | MCO₃ + 2HNO₃    |    dilute     | ________________ |
-| 4. | 2M(NO₃)₂        |       Δ       | ________________ |
-| 5. | BeF₂ + 2F⁻      |   excess F⁻   | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | MCl₂ + Na₂CO₃ | aq. | ________________ |
+| 2. | MCO₃ | Δ | ________________ |
+| 3. | MCO₃ + 2HNO₃ | dilute | ________________ |
+| 4. | 2M(NO₃)₂ | Δ | ________________ |
+| 5. | BeF₂ + 2F⁻ | excess F⁻ | ________________ |
 
 **66. Calcium oxide / quicklime**
 
-|     | **Reactant(s)** | **Condition** | **Write product(s)**             |
-|:---:|-----------------|:-------------:|----------------------------------|
-| 1. | CaCO₃           |  1070–1270 K  | ________________ |
-| 2. | CaO + H₂O       |    slaking    | ________________ |
-| 3. | CaO + CO₂       |       —       | ________________ |
-| 4. | CaO + SiO₂      |    high T     | ________________ |
-| 5. | 6CaO + P₄O₁₀    |    high T     | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | CaCO₃ | 1070–1270 K | ________________ |
+| 2. | CaO + H₂O | slaking | ________________ |
+| 3. | CaO + CO₂ | — | ________________ |
+| 4. | CaO + SiO₂ | high T | ________________ |
+| 5. | 6CaO + P₄O₁₀ | high T | ________________ |
 
 **67. Calcium hydroxide / lime water**
 
-|     | **Reactant(s)**   | **Condition**  | **Write product(s)**             |
-|:---:|-------------------|:--------------:|----------------------------------|
-| 1. | Ca(OH)₂ + CO₂     |  limited CO₂   | ________________ |
-| 2. | CaCO₃ + CO₂ + H₂O |   excess CO₂   | ________________ |
-| 3. | 2Ca(OH)₂ + 2Cl₂   |  milk of lime  | ________________ |
-| 4. | Ca(OH)₂ + 2HCl    | neutralisation | ________________ |
-| 5. | Ca(OH)₂ + H₂SO₄   | neutralisation | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | Ca(OH)₂ + CO₂ | limited CO₂ | ________________ |
+| 2. | CaCO₃ + CO₂ + H₂O | excess CO₂ | ________________ |
+| 3. | 2Ca(OH)₂ + 2Cl₂ | milk of lime | ________________ |
+| 4. | Ca(OH)₂ + 2HCl | neutralisation | ________________ |
+| 5. | Ca(OH)₂ + H₂SO₄ | neutralisation | ________________ |
 
 **68. Calcium carbonate**
 
-|     | **Reactant(s)** | **Condition** | **Write product(s)**             |
-|:---:|-----------------|:-------------:|----------------------------------|
-| 1. | Ca(OH)₂ + CO₂   |  preparation  | ________________ |
-| 2. | CaCl₂ + Na₂CO₃  |      aq.      | ________________ |
-| 3. | CaCO₃           |    1200 K     | ________________ |
-| 4. | CaCO₃ + 2HCl    |    dilute     | ________________ |
-| 5. | CaCO₃ + H₂SO₄   |    dilute     | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | Ca(OH)₂ + CO₂ | preparation | ________________ |
+| 2. | CaCl₂ + Na₂CO₃ | aq. | ________________ |
+| 3. | CaCO₃ | 1200 K | ________________ |
+| 4. | CaCO₃ + 2HCl | dilute | ________________ |
+| 5. | CaCO₃ + H₂SO₄ | dilute | ________________ |
 
 **69. Gypsum, Plaster of Paris and setting**
 
-|     | **Reactant(s)**      | **Condition**  | **Write product(s)**             |
-|:---:|----------------------|:--------------:|----------------------------------|
-| 1. | 2CaSO₄·2H₂O          |     393 K      | ________________ |
-| 2. | CaSO₄·½H₂O + 3/2 H₂O |    setting     | ________________ |
-| 3. | CaSO₄·2H₂O           |  above 393 K   | ________________ |
-| 4. | CaSO₄·½H₂O           | strong heating | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | 2CaSO₄·2H₂O | 393 K | ________________ |
+| 2. | CaSO₄·½H₂O + 3/2 H₂O | setting | ________________ |
+| 3. | CaSO₄·2H₂O | above 393 K | ________________ |
+| 4. | CaSO₄·½H₂O | strong heating | ________________ |
 
 **70. Cement clinker chemistry and NCERT exercise reactions**
 
-|     | **Reactant(s)** | **Condition** | **Write product(s)**             |
-|:---:|-----------------|:-------------:|----------------------------------|
-| 1. | 2CaO + SiO₂     |     kiln      | ________________ |
-| 2. | 3CaO + SiO₂     |     kiln      | ________________ |
-| 3. | 3CaO + Al₂O₃    |     kiln      | ________________ |
-| 4. | 2Ca(NO₃)₂       |       Δ       | ________________ |
-| 5. | Mg + air        |   ignition    | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | 2CaO + SiO₂ | kiln | ________________ |
+| 2. | 3CaO + SiO₂ | kiln | ________________ |
+| 3. | 3CaO + Al₂O₃ | kiln | ________________ |
+| 4. | 2Ca(NO₃)₂ | Δ | ________________ |
+| 5. | Mg + air | ignition | ________________ |
 
 **SECTION H — ADVANCED REACTION BANK: J.D. LEE / GUHA / COACHING-STYLE
 CHEMISTRY (Q71–Q80)**
@@ -8371,82 +8844,82 @@ written; fill all products/conditions.
 
 **71. Liquid ammonia, ammoniates and amides**
 
-|     | **Reactant(s)** |   **Condition**    | **Write product(s)**             |
-|:---:|-----------------|:------------------:|----------------------------------|
-| 1. | 2NH₃ + 2e⁻      |      liq. NH₃      | ________________ |
-| 2. | M(NH₃)₆         | slow decomposition | ________________ |
-| 3. | Ca + 2NH₃       |       high T       | ________________ |
-| 4. | Ba + 2NH₃       |       high T       | ________________ |
-| 5. | Ca + (x+y)NH₃   |      liq. NH₃      | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | 2NH₃ + 2e⁻ | liq. NH₃ | ________________ |
+| 2. | M(NH₃)₆ | slow decomposition | ________________ |
+| 3. | Ca + 2NH₃ | high T | ________________ |
+| 4. | Ba + 2NH₃ | high T | ________________ |
+| 5. | Ca + (x+y)NH₃ | liq. NH₃ | ________________ |
 
 **72. Peroxides**
 
-|     | **Reactant(s)** | **Condition**  | **Write product(s)**             |
-|:---:|-----------------|:--------------:|----------------------------------|
-| 1. | 2BaO + O₂       | ~500 °C / air  | ________________ |
-| 2. | Ca(OH)₂ + H₂O₂  | then dehydrate | ________________ |
-| 3. | BaO₂ + 2HCl     |     dilute     | ________________ |
-| 4. | SrO + 1/2 O₂    |    high P,T    | ________________ |
-| 5. | Mg(OH)₂ + H₂O₂  | then dehydrate | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | 2BaO + O₂ | ~500 °C / air | ________________ |
+| 2. | Ca(OH)₂ + H₂O₂ | then dehydrate | ________________ |
+| 3. | BaO₂ + 2HCl | dilute | ________________ |
+| 4. | SrO + 1/2 O₂ | high P,T | ________________ |
+| 5. | Mg(OH)₂ + H₂O₂ | then dehydrate | ________________ |
 
 **73. Sulphates, hardness and water softening**
 
-|     | **Reactant(s)**     | **Condition**  | **Write product(s)**             |
-|:---:|---------------------|:--------------:|----------------------------------|
-| 1. | MgSO₄               |  strong heat   | ________________ |
-| 2. | BaSO₄ + 4C          |     high T     | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | MgSO₄ | strong heat | ________________ |
+| 2. | BaSO₄ + 4C | high T | ________________ |
 | 3. | Ca(HCO₃)₂ + Ca(OH)₂ | lime softening | ________________ |
-| 4. | CaSO₄ + Na₂CO₃      | soda softening | ________________ |
-| 5. | Ca²⁺ + [H₂EDTA]²⁻ |    buffered    | ________________ |
+| 4. | CaSO₄ + Na₂CO₃ | soda softening | ________________ |
+| 5. | Ca²⁺ + [H₂EDTA]²⁻ | buffered | ________________ |
 
 **74. Hydrides**
 
-|     | **Reactant(s)** | **Condition** | **Write product(s)**             |
-|:---:|-----------------|:-------------:|----------------------------------|
-| 1. | 2BeCl₂ + LiAlH₄ |     ether     | ________________ |
-| 2. | BeCl₂ + 2LiBH₄  |       —       | ________________ |
-| 3. | BeB₂H₈ + 2PPh₃  | sealed / heat | ________________ |
-| 4. | CaH₂ + 2H₂O     |  hydrolysis   | ________________ |
-| 5. | CaH₂ + 2HCl     |  dilute acid  | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | 2BeCl₂ + LiAlH₄ | ether | ________________ |
+| 2. | BeCl₂ + 2LiBH₄ | — | ________________ |
+| 3. | BeB₂H₈ + 2PPh₃ | sealed / heat | ________________ |
+| 4. | CaH₂ + 2H₂O | hydrolysis | ________________ |
+| 5. | CaH₂ + 2HCl | dilute acid | ________________ |
 
 **75. Beryllium halides and fluoride chemistry**
 
-|     | **Reactant(s)**  | **Condition** | **Write product(s)**             |
-|:---:|------------------|:-------------:|----------------------------------|
-| 1. | [Be(H₂O)₄]Cl₂  |     heat      | ________________ |
-| 2. | BeO + 2NH₃ + 4HF |       —       | ________________ |
-| 3. | (NH₄)₂[BeF₄]   |     heat      | ________________ |
-| 4. | 2BeO + CCl₄      |    ~800 °C    | ________________ |
-| 5. | CaF₂ + H₂SO₄     |  conc./heat   | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | [Be(H₂O)₄]Cl₂ | heat | ________________ |
+| 2. | BeO + 2NH₃ + 4HF | — | ________________ |
+| 3. | (NH₄)₂[BeF₄] | heat | ________________ |
+| 4. | 2BeO + CCl₄ | ~800 °C | ________________ |
+| 5. | CaF₂ + H₂SO₄ | conc./heat | ________________ |
 
 **76. Nitrides, carbides, phosphides and chalcogenides**
 
-|     | **Reactant(s)** | **Condition** | **Write product(s)**             |
-|:---:|-----------------|:-------------:|----------------------------------|
-| 1. | Ca₃N₂ + 6H₂O    |  hydrolysis   | ________________ |
-| 2. | Be₂C + 4H₂O     |  hydrolysis   | ________________ |
-| 3. | Ca + 2C         |   ~1100 °C    | ________________ |
-| 4. | CaO + 3C        |   ~2000 °C    | ________________ |
-| 5. | CaC₂ + 2H₂O     |  hydrolysis   | ________________ |
-| 6. | 3M + 2P         |    high T     | ________________ |
-| 7. | M + S           |    high T     | ________________ |
-| 8. | M + Se          |    high T     | ________________ |
-| 9. | M + Te          |    high T     | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | Ca₃N₂ + 6H₂O | hydrolysis | ________________ |
+| 2. | Be₂C + 4H₂O | hydrolysis | ________________ |
+| 3. | Ca + 2C | ~1100 °C | ________________ |
+| 4. | CaO + 3C | ~2000 °C | ________________ |
+| 5. | CaC₂ + 2H₂O | hydrolysis | ________________ |
+| 6. | 3M + 2P | high T | ________________ |
+| 7. | M + S | high T | ________________ |
+| 8. | M + Se | high T | ________________ |
+| 9. | M + Te | high T | ________________ |
 
 **77. Magnesium carbide and calcium cyanamide**
 
-|     | **Reactant(s)** |  **Condition**  | **Write product(s)**             |
-|:---:|-----------------|:---------------:|----------------------------------|
-| 1. | MgC₂            |      heat       | ________________ |
-| 2. | Mg₂C₃ + 4H₂O    |   hydrolysis    | ________________ |
-| 3. | CaC₂ + N₂       |    ~1100 °C     | ________________ |
-| 4. | CaNCN + 5H₂O    | slow hydrolysis | ________________ |
-| 5. | BaC₂ + N₂       |     high T      | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | MgC₂ | heat | ________________ |
+| 2. | Mg₂C₃ + 4H₂O | hydrolysis | ________________ |
+| 3. | CaC₂ + N₂ | ~1100 °C | ________________ |
+| 4. | CaNCN + 5H₂O | slow hydrolysis | ________________ |
+| 5. | BaC₂ + N₂ | high T | ________________ |
 
 **78. Cyanamide derivatives**
 
 |  | **Reactant(s)** | **Condition** | **Write product(s)** |
-|:--:|----|:--:|----|
+|---|---|---|---|
 | 1. | CaNCN + H₂SO₄ | — | ________________ |
 | 2. | CaNCN + CO₂ + H₂O | — | ________________ |
 | 3. | H₂NCN + H₂O | pH<2 or >12 | ________________ |
@@ -8455,18 +8928,18 @@ written; fill all products/conditions.
 
 **79. Beryllium hydrolysis and complexes**
 
-|     | **Reactant(s)**      |  **Condition**  | **Write product(s)**             |
-|:---:|----------------------|:---------------:|----------------------------------|
-| 1. | [Be(H₂O)₄]²⁺ + H₂O |   hydrolysis    | ________________ |
-| 2. | BeF₂ + 2F⁻           | excess fluoride | ________________ |
-| 3. | Be(OH)₂ + 2OH⁻       |    alkaline     | ________________ |
-| 4. | 4Be(OH)₂ + 6CH₃COOH  |   evaporation   | ________________ |
-| 5. | Be²⁺ + 2C₂O₄²⁻       |  complexation   | ________________ |
+|  | **Reactant(s)** | **Condition** | **Write product(s)** |
+|---|---|---|---|
+| 1. | [Be(H₂O)₄]²⁺ + H₂O | hydrolysis | ________________ |
+| 2. | BeF₂ + 2F⁻ | excess fluoride | ________________ |
+| 3. | Be(OH)₂ + 2OH⁻ | alkaline | ________________ |
+| 4. | 4Be(OH)₂ + 6CH₃COOH | evaporation | ________________ |
+| 5. | Be²⁺ + 2C₂O₄²⁻ | complexation | ________________ |
 
 **80. Coaching-style Mg/Ca special reactions**
 
 |  | **Reactant(s)** | **Condition** | **Write product(s)** |
-|:--:|----|:--:|----|
+|---|---|---|---|
 | 1. | MgCl₂·6H₂O | Δ | ________________ |
 | 2. | Mg(OH)Cl | Δ | ________________ |
 | 3. | MgCl₂·NH₄Cl·6H₂O | dehydrate, then strong Δ | ________________ |
@@ -8478,7 +8951,7 @@ written; fill all products/conditions.
 ------------------------------------------------------------------------
 
 | **Q** | **Answer** | **Q** | **Answer** |
-|----|----|----|----|
+|---|---|---|---|
 | 1 | A | 41 | 2 |
 | 2 | D | 42 | 3 |
 | 3 | A | 43 | 5 |

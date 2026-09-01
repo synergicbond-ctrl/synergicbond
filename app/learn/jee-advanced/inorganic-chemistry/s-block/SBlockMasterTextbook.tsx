@@ -92,7 +92,7 @@ export default function SBlockMasterTextbook() {
           </nav>
         </aside>
 
-        <article className="min-w-0 space-y-12">
+        <article className="min-w-0 max-w-[52rem] space-y-12">
           <section className="rounded-xl border border-cyan-400/20 bg-[var(--surface)] p-7 sm:p-10">
             <h2 className="w-fit text-3xl font-black leading-tight sm:text-4xl" style={GRADIENT}>Two independent textbook parts</h2>
             <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--text-body)]">

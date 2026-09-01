@@ -2089,7 +2089,7 @@ is its suspension.
 >
 > (D) 1, 2, 3, 4 and 5 only
 
-## SECTION B - Many-Correct (NCERT)
+## SECTION B — Many-Correct
 
 *For each item, enter the number of correct statements. The expanded
 sets test orders, data, uses, exceptions and traps at statement level.*
@@ -4786,1334 +4786,173 @@ observations per element.
 reaction is shown as a balanced examinable transformation; every mapping
 and numerical step is explicit.*
 
-### SECTION A — High-Density Multi-Statement Single-Correct
+### SECTION A — Multi-Statement Single-Correct
+
+*In every item statement 6 is the planted error; the correct option is the one listing statements 1–5.*
 
 A01 — Answer: B
 
-S1: True — successive electron shells increase size down the group,
-while M²⁺ is smaller than the isoelectronic/period-matched M⁺ ion
-because of greater nuclear charge.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-S4: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-S5: True — greater size and shielding lower ionisation enthalpy down
-the group; Group-2 first ionisation remains above the period-matched
-Group-1 value.
-
-S6: False — Melting and boiling points are irregular because crystal
-structures and metallic bonding do not change monotonically.
-
-Therefore the correct response is B.
+Metallic radius, the IE₁ order and the density order (Ca 1.55 < Mg 1.74 < Be 1.85 < Sr 2.63 < Ba 3.62 g cm⁻³) are all correct, and the tabulated m.p. order (Be > Ca > Sr > Ba > Mg) and b.p. order (Be > Ba > Ca > Sr > Mg) are reproduced exactly by statements 3 and 4. Statement 6 is false: precisely because the metallic structure and bonding do not change monotonically, the melting and boiling points are irregular. Correct set 1–5.
 
 A02 — Answer: D
 
-S1: True — greater size and shielding lower ionisation enthalpy down
-the group; Group-2 first ionisation remains above the period-matched
-Group-1 value.
-
-S2: True — greater size and shielding lower ionisation enthalpy down
-the group; Group-2 first ionisation remains above the period-matched
-Group-1 value.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: False — Be is not the strongest aqueous reducing metal; its E° is
-much less negative than those of Ca, Sr and Ba.
-
-Therefore the correct response is D.
+Group-2 first ionisation enthalpies exceed the period-matched Group-1 values, while the second ionisation enthalpies are far lower (the Group-1 second electron comes from a noble-gas core). |ΔH_hyd| falls as M²⁺ grows; E°(M²⁺/M) for Ca, Sr and Ba all lie near −2.9 V; Be at −1.97 V is much less negative. Statement 6 is false: Be has the **least** negative E°, so it is the weakest aqueous reducing metal of the group, not the strongest. Correct set 1–5.
 
 A03 — Answer: A
 
-S1: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S2: True — excitation/emission energies give Ca brick-red, Sr crimson
-and Ba apple-green; Be/Mg transitions fall outside the useful
-visible-flame response.
-
-S3: True — excitation/emission energies give Ca brick-red, Sr crimson
-and Ba apple-green; Be/Mg transitions fall outside the useful
-visible-flame response.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: False — Calcium is sufficiently electropositive to reduce several
-refractory metal oxides and to serve as an oxygen/nitrogen getter.
-
-Therefore the correct response is A.
+Ca and Mg are the two most abundant Group-2 elements in the crust; Be and Mg give no flame colour because their excitation energies are too high; Ca/Sr/Ba give brick-red, crimson and apple-green; Cu–Be is used for non-sparking springs and Mg–Al for light structural alloys. Statement 6 is false: calcium is more electropositive than carbon and is used as a reducing agent, for example to obtain U, Th, Zr and V from their halides or oxides. Correct set 1–5.
 
 A04 — Answer: C
 
-S1: True — a coherent surface oxide slows otherwise favourable bulk
-reaction.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S5: True — kinetic protection weakens down the group, so water
-reactivity rises; Mg requires hot water/steam.
-
-S6: False — Magnesium with steam forms MgO + H₂; Mg(OH)₂ is associated
-with hot liquid water, not the principal high-temperature steam product.
-
-Therefore the correct response is C.
+Coherent surface oxide films protect Be and Mg; Be and Mg burn in air to oxide plus nitride (Be₃N₂, Mg₃N₂); Ca, Sr and Ba tarnish rapidly forming oxide and nitride and react with cold water with increasing vigour down the group. Statement 6 is false: magnesium with steam gives the oxide — Mg + H₂O → MgO + H₂ — not the hydroxide. Correct set 1–5.
 
 A05 — Answer: B
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: False — BeH₂ is not formed readily by direct combination; it is
-prepared by hydride-transfer or borohydride routes.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — a coherent surface oxide slows otherwise favourable bulk
-reaction.
-
-Therefore the correct response is B.
+M + X₂ → MX₂ occurs on heating; BeH₂ is made from BeCl₂ + LiAlH₄; CaH₂, SrH₂ and BaH₂ are saline ionic hydrides; the metals liberate H₂ from non-oxidising acids; Be is passivated by an adherent oxide film (for example by concentrated HNO₃). Statement 2 is false: Be and Mg do not combine directly with H₂ — only Ca, Sr and Ba form hydrides by direct union. Correct set 1, 3, 4, 5, 6.
 
 A06 — Answer: D
 
-S1: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: False — Peroxide stability increases down the group as the larger
-M²⁺ ions better stabilise O₂²⁻.
-
-Therefore the correct response is D.
+BeO is amphoteric and substantially covalent; MgO to BaO are predominantly ionic; MO basicity rises down the group; M(OH)₂ solubility and basicity rise from Mg to Ba; Be(OH)₂ + 2OH⁻ → [Be(OH)₄]²⁻. Statement 6 is false: peroxide stability **increases** from Mg to Ba, because the larger cation better stabilises the large O₂²⁻ ion. Correct set 1–5.
 
 A07 — Answer: A
 
-S1: True — Be²⁺ has exceptional charge density and polarising power.
-
-S2: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S6: False — Heavier Group-2 fluorides are relatively insoluble; their
-high lattice enthalpy outweighs hydration.
-
-Therefore the correct response is A.
+BeX₂ are far more covalent than the Ca/Sr/Ba halides; solid BeCl₂ is a chloride-bridged polymer and the hot vapour becomes linear monomeric; the hydrate number falls down the group (BeCl₂·4H₂O → BaCl₂·2H₂O); hydrated Be and Mg chlorides hydrolyse on heating. Statement 6 is false: the fluorides of Ca, Sr and Ba are much **less** soluble than the corresponding chlorides. Correct set 1–5.
 
 A08 — Answer: C
 
-S1: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S2: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S3: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S6: False — Group-2 nitrates give MO + NO₂ + O₂, not nitrite + O₂.
-
-Therefore the correct response is C.
+Group-2 carbonates are sparingly soluble, their solubility falls and their thermal stability rises down the group, BeCO₃ is exceptionally unstable, and sulphate solubility drops sharply from MgSO₄ to BaSO₄. Statement 6 is false: Group-2 nitrates decompose to the **oxide** with NO₂ and O₂ — 2M(NO₃)₂ → 2MO + 4NO₂ + O₂ — and do not give nitrites. Correct set 1–5.
 
 A09 — Answer: B
 
-S1: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-S2: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S3: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: False — BeCl₂ is substantially covalent, electron-deficient and
-polymeric in the solid state.
-
-Therefore the correct response is B.
+High charge density makes Be compounds covalent; BeO and Be(OH)₂ are amphoteric; Be and Al both dissolve in alkali evolving H₂; Be₂C and Al₄C₃ are methanides giving CH₄; both metals form many complexes. Statement 6 is false: BeCl₂ is a covalent bridged/polymeric chloride, not ionic — it resembles covalent AlCl₃. Correct set 1–5.
 
 A10 — Answer: D
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
+CaO and Ca(OH)₂ are quicklime and slaked lime; lime water is the clear saturated solution and milk of lime the suspension; excess CO₂ dissolves CaCO₃ as Ca(HCO₃)₂; gypsum is CaSO₄·2H₂O and Plaster of Paris CaSO₄·½H₂O; gypsum retards cement setting. Statement 6 is false: dead-burnt plaster is anhydrous CaSO₄ with essentially no setting power; the rapidly setting hemihydrate is Plaster of Paris. Correct set 1–5.
 
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
 
-S3: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S4: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S5: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S6: False — Dead-burnt plaster is anhydrous CaSO₄ and lacks the rapid
-rehydration/setting behaviour of POP.
-
-Therefore the correct response is D.
-
-### SECTION B — Line-by-Line How-Many-Correct
+### SECTION B — How-Many-Correct
 
 B01 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — successive electron shells increase size down the group,
-while M²⁺ is smaller than the isoelectronic/period-matched M⁺ ion
-because of greater nuclear charge.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — greater size and shielding lower ionisation enthalpy down
-the group; Group-2 first ionisation remains above the period-matched
-Group-1 value.
-
-S5: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: False — The melting/boiling trends are irregular.
-
-S8: True — excitation/emission energies give Ca brick-red, Sr crimson
-and Ba apple-green; Be/Mg transitions fall outside the useful
-visible-flame response.
-
-S9: True — excitation/emission energies give Ca brick-red, Sr crimson
-and Ba apple-green; Be/Mg transitions fall outside the useful
-visible-flame response.
-
-S10: False — Group-2 metals are generally harder than the
-corresponding alkali metals.
-
-S11: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S12: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-Therefore the correct response is 10.
+False: 7 — the melting/boiling trends are irregular, not perfectly regular; 10 — Group-2 metals are **harder** than the alkali metals, because two valence electrons give stronger metallic bonding. The other ten statements are standard periodic facts.
 
 B02 — Answer: 10
 
-S1: True — a coherent surface oxide slows otherwise favourable bulk
-reaction.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — kinetic protection weakens down the group, so water
-reactivity rises; Mg requires hot water/steam.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: False — Be does not combine directly and readily with H₂.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S10: False — Be has a much less negative E° than Ca/Sr/Ba.
-
-S11: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S12: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-Therefore the correct response is 10.
+False: 7 — Be does not combine directly with H₂; 10 — Be has the least negative E° in the group, not the most negative. The rest correctly describe combustion, water, halogen, acid and metal–ammonia behaviour.
 
 B03 — Answer: 10
 
-S1: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: False — BeO is predominantly covalent (wurtzite-type), not a
-normal rock-salt ionic oxide.
-
-S6: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S7: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S10: True — larger M²⁺ ions stabilise the large peroxide ion more
-effectively down the group.
-
-S11: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S12: False — Peroxide stability rises down the group; BaO₂ is among
-the most stable.
-
-Therefore the correct response is 10.
+False: 5 — BeO adopts the 4:4 wurtzite structure, not the 6:6 rock-salt structure; 12 — the heavier peroxides are more stable than MgO₂, not less. All other oxide/hydroxide/peroxide statements are correct.
 
 B04 — Answer: 11
 
-S1: True — Be²⁺ has exceptional charge density and polarising power.
-
-S2: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S3: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S10: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-S11: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S12: False — Direct heating of MgCl₂·6H₂O in air causes hydrolysis;
-anhydrous MgCl₂ needs protected dehydration (for example dry HCl/NH₄Cl
-routes).
-
-Therefore the correct response is 11.
+False: 12 — heating MgCl₂·6H₂O in air hydrolyses it to Mg(OH)Cl/MgO + HCl; anhydrous MgCl₂ requires a stream of HCl (or dehydration of the NH₃ adduct). The other eleven statements are correct.
 
 B05 — Answer: 11
 
-S1: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S2: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S3: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S7: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S8: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S9: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S10: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S11: False — Group-2 carbonates decompose to MO + CO₂, not nitrites.
-
-S12: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-Therefore the correct response is 11.
+False: 11 — carbonates decompose to the oxide and CO₂; they contain no nitrogen and cannot form nitrites. The remaining eleven statements are correct.
 
 B06 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — Be²⁺ has exceptional charge density and polarising power.
-
-S3: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S10: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S11: False — Be most commonly favours coordination number 4;
-six-coordinate Be is not universal.
-
-S12: False — Many Be compounds are substantially covalent.
-
-Therefore the correct response is 10.
+False: 11 — Be is limited to coordination number 4 (only 2s and 2p orbitals), so it does not form six-coordinate complexes like Al³⁺; 12 — Be compounds are largely covalent, not ionic.
 
 B07 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — kinetic protection weakens down the group, so water
-reactivity rises; Mg requires hot water/steam.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S10: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S11: False — CaO is a strongly basic oxide.
-
-S12: False — Slaking is the addition of water to CaO.
-
-Therefore the correct response is 10.
+False: 11 — CaO is a basic oxide, not acidic; 12 — slaking is the addition of water to CaO (CaO + H₂O → Ca(OH)₂), not its removal.
 
 B08 — Answer: 11
 
-S1: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S10: False — CaCO₃ is practically insoluble in pure water.
-
-S11: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S12: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-Therefore the correct response is 11.
+False: 10 — CaCO₃ is essentially insoluble in pure water. The other eleven statements are correct.
 
 B09 — Answer: 10
 
-S1: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S4: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-S5: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S8: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S9: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S10: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-S11: False — Gypsum retards and controls cement setting.
-
-S12: False — POP contains less water of crystallisation than gypsum.
-
-Therefore the correct response is 10.
+False: 11 — gypsum retards (regulates) setting; it does not accelerate flash setting; 12 — the hemihydrate has less water of crystallisation than gypsum (½ vs 2).
 
 B10 — Answer: 10
 
-S1: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — EDTA forms 1:1 chelates with Ca²⁺ and Mg²⁺ under
-hardness-titration conditions.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S10: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S11: False — Chlorophyll contains Mg at its centre.
-
-S12: False — Be forms stable chelates such as [Be(ox)₂]²⁻.
-
-Therefore the correct response is 10.
+False: 11 — chlorophyll contains Mg, not Ca; 12 — Be does form chelate complexes such as [Be(ox)₂]²⁻ and basic beryllium acetate.
 
 B11 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — successive electron shells increase size down the group,
-while M²⁺ is smaller than the isoelectronic/period-matched M⁺ ion
-because of greater nuclear charge.
-
-S3: True — greater size and shielding lower ionisation enthalpy down
-the group; Group-2 first ionisation remains above the period-matched
-Group-1 value.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-S6: False — m.p. values are irregular
-
-S7: True — excitation/emission energies give Ca brick-red, Sr crimson
-and Ba apple-green; Be/Mg transitions fall outside the useful
-visible-flame response.
-
-S8: True — excitation/emission energies give Ca brick-red, Sr crimson
-and Ba apple-green; Be/Mg transitions fall outside the useful
-visible-flame response.
-
-S9: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S10: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S11: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S12: False — Be is much less negative than Ca/Sr/Ba
-
-Hence 10 statements are correct.
+False: 6 — Group-2 melting points are irregular, not regularly decreasing; 12 — Be has the least negative E°(M²⁺/M), not the most negative.
 
 B12 — Answer: 10
 
-S1: True — a coherent surface oxide slows otherwise favourable bulk
-reaction.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — kinetic protection weakens down the group, so water
-reactivity rises; Mg requires hot water/steam.
-
-S4: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S7: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S8: False — Ba(OH)₂ is more basic
-
-S9: False — BeO is not attacked by water
-
-S10: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S11: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S12: True — larger M²⁺ ions stabilise the large peroxide ion more
-effectively down the group.
-
-Hence 10 statements are correct.
+False: 8 — Ba(OH)₂ is more basic than Mg(OH)₂; 9 — ignited BeO is refractory and inert and is not readily attacked by water.
 
 B13 — Answer: 10
 
-S1: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S2: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S3: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S4: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S7: False — BaSO₄ is useful because it is extremely insoluble
-
-S8: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S9: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S10: False — the final solid is MO
-
-S11: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-S12: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-Hence 10 statements are correct.
+False: 7 — BaSO₄ is used as a contrast medium because it is insoluble (and therefore non-toxic despite Ba²⁺), not soluble; 10 — Group-2 nitrates leave the oxide, not the nitrite, as the final solid.
 
 B14 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S8: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S9: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S10: False — gypsum retards/controls setting
-
-S11: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S12: False — setting involves hydration and rearrangement
-
-Hence 10 statements are correct.
+False: 10 — gypsum retards, not accelerates, setting; 12 — setting is a hydration/rearrangement process, not mere physical drying.
 
 B15 — Answer: 10
 
-S1: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S2: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S3: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S4: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — EDTA forms 1:1 chelates with Ca²⁺ and Mg²⁺ under
-hardness-titration conditions.
-
-S7: False — BaSO₄ is used because it is insoluble
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S10: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S11: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S12: False — Be compounds are highly toxic and must never be tasted
-
-Hence 10 statements are correct.
+False: 7 — BaSO₄ works as a contrast medium because it is insoluble; 12 — beryllium compounds are toxic and must never be tasted.
 
 B16 — Answer: 10
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — greater size and shielding lower ionisation enthalpy down
-the group; Group-2 first ionisation remains above the period-matched
-Group-1 value.
-
-S4: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-S5: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S6: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S7: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S8: False — except Li₂CO₃, alkali carbonates are strongly heat-stable
-
-S9: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S10: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S11: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S12: False — Group-2 radii are smaller in the same period
-
-Hence 10 statements are correct.
+False: 8 — only Li₂CO₃ decomposes easily; Na₂CO₃, K₂CO₃ and the rest are very stable and do not decompose below 600 °C; 12 — Group-2 metallic radii are smaller than the Group-1 radii in the same period.
 
 B17 — Answer: 8
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: False — they occur as compounds, not as free metals
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: False — water is reduced in aqueous solution; fused anhydrous
-MgCl₂ is required
-
-S10: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-Hence 8 statements are correct.
+False: 7 — the Group-2 metals are too reactive to occur free and are always found combined; 9 — aqueous MgCl₂ cannot be electrolysed to magnesium (H₂ is discharged instead); the molten chloride is used.
 
 B18 — Answer: 8
 
-S1: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S2: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — Be²⁺ has exceptional charge density and polarising power.
-
-S7: False — the hydrate hydrolyses to Be(OH)₂ with HCl and water on
-heating
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: False — Be is normally four-coordinate and does not complex
-appreciably with hexadentate EDTA
-
-S10: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-Hence 8 statements are correct.
+False: 7 — heating [Be(H₂O)₄]Cl₂ hydrolyses it to Be(OH)Cl/BeO + HCl; 9 — Be²⁺ is limited to four-coordination and forms a weaker EDTA complex than Ca²⁺, and EDTA cannot enforce six-coordinate Be.
 
 B19 — Answer: 8
 
-S1: True — successive electron shells increase size down the group,
-while M²⁺ is smaller than the isoelectronic/period-matched M⁺ ion
-because of greater nuclear charge.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-S4: True — greater size and shielding lower ionisation enthalpy down
-the group; Group-2 first ionisation remains above the period-matched
-Group-1 value.
-
-S5: True — greater size and shielding lower ionisation enthalpy down
-the group; Group-2 first ionisation remains above the period-matched
-Group-1 value.
-
-S6: False — metallic structures make density and melting-point
-sequences irregular
-
-S7: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-S8: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-S9: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S10: False — first ionisation enthalpy generally decreases
-
-Hence 8 statements are correct.
+False: 6 — density and melting point both vary irregularly down Group 2; 10 — first ionisation enthalpy decreases, not increases, with atomic number in Group 2.
 
 B20 — Answer: 9
 
-S1: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — kinetic protection weakens down the group, so water
-reactivity rises; Mg requires hot water/steam.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: False — oxide basicity increases down the group
-
-S6: True — larger M²⁺ ions stabilise the large peroxide ion more
-effectively down the group.
-
-S7: True — larger M²⁺ ions stabilise the large peroxide ion more
-effectively down the group.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: True — larger M²⁺ ions stabilise the large peroxide ion more
-effectively down the group.
-
-S10: True — larger M²⁺ ions stabilise the large peroxide ion more
-effectively down the group.
-
-Hence 9 statements are correct.
+False: 5 — the basic character of MO increases from MgO to BaO, not decreases. The other nine statements are correct.
 
 B21 — Answer: 9
 
-S1: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S2: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S3: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S7: False — Ba(OH)₂ is more soluble and more strongly basic
-
-S8: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S9: True — kinetic protection weakens down the group, so water
-reactivity rises; Mg requires hot water/steam.
-
-S10: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-Hence 9 statements are correct.
+False: 7 — Ba(OH)₂ is both more soluble and more basic than Mg(OH)₂. The rest are correct.
 
 B22 — Answer: 8
 
-S1: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-S7: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S8: False — sulphate thermal stability increases as the metal becomes
-more basic down the group
-
-S9: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S10: False — CaSO₄ has finite solubility, so gypsum/alabaster weather
-outdoors
-
-Hence 8 statements are correct.
+False: 8 — sulphate thermal stability increases down the group (BaSO₄ is the most stable); 10 — CaSO₄ is slightly soluble, so gypsum does weather outdoors over time.
 
 B23 — Answer: 8
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: False — the hydrated nitrate decomposes rather than furnishing a
-clean anhydrous nitrate
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S5: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S6: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S7: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-S8: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S9: False — hydrate-forming tendency generally decreases down the
-group
-
-S10: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-Hence 8 statements are correct.
+False: 2 — hydrated Group-2 nitrates cannot be dehydrated cleanly, since heating causes partial hydrolysis/decomposition; 9 — the hydrate-forming tendency of the halides decreases from Mg to Ba.
 
 B24 — Answer: 8
 
-S1: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S2: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S3: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S4: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S5: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S6: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S7: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: False — magnesium also forms Mg₃N₂
-
-S10: False — CaH₂ contains H⁻ and evolves H₂ on hydrolysis
-
-Hence 8 statements are correct.
+False: 9 — magnesium does combine directly with N₂ (3Mg + N₂ → Mg₃N₂); 10 — CaH₂ contains H⁻ ions and gives H₂ on hydrolysis (CaH₂ + 2H₂O → Ca(OH)₂ + 2H₂).
 
 B25 — Answer: 9
 
-S1: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S8: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S9: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S10: False — they give CH₄, C₂H₂ and propyne respectively
-
-Hence 9 statements are correct.
+False: 10 — Be₂C, CaC₂ and Mg₂C₃ give different hydrocarbons on hydrolysis: CH₄, C₂H₂ and CH₃C≡CH respectively.
 
 B26 — Answer: 9
 
-S1: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S2: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S3: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S7: True — EDTA forms 1:1 chelates with Ca²⁺ and Mg²⁺ under
-hardness-titration conditions.
-
-S8: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S9: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S10: False — chlorophyll contains Mg
-
-Hence 9 statements are correct.
+False: 10 — chlorophyll contains Mg, not Ca, at the ring centre.
 
 B27 — Answer: 9
 
-S1: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S10: False — MgO is refractory and is used for high-temperature
-linings
-
-Hence 9 statements are correct.
+False: 10 — MgO melts near 2850 °C and is an excellent refractory, not a poor one.
 
 B28 — Answer: 8
 
-S1: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S2: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S3: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S4: True — larger, less polarising cations destabilise the oxoanion
-less, so carbonate/nitrate-derived trends follow polarising power.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — Be²⁺ has exceptional charge density and polarising power.
-
-S7: False — ionic character increases toward BaH₂
-
-S8: True — larger M²⁺ ions stabilise the large peroxide ion more
-effectively down the group.
-
-S9: False — hydration magnitude decreases toward Ba²⁺
-
-S10: True — Be²⁺ has exceptional charge density and polarising power.
-
-Hence 8 statements are correct.
+False: 7 — the ionic character of MH₂ increases, not decreases, from BeH₂ to BaH₂; 9 — hydration-enthalpy magnitude decreases, not increases, from Be²⁺ to Ba²⁺.
 
 B29 — Answer: 9
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S3: True — the observed solubility is the net result of lattice
-enthalpy and hydration enthalpy, not ionic size alone.
-
-S4: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-S5: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: True — EDTA forms 1:1 chelates with Ca²⁺ and Mg²⁺ under
-hardness-titration conditions.
-
-S10: False — boiling does not remove permanent chloride/sulphate
-hardness
-
-Hence 9 statements are correct.
+False: 10 — boiling removes only temporary hardness; permanent hardness needs chemical softening (washing soda, lime–soda, ion exchange or Calgon).
 
 B30 — Answer: 8
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
+False: 9 — the diagonal relationship is a similarity, not an identity: Be is limited to four-coordination whereas Al can be six-coordinate; 10 — Be compounds are largely covalent, not always ionic.
 
-S2: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S5: True — small, strongly polarising Be produces covalent/amphoteric
-chemistry and soluble beryllate complexes in excess base.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S7: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S8: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S9: False — the relationship is a limited chemical analogy, not
-identity
-
-S10: False — Be compounds are often substantially covalent and both
-elements show mixed bonding
-
-Hence 8 statements are correct.
 
 ### SECTION C — Complete Reaction Bank
 
@@ -6146,7 +4985,7 @@ C03 — Answer: All five equations in the solution
 
 C04 — Answer: All five equations in the solution
 
-| Be(OH)₂ + 2HCl + 2H₂O | **⟶** | [Be(OH)₄]Cl₂ |
+| Be(OH)₂ + 2HCl + 2H₂O | **⟶** | [Be(H₂O)₄]Cl₂ |
 |---|---|---|
 | MCl₂ + Na₂CO₃ | *aq.* **⟶** | MCO₃↓ + 2NaCl |
 | MCO₃ | *Δ* **⟶** | MO + CO₂ |
@@ -6373,195 +5212,56 @@ C28 — Answer: All five equations in the solution
 
 D01 — Answer: C
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-Therefore the correct response is C.
+All six statements are correct. Ca, Sr and Ba dissolve in liquid NH₃ to give blue, conducting, strongly reducing solutions coloured by solvated electrons; concentrated solutions turn bronze; and ammoniates such as [Ca(NH₃)₆] can be recovered.
 
 D02 — Answer: A
 
-S1: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S2: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: False — the stated generalisation is not valid.
-
-Therefore the correct response is A.
+Statements 1–5 are correct: BeH₂ is covalent and polymeric, CaH₂ is a saline hydride giving H₂ on hydrolysis, and Be₂C, CaC₂ and Mg₂C₃ are a methanide, an acetylide and an allylide giving CH₄, C₂H₂ and CH₃C≡CH respectively. Statement 6 is false — all of these are high-melting solids, not molecular liquids.
 
 D03 — Answer: D
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — electron deficiency and the small Be centre favour
-bridging/coordinate bonding, usually with coordination number four.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: False — the stated generalisation is not valid.
-
-Therefore the correct response is D.
+Statements 1–5 are correct: [BeF₄]²⁻ is tetrahedral, [Be(ox)₂]²⁻ has two bidentate oxalates, and both basic beryllium acetate and nitrate contain a Be₄O core with six edge bridges; Be adopts low coordination because only 2s and 2p orbitals are available. Statement 6 is false — Be²⁺ is limited to four-coordination and forms a much weaker EDTA complex than Ca²⁺.
 
 D04 — Answer: B
 
-S1: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S2: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S3: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S4: True — this is the established biological role: Mg is central to
-chlorophyll/ATP enzymes, while Ca is structural and regulatory.
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: True — EDTA forms 1:1 chelates with Ca²⁺ and Mg²⁺ under
-hardness-titration conditions.
-
-Therefore the correct response is B.
+All six statements are correct: Mg is the central metal of chlorophyll and an ATP-linked enzyme cofactor; about 99 % of body calcium is in bone and teeth; Ca²⁺ governs neuromuscular function, membrane integrity and clotting; plasma Ca²⁺ is under hormonal control; and EDTA gives a 1:1 complex used to measure Ca²⁺/Mg²⁺ hardness.
 
 D05 — Answer: C
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — hydrolysis/product identity follows the anionic unit (H⁻,
-N³⁻, C⁴⁻, C₂²⁻, C₃⁴⁻ or NCN²⁻).
-
-S5: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S6: False — the stated generalisation is not valid.
-
-Therefore the correct response is C.
+Statements 1–5 are correct: CaC₂ + N₂ → CaNCN + C fixes nitrogen; the [N=C=N]²⁻ ion is linear and isoelectronic with CO₂; CaNCN acts as a slow nitrogen fertiliser; acid liberates cyanamide H₂NCN, which gives urea or thiourea. Statement 6 is false — BaC₂ with N₂ gives the cyanide Ba(CN)₂, not a cyanamide.
 
 D06 — Answer: A
 
-S1: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S2: True — the statement follows the tabulated data; unlike simple
-size trends, metallic structure makes several physical-property
-sequences irregular.
-
-S3: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S4: True — this agrees with the verified chemical fact and the
-balanced chemistry used elsewhere in the bank.
-
-S5: True — EDTA forms 1:1 chelates with Ca²⁺ and Mg²⁺ under
-hardness-titration conditions.
-
-S6: False — the stated generalisation is not valid.
-
-Therefore the correct response is A.
+Statements 1–5 are correct: temporary hardness is due to Ca/Mg hydrogencarbonates and is removed on boiling; permanent hardness is due to Ca/Mg chlorides and sulphates; Na₂CO₃ precipitates CaCO₃; EDTA gives 1:1 complexes with Ca²⁺ and Mg²⁺. Statement 6 is false — BaSO₄ is insoluble, which is exactly why it is a safe X-ray contrast agent.
 
 D07 — Answer: D
 
-S1: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S2: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S3: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S4: True — hydration magnitude follows charge density and therefore
-decreases as M²⁺ grows.
-
-S5: True — the hydration state and clinker hydration chemistry give
-the stated identity or application.
-
-S6: False — the stated generalisation is not valid.
-
-Therefore the correct response is D.
+Statements 1–5 are correct: Portland cement is lime-rich, its silica/alumina ratio is controlled, gypsum regulates setting time, setting is a hydration/rearrangement process, and POP sets by re-forming gypsum. Statement 6 is false — dead-burnt (anhydrous) CaSO₄ sets very slowly, far more slowly than POP.
 
 D08 — Answer: A→P,R,S; B→Q,R; C→Q,R; D→T,U
 
-Complete mapping: A→P,R,S; B→Q,R; C→Q,R; D→T,U.
-
-Each link follows the independently audited trend, reaction, structure
-or application; one List-I entry may match more than one List-II item.
+A (Mg(OH)₂ → Ba(OH)₂): solubility, thermal stability and basic strength of the hydroxides all rise down the group → P, R, S. B (MgCO₃ → BaCO₃): carbonate solubility falls while thermal stability rises → Q, R. C (MgSO₄ → BaSO₄): sulphate solubility falls while thermal stability rises → Q, R. D (BeCl₂ → BaCl₂): covalent character and hydrate-forming tendency both fall down the group → T, U.
 
 D09 — Answer: A→P,R; B→Q,R,U; C→Q,S,T; D→Q,S
 
-Complete mapping: A→P,R; B→Q,R,U; C→Q,S,T; D→Q,S.
-
-Each link follows the independently audited trend, reaction, structure
-or application; one List-I entry may match more than one List-II item.
+A (BeO): amphoteric and refractory → P, R. B (MgO): ionic, refractory, and the least basic of the listed basic oxides → Q, R, U. C (CaO): ionic, gives the strongly basic Ca(OH)₂, and slakes vigorously with water → Q, S, T. D (Ba(OH)₂): an ionic, strongly basic hydroxide → Q, S.
 
 D10 — Answer: A→P,R,U; B→Q,R; C→S,V,W; D→T,V,W
 
-Complete mapping: A→P,R,U; B→Q,R; C→S,V,W; D→T,V,W.
-
-Each link follows the independently audited trend, reaction, structure
-or application; one List-I entry may match more than one List-II item.
+A (BeH₂): covalent polymer with 3-centre bridges, liberates H₂ on hydrolysis → P, R, U. B (CaH₂): ionic hydride, liberates H₂ on hydrolysis → Q, R. C (Be₂C): a carbide (methanide) giving CH₄ → S, V, W. D (CaC₂): a carbide (acetylide) giving C₂H₂ → T, V, W.
 
 D11 — Answer: A→P,V; B→P,Q,T,V; C→R,T; D→Q,S,T,U,V
 
-Complete mapping: A→P,V; B→P,Q,T,V; C→R,T; D→Q,S,T,U,V.
-
-Each link follows the independently audited trend, reaction, structure
-or application; one List-I entry may match more than one List-II item.
+A ([BeF₄]²⁻): tetrahedral, anionic → P, V. B ([Be(ox)₂]²⁻): tetrahedral Be, chelate rings, O-donor ligands, anionic → P, Q, T, V. C (Be₄O(OAc)₆): neutral cluster with a central Be₄O core and O-donor acetates → R, T. D ([Ca(EDTA)]²⁻): chelate rings, 1:1 metal:ligand, O-donors, six donor atoms from one ligand, anionic → Q, S, T, U, V.
 
 D12 — Answer: A→P,Q,T; B→P,Q,U; C→P,R; D→P,S
 
-Complete mapping: A→P,Q,T; B→P,Q,U; C→P,R; D→P,S.
-
-Each link follows the independently audited trend, reaction, structure
-or application; one List-I entry may match more than one List-II item.
+A (CaO): construction use, reacts with CO₂, made by calcining limestone → P, Q, T. B (Ca(OH)₂): construction use, reacts with CO₂, used for whitewashing → P, Q, U. C (CaCO₃): building material, gives CO₂ with dilute acid → P, R. D (CaSO₄·½H₂O): construction use, sets with water → P, S.
 
 D13 — Answer: A→P,Q,U; B→R,U; C→S; D→T
 
-Complete mapping: A→P,Q,U; B→R,U; C→S; D→T.
+A (Mg²⁺): ATP-linked enzyme chemistry, chlorophyll centre, EDTA-titratable → P, Q, U. B (Ca²⁺): bones/coagulation/neuromuscular role, EDTA-titratable → R, U. C (CaCl₂): desiccant and refrigeration brine → S. D (BaSO₄): X-ray contrast material → T.
 
-Each link follows the independently audited trend, reaction, structure
-or application; one List-I entry may match more than one List-II item.
 
 ### SECTION E — Comprehension Passages
 
@@ -7479,11 +6179,9 @@ BaSO₄; stable BaO₂; BaC₂+N₂→Ba(CN)₂ exception.
 >
 > 2. Ascending density order is Ca < Mg < Be < Sr < Ba.
 >
-> 3. Melting-point order is Be > Ca > Sr > Ba > Mg using NCERT
-> Table 10.2.
+> 3. Melting-point order is Be > Ca > Sr > Ba > Mg.
 >
-> 4. Boiling-point order is Be > Ba > Ca > Sr > Mg using NCERT
-> Table 10.2.
+> 4. Boiling-point order is Be > Ba > Ca > Sr > Mg.
 >
 > 5. IE₁ decreases Be > Mg > Ca > Sr > Ba.
 >
@@ -7502,10 +6200,9 @@ BaSO₄; stable BaO₂; BaC₂+N₂→Ba(CN)₂ exception.
 
 > 1. |ΔHhyd| follows Be²⁺ > Mg²⁺ > Ca²⁺ > Sr²⁺ > Ba²⁺.
 >
-> 2. E°(M²⁺/M) becomes progressively more negative from Be to Ba in the
-> NCERT data.
+> 2. E°(M²⁺/M) becomes progressively more negative from Be to Ba.
 >
-> 3. Ra has a more negative E° than Ba in the NCERT table.
+> 3. Ra has a more negative E° than Ba.
 >
 > 4. Group-2 metals are strong reducing agents but weaker than
 > corresponding alkali metals.
@@ -7600,7 +6297,7 @@ BaSO₄; stable BaO₂; BaC₂+N₂→Ba(CN)₂ exception.
 
 **6. Reducing nature and liquid-ammonia chemistry**
 
-> 1. NCERT gives deep blue-black metal–ammonia solutions containing
+> 1. Deep blue-black metal–ammonia solutions contain
 > ammoniated ions/electrons.
 >
 > 2. Ammoniates such as [M(NH₃)₆]²⁺ can be recovered from these
@@ -7687,7 +6384,7 @@ BaSO₄; stable BaO₂; BaC₂+N₂→Ba(CN)₂ exception.
 > 5. All Group-2 nitrates decompose on heating to MO + NO₂ + O₂.
 >
 > 6. Mg(NO₃)₂ crystallises with six waters while Ba(NO₃)₂ crystallises
-> anhydrous in the NCERT account.
+> anhydrous.
 >
 > (A) 1, 2, 3, 4, 5 only
 >
@@ -7702,7 +6399,7 @@ BaSO₄; stable BaO₂; BaC₂+N₂→Ba(CN)₂ exception.
 > 1. Very small size and high ionisation enthalpy make Be compounds
 > unusually covalent and readily hydrolysed.
 >
-> 2. NCERT states that Be does not exhibit coordination number greater
+> 2. Be does not exhibit a coordination number greater
 > than four.
 >
 > 3. BeO and Be(OH)₂ are amphoteric.
@@ -7748,7 +6445,7 @@ BaSO₄; stable BaO₂; BaC₂+N₂→Ba(CN)₂ exception.
 >
 > (D) 1, 2, 3, 4, 5, 6 only
 
-**12. Cement and biological importance — consolidated NCERT facts**
+**12. Cement and biological importance**
 
 > 1. An adult body contains about 25 g Mg and 1200 g Ca; Mg is an
 > ATP-phosphate-transfer cofactor and occurs in chlorophyll, while Ca is
@@ -7756,13 +6453,13 @@ BaSO₄; stable BaO₂; BaC₂+N₂→Ba(CN)₂ exception.
 > membrane and coagulation functions.
 >
 > 2. Plasma calcium is regulated near 100 mg L⁻¹ by calcitonin and
-> parathyroid hormone; NCERT also notes continuous bone turnover of
+> parathyroid hormone; there is continuous bone turnover of
 > about 400 mg Ca per day.
 >
 > 3. Portland-cement clinker is mixed with 2–3% gypsum to slow the
 > setting process.
 >
-> 4. NCERT gives approximate cement composition CaO 50–60%, SiO₂
+> 4. The approximate cement composition is CaO 50–60%, SiO₂
 > 20–25%, Al₂O₃ 5–10%, MgO 2–3%, Fe₂O₃ 1–2%, SO₃ 1–2%.
 >
 > 5. Important clinker constituents listed are Ca₂SiO₄ 26%, Ca₃SiO₅ 51%
@@ -7787,7 +6484,7 @@ For each question, statements 1–6 are given first. Select every option
 for which all listed statement numbers are correct. One or more options
 may be correct.
 
-**13. NCERT uses of Group-2 elements and compounds**
+**13. Uses of Group-2 elements and compounds**
 
 > 1. Cu–Be alloys are used for high-strength springs and Be metal for
 > X-ray-tube windows.
@@ -7801,7 +6498,7 @@ may be correct.
 > 4. Ca is used to reduce difficult metal oxides; Ca and Ba have been
 > used as getters in vacuum tubes.
 >
-> 5. Radium salts are cited in the old NCERT text for radiotherapy.
+> 5. Radium salts were formerly used in radiotherapy.
 >
 > 6. Be is the preferred metal for ordinary photoelectric cells because
 > of its very low ionisation enthalpy.
@@ -7873,12 +6570,12 @@ may be correct.
 >
 > 2. Plaster of Paris is CaSO₄·½H₂O.
 >
-> 3. NCERT calls anhydrous CaSO₄ obtained on stronger heating
+> 3. Anhydrous CaSO₄ obtained on stronger heating is called
 > dead-burnt plaster.
 >
 > 4. Plaster of Paris sets by hydration/recrystallisation to gypsum.
 >
-> 5. NCERT uses include plastering, fracture casts, dentistry and
+> 5. Uses include plastering, fracture casts, dentistry and
 > ornamental/statue work.
 >
 > 6. Alabaster is an anhydrous barium sulphate mineral.
@@ -7893,8 +6590,7 @@ may be correct.
 
 **17. Advanced CaCO₃ structural/mineral facts**
 
-> 1. Calcite is the thermodynamically more stable CaCO₃ form in the
-> advanced reference.
+> 1. Calcite is the thermodynamically more stable CaCO₃ form.
 >
 > 2. In calcite Ca²⁺ is surrounded by six oxygen atoms.
 >
@@ -7947,7 +6643,7 @@ may be correct.
 >
 > 4. CaC₂ is an acetylide and gives C₂H₂ on hydrolysis.
 >
-> 5. Mg₂C₃ hydrolysis gives propyne in the advanced reference.
+> 5. Mg₂C₃ hydrolysis gives propyne.
 >
 > 6. BaC₂ reacts with N₂ to form BaNCN as the principal exceptional
 > product.
@@ -8013,7 +6709,7 @@ may be correct.
 > 1. [Ca(EDTA)]²⁻ is a 1:1 metal–ligand complex and EDTA can offer
 > six donor atoms.
 >
-> 2. The advanced reference notes that Be, being characteristically
+> 2. Be, being characteristically
 > four-coordinate, does not complex appreciably with EDTA like Ca/Mg.
 >
 > 3. Chlorophyll contains Mg coordinated to four ring nitrogens.
@@ -8043,7 +6739,7 @@ may be correct.
 > 3. CaO₂ can be obtained via peroxide treatment of Ca(OH)₂ followed by
 > dehydration of a hydrated peroxide.
 >
-> 4. No stable peroxide of Be is known in the advanced reference.
+> 4. No stable peroxide of Be is known.
 >
 > 5. Acidification of BaO₂ yields H₂O₂.
 >
@@ -8351,7 +7047,7 @@ on heating according to 2M(NO₃)₂ → 2MO + 4NO₂ + O₂?**
 
 Answer: __________
 
-**44. For good-quality Portland cement, NCERT states
+**44. For good-quality Portland cement,
 CaO/(SiO₂+Al₂O₃+Fe₂O₃) should be as close as possible to x. Find x.**
 
 Answer: __________
@@ -8363,12 +7059,11 @@ halides?**
 
 Answer: __________
 
-**46. Among BeSO₄, MgSO₄, CaSO₄, SrSO₄ and BaSO₄, how many are described
-as readily soluble in water in NCERT?**
+**46. Among BeSO₄, MgSO₄, CaSO₄, SrSO₄ and BaSO₄, how many are described as readily soluble in water?**
 
 Answer: __________
 
-**47. Using the NCERT hydrate examples MgCl₂·8H₂O, CaCl₂·6H₂O,
+**47. Using the hydrate examples MgCl₂·8H₂O, CaCl₂·6H₂O,
 SrCl₂·6H₂O and BaCl₂·2H₂O, find the total number of waters of
 crystallisation in one formula unit of each taken together.**
 
@@ -8474,7 +7169,7 @@ Answer: ________
 >
 > 13. Be has the most negative E° in the group.
 >
-> 14. NCERT describes deep blue-black solutions in liquid NH₃.
+> 14. Deep blue-black solutions form in liquid NH₃.
 >
 > 15. Ammoniates [M(NH₃)₆]²⁺ may be recovered.
 
@@ -8527,7 +7222,7 @@ Answer: ________
 >
 > 3. BeCO₃ is the most stable carbonate and needs no CO₂ atmosphere.
 >
-> 4. Group-2 sulphates are white solids; NCERT describes them as stable
+> 4. Group-2 sulphates are white solids and are stable
 > to heat.
 >
 > 5. BeSO₄ and MgSO₄ are readily water-soluble.
@@ -8562,7 +7257,7 @@ Answer: ________
 >
 > 2. CO₂ is removed to drive calcination toward completion.
 >
-> 3. CaO is a white amorphous solid with NCERT m.p. about 2870 K.
+> 3. CaO is a white amorphous solid with m.p. about 2870 K.
 >
 > 4. CaO absorbs atmospheric H₂O and CO₂.
 >
@@ -8595,7 +7290,7 @@ Answer: ________
 > 1. CaO is a primary material for cement manufacture and a cheap
 > alkali source.
 >
-> 2. NCERT mentions CaO in manufacture of sodium carbonate from caustic
+> 2. CaO is used in the manufacture of sodium carbonate from caustic
 > soda.
 >
 > 3. CaO is used in sugar purification and dyestuffs.
@@ -8635,7 +7330,7 @@ Answer: ________
 
 > 1. Joseph Aspdin introduced Portland cement in England in 1824.
 >
-> 2. NCERT gives CaO about 50–60% in Portland cement.
+> 2. CaO is about 50–60% of Portland cement.
 >
 > 3. SiO₂ is about 20–25%.
 >
@@ -8651,12 +7346,12 @@ Answer: ________
 >
 > 9. CaO/(SiO₂+Al₂O₃+Fe₂O₃) should be near 2.
 >
-> 10. NCERT lists Ca₂SiO₄ 26%, Ca₃SiO₅ 51% and Ca₃Al₂O₆ 11% as
-> important clinker constituents.
+> 10. The clinker phases are approximately Ca₂SiO₄ 26%, Ca₃SiO₅ 51%
+> and Ca₃Al₂O₆ 11%.
 >
 > 11. An adult body contains about 25 g Mg and 1200 g Ca.
 >
-> 12. NCERT gives daily requirement in this section as 200–300 mg.
+> 12. The daily requirement is about 200–300 mg.
 >
 > 13. ATP-utilising phosphate-transfer enzymes require Mg as cofactor.
 >
@@ -8706,7 +7401,7 @@ Answer: ________
 
 Answer: ________
 
-**SECTION G — COMPLETE NCERT REACTION BANK: WRITE THE PRODUCTS
+**SECTION G — REACTION BANK: WRITE THE PRODUCTS
 (Q61–Q70)**
 
 ------------------------------------------------------------------------
@@ -8752,7 +7447,7 @@ prompts; write every product and balance the equation.
 | 1. | 2M + O₂ | burning | ________________ |
 | 2. | MO + H₂O | — | ________________ |
 | 3. | Be(OH)₂ + 2OH⁻ | excess alkali | ________________ |
-| 4. | Be(OH)₂ + 2HCl + 2H₂O | acid; NCERT form | ________________ |
+| 4. | Be(OH)₂ + 2HCl + 2H₂O | acid; hydrated form | ________________ |
 | 5. | BeO + 2HCl | acid | ________________ |
 
 **65. Oxo-salts**
@@ -8804,7 +7499,7 @@ prompts; write every product and balance the equation.
 | 3. | CaSO₄·2H₂O | above 393 K | ________________ |
 | 4. | CaSO₄·½H₂O | strong heating | ________________ |
 
-**70. Cement clinker chemistry and NCERT exercise reactions**
+**70. Cement clinker chemistry and related reactions**
 
 |  | **Reactant(s)** | **Condition** | **Write product(s)** |
 |---|---|---|---|
@@ -8955,7 +7650,7 @@ written; fill all products/conditions.
 | 21 | A,C,D | 61 | 2BeO | Be₃N₂ | 2MgO | Mg₃N₂ | Ca(OH)₂ + H₂ |
 | 22 | A,C,D | 62 | Sr(OH)₂ + H₂ | Ba(OH)₂ + H₂ | MX₂ | CaH₂ | MgCl₂ + H₂ |
 | 23 | A,C,D | 63 | BeF₂ + 2NH₄F | BeCl₂ + CO | 2BeH₂ + LiCl + AlCl₃ | MCl₂ + H₂ | [M(NH₃)ₓ]²⁺ + 2[e(NH₃)ᵧ]⁻ |
-| 24 | A,C,D | 64 | 2MO | M(OH)₂ | [Be(OH)₄]²⁻ | [Be(OH)₄]Cl₂ | BeCl₂ + H₂O |
+| 24 | A,C,D | 64 | 2MO | M(OH)₂ | [Be(OH)₄]²⁻ | [Be(H₂O)₄]Cl₂ | BeCl₂ + H₂O |
 | 25 | A→P,R; B→Q,R,S; C→Q,S; D→Q,S,T | 65 | MCO₃↓ + 2NaCl | MO + CO₂ | M(NO₃)₂ + CO₂ + H₂O | 2MO + 4NO₂ + O₂ | [BeF₄]²⁻ |
 | 26 | A→P; B→P,Q,T; C→R; D→S,T | 66 | CaO + CO₂ | Ca(OH)₂ | CaCO₃ | CaSiO₃ | 2Ca₃(PO₄)₂ |
 | 27 | A→P; B→Q; C→R; D→S,T | 67 | CaCO₃↓ + H₂O | Ca(HCO₃)₂ | CaCl₂ + Ca(OCl)₂ + 2H₂O | CaCl₂ + 2H₂O | CaSO₄ + 2H₂O |
@@ -8977,14 +7672,14 @@ written; fill all products/conditions.
 
 ------------------------------------------------------------------------
 
-• Q1: NCERT Table 10.2 gives m.p. Be 1560 > Ca 1124 > Sr 1062 > Ba
+• Q1: standard data give m.p. Be 1560 > Ca 1124 > Sr 1062 > Ba
 1002 > Mg 924 K and b.p. Be 2745 > Ba 2078 > Ca 1767 > Sr 1655 > Mg
 1363 K; the trend is explicitly non-systematic.
 
 • Q2: E° values are Be −1.97, Mg −2.36, Ca −2.84, Sr −2.89, Ba −2.92 and
-Ra −2.92 V. Thus Ba and Ra are equal in the NCERT table.
+Ra −2.92 V. Thus Ba and Ra are essentially equal.
 
-• Q12/Q59: gypsum is added to slow cement setting. NCERT clinker data:
+• Q12/Q59: gypsum is added to slow cement setting. Clinker data:
 Ca₂SiO₄ 26%, Ca₃SiO₅ 51%, Ca₃Al₂O₆ 11%.
 
 • Q35/Q50: 192 g CaC₂ = 3 mol; 3 mol CaC₂ → 3 mol H₂NCN → 1 mol

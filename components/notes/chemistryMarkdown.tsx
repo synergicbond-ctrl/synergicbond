@@ -15,7 +15,7 @@ import "katex/dist/katex.min.css";
  * them, and every tinted surface uses the matching hue.
  * ------------------------------------------------------------------ */
 
-const C = {
+export const C = {
   ink: "#f6f9fd",
   body: "#dde5f0",
   faint: "#9db0c6",
@@ -35,7 +35,7 @@ const C = {
 } as const;
 
 /** translucent tint of a hex colour, for call-out / card backgrounds */
-const tint = (hex: string, pct: number) => {
+export const tint = (hex: string, pct: number) => {
   const n = parseInt(hex.slice(1), 16);
   const r = (n >> 16) & 255;
   const g = (n >> 8) & 255;
@@ -227,7 +227,7 @@ const slotFor = (label: string, fallback: "above" | "below"): "above" | "below" 
   return fallback;
 };
 
-function Equation({ raw }: { raw: string }) {
+export function Equation({ raw }: { raw: string }) {
   const parts = raw.trim().split(ARROWS);
   const arrowIdx = parts.map((p, i) => (ARROWS.test(p) ? i : -1)).filter((i) => i >= 0);
   const meta: { above: string[]; below: string[] }[] = parts.map(() => ({ above: [], below: [] }));
@@ -248,7 +248,12 @@ function Equation({ raw }: { raw: string }) {
   // equation; anything else (a stray observation / scope note) drops to a prose
   // line beneath the equation. Nothing is ever left as an inline pill.
   const trailingNotes: string[] = [];
-  const looksLikeFormula = (t: string) => !/\s/.test(t) && /[A-Za-z]/.test(t) && /^[A-Za-z0-9()[\]·.,'’+−\-µμΔ]+$/.test(t);
+  const looksLikeFormula = (t: string) =>
+    !/\s/.test(t) &&
+    /[A-Za-z]/.test(t) &&
+    // allow Unicode sub/superscripts (₀-₉ ⁰-⁹ ⁺ ⁻) and the triple-bond glyph so
+    // bracketed complex ions like [Be(OH)₄]²⁻ or [C≡C]²⁻ stay in the equation
+    /^[A-Za-z0-9()[\]·.,'’+−\-µμΔ₀-ₜ⁰-ⁿ≡]+$/.test(t);
   for (let i = 0; i < parts.length; i++) {
     if (ARROWS.test(parts[i]) || !parts[i]) continue;
     parts[i] = parts[i].replace(COND_RE, (full, inner) => {

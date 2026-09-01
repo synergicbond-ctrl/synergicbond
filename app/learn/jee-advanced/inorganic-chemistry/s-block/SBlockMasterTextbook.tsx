@@ -7,6 +7,11 @@ import { SBlockMarkdown } from "./_markdown";
 import { SBlockVisual } from "./visuals";
 import { ALKALI_METAL_SECTIONS, ALKALINE_EARTH_METAL_SECTIONS, type SBlockSection } from "./content";
 
+const TABS = [
+  { label: "Textbook", href: "/learn/jee-advanced/inorganic-chemistry/s-block", active: true },
+  { label: "Question Bank", href: "/learn/jee-advanced/inorganic-chemistry/s-block/question-bank" },
+];
+
 // Part title — the shared boron-family H1 treatment.
 function PartHeading({ id, children }: { id: string; children: React.ReactNode }) {
   return (
@@ -74,6 +79,7 @@ export default function SBlockMasterTextbook() {
       chapterSlug="s-block"
       description="Two independent textbook parts: Alkali Metals and Alkaline Earth Metals."
       free={false}
+      tabs={TABS}
     >
       <div className="grid gap-7 lg:grid-cols-[240px_minmax(0,1fr)]">
         <aside className="lg:sticky lg:top-8 lg:h-[calc(100vh-4rem)] lg:overflow-y-auto">

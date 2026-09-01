@@ -732,136 +732,634 @@ function OxStateMap() {
   );
 }
 
-/* ------------------------------ dispatcher ------------------------------- */
+/** A small B12 icosahedron centred at (cx,cy); `s` scales it. */
+function MiniIcosa({ cx, cy, s = 1, dim = false }: { cx: number; cy: number; s?: number; dim?: boolean }) {
+  const outer = 34 * s;
+  const inner = 18 * s;
+  const cap = 46 * s;
+  const stroke = dim ? "#3f5a74" : COL.B;
+  const pent = (r: number, off: number) =>
+    Array.from({ length: 5 }, (_, i) => {
+      const a = ((i * 72 + off - 90) * Math.PI) / 180;
+      return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
+    });
+  const O = pent(outer, 0);
+  const I = pent(inner, 36);
+  const top = { x: cx, y: cy - cap };
+  const bot = { x: cx, y: cy + cap };
+  const r = 5 * s;
+  return (
+    <g opacity={dim ? 0.5 : 1}>
+      {O.map((p, i) => (
+        <Bond key={`o${i}`} x1={p.x} y1={p.y} x2={O[(i + 1) % 5].x} y2={O[(i + 1) % 5].y} color={stroke} w={1.7 * s} />
+      ))}
+      {I.map((p, i) => (
+        <Bond key={`i${i}`} x1={p.x} y1={p.y} x2={I[(i + 1) % 5].x} y2={I[(i + 1) % 5].y} color={stroke} w={1.5 * s} dash="4 3" />
+      ))}
+      {O.map((p, i) => (
+        <g key={`b${i}`}>
+          <Bond x1={p.x} y1={p.y} x2={top.x} y2={top.y} color="#3f5a74" w={1.2 * s} />
+          <Bond x1={p.x} y1={p.y} x2={bot.x} y2={bot.y} color="#3f5a74" w={1.2 * s} />
+          <Bond x1={p.x} y1={p.y} x2={I[i].x} y2={I[i].y} color="#3f5a74" w={1.2 * s} />
+          <Bond x1={p.x} y1={p.y} x2={I[(i + 4) % 5].x} y2={I[(i + 4) % 5].y} color="#3f5a74" w={1.2 * s} />
+        </g>
+      ))}
+      {[top, bot, ...O, ...I].map((p, i) => (
+        <circle key={i} cx={p.x} cy={p.y} r={r} fill={COL.Bfill} stroke={stroke} strokeWidth={1.6} />
+      ))}
+    </g>
+  );
+}
 
+/** Pentagonal-pyramid construction of the B12 icosahedron. */
+function IcosaFromPyramids() {
+  return (
+    <Svg h={220}>
+      {/* top pyramid */}
+      {(() => {
+        const cx = 70, cy = 120, apex = { x: cx, y: cy - 48 };
+        const ring = Array.from({ length: 5 }, (_, i) => {
+          const a = ((i * 72 - 90) * Math.PI) / 180;
+          return { x: cx + 30 * Math.cos(a), y: cy + 14 * Math.sin(a) };
+        });
+        return (
+          <g>
+            {ring.map((p, i) => (
+              <Bond key={i} x1={p.x} y1={p.y} x2={ring[(i + 1) % 5].x} y2={ring[(i + 1) % 5].y} color={COL.B} w={2} dash="4 3" />
+            ))}
+            {ring.map((p, i) => <Bond key={`a${i}`} x1={p.x} y1={p.y} x2={apex.x} y2={apex.y} color="#3f5a74" w={1.6} />)}
+            {[apex, ...ring].map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={5} fill={COL.Bfill} stroke={COL.B} strokeWidth={1.8} />)}
+            <text x={cx} y={cy + 44} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">apex + 5-ring</text>
+          </g>
+        );
+      })()}
+      <text x={140} y={124} textAnchor="middle" fontSize="20" fill={COL.amber}>+</text>
+      {/* staggered belt: two pentagons rotated 36 deg */}
+      {(() => {
+        const cx = 210, cy = 110;
+        const p = (r: number, off: number) => Array.from({ length: 5 }, (_, i) => {
+          const a = ((i * 72 + off - 90) * Math.PI) / 180;
+          return { x: cx + r * Math.cos(a), y: cy + 16 * Math.sin(a) + (off ? 26 : -26) };
+        });
+        const a = p(30, 0), b = p(30, 36);
+        return (
+          <g>
+            {a.map((q, i) => <Bond key={`a${i}`} x1={q.x} y1={q.y} x2={a[(i + 1) % 5].x} y2={a[(i + 1) % 5].y} color={COL.B} w={2} />)}
+            {b.map((q, i) => <Bond key={`b${i}`} x1={q.x} y1={q.y} x2={b[(i + 1) % 5].x} y2={b[(i + 1) % 5].y} color={COL.B} w={2} />)}
+            {a.map((q, i) => <Bond key={`x${i}`} x1={q.x} y1={q.y} x2={b[i].x} y2={b[i].y} color="#3f5a74" w={1.4} />)}
+            {[...a, ...b].map((q, i) => <circle key={i} cx={q.x} cy={q.y} r={5} fill={COL.Bfill} stroke={COL.B} strokeWidth={1.8} />)}
+            <text x={cx} y={cy + 54} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">staggered belt · 36°</text>
+          </g>
+        );
+      })()}
+      <text x={290} y={124} textAnchor="middle" fontSize="20" fill={COL.amber}>+</text>
+      {/* bottom pyramid */}
+      {(() => {
+        const cx = 350, cy = 110, apex = { x: cx, y: cy + 48 };
+        const ring = Array.from({ length: 5 }, (_, i) => {
+          const a = ((i * 72 - 90) * Math.PI) / 180;
+          return { x: cx + 30 * Math.cos(a), y: cy + 14 * Math.sin(a) };
+        });
+        return (
+          <g>
+            {ring.map((p, i) => (
+              <Bond key={i} x1={p.x} y1={p.y} x2={ring[(i + 1) % 5].x} y2={ring[(i + 1) % 5].y} color={COL.B} w={2} dash="4 3" />
+            ))}
+            {ring.map((p, i) => <Bond key={`a${i}`} x1={p.x} y1={p.y} x2={apex.x} y2={apex.y} color="#3f5a74" w={1.6} />)}
+            {[apex, ...ring].map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={5} fill={COL.Bfill} stroke={COL.B} strokeWidth={1.8} />)}
+          </g>
+        );
+      })()}
+      <text x={418} y={124} textAnchor="middle" fontSize="20" fill={COL.amber}>=</text>
+      <MiniIcosa cx={468} cy={110} s={1.15} />
+      <text x={210} y={205} textAnchor="middle" fontSize="11" fill="#8fa4b4">
+        two pentagonal pyramids sharing a staggered pentagonal belt → 12 vertices, 20 triangular faces
+      </text>
+    </Svg>
+  );
+}
+
+/** alpha-rhombohedral boron: icosahedra joined by inter-icosahedral B-B bonds. */
+function AlphaRhombLattice() {
+  const centres = [
+    { x: 120, y: 80 }, { x: 260, y: 60 }, { x: 400, y: 80 },
+    { x: 190, y: 175 }, { x: 330, y: 175 }, { x: 260, y: 250 },
+  ];
+  const links: [number, number][] = [[0, 1], [1, 2], [0, 3], [1, 3], [1, 4], [2, 4], [3, 4], [3, 5], [4, 5]];
+  return (
+    <Svg h={280}>
+      {links.map(([a, b], i) => (
+        <Bond key={i} x1={centres[a].x} y1={centres[a].y} x2={centres[b].x} y2={centres[b].y} color={COL.amber} w={2.2} dash="1 5" />
+      ))}
+      {centres.map((c, i) => <MiniIcosa key={i} cx={c.x} cy={c.y} s={0.72} dim={i > 0} />)}
+      <text x={260} y={272} textAnchor="middle" fontSize="11" fill="#8fa4b4">
+        each B₁₂ has 6 nearest-neighbour icosahedra · dotted = 2c–2e inter-icosahedral B–B bonds
+      </text>
+    </Svg>
+  );
+}
+
+/* -------- new figures for the forensic rebuild (inline placement) -------- */
+
+function Level({ x, y, w = 90, label, electrons = 0, color = "#9fb2c4" }: { x: number; y: number; w?: number; label?: string; electrons?: number; color?: string }) {
+  return (
+    <g>
+      <line x1={x} y1={y} x2={x + w} y2={y} stroke={color} strokeWidth={3} strokeLinecap="round" />
+      {label ? <text x={x + w + 8} y={y + 4} fontSize="11" fill="#c9d6df">{label}</text> : null}
+      {Array.from({ length: electrons }).map((_, i) => (
+        <text key={i} x={x + w / 2 + (i - (electrons - 1) / 2) * 12} y={y - 6} fontSize="13" textAnchor="middle" fill={COL.amber}>↑{i % 2 ? "" : "↓"}</text>
+      ))}
+    </g>
+  );
+}
+
+function BF3FourCentreMO() {
+  return (
+    <Svg h={260}>
+      <text x={260} y={20} textAnchor="middle" fontSize="12" fill="#8fa4b4">four-centre π interaction in BF₃ — one delocalised bonding π-MO, not three B=F double bonds</text>
+      {/* fragment orbitals */}
+      <Level x={40} y={70} w={70} label="empty B 2pᵤ" color={COL.B} />
+      <Level x={400} y={150} w={70} label="filled F 2p π-set" color={COL.O} electrons={0} />
+      <text x={435} y={172} fontSize="10" fill="#8fa4b4">(3 combinations)</text>
+      {/* MO ladder centre */}
+      <Level x={210} y={45} w={100} label="π*  (antibonding)" color={COL.red} />
+      <Level x={210} y={110} w={100} label="2 × non-bonding" color="#9fb2c4" electrons={4} />
+      <Level x={210} y={190} w={100} label="π  (4-centre bonding)" color={COL.green} electrons={2} />
+      {/* correlation lines */}
+      <Bond x1={110} y1={70} x2={210} y2={45} color={COL.B} w={1} dash="3 3" />
+      <Bond x1={110} y1={70} x2={210} y2={190} color={COL.B} w={1} dash="3 3" />
+      <Bond x1={400} y1={150} x2={310} y2={110} color={COL.O} w={1} dash="3 3" />
+      <Bond x1={400} y1={150} x2={310} y2={190} color={COL.O} w={1} dash="3 3" />
+      <text x={260} y={240} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">net: partial π character shared over B + 3F → shorter B–F, weaker Lewis acidity toward hard donors</text>
+    </Svg>
+  );
+}
+
+function ThreeCentreMO() {
+  return (
+    <Svg h={230}>
+      <text x={260} y={18} textAnchor="middle" fontSize="12" fill="#8fa4b4">B–H–B bridge: 3 orbitals → 3 MOs, only the lowest filled (2 electrons / 3 centres)</text>
+      <Level x={200} y={50} w={120} label="σ*  antibonding (empty)" color={COL.red} />
+      <Level x={200} y={110} w={120} label="≈ non-bonding (empty)" color="#9fb2c4" />
+      <Level x={200} y={175} w={120} label="σ  bonding (2 e⁻)" color={COL.green} electrons={2} />
+      {/* atomic orbitals */}
+      <Atom x={70} y={130} label="B" stroke={COL.B} fill={COL.Bfill} r={13} />
+      <Atom x={130} y={130} label="H" stroke={COL.H} fill="#241f10" r={11} />
+      <text x={100} y={165} textAnchor="middle" fontSize="10" fill="#8fa4b4">B  ·  H  ·  B</text>
+      <Atom x={100} y={95} label="B" stroke={COL.B} fill={COL.Bfill} r={13} />
+      <Bond x1={143} y1={130} x2={200} y2={175} color="#3f5a74" w={1} dash="3 3" />
+      <text x={400} y={205} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">⇒ each B–H segment has bond order well below 1</text>
+    </Svg>
+  );
+}
+
+function polygon(cx: number, cy: number, r: number, n: number, rot = -90) {
+  return Array.from({ length: n }, (_, i) => {
+    const a = ((i * 360) / n + rot) * (Math.PI / 180);
+    return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
+  });
+}
+
+function Cage({ cx, cy, n, r, label }: { cx: number; cy: number; n: number; r: number; label: string }) {
+  const p = polygon(cx, cy, r, n);
+  return (
+    <g>
+      {p.map((a, i) => p.slice(i + 1).map((b, j) => (
+        <Bond key={`${i}-${j}`} x1={a.x} y1={a.y} x2={b.x} y2={b.y} color="#3f5a74" w={1} />
+      )))}
+      {p.map((a, i) => (
+        <g key={i}>
+          <Bond x1={a.x} y1={a.y} x2={a.x + (a.x - cx) * 0.5} y2={a.y + (a.y - cy) * 0.5} color={COL.Cl} w={1.6} />
+          <circle cx={a.x} cy={a.y} r={5} fill={COL.Bfill} stroke={COL.B} strokeWidth={1.8} />
+        </g>
+      ))}
+      <text x={cx} y={cy + r + 24} textAnchor="middle" fontSize="11" fontWeight="700" fill="#c9d6df">{label}</text>
+    </g>
+  );
+}
+
+function LowerBoronHalides() {
+  return (
+    <div className="space-y-3">
+      <B2Cl4 />
+      <Svg h={170}>
+        <Cage cx={95} cy={80} n={4} r={30} label="B₄Cl₄ (closo)" />
+        <Cage cx={260} cy={80} n={8} r={36} label="B₈Cl₈" />
+        <Cage cx={430} cy={80} n={9} r={36} label="B₉Cl₉" />
+        <text x={260} y={158} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">subhalide (BCl)ₙ cages — electron-deficient multicentre B–B framework, not localised single bonds</text>
+      </Svg>
+    </div>
+  );
+}
+
+function borazineRing(cx: number, cy: number, r: number) {
+  const p = polygon(cx, cy, r, 6, -90);
+  // even index = B, odd = N
+  return p.map((pt, i) => ({ ...pt, el: i % 2 === 0 ? "B" : "N" }));
+}
+
+function BorazineMO() {
+  const ring = borazineRing(160, 120, 55);
+  return (
+    <Svg h={250}>
+      <text x={260} y={18} textAnchor="middle" fontSize="12" fill="#8fa4b4">borazine — N→B π donation makes the ring π-system polar (unlike benzene)</text>
+      {ring.map((a, i) => (
+        <Bond key={i} x1={a.x} y1={a.y} x2={ring[(i + 1) % 6].x} y2={ring[(i + 1) % 6].y} color="#6b7f92" w={2.4} />
+      ))}
+      {ring.map((a, i) => (
+        <Atom key={i} x={a.x} y={a.y} label={a.el} stroke={a.el === "B" ? COL.B : COL.N} fill={a.el === "B" ? COL.Bfill : COL.Nfill} r={13} />
+      ))}
+      {/* N lone-pair donation arrows toward adjacent B */}
+      {ring.filter((a) => a.el === "N").map((n, i) => {
+        const b = ring[(ring.indexOf(n) + 1) % 6];
+        return <Bond key={i} x1={n.x} y1={n.y} x2={b.x} y2={b.y} color={COL.green} w={1.4} dash="2 4" />;
+      })}
+      <text x={160} y={205} textAnchor="middle" fontSize="10" fill="#8fa4b4">δ⁻ on N · δ⁺ on B · dotted = lone-pair π donation</text>
+      {/* charge-separated contributor */}
+      <g transform="translate(330,45)">
+        {borazineRing(0, 60, 45).map((a, i, arr) => (
+          <g key={i}>
+            <Bond x1={a.x} y1={a.y} x2={arr[(i + 1) % 6].x} y2={arr[(i + 1) % 6].y} color="#6b7f92" w={2} />
+            <Atom x={a.x} y={a.y} label={a.el === "B" ? "B⁻" : "N⁺"} stroke={a.el === "B" ? COL.B : COL.N} fill={a.el === "B" ? COL.Bfill : COL.Nfill} r={13} />
+          </g>
+        ))}
+        <text x={0} y={125} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">important charge-separated contributor</text>
+      </g>
+    </Svg>
+  );
+}
+
+function MiniBorazine({ cx, cy, r, bLabel, nLabel, title }: { cx: number; cy: number; r: number; bLabel: string; nLabel: string; title: string }) {
+  const ring = borazineRing(cx, cy, r);
+  return (
+    <g>
+      {ring.map((a, i) => (
+        <Bond key={i} x1={a.x} y1={a.y} x2={ring[(i + 1) % 6].x} y2={ring[(i + 1) % 6].y} color="#6b7f92" w={2} />
+      ))}
+      {ring.map((a, i) => {
+        const sub = a.el === "B" ? bLabel : nLabel;
+        const ox = (a.x - cx) * 0.85;
+        const oy = (a.y - cy) * 0.85;
+        return (
+          <g key={i}>
+            <Bond x1={a.x} y1={a.y} x2={a.x + ox} y2={a.y + oy} color="#8fa4b4" w={1.2} />
+            <text x={a.x + ox * 1.5} y={a.y + oy * 1.5 + 3} textAnchor="middle" fontSize="9" fill="#c9d6df">{sub}</text>
+            <Atom x={a.x} y={a.y} label={a.el} stroke={a.el === "B" ? COL.B : COL.N} fill={a.el === "B" ? COL.Bfill : COL.Nfill} r={10} />
+          </g>
+        );
+      })}
+      <text x={cx} y={cy + r + 30} textAnchor="middle" fontSize="10" fontWeight="700" fill="#c9d6df">{title}</text>
+    </g>
+  );
+}
+
+function BorazineDerivatives() {
+  return (
+    <Svg h={240}>
+      <MiniBorazine cx={90} cy={95} r={40} bLabel="Cl" nLabel="H" title="B-trichloroborazine" />
+      <MiniBorazine cx={250} cy={95} r={40} bLabel="CH₃" nLabel="H" title="B-trimethylborazine" />
+      <MiniBorazine cx={410} cy={95} r={40} bLabel="Cl" nLabel="H₂" title="+3HCl adduct (Cl→B, H→N)" />
+      <g transform="translate(250,175)">
+        <text x={0} y={-8} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">borazine–Cr(CO)₃: ring η⁶-bound to Cr(CO)₃ through its π system</text>
+        <ellipse cx={0} cy={12} rx={46} ry={12} fill="none" stroke="#6b7f92" strokeWidth={2} />
+        <Bond x1={0} y1={20} x2={0} y2={40} color="#8fa4b4" w={1.4} dash="3 3" />
+        <Atom x={0} y={50} label="Cr" stroke={COL.metal} fill="#2a1414" r={12} />
+        {[-18, 0, 18].map((dx, i) => <text key={i} x={dx} y={72} textAnchor="middle" fontSize="9" fill="#c9d6df">CO</text>)}
+      </g>
+    </Svg>
+  );
+}
+
+function Deltahedron({ cx, cy, n, r, open, label, formula }: { cx: number; cy: number; n: number; r: number; open: number; label: string; formula: string }) {
+  const p = polygon(cx, cy, r, n);
+  return (
+    <g>
+      {p.map((a, i) => p.slice(i + 1).map((b, j) => {
+        const isOpen = i >= n - open || i + 1 + j >= n - open;
+        return <Bond key={`${i}-${j}`} x1={a.x} y1={a.y} x2={b.x} y2={b.y} color={isOpen ? "#33465a" : "#5a7a9a"} w={isOpen ? 1 : 1.6} dash={isOpen ? "3 4" : undefined} />;
+      }))}
+      {p.map((a, i) => <circle key={i} cx={a.x} cy={a.y} r={5} fill={COL.Bfill} stroke={COL.B} strokeWidth={1.8} />)}
+      <text x={cx} y={cy + r + 20} textAnchor="middle" fontSize="11" fontWeight="700" fill="#c9d6df">{label}</text>
+      <text x={cx} y={cy + r + 36} textAnchor="middle" fontSize="10" fill="#8fa4b4">{formula}</text>
+    </g>
+  );
+}
+
+function BoraneClasses() {
+  return (
+    <Svg h={230}>
+      <text x={260} y={16} textAnchor="middle" fontSize="12" fill="#8fa4b4">open the closo cage by removing vertices → nido → arachno</text>
+      <Deltahedron cx={90} cy={95} n={6} r={38} open={0} label="closo" formula="BₙHₙ²⁻ · (n+1) pairs" />
+      <Deltahedron cx={255} cy={95} n={6} r={38} open={2} label="nido" formula="BₙHₙ₊₄ · (n+2) pairs" />
+      <Deltahedron cx={420} cy={95} n={6} r={38} open={3} label="arachno" formula="BₙHₙ₊₆ · (n+3) pairs" />
+      <text x={260} y={210} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">B₂H₆ is the simplest nido-type borane · pyrolysis interconversions are condition-dependent</text>
+    </Svg>
+  );
+}
+
+function FlowBox({ x, y, w, h = 40, text, color = COL.B }: { x: number; y: number; w: number; h?: number; text: string; color?: string }) {
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={h} rx={6} fill={color + "22"} stroke={color} strokeWidth={1.4} />
+      {text.split("\n").map((ln, i) => (
+        <text key={i} x={x + w / 2} y={y + h / 2 + 4 + (i - (text.split("\n").length - 1) / 2) * 12} textAnchor="middle" fontSize="10" fill="#e6eef7">{ln}</text>
+      ))}
+    </g>
+  );
+}
+
+function Arrow({ x1, y1, x2, y2, label }: { x1: number; y1: number; x2: number; y2: number; label?: string }) {
+  const ang = Math.atan2(y2 - y1, x2 - x1);
+  return (
+    <g>
+      <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={COL.amber} strokeWidth={1.6} />
+      <polygon points={`${x2},${y2} ${x2 - 8 * Math.cos(ang - 0.4)},${y2 - 8 * Math.sin(ang - 0.4)} ${x2 - 8 * Math.cos(ang + 0.4)},${y2 - 8 * Math.sin(ang + 0.4)}`} fill={COL.amber} />
+      {label ? <text x={(x1 + x2) / 2} y={(y1 + y2) / 2 - 5} textAnchor="middle" fontSize="9" fill="#8fa4b4">{label}</text> : null}
+    </g>
+  );
+}
+
+function BayerHallHeroult() {
+  return (
+    <Svg h={320}>
+      <text x={260} y={16} textAnchor="middle" fontSize="12" fill="#8fa4b4">Bayer purification → Hall–Héroult electrolysis</text>
+      <FlowBox x={20} y={40} w={90} text={"bauxite\nAl₂O₃·xH₂O"} />
+      <Arrow x1={110} y1={60} x2={150} y2={60} label="hot conc. NaOH" />
+      <FlowBox x={150} y={40} w={110} text={"soluble\nNa[Al(OH)₄]"} color={COL.green} />
+      <Arrow x1={205} y1={80} x2={205} y2={110} label="filter Fe₂O₃ / SiO₂" />
+      <FlowBox x={150} y={110} w={110} text={"seed with Al(OH)₃\n→ Al(OH)₃ ↓"} />
+      <Arrow x1={260} y1={130} x2={300} y2={130} label="calcine ≈1200°C" />
+      <FlowBox x={300} y={110} w={90} text={"pure Al₂O₃"} color={COL.O} />
+      <Arrow x1={345} y1={150} x2={345} y2={185} />
+      {/* cell */}
+      <rect x={120} y={185} width={280} height={110} rx={8} fill="#0d1626" stroke={COL.B} strokeWidth={1.4} />
+      <text x={260} y={203} textAnchor="middle" fontSize="10" fill="#8fa4b4">Al₂O₃ in molten cryolite Na₃AlF₆ (+ CaF₂, AlF₃) · ≈ 950 °C</text>
+      {[150, 230, 310].map((x, i) => <rect key={i} x={x} y={210} width={22} height={30} fill="#241f10" stroke={COL.H} strokeWidth={1} />)}
+      <text x={260} y={228} textAnchor="middle" fontSize="9" fill="#f4e2b0">carbon anodes (consumed → CO₂)</text>
+      <rect x={135} y={262} width={250} height={22} fill={COL.metal + "33"} stroke={COL.metal} strokeWidth={1.2} />
+      <text x={260} y={277} textAnchor="middle" fontSize="9.5" fill="#f0c9c9">molten Al at carbon-lined cathode</text>
+      <text x={260} y={312} textAnchor="middle" fontSize="9.5" fill="#8fa4b4">cathode: Al³⁺ + 3e⁻ → Al · anode: 2O²⁻ → O₂ + 4e⁻ ; C + O₂ → CO₂</text>
+    </Svg>
+  );
+}
+
+function AlQualitative() {
+  return (
+    <Svg h={260}>
+      <FlowBox x={200} y={20} w={110} text={"Al³⁺ (aq)"} />
+      <Arrow x1={255} y1={40} x2={255} y2={65} label="OH⁻ / NH₃" />
+      <FlowBox x={185} y={65} w={140} text={"white gelatinous\nAl(OH)₃ ↓"} color="#9fb2c4" />
+      <Arrow x1={200} y1={95} x2={110} y2={135} label="excess NaOH" />
+      <Arrow x1={255} y1={105} x2={255} y2={135} label="excess NH₃" />
+      <Arrow x1={310} y1={95} x2={400} y2={135} label="aluminon" />
+      <FlowBox x={30} y={135} w={150} text={"dissolves →\n[Al(OH)₄]⁻ (colourless)\n≠ Mg²⁺ (stays ↓)"} color={COL.green} />
+      <FlowBox x={195} y={135} w={130} text={"no change\n≠ Zn²⁺ → [Zn(NH₃)₄]²⁺"} color={COL.O} />
+      <FlowBox x={355} y={135} w={130} text={"red lake\nadsorbed on Al(OH)₃"} color={COL.red} />
+      <text x={260} y={245} textAnchor="middle" fontSize="10" fill="#8fa4b4">the excess-NaOH and excess-NH₃ tests together place aluminium unambiguously</text>
+    </Svg>
+  );
+}
+
+/* ---------------------------- inline figure atlas ----------------------- */
+
+const RadiusBars = () => (
+  <Bars
+    data={[
+      { k: "B", v: 88 },
+      { k: "Al", v: 143 },
+      { k: "Ga", v: 135, tag: "d-block" },
+      { k: "In", v: 167 },
+      { k: "Tl", v: 170, tag: "4f" },
+    ]}
+    unit="atomic / metallic radius · pm"
+    note="order: B < Ga < Al < In < Tl"
+  />
+);
+const IeBars = () => (
+  <Bars
+    data={[
+      { k: "B", v: 801 },
+      { k: "Al", v: 577 },
+      { k: "Ga", v: 579 },
+      { k: "In", v: 558 },
+      { k: "Tl", v: 589 },
+    ]}
+    unit="IE₁ · kJ mol⁻¹"
+    note="order: In < Al < Ga < Tl < B"
+  />
+);
+
+type Fig = { title: string; caption: string; render: () => ReactNode };
+
+const FIGURES: Record<string, Fig> = {
+  "covalence-cap": {
+    title: "First-member anomaly — why boron caps at covalence 4",
+    caption:
+      "A period-2 atom has only 2s + 2p valence orbitals, so boron's maximum covalence is 4 ([BF₄]⁻). From aluminium onward, higher coordination numbers such as 6 ([AlF₆]³⁻) become accessible.",
+    render: () => <CovalenceCap />,
+  },
+  "radii": {
+    title: "Atomic / metallic radius across Group 13",
+    caption:
+      "A new shell is added down the group, but Ga is smaller than Al (poor 3d¹⁰ shielding — d-block contraction) and Tl is only marginally larger than In (4f¹⁴ — lanthanoid contraction). Invariant exam point: Ga < Al.",
+    render: () => <RadiusBars />,
+  },
+  "ie1": {
+    title: "First ionisation enthalpy",
+    caption:
+      "IE₁ falls from B to Al with size, then rises slightly at Ga and again at Tl because poorly shielding d and f electrons hold the outer electrons more tightly.",
+    render: () => <IeBars />,
+  },
+  "lewis-adduct": {
+    title: "Electron deficiency → Lewis acidity",
+    caption:
+      "A trivalent Group 13 centre has only six electrons around it. Accepting a lone pair converts planar sp² BF₃ into a tetrahedral sp³ adduct such as F₃B←NH₃.",
+    render: () => <LewisAdduct />,
+  },
+  "aquo-ions": {
+    title: "Aquo ion ⇌ hydroxo ion",
+    caption:
+      "Heavier Group 13 ions give octahedral [M(H₂O)₆]³⁺ (acidic through hydrolysis) and, in strong alkali, tetrahedral [M(OH)₄]⁻. Boron forms no normal aquated B³⁺ ion.",
+    render: () => <AquoIons />,
+  },
+  "oxide-trend": {
+    title: "Oxide / hydroxide character down the group",
+    caption:
+      "Oxide character tracks metallic character: acidic B₂O₃ → amphoteric Al₂O₃ / Ga₂O₃ → predominantly basic In₂O₃ → strongly basic Tl₂O and TlOH.",
+    render: () => <OxideTrend />,
+  },
+  "diagonal": {
+    title: "The boron–silicon diagonal relationship",
+    caption:
+      "B and Si sit on a periodic-table diagonal and share polarising power (z/r) and covalent, network, weakly acidic behaviour — a set of similarities, not identity (B caps at covalence 4, Si reaches 6).",
+    render: () => <DiagonalBSi />,
+  },
+  "oxstate-map": {
+    title: "Group 13 master map — oxidation-state stability",
+    caption:
+      "Down the group the ns² pair is held back (inert-pair effect): the +1 state becomes progressively more stable while +3 becomes strongly oxidising, so Tl(I) is the dominant thallium state.",
+    render: () => <OxStateMap />,
+  },
+  "icosahedron": {
+    title: "Elemental boron — the B₁₂ icosahedron",
+    caption:
+      "Crystalline boron is built from B₁₂ icosahedra (12 vertices, 20 triangular faces) — two staggered pentagons capped by an apex atom top and bottom — linked by multicentre inter-icosahedral B–B bonds. Multicentre bonding compensates for boron's electron deficiency.",
+    render: () => <IcosahedronB12 />,
+  },
+  "icosa-construction": {
+    title: "Construction of the B₁₂ icosahedron from pentagonal pyramids",
+    caption:
+      "Top pentagonal pyramid (1 apex + 5-ring) + a staggered pentagonal belt (two pentagons offset by 36° about the fivefold axis) + bottom pentagonal pyramid = the 12-vertex icosahedron.",
+    render: () => <IcosaFromPyramids />,
+  },
+  "alpha-rhombohedral": {
+    title: "α-rhombohedral boron — a lattice of linked icosahedra",
+    caption:
+      "B₁₂ units sit on a rhombohedral lattice; neighbouring icosahedra are joined by 2c–2e inter-icosahedral B–B bonds and each icosahedron has six nearest neighbours. The extended 3-D network gives α-boron its extreme hardness and high melting point. β-rhombohedral boron is more complex, built from larger B₈₄ units (central B₁₂ + 12 exterior atoms + an outer B₆₀ cage) with interstitial atoms.",
+    render: () => <AlphaRhombLattice />,
+  },
+  "borate-units": {
+    title: "Boric acid and key borate structural units",
+    caption:
+      "B(OH)₃ is trigonal planar (sp²); [B(OH)₄]⁻ is tetrahedral (sp³); the borax anion [B₄O₅(OH)₄]²⁻ has two trigonal and two tetrahedral boron centres joined by five bridging O atoms.",
+    render: () => <BoricAcidUnits />,
+  },
+  "cis-diol": {
+    title: "Why cis-diols raise the apparent acidity of boric acid",
+    caption:
+      "A cis-diol chelates [B(OH)₄]⁻ through a five-membered O–B–O ring; removing the tetrahydroxyborate shifts B(OH)₃ + 2H₂O ⇌ [B(OH)₄]⁻ + H₃O⁺ to the right, so H₃BO₃ can then be titrated with phenolphthalein.",
+    render: () => <CisDiolChelate />,
+  },
+  "peroxoborate": {
+    title: "Sodium peroxoborate — the true dimeric anion",
+    caption:
+      "Commercial 'sodium perborate' NaBO₃·4H₂O is the dimeric anion [B₂(O₂)₂(OH)₄]²⁻ with two genuine O–O peroxo bridges and both boron atoms tetrahedral; warm water releases H₂O₂.",
+    render: () => <Peroxoborate />,
+  },
+  "bf3": {
+    title: "BF₃ — trigonal-planar structure and F→B π donation",
+    caption:
+      "BF₃ is trigonal planar (sp² B, zero dipole). The vacant B 2p orbital accepts π density from filled F 2p lone pairs, shortening B–F to ≈130 pm; the donation is lost when B becomes tetrahedral in an adduct or [BF₄]⁻ (≈138–143 pm).",
+    render: () => <BF3Planar />,
+  },
+  "bf3-mo": {
+    title: "BF₃ — the four-centre π picture (MOT lens)",
+    caption:
+      "The empty B 2pᵤ orbital combines with the symmetry-matched filled combination of the three F 2p lone pairs to give one delocalised four-centre bonding π-MO (plus non-bonding and antibonding levels). This single delocalised π interaction — not three localised B=F double bonds — is what shortens B–F and weakens BF₃ as a Lewis acid toward hard donors.",
+    render: () => <BF3FourCentreMO />,
+  },
+  "b2cl4-cages": {
+    title: "B₂Cl₄ and the lower boron chlorides",
+    caption:
+      "B₂Cl₄ (low-pressure discharge of BCl₃ over Hg) has a genuine B–B bond — non-eclipsed in gas/liquid, planar in the solid. The subhalides (BCl)ₙ — B₄Cl₄, B₈Cl₈, B₉Cl₉ — are compact closo boron cages whose B–B framework uses multicentre bonding, so cage edges are not ordinary single bonds.",
+    render: () => <LowerBoronHalides />,
+  },
+  "diborane": {
+    title: "Diborane B₂H₆ — 3-centre–2-electron bonding",
+    caption:
+      "Four terminal B–H bonds are ordinary 2c–2e bonds; the two B–H–B bridges are 3c–2e bonds. The B₂H₄ unit is planar and the two bridging H atoms sit one above and one below that plane. Terminal B–H ≈ 119 pm; bridging B–H ≈ 133 pm.",
+    render: () => <Diborane />,
+  },
+  "3c2e-mo": {
+    title: "The B–H–B bridge — molecular-orbital view (MOT lens)",
+    caption:
+      "Three atomic orbitals (B, H, B) combine into three MOs: bonding, approximately non-bonding, and antibonding. Only the lowest (bonding) MO is filled — two electrons spread over three centres. That is why each B–H segment of the bridge has a bond order well below 1 and must not be drawn as a normal single bond.",
+    render: () => <ThreeCentreMO />,
+  },
+  "borazine": {
+    title: "Borazine and hexagonal boron nitride",
+    caption:
+      "Borazine B₃N₃H₆ is a planar six-membered ring of alternating B and N; the polar Bδ⁺–Nδ⁻ bonds make it more reactive than benzene. Hexagonal BN ('white graphite') stacks the same alternating framework into insulating 2-D layers.",
+    render: () => <Borazine />,
+  },
+  "borazine-mo": {
+    title: "Borazine π system vs benzene (MOT lens)",
+    caption:
+      "N donates its lone pair into the empty B 2p orbital, giving π delocalisation around the ring — but the electron density is pulled toward nitrogen, so the ring is polar and a charge-separated contributor (B⁻=N⁺) is important. Unlike benzene, the π electrons are not evenly shared, so borazine readily adds HX across B–N.",
+    render: () => <BorazineMO />,
+  },
+  "borazine-derivatives": {
+    title: "Borazine derivatives and complexes",
+    caption:
+      "B-trichloroborazine (from 3NH₄Cl + 3BCl₃), B-trimethylborazine, the HCl-addition product [H atoms add H→N, Cl→B] and a schematic borazine–Cr(CO)₃ π-complex where the ring binds a metal-carbonyl fragment through its π system.",
+    render: () => <BorazineDerivatives />,
+  },
+  "borane-classes": {
+    title: "Borane cluster classification (Wade / Lipscomb)",
+    caption:
+      "closo BₙHₙ²⁻ (n+1 skeletal pairs) → nido BₙHₙ₊₄ (n+2) → arachno BₙHₙ₊₆ (n+3): removing vertices from the closo deltahedron opens the cage. B₂H₆ is the simplest nido-type member. Pyrolysis interconversions are condition-dependent, not a single clean sequence.",
+    render: () => <BoraneClasses />,
+  },
+  "borohydride-bridges": {
+    title: "Covalent borohydrides and polymeric aluminium hydride",
+    caption:
+      "In covalent metal borohydrides BH₄⁻ bridges the metal through two H atoms (η²). Al(BH₄)₃ is a discrete molecule with six Al–H–B bridges; Be(BH₄)₂ is a chain polymer; (AlH₃)ₙ is a polymer held together by Al–H–Al multicentre bridges.",
+    render: () => <BorohydrideBridges />,
+  },
+  "al2cl6": {
+    title: "Al₂Cl₆ — dimeric aluminium chloride",
+    caption:
+      "Anhydrous AlCl₃ dimerises through two µ-Cl bridges so that each aluminium is roughly tetrahedral; association is favoured at lower temperature and dissociation increases on heating (to monomeric planar AlCl₃ above ≈ 800 °C).",
+    render: () => <Al2Cl6 />,
+  },
+  "al2me6": {
+    title: "Al₂(CH₃)₆ — electron-deficient alkyl bridges",
+    caption:
+      "Dimeric trimethylaluminium has two bridging and four terminal methyl groups; the Al–C–Al bridges are 3-centre–2-electron bonds analogous to the B–H–B bridges of diborane.",
+    render: () => <Al2Me6 />,
+  },
+  "aluminate-ring": {
+    title: "Tricalcium aluminate — the Al–O ring in Ca₉[Al₆O₁₈]",
+    caption:
+      "Six AlO₄ tetrahedra share corners to give a 12-membered Al–O ring; each aluminium also carries two exocyclic O atoms (Ca²⁺ ions and full packing omitted). Ca₃Al₂O₆ × 3 = Ca₉Al₆O₁₈.",
+    render: () => <AluminateRing />,
+  },
+  "al-chelates": {
+    title: "Octahedral aluminium chelates",
+    caption:
+      "Three bidentate ligands (acetylacetonate, oxalate or 8-hydroxyquinolinate) fill six coordination sites around Al(III), giving octahedral Al(acac)₃, [Al(ox)₃]³⁻ and Al(oxine)₃ (the basis of the gravimetric oxine determination of aluminium).",
+    render: () => <AlChelate />,
+  },
+  "bayer-hall": {
+    title: "Aluminium extraction — Bayer purification + Hall–Héroult electrolysis",
+    caption:
+      "Bayer: bauxite → hot conc. NaOH dissolves Al as aluminate, Fe₂O₃/SiO₂ impurities filtered off → seeded Al(OH)₃ precipitation → calcination → pure Al₂O₃. Hall–Héroult: Al₂O₃ dissolved in molten cryolite Na₃AlF₆ (solvent + conductivity; CaF₂/AlF₃ additives), ≈ 950 °C. Cathode: Al³⁺ + 3e⁻ → Al(l). Anode (carbon, consumed): 2O²⁻ → O₂ + 4e⁻, then C + O₂ → CO₂.",
+    render: () => <BayerHallHeroult />,
+  },
+  "al-qual": {
+    title: "Aluminium — qualitative analysis flow",
+    caption:
+      "Al³⁺ + 3OH⁻ → white gelatinous Al(OH)₃. Dissolves in EXCESS NaOH → [Al(OH)₄]⁻ (distinguishes Al³⁺ from Mg²⁺, which does not redissolve). Does NOT dissolve in excess NH₃ (distinguishes Al³⁺ from Zn²⁺, which forms [Zn(NH₃)₄]²⁺). Confirmatory: aluminon gives a red lake adsorbed on Al(OH)₃.",
+    render: () => <AlQualitative />,
+  },
+};
+
+/** Resolve a `::figure KEY::` marker to an inline visual atlas Frame. */
+export function boronFigure(key: string): ReactNode {
+  const f = FIGURES[key];
+  if (!f) return null;
+  return (
+    <Frame title={f.title} caption={f.caption}>
+      {f.render()}
+    </Frame>
+  );
+}
+
+/** Back-compat: the old per-part visual block (used by the dev preview only). */
 export function BoronFamilyVisual({ part }: { part: number }) {
-  switch (part) {
-    case 1:
-      return (
-        <Frame title="First-member anomaly — why boron caps at covalence 4" caption="A period-2 atom has only 2s + 2p valence orbitals, so boron's maximum covalence is 4 ([BF₄]⁻). From aluminium onward, higher coordination numbers such as 6 ([AlF₆]³⁻) become accessible.">
-          <CovalenceCap />
-        </Frame>
-      );
-    case 3:
-      return (
-        <div className="space-y-6">
-          <Frame title="Atomic / metallic radius across Group 13" caption="A new shell is added down the group, but Ga is smaller than Al (poor 3d¹⁰ shielding — d-block contraction) and Tl is only marginally larger than In (4f¹⁴ — lanthanoid contraction). Invariant exam point: Ga < Al.">
-            <Bars
-              data={[
-                { k: "B", v: 88 },
-                { k: "Al", v: 143 },
-                { k: "Ga", v: 135, tag: "d-block" },
-                { k: "In", v: 167 },
-                { k: "Tl", v: 170, tag: "4f" },
-              ]}
-              unit="atomic / metallic radius · pm"
-              note="order: B < Ga < Al < In < Tl"
-            />
-          </Frame>
-          <Frame title="First ionisation enthalpy" caption="IE₁ falls from B to Al with size, then rises slightly at Ga and again at Tl because poorly shielding d and f electrons hold the outer electrons more tightly.">
-            <Bars
-              data={[
-                { k: "B", v: 801 },
-                { k: "Al", v: 577 },
-                { k: "Ga", v: 579 },
-                { k: "In", v: 558 },
-                { k: "Tl", v: 589 },
-              ]}
-              unit="IE₁ · kJ mol⁻¹"
-              note="order: In < Al < Ga < Tl < B"
-            />
-          </Frame>
-        </div>
-      );
-    case 4:
-      return (
-        <div className="space-y-6">
-          <Frame title="Electron deficiency → Lewis acidity" caption="A trivalent Group 13 centre has only six electrons around it. Accepting a lone pair converts planar sp² BF₃ into a tetrahedral sp³ adduct such as F₃B←NH₃.">
-            <LewisAdduct />
-          </Frame>
-          <Frame title="Aquo ion ⇌ hydroxo ion" caption="Heavier Group 13 ions give octahedral [M(H₂O)₆]³⁺ (acidic through hydrolysis) and, in strong alkali, tetrahedral [M(OH)₄]⁻. Boron forms no normal aquated B³⁺ ion.">
-            <AquoIons />
-          </Frame>
-          <Frame title="Oxide / hydroxide character down the group" caption="Oxide character tracks metallic character: acidic B₂O₃ → amphoteric Al₂O₃ / Ga₂O₃ → predominantly basic In₂O₃ → strongly basic Tl₂O and TlOH.">
-            <OxideTrend />
-          </Frame>
-        </div>
-      );
-    case 6:
-      return (
-        <Frame title="The boron–silicon diagonal relationship" caption="B and Si sit on a periodic-table diagonal and share polarising power (z/r) and covalent, network, weakly acidic behaviour — a set of similarities, not identity (B caps at covalence 4, Si reaches 6).">
-          <DiagonalBSi />
-        </Frame>
-      );
-    case 13:
-      return (
-        <Frame title="Group 13 master map — oxidation-state stability" caption="Down the group the ns² pair is held back (inert-pair effect): the +1 state becomes progressively more stable while +3 becomes strongly oxidising, so Tl(I) is the dominant thallium state.">
-          <OxStateMap />
-        </Frame>
-      );
-    case 7:
-      return (
-        <Frame title="Elemental boron — the B₁₂ icosahedron" caption="Crystalline boron is built from B₁₂ icosahedra (12 vertices, 20 faces) — two staggered pentagons capped by an apex atom top and bottom — linked by multicentre intericosahedral B–B bonds.">
-          <IcosahedronB12 />
-        </Frame>
-      );
-    case 8:
-      return (
-        <div className="space-y-6">
-          <Frame title="Boric acid and key borate structural units" caption="B(OH)₃ is trigonal planar (sp²); [B(OH)₄]⁻ is tetrahedral (sp³); the borax anion [B₄O₅(OH)₄]²⁻ has two trigonal and two tetrahedral boron centres joined by five bridging O atoms.">
-            <BoricAcidUnits />
-          </Frame>
-          <Frame title="Why cis-diols raise the apparent acidity of boric acid" caption="A cis-diol chelates [B(OH)₄]⁻ through a five-membered O–B–O ring; removing the tetrahydroxyborate shifts B(OH)₃ + 2H₂O ⇌ [B(OH)₄]⁻ + H₃O⁺ to the right, so H₃BO₃ can then be titrated with phenolphthalein.">
-            <CisDiolChelate />
-          </Frame>
-          <Frame title="Sodium peroxoborate — the true dimeric anion" caption="Commercial 'sodium perborate' NaBO₃·4H₂O is the dimeric anion with two genuine O–O peroxo bridges and both boron atoms tetrahedral; warm water releases H₂O₂.">
-            <Peroxoborate />
-          </Frame>
-        </div>
-      );
-    case 9:
-      return (
-        <div className="space-y-6">
-          <Frame title="BF₃ — trigonal-planar structure and F→B π donation" caption="BF₃ is trigonal planar (sp² B, zero dipole). The vacant B 2p orbital accepts π density from filled F 2p lone pairs, shortening B–F to ≈130 pm; the donation is lost when B becomes tetrahedral in an adduct or [BF₄]⁻ (≈138–143 pm).">
-            <BF3Planar />
-          </Frame>
-          <Frame title="Boron dihalide B₂Cl₄" caption="B₂Cl₄ (from low-pressure electric discharge of BCl₃ over mercury) contains a real B–B bond; it is non-eclipsed in the gas/liquid and more nearly planar in the solid.">
-            <B2Cl4 />
-          </Frame>
-        </div>
-      );
-    case 10:
-      return (
-        <div className="space-y-6">
-          <Frame title="Diborane B₂H₆ — 3-centre–2-electron bonding" caption="Four terminal B–H bonds are ordinary 2c–2e bonds; the two B–H–B bridges are 3c–2e bonds. The B₂H₄ unit is planar and the bridging H atoms sit above and below that plane.">
-            <Diborane />
-          </Frame>
-          <Frame title="Borazine and hexagonal boron nitride" caption="Borazine B₃N₃H₆ is a planar six-membered ring of alternating B and N; the polar Bδ⁺–Nδ⁻ bonds make it more reactive than benzene. Hexagonal BN ('white graphite') stacks the same alternating framework into insulating 2-D layers.">
-            <Borazine />
-          </Frame>
-          <Frame title="Covalent borohydrides and polymeric aluminium hydride" caption="In covalent metal borohydrides BH₄⁻ bridges the metal through two H atoms (η²). Al(BH₄)₃ is a discrete molecule with six Al–H–B bridges; (AlH₃)ₙ is a polymer held together by Al–H–Al multicentre bridges.">
-            <BorohydrideBridges />
-          </Frame>
-        </div>
-      );
-    case 11:
-      return (
-        <div className="space-y-6">
-          <Frame title="Al₂Cl₆ — dimeric aluminium chloride" caption="Anhydrous AlCl₃ dimerises through two µ-Cl bridges so that each aluminium is roughly tetrahedral; association is favoured at lower temperature and dissociation increases on heating.">
-            <Al2Cl6 />
-          </Frame>
-          <Frame title="Al₂(CH₃)₆ — electron-deficient alkyl bridges" caption="Dimeric trimethylaluminium has two bridging and four terminal methyl groups; the Al–C–Al bridges are 3-centre–2-electron bonds analogous to the B–H–B bridges of diborane.">
-            <Al2Me6 />
-          </Frame>
-          <Frame title="Tricalcium aluminate — the Al–O ring in Ca₉[Al₆O₁₈]" caption="Six AlO₄ tetrahedra share corners to give a 12-membered Al–O ring; each aluminium also carries two exocyclic O atoms (Ca²⁺ ions and full packing omitted).">
-            <AluminateRing />
-          </Frame>
-          <Frame title="Octahedral aluminium chelates" caption="Three bidentate ligands (acetylacetonate, oxalate or 8-hydroxyquinolinate) fill six coordination sites around Al(III), giving octahedral Al(acac)₃, [Al(ox)₃]³⁻ and Al(oxine)₃.">
-            <AlChelate />
-          </Frame>
-        </div>
-      );
-    default:
-      return null;
-  }
+  const byPart: Record<number, string[]> = {
+    1: ["covalence-cap"],
+    3: ["radii", "ie1"],
+    4: ["lewis-adduct", "aquo-ions", "oxide-trend"],
+    6: ["diagonal"],
+    7: ["icosahedron", "icosa-construction", "alpha-rhombohedral"],
+    8: ["borate-units", "cis-diol", "peroxoborate"],
+    9: ["bf3", "bf3-mo", "b2cl4-cages"],
+    10: ["diborane", "3c2e-mo", "borazine", "borazine-mo", "borazine-derivatives", "borane-classes", "borohydride-bridges"],
+    11: ["al2cl6", "al2me6", "aluminate-ring", "al-chelates", "bayer-hall", "al-qual"],
+    13: ["oxstate-map"],
+  };
+  const keys = byPart[part];
+  if (!keys) return null;
+  return <div className="space-y-6">{keys.map((k) => <div key={k}>{boronFigure(k)}</div>)}</div>;
 }

@@ -14,6 +14,8 @@ Non-metallic character generally decreases down a group, so the heavier members 
 
 ## 1.2 First-member anomaly, covalence and pi bonding
 
+::figure covalence-cap::
+
 The first member of a p-block group differs strongly from the heavier members because of its very small size. For second-period elements, the valence shell contains only 2s and 2p orbitals; therefore boron normally shows a maximum covalence of four. Thus [BF₄]⁻ exists, whereas aluminium can form six-coordinate [AlF₆]³⁻.
 
 Second-period p orbitals overlap efficiently with other 2p orbitals. Therefore p-p pi bonding is comparatively effective for the first-row p-block elements. With heavier atoms, larger and more diffuse orbitals and poorer energy/size matching make ordinary p-p pi overlap less effective.
@@ -83,6 +85,8 @@ B and Al have noble-gas cores; Ga and In additionally contain filled d¹⁰ core
 
 ## 3.1 Atomic and ionic radii
 
+::figure radii::
+
 A new shell is added down the group, but Ga is smaller than Al because the intervening 3d¹⁰ electrons shield poorly (d-block contraction). Tl is only slightly larger than In because 4f electrons shield still more poorly (lanthanoid contraction). The approximate M³⁺ radius for B is only an estimate because a normal B³⁺ ion does not exist.
 
 | **Element** | **Atomic/metallic radius / pm** | **M³⁺ radius / pm** | **M⁺ radius / pm** | **Interpretation** |
@@ -110,6 +114,8 @@ A new shell is added down the group, but Ga is smaller than Al because the inter
 > Note: Poor d/f shielding increases effective nuclear attraction.
 
 ## 3.2 Ionisation enthalpy
+
+::figure ie1::
 
 | **Element** | **IE₁** | **IE₂** | **IE₃** | **Sum of Three IE** |
 |:--:|:--:|:--:|:--:|:--:|
@@ -293,17 +299,19 @@ The apparent Ga(II) chloride is better represented as Ga⁺[GaCl₄]⁻; it ther
 
 **Mixed-valence indium chloride:**
 
-In + 2HCl(g) [heated indium] ⟶ [dry HCl] InCl2 + H2
+In(s) + 2HCl(g) [heat] ⟶ [dry HCl gas] InCl2 + H2
 
 The product is better represented as In⁺[InCl₄]⁻ and contains In(I) and In(III), not a simple In(II) ion.
 
 **Gallium(I) tetrachloroaluminate example:**
 
-2Ga + GaCl3 + 3AlCl3 [molten chloride medium] ⟶ [controlled temperature] 3Ga+[AlCl4]-
+2Ga(s) + GaCl3 + 3AlCl3 [warm] ⟶ [molten chloride melt] 3Ga+[AlCl4]-
 
 This chloroaluminate medium stabilises gallium in the +1 oxidation state.
 
 ## 4.3 Electron deficiency, Lewis acidity and coordination
+
+::figure lewis-adduct::
 
 > Key Point: A trivalent Group 13 centre such as B in BF₃ has only six electrons around the central atom and is electron deficient. It can accept a lone pair and behaves as a Lewis acid:
 
@@ -353,17 +361,21 @@ InF₃ + 3F⁻ ⟶ [InF₆]³⁻. In these ions Ga and In have coordination numb
 
 ## 4.4 Hydrolysis, aquo ions and oxide/hydroxide character
 
+::figure aquo-ions::
+
+::figure oxide-trend::
+
 The trichlorides, bromides and iodides are largely covalent and undergo hydrolysis in water. Tetrahedral [M(OH)₄]⁻ and octahedral [M(H₂O)₆]³⁺ species occur in aqueous media for the heavier members; boron is exceptional and does not form a normal aquated B³⁺ ion.
 
 **Thallium(I) oxide/hydroxide:** TlOH is a soluble strong base, while Tl₂O is strongly basic and forms TlOH with water. This is consistent with the alkali-metal-like character of Tl(I).
 
-AlCl3 + 6H2O [acidic aqueous solution] ⟶ [Al(H2O)6]3+ + 3Cl-
+AlCl3(s) + 6H2O(l) ⟶ [Al(H2O)6]3+(aq) + 3Cl-(aq)
 
-[Al(H2O)6]3+ + H2O [stepwise hydrolysis] ⇌ [Al(H2O)5OH]2+ + H3O+
+[Al(H2O)6]3+ + H2O ⇌ [Al(H2O)5(OH)]2+ + H3O+
 
-Al(OH)3 + OH- [strongly alkaline solution] ⟶ [Al(OH)4]-
+Al(OH)3(s) + OH-(aq) ⟶ [Al(OH)4]-(aq)
 
-The actual speciation depends on pH.
+Hydrolysis of the hexaaqua ion proceeds stepwise, which is why aqueous Al³⁺ salts are acidic; in strongly alkaline solution the amphoteric hydroxide redissolves as tetrahydroxoaluminate. The actual speciation depends on pH.
 
 > **JEE TRAP: Anhydrous AlCl₃ gives white fumes in moist air because atmospheric water partially hydrolyses it and liberates HCl; the moist HCl appears as visible white fumes.**
 >
@@ -423,7 +435,9 @@ Boron is comparatively unreactive at ordinary temperature because its covalent l
 
 **Aluminium in oxygen:**
 
-4Al(s) + 3O2(g) [ignition] ⟶ [powder burns brilliantly] 2Al2O3(s)
+4Al(s) + 3O2(g) [ignition] ⟶ 2Al2O3(s)
+
+Observation: finely divided aluminium burns in oxygen with a brilliant white flame.
 
 **Aluminium in nitrogen:**
 
@@ -499,7 +513,7 @@ In the presence of air, O₂ acts as the oxidising agent and sodium metaborate i
 
 **Condensed aluminate notation:**
 
-2Al(s) + 2NaOH(aq) + 2H2O(l) [Δ] ⟶ [concentrated] 2NaAlO2(aq) + 3H2(g)
+2Al(s) + 2NaOH(conc.) + 2H2O(l) [Δ] ⟶ 2NaAlO2(aq) + 3H2(g)
 
 **Gallium in aqueous alkali:**
 
@@ -511,19 +525,17 @@ The [Al(OH)₄]⁻ equation is the preferred aqueous description. NaAlO₂ is a 
 
 > **Key Point: Group 13 elements react with halogens to form trihalides, with the important exception TlI₃. 'TlI₃' is better represented as Tl⁺[I₃]⁻; the metal remains in the +1 oxidation state rather than forming true Tl(III) iodide.**
 
-Amorphous boron also forms B₂S₃ with sulphur at high temperature, BN with nitrogen, and refractory borides with many metals. Representative reactions are collected below.
+Amorphous boron also forms B₂S₃ with sulphur at high temperature, BN with nitrogen, and refractory borides with many metals. Representative reactions are collected below (B₂S₃ and BN are given in full in their own blocks).
 
-2B + 3S [about 1200 °C in the advanced note] ⟶ B2S3
+xB(s) + yM(s) [Δ] ⟶ MyBx
 
-2B + N2 [very high temperature] ⟶ 2BN
-
-B + M ⟶ [many metals] MxBy
-
-borides are often hard, refractory and non-stoichiometric)
+Many metals combine directly with boron to give borides that are typically very hard, refractory and often non-stoichiometric or interstitial.
 
 **General trihalide formation:**
 
-2E(s) + 3X2 [Δ] ⟶ [E = B, Al, Ga, In; X = F, Cl, Br, I as feasible] 2EX3
+2E(s) + 3X2 [Δ] ⟶ 2EX3
+
+Here E = B, Al, Ga, In and X = F, Cl, Br, I where feasible; recall that "TlI₃" is really Tl⁺[I₃]⁻, so thallium(III) iodide is not obtained this way.
 
 **Boron sulfide:**
 
@@ -531,7 +543,7 @@ borides are often hard, refractory and non-stoichiometric)
 
 **Boron carbide:**
 
-4B(s) + C(s) [electric furnace] ⟶ [about 2000 °C] B4C(s)
+4B(s) + C(s) [electric furnace, ~2000 °C] ⟶ B4C(s)
 
 **Magnesium boride:**
 
@@ -539,7 +551,7 @@ borides are often hard, refractory and non-stoichiometric)
 
 **Aluminium carbide:**
 
-4Al(s) + 3 C(s) [high temperature] ⟶ Al4C3(s)
+4Al(s) + 3C(s) [high temperature] ⟶ Al4C3(s)
 
 Metal amides:
 
@@ -549,7 +561,7 @@ No universal direct reaction of metallic Group 13 elements with NH3 should be me
 
 **Tl(I) halide solubility:** Aqueous solubility decreases sharply in the order TlF >> TlCl > TlBr > TlI. TlF is readily soluble, TlCl is sparingly soluble, and TlBr/TlI are very slightly soluble.
 
-TlI(s) + I2(s) [in iodide-rich solution] ⟶ Tl+[I3]-(s/aq)
+TlI(s) + I2(s) ⟶ [iodide-rich solution] Tl+[I3]-(s/aq)
 
 Many metal borides are very hard, refractory and non-stoichiometric/interstitial phases, so a single simple formula may not describe the whole composition range. Binary alkali-metal borides do exist, particularly in the Li-B system and for some Na-B compositions. However, borates and borohydrides are much more prominent in elementary aqueous/main-group chemistry; binary alkali-metal borides should therefore not be dismissed as nonexistent.
 
@@ -575,6 +587,8 @@ Boron differs sharply from Al-Tl because it is very small, has high ionisation e
 | Nitrogen | Forms BN directly at very high T | Al forms AlN; behaviour is metallic |
 
 ## 6.2 Diagonal similarity between boron and silicon
+
+::figure diagonal::
 
 A formal ionic-potential comparison gives z/r ≈ 0.073 e pm⁻¹ for B³⁺ and ≈ 0.074 e pm⁻¹ for Si⁴⁺. The close values illustrate similar polarising power, but B³⁺ is not a stable free aqueous ion; this is only a formal size-charge comparison.
 
@@ -606,7 +620,9 @@ Si + 2Mg [Δ] ⟶ Mg2Si
 
 4BCl3 + 3LiAlH4 [dry ether] ⟶ 2B2H6 + 3LiCl + 3AlCl3
 
-SiCl4 + LiAlH4 [dry ether] ⟶ [schematic net comparison] SiH4 + LiCl + AlCl3
+SiCl4 + LiAlH4 [dry ether] ⟶ SiH4 + LiCl + AlCl3
+
+Both equations are written as schematic net comparisons; the boron case is the standard laboratory diborane preparation.
 
 Acid comparison: dilute boric acid has Ka of order 6 x 10⁻¹⁰ (pKa about 9.25); the diagonal-comparison page places silicic acid in the same very-weak-acid range. Exact silicic-acid constants depend strongly on hydration and polymerisation.
 
@@ -620,11 +636,11 @@ SiO2(s) + 2NaOH(l) [fusion] ⟶ Na2SiO3(s) + H2O(g)
 
 **Halide hydrolysis:**
 
-BCl3(l) + 3H2O(l) [room temperature] ⟶ H3BO3(aq) + 3HCl(aq)
+BCl3(l) + 3H2O(l) ⟶ H3BO3(aq) + 3HCl(aq)
 
 **Silicon tetrachloride hydrolysis:**
 
-SiCl4(l) + 2H2O(l) [room temperature] ⟶ [moisture] SiO2.xH2O(s) + 4HCl(aq)
+SiCl4(l) + 2H2O(l) ⟶ SiO2.xH2O(s) + 4HCl(aq)
 
 Fluoro-complex:
 
@@ -632,7 +648,7 @@ BF3(g) + F-(solvated) ⟶ [BF4]-(solvated)
 
 Silica with HF:
 
-SiO2(s) + 6HF(aq) [concentrated] ⟶ H2SiF6(aq) + 2H2O(l)
+SiO2(s) + 6HF(aq, conc.) ⟶ H2SiF6(aq) + 2H2O(l)
 
 > **Limits of the analogy B normally reaches maximum covalence 4, whereas Si commonly reaches 6 in [SiF₆]²⁻. B forms trihalides; Si forms tetrahalides. Boron is oxidised by hot concentrated HNO₃/H₂SO₄, while Si is notably attacked by HF. A diagonal relationship is a set of similarities, not identity.**
 
@@ -651,13 +667,15 @@ Natural boron occurs only in combined form. Borax or colemanite is first convert
 
 From borax to boric acid:
 
-Na2B4O7.10H2O(aq) + H2SO4(aq) [dilute; cool/crystallise] ⟶ 4H3BO3(s) + Na2SO4(aq) + 5H2O(l)
+Na2B4O7.10H2O(aq) + H2SO4(aq, dil.) ⟶ 4H3BO3(s) + Na2SO4(aq) + 5H2O(l)
+
+Cooling the acidified liquor crystallises the sparingly soluble boric acid.
 
 **Colemanite/sulfurous-acid route:**
 
-Ca2B6O11 + 4SO2 + 11H2O [pass SO2 through aqueous suspension] ⟶ [filter calcium bisulfite solution] 2Ca(HSO3)2 + 6H3BO3
+Ca2B6O11 + 4SO2 + 11H2O ⟶ 2Ca(HSO3)2 + 6H3BO3
 
-Hydration water in natural colemanite changes the bookkeeping but not the conversion principle.
+Sulfur dioxide is passed through an aqueous suspension of the ground mineral; the soluble calcium hydrogensulfite is filtered off, leaving boric acid in solution. Hydration water in natural colemanite changes the bookkeeping but not the conversion principle.
 
 From natural tincal: dissolve the crude mineral in hot water, remove sand/clay and other insoluble impurities by filtration, concentrate the clear solution and cool to crystallise purified borax decahydrate.
 
@@ -669,41 +687,47 @@ Natural tincal is crude borax mixed with sand and clay and may contain roughly o
 
 **Sodium reduction:**
 
-B2O3(s) + 6Na(s) [strong heating] ⟶ [inert atmosphere; amorphous] 2B(s) + 3Na2O(s)
+B2O3(s) + 6Na(s) [strong heating] ⟶ [inert atmosphere] 2B(s) + 3Na2O(s)
 
 **Potassium reduction:**
 
-B2O3(s) + 6K(s) [strong heating] ⟶ [inert atmosphere; amorphous] 2B(s) + 3K2O(s)
+B2O3(s) + 6K(s) [strong heating] ⟶ [inert atmosphere] 2B(s) + 3K2O(s)
 
 **Magnesium reduction/Moissan process:**
 
-B2O3(s) + 3Mg(s) [ignition] ⟶ [amorphous] 2B(s) + 3MgO(s)
+B2O3(s) + 3Mg(s) [ignition] ⟶ 2B(s) + 3MgO(s)
+
+The metal-reduction routes above all give amorphous (brown) boron; the crude product is washed to remove the oxide and any borides.
 
 **Aluminium reduction:**
 
 B2O3(l) + 2Al(s) [high temperature] ⟶ 2B(s) + Al2O3(s)
 
-**Electrolytic route:**
-
-B2O3-MgO melt [electrolysis] ⟶ [about 1343 K] B deposits at cathode
-
-**O₂ evolves at anode**
+**Electrolytic route:** electrolysis of a molten B₂O₃–MgO mixture near 1343 K deposits boron at the cathode (reduction of B³⁺ to B) while oxygen is evolved at the anode. The product is amorphous.
 
 **Hydrogen reduction of trichloride:**
 
-2BCl3(g) + 3H2(g) [hot W/Ta filament] ⟶ [about 1273 K; crystalline] 2B(s) + 6HCl(g)
+2BCl3(g) + 3H2(g) [hot W/Ta filament, ~1273 K] ⟶ 2B(s) + 6HCl(g)
+
+Filament deposition from the volatile halide gives crystalline boron of high purity.
 
 **Van Arkel-type iodide purification:**
 
-2BI3(g) [hot W/Ta filament] ⟶ [crystalline] 2B(s) + 3I2(g)
+2BI3(g) [hot W/Ta filament] ⟶ 2B(s) + 3I2(g)
 
 **Diborane pyrolysis:**
 
-B2H6(g) [red heat/hot filament] ⟶ [high purity] 2B(s) + 3H2(g)
+B2H6(g) [red heat / hot filament] ⟶ 2B(s) + 3H2(g)
 
 In the Moissan route, the crude product is washed successively to remove MgO and borides. It remains amorphous and impure compared with filament-deposited crystalline boron.
 
 ## 7.2 Allotropes and properties
+
+::figure icosahedron::
+
+::figure icosa-construction::
+
+::figure alpha-rhombohedral::
 
 Boron occurs in several allotropes. Crystalline boron is built from B₁₂ icosahedral units linked by multicentre B–B bonding. The structures are not made of conventional localised two-centre bonds alone: multicentre bonding compensates for electron deficiency.
 
@@ -754,7 +778,7 @@ B₂O₃ is also called boron sesquioxide: "sesqui" indicates an oxygen-to-boron
 
 **Hygroscopic hydration:**
 
-B2O3 + 3H2O [moist air/water] ⟶ 2H3BO3
+B2O3(s) + 3H2O(l) ⟶ 2H3BO3(aq)
 
 Thus B₂O₃ is the acid anhydride of orthoboric acid.
 
@@ -768,9 +792,9 @@ Thus B₂O₃ is the acid anhydride of orthoboric acid.
 
 **With basic oxide:**
 
-B2O3(l) + CuO(s) [borax-bead flame] ⟶ Cu(BO2)2(glass
+B2O3(l) + CuO(s) [borax-bead flame] ⟶ Cu(BO2)2(s)
 
-blue-green)
+Observation: a blue-green glassy bead (the basis of the borax-bead test for copper).
 
 **With alkali:**
 
@@ -786,9 +810,9 @@ B2O3(s) + As2O5(s) [strong heating] ⟶ 2BAsO4(s)
 
 *B₂O₃ is predominantly an acidic oxide and reacts readily with basic oxides and alkalies to form borates. Reactions in which B₂O₃ behaves as a basic component toward very strongly acidic oxides are specialised and should not be used as the general description of its oxide character.*
 
-B2O3 + 3SO3 ⟶ B2(SO4)3
+B2O3(s) + 3SO3(g) ⟶ B2(SO4)3(s)
 
-its formally balanced version is B₂O₃ + 3SO₃ ⟶ B₂(SO₄)₃, but this is not treated as a routine reaction because boron sulfate is not an ordinary stable product under standard classroom conditions.
+This equation balances formally, but it is not a routine reaction: boron sulfate is not an ordinary stable product under standard classroom conditions.
 
 > Oxide-character note: Al2O3 is amphoteric, whereas B2O3 and SiO2 are acidic network oxides. A fixed universal ranking of the acidic character of B2O3 versus SiO2 is not used here because the comparison depends on the criterion and reaction considered. For this treatment, retain the classifications rather than an unsupported exact order.
 
@@ -801,7 +825,7 @@ Structural summary: (1) monomeric BO₃ units can polymerise by sharing oxygen a
 > **JEE TRAP: Do not assign one hybridisation to every boron atom in a borate. In the tetraborate ion of borax, two boron centres are trigonal and two are tetrahedral.**
 
 
-Figure 3. Condensed borate motifs and the hydrogen-bonded sheet structure of crystalline boric acid.
+::figure borate-units::
 
 | **Class** | **Representative formula/species** | **Structural idea** |
 |----|----|----|
@@ -984,11 +1008,7 @@ Boric acid cannot normally be titrated sharply with NaOH. Polyhydroxy compounds 
 
 > Analytical Note: polyols with suitable neighbouring oxygen donor groups increase the apparent acidity of boric acid by complex formation. Mannitol and sorbitol are particularly effective; glycerol also works. Ethylene glycol does form borate complexes, but its enhancement is weaker and less analytically useful, so it should not be described as a complete exception that fails to complex.
 
-H3BO3 [above about 370 K] ⟶ HBO2
-
-HBO2 [further heat] ⟶ B2O3
-
-On progressive heating, boric acid undergoes stepwise dehydration: H₃BO₃ → HBO₂ (metaboric acid) → H₂B₄O₇ (tetraboric acid) → B₂O₃ (glassy mass).
+On progressive heating, boric acid undergoes stepwise dehydration: H₃BO₃ → HBO₂ (metaboric acid) → H₂B₄O₇ (tetraboric acid) → B₂O₃ (glassy mass). The individual balanced steps are given below.
 
 In crystalline boric acid, planar B(OH)₃ units are joined by hydrogen bonds to form approximately hexagonal two-dimensional sheets. The interlayer separation is about 3.18 Å, and the weak forces between layers allow easy cleavage into fine particles.
 
@@ -1004,25 +1024,27 @@ pKa about 9.25 at 25 °C
 
 From borax:
 
-Na2B4O7.10H2O(aq) + H2SO4(aq) [dilute; below about 60 °C, cool] ⟶ 4H3BO3(s) + Na2SO4(aq) + 5H2O(l)
+Na2B4O7.10H2O(aq) + H2SO4(aq, dil.) [below ~60 °C] ⟶ 4H3BO3(s) + Na2SO4(aq) + 5H2O(l)
 
 **From boron trihalides:**
 
-BX3 + 3H2O [X = Cl, Br or I] ⟶ [controlled hydrolysis] B(OH)3 + 3HX
+BX3 + 3H2O ⟶ B(OH)3 + 3HX
+
+(X = Cl, Br, I; the trihalides hydrolyse vigorously and completely.)
 
 **From borane monomer/adduct representation:**
 
-BH3 + 3H2O [hydrolysis] ⟶ B(OH)3 + 3H2
+BH3 + 3H2O ⟶ B(OH)3 + 3H2
 
 in practice free BH₃ is generated as diborane or a donor adduct.
 
 **At about 100 °C:**
 
-H3BO3(s) [about 100 °C] ⟶ [metaboric acid] HBO2(s) + H2O(g)
+H3BO3(s) [~100 °C] ⟶ HBO2(s) + H2O(g)
 
 **At about 140-160 °C:**
 
-4HBO2(s) [about 140-160 °C] ⟶ [depending on heating history/source convention; tetraboric acid] H2B4O7(s) + H2O(g)
+4HBO2(s) [~140-160 °C] ⟶ H2B4O7(s) + H2O(g)
 
 Heating of boric acid proceeds stepwise: H₃BO₃ → HBO₂ → H₂B₄O₇ → B₂O₃. Exact transition temperatures depend on experimental conditions; the sequence is the important point.
 
@@ -1032,27 +1054,27 @@ H2B4O7(s) [red heat] ⟶ 2B2O3(l) + H2O(g)
 
 Fluoroboric acid:
 
-H3BO3(aq) + 4HF(aq) [concentrated] ⟶ HBF4(aq) + 3H2O(l)
+H3BO3(aq) + 4HF(aq, conc.) ⟶ HBF4(aq) + 3H2O(l)
 
 Fluoroboric acid, HBF₄, is a strong acid and is commonly handled as an aqueous solution; commercial solutions are often about 40% HBF₄.
 
 **Volatile ester test:**
 
-H3BO3(s/aq) + 3C2H5OH(l) [concentrated H2SO4] ⟶ [warm] B(OC2H5)3(g) + 3H2O(l)
+H3BO3(s/aq) + 3C2H5OH(l) [conc. H2SO4, warm] ⟶ B(OC2H5)3(g) + 3H2O(l)
 
-vapour burns green
+Observation: the ethyl borate vapour burns with a green-edged flame.
 
 **Methyl-borate flame test:**
 
-B(OH)3 + 3CH3OH [concentrated H2SO4] ⟶ [warm] B(OCH3)3 + 3H2O
+B(OH)3 + 3CH3OH [conc. H2SO4, warm] ⟶ B(OCH3)3 + 3H2O
 
 concentrated H₂SO₄ removes water and the volatile ester burns with a green flame.
 
 Stepwise fluoride test:
 
-CaF2 + H2SO4(concentrated) ⟶ CaSO4 + 2HF
+CaF2(s) + H2SO4(l, conc.) ⟶ CaSO4(s) + 2HF(g)
 
-H3BO3 + 3HF ⟶ BF3(g) + 3H2O.
+H3BO3(s) + 3HF(g) ⟶ BF3(g) + 3H2O(l)
 
 > **Polyborate acidity: At higher boric-acid concentration, condensation gives polyborate species with an apparent pK near 6.84. This equilibrium is distinct from the dilute B(OH)₃ equilibrium with pKₐ about 9.25.**
 
@@ -1065,9 +1087,11 @@ Positional-diol comparison: catechol has adjacent OH groups and forms a favourab
 In crystalline H₃BO₃ the hydrogen-bonded molecular sheets are separated by about 3.18 Å. Weak forces between these widely separated layers account for easy cleavage into fine, soft flakes and the greasy/soapy feel.
 
 
-Figure 4. Cis-diol complexation of borate: five-membered O–B–O chelate formation increases the apparent acidity of boric acid.
+::figure cis-diol::
 
 ## 8.5 Sodium peroxoborate (perborate)
+
+::figure peroxoborate::
 
 Sodium peroxoborate can be prepared either electrochemically from a sodium-borate solution or by oxidising boric acid/sodium metaborate with H₂O₂. The peroxide O-O linkage is the chemically important feature.
 
@@ -1078,21 +1102,19 @@ Commercial sodium perborate is more accurately described as a peroxoborate hydra
 
 **Exact dimeric peroxide route:**
 
-2NaBO2(aq) + 2H2O2(aq) + 6H2O(l) [cold alkaline crystallisation] ⟶ Na2[(OH)2B(O-O)2B(OH)2].6H2O(s)
+2NaBO2(aq) + 2H2O2(aq) + 6H2O(l) [cold alkaline solution] ⟶ Na2[(OH)2B(O-O)2B(OH)2].6H2O(s)
 
 **Common empirical shorthand:**
 
-NaBO2(aq) + H2O2(aq) + 3H2O(l) [cool crystallisation] ⟶ NaBO3.4H2O(s)
+NaBO2(aq) + H2O2(aq) + 3H2O(l) [cold] ⟶ NaBO3.4H2O(s)
 
 **Electrolytic route:**
 
-Na2B4O7/Na2CO3 solution [electrolysis] ⟶ [cold alkaline medium] sodium peroxoborate hydrate
-
-sodium peroxoborate hydrate crystallises at anode region
+Electrolysis of a cold alkaline Na₂B₄O₇ / Na₂CO₃ solution deposits sodium peroxoborate hydrate in the anode region.
 
 **Active oxygen release:**
 
-NaBO3.4H2O(aq) [water] ⟶ [warmed to about 60-80 °C] NaBO2(aq) + H2O2(aq) + 3H2O(l)
+NaBO3.4H2O(aq) [~60-80 °C] ⟶ NaBO2(aq) + H2O2(aq) + 3H2O(l)
 
 The anion is [(OH)₂B(mu-O-O)₂B(OH)₂]²⁻, containing two peroxide bridges. Uses: oxygen bleach/brightener in washing powders, mild disinfectant, and oxidising agent. It is compatible with enzymes used in many biological washing powders; above about 80 °C peroxide linkages break down and active H₂O₂ is released. The oxygen-release function—not a single rigid molecular NaBO₃ unit—is the chemical point.
 
@@ -1123,9 +1145,7 @@ The anion is [(OH)₂B(mu-O-O)₂B(OH)₂]²⁻, containing two peroxide bridges
 
 ## 9.2 Preparation and bonding of BF₃/BCl₃
 
-BF₃ is a colourless gas with a boiling point near −101 °C. It can be prepared on a large scale from B₂O₃/CaF₂/concentrated H₂SO₄ and by routes involving NH₄BF₄. BF₃ etherate is an important commercial Lewis-acid reagent.
-
-B2O3 + 3CaF2 + 3H2SO4(conc.) ⟶ 2BF3 + 3CaSO4 + 3H2O
+BF₃ is a colourless gas with a boiling point near −101 °C. It can be prepared on a large scale from B₂O₃/CaF₂/concentrated H₂SO₄ (equation below) and by routes involving NH₄BF₄. BF₃ etherate is an important commercial Lewis-acid reagent.
 
 The B–F distance in free BF₃ is about 1.30 Å, shorter than a simple single-bond estimate, and the B–F bond is unusually strong. This is consistent with appreciable delocalised pπ–pπ donation from fluorine into the empty boron p orbital.
 
@@ -1137,34 +1157,32 @@ On Lewis-base coordination, the boron centre becomes tetrahedral and the delocal
 
 **Laboratory BF₃:**
 
-B2O3(s) + 3CaF2(s) + 3H2SO4(l) [Δ] ⟶ [concentrated] 2BF3(g) + 3CaSO4(s) + 3H2O(g)
+B2O3(s) + 3CaF2(s) + 3H2SO4(l, conc.) [Δ] ⟶ 2BF3(g) + 3CaSO4(s) + 3H2O(g)
 
 **From ammonium tetrafluoroborate:**
 
 NH4BF4(s) [Δ] ⟶ BF3(g) + NH3(g) + HF(g)
 
-**Alternative BF₃ preparation:**
-
-B2O3 + 6NH4BF4 [Δ] ⟶ 8BF3 + 6NH3 + 3H2O
-
-**Boron oxide/ammonium tetrafluoroborate route:**
+**Boron oxide / ammonium tetrafluoroborate route:**
 
 B2O3(s) + 6NH4BF4(s) [Δ] ⟶ 8BF3(g) + 6NH3(g) + 3H2O(g)
 
 **From borax:**
 
-Na2B4O7(s) + 6CaF2(s) + 7H2SO4(l) [Δ] ⟶ [concentrated] 4BF3(g) + 6CaSO4(s) + Na2SO4(s) + 7H2O(g)
+Na2B4O7(s) + 6CaF2(s) + 7H2SO4(l, conc.) [Δ] ⟶ 4BF3(g) + 6CaSO4(s) + Na2SO4(s) + 7H2O(g)
 
 **Boron trichloride:**
 
-B2O3(s) + 3 C(s) + 3Cl2(g) [red heat/electric furnace] ⟶ 2BCl3(g) + 3CO(g)
+B2O3(s) + 3C(s) + 3Cl2(g) [red heat / electric furnace] ⟶ 2BCl3(g) + 3CO(g)
 
 **Direct combination:**
 
-2B(s) + 3Cl2(g) [about 400 °C] ⟶ 2BCl3(g)
+2B(s) + 3Cl2(g) [~400 °C] ⟶ 2BCl3(g)
 
 
-Figure 5. BF₃ is trigonal planar; F→B pπ–pπ donation gives partial π character to the three B–F bonds.
+::figure bf3::
+
+::figure bf3-mo::
 
 21. Each BX₃ molecule is sp²/trigonal planar with a nominally vacant perpendicular B 2p orbital.
 
@@ -1186,7 +1204,7 @@ BF3(g) + NH3(g) [dry conditions] ⟶ F3B←NH3(s)
 
 **Etherate:**
 
-BF3(g) + (C2H5)2O(l) [dry ether] ⟶ [cool] BF3.O(C2H5)2(l)
+BF3(g) + (C2H5)2O(l) [dry ether, cool] ⟶ BF3.O(C2H5)2(l)
 
 *BF3 etherate is a commercially available viscous liquid and a convenient Lewis-acid reagent.*
 
@@ -1204,7 +1222,7 @@ HF capture by boric acid:
 
 **Net BF₃ hydrolysis:**
 
-4BF3(g) + 3H2O(l) [room temperature] ⟶ H3BO3(aq) + 3HBF4(aq)
+4BF3(g) + 3H2O(l) ⟶ H3BO3(aq) + 3HBF4(aq)
 
 Why BF₃ and BCl₃ differ in water: strong delocalised B-F pπ–pπ bonding and the stability of fluoride-containing adduct/fluoroborate species make BF₃ hydrolysis incomplete. B-Cl and B-Br bonds are more readily cleaved; formation of strong B-O bonds drives complete hydrolysis to B(OH)₃ and HX.
 
@@ -1212,7 +1230,7 @@ BF₃ fumes in moist air and is only partially hydrolysed in excess water. BCl�
 
 **BCl₃ hydrolysis:**
 
-BCl3(g/l) + 3H2O(l) [moisture] ⟶ [room temperature] H3BO3(aq) + 3HCl(aq)
+BCl3(g/l) + 3H2O(l) ⟶ H3BO3(aq) + 3HCl(aq)
 
 BF₃ forms adducts with donors such as Et₂O, NH₃, NMe₃ and F⁻, as well as many O-, N-, P- and S-donor ligands. Adduct formation depends on donor strength and reaction conditions.
 
@@ -1224,45 +1242,33 @@ BF₃ forms adducts with donors such as Et₂O, NH₃, NMe₃ and F⁻, as well 
 
 Borates treated with HF, or with concentrated H₂SO₄ plus CaF₂, generate volatile BF₃. Introduction of the boron fluoride vapour into a flame gives a characteristic green coloration.
 
-CaF2 + H2SO4(conc.) ⟶ CaSO4 + 2HF
+CaF2(s) + H2SO4(l, conc.) ⟶ CaSO4(s) + 2HF(g)
 
-H3BO3 + 3HF ⟶ BF3 + 3H2O
+H3BO3(s) + 3HF(g) ⟶ BF3(g) + 3H2O(l)
 
 An alternative is the methyl-borate test. The borate is converted to boric acid, warmed with methanol in the presence of concentrated H₂SO₄, and the volatile methyl borate burns with a green flame.
 
 B(OH)3 + 3CH3OH ⇌ B(OCH3)3 + 3H2O
 
-H3BO3 + 4HF ⟶ H+ + [BF4]- + 3H2O (fluoroboric acid
+H3BO3 + 4HF ⟶ H+ + [BF4]- + 3H2O
 
-[BF₄]⁻ is tetrahedral)
+The product is fluoroboric acid, HBF₄; the [BF₄]⁻ ion is tetrahedral.
 
 Mixed boron halides undergo rapid redistribution, especially in the presence of Lewis acids/halides. The equilibrium distribution is statistical only when bond-energy preferences and steric effects are negligible.
 
 **Redistribution example:**
 
-BF3(g) + BCl3(g) [heat or Lewis-acid/halide catalyst] ⟶ BF2Cl(g) + BFCl2(g)
+BF3(g) + BCl3(g) [heat or Lewis-acid / halide catalyst] ⇌ BF2Cl(g) + BFCl2(g)
 
-equilibrium mixture
+**Three-halogen redistribution:** mixing BF₃, BCl₃ and BBr₃ at room temperature gives a near-statistical equilibrium mixture of all the mixed boron halides — BFClBr, BF₂Cl, BF₂Br, BFCl₂, BFBr₂ — together with the parent trihalides.
 
-**Three-halogen redistribution:**
-
-BF3 + BCl3 + BBr3 [mix] ⟶ [room temperature/equilibrate] mixed halides
-
-statistical mixture including BFClBr, BF₂Cl, BF₂Br, BFCl₂, BFBr₂ and parent halides
-
-**Qualitative fluoride route:**
-
-3CaF2(s) + B2O3(s) + 3H2SO4(l) [Δ] ⟶ [concentrated] 2BF3(g) + 3CaSO4(s) + 3H2O(g)
-
-alcohol flame may appear green after ester formation
+**Qualitative fluoride route:** a borate with CaF₂ and concentrated H₂SO₄ generates BF₃ on warming (equation in §9.2); introduced into a flame it gives a green colour, and after methyl or ethyl borate formation the alcohol flame is edged with green.
 
 BCl₃ is used as a Lewis-acid catalyst, chlorinating reagent and precursor for high-purity boron. BF₃ and its etherate catalyse alkylation, polymerisation and rearrangement reactions; HBF₄ and tetrafluoroborates provide weakly coordinating anions in synthesis.
 
 ## 9.4 Boron dihalides, B₂X₄
 
-B₂Cl₄ can be produced by low-pressure electric discharge of BCl₃ in the presence of mercury. The B-B bond allows rotation; the gas/liquid prefers a non-eclipsed conformation, whereas crystal packing makes the solid more nearly planar.
-
-2BCl3 + 2Hg [electric discharge] ⟶ [low pressure] B2Cl4 + Hg2Cl2
+B₂Cl₄ can be produced by low-pressure electric discharge of BCl₃ in the presence of mercury (equation below). The B-B bond allows rotation; the gas/liquid prefers a non-eclipsed conformation, whereas crystal packing makes the solid more nearly planar.
 
 Apparent Ga(II) and In(II) chlorides are commonly mixed-valence compounds rather than true M(II) species: GaCl₂ is better represented as Ga⁺[GaCl₄]⁻ and the analogous indium compound contains In(I) and In(III).
 
@@ -1280,16 +1286,16 @@ B₂F₄ (diboron tetrafluoride) is the fluoride analogue of B₂Cl₄ and conta
 
 **Hydrolysis:**
 
-B2Cl4(l) + 6H2O(l) [cold] ⟶ [controlled addition] 2H3BO3(aq) + 4HCl(aq) + H2(g)
+B2Cl4(l) + 6H2O(l) [cold] ⟶ 2H3BO3(aq) + 4HCl(aq) + H2(g)
 
 **Disproportionation:**
 
-3B2Cl4(l) [standing/heat] ⟶ 4BCl3(g) + 2B(s)
+3B2Cl4(l) [standing / heat] ⟶ 4BCl3(g) + 2B(s)
 
-balanced limiting representation, with polymeric lower chlorides possible
+This is a limiting representation; polymeric lower chlorides are also formed.
 
 
-Figure 6. B₂Cl₄ conformations and schematic cage projections of B₄Cl₄, B₈Cl₈ and B₉Cl₉.
+::figure b2cl4-cages::
 
 > **Chemical note: Thermal decomposition of B₂Cl₄ is condition-dependent and may produce polymeric lower chlorides; it should not be represented by a single universal product equation.**
 
@@ -1339,7 +1345,7 @@ Several neutral boranes are known. When a simple name is ambiguous, the hydrogen
 | nido | BₙHₙ₊₄ | B₂H₆, B₅H₉, B₆H₁₀, B₁₀H₁₄ |
 | arachno | BₙHₙ₊₆ | B₄H₁₀, B₅H₁₁, B₆H₁₂, B₈H₁₄ |
 
-Figure 7. Classification of selected boranes; pyrolysis products are condition-dependent rather than following a single clean interconversion sequence.
+::figure borane-classes::
 
 ### Lipscomb STYX notation
 
@@ -1349,17 +1355,13 @@ In the STYX description, s = number of B-H-B bridges, t = number of three-centre
 
 **From magnesium boride:**
 
-Mg3B2(s) + 6H3PO4(l) [warm] ⟶ [product is a borane mixture, B2H6 major volatile fraction] B2H6(g) + 3Mg(H2PO4)2(s/aq)
+Mg3B2(s) + 6H3PO4(l) [warm] ⟶ B2H6(g) + 3Mg(H2PO4)2(s/aq)
 
-**Acid route:**
-
-Mg3B2 + dilute HCl [controlled low temperature] ⟶ borane mixture
-
-This route gives a mixture of volatile boranes including B₂H₆, B₄H₁₀ and B₅H₉ together with magnesium chloride; it is not a clean single-product preparation.
+Warming magnesium boride with a non-oxidising acid (dilute H₃PO₄ or HCl) liberates a mixture of volatile boranes — B₂H₆ as the major fraction, with B₄H₁₀ and B₅H₉ — together with the magnesium salt. It is not a clean single-product preparation.
 
 **High-pressure reduction:**
 
-B2O3(s) + 2Al(s) + 3H2(g) [about 150 °C] ⟶ [very high H2 pressure (about 450-750 atm)] B2H6(g) + Al2O3(s)
+B2O3(s) + 2Al(s) + 3H2(g) [~150 °C] ⟶ [~450-750 atm H2] B2H6(g) + Al2O3(s)
 
 Preparation conditions: Reduction is carried out under very high hydrogen pressure near 150 °C; the exact pressure depends on the preparative method.
 
@@ -1369,37 +1371,33 @@ Preparation conditions: Reduction is carried out under very high hydrogen pressu
 
 **Lithium aluminium hydride:**
 
-4BCl3(g/ether) + 3LiAlH4(ether) [dry ether] ⟶ [low temperature] 2B2H6(g) + 3LiCl(s) + 3AlCl3(ether)
+4BCl3(ether) + 3LiAlH4(ether) [dry ether, low temperature] ⟶ 2B2H6(g) + 3LiCl(s) + 3AlCl3(ether)
 
-**Exact BF³-etherate/LAH route:**
+**BF₃ etherate / LiAlH₄ route:**
 
-4Et2O.BF3 + 3LiAlH4 [dry ether] ⟶ [controlled low temperature] 2B2H6 + 3LiAlF4 + 4Et2O
-
-**BF₃ etherate/LiAlH₄ route:**
-
-4BF3.OEt2 + 3LiAlH4 [dry ether] ⟶ [controlled low temperature] 2B2H6 + 3LiAlF4 + 4Et2O
+4BF3.OEt2 + 3LiAlH4 [dry ether, low temperature] ⟶ 2B2H6 + 3LiAlF4 + 4Et2O
 
 **Borohydride/iodine:**
 
-2NaBH4(s) + I2(s) [diglyme] ⟶ [about 0-25 °C] B2H6(g) + 2NaI(s) + H2(g)
+2NaBH4(s) + I2(s) [diglyme, 0-25 °C] ⟶ B2H6(g) + 2NaI(s) + H2(g)
 
 Diglyme is bis(2-methoxyethyl) ether, a coordinating polyether with formula CH₃OCH₂CH₂OCH₂CH₂OCH₃. It dissolves ionic hydride reagents and permits controlled generation of diborane.
 
 **Borohydride/BF₃ etherate:**
 
-3NaBH4(s) + 4BF3.OEt2(l) [diglyme/ether] ⟶ [controlled addition] 2B2H6(g) + 3NaBF4(s) + 4Et2O(l)
+3NaBH4(s) + 4BF3.OEt2(l) [diglyme] ⟶ 2B2H6(g) + 3NaBF4(s) + 4Et2O(l)
 
 **Tetraborane decomposition:**
 
-B4H10(g) [about 100 °C] ⟶ B2H6(g) + higher boranes + H2(g)
+B4H10(g) [~100 °C] ⟶ B2H6(g) + higher boranes + H2(g)
 
-product mixture, so no unique simple stoichiometry
+This is a product mixture, so no unique simple stoichiometry applies.
 
 **Electric-discharge route:**
 
 2BCl3(g) + 6H2(g) [silent electric discharge] ⟶ [low pressure] B2H6(g) + 6HCl(g)
 
-low-yield mixture
+The yield is low and the product is a mixture of boranes.
 
 > **Preparative caution: Boranes are toxic, volatile and pyrophoric. Several preparative routes give mixtures of boranes, which require separation by low-temperature fractionation.**
 
@@ -1412,7 +1410,9 @@ Representative structural values are: terminal B-H about 119 pm, bridge B-H abou
 > **JEE TRAP:** The bridge B-H bonds are longer than terminal B-H bonds because one electron pair is shared over three centres. Do not assign a normal single-bond order of 1 to each B-H segment in a bridge.
 
 
-Figure 8. Diborane contains four terminal B–H 2c–2e bonds and two B–H–B 3c–2e bridge bonds.
+::figure diborane::
+
+::figure 3c2e-mo::
 
 Diborane electron count: B₂H₆ contains twelve valence electrons--three from each B atom and one from each of six H atoms. Twelve electrons cannot provide ordinary two-centre two-electron bonds for every adjacent B-H/B-B connection, which necessitates the two three-centre two-electron B-H-B bridges.
 
@@ -1442,53 +1442,41 @@ Diborane is a colourless, highly toxic gas with an unpleasant odour. It ignites 
 
 ### Additional reactions of diborane and borane
 
-B2H6 + 6CH3OH ⟶ 2B(OCH3)3 + 6H2
+Diborane also reacts with methanol, diethyl sulfide, lithium hydride, sodium, hydrogen chloride and chlorine; each of these is given with its proper conditions in the blocks below.
 
-B2H6 + 2Et2S ⟶ 2Et2S.BH3
-
-B2H6 + 2LiH ⟶ 2LiBH4
-
-2B2H6 + 2Na [slow] ⟶ NaBH4 + NaB3H8
-
-B2H6 + HCl ⟶ B2H5Cl + H2
-
-B2H6 + 3Cl2 ⟶ 2BCl3 + 6HCl
-
-Hydroboration proceeds under mild conditions, adds B and H syn across C=C/C#C systems, and for unsymmetrical alkenes places boron preferentially at the less substituted carbon. Oxidation of the organoborane with alkaline H₂O₂ gives the anti-Markovnikov alcohol while retaining the overall syn addition relationship.
+Hydroboration proceeds under mild conditions, adds B and H syn across C=C / C≡C systems, and for unsymmetrical alkenes places boron preferentially at the less substituted carbon. Oxidation of the organoborane with alkaline H₂O₂ gives the anti-Markovnikov alcohol while retaining the overall syn addition relationship.
 
 **Combustion:**
 
 B2H6(g) + 3O2(g) [ignition] ⟶ B2O3(s) + 3H2O(g)
 
-strongly exothermic
-
-Combustion note: The balanced combustion reaction forms one mole of B₂O₃ per mole of B₂H₆ and is strongly exothermic.
+Combustion note: the reaction forms one mole of B₂O₃ per mole of B₂H₆ and is strongly exothermic.
 
 **Hydrolysis:**
 
-B2H6(g) + 6H2O(l) [room temperature] ⟶ 2H3BO3(aq) + 6H2(g)
+B2H6(g) + 6H2O(l) ⟶ 2H3BO3(aq) + 6H2(g)
 
 **Methanolysis:**
 
-B2H6(g) + 6CH3OH(l) [dry methanol] ⟶ [controlled low temperature] 2B(OCH3)3(l) + 6H2(g)
+B2H6(g) + 6CH3OH(l) [dry methanol] ⟶ [low temperature] 2B(OCH3)3(l) + 6H2(g)
 
 **Alkaline decomposition:**
 
-B2H6(g) + 6NaOH(aq) [aqueous alkali] ⟶ [room temperature] 2Na3BO3(aq) + 6H2(g)
+B2H6(g) + 6NaOH(aq) ⟶ 2Na3BO3(aq) + 6H2(g)
 
 **Oxidation by halogen:**
 
-B2H6(g) + 3Cl2(g) [dry chlorine] ⟶ [controlled photochemical/thermal reaction] 2BCl3(g) + 6HCl(g)
+B2H6(g) + 3Cl2(g) [dry chlorine, hν or Δ] ⟶ 2BCl3(g) + 6HCl(g)
 
 **Chlorodiborane substitution:**
 
-B2H6(g) + HCl(g) [dry HCl] ⟶ [AlCl3 catalyst, low temperature] B2H5Cl(g) + H2(g)
+B2H6(g) + HCl(g) [AlCl3 catalyst, low temperature] ⟶ B2H5Cl(g) + H2(g)
 
 **General hydrogen-halide substitution:**
 
-B2H6 + HX [dry conditions, suitable Lewis-acid catalyst/controlled low temperature] ⟶ [X = Cl, Br or I] B2H5X + H2
+B2H6 + HX [Lewis-acid catalyst, low temperature] ⟶ B2H5X + H2
 
-Further substitution can occur if HX is not limited.
+Here X = Cl, Br or I, with dry conditions throughout; further substitution occurs if HX is not limited.
 
 **Thermal decomposition:**
 
@@ -1510,13 +1498,11 @@ Further symmetrical-cleavage donors include NEt₃, SEt₂, PMe₃, CO and THF. 
 
 **Phosphorus trifluoride adduct:**
 
-B2H6(g) + 2PF3(g) [dry] ⟶ [low temperature] 2BH3.PF3
-
-donor-adduct formation
+B2H6(g) + 2PF3(g) [dry, low temperature] ⟶ 2BH3.PF3
 
 **Carbonyl adduct:**
 
-B2H6(g) + 2CO(g) [about 470 K] ⟶ [about 20 bar] 2BH3.CO
+B2H6(g) + 2CO(g) [~470 K, ~20 bar] ⟶ 2BH3.CO
 
 Bonding in OC⁻>BH₃: the outward carbon lone pair/HOMO of CO donates into the vacant acceptor orbital of BH₃ and completes the boron octet. A weaker interaction can donate electron density from a B-H bond into the CO LUMO through hyperconjugation. The dominant interaction is CO⁻>BH₃ donation.
 
@@ -1526,7 +1512,7 @@ B2H6(g) + 2LiH(s) [dry Et2O] ⟶ 2LiBH4(ether/solid)
 
 **Sodium-amalgam reduction:**
 
-2B2H6(g) + 2Na(Hg) [sodium amalgam] ⟶ [slow, dry ether] NaBH4 + NaB3H8
+2B2H6(g) + 2Na(Hg) ⟶ [dry ether] NaBH4 + NaB3H8
 
 **Symmetrical cleavage by amine:**
 
@@ -1542,53 +1528,37 @@ B2H6(g) + 2NH3(g) [low temperature] ⟶ [BH2(NH3)2]+[BH4]-(s)
 
 L = NH₃, RNH₂ or R₂NH.
 
-Ammonia condition map: excess NH₃ at low temperature favours the ionic diborane-ammonia adduct; excess NH₃ at higher temperature favours (BN)x; a 2NH₃:₁B₂H₆ ratio at higher temperature favours borazine. Temperature and reactant ratio therefore control the condensation product.
-
-**Borazine formation:**
-
-3B2H6(g) + 6NH3(g) [about 450 K] ⟶ 2B3N3H6(l) + 12H2(g)
+Ammonia condition map: excess NH₃ at low temperature favours the ionic diborane-ammonia adduct; excess NH₃ at higher temperature favours (BN)ₓ; a 2 NH₃ : 1 B₂H₆ ratio at higher temperature favours borazine (equation in §10.6). Temperature and reactant ratio therefore control the condensation product.
 
 Diborane cleavage depends on donor strength, steric size, stoichiometry and temperature. Bulky tertiary donors such as NMe₃/NEt₃ and donors such as Et₂O, Et₂S, PMe₃, PF₃, CO and THF commonly give symmetrical cleavage into two BH₃.L adducts. Small primary/secondary nitrogen donors such as NH₃, MeNH₂ and Me₂NH can stabilise the asymmetric ion pair [L₂BH₂]⁺[BH₄]⁻. On heating, ammonia-derived adducts dehydrogenate and condense toward borazine or BN, depending on ratio and temperature.
 
 **Hydroboration:**
 
-B2H6(g) + 6RCH=CH2 [dry ether/THF] ⟶ [0-25 °C] 2B(CH2CH2R)3
+B2H6(g) + 6RCH=CH2 [dry ether / THF] ⟶ [0-25 °C] 2B(CH2CH2R)3
 
-syn addition, B to less substituted C
+Syn addition places boron on the less substituted carbon.
 
 **Alkyne hydroboration:**
 
-B2H6(g) + 6RC#CR&#39; [dry ether/THF] ⟶ [N2 atmosphere, low temperature] 2B(RC=CHR&#39;)3
+B2H6(g) + 6RC≡CR' [dry ether / THF] ⟶ [N2 atmosphere, low temperature] 2B(RC=CHR')3
 
-syn addition gives vinylboranes
+Syn addition gives vinylboranes.
 
 **Oxidative work-up:**
 
-B(CH2CH2R)3 + 3H2O2 + OH- [aqueous alkaline peroxide] ⟶ [0-25 °C then warm] 3RCH2CH2OH + B(OH)4-
+B(CH2CH2R)3 + 3H2O2 + OH- [aqueous alkali] ⟶ [0-25 °C, then warm] 3RCH2CH2OH + B(OH)4-
 
-**Protonolysis:**
+**Protonolysis:** a carboxylic acid cleaves the C–B bonds on gentle heating, replacing boron with hydrogen. With acetic acid:
 
-B(CH2CH2R)3 [R&#39;CO2H] ⟶ [gentle heat] hydrocarbons after C-B protonolysis
+BR3 + 3CH3COOH [gentle heat] ⟶ 3RH + B(OOCCH3)3
 
-**Acetic-acid example:**
-
-BR3 + 3CH3COOH [gentle heat] ⟶ 3RH + B(OCOCH3)3
-
-**Chromic-acid oxidation:**
-
-R3B [H2CrO4] ⟶ [aqueous acidic medium, controlled temperature] oxidation products
-
-ketone(s) from secondary alkyl groups or carboxylic acid(s) under stronger oxidation; product depends on organoborane structure
+**Chromic-acid oxidation:** H₂CrO₄ in acidic aqueous medium oxidises the trialkylborane — to ketones from secondary alkyl groups, or to carboxylic acids under more forcing conditions. The product depends on the organoborane structure.
 
 > Hydroboration conditions and significance: reactions are carried out in rigorously dry ether/THF under N₂ because diborane and the organoborane products are highly reactive. Trialkylboranes BR₃ are usually used in situ rather than isolated. The method is valuable because the initial hydride addition is mild and different reagents that cleave the B-C bond furnish hydrocarbons, alcohols, ketones or carboxylic acids. Hydroboration-oxidation gives anti-Markovnikov hydration with overall syn addition (the earlier descriptions call the outcome cis-hydrogenation/cis-hydration); steric and electronic effects place B on the less substituted carbon.
 
 ## 10.5 Tetrahydridoborates and aluminium hydrides
 
-The most important tetrahydridoborate is NaBH₄. It can be prepared industrially from trimethyl borate and NaH under elevated temperature and pressure in THF. NaBH₄ is an ionic solid containing tetrahedral [BH₄]⁻ ions.
-
-4B(OCH3)3 + 4NaH ⟶ NaBH4 + 3NaB(OCH3)4
-
-*Industrial preparation:*
+The most important tetrahydridoborate is NaBH₄. It can be prepared industrially from trimethyl borate and NaH under elevated temperature and pressure in THF (equation below). NaBH₄ is an ionic solid containing tetrahedral [BH₄]⁻ ions.
 
 Water stability changes markedly across alkali-metal borohydrides: LiBH₄ reacts violently with water; NaBH₄ can persist in cold aqueous media with only slow decomposition; KBH₄ is still more resistant. All are reducing agents, but NaBH₄ is especially convenient in aqueous/alcoholic media.
 
@@ -1600,19 +1570,21 @@ Not all borohydrides are ionic. Be(BH₄)₂ and Al(BH₄)₃ are more covalent 
 
 **Sodium borohydride, industrial:**
 
-4NaH(s) + B(OCH3)3(l) [about 250-270 °C] ⟶ NaBH4(s) + 3NaOCH3(s)
+4NaH(s) + B(OCH3)3(l) [~250-270 °C] ⟶ NaBH4(s) + 3NaOCH3(s)
 
 **Textbook high-pressure THF route:**
 
-4B(OCH3)3 + 4NaH [THF] ⟶ [about 250 °C, high pressure] NaBH4 + 3Na[B(OCH3)4]
+4B(OCH3)3 + 4NaH [THF] ⟶ [~250 °C, high pressure] NaBH4 + 3Na[B(OCH3)4]
 
 **From diborane:**
 
-2MH(s) + B2H6(g) [dry diethyl ether] ⟶ [M = Li or Na] 2M+[BH4]-(ether/solid)
+2MH(s) + B2H6(g) [dry Et2O] ⟶ 2M[BH4](ether/solid)
+
+(M = Li or Na.)
 
 **Lithium borohydride:**
 
-NaBH4(s) + LiCl(s) [dry ether/THF] ⟶ [metathesis] LiBH4 + NaCl(s)
+NaBH4(s) + LiCl(s) [dry ether / THF] ⟶ LiBH4 + NaCl(s)
 
 **Calcium borohydride:**
 
@@ -1628,9 +1600,9 @@ BeCl2 + 2LiBH4 [dry ether] ⟶ [low temperature] Be(BH4)2 + 2LiCl
 
 **Aluminium hydride:**
 
-3LiAlH4 + AlCl3 [dry ether] ⟶ [low temperature] 4AlH3(ether)
+3LiAlH4 + AlCl3 [dry ether] ⟶ [low temperature] 4AlH3(ether) + 3LiCl(s)
 
-removal of ether gives polymeric (AlH₃)n
+Removing the ether leaves polymeric (AlH₃)ₙ.
 
 **Aluminium borohydride:**
 
@@ -1641,7 +1613,7 @@ NaBH₄ is an ionic white solid containing tetrahedral [BH₄]⁻ ions. At ambie
 NaBH₄ selectivity: it is a nucleophilic hydride reagent and attacks sites of low electron density, so aldehydes and ketones are readily reduced whereas isolated C=C, COOH and NO₂ groups are not normally attacked under its usual mild conditions. LiAlH₄ is substantially stronger, generally leaves an isolated C=C bond unchanged, and cannot be used in aqueous solution because it reacts violently with water.
 
 
-Figure 9. Covalent borohydride bonding in Al(BH₄)₃ and polymeric Be(BH₄)₂, with a polymeric AlH₃ bridge motif.
+::figure borohydride-bridges::
 
 | **Reagent** | **Typical medium/stability** | **Reducing behaviour** |
 |----|----|----|
@@ -1664,29 +1636,29 @@ BH4-(aq) + H+(aq) + 3H2O(l) [acidic water] ⟶ H3BO3(aq) + 4H2(g)
 
 **Carbonyl reduction:**
 
-R2C=O + NaBH4 [methanol/ethanol, 0-25 °C] ⟶ [then H3O+] R2CHOH
+R2C=O + NaBH4 [methanol / ethanol, 0-25 °C] ⟶ R2CHOH
+
+(followed by acidic aqueous work-up.)
 
 **Ester reduction:**
 
-RCOOR&#39; + LiAlH4 [dry ether] ⟶ [then cautious aqueous work-up] RCH2OH + R&#39;OH
+RCOOR' + LiAlH4 [dry ether] ⟶ RCH2OH + R'OH
+
+(followed by cautious aqueous work-up.)
 
 ## 10.6 Borazine, B₃N₃H₆
 
 > **MOT LENS – borazine vs benzene:** Six ring p orbitals combine into delocalised pi molecular orbitals, but the B and N atomic orbital energies are not equal. Occupied pi orbitals are polarised toward electronegative N, while low-lying acceptor character is greater at B. Consequently the B-N bonds have partial pi character but the ring is less electronically uniform and less aromatic than benzene; borazine is therefore more reactive toward addition/hydrolysis.
 
-Because electron density is higher at nitrogen, protonation by HCl occurs preferentially at N rather than B. This polarity is a useful way to remember why 'inorganic benzene' is a structural analogy, not a claim of identical aromatic stability.
-
-B3N3H6 + 3HCl ⟶ B3N3H9Cl3
-
-B3N3H6 + 9H2O [slow hydrolysis on heating] ⟶ 3NH3 + 3H3BO3 + 3H2
+Because electron density is higher at nitrogen, protonation by HCl occurs preferentially at N rather than B. This polarity is a useful way to remember why 'inorganic benzene' is a structural analogy, not a claim of identical aromatic stability. Borazine adds HCl and is hydrolysed by water — both reactions are given with conditions below.
 
 > **JEE TRAP:** Borazine is planar and delocalised, but B-N bonds are polar. Do not transfer benzene's equal C-C electron distribution or low addition reactivity directly to borazine.
 
 
-Figure 10. Borazine and layered hexagonal boron nitride: alternating B/N frameworks with polar B–N bonds.
+::figure borazine::
 
 
-Figure 11. Borazine p-orbital overlap and a representative charge-separated resonance contributor.
+::figure borazine-mo::
 
 Borazine ('inorganic benzene') is a colourless liquid with a planar six-membered alternating B-N ring. It is isoelectronic with benzene, but B-N bonds are polar (B delta+, N delta-) and pi delocalisation is unequal, so it is much more reactive toward addition and hydrolysis.
 
@@ -1698,23 +1670,21 @@ Aromaticity cannot be assigned a single universal percentage. Borazine is less a
 
 **From diborane/ammonia:**
 
-3B2H6(g) + 6NH3(g) [about 450 K] ⟶ 2B3N3H6(l) + 12H2(g)
+3B2H6(g) + 6NH3(g) [~450 K] ⟶ 2B3N3H6(l) + 12H2(g)
 
-**From ammonium chloride/borohydride:**
+**From ammonium chloride / borohydride:**
 
 3NH4Cl(s) + 3NaBH4(s) [diglyme] ⟶ [reflux] B3N3H6(l) + 3NaCl(s) + 9H2(g)
 
 **Chloroborazine intermediate:**
 
-3BCl3 + 3NH4Cl [chlorobenzene] ⟶ [about 140 °C] B3N3H3Cl3 + 9HCl
+3BCl3 + 3NH4Cl [chlorobenzene, ~140 °C] ⟶ B3N3H3Cl3 + 9HCl
 
-cyclocondensation representation
+This is a cyclocondensation; the chloroborazine (B-trichloroborazine) is the isolable intermediate.
 
 **Reduction of chloroborazine:**
 
-B3N3H3Cl3 + 3NaBH4 [dry ether] ⟶ [controlled addition] B3N3H6 + 3NaCl + 3BH3-derived products
-
-simplified teaching conversion
+2B3N3H3Cl3 + 6NaBH4 [dry ether] ⟶ 2B3N3H6 + 6NaCl + 3B2H6
 
 **Methyl substitution:**
 
@@ -1722,22 +1692,22 @@ B3N3H3Cl3 + 3CH3MgBr [dry ether] ⟶ [low temperature] B3N3H3(CH3)3 + 3MgBrCl
 
 **Hydrolysis:**
 
-B3N3H6(l) + 9H2O(l) [room temperature] ⟶ 3H3BO3(aq) + 3NH3(aq) + 3H2(g)
+B3N3H6(l) + 9H2O(l) [slow at room temperature, faster on warming] ⟶ 3H3BO3(aq) + 3NH3(aq) + 3H2(g)
 
 **Hydrogen chloride addition:**
 
-B3N3H6 + 3HCl [dry ether] ⟶ [low temperature; ring addition product] B3N3H9Cl3
+B3N3H6 + 3HCl [dry ether, low temperature] ⟶ B3N3H9Cl3
 
 In HCl addition to borazine, protonation occurs at nitrogen because the polar B-N ring has greater electron density on the more electronegative N atoms; chloride then adds at electron-poor boron.
 
 **Pyrolysis to BN:**
 
-B3N3H6(l) [high-temperature pyrolysis] ⟶ [inert atmosphere] 3BN(s) + 3H2(g)
+B3N3H6(l) [pyrolysis, high temperature] ⟶ [inert atmosphere] 3BN(s) + 3H2(g)
 
 In B₃N₃H₃Cl₃ and B₃N₃H₃(CH₃)₃, the Cl or CH₃ substituents occupy the three boron sites while each nitrogen retains H. Borazine can also coordinate metal carbonyl fragments through its π system.
 
 
-Figure 12. Chloroborazine, trimethylborazine, HCl-addition product and a schematic borazine–Cr(CO)₃ π-complex.
+::figure borazine-derivatives::
 
 > **Aromatic character (qualitative)** Increasing order: borazine < benzene\
 > Decreasing order: benzene > borazine\
@@ -1763,15 +1733,17 @@ B2O3(s) + 2NH3(g) [900-1200 °C] ⟶ 2BN(s) + 3H2O(g)
 
 **From boron trichloride/ammonia:**
 
-BCl3(g) + NH3(g) [high temperature] ⟶ [via adduct/aminolysis] BN(s) + 3HCl(g)
+BCl3(g) + NH3(g) [high temperature] ⟶ BN(s) + 3HCl(g)
+
+This proceeds through the BCl₃·NH₃ adduct and successive aminolysis.
 
 **Boron carbide:**
 
-2B2O3(s) + 7 C(s) [electric furnace] ⟶ [about 2000-2500 °C] B4C(s) + 6CO(g)
+2B2O3(s) + 7C(s) [electric furnace, ~2000-2500 °C] ⟶ B4C(s) + 6CO(g)
 
 **B₄C coating on carbon fibre:**
 
-4BCl3(g) + C(fibre) + 6H2(g) [chemical-vapour deposition] ⟶ [about 1700-1800 °C] B4C-coated fibre + 12HCl(g)
+4BCl3(g) + C(fibre) + 6H2(g) [chemical-vapour deposition, ~1700-1800 °C] ⟶ B4C-coated fibre + 12HCl(g)
 
 Hexagonal BN has alternating B and N atoms in planar six-membered rings. Representative data are B-N about 145 pm, interlayer separation about 330 pm and an average B-N bond order near 1.33; the unequal B/N electronegativities make the layers electronically different from graphite even though the topology is analogous.
 
@@ -1799,15 +1771,11 @@ The protective Al₂O₃ film on aluminium is exceptionally thin, about 10⁻⁴
 
 Anodising deliberately thickens the oxide film by electrolysis with aluminium as the anode in dilute H₂SO₄. The resulting oxide layer may be of order 10⁻² mm and can take up pigments to produce a durable decorative finish.
 
-2Al(s) + 3/2 O2(g) ⟶ Al2O3(s)
+4Al(s) + 3O2(g) ⟶ 2Al2O3(s)
 
-ΔH° approximately -1670 kJ mol⁻¹
+ΔfH°(Al₂O₃) ≈ −1670 kJ mol⁻¹
 
-The large negative enthalpy of formation of Al₂O₃ underlies aluminothermic reductions (thermite chemistry).
-
-8Al + 3Mn3O4 ⟶ 4Al2O3 + 9Mn
-
-2Al + Cr2O3 ⟶ Al2O3 + 2Cr
+The large negative enthalpy of formation of Al₂O₃ underlies aluminothermic reductions (thermite chemistry); the balanced examples with ignition conditions are given in §11.1 below.
 
 25. Aluminium is bright silvery-white, light (density about 2.70 g cm⁻³), malleable and ductile, with high tensile strength when alloyed and high thermal/electrical conductivity.
 
@@ -1819,7 +1787,9 @@ The large negative enthalpy of formation of Al₂O₃ underlies aluminothermic r
 
 **Thermite/iron welding:**
 
-Fe2O3(s) + 2Al(s) [ignite with Mg ribbon] ⟶ [thermite mixture] Al2O3(l) + 2Fe(l) + heat
+Fe2O3(s) + 2Al(s) [ignite with Mg ribbon] ⟶ Al2O3(l) + 2Fe(l)
+
+Strongly exothermic — the thermite reaction, which produces molten iron for on-site rail welding.
 
 **Chromium extraction:**
 
@@ -1831,7 +1801,7 @@ Cr2O3(s) + 2Al(s) [ignition] ⟶ Al2O3(s) + 2Cr(l/s)
 
 **Carbide hydrolysis:**
 
-Al4C3(s) + 12H2O(l) [room temperature/warm] ⟶ 4Al(OH)3(s) + 3CH4(g)
+Al4C3(s) + 12H2O(l) [warm] ⟶ 4Al(OH)3(s) + 3CH4(g)
 
 > **Aluminothermy A metal oxide can be reduced by Al when formation of Al₂O₃ provides the larger thermodynamic driving force. The ignition barrier is high, after which the reaction can generate molten metal.**
 
@@ -1841,15 +1811,9 @@ Alumina occurs principally as alpha-Al₂O₃ (corundum) and gamma-Al₂O₃, wi
 
 Gamma-Al₂O₃ is a high-surface-area form useful as an adsorbent/catalyst support and in chromatography. Heating hydrated aluminium oxide ultimately converts it toward the thermodynamically stable alpha form.
 
-2Al(OH)3 [Δ] ⟶ Al2O3 + 3H2O
-
-Al2(SO4)3 [Δ] ⟶ Al2O3 + 3SO3
+On heating, Al(OH)₃ and Al₂(SO₄)₃ both dehydrate/decompose toward Al₂O₃; the balanced steps with temperatures are given in §11.2 below.
 
 Al(OH)₃ is amphoteric: it reacts with acid to give hydrated Al³⁺ and with excess NaOH to give tetrahydroxoaluminate(III). Passing CO₂ through an aluminate solution can reprecipitate Al(OH)₃ because its acidic character is weak.
-
-Al(OH)3 + OH- ⟶ [Al(OH)4]-
-
-[Al(OH)4]- + CO2 ⟶ [schematic aqueous form] Al(OH)3(s) + HCO3-
 
 > **JEE TRAP: At strongly alkaline pH, [Al(OH)₄]⁻ is the key mononuclear species. Do not treat 'NaAlO₂' and 'Na[Al(OH)₄]' as unrelated products; they are alternative formula conventions for hydrated aluminate chemistry.**
 
@@ -1864,7 +1828,7 @@ Al(OH)3 + OH- ⟶ [Al(OH)4]-
 
 **Hydroxide calcination:**
 
-2Al(OH)3(s) [about 300 °C then stronger calcination] ⟶ Al2O3(s) + 3H2O(g)
+2Al(OH)3(s) [~300 °C, then stronger calcination] ⟶ Al2O3(s) + 3H2O(g)
 
 **Sulfate decomposition:**
 
@@ -1874,9 +1838,7 @@ Al2(SO4)3(s) [strong heat] ⟶ Al2O3(s) + 3SO3(g)
 
 (NH4)2SO4.Al2(SO4)3.24H2O(s) [strong heat] ⟶ Al2O3(s) + 2NH3(g) + 4SO3(g) + 25H2O(g)
 
-**Ruby synthesis:**
-
-Al2O3(s) + trace Cr2O3(s) [oxyhydrogen flame/very high temperature] ⟶ synthetic ruby crystal
+**Ruby synthesis:** fusing Al₂O₃ with a trace of Cr₂O₃ in an oxyhydrogen flame (Verneuil process) grows boules of synthetic ruby.
 
 **Acidic reaction:**
 
@@ -1888,7 +1850,9 @@ Al2O3(s) + 2OH-(aq) + 3H2O(l) [hot concentrated alkali] ⟶ 2[Al(OH)4]-(aq)
 
 **Hydroxide precipitation:**
 
-Al3+(aq) + 3OH-(aq) [limited aqueous NaOH/NH3] ⟶ [white gelatinous] Al(OH)3(s)
+Al3+(aq) + 3OH-(aq) [limited NaOH or NH3] ⟶ Al(OH)3(s)
+
+Observation: a white gelatinous precipitate.
 
 **Hydroxide redissolution:**
 
@@ -1896,7 +1860,7 @@ Al(OH)3(s) + OH-(aq) [excess strong alkali] ⟶ [Al(OH)4]-(aq)
 
 **Reprecipitation by CO₂:**
 
-[Al(OH)4]-(aq) + CO2(g) [pass CO2 at room temperature] ⟶ Al(OH)3(s) + HCO3-(aq)
+[Al(OH)4]-(aq) + CO2(g) [room temperature] ⟶ Al(OH)3(s) + HCO3-(aq)
 
 > **Hardness of common materials (qualitative).** Increasing order: glass < corundum (Al₂O₃) < cubic BN ≈ diamond Decreasing order: diamond ≈ cubic BN > corundum > glass Note: The exact ranking of c-BN and diamond depends on the hardness definition and crystal direction.\
 
@@ -1910,11 +1874,7 @@ Phase transformation: γ-Al₂O₃ is a metastable transition alumina formed by 
 
 ## 11.3 Aluminium halides, especially AlCl₃
 
-Anhydrous AlCl₃ is deliquescent, fumes in moist air, and sublimes at about 180 °C. It is substantially covalent and dimeric as Al₂Cl₆ in the vapour/non-polar-solvent picture, with halogen bridges completing the octet at aluminium.
-
-2Al + 6HCl(g) [dry] ⟶ 2AlCl3 + 3H2
-
-Al2O3 + 3C + 3Cl2 [high T] ⟶ 2AlCl3(g) + 3CO
+Anhydrous AlCl₃ is deliquescent, fumes in moist air, and sublimes at about 180 °C. It is substantially covalent and dimeric as Al₂Cl₆ in the vapour/non-polar-solvent picture, with halogen bridges completing the octet at aluminium. The preparative routes (direct chlorination, dry HCl, carbochlorination) are given with conditions in §11.3 below.
 
 In Friedel-Crafts alkylation/acylation, simple textbook stoichiometries often consume AlCl₃ by formation of [AlCl₄]⁻. Thus it is safer to describe AlCl₃ as a Lewis-acid promoter/catalyst system whose regeneration depends on the full reaction/work-up, rather than assuming every equation is a perfect catalytic cycle.
 
@@ -1924,27 +1884,27 @@ AlF₃ is predominantly ionic, high-melting and polymeric. Anhydrous AlCl₃/AlB
 
 **Direct chlorination:**
 
-2Al(s) + 3Cl2(g) [dry chlorine] ⟶ [initiate gently then control heat] 2AlCl3(s/vapour)
+2Al(s) + 3Cl2(g) [dry chlorine, warm] ⟶ 2AlCl3(s/vapour)
 
 **Dry HCl route:**
 
-2Al(s) + 6HCl(g) [high temperature] ⟶ [overheated; dry] 2AlCl3(g) + 3H2(g)
+2Al(s) + 6HCl(g) [dry HCl gas, high temperature] ⟶ 2AlCl3(g) + 3H2(g)
 
 **Carbochlorination:**
 
-Al2O3 + 3C + 3Cl2(g) [high temperature, about 1000-1500 °C depending source/process] ⟶ [condense AlCl3 vapour; dry] 2AlCl3 + 3CO
+Al2O3 + 3C + 3Cl2(g) [~1000-1500 °C, dry] ⟶ 2AlCl3 + 3CO
 
-*Dry high-temperature carbochlorination is followed by condensation of AlCl₃.*
-
-the robust point is dry high-temperature carbochlorination followed by condensation.
+The AlCl₃ vapour is condensed downstream; the exact temperature depends on the process.
 
 **Dimerisation:**
 
-2AlCl3(g) [cool vapour/non-polar solvent] ⟶ Al2Cl6
+2AlCl3(g) [cool, non-polar solvent] ⟶ Al2Cl6
 
 **Monomerisation:**
 
-Al2Cl6(g) [high temperature] ⟶ [about 800 °C; trigonal planar] 2AlCl3(g)
+Al2Cl6(g) [high temperature, ~800 °C] ⟶ 2AlCl3(g)
+
+The monomer is trigonal planar (aluminium coordination number 3).
 
 **Hydration/ionisation:**
 
@@ -1952,30 +1912,30 @@ Al2Cl6 + 12H2O(l) [dissolution] ⟶ 2[Al(H2O)6]3+(aq) + 6Cl-(aq)
 
 **Hydrated chloride from aluminium:**
 
-2Al(s) + 6HCl(aq) + 12H2O(l) [dissolve] ⟶ [filter, concentrate/cool; dilute] 2AlCl3.6H2O(s) + 3H2(g)
+2Al(s) + 6HCl(aq) + 12H2O(l) ⟶ 2AlCl3.6H2O(s) + 3H2(g)
 
 **Hydrated chloride from alumina:**
 
-Al2O3(s) + 6HCl(aq) + 9H2O(l) [warm] ⟶ [filter, concentrate/cool; dilute] 2AlCl3.6H2O(s)
+Al2O3(s) + 6HCl(aq) + 9H2O(l) [warm] ⟶ 2AlCl3.6H2O(s)
 
 **Hydrated chloride from hydroxide:**
 
-Al(OH)3(s) + 3HCl(aq) + 3H2O(l) [warm] ⟶ [concentrate/cool; dilute] AlCl3.6H2O(s)
+Al(OH)3(s) + 3HCl(aq) + 3H2O(l) [warm] ⟶ AlCl3.6H2O(s)
+
+In each case the hydrated chloride is recovered by filtering, concentrating and cooling the solution to crystallise.
 
 **Ammonia addition compound:**
 
-AlCl3(s) + 6NH3(g) [dry NH3] ⟶ [cool; anhydrous; white] AlCl3.6NH3(s)
+AlCl3(s) + 6NH3(g) [dry NH3] ⟶ AlCl3.6NH3(s)
 
-Equivalent equation using the dimeric formula of aluminium chloride:
-
-Al2Cl6 + 12NH3 [dry NH3] ⟶ [cool] 2AlCl3·6NH3
+Observation: a white anhydrous solid. Using the dimeric formula, Al₂Cl₆ + 12 NH₃ ⟶ 2 AlCl₃·6NH₃.
 
 **Overall hydrolysis on heating hydrate:**
 
 2AlCl3.6H2O(s) [strong heating] ⟶ Al2O3(s) + 6HCl(g) + 9H2O(g)
 
 
-Figure 13. Al₂Cl₆ contains two μ-Cl bridges; each aluminium centre is approximately tetrahedral.
+::figure al2cl6::
 
 | **State/medium** | **Predominant description** | **Geometry/data** |
 |----|----|----|
@@ -2011,23 +1971,25 @@ Friedel–Crafts note: AlCl₃ may be consumed or remain strongly bound to the p
 
 **Friedel-Crafts alkylation:**
 
-C6H6 + RCl + AlCl3 [anhydrous conditions] ⟶ [0-80 °C depending on RCl] C6H5R + HCl
+C6H6 + RCl + AlCl3 [anhydrous, 0-80 °C] ⟶ C6H5R + HCl
 
-[AlCl₄]⁻ intermediate
+The reaction goes through an [AlCl₄]⁻ intermediate.
 
 **Friedel-Crafts acylation:**
 
-C6H6 + RCOCl + AlCl3 [anhydrous solvent] ⟶ [controlled temperature] C6H5COR + HCl
+C6H6 + RCOCl + AlCl3 [anhydrous solvent] ⟶ C6H5COR + HCl
 
-hydrolytic work-up
+An aqueous work-up follows to release the ketone from its AlCl₃ complex.
 
 **Ethyl bromide manufacture:**
 
-CH2=CH2(g) + HBr(g) [AlCl3/AlBr3 catalyst] ⟶ [controlled temperature] C2H5Br
+CH2=CH2(g) + HBr(g) [AlCl3 or AlBr3 catalyst] ⟶ C2H5Br
 
 **Al³⁺ qualitative precipitate:**
 
-Al3+(aq) + 3NH3(aq) + 3H2O(l) [room temperature] ⟶ [white] Al(OH)3(s) + 3NH4+(aq)
+Al3+(aq) + 3NH3(aq) + 3H2O(l) ⟶ Al(OH)3(s) + 3NH4+(aq)
+
+Observation: a white gelatinous precipitate that does not redissolve in excess ammonia.
 
 Aquo-ion hydrolysis:
 
@@ -2035,23 +1997,23 @@ Aquo-ion hydrolysis:
 
 **Hydroxo-bridged dimer:**
 
-2[Al(H2O)5OH]2+(aq) [condensation in mildly acidic solution] ⟶ [(H2O)4Al(mu-OH)2Al(H2O)4]4+(aq) + 2H2O(l)
+2[Al(H2O)5OH]2+(aq) [mildly acidic solution] ⟶ [(H2O)4Al(μ-OH)2Al(H2O)4]4+(aq) + 2H2O(l)
 
-**Aluminon confirmation:**
-
-Al3+(aq) + aluminon reagent [ammoniacal buffer] ⟶ [warm] red lake on Al(OH)3
+**Aluminon confirmation:** in an ammoniacal buffer, Al³⁺ adsorbs the aluminon dye onto freshly precipitated Al(OH)₃ to give a bright red lake — a sensitive confirmatory test for aluminium.
 
 Qualitative distinction with NaOH: Al³⁺ first gives white gelatinous Al(OH)₃, which dissolves in excess NaOH as [Al(OH)₄]⁻. The hydroxides of Mg²⁺, Ca²⁺, Sr²⁺ and Ba²⁺ do not show this amphoteric redissolution under the same test conditions. Distinction from Zn²⁺ with excess NH₄OH: Al(OH)₃ remains insoluble, whereas Zn(OH)₂ dissolves through ammine-complex formation, commonly represented as [Zn(NH₃)₄]²⁺.
 
 **Molecular precipitation from aluminium chloride:**
 
-AlCl3(aq) + 3NH4OH(aq) [room temperature] ⟶ [limited reagent; white gelatinous] Al(OH)3(s) + 3NH4Cl(aq)
+AlCl3(aq) + 3NH4OH(aq) ⟶ Al(OH)3(s) + 3NH4Cl(aq)
+
+Observation: white gelatinous Al(OH)₃ with a limited amount of the reagent.
 
 Redissolution in excess alkali, condensed notation:
 
-Al(OH)3(s) + NaOH(aq) [excess] ⟶ NaAlO2(aq) + 2H2O(l)
+Al(OH)3(s) + NaOH(aq, excess) ⟶ NaAlO2(aq) + 2H2O(l)
 
-aqueous-species notation: Al(OH)₃ + OH- ⟶ [Al(OH)₄]⁻.
+In aqueous-species notation this is Al(OH)₃ + OH⁻ ⟶ [Al(OH)₄]⁻.
 
 Analytical meaning: excess NaOH dissolves Al(OH)₃ but not the hydroxides of Mg²⁺, Ca²⁺, Sr²⁺ or Ba²⁺ under this test. Excess NH₄OH leaves Al(OH)₃ undissolved, whereas Zn(OH)₂ dissolves by forming soluble tetraamminezinc(II), [Zn(NH₃)₄]²⁺.
 
@@ -2069,19 +2031,21 @@ Uses of aluminium sulfate and alums include water and sewage treatment as coagul
 
 **Aluminium sulfate from bauxite/hydroxide:**
 
-2Al(OH)3(s) + 3H2SO4(aq) [Δ] ⟶ [concentrate/crystallise] Al2(SO4)3(aq/s) + 6H2O(l)
+2Al(OH)3(s) + 3H2SO4(aq) [Δ] ⟶ Al2(SO4)3(aq) + 6H2O(l)
 
 **Potash alum crystallisation:**
 
-Al2(SO4)3(aq) + K2SO4(aq) + 24H2O(l) [hot solution] ⟶ [cool slowly] K2SO4.Al2(SO4)3.24H2O(s)
+Al2(SO4)3(aq) + K2SO4(aq) + 24H2O(l) [hot solution, then cool slowly] ⟶ K2SO4.Al2(SO4)3.24H2O(s)
 
 **Ionic dissolution:**
 
-KAl(SO4)2.12H2O(s) [water] ⟶ K+(aq) + Al3+(aq) + 2SO42-(aq) + 12H2O(l)
+KAl(SO4)2.12H2O(s) ⟶ K+(aq) + Al3+(aq) + 2SO42-(aq) + 12H2O(l)
 
 **Puffed/burnt alum:**
 
-KAl(SO4)2.12H2O(s) [gentle then stronger heating] ⟶ [porous/puffed alum] KAl(SO4)2(s) + 12H2O(g)
+KAl(SO4)2.12H2O(s) [gentle, then stronger heating] ⟶ KAl(SO4)2(s) + 12H2O(g)
+
+The residue is a light, porous mass ("burnt alum").
 
 An alum is a double sulfate M(I)M(III)(SO₄)₂.12H₂O, equivalently M₂SO₄.M'₂(SO₄)₃.24H₂O. The crystals are usually octahedral and dissociate into their constituent ions in water; a double salt is therefore distinct from a persistent complex ion.
 
@@ -2116,7 +2080,7 @@ High-alumina cement is produced from limestone and bauxite with small amounts of
 > **JEE TRAP: Gypsum is added to retard the setting of ordinary Portland cement. Controlled setting improves the final strength.**
 
 
-Figure 14. Tricalcium aluminate ring motif: six AlO₄ tetrahedra share corners in the Ca₉[Al₆O₁₈] structural representation.
+::figure aluminate-ring::
 
 | **Feature** | **Portland cement** | **High-alumina cement** |
 |----|----|----|
@@ -2170,32 +2134,34 @@ In the low-temperature model, GaH₃ dimerises as Ga₂H₆ with terminal and br
 
 **Ammonia ion-pair adduct:**
 
-Ga2H6 + 2NH3 [about 195 K] ⟶ [(NH3)2GaH2]+[GaH4]-
+Ga2H6 + 2NH3 [~195 K] ⟶ [(NH3)2GaH2]+[GaH4]-
 
 **Trimethylamine cleavage:**
 
-Ga2H6 + 2NMe3 [about 178 K] ⟶ 2NMe3.GaH3
+Ga2H6 + 2NMe3 [~178 K] ⟶ 2NMe3.GaH3
 
 **Phosphine cleavage:**
 
-Ga2H6 + 2PH3 [about 20 K] ⟶ 2PH3.GaH3
+Ga2H6 + 2PH3 [~20 K] ⟶ 2PH3.GaH3
 
 **Complete chlorination by HCl:**
 
-Ga2H6 + 6HCl [about 178 K] ⟶ Ga2Cl6 + 6H2
+Ga2H6 + 6HCl [~178 K] ⟶ Ga2Cl6 + 6H2
 
 **Hydrogallation of ethene:**
 
-Ga2H6 + 4CH2=CH2 [about 243 K] ⟶ [often associated/polymeric] 2[(C2H5)2GaH]
+Ga2H6 + 4CH2=CH2 [~243 K] ⟶ 2[(C2H5)2GaH]
+
+The diethylgallane product is usually associated or polymeric.
 
 **Thermal decomposition:**
 
-Ga2H6 [above about 253 K] ⟶ 2Ga + 3H2
+Ga2H6 [above ~253 K] ⟶ 2Ga + 3H2
 
 > Hydride chemistry is strongly condition-dependent; temperature, donor and stoichiometry can change the product.
 
 
-Figure 15. Electron-deficient multicentre bonding: dimeric Al₂(CH₃)₆ and representative hydride-bridge motifs.
+::figure al2me6::
 
 | **Species** | **Geometry/structure** | **Significance** |
 |----|----|----|
@@ -2207,7 +2173,7 @@ Figure 15. Electron-deficient multicentre bonding: dimeric Al₂(CH₃)₆ and r
 | Al(⁸-hydroxyquinolinate)₃ | Octahedral chelate | Analytical precipitation/extraction |
 
 
-Figure 16. Octahedral aluminium chelates formed by three bidentate ligands: acetylacetonate, oxalate and 8-hydroxyquinolinate.
+::figure al-chelates::
 
 The aluminium 8-hydroxyquinolinate (oxinate) complex is used for the selective precipitation and gravimetric determination of aluminium.
 
@@ -2229,17 +2195,17 @@ Al₂(CH₃)₆ is electron-deficient and dimeric, with two bridging methyl grou
 
 ## 11.7 Aluminium extraction — Bayer purification and Hall–Héroult electrolysis
 
+::figure bayer-hall::
+
 Bauxite is first purified to alumina by exploiting the amphoteric character of aluminium oxide/hydroxide. In the Bayer process, hot concentrated NaOH dissolves aluminium as aluminate while many iron-rich impurities remain insoluble; after clarification, Al(OH)₃ is precipitated (commonly by seeding) and calcined to Al₂O₃.
 
-Al₂O₃·2H₂O —2NaOH→ 2NaAlO₂ —4H₂O→ 2Al(OH)₃ —Δ→ Al₂O₃ + 3H₂O
+The Bayer sequence in three balanced steps:
 
-Stepwise:
+Al2O3·2H2O(s) + 2NaOH(aq) [hot concentrated] ⟶ 2NaAlO2(aq) + 3H2O(l)
 
-Al₂O₃·2H₂O + 2NaOH → 2NaAlO₂ + 3H₂O
+2NaAlO2(aq) + 4H2O(l) [dilute, seed with Al(OH)3] ⟶ 2Al(OH)3(s) + 2NaOH(aq)
 
-2NaAlO₂ + 4H₂O → 2Al(OH)₃↓ + 2NaOH
-
-2Al(OH)₃ —Δ→ Al₂O₃ + 3H₂O
+2Al(OH)3(s) [Δ] ⟶ Al2O3(s) + 3H2O(g)
 
 Hall-Heroult electrolysis dissolves Al₂O₃ in molten cryolite, Na₃AlF₆. Cryolite lowers the operating temperature and improves ionic conductivity. Liquid aluminium forms at the cathode; carbon anodes are consumed by oxide-derived oxygen, giving mainly CO₂.
 
@@ -2260,6 +2226,8 @@ The molten Hall–Héroult bath is dominated by cryolite and contains dissolved 
 > JEE TRAP: In the Hall–Héroult process, alumina supplies aluminium, while cryolite acts mainly as the molten solvent and electrolyte modifier.
 
 ## 11.8 Aluminium qualitative analysis and materials chemistry
+
+::figure al-qual::
 
 Al(OH)₃ forms a white gelatinous precipitate from Al³⁺ solutions on controlled addition of base. It dissolves in excess NaOH because of its amphoteric character. The aluminon reagent gives a characteristic red lake associated with aluminium hydroxide.
 
@@ -2352,6 +2320,8 @@ B, C, N, O and F are all small, have unusually high ionisation enthalpy and elec
 The heavier congeners in each group are larger, have accessible d orbitals (from n = 3 onward, though the “d-orbital participation” language is now understood loosely as orbital availability/hybridisation convenience rather than literal d-orbital bonding) and commonly show higher coordination numbers (6 for Al, Si, S, Cl in typical complexes/oxoanions vs 3–4 for B, C, N, O).
 
 ## 13.4 Inert-pair effect across the heavier p-block
+
+::figure oxstate-map::
 
 Down heavier p-block groups, the valence ns² electron pair increasingly resists participating in bonding and instead stays as a stereochemically distorting lone pair on the atom in its lower oxidation state. Consequently, **lower oxidation states become progressively more stable down a group**: Tl(I) is more stable than Tl(III); Pb(II) is more stable than Pb(IV); Bi(III) is more stable than Bi(V). PbO₂ is therefore a strong oxidising agent (it “wants” to fall to Pb²⁺), while Tl³⁺ is a good oxidising agent (it “wants” to fall to Tl⁺). This is a **relative-stability trend rooted in poor shielding and relativistic contraction of the 6s orbital for the sixth-period elements**, not a claim that the higher oxidation state cannot exist or is never encountered in a question.
 

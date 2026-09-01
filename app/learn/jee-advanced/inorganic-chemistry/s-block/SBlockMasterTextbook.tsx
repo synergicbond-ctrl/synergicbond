@@ -75,7 +75,18 @@ export default function SBlockMasterTextbook() {
             <H2 id="part-b-alkaline-earth">Part B — Alkaline Earth Metals</H2>
             {filteredAlkalineEarth.map((section) => (
               <section key={section.id}>
-                <h2 id={section.id} className="scroll-mt-28 border-b border-cyan-400/25 pb-4 pt-4 text-center font-sans text-3xl font-black tracking-tight text-cyan-50 sm:text-4xl">
+                <h2
+                  id={section.id}
+                  className="scroll-mt-28 w-fit border-b-2 pb-2 pt-6 font-sans text-3xl font-black leading-tight tracking-tight sm:text-4xl"
+                  style={{
+                    color: "#3fd0ee",
+                    backgroundImage: "linear-gradient(100deg, #3fd0ee, #a98cff 55%, #f472c0)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    borderColor: "rgba(63, 208, 238, 0.35)",
+                  }}
+                >
                   {section.label}
                 </h2>
                 <div className="mt-5 space-y-6">{section.blocks.map((block, index) => block.kind === "md" ? <SBlockMarkdown key={index} markdown={block.text} accent="cyan" /> : <SBlockVisual key={index} id={block.id} />)}</div>

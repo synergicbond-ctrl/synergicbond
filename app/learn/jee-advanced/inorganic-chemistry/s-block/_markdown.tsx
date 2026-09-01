@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
+import { ChemistryMarkdown, Equation, C, tint } from "@/components/notes/chemistryMarkdown";
 
 type Accent = "amber" | "cyan";
 
@@ -41,106 +42,76 @@ function removeWorkedExamples(markdown: string) {
   );
 }
 
-function makeComponents(accent: Accent): Components {
-  const sectionBorder = accent === "cyan" ? "border-t-cyan-400/30" : "border-t-[var(--border)]";
-  const h1Text = accent === "cyan" ? "text-cyan-50" : "text-[var(--foreground)]";
-  const h2Text = accent === "cyan" ? "text-cyan-100/95" : "text-[var(--foreground)]";
-  const markerColor = accent === "cyan" ? "marker:text-cyan-300" : "marker:text-[var(--accent)]";
-  // The centred-textbook treatment (headings + tables) is Part B's identity;
-  // Part A keeps its original left-aligned layout untouched.
-  const headingAlign = accent === "cyan" ? "text-center" : "";
-  const tableAlign = accent === "cyan" ? "sm:mx-auto sm:w-fit sm:max-w-full" : "";
-  return {
-    h1: ({ children }) => {
-      const text = flattenText(children);
-      return (
-        <section className="mt-12 first:mt-0">
-          <h2 id={slugify(text)} className={`scroll-mt-24 border-t ${sectionBorder} pt-10 ${headingAlign} font-display text-3xl font-black leading-tight tracking-tight ${h1Text} sm:text-4xl`}>
-            {children}
-          </h2>
-        </section>
-      );
-    },
-    h2: ({ children }) => {
-      const text = flattenText(children);
-      return <h3 id={slugify(text)} className={`scroll-mt-24 pt-7 font-display text-2xl font-black leading-tight ${h2Text} sm:text-[28px]`}>{children}</h3>;
-    },
-    h3: ({ children }) => <h4 className="pt-4 font-display text-xl font-black leading-tight text-[var(--foreground)] sm:text-[22px]">{children}</h4>,
-    h4: ({ children }) => <h5 className="pt-2 font-display text-base font-black text-[var(--text-muted)] sm:text-lg">{children}</h5>,
-    p: ({ children }) => <p className="max-w-[94ch] text-[15.5px] leading-[1.86] text-slate-300 sm:text-[16.5px]">{children}</p>,
-    ul: ({ children }) => <ul className={`ml-5 max-w-[94ch] list-disc space-y-2.5 text-slate-300 ${markerColor}`}>{children}</ul>,
-    ol: ({ children }) => <ol className="ml-6 max-w-[94ch] list-decimal space-y-2.5 text-slate-300 marker:font-black marker:text-amber-300">{children}</ol>,
-    li: ({ children }) => <li className="pl-1 text-[15.5px] leading-7 sm:text-base">{children}</li>,
-    strong: ({ children }) => <strong className="font-black text-slate-50">{children}</strong>,
-    em: ({ children }) => <em className="text-[var(--text-faint)]">{children}</em>,
-    blockquote: ({ children }) => (
-      <blockquote className="my-5 rounded-lg border border-[var(--border)] border-l-4 border-l-[var(--accent)] bg-[var(--surface-2)] px-5 py-4 text-[var(--foreground)] shadow-lg shadow-black/10">
-        {children}
-      </blockquote>
-    ),
-    hr: () => <hr className="my-10 border-[var(--border)]" />,
-    table: ({ children }) => (
-      <div className={`my-6 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--surface)] shadow-xl shadow-black/20 ${tableAlign}`}>
-        <table className="min-w-full border-collapse text-left text-sm sm:text-[15px]">{children}</table>
-      </div>
-    ),
-    thead: ({ children }) => <thead className={`bg-[var(--surface-2)] ${accent === "cyan" ? "text-cyan-100" : "text-[var(--foreground)]"}`}>{children}</thead>,
-    th: ({ children }) => <th className="border-b border-[var(--border)] px-4 py-3.5 font-black">{children}</th>,
-    td: ({ children }) => <td className="border-b border-white/[.07] px-4 py-3.5 align-top leading-6 text-slate-300">{children}</td>,
-    a: ({ href, children }) => <a href={href} className="font-bold text-[var(--accent)] underline decoration-[var(--accent)]/30 underline-offset-4 hover:text-[var(--foreground)]">{children}</a>,
-    code: ({ children }) => <code className="rounded-md border border-[var(--border)] bg-[var(--surface-2)] px-1.5 py-0.5 font-mono text-[0.9em] text-[var(--foreground)]">{children}</code>,
-  };
-}
+/* ================================================================== */
+/*  Part A — Alkali Metals: original muted renderer (unchanged).       */
+/* ================================================================== */
 
-const AMBER_COMPONENTS = makeComponents("amber");
-const CYAN_COMPONENTS = makeComponents("cyan");
+const AMBER_COMPONENTS: Components = {
+  h1: ({ children }) => {
+    const text = flattenText(children);
+    return (
+      <section className="mt-12 first:mt-0">
+        <h2 id={slugify(text)} className="scroll-mt-24 border-t border-t-[var(--border)] pt-10 font-display text-3xl font-black leading-tight tracking-tight text-[var(--foreground)] sm:text-4xl">
+          {children}
+        </h2>
+      </section>
+    );
+  },
+  h2: ({ children }) => {
+    const text = flattenText(children);
+    return <h3 id={slugify(text)} className="scroll-mt-24 pt-7 font-display text-2xl font-black leading-tight text-[var(--foreground)] sm:text-[28px]">{children}</h3>;
+  },
+  h3: ({ children }) => <h4 className="pt-4 font-display text-xl font-black leading-tight text-[var(--foreground)] sm:text-[22px]">{children}</h4>,
+  h4: ({ children }) => <h5 className="pt-2 font-display text-base font-black text-[var(--text-muted)] sm:text-lg">{children}</h5>,
+  p: ({ children }) => <p className="max-w-[94ch] text-[15.5px] leading-[1.86] text-slate-300 sm:text-[16.5px]">{children}</p>,
+  ul: ({ children }) => <ul className="ml-5 max-w-[94ch] list-disc space-y-2.5 text-slate-300 marker:text-[var(--accent)]">{children}</ul>,
+  ol: ({ children }) => <ol className="ml-6 max-w-[94ch] list-decimal space-y-2.5 text-slate-300 marker:font-black marker:text-amber-300">{children}</ol>,
+  li: ({ children }) => <li className="pl-1 text-[15.5px] leading-7 sm:text-base">{children}</li>,
+  strong: ({ children }) => <strong className="font-black text-slate-50">{children}</strong>,
+  em: ({ children }) => <em className="text-[var(--text-faint)]">{children}</em>,
+  blockquote: ({ children }) => (
+    <blockquote className="my-5 rounded-lg border border-[var(--border)] border-l-4 border-l-[var(--accent)] bg-[var(--surface-2)] px-5 py-4 text-[var(--foreground)] shadow-lg shadow-black/10">
+      {children}
+    </blockquote>
+  ),
+  hr: () => <hr className="my-10 border-[var(--border)]" />,
+  table: ({ children }) => (
+    <div className="my-6 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--surface)] shadow-xl shadow-black/20">
+      <table className="min-w-full border-collapse text-left text-sm sm:text-[15px]">{children}</table>
+    </div>
+  ),
+  thead: ({ children }) => <thead className="bg-[var(--surface-2)] text-[var(--foreground)]">{children}</thead>,
+  th: ({ children }) => <th className="border-b border-[var(--border)] px-4 py-3.5 font-black">{children}</th>,
+  td: ({ children }) => <td className="border-b border-white/[.07] px-4 py-3.5 align-top leading-6 text-slate-300">{children}</td>,
+  a: ({ href, children }) => <a href={href} className="font-bold text-[var(--accent)] underline decoration-[var(--accent)]/30 underline-offset-4 hover:text-[var(--foreground)]">{children}</a>,
+  code: ({ children }) => <code className="rounded-md border border-[var(--border)] bg-[var(--surface-2)] px-1.5 py-0.5 font-mono text-[0.9em] text-[var(--foreground)]">{children}</code>,
+};
 
-function Markdown({ markdown, accent }: { markdown: string; accent: Accent }) {
+function AmberMarkdown({ markdown }: { markdown: string }) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm, remarkMath]}
       rehypePlugins={[[rehypeKatex, { throwOnError: false, strict: false }]]}
-      components={accent === "cyan" ? CYAN_COMPONENTS : AMBER_COMPONENTS}
+      components={AMBER_COMPONENTS}
     >
       {normaliseMath(markdown)}
     </ReactMarkdown>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Styled callouts — Core Focus / Exam Note / Bonding Insight /       */
-/*  Exam Pattern. Authored in the content files as a leading           */
-/*  `**Label:** …` paragraph; grouped and lifted out here so the       */
-/*  source taxonomy renders as real callout components, not bold text. */
-/* ------------------------------------------------------------------ */
+/* ================================================================== */
+/*  Part B — Alkaline Earth Metals: the vivid multi-colour system      */
+/*  shared with the p-block / boron-family notes — gradient headings,  */
+/*  gold emphasis, champagne equations, coral arrows.                  */
+/* ================================================================== */
 
 type CalloutKind = "core-focus" | "exam-note" | "bonding-insight" | "exam-pattern";
 
-const CALLOUT_META: Record<CalloutKind, { label: string; frame: string; badge: string; rule: string }> = {
-  "core-focus": {
-    label: "Core Focus",
-    frame: "border-cyan-400/30 bg-cyan-500/[0.06]",
-    badge: "bg-cyan-400/15 text-cyan-200",
-    rule: "bg-cyan-400/60",
-  },
-  "exam-note": {
-    label: "Exam Note",
-    frame: "border-violet-400/30 bg-violet-500/[0.06]",
-    badge: "bg-violet-400/15 text-violet-200",
-    rule: "bg-violet-400/60",
-  },
-  "bonding-insight": {
-    label: "Bonding Insight",
-    frame: "border-teal-400/30 bg-teal-500/[0.06]",
-    badge: "bg-teal-400/15 text-teal-200",
-    rule: "bg-teal-400/60",
-  },
-  "exam-pattern": {
-    label: "Exam Pattern",
-    frame: "border-amber-400/30 bg-amber-500/[0.06]",
-    badge: "bg-amber-400/15 text-amber-200",
-    rule: "bg-amber-400/60",
-  },
+const CALLOUT_META: Record<CalloutKind, { label: string; icon: string; accent: string }> = {
+  "core-focus": { label: "Core Focus", icon: "★", accent: C.cyan },
+  "exam-note": { label: "Exam Note", icon: "✎", accent: C.violet },
+  "bonding-insight": { label: "Bonding Insight", icon: "◎", accent: C.teal },
+  "exam-pattern": { label: "Exam Pattern", icon: "⚠", accent: C.gold },
 };
 
 const CALLOUT_LABEL_RE = /^\*\*(Core Focus|Exam Note|Bonding Insight|Exam Pattern)\b:?\*\*:?\s*/i;
@@ -149,35 +120,26 @@ function calloutKind(label: string): CalloutKind {
   return label.toLowerCase().replace(/\s+/g, "-") as CalloutKind;
 }
 
-function Callout({ kind, body, accent }: { kind: CalloutKind; body: string; accent: Accent }) {
+function MultiColourCallout({ kind, body }: { kind: CalloutKind; body: string }) {
   const meta = CALLOUT_META[kind];
   return (
-    <aside className={`my-6 overflow-hidden rounded-xl border ${meta.frame} shadow-lg shadow-black/20`}>
-      <div className="flex items-stretch">
-        <div className={`w-1 shrink-0 ${meta.rule}`} aria-hidden />
-        <div className="min-w-0 flex-1 px-5 py-4 sm:px-6">
-          <p className={`mb-2 inline-flex items-center rounded-md px-2 py-0.5 text-[10px] font-black uppercase tracking-[0.18em] ${meta.badge}`}>
-            {meta.label}
-          </p>
-          <div className="callout-body space-y-3 text-[15px] leading-[1.8] text-slate-200">
-            <Markdown markdown={body} accent={accent} />
-          </div>
-        </div>
+    <div className="my-5 rounded-xl p-4 pl-5" style={{ borderLeft: `4px solid ${meta.accent}`, background: tint(meta.accent, 0.1) }}>
+      <p className="mb-1.5 flex items-center gap-1.5 text-[11px] font-black uppercase tracking-[0.18em]" style={{ color: meta.accent }}>
+        <span aria-hidden className="text-[13px] leading-none">{meta.icon}</span>
+        {meta.label}
+      </p>
+      <div className="space-y-2 text-[15px] leading-[1.75]" style={{ color: C.body }}>
+        <ChemistryMarkdown markdown={body} />
       </div>
-    </aside>
+    </div>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Reaction blocks — a run of equation lines authored as plain text   */
-/*  (`A + B —(condition)→ C + D`). Rendered centred, with the          */
-/*  condition sitting over a drawn arrow. No `[heat]` / pill badges.   */
-/* ------------------------------------------------------------------ */
+/* ---------- reactions: reuse the shared champagne / coral equation --- */
 
 // A leading "Some phrase: " before the equation, e.g. "Calcination:",
 // "Route 1:", "General carbothermic reduction (illustrative):".
 const STEP_LABEL_RE = /^([A-Z][^:\n→⇌⇋⟶]{1,60}):\s+(?=.*[→⇌⇋⟶])/;
-const ARROW_SPLIT_SOURCE = "\\s*(?:—\\(([^)]+)\\)→|⟶|→|⇌|⇋)\\s*";
 // Three consecutive lowercase words, or a comma followed by a lowercase
 // clause ⇒ this is prose, not an equation.
 const PROSE_RUN_RE = /[a-z]{3,}\s+[a-z]{3,}\s+[a-z]{3,}|,\s+[a-z]{3,}\s+[a-z]{3,}/;
@@ -186,7 +148,6 @@ function hasArrow(line: string) {
   return /(?:→|⇌|⇋|⟶)/.test(line);
 }
 
-// Peel a trailing " (note)" off the end of an equation line.
 function splitTrailingNote(text: string): { core: string; note: string | null } {
   const match = text.match(/\s+\(([^()]+)\)\s*$/);
   if (match && !/[→⇌⇋⟶]/.test(match[1])) {
@@ -195,8 +156,6 @@ function splitTrailingNote(text: string): { core: string; note: string | null } 
   return { core: text.trim(), note: null };
 }
 
-// The equation "core" of a line: after stripping a leading label and a
-// trailing parenthetical note.
 function equationCore(line: string): string {
   return splitTrailingNote(line.replace(STEP_LABEL_RE, "")).core;
 }
@@ -223,44 +182,32 @@ function isReactionBlock(block: string) {
   });
 }
 
+// Turn the authored `A + B —(condition)→ C` shorthand into the
+// `A + B [condition] ⟶ C` form the shared <Equation> renderer expects,
+// so s-block reactions look identical to the boron-family ones.
+function toSharedEquation(core: string): string {
+  return core.replace(/\s*—\(([^)]+)\)→\s*/g, " [$1] ⟶ ").replace(/\s+/g, " ").trim();
+}
+
 function ReactionLine({ line }: { line: string }) {
   const labelMatch = line.match(STEP_LABEL_RE);
   const label = labelMatch ? labelMatch[1].trim() : null;
   const afterLabel = labelMatch ? line.slice(labelMatch[0].length) : line;
   const { core, note } = splitTrailingNote(afterLabel);
 
-  const species: string[] = [];
-  const arrows: { condition: string | null; equilibrium: boolean }[] = [];
-  const arrowRe = new RegExp(ARROW_SPLIT_SOURCE, "g");
-  let lastIndex = 0;
-  for (let m = arrowRe.exec(core); m !== null; m = arrowRe.exec(core)) {
-    species.push(core.slice(lastIndex, m.index).trim());
-    arrows.push({ condition: m[1] ? m[1].trim() : null, equilibrium: /⇌|⇋/.test(m[0]) });
-    lastIndex = arrowRe.lastIndex;
-  }
-  species.push(core.slice(lastIndex).trim());
-
   return (
-    <div className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-2 text-center text-[15px] leading-relaxed text-slate-100 sm:text-[16.5px]">
+    <div>
       {label ? (
-        <span className="mb-0.5 w-full text-center font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500">
+        <p className="mb-0.5 text-[11px] font-black uppercase tracking-[0.16em]" style={{ color: tint(C.rxnArrow, 0.85) }}>
           {label}
-        </span>
+        </p>
       ) : null}
-      {species.map((sp, i) => (
-        <span key={`s-${i}`} className="contents">
-          <span className="whitespace-nowrap">{sp}</span>
-          {i < arrows.length ? (
-            <span className="mx-1 inline-flex min-w-[2.5rem] flex-col items-center leading-none">
-              <span className="whitespace-nowrap pb-[3px] text-[11px] text-cyan-200/90">
-                {arrows[i].condition || null}
-              </span>
-              <span aria-hidden className="text-[19px] leading-none text-slate-300">{arrows[i].equilibrium ? "⇌" : "⟶"}</span>
-            </span>
-          ) : null}
-        </span>
-      ))}
-      {note ? <span className="mt-1 w-full text-center font-sans text-[12.5px] italic text-slate-400">{note}</span> : null}
+      <Equation raw={toSharedEquation(core)} />
+      {note ? (
+        <p className="mt-1 text-[13px] leading-relaxed" style={{ color: C.faint }}>
+          {note}
+        </p>
+      ) : null}
     </div>
   );
 }
@@ -268,7 +215,7 @@ function ReactionLine({ line }: { line: string }) {
 function ReactionRun({ block }: { block: string }) {
   const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
   return (
-    <div className="my-6 flex flex-col items-center gap-4 border-y border-white/[0.07] py-5">
+    <div className="my-6 space-y-1">
       {lines.map((line, i) => (
         <ReactionLine key={i} line={line} />
       ))}
@@ -276,10 +223,7 @@ function ReactionRun({ block }: { block: string }) {
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Segmentation — split one authored markdown string into an ordered  */
-/*  list of markdown / callout / reaction segments.                    */
-/* ------------------------------------------------------------------ */
+/* ---------- segmentation ------------------------------------------- */
 
 type Segment =
   | { type: "md"; text: string }
@@ -331,8 +275,8 @@ function segmentMarkdown(markdown: string): Segment[] {
       // The first line is a "lead-in" (follow-on paragraphs belong to the
       // callout) only when it is empty, very short, a question, a colon
       // lead-in, or a trailing parenthetical with no full sentence. A
-      // complete sentence ending in "." is the whole callout — take only
-      // its bullet list, never the surrounding section prose.
+      // complete sentence ending in "." is the whole callout — take only its
+      // bullet list, never the surrounding section prose.
       const titleLike =
         bodyParts.length === 0 ||
         firstBody.length < 46 ||
@@ -358,7 +302,6 @@ function segmentMarkdown(markdown: string): Segment[] {
 
     if (isReactionBlock(block)) {
       flush();
-      // Merge consecutive reaction blocks into one panel.
       const runLines = [block];
       let j = i + 1;
       for (; j < blocks.length; j += 1) {
@@ -377,20 +320,38 @@ function segmentMarkdown(markdown: string): Segment[] {
   return segments;
 }
 
+/* ---------- public renderer -------------------------------------- */
+
 export function SBlockMarkdown({ markdown, accent = "amber" }: { markdown: string; accent?: Accent }) {
   const prepared = removeWorkedExamples(markdown);
-  const segments = segmentMarkdown(prepared);
 
+  if (accent !== "cyan") {
+    return (
+      <div className="space-y-5">
+        <AmberMarkdown markdown={prepared} />
+      </div>
+    );
+  }
+
+  // Part B: the page shell already prints the numbered section heading, so
+  // drop a leading `## 4. Nitrides and Carbides` line that repeats it, then
+  // lift the `### 4.1` subsections to `##` so they render at the cyan
+  // sub-heading level the shared multi-colour system uses (matching the
+  // p-block / boron-family notes).
+  const body = prepared
+    .replace(/^\s*##\s+\d+\.\s+[^\n]+\s*(?:\n+|$)/, "")
+    .replace(/^###\s+/gm, "## ");
+  const segments = segmentMarkdown(body);
   return (
-    <div className="space-y-5">
+    <div className="space-y-4">
       {segments.map((segment, index) => {
         if (segment.type === "callout") {
-          return <Callout key={index} kind={segment.kind} body={segment.body} accent={accent} />;
+          return <MultiColourCallout key={index} kind={segment.kind} body={segment.body} />;
         }
         if (segment.type === "reaction") {
           return <ReactionRun key={index} block={segment.text} />;
         }
-        return <Markdown key={index} markdown={segment.text} accent={accent} />;
+        return <ChemistryMarkdown key={index} markdown={segment.text} />;
       })}
     </div>
   );

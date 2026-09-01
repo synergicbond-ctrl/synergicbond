@@ -44,19 +44,19 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
-      {
-        // The notes routes are all `force-dynamic`, per-user, and entitlement
-        // gated — they must never be served from a browser, bfcache, or CDN
-        // copy, or a reader can be stuck on a pre-deploy version of a chapter
-        // (stale lesson list) after new lessons ship. Force a revalidation on
-        // every navigation.
-        source: "/notes/:path*",
+      // The notes and learn routes are per-user and entitlement gated — they
+      // must never be served from a browser, bfcache, App Router client cache,
+      // or CDN copy, or a reader can be stuck on a pre-deploy version of a
+      // chapter (stale lesson list, old rendering) after a deploy, even after a
+      // hard refresh. Force a revalidation on every navigation.
+      ...["/notes/:path*", "/learn/:path*"].map((source) => ({
+        source,
         headers: [
           { key: "Cache-Control", value: "no-store, must-revalidate" },
           { key: "CDN-Cache-Control", value: "no-store" },
           { key: "Vercel-CDN-Cache-Control", value: "no-store" },
         ],
-      },
+      })),
     ];
   },
 };

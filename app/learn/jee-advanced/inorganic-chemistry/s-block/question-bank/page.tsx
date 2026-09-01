@@ -47,20 +47,20 @@ export default function SBlockQuestionBankPage() {
       discipline="JEE Advanced Chemistry"
       chapterTitle="s-Block Question Bank"
       chapterSlug="s-block"
-      description="Alkali Metals Assignment-1 and the Alkaline Earth Metals assignment bank — full JEE Advanced question sets with answer keys and detailed solutions."
+      description="JEE Advanced practice on Group 1 and Group 2 — single- and multiple-correct, matrix match, comprehension, integer and numerical questions with full answer keys and detailed solutions."
       free={false}
       tabs={TABS}
     >
       <article className="mx-auto min-w-0 max-w-3xl space-y-12">
         <section aria-labelledby="qb-alkali-metals">
-          <GroupHeading id="qb-alkali-metals">Alkali Metals — Assignment-1</GroupHeading>
+          <GroupHeading id="qb-alkali-metals">Alkali Metals</GroupHeading>
           <div className="mt-4">
             <SBlockQuestionBankMarkdown markdown={ALKALI_METALS_QUESTION_BANK_MARKDOWN} />
           </div>
         </section>
 
         <section aria-labelledby="qb-alkaline-earth-metals">
-          <GroupHeading id="qb-alkaline-earth-metals">Alkaline Earth Metals — Assignment-2</GroupHeading>
+          <GroupHeading id="qb-alkaline-earth-metals">Alkaline Earth Metals</GroupHeading>
           <div className="mt-4">
             <SBlockQuestionBankMarkdown markdown={ALKALINE_EARTH_METALS_QUESTION_BANK_MARKDOWN} />
           </div>

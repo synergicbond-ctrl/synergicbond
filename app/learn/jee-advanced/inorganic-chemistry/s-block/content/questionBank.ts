@@ -1,32 +1,19 @@
-// Faithful reproduction of the authored source assignments. The only
-// changes to the source text are format conversion (pandoc -> GFM pipe
-// tables, pandoc backslash-escapes removed, heading levels shifted down
-// one) plus the transcription notes below.
+// s-Block question bank. Two groups: Alkali Metals (Sections A-G, Q1-60)
+// and Alkaline Earth Metals (Sections A-J plus a further practice set),
+// each with full answer keys and detailed solutions.
 //
-// Alkali Metals: "Alkali Metals Assignment-1" -- Sections A-G, Q1-60,
-// full answer key + detailed solutions.
-// Alkaline Earth Metals: "s Block Assignment-2" -- Sections A-J, full
-// answer key + detailed solutions -- with the supplementary "Alkaline
-// Earth Metals 80Q" set appended in full beneath it.
+// A handful of reaction schemes that were authored as images were
+// transcribed into the shared "A [condition] -> B" equation syntax, with
+// three coefficient/symbol slips corrected on review (Q39 transformation
+// A -> 2P; Q43 #8 -> 2M + 2ROH; Q43 #34 -> >=373 K). The Q43 "how many
+// are correct" sweep intentionally retains four incorrect entries
+// (#11, #17, #77, #78) as traps; the answer key (74) accounts for them.
 //
-// Word-embedded reaction-scheme images in the Alkali Metals source
-// (Q29-Q30, Q35-Q40 and the Q43 78-equation sweep) were OCR-transcribed
-// from the source PDF into the shared "A [condition] -> B" equation
-// syntax. Three coefficient/symbol transcription slips were corrected
-// against the source PDF: Q39 transformation A (2P, not 4P), Q43 #8
-// (2M + 2ROH), Q43 #34 (>=373 K). The Q43 sweep intentionally keeps the
-// four authored trap entries (#11, #17, #77, #78) that the doc's own
-// solution flags as incorrect.
-//
-// ~15 Group-2 structure diagrams (AEM Section H; 80Q Section D) are
-// decorative illustrations -- every associated question stem fully
-// describes the structure or names a standard species, and the answer
-// keys confirm the answers are standard structural facts. Each image is
-// marked in place; none is required to answer its question.
+// Group-2 structures referenced by the AEM sections are drawn as clean
+// original schematics in question-bank/visuals.tsx and pulled in through
+// `::figure` markers.
 
 export const ALKALI_METALS_QUESTION_BANK_MARKDOWN = String.raw`
-**ALKALI METALS**
-
 ## SECTION A — SINGLE CORRECT: STATEMENT COMBINATIONS (Q1–Q12)
 
 *Each question contains six numbered statements. Choose the one option
@@ -1857,8 +1844,6 @@ reacts with NaOH: NaHCO₃ + NaOH ⟶ Na₂CO₃ + H₂O. Total = 11.
 `;
 
 export const ALKALINE_EARTH_METALS_QUESTION_BANK_MARKDOWN = String.raw`
-**ALKALINE EARTH METALS**
-
 ## SECTION A - Single-Correct 
 
 A01. Consider the following statements about periodic and physical
@@ -7482,11 +7467,7 @@ BaSO₄; stable BaO₂; BaC₂+N₂→Ba(CN)₂ exception.
 
 ---
 
-## SUPPLEMENTARY 80-QUESTION PRACTICE SET
-
-*A second, independently authored 80-question set covering the same Group 2 syllabus from different angles. Some conceptual overlap with the assignment above is expected; both sets are kept in full as authored.*
-
-**ALKALINE EARTH METALS**
+## FURTHER PRACTICE SET — GROUP 2
 
 **SECTION A — SINGLE CORRECT**
 
@@ -8833,13 +8814,12 @@ prompts; write every product and balance the equation.
 | 4. | 2Ca(NO₃)₂ | Δ | ________________ |
 | 5. | Mg + air | ignition | ________________ |
 
-**SECTION H — ADVANCED REACTION BANK: J.D. LEE / GUHA / COACHING-STYLE
+**SECTION H — ADVANCED REACTION BANK**
 CHEMISTRY (Q71–Q80)**
 
 ------------------------------------------------------------------------
 
-These are reaction facts and transformations from the uploaded advanced
-Group-2 reference and coaching-style material. Questions are freshly
+This bank collects advanced Group-2 reaction facts and transformations. Questions are
 written; fill all products/conditions.
 
 **71. Liquid ammonia, ammoniates and amides**
@@ -8946,7 +8926,7 @@ written; fill all products/conditions.
 | 4. | CaCl₂ + 8NH₃ | addition | ________________ |
 | 5. | CaCl₂ + 4C₂H₅OH | addition | ________________ |
 
-**ANSWER KEY — VERIFIED**
+**ANSWER KEY**
 
 ------------------------------------------------------------------------
 
@@ -8993,7 +8973,7 @@ written; fill all products/conditions.
 | 39 | 9 | 79 | [Be(H₂O)₃(OH)]⁺ + H₃O⁺ | [BeF₄]²⁻ | [Be(OH)₄]²⁻ | Be₄O(CH₃COO)₆ + 7H₂O | [Be(ox)₂]²⁻ |
 | 40 | 15.7 | 80 | Mg(OH)Cl + HCl + 5H₂O | MgO + HCl | MgCl₂ + NH₃ + HCl + 6H₂O (net) | CaCl₂·8NH₃ | CaCl₂·4C₂H₅OH |
 
-**VERIFICATION NOTES FOR HIGH-RISK ITEMS**
+**NOTES ON SELECTED ITEMS**
 
 ------------------------------------------------------------------------
 
@@ -9022,7 +9002,5 @@ contacts = 16.
 • Q52: conventional [Ca(EDTA)]²⁻ contains five chelate rings for a
 hexadentate EDTA ligand.
 
-• Advanced bank: reactions are based on the uploaded
-Group-2/J.D.-Lee-style reference and coaching notes; reaction conditions
-have been stated to avoid ambiguous product questions.
+• Advanced bank: reaction conditions are stated explicitly to avoid ambiguous product questions.
 `;

@@ -2,36 +2,39 @@
 
 import { useMemo, useState } from "react";
 import { CanonicalChapterPage } from "@/components/notes/canonical";
+import { C, tint } from "@/components/notes/chemistryMarkdown";
 import { SBlockMarkdown } from "./_markdown";
 import { SBlockVisual } from "./visuals";
 import { ALKALI_METAL_SECTIONS, ALKALINE_EARTH_METAL_SECTIONS, type SBlockSection } from "./content";
 
-const GRADIENT: React.CSSProperties = {
-  color: "#3fd0ee",
-  backgroundImage: "linear-gradient(100deg, #3fd0ee, #a98cff 55%, #f472c0)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-};
-
+// Part title — the shared boron-family H1 treatment.
 function PartHeading({ id, children }: { id: string; children: React.ReactNode }) {
   return (
     <h2
       id={id}
-      className="scroll-mt-28 w-fit border-b-2 pb-2 pt-4 font-sans text-[2rem] font-black leading-tight tracking-tight sm:text-[2.5rem]"
-      style={{ ...GRADIENT, borderColor: "rgba(63, 208, 238, 0.4)" }}
+      className="scroll-mt-28 w-fit pt-7 font-sans text-[1.9rem] font-black leading-tight tracking-tight sm:text-[2.25rem]"
+      style={{
+        color: C.cyan,
+        backgroundImage: `linear-gradient(100deg, ${C.cyan}, ${C.violet} 55%, ${C.pink})`,
+        WebkitBackgroundClip: "text",
+        backgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        borderTop: `2px solid ${tint(C.cyan, 0.35)}`,
+      }}
     >
       {children}
     </h2>
   );
 }
 
+// Numbered section heading — the shared boron-family H2 treatment (cyan,
+// restrained underline). Deliberately NOT the gradient part-title size.
 function SectionHeading({ id, children }: { id: string; children: React.ReactNode }) {
   return (
     <h2
       id={id}
-      className="scroll-mt-28 w-fit border-b-2 pb-2 pt-6 font-sans text-[1.7rem] font-black leading-tight tracking-tight sm:text-[2rem]"
-      style={{ ...GRADIENT, borderColor: "rgba(63, 208, 238, 0.3)" }}
+      className="mt-2 inline-block scroll-mt-28 border-b-2 pb-1 pt-8 font-sans text-[1.45rem] font-black leading-tight"
+      style={{ color: C.cyan, borderColor: tint(C.cyan, 0.4) }}
     >
       {children}
     </h2>
@@ -40,7 +43,7 @@ function SectionHeading({ id, children }: { id: string; children: React.ReactNod
 
 function SectionBody({ section }: { section: SBlockSection }) {
   return (
-    <div className="mt-5 space-y-6">
+    <div className="mt-4 space-y-5">
       {section.blocks.map((block, index) =>
         block.kind === "md" ? (
           <SBlockMarkdown key={index} markdown={block.text} />
@@ -72,34 +75,27 @@ export default function SBlockMasterTextbook() {
       description="Two independent textbook parts: Alkali Metals and Alkaline Earth Metals."
       free={false}
     >
-      <div className="grid gap-8 lg:grid-cols-[290px_minmax(0,1fr)]">
+      <div className="grid gap-7 lg:grid-cols-[240px_minmax(0,1fr)]">
         <aside className="lg:sticky lg:top-8 lg:h-[calc(100vh-4rem)] lg:overflow-y-auto">
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Find a section…"
-            className="mb-3 w-full rounded-lg border border-cyan-400/20 bg-[var(--surface)] px-4 py-3 text-sm outline-none placeholder:text-[var(--text-muted)] focus:border-cyan-400/50"
+            className="mb-3 w-full rounded-lg border border-cyan-400/15 bg-[var(--surface)] px-3.5 py-2.5 text-[13px] outline-none placeholder:text-[var(--text-muted)] focus:border-cyan-400/40"
           />
-          <nav className="rounded-lg border border-cyan-400/15 bg-[var(--surface)] p-3">
-            <p className="px-3 pb-1 pt-2 text-xs font-black uppercase tracking-[0.16em] text-[#3fd0ee]">Part A — Alkali Metals</p>
+          <nav className="rounded-lg border border-cyan-400/12 bg-[var(--surface)] p-2.5">
+            <p className="px-2.5 pb-1 pt-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-[#3fd0ee]">Part A — Alkali Metals</p>
             {filteredAlkali.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[#a5f3fc]">{s.label}</a>
+              <a key={s.id} href={`#${s.id}`} className="block rounded-md px-2.5 py-2 text-[13px] leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[#a5f3fc]">{s.label}</a>
             ))}
-            <p className="mt-3 border-t border-cyan-400/15 px-3 pb-1 pt-4 text-xs font-black uppercase tracking-[0.16em] text-[#3fd0ee]">Part B — Alkaline Earth Metals</p>
+            <p className="mt-2 border-t border-cyan-400/12 px-2.5 pb-1 pt-3 text-[10px] font-black uppercase tracking-[0.16em] text-[#3fd0ee]">Part B — Alkaline Earth Metals</p>
             {filteredAlkalineEarth.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[#a5f3fc]">{s.label}</a>
+              <a key={s.id} href={`#${s.id}`} className="block rounded-md px-2.5 py-2 text-[13px] leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[#a5f3fc]">{s.label}</a>
             ))}
           </nav>
         </aside>
 
-        <article className="min-w-0 max-w-[52rem] space-y-12">
-          <section className="rounded-xl border border-cyan-400/20 bg-[var(--surface)] p-7 sm:p-10">
-            <h2 className="w-fit text-3xl font-black leading-tight sm:text-4xl" style={GRADIENT}>Two independent textbook parts</h2>
-            <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--text-body)]">
-              Part A covers only the Alkali Metals. Part B covers only the Alkaline Earth Metals. Each part has its own contents and reading sequence.
-            </p>
-          </section>
-
+        <article className="min-w-0 max-w-3xl space-y-10">
           <section aria-labelledby="part-a-alkali">
             <PartHeading id="part-a-alkali">Part A — Alkali Metals</PartHeading>
             {filteredAlkali.map((section) => (

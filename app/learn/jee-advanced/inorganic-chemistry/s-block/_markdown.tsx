@@ -250,16 +250,20 @@ export function SBlockMarkdown({ markdown }: { markdown: string; accent?: "amber
   // The page shell already prints each section's heading, so drop a leading
   // section-title line — `## 4. Nitrides…` (number-dot-word) or a plain
   // `## Structures of Metals…` — that repeats it. A numbered subsection like
-  // `## 4.1 Nitrides` is deliberately NOT matched. Then lift `### 4.1`
-  // subsections to `##` so they render at the cyan sub-heading level the
-  // shared multi-colour system uses.
-  const body = removeWorkedExamples(markdown)
-    .replace(/^\s*##\s+(?:\d+\.\s+\D|[A-Z])[^\n]*\s*(?:\n+|$)/, "")
-    .replace(/^###\s+/gm, "## ");
+  // `## 4.1 Nitrides` is deliberately NOT matched. The authored heading
+  // hierarchy is otherwise preserved: `##` → cyan, `###` → gold, `####` →
+  // pink, exactly as in the boron-family / p-block notes.
+  const body = removeWorkedExamples(markdown).replace(
+    /^\s*##\s+(?:\d+\.\s+\D|[A-Z])[^\n]*\s*(?:\n+|$)/,
+    "",
+  );
 
   const segments = segmentMarkdown(body);
   return (
-    <div className="space-y-4">
+    // Some Part A `$$…$$` equations pack several reactions on one line with
+    // `\qquad`; let the paragraph / display block scroll internally on narrow
+    // screens rather than pushing the page wider.
+    <div className="space-y-4 [&_.katex-display]:max-w-full [&_.katex-display]:overflow-x-auto [&_p]:overflow-x-auto">
       {segments.map((segment, index) => {
         if (segment.type === "callout") {
           return <MultiColourCallout key={index} kind={segment.kind} body={segment.body} />;

@@ -326,7 +326,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     sectionLabel: "Group 13 deep dive",
     title: "The Boron Family",
     href: "/notes/boron-family",
-    lessonLabel: "14 lessons",
+    lessonLabel: "13 lessons + question bank",
     premium: true,
     description: "Group 13 (B, Al, Ga, In, Tl) in full: periodic trends and anomalies, the inert-pair effect, electron-deficient and multicentre bonding, borax and boric acid, boron halides, boranes and borazine, aluminium chemistry, and an integrated Q1–Q90 question bank with answer key.",
   },

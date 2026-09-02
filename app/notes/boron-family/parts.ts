@@ -2,12 +2,14 @@ import "server-only";
 import { BORON_FAMILY_MASTER_MARKDOWN } from "./content";
 import { BORON_FAMILY_QUESTION_BANK_MARKDOWN } from "./questionBank";
 
+export { BORON_FAMILY_QUESTION_BANK_MARKDOWN };
+
 export interface BoronFamilyPartDef {
   slug: string;
   number: number;
   title: string;
-  /** Master-markdown section number, or "qbank" for the question-bank lesson. */
-  section: number | "qbank";
+  /** Master-markdown section number. */
+  section: number;
 }
 
 export const BORON_FAMILY_PARTS: BoronFamilyPartDef[] = [
@@ -24,7 +26,6 @@ export const BORON_FAMILY_PARTS: BoronFamilyPartDef[] = [
   { slug: "part11", number: 11, title: "Aluminium and important aluminium compounds", section: 11 },
   { slug: "part12", number: 12, title: "Uses of boron, aluminium and their compounds", section: 12 },
   { slug: "part13", number: 13, title: "p-Block overview and Group 13 connections", section: 13 },
-  { slug: "part14", number: 14, title: "JEE question bank — Q1–Q90, reactions & answer key", section: "qbank" },
 ];
 
 function sections() {
@@ -45,7 +46,6 @@ function sections() {
 }
 
 export function boronFamilyPartMarkdown(part: BoronFamilyPartDef) {
-  if (part.section === "qbank") return BORON_FAMILY_QUESTION_BANK_MARKDOWN;
   const found = sections().find((item) => item.num === part.section);
   return found ? found.text : "";
 }

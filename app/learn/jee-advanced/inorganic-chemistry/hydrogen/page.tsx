@@ -9,8 +9,13 @@ import HydrogenVisual from "./visuals";
 export const metadata: Metadata = {
   title: "Hydrogen & Hydrogen Peroxide (H₂O₂) — JEE Advanced | Synergic Bond",
   description:
-    "Comprehensive hydrogen chemistry covering H₂, D₂O, H₂O₂ redox reactions, water hardness, isotope effects. Verified H₂O₂ master reaction sheet with 8 high-yield traps and complete assignments.",
+    "Comprehensive hydrogen chemistry covering H₂, D₂O, H₂O₂ redox reactions, water hardness, isotope effects. Verified H₂O₂ master reaction sheet with 8 high-yield traps and a full question bank.",
 };
+
+const TABS = [
+  { label: "Chapter", href: "/learn/jee-advanced/inorganic-chemistry/hydrogen", active: true },
+  { label: "Question Bank", href: "/learn/jee-advanced/inorganic-chemistry/hydrogen/question-bank" },
+];
 
 export default function HydrogenNotesPage() {
   return (
@@ -20,6 +25,8 @@ export default function HydrogenNotesPage() {
       chapterTitle="Hydrogen & Hydrogen Peroxide (H₂O₂)"
       chapterSlug="hydrogen"
       description="Element, Water Chemistry, Heavy Water, Redox Reactions"
+      free={false}
+      tabs={TABS}
     >
       <article className="mx-auto min-w-0 max-w-3xl space-y-10">
         {HYDROGEN_SECTIONS.map((section) => (

@@ -1,12 +1,9 @@
 import { H2O2_NOTES_SECTIONS } from "./h2o2-notes";
-import { HYDROGEN_ASSIGNMENTS_SECTIONS } from "./hydrogen-assignments";
 import type { HydrogenSection } from "./types";
 
 export type { HydrogenBlock, HydrogenSection } from "./types";
+export { HYDROGEN_QUESTION_BANK_MARKDOWN } from "./questionBank";
 
-// Hydrogen chapter structure: comprehensive H2O2 theory followed by integrated assignments
-// covering hydrogen fundamentals, water chemistry, heavy water, and H2O2 redox reactions
-export const HYDROGEN_SECTIONS: HydrogenSection[] = [
-  ...H2O2_NOTES_SECTIONS,
-  ...HYDROGEN_ASSIGNMENTS_SECTIONS,
-];
+// Hydrogen chapter: the H2O2 theory sections. The JEE assignment sets live
+// in their own question-bank view (question-bank/page.tsx).
+export const HYDROGEN_SECTIONS: HydrogenSection[] = [...H2O2_NOTES_SECTIONS];

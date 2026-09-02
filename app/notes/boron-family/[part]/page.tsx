@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { AppShell } from "@/components/AppShell";
 import { BORON_FAMILY_PARTS, boronFamilyPartBySlug, boronFamilyPartMarkdown } from "../parts";
 import { boronFamilyLessonRef, boronFamilyTabs, sectionLabel } from "../_chapter";
@@ -21,7 +21,10 @@ export async function generateMetadata({ params }: { params: Promise<{ part: str
 }
 
 export default async function BoronFamilyPartPage({ params }: { params: Promise<{ part: string }> }) {
-  const part = boronFamilyPartBySlug((await params).part);
+  const slug = (await params).part;
+  // The question bank moved out of the lesson list to its own view.
+  if (slug === "part14") redirect("/notes/boron-family/question-bank");
+  const part = boronFamilyPartBySlug(slug);
   if (!part) notFound();
 
   const prevRef = boronFamilyLessonRef(part.number - 1);

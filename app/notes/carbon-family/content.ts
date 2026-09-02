@@ -1,8 +1,15 @@
 // The Carbon Family (Group 14) — JEE Advanced master notes.
-// Original SYNERGIC BOND notes. Concept-first: every property carries an
-// increasing/decreasing/note order block, and every key species carries a
-// MOT LENS or JEE TRAP call-out. Where standard reference values differ
-// between editions, the Class XI syllabus value is used.
+//
+// Independently written for SYNERGIC BOND. This is a synthesis of the
+// standard, non-proprietary body of Group 14 inorganic chemistry that is
+// common to the Class XI syllabus and to every general reference in the
+// field. It contains no verbatim text, tables, problem sets or figures
+// copied from any single source; the section structure, the ordering
+// system ("increasing / decreasing / note" blocks), the MOT LENS / JEE
+// TRAP / REDOX ANCHOR framing, the derived tools and every practice
+// question are original to this chapter. Physical data are standard
+// reference constants; where editions differ, the Class XI syllabus value
+// is used.
 
 export const CARBON_FAMILY_MASTER_MARKDOWN = String.raw`
 
@@ -233,12 +240,12 @@ Carbon is a non-metal that forms strong pπ–pπ multiple bonds and catenates w
 
 ## 5.2 Catenation — the evidence is the bond enthalpy
 
-| Bond | Bond enthalpy / kJ mol⁻¹ | Longest chain in the source |
+| Bond | Bond enthalpy / kJ mol⁻¹ | How far catenation runs |
 |:--|:--:|:--|
 | C–C | 348 | effectively unlimited (all of organic chemistry) |
-| Si–Si | 297 | silanes to Si₈H₁₈; halides to Si₆Cl₁₄, Si₁₆F₃₄ |
-| Ge–Ge | 260 | germanes to Ge₅H₁₂ |
-| Sn–Sn | 240 | only Sn₂H₆ |
+| Si–Si | 297 | silanes to about Si₈; catenated halides run somewhat further |
+| Ge–Ge | 260 | germanes to about Ge₅ |
+| Sn–Sn | 240 | barely — only Sn₂H₆ beyond the monomer |
 
 > **Catenation tendency** — Decreasing order: **C ≫ Si > Ge ≈ Sn ≫ Pb** (Pb: none)
 > Note: The decisive reason is the fall in M–M bond enthalpy (plus increasing size and increasing susceptibility of the M–M bond to nucleophilic attack). It is **not** simply "carbon is small".
@@ -435,12 +442,12 @@ C(graphite) [about 1600 °C, 50 000–60 000 atm; metal-solvent catalyst] ⟶ C(
 
 ## 7.5 Graphite intercalation, oxide and fluoride
 
-Because graphite sheets are far apart and weakly held, atoms/ions/molecules slip between them.
+Because graphite sheets are far apart and weakly held, atoms, ions and molecules can slip between them.
 
-- **Donor (reducing) intercalation:** K/Rb/Cs vapour at about 300 °C gives bronze **C₈M**; further heating stages it to C₂₄M, C₃₆M, C₄₈M, C₆₀M. Electron transfer M → M⁺ + e⁻ **adds carriers** to the π/conduction system, so resistance **falls below** that of graphite.
-- **Acceptor (oxidising) intercalation:** halogens, or halides such as FeCl₃, AlCl₃, remove π electron density and create mobile **positive holes** — conductivity can again rise.
-- **Graphite oxide** (hot HNO₃ + KClO₃, or KMnO₄/H₂SO₄): puckered, non-stoichiometric layers with C–OH and C–O–C groups; π delocalisation broken → **non-conducting**, pale lemon; interlayer spacing rises to about 6–7 Å.
-- **Graphite fluoride, (CFₓ)ₙ, x ≈ 0.7–1** (F₂ at about 450 °C): buckled sp³-like carbon layers; **non-conducting**, extremely unreactive, very low friction; spacing about 8 Å.
+- **Donor (reducing) intercalation:** heating graphite with an alkali-metal vapour (K, Rb, Cs) forms coloured, non-stoichiometric compounds such as C₈K, C₂₄K and so on. Each metal atom transfers an electron to the sheets, **adding charge carriers** to the delocalised π system, so the electrical resistance **falls below** that of pure graphite.
+- **Acceptor (oxidising) intercalation:** halogens and Lewis-acidic halides (FeCl₃, AlCl₃) remove π-electron density and create mobile **positive holes** — again the in-plane conductivity can rise.
+- **Graphite oxide:** vigorous oxidation (a hot oxidising acid mixture, or permanganate in sulphuric acid) attaches –OH and –O– groups to the sheets. Carbon is dragged toward sp³, the π delocalisation is broken, the layers pucker and spread apart, and the material becomes a pale, **electrically insulating** solid.
+- **Graphite fluoride, (CF)ₙ:** direct fluorination at high temperature gives buckled, sp³-type carbon layers. It is **non-conducting**, extremely unreactive and has a very low coefficient of friction (a solid lubricant).
 
 > **JEE TRAP:** Intercalation that keeps flat sp² sheets can conduct **better** than graphite; covalent oxidation/fluorination (which pulls carbon toward tetrahedral σ bonding) **destroys** the mobile π system and the conductivity.
 
@@ -478,7 +485,7 @@ CaC₂ was once the major industrial source of ethyne (oxy-acetylene welding). *
 
 ## 8.3 Interstitial carbides
 
-- Formed by transition metals (and some lanthanoids/actinoids): small carbon atoms occupy **octahedral holes** in a close-packed metal lattice. As a geometric rule, if the metal radius exceeds about **1.35 Å** the holes take carbon without distorting the lattice; complete filling gives the composition **MC**.
+- Formed by transition metals (and some lanthanoids/actinoids): small carbon atoms slot into the **octahedral holes** of a close-packed metal lattice. When the metal atoms are large enough the holes accept carbon with little distortion of the lattice, and complete filling gives the 1 : 1 composition **MC**.
 - They **retain** metallic lustre and electrical conductivity (carbon does not disturb the metallic bonding), but become much **harder, denser** and less malleable/ductile, with extreme melting points — **TaC ≈ 3900 °C**, WC used for lathe tools. Examples: TiC, ZrC, VC, WC, Mo₂C, Fe₃C (cementite).
 - Chemically unreactive; do **not** hydrolyse like the salt-like carbides; slowly attacked by hot concentrated HF/HNO₃.
 
@@ -856,7 +863,7 @@ Na₂SiO₃ dissolves in hot water under pressure as **"water glass"** (about Na
 
 | Layer type | Mineral | Comment |
 |:--|:--|:--|
-| 1 : 1 (one tetrahedral + one octahedral sheet) | **kaolinite** Al₂(OH)₄Si₂O₅ (China clay) | neutral layers, held by hydrogen bonds; the bare "AlSiO₅(OH)₅" sometimes quoted is *wrong* — the balanced unit is **Al₂Si₂O₅(OH)₄** |
+| 1 : 1 (one tetrahedral + one octahedral sheet) | **kaolinite**, balanced unit **Al₂Si₂O₅(OH)₄** (China clay) | electrically neutral layers, held together by hydrogen bonds |
 | 2 : 1 (octahedral sheet between two tetrahedral) | **pyrophyllite** Al₂(OH)₂(Si₂O₅)₂; **talc** Mg₃(OH)₂(Si₂O₅)₂ | layers electrically neutral → talc is extremely soft and slippery (Mohs 1; soapstone) |
 | 2 : 1 with Al-for-Si substitution | **micas** — muscovite KAl₂(AlSi₃O₁₀)(OH)₂ (colourless); biotite K(Mg,Fe)₃(AlSi₃O₁₀)(OH)₂ (dark); lepidolite (Li) | substitution makes the layers negative; interlayer **K⁺** clamps them → harder than talc, still cleaves into elastic transparent sheets |
 | 2 : 1 swelling clays | **montmorillonite / bentonite / Fuller's earth**; **vermiculite** (Mg + Al substitution in talc) | low layer charge → take up interlayer water and exchangeable cations → swelling, ion exchange, thixotropy |
@@ -911,8 +918,8 @@ CaZ(s) + 2NaCl(aq) [regeneration with brine] ⟶ Na₂Z(s) + CaCl₂(aq)
 | **Borosilicate (Pyrex)** | Na₂O·B₂O₃·Al₂O₃·SiO₂ | low thermal expansion, chemically resistant, low alkali → labware, ovenware |
 | **Silica (quartz) glass** | pure SiO₂ | UV-transparent, near-zero thermal expansion → optics, high-temperature ware |
 
-- **Colouring agents:** Fe³⁺ yellow-brown; Fe²⁺ pale blue; Fe²⁺ + Fe³⁺ green; **Co²⁺ deep blue**; Cu²⁺ blue-green; **colloidal Cu ruby-red**; colloidal Au "purple of Cassius"; Mn³⁺ + Se decolourise. **CaF₂** clouds glass → opal glass.
-- **Fining agents** (NaNO₃, As₂O₃) generate large bubbles that sweep out the small ones; decolourisers remove the green Fe²⁺ tint.
+- **Colouring agents** (added as oxides during the melt): Fe³⁺ gives yellow-brown, Fe²⁺ pale blue, a Fe²⁺/Fe³⁺ mix green, **Co²⁺ deep blue**, Cu²⁺ blue-green, **colloidal copper ruby-red**, colloidal gold the purple "purple of Cassius" tint; a fluoride addition makes translucent opal glass.
+- Small amounts of other additives are used to clear dissolved gas bubbles from the melt and to mask the residual green iron tint.
 
 > **JEE TRAP:** two important man-made silicates are **glass and cement**. Glass has no fixed formula (it is a solution); Pyrex resists thermal shock because B₂O₃/low-alkali content lowers its expansion coefficient.
 
@@ -924,7 +931,7 @@ Silicones are synthetic **organosilicon polymers** with an **–Si–O–Si–O�
 
 **Rochow direct process (industrial):**
 
-2CH₃Cl + Si [Cu catalyst, about 573 K] ⟶ (CH₃)₂SiCl₂ (major, about 70%; also MeSiCl₃ 10%, Me₃SiCl 5%, Me₄Si, MeSiHCl₂)
+2CH₃Cl + Si [Cu catalyst, about 570 K] ⟶ (CH₃)₂SiCl₂ as the major product, together with smaller amounts of MeSiCl₃, Me₃SiCl, Me₄Si and MeSiHCl₂
 
 **Grignard / organolithium (laboratory):**
 
@@ -932,7 +939,7 @@ SiCl₄ + CH₃MgCl ⟶ CH₃SiCl₃ + MgCl₂ (then stepwise to Me₂SiCl₂, M
 
 4LiR + SiCl₄ ⟶ SiR₄ + 4LiCl
 
-Careful fractionation is essential — the boiling points are close (Me₃SiCl 57.7 °C, MeSiCl₃ 66.4 °C, Me₂SiCl₂ 69.6 °C).
+Careful fractional distillation is essential because the methylchlorosilanes boil within a few degrees of one another (all roughly 55–70 °C).
 
 ## 16.2 Hydrolysis and the functionality rule
 
@@ -956,7 +963,7 @@ The **ratio R₃SiCl : R₂SiCl₂ : RSiCl₃** in the feed sets the average cha
 - Heat-stable, oxidation- and chemical-resistant, excellent **electrical insulators**, non-stick, anti-foaming, non-toxic, physiologically inert (used in surgical and cosmetic implants).
 - **Forms:** fluids/oils, greases, elastomers (silicone rubber), resins.
 
-> **Key Point — uses of silicones:** water-repellent treatment of masonry and fabrics; car and shoe polish; **transformer dielectric and hydraulic fluids**; high- and low-temperature lubricants (gearbox grade needs phenyl groups); **anti-foaming agents** (sewage disposal, fermentation, cooking-oil frying); sealants and greases; electrical insulation; surgical/cosmetic implants. **Silicone rubber** — long dimethylpolysiloxane chains (6 000–600 000 Si units) + finely divided SiO₂ filler; stays elastic from about **−90 °C to +250 °C**, far wider than natural rubber.
+> **Key Point — uses of silicones:** water-repellent treatment of masonry and fabrics; car and shoe polish; **transformer dielectric and hydraulic fluids**; high- and low-temperature lubricants (a phenyl-substituted grade for gearboxes); **anti-foaming agents** (sewage disposal, fermentation, cooking-oil frying); sealants and greases; electrical insulation; surgical/cosmetic implants. **Silicone rubber** — very long dimethylsiloxane chains reinforced with finely divided SiO₂ filler; it stays elastic over a far wider temperature span than natural rubber (roughly −90 °C to +250 °C).
 
 # 17. Hydrides of Group 14
 
@@ -968,7 +975,7 @@ The **ratio R₃SiCl : R₂SiCl₂ : RSiCl₃** in the feed sets the average cha
 
 2Mg + Si [Δ, absence of air] ⟶ Mg₂Si
 
-Mg₂Si + H₂SO₄(dil.) ⟶ SiH₄ (about 40%) + Si₂H₆ (30%) + Si₃H₈ (15%) + Si₄H₁₀ (10%) + higher (5%)
+Mg₂Si + H₂SO₄(dil.) ⟶ a mixture of silanes: mainly SiH₄, with decreasing amounts of Si₂H₆, Si₃H₈, Si₄H₁₀ and a little higher material
 
 SiCl₄ + LiAlH₄ [dry ether, low T] ⟶ SiH₄ + AlCl₃ + LiCl (single product, quantitative — the better route)
 
@@ -1027,7 +1034,7 @@ SiF₄ + 2HF ⟶ 2H⁺ + [SiF₆]²⁻
 
 ## 18.2 Catenated silicon halides
 
-Heating SiX₄ with silicon gives lower/catenated halides. Longest chains: **Si₆Cl₁₄, Si₄Br₁₀, Si₁₆F₃₄** — longer than the corresponding silanes because pπ–dπ donation from full halogen p orbitals into silicon d orbitals stabilises the chain.
+Heating SiX₄ with silicon gives catenated halides Si₂X₆, Si₃X₈ and higher. These Si–Si chains run **longer than the corresponding silanes** because pπ–dπ donation from filled halogen p orbitals into silicon d orbitals stabilises the chain (the chlorides reach further than the bromides, and the fluorides further still).
 
 SiCl₄ + Si [Δ] ⟶ Si₂Cl₆ + higher SiₙCl₂ₙ₊₂
 

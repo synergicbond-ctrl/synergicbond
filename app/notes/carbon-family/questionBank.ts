@@ -25,17 +25,20 @@ Work each section first, then check against the key at the end. Reasoning notes 
 (C) it forms a haemoglobin complex about 300 times more stable than the oxygen complex
 (D) it is sparingly soluble in water
 
-**A5.** Pb₃O₄ reacts with (i) HNO₃ and with (ii) a hot HNO₃ / H₂O₂ mixture to give products A and B. A and B are respectively
-(A) Pb(NO₃)₂ + PbO₂, and Pb(NO₃)₂
-(B) Pb(NO₃)₂, and Pb(NO₃)₂
-(C) PbO₂ and Pb(NO₃)₂
-(D) Pb(NO₃)₂ + PbO₂ + Pb(NO₃)₂
+**A5.** Warm dilute HNO₃ is added to red lead, Pb₃O₄. Which statement is correct?
+(A) all the solid dissolves as Pb(NO₃)₂
+(B) two-thirds of the lead dissolves as Pb(NO₃)₂; the rest is left as brown PbO₂
+(C) the solid does not dissolve at all
+(D) only the PbO₂ part dissolves
 
-**A6.** Electrolysing a hot concentrated NaCl solution in the absence of PbO with vigorous stirring gives
-(A) Pb₃O₄  (B) Pb₂O₃  (C) PbO₂  (D) NaClO₃
+**A6.** As the temperature is raised, the lead oxides lose oxygen in stages. Which sequence is correct?
+(A) PbO₂ → Pb₂O₃ → Pb₃O₄ → PbO
+(B) PbO → Pb₃O₄ → PbO₂ → Pb₂O₃
+(C) Pb₃O₄ → PbO₂ → Pb₂O₃ → PbO
+(D) PbO → PbO₂ → Pb₃O₄ → Pb₂O₃
 
-**A7.** In which reaction is PbSO₄ formed?
-(A) PbO₂ + SO₂  (B) PbS + O₃  (C) PbS + H₂O₂  (D) all of these
+**A7.** Old white-lead paint darkens in polluted (H₂S-bearing) air as it turns to black PbS. The white colour is restored by swabbing with
+(A) dilute HCl  (B) H₂O₂  (C) dilute NaOH  (D) aqueous NH₃
 
 **A8.** SnO₂ is insoluble in
 (A) conc. HCl  (B) hot HNO₃  (C) aqua regia  (D) all of these
@@ -168,7 +171,7 @@ Rule for a terminal M–C≡O: one M–C σ, one C–O σ, two C–O π. For a d
 
 ## Answer key
 
-**Single correct:** A1 (B) · A2 (D, Sn m.p. 505 K is the lowest) · A3 (D) · A4 (C) · A5 (A) · A6 (A) · A7 (D) · A8 (D) — SnO₂ dissolves only in hot conc. H₂SO₄ · A9 (A)
+**Single correct:** A1 (B) · A2 (D, Sn m.p. 505 K is the lowest) · A3 (D) · A4 (C) · A5 (B) — Pb₃O₄ = 2PbO·PbO₂; dilute HNO₃ takes up the PbO, leaving brown PbO₂ · A6 (A) — PbO₂ → Pb₂O₃ → Pb₃O₄ → PbO on heating, fully to PbO above about 600 °C · A7 (B) — H₂O₂ oxidises black PbS to white PbSO₄ (PbS + 4H₂O₂ → PbSO₄ + 4H₂O), the classic painting-restoration reaction · A8 (D) — SnO₂ resists HCl, HNO₃ and aqua regia; only hot conc. H₂SO₄ (or fused alkali) dissolves it · A9 (A)
 
 **Multiple correct:** B1 (A, C) · B2 (B, C) · B3 (A, B, C) · B4 (A, B, C) · B5 (A, C) · B6 (B, D)
 

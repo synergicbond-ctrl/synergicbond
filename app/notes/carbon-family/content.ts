@@ -117,11 +117,17 @@ A new shell is added at each step, but the increase is very uneven. **C → Si**
 
 *Representative kJ mol⁻¹ values.*
 
-> **First ionisation enthalpy** — Increasing order: Sn < Pb < Ge < Si < C
-> Decreasing order: **C > Si > Ge > Pb > Sn**
-> Note: ΔᵢH₁ falls sharply C → Si, the fall then flattens, and it **rises slightly Sn → Pb** because the poorly shielding 4f¹⁴/5d¹⁰ core lets Zₑff increase. This Pb > Sn reversal is asked directly.
+> **Individual ionisation enthalpies — the four decreasing orders (read them off the table):**
+> - ΔᵢH₁: **C > Si > Ge > Pb > Sn**
+> - ΔᵢH₂: **C > Si > Ge > Pb > Sn**
+> - ΔᵢH₃: **C > Ge > Si > Pb > Sn**
+> - ΔᵢH₄: **C > Ge > Si > Pb > Sn**
+> - Sum ΔᵢH₁₋₄: **C ≫ Ge > Si > Pb > Sn**
+>
+> Increasing order of ΔᵢH₁: Sn < Pb < Ge < Si < C.
+> Note: two irregularities break the "decreases down the group" expectation. (i) **Sn → Pb rises** at every ionisation: the 4f¹⁴ and 5d¹⁰ electrons of Pb shield the 6s/6p electrons poorly, so Zₑff on them is high — this is why **Pb > Sn** throughout. (ii) From ΔᵢH₃ onward **Ge overtakes Si**: the third and fourth electrons of Ge come out against the poorly shielding 3d¹⁰ core (which Si does not have), so Ge's later ionisations — and therefore the **sum** — cost more than Si's. The old "Pb before Si in the sum" ranking is wrong: Si (9945) > Pb (9328).
 
-> **Sum of the first four ionisation enthalpies** — Decreasing order: C ≫ Ge > Pb > Si > Sn
+> **Sum of the first four ionisation enthalpies** — Decreasing order: **C ≫ Ge > Si > Pb > Sn**
 > Note: For every element the sum is enormous (about 9 000–14 000 kJ mol⁻¹). Removing four electrons is never repaid by lattice or hydration energy, so **all M⁴⁺ compounds are covalent** — there is no ionic M⁴⁺ salt.
 
 > **JEE TRAP:** "ΔᵢH decreases regularly down Group 14" is **wrong**. Also note "How many Group 14 elements have ΔᵢH₁ higher than Pb?" → answer **3** (C, Si, Ge).
@@ -157,10 +163,10 @@ A new shell is added at each step, but the increase is very uneven. **C → Si**
 | Pb | 11.34 | 600 | 2024 |
 
 > **Melting point** — Decreasing order: **C > Si > Ge > Pb > Sn**
-> Note: C, Si, Ge fall in order as M–M network bonds weaken; Sn and Pb are far lower (metallic), and Pb > Sn because Pb's metallic bonding is a little stronger.
+> Explanation: C, Si and Ge are **covalent three-dimensional networks** — to melt them you must break strong M–M covalent bonds, and that bond strength falls C → Si → Ge as the atoms enlarge and orbital overlap worsens, so the m.p. falls in the same order (about 4373 → 1693 → 1218 K). Sn and Pb are **metals** held only by metallic bonding, so their m.p. collapses to a far lower band (~505–600 K); within that band **Pb > Sn** because lead's metallic (cohesive) bonding is a little stronger than that of white tin. Net order: C > Si > Ge ≫ Pb > Sn.
 
 > **Boiling point** — Decreasing order: Si > Ge > Sn > Pb
-> Note: This one *is* regular (Si > Ge > Sn > Pb); carbon has no ordinary boiling point (it sublimes near 4100 K).
+> Explanation: Boiling pulls the atoms completely apart into the gas, so b.p. tracks the **atomisation (cohesive) energy**, which decreases **smoothly** down the group as the covalent/metallic bonding weakens — hence the regular Si (3550) > Ge (3123) > Sn (2896) > Pb (2024) K. There is no m.p.-style inversion here because no change of bonding *type* interrupts the trend (carbon is left out — graphite has no ordinary b.p., it sublimes near 4100 K).
 
 > **Density** — Increasing order: Si < C(graphite) < C(diamond) < Ge < Sn < Pb
 > Note: Density rises down the group as atomic mass grows faster than volume; graphite is less dense than diamond because its sheets are widely spaced (340 pm).
@@ -248,7 +254,18 @@ Carbon forms C=C, C≡C, C=O, C=S, C≡N readily. Silicon and the heavier atoms 
 
 ## 5.4 Diagonal relationship
 
-Carbon's diagonal partner is not in its own group; the classic Group 13/14 diagonal link is **B ↔ Si** (comparable ionic potential; both acidic network oxides; both form weak oxoacids that condense to polymeric borates/silicates; both give volatile hydrolysable halides; both form hard carbides/borides/silicides). Within Group 14, carbon simply stands apart as the first-row anomaly, and Ge–Sn–Pb form the graded metallic series.
+Carbon's diagonal partner is not in its own group; the classic Group 13/14 diagonal link is **B ↔ Si**.
+
+**Why the diagonal link exists.** Moving one place *down* a group increases size and lowers electronegativity; moving one place *right* along the next period increases nuclear charge and raises electronegativity. Down-and-right, these two changes roughly cancel, so B and Si end up with a similar **atomic size, electronegativity and — most importantly — charge/radius ratio (ionic potential)**. Similar polarising power means similar bonding, so the two elements behave alike:
+
+- Both are **non-metals** that form no simple cation (no B³⁺, no Si⁴⁺); their chemistry is entirely covalent.
+- **Acidic, polymeric, network oxides** — B₂O₃ and SiO₂ are both glass-formers.
+- Their oxoacids are **weak and condense** on heating: H₃BO₃ → polyborates; Si(OH)₄ → polysilicic acids and silicates.
+- **Volatile covalent halides that are readily hydrolysed:** BCl₃ + 3H₂O → H₃BO₃ + 3HCl; SiCl₄ + 4H₂O → Si(OH)₄ + 4HCl. (Carbon's CCl₄ is *not* hydrolysed — the contrast that shows C is the odd one out.)
+- **Volatile, flammable, spontaneously-hydrolysing hydrides** — boranes and silanes — unlike the inert alkanes.
+- Hard, high-melting **binary compounds with strong 3-D covalent lattices:** B₄C, BN, SiC, Si₃N₄.
+
+Within Group 14, carbon stands apart as the first-row anomaly and Ge–Sn–Pb form the graded metallic series; the useful diagonal comparison is with **boron**, not with any Group 14 element.
 
 # 6. Elemental chemical reactivity — conditions included
 
@@ -530,17 +547,19 @@ Cu₂Cl₂ + 2CO + 2H₂O ⟶ 2[CuCl(CO)(H₂O)] (CO absorbed by ammoniacal/HCl 
 
 - **Toxicity:** CO binds haemoglobin as **carboxyhaemoglobin**, a complex about **300 times more stable** than oxyhaemoglobin, so it blocks O₂ transport in the red cells → oxygen deficiency, unconsciousness, death. **Carbogen** (95% O₂ + 5% CO₂) is the antidote — high O₂ displaces the CO and the CO₂ stimulates breathing.
 
-> **MOT LENS — CO.** Isoelectronic with N₂ (14 valence e⁻): σ2s² σ*2s² π2p⁴ σ2p², **one σ + two π = bond order 3**. The HOMO is a weakly antibonding σ orbital concentrated on **carbon** — this is the "lone pair on C" that lets CO act as a σ-donor ligand. Because carbon is the less electronegative end, the small permanent dipole points C(δ−)→O(δ+), the reverse of a naive electronegativity guess.
+> **MOT LENS — CO.** Isoelectronic with N₂ (14 valence e⁻); filling with s–p mixing gives …(2σ)²(2σ\*)²(1π)⁴(3σ)², **one σ + two π = bond order 3**. The HOMO is the **3σ** orbital: it comes out **essentially non-bonding, with only very slight antibonding character**, and its electron density is concentrated on **carbon** — this is the "lone pair on C" that lets CO act as a σ-donor ligand. (Because the donated electron is marginally antibonding, removing it on coordination can raise the C–O bond order slightly; the fall in ν(CO) that is actually observed comes from π back-donation into π\*, not from σ-donation.) Since carbon is the less electronegative end, the small permanent dipole points C(δ−)→O(δ+), the reverse of a naive electronegativity guess.
 
 ## 9.3 CO as a reducing agent and as a ligand
 
 **Reduction of metal oxides (metallurgy):**
 
-Fe₂O₃ + 3CO [blast furnace, Δ] ⟶ 2Fe + 3CO₂
+Fe₂O₃ + 3CO [blast furnace, 500–900 K "indirect reduction" zone] ⟶ 2Fe + 3CO₂
 
-ZnO + CO [Δ] ⟶ Zn + CO₂
+ZnO + CO [≳ 1400 K; Zn distils off as vapour] ⟶ Zn + CO₂
 
-CuO + CO ⟶ Cu + CO₂
+CuO + CO [gentle warming, ~500 K] ⟶ Cu + CO₂
+
+*(Textbooks usually quote these without a temperature; the values above are the conditions under which each is actually run — the CuO reduction is thermodynamically favourable even near room temperature, the ZnO one only turns favourable above ~1200 K.)*
 
 CO reduces the oxides of all metals **below** aluminium in the reactivity series — not the oxides of Na, K, Ca, Mg, Al. This is the working principle of the blast furnace.
 

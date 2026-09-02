@@ -150,6 +150,20 @@ Mark: (A) both statements true, II explains I; (B) both true, II does not explai
 (A) diamond  (B) graphite  (C) fullerene
 (P) all C atoms sp²  (Q) d(C–C) is a maximum (154 pm)  (R) discrete molecule, not a lattice  (S) contains 12 five-membered rings
 
+**F4.** Match each metal carbonyl with its number of **bridging (μ-CO)** groups.
+(A) Ni(CO)₄  (B) Fe₂(CO)₉  (C) Co₂(CO)₈ (crystalline)  (D) Mn₂(CO)₁₀
+(P) 0  (Q) 2  (R) 3
+
+## G. Carbonyl bonding — count the bonds
+
+Rule for a terminal M–C≡O: one M–C σ, one C–O σ, two C–O π. For a doubly-bridging μ-CO: two M–C σ, one C–O σ, one C–O π (the second π has become M–C). Metal–metal σ bonds are counted separately.
+
+**G1.** In **Fe₂(CO)₉** (3 bridging + 6 terminal CO, one Fe–Fe bond) count: (a) Fe–C σ bonds, (b) C–O σ bonds, (c) C–O π bonds, (d) total σ framework (including Fe–Fe).
+
+**G2.** In **Ni(CO)₄** count the total number of σ bonds and the total number of π bonds.
+
+**G3.** How many CO groups are bridging in (i) Fe(CO)₅ (ii) Mn₂(CO)₁₀ (iii) Co₂(CO)₈ (crystal) (iv) Co₄(CO)₁₂?
+
 ---
 
 ## Answer key
@@ -164,5 +178,10 @@ Mark: (A) both statements true, II explains I; (B) both true, II does not explai
 
 **Integer:** E1 = 90 · E2 = 32 (84/2 − 10) · E3 = 3 (C, Si, Ge) · E4 = 3 (C, Si, Ge — P and S catenate far less) · E5 = 12 (6 terminal + 2×3 bridging) · E6 = 1 · E7 = 6 (all of CO₃²⁻, COCl₂, C₃O₂, CS₂ are planar/linear; SiO₄⁴⁻ is a regular tetrahedron — not planar; HCO₃⁻ has a planar CO₃ skeleton; if SiO₄⁴⁻ is excluded the answer is 5) · E8 = 2 (CO₂ has C at +4, CO has C at +2) · E9 = 5 (GeO, PbO₂, SnO₂, GeO₂, SiO₂; CO neutral, SnO amphoteric) · E10 = 5 (SnCl₄·5H₂O)
 
-**Matrix–match:** F1 A→S, B→Q, C→P, D→R · F2 A→Q, B→S, C→R, D→P · F3 A→Q, B→(P, R, S), C→(R, S)
+**Matrix–match:** F1 A→S, B→Q, C→P, D→R · F2 A→Q, B→S, C→R, D→P · F3 A→Q, B→P, C→(P, R, S) — diamond has the longest C–C (154 pm); graphite and fullerene are both all-sp²; only the fullerene is a discrete molecule and only it carries the twelve 5-rings · F4 A→P (0), B→R (3), C→Q (2), D→P (0)
+
+**G. Carbonyl bonding:**
+- **G1** Fe₂(CO)₉: (a) Fe–C σ = 6 (terminal) + 2×3 (bridging) = **12**; (b) C–O σ = one per CO = **9**; (c) C–O π = 2×6 (terminal) + 1×3 (bridging) = **15**; (d) total σ framework = 12 (Fe–C) + 9 (C–O) + 1 (Fe–Fe) = **22**.
+- **G2** Ni(CO)₄ (all terminal): σ = 4 (Ni–C) + 4 (C–O) = **8**; π = 2 × 4 = **8**.
+- **G3** bridging CO: (i) Fe(CO)₅ → **0** (trigonal bipyramid, all terminal); (ii) Mn₂(CO)₁₀ → **0** (only an Mn–Mn bond); (iii) Co₂(CO)₈ crystal → **2** (a non-bridged isomer also exists in solution); (iv) Co₄(CO)₁₂ → **3** bridging + 9 terminal on a Co₄ tetrahedron.
 `;

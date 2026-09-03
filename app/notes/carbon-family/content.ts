@@ -786,102 +786,154 @@ SiC(s) + 2Cl₂(g) [≈ 1000 °C] ⟶ SiCl₄(g) + C(s)
 
 # 9. Oxides of carbon — carbon monoxide
 
-Carbon forms more oxides than any other Group 14 element: the important pair is **CO** and **CO₂**; also the suboxide **C₃O₂**, and less stable C₅O₂, C₁₂O₉ (mellitic anhydride) and graphite oxide. The oxides differ from those of Si–Pb because carbon forms **pπ–pπ** multiple bonds to oxygen.
+Carbon forms **more oxides than any other Group 14 element**: the two important ones — **CO** and **CO₂** — plus the linear suboxide **C₃O₂**, the higher suboxide **C₁₂O₉** (anhydride of mellitic acid), disputed C₅O₂, and non-stoichiometric **graphite oxide**. All of them are **molecular** (or, for graphite oxide, layered) — the direct consequence of carbon's strong **pπ–pπ** bonding to oxygen. Contrast Si → Pb, whose only oxides are the network solid SiO₂ and the ionic-lattice monoxides/dioxides.
 
 ## 9.1 Carbon monoxide — preparation
 
-**Direct (limited air):**
+**Direct oxidation of carbon in limited air:**
 
-2C + O₂ [limited O₂, Δ] ⟶ 2CO
+2C(s) + O₂(g) [limited O₂, Δ] ⟶ 2CO(g)   Δ_fH°(CO) = −110.5 kJ mol⁻¹
 
-**Small scale (pure CO) — dehydration of methanoic acid:**
+**The Boudouard equilibrium** governs how much CO vs CO₂ a carbon/O₂ system holds:
 
-HCOOH [conc. H₂SO₄, 373 K] ⟶ CO + H₂O
+C(s) + CO₂(g) ⇌ 2CO(g)   Δ_rH ≈ +172 kJ mol⁻¹ (endothermic, +Δn_gas)
 
-**From potassium hexacyanoferrate(II):**
+- **High temperature** (> ~1000 K) and **low pressure** push it right → **CO dominates** (the blast-furnace tuyère zone, producer gas).
+- **Low temperature** → CO₂ dominates. This is why a car exhaust or a stove makes CO only when the burn is hot and air-starved.
 
-K₄[Fe(CN)₆] + 6H₂SO₄(conc.) + 6H₂O [Δ] ⟶ 2K₂SO₄ + FeSO₄ + 3(NH₄)₂SO₄ + 6CO
+**Small scale — dehydration of methanoic (formic) acid:**
 
-> **JEE TRAP:** Use **concentrated** H₂SO₄ with K₄[Fe(CN)₆]. With **dilute** H₂SO₄ the cyanide is set free as the far more poisonous **HCN**, not CO (the sequence is 6HCN → 6HCOOH → 6CO only under concentrated acid).
+HCOOH(l) [conc. H₂SO₄, ≈ 373 K; H₂SO₄ removes water] ⟶ CO(g) + H₂O
 
-**Water gas and producer gas:**
+**From oxalic acid** (gives a CO + CO₂ mixture; pass through KOH to remove the CO₂):
 
-C + H₂O(g) [red-hot coke; Δ_rH ≈ +131 kJ mol⁻¹, endothermic] ⟶ CO + H₂
+H₂C₂O₄(s) [conc. H₂SO₄, Δ] ⟶ CO(g) + CO₂(g) + H₂O
 
-2C + O₂ + 4N₂ [air over red-hot coke; overall exothermic] ⟶ 2CO + 4N₂
+**From potassium hexacyanoferrate(II)** — a clean CO source with no gaseous by-product:
 
-- **Water gas (synthesis gas)** ≈ equimolar **CO + H₂**; **high calorific value** — both components burn. The reaction is strongly endothermic, so the coke cools and the steam blast is alternated with an air blast to reheat it.
-- **Producer gas** ≈ 70% N₂ + 25% CO + about 4% CO₂; **low calorific value** — the N₂ is inert ballast.
-- **Coal gas** ("town gas"): CO + H₂ + CH₄ + CO₂ from destructive distillation of coal — largely replaced by natural gas.
+K₄[Fe(CN)₆](s) + 6H₂SO₄(conc.) + 6H₂O [Δ] ⟶ 2K₂SO₄ + FeSO₄ + 3(NH₄)₂SO₄ + 6CO(g)
 
-> **Calorific value** — Decreasing order: water gas > coal gas > producer gas
-> Note: Water gas = CO + H₂; producer gas = CO + N₂; coal gas = CO + H₂ + CH₄. Do not interchange them.
+> **JEE TRAP:** with K₄[Fe(CN)₆] the acid must be **concentrated** H₂SO₄. **Dilute** acid liberates the far more poisonous **HCN** instead — full CO only comes via the 6HCN → 6HCOOH → 6CO sequence that concentrated acid drives.
 
-## 9.2 CO — properties, detection, estimation, toxicity
+**Industrial fuel gases:**
 
-- Colourless, odourless, almost insoluble in water, **neutral oxide** (forms no salt with acid or base), burns with a **blue flame** (Δ_cH ≈ −283 kJ mol⁻¹).
-- **Detection:**
+C(s) + H₂O(g) [red-hot coke, ≈ 1000 °C; Δ_rH ≈ +131 kJ mol⁻¹] ⟶ CO(g) + H₂(g)   — **water gas / synthesis gas**
 
-CO + PdCl₂ + H₂O ⟶ CO₂ + Pd↓ (black) + 2HCl
+2C(s) + O₂(g) + 4N₂(g) [air over red-hot coke; overall exothermic] ⟶ 2CO(g) + 4N₂(g)   — **producer gas**
 
-Cu₂Cl₂ + 2CO + 2H₂O ⟶ 2[CuCl(CO)(H₂O)] (CO absorbed by ammoniacal/HCl CuCl)
+| Fuel gas | Made from | Composition (approx.) | Calorific value | Note |
+|:--|:--|:--|:--:|:--|
+| **water gas** | steam + red-hot coke | CO + H₂ (1 : 1) | **high** | endothermic — the coke cools, so a hot air-blast is alternated with the steam-blast |
+| **producer gas** | air (+ a little steam) + coke | ~25 % CO, ~4 % CO₂, **~70 % N₂** | **low** | the N₂ is dead ballast; used where cheap bulk heat is enough |
+| **coal gas** ("town gas") | destructive distillation of coal | CO + H₂ + CH₄ + CO₂ | high | historic domestic gas; displaced by natural gas |
 
-- **Estimation** — quantitative oxidation by iodine pentoxide, then titrate the liberated I₂ with thiosulphate:
+> **Calorific value** — Decreasing order: **water gas > coal gas > producer gas**.
+> Note: water gas = CO + H₂; producer gas = CO + N₂; coal gas = CO + H₂ + CH₄. Interchanging them is a classic mistake.
 
-5CO + I₂O₅ ⟶ 5CO₂ + I₂
+- **Water-gas shift** (raises the H₂ fraction for ammonia synthesis): CO + H₂O(g) [Fe₂O₃/Cr₂O₃, ~700 K] ⇌ CO₂ + H₂.
+- Synthesis gas → **methanol** (CO + 2H₂ → CH₃OH, Cu/ZnO), → **hydrocarbons** (Fischer–Tropsch, Co/Fe), → **aldehydes** (hydroformylation / oxo process, RCH=CH₂ + CO + H₂ → RCH₂CH₂CHO).
 
-- **Toxicity:** CO binds haemoglobin as **carboxyhaemoglobin**, a complex about **300 times more stable** than oxyhaemoglobin, so it blocks O₂ transport in the red cells → oxygen deficiency, unconsciousness, death. **Carbogen** (95% O₂ + 5% CO₂) is the antidote — high O₂ displaces the CO and the CO₂ stimulates breathing.
+## 9.2 CO — structure, properties, detection, toxicity
 
-> **MOT LENS — CO.** Isoelectronic with N₂ (14 valence e⁻); filling with s–p mixing gives …(2σ)²(2σ\*)²(1π)⁴(3σ)², **one σ + two π = bond order 3**. The HOMO is the **3σ** orbital: it comes out **essentially non-bonding, with only very slight antibonding character**, and its electron density is concentrated on **carbon** — this is the "lone pair on C" that lets CO act as a σ-donor ligand. (Because the donated electron is marginally antibonding, removing it on coordination can raise the C–O bond order slightly; the fall in ν(CO) that is actually observed comes from π back-donation into π\*, not from σ-donation.) Since carbon is the less electronegative end, the small permanent dipole points C(δ−)→O(δ+), the reverse of a naive electronegativity guess.
+**Physical / chemical character**
+
+- Colourless, odourless, tasteless gas; **very slightly soluble** in water; **b.p. −191 °C**.
+- A **neutral oxide** — forms no salt with dilute acid or alkali (but see §9.4: with *molten* NaOH under pressure it does give sodium methanoate, so "neutral" is a room-temperature statement).
+- **Burns in air with a blue flame:** 2CO + O₂ → 2CO₂, Δ_cH ≈ −283 kJ mol⁻¹ — CO is itself a fuel (the blue "flicker" over a coke fire or gas hob).
+- Thermodynamically a **reducing agent**, not an oxidising one: CO wants to pick up the missing oxygen and become CO₂.
+
+> **MOT LENS — the CO molecule.** Isoelectronic with N₂ (14 valence e⁻); the filled MOs (with s–p mixing) are …(1π)⁴(3σ)², giving **one σ + two π bonds, bond order 3**. Consequences:
+> - **C–O = 112.8 pm** — *shorter* than a C=O double bond (122 pm), consistent with the triple bond, and the **highest bond dissociation energy of any molecule** (1072 kJ mol⁻¹).
+> - The **HOMO (3σ)** is **essentially non-bonding, very slightly antibonding**, and concentrated **on carbon** — the "carbon lone pair" that makes CO a σ-donor ligand.
+> - **Dipole moment is tiny (≈ 0.11 D) and points C(δ−)→O(δ+)** — the reverse of the electronegativity guess, because that carbon-centred lone pair swamps the O-ward bond polarity.
+
+**Detection**
+
+CO(g) + PdCl₂(aq) + H₂O ⟶ CO₂(g) + Pd↓ (black) + 2HCl   — a black stain of finely divided Pd (used in CO detector papers)
+
+- CO **burns with a blue flame** and **reduces** an ammoniacal AgNO₃ or a hot CuO tube (→ Cu + CO₂).
+- **Absorbed** by ammoniacal or acidified Cu(I) chloride: Cu₂Cl₂ + 2CO + 2H₂O → 2[CuCl(CO)(H₂O)] — the basis of CO removal in gas analysis.
+
+**Estimation** — quantitative oxidation by iodine pentoxide, then iodometric titration of the I₂:
+
+5CO(g) + I₂O₅(s) [warm] ⟶ 5CO₂(g) + I₂ ;   I₂ + 2S₂O₃²⁻ ⟶ 2I⁻ + S₄O₆²⁻
+
+**Toxicity**
+
+CO binds the Fe(II) of haemoglobin to give **carboxyhaemoglobin**, a complex **≈ 200–250 times more stable** than the oxygen complex, so even a small partial pressure of CO ties up most of the haemoglobin and blocks O₂ transport → headache, confusion, cherry-red skin, unconsciousness, death. It is odourless, so there is no warning.
+
+- **Antidote: carbogen** (95 % O₂ + 5 % CO₂). The high O₂ partial pressure displaces CO from haemoglobin by mass action; the 5 % CO₂ stimulates the respiratory centre to breathe faster and clear the CO sooner. Pure O₂ (or hyperbaric O₂) is used clinically.
 
 ## 9.3 CO as a reducing agent and as a ligand
 
-**Reduction of metal oxides (metallurgy):**
+### Reduction of metal oxides (the heart of pyrometallurgy)
 
-Fe₂O₃ + 3CO [blast furnace, 500–900 K "indirect reduction" zone] ⟶ 2Fe + 3CO₂
+Fe₂O₃(s) + 3CO(g) [blast furnace, 500–900 K "indirect-reduction" zone] ⟶ 2Fe(s/l) + 3CO₂(g)
 
-ZnO + CO [≳ 1400 K; Zn distils off as vapour] ⟶ Zn + CO₂
+ZnO(s) + CO(g) [≳ 1400 K; Zn distils off as vapour] ⟶ Zn(g) + CO₂(g)
 
-CuO + CO [gentle warming, ~500 K] ⟶ Cu + CO₂
+CuO(s) + CO(g) [gentle warming] ⟶ Cu(s) + CO₂(g)
 
-*(Textbooks usually quote these without a temperature; the values above are the conditions under which each is actually run — the CuO reduction is thermodynamically favourable even near room temperature, the ZnO one only turns favourable above ~1200 K.)*
+- CO reduces the oxides of all metals **below aluminium** in the reactivity/Ellingham order — Fe, Zn, Pb, Cu, Ni, Sn … — but **not** the oxides of Na, K, Ca, Mg, Al, whose M–O bond is too strong. That single fact is why iron is smelted with coke but aluminium must be electrolysed.
+- **Ellingham view:** the C + ½O₂ → CO line slopes *downward* with temperature (Δn_gas = +1), so above a crossover temperature CO becomes a better oxygen-scavenger than the metal — carbon can then pull the oxygen out of the ore.
 
-CO reduces the oxides of all metals **below** aluminium in the reactivity series — not the oxides of Na, K, Ca, Mg, Al. This is the working principle of the blast furnace.
+### Metal carbonyls
 
-**Metal carbonyls:**
+CO uses its carbon lone pair to bond to **low-oxidation-state (often zero) transition metals**:
 
-Ni + 4CO [about 50–80 °C; Mond process] ⟶ Ni(CO)₄
+Ni(s) + 4CO(g) [50–80 °C, 1 atm; Mond process] ⟶ Ni(CO)₄(g)   — and, at ~180 °C, the reverse, depositing 99.99 % pure Ni
 
-Fe + 5CO [about 200 °C, pressure] ⟶ Fe(CO)₅
+Fe(s) + 5CO(g) [≈ 200 °C, 200 atm] ⟶ Fe(CO)₅(l)
 
-2Fe(CO)₅ [uv, photolysis] ⟶ Fe₂(CO)₉ + CO
+2Fe(CO)₅ [uv] ⟶ Fe₂(CO)₉(s) + CO
 
-CrCl₃ + 6Na + 6CO [pressure] ⟶ Cr(CO)₆ + 6NaCl
+CrCl₃ + 6CO + 2Al [AlCl₃, benzene, reductive carbonylation] ⟶ Cr(CO)₆ + 2AlCl₃   (a reductive route; Na also works)
 
-First-row binary carbonyls: V(CO)₆, Cr(CO)₆, Mn₂(CO)₁₀, Fe(CO)₅, Fe₂(CO)₉, Fe₃(CO)₁₂, Co₂(CO)₈, Co₄(CO)₁₂, Co₆(CO)₁₆, Ni(CO)₄.
+| Carbonyl | Geometry | M–M / bridges | Valence electrons at M |
+|:--|:--|:--|:--:|
+| Ni(CO)₄ | tetrahedral | — | 18 |
+| Fe(CO)₅ | trigonal bipyramid | — | 18 |
+| Cr(CO)₆ | octahedral | — | 18 |
+| Mn₂(CO)₁₀ | two octahedra, staggered | 1 Mn–Mn, no bridge | 18 each |
+| Fe₂(CO)₉ | two Fe | 1 Fe–Fe + **3 bridging CO** | 18 each |
+| Co₂(CO)₈ (solid) | two Co | 1 Co–Co + **2 bridging CO** | 18 each |
+| **V(CO)₆** | octahedral | — | **17 (the exception)** — too crowded to dimerise; paramagnetic; easily reduced to [V(CO)₆]⁻ (18e) |
 
-> **MOT LENS — synergic M–CO bonding.** Two coupled donations act together:
-> 1. **σ-donation:** the carbon lone pair (weakly antibonding σ HOMO of CO) donates into an empty metal orbital, M ← C≡O.
-> 2. **π back-donation:** a filled metal **dπ** orbital donates into the empty CO **π\*** (antibonding), M → C≡O.
-> Back-donation *strengthens* the M–C bond and *weakens* the internal C–O bond, so the **C–O stretching frequency falls** on coordination (about 2143 cm⁻¹ in free CO → about 1800–2000 cm⁻¹ in a carbonyl). CO forms only weak σ-adducts with Lewis acids such as BF₃ (no π back-bonding available) but strong bonds to low-oxidation-state transition metals, where both σ and π operate.
+- **The 18-electron (effective-atomic-number) rule:** a stable carbonyl usually gives the metal the electron count of the next noble gas. Odd-electron metals (Mn, Co) reach 18 by forming an **M–M bond** (each M shares one electron) → the dimers Mn₂(CO)₁₀, Co₂(CO)₈.
+
+> **MOT LENS — synergic M–CO bonding.** Two donations act together and reinforce each other:
+> 1. **σ-donation** M ← C≡O: the carbon lone pair (the 3σ HOMO of CO) donates into an empty metal orbital.
+> 2. **π back-donation** M → C≡O: a filled metal **dπ** orbital donates into the empty CO **π\*** (antibonding).
 >
-> **Ligand order (σ-donor strength):** CN⁻ > RNC > CO > NO⁺. **π-acceptor strength runs the reverse way** — NO⁺ > CO > RNC > CN⁻. CN⁻ is a stronger σ-donor than CO (it carries a negative charge) but a weaker π-acceptor.
+> Back-donation *strengthens* the M–C bond and *weakens* the internal C–O bond, so **ν(CO) drops** on coordination: **2143 cm⁻¹ in free CO → ≈ 2000 cm⁻¹ (terminal) → ≈ 1800 cm⁻¹ (bridging)**. The more electron-rich the metal (low oxidation state, or an added negative charge), the more back-donation and the lower ν(CO): free CO 2143 > Ni(CO)₄ 2060 > [Co(CO)₄]⁻ 1890 > [Fe(CO)₄]²⁻ 1790 cm⁻¹.
 >
-> **Fe₂(CO)₉ structure:** 6 **terminal** CO (three on each Fe) + 3 **bridging** CO across the Fe–Fe bond. Each bridging CO makes two Fe–C contacts, so total Fe–C bonds = 6 + 2×3 = **12**. (Integer-answer favourite.)
+> BF₃ (no d electrons → no π back-bonding) forms only a **weak** OC→BF₃ adduct; low-valent transition metals form **strong** M–CO bonds where both σ and π operate.
+>
+> **σ-donor order:** CN⁻ > CO > NO⁺. **π-acceptor order (reverse):** NO⁺ > CO > CN⁻. CN⁻ is the better σ-donor (it is negatively charged) but the poorer π-acceptor.
+>
+> **Fe₂(CO)₉:** 6 terminal + 3 bridging CO + 1 Fe–Fe bond. Each bridging CO touches two Fe, so total **Fe–C bonds = 6 + 2×3 = 12**. (An integer-answer favourite — also count the σ framework: 12 Fe–C + 9 C–O + 1 Fe–Fe = 22.)
 
 ## 9.4 Other reactions of CO
 
-CO + ½O₂ ⟶ CO₂
+CO(g) + ½O₂(g) [spark / hot surface] ⟶ CO₂(g)
 
-CO + S [Δ] ⟶ COS (carbonyl sulphide)
+CO(g) + S(g) [Δ] ⟶ COS(g)   (carbonyl sulphide — linear, like CO₂)
 
-CO + Cl₂ [charcoal catalyst, sunlight] ⟶ COCl₂ (phosgene)
+CO(g) + Cl₂(g) [activated charcoal or light] ⟶ COCl₂(g)   — **phosgene**
+
+CO(g) + NaOH(s) [≈ 200 °C, ~10 atm] ⟶ HCOONa(s)   (sodium methanoate — the reason "CO is neutral" is only a mild statement)
+
+CO(g) + 2H₂(g) [Cu/ZnO/Al₂O₃, ~250 °C, 50–100 atm] ⟶ CH₃OH(l)
+
+**Phosgene, COCl₂** — trigonal planar (C sp²), b.p. 8 °C, **extremely toxic** (a WWI chemical weapon; it hydrolyses slowly in the lungs to HCl):
 
 COCl₂ + H₂O ⟶ CO₂ + 2HCl
 
-COCl₂ + 4NH₃ ⟶ CO(NH₂)₂ + 2NH₄Cl (urea)
+COCl₂ + 2NH₃ ⟶ CO(NH₂)₂ (urea) + 2NH₄Cl   (written also as +4NH₃ → urea + 2NH₄Cl)
 
-Phosgene, COCl₂, is extremely toxic (a WWI war gas); now made in bulk for isocyanate → polyurethane manufacture.
+COCl₂ + 2ROH ⟶ (RO)₂CO (a dialkyl carbonate) + 2HCl
+
+Industrially phosgene is made in bulk for **isocyanates** (R–N=C=O) → **polyurethanes** and **polycarbonates**.
 
 # 10. Carbon dioxide, carbonic acid, carbonates and hydrogencarbonates
 
@@ -911,57 +963,96 @@ Na₂CO₃ + CO₂ + H₂O [cool] ⇌ 2NaHCO₃
 
 ## 10.2 CO₂ — structure, properties, uses
 
-- Colourless, odourless, **acidic** oxide, about 1.5× denser than air, non-combustible; low water solubility but great biochemical / geochemical importance (photosynthesis; carbonate rocks; ocean buffering).
-- **Solid CO₂ = "dry ice"**, sublimes at **−78 °C** (1 atm) without melting — refrigerant for ice cream and frozen food, laboratory coolant, stage fog; supercritical CO₂ is a green solvent.
-- **Structure:** linear **O=C=O**, carbon **sp**; two localised σ(C–O) plus a delocalised π system, so both C–O bonds are equal at **115 pm** (between C=O 122 and C≡O 113) and the molecule has **zero dipole moment**. Resonance description:
+**Physical character**
 
-O⁻–C≡O⁺ ↔ O=C=O ↔ ⁺O≡C–O⁻
+- Colourless, odourless, faintly acid-tasting gas; **≈ 1.5× denser than air** (M = 44); does not burn and does not support ordinary combustion (but burning Mg *does* continue in CO₂: 2Mg + CO₂ → 2MgO + C).
+- **No liquid phase at 1 atm.** The phase diagram: **triple point 5.11 atm, −56.6 °C**; below 5.11 atm solid sublimes straight to gas. **Solid CO₂ ("dry ice")** sublimes at **−78.5 °C** (1 atm) — a refrigerant that leaves no liquid residue (ice cream, frozen transport, laboratory cold baths, stage fog).
+- **Supercritical CO₂** (above **31 °C and 73 atm**) — a tunable, non-toxic, non-flammable **green solvent**: decaffeinating coffee, extracting hops and flavours, dry-cleaning, and as a reaction medium.
+- **Solubility:** ~0.9 volume per volume of water at 25 °C, 1 atm (Henry's law — more under pressure, hence carbonated drinks). A clathrate hydrate **CO₂·~6H₂O** forms near 0 °C under ~10–50 atm.
 
-- A clathrate hydrate **CO₂·8H₂O** crystallises near 0 °C under about 50 atm CO₂.
-- **Photosynthesis / respiration:**
+**Structure**
 
-6CO₂ + 6H₂O [sunlight, chlorophyll] ⟶ C₆H₁₂O₆ + 6O₂
+Linear **O=C=O** (D_∞h), carbon **sp** hybridised. The two sp hybrids make the σ framework; the two unhybridised carbon 2p orbitals overlap the perpendicular oxygen 2p orbitals to give **two 3-centre–4-electron π systems** (one in each of the two planes). Net result:
 
-- **Greenhouse effect:** rising atmospheric CO₂ from fossil-fuel combustion and limestone calcination for cement traps outgoing infrared radiation, raising the surface temperature ("global warming").
+- both C–O bonds **exactly equal**, length **116 pm** (between C=O 122 and C≡O 113 — effective bond order ≈ 2);
+- **zero dipole moment** (the two bond dipoles cancel — a standard "why is CO₂ non-polar but SO₂ polar" question);
+- resonance shorthand: ⁻O–C≡O⁺ ↔ O=C=O ↔ ⁺O≡C–O⁻.
 
-> **MOT LENS — CO₂.** Carbon is **sp**; the two sp hybrids form the σ framework. The two unhybridised carbon 2p orbitals combine with the perpendicular oxygen 2p orbitals to give **two 3-centre 4-electron π systems** (one in each plane) delocalised over O–C–O. Result: two equal C–O bonds of effective order 2, no dipole, and a bond length between double and triple. Because the π overlap is genuine pπ–pπ, CO₂ is a **discrete molecule** — contrast SiO₂ (Section 13).
+> **MOT LENS — why CO₂ is a molecule but SiO₂ is a solid.** Carbon's compact 2p orbitals overlap oxygen 2p efficiently → strong **pπ–pπ** C=O bonds → the octet is satisfied in a small **discrete O=C=O molecule**, held to its neighbours only by weak dispersion forces (hence a gas). Silicon's diffuse 3p gives poor π overlap, so silicon instead forms **four Si–O σ single bonds** and polymerises into the 3-D SiO₂ network — one giant molecule, m.p. ~1983 K (§13). Same stoichiometry, opposite physical state, one cause.
 
-> **Key Point — uses of CO₂:** carbonating soft drinks; **fire extinguishers** (denser than air and non-combustible, it smothers a flame); dry ice as a refrigerant; manufacture of **urea** and of Na₂CO₃ (Solvay); inert atmosphere; the raw material of photosynthesis.
+**Biogeochemistry**
+
+- **Photosynthesis** (endothermic; stores solar energy): 6CO₂ + 6H₂O [hν, chlorophyll] ⟶ C₆H₁₂O₆ + 6O₂ ; **respiration / combustion** run it backwards.
+- **The carbonate–silicate cycle** locks atmospheric CO₂ into limestone (CaCO₃) over geological time; volcanism returns it.
+- **Greenhouse effect:** CO₂ (and CH₄, H₂O, N₂O, CFCs) absorbs outgoing infrared and re-radiates it, warming the surface. Atmospheric CO₂ has risen from ~0.028 % (pre-industrial) to ~0.042 % from fossil-fuel burning and limestone calcination for cement — the driver of current climate change. **Carbon capture** (amine scrubbing, §10.1) and storage/utilisation are active responses.
+
+> **Key Point — uses of CO₂:** carbonating drinks; **fire extinguishers** (heavy, inert — blankets the fuel and excludes O₂; *not* for burning metals or electrical fires vs water though); **dry ice** refrigerant; **supercritical-CO₂** extraction/solvent; manufacture of **urea** (2NH₃ + CO₂ → NH₂CONH₂ + H₂O) and of **Na₂CO₃** (Solvay ammonia–soda); inert/modified atmosphere packaging; a **plant growth booster** in greenhouses; the working fluid in some gas-cooled reactors.
 
 ## 10.3 Carbonic acid, carbonates and hydrogencarbonates
 
-CO₂ + H₂O ⇌ H₂CO₃ (a weak **dibasic** acid; only a few % of dissolved CO₂ is actually hydrated)
+### 10.3.1 The equilibria
 
-H₂CO₃ + H₂O ⇌ HCO₃⁻ + H₃O⁺ (Ka₁ ≈ 4.3×10⁻⁷)
+CO₂(aq) + H₂O ⇌ H₂CO₃(aq)   — only **~0.2 %** of dissolved CO₂ is actually hydrated to H₂CO₃
 
-HCO₃⁻ + H₂O ⇌ CO₃²⁻ + H₃O⁺ (Ka₂ ≈ 4.8×10⁻¹¹)
+H₂CO₃ + H₂O ⇌ HCO₃⁻ + H₃O⁺   K_a1(apparent) ≈ 4.3×10⁻⁷ (pK ≈ 6.4)
 
-- The **H₂CO₃ / HCO₃⁻ buffer** holds **blood pH at 7.26–7.42**. CO₂ is acidic and combines with alkalis to give carbonates.
-- **Two series of salts:** normal carbonates CO₃²⁻ and acid salts (hydrogencarbonates) HCO₃⁻.
+HCO₃⁻ + H₂O ⇌ CO₃²⁻ + H₃O⁺   K_a2 ≈ 4.8×10⁻¹¹ (pK ≈ 10.3)
 
-NaOH + CO₂ [excess NaOH] ⟶ Na₂CO₃ + H₂O
+- Because most "H₂CO₃" is really loosely hydrated CO₂, the **true** K_a1 of the H₂CO₃ molecule is ~2×10⁻⁴ (a much stronger acid than the apparent value suggests).
+- **H₂CO₃ is a weak dibasic acid** → two salt series: normal **carbonates CO₃²⁻** and acid **hydrogencarbonates HCO₃⁻**.
+- **Blood buffer:** the CO₂/HCO₃⁻ pair (with the lungs venting CO₂ and the kidneys adjusting HCO₃⁻) holds arterial pH in a narrow band around **7.4** — the physiologically vital carbonate buffer.
 
-NaOH + CO₂ [excess CO₂] ⟶ NaHCO₃
+CO₂ + 2NaOH(excess) ⟶ Na₂CO₃ + H₂O   ;   CO₂(excess) + NaOH ⟶ NaHCO₃
 
-**Solubility.** Group 1 carbonates and (NH₄)₂CO₃ are soluble (Li₂CO₃ only slightly); Group 2 carbonates are sparingly soluble/insoluble. Ag₂CO₃ is yellow (strong Ag⁺ polarisation), although most Ag⁺ salts are white.
+### 10.3.2 Structure and bonding
 
-**Thermal stability.** Group 1 carbonates (except Li₂CO₃) are heat-stable and melt undecomposed; Group 2 carbonates decompose to the oxide + CO₂, and their stability **increases down the group** as the cation gets larger and less polarising.
+> **MOT LENS — CO₃²⁻.** Trigonal planar (D₃h), carbon **sp²**. Three σ(C–O) from the sp² hybrids; the leftover carbon 2p_z overlaps all three oxygen p orbitals to give **one delocalised π MO over all four atoms** (a 4-centre–6-electron π system, one bonding pair in it). All three C–O bonds are **identical**, length ≈ 129 pm, **bond order ≈ 1⅓**.
+> **HCO₃⁻** keeps the planar CO₃ skeleton but one O now carries H; two C–O bonds are equivalent (~1.5) and the C–OH bond is a longer single bond. Solid hydrogencarbonates contain **H-bonded HCO₃⁻ dimers or chains**.
+> **"CO₄⁴⁻" does not exist** — carbon is too small for four O and cannot expand its octet — whereas **SiO₄⁴⁻** is the basis of all silicate chemistry. Exactly the NO₃⁻ (planar, 3-coordinate) vs PO₄³⁻ (tetrahedral, 4-coordinate) contrast.
 
-| Carbonate | Approx. decomposition T |
-|:--|:--:|
-| BeCO₃ | < 100 °C |
-| MgCO₃ | 540 °C |
-| CaCO₃ | 900 °C |
-| SrCO₃ | 1290 °C |
-| BaCO₃ | 1360 °C |
+### 10.3.3 Solubility
 
-- Solid **hydrogencarbonates** exist only for Group 1 and NH₄⁺; they are less thermally stable than the carbonates and their structures contain H-bonded chains of HCO₃⁻.
+- **Soluble:** all Group 1 carbonates (Li₂CO₃ only sparingly) and (NH₄)₂CO₃.
+- **Insoluble / sparingly soluble:** Group 2 and most heavy-metal carbonates — CaCO₃, BaCO₃, PbCO₃, ZnCO₃, MgCO₃.
+- **All hydrogencarbonates are soluble.** Solid HCO₃⁻ salts exist only for **Group 1 (except Li) and NH₄⁺** — a smaller/more-polarising cation cannot support the H-bonded HCO₃⁻ network; "Ca(HCO₃)₂" and "Mg(HCO₃)₂" exist only in solution (they are temporary hardness).
+- **Ag₂CO₃ is pale yellow** (strong Ag⁺ → O polarisation) though most silver salts are white.
 
-Ca(OH)₂ + CO₂ ⟶ CaCO₃↓ (white) + H₂O
+### 10.3.4 Thermal stability — the polarising-power argument
 
-CaCO₃ + CO₂ + H₂O [excess CO₂] ⟶ Ca(HCO₃)₂ (soluble)
+A carbonate decomposes when the cation can pull an O²⁻ out of the planar CO₃²⁻ ion (leaving CO₂):  **MCO₃ → MO + CO₂**.
 
-> **DETECTION TRAP:** CO₂ turns limewater / baryta water milky (CaCO₃ / BaCO₃); **excess CO₂ clears** the milkiness as soluble Ca(HCO₃)₂. SO₂ also turns limewater milky — distinguish with acidified KMnO₄ or K₂Cr₂O₇ (SO₂ decolourises them; CO₂ does not).
+- A **small, highly charged cation** (high ionic potential) polarises CO₃²⁻ strongly → the carbonate is **less stable**, decomposes at **lower** temperature.
+- A **large, low-charge cation** barely disturbs CO₃²⁻ → the carbonate is **more stable**.
+
+| Carbonate | Approx. decomposition T | Trend |
+|:--|:--:|:--|
+| Li₂CO₃ | ~1300 °C (Group 1 anomaly — decomposes; the rest of Group 1 do not) | small Li⁺, diagonal to Mg |
+| BeCO₃ | < 100 °C | tiny Be²⁺ → very unstable |
+| MgCO₃ | ~540 °C | |
+| CaCO₃ | ~900 °C | **stability increases down Group 2** |
+| SrCO₃ | ~1290 °C | as cation grows and z/r falls |
+| BaCO₃ | ~1360 °C | |
+
+- **Na₂CO₃ and K₂CO₃ melt without decomposing** (~850–900 °C) — the large +1 cations do not polarise CO₃²⁻ enough.
+- **All hydrogencarbonates decompose on gentle heating:** 2NaHCO₃ → Na₂CO₃ + CO₂ + H₂O (baking, fire extinguishers, antacids); Ca(HCO₃)₂ → CaCO₃ + CO₂ + H₂O (kettle fur, stalactites, boiling out temporary hardness).
+
+### 10.3.5 The limewater test
+
+Ca(OH)₂(aq) + CO₂(g) ⟶ CaCO₃↓ (white, milky) + H₂O
+
+CaCO₃(s) + CO₂(g) + H₂O(l) [excess CO₂] ⟶ Ca(HCO₃)₂(aq) (clear again)
+
+> **DETECTION TRAP:** CO₂ turns limewater (or baryta water) **milky**; **excess CO₂ clears** it as soluble Ca(HCO₃)₂ — a two-stage response that is itself diagnostic. **SO₂ also turns limewater milky** (CaSO₃) — tell them apart with acidified **KMnO₄ or K₂Cr₂O₇**, which SO₂ decolourises (green Cr³⁺ / colourless Mn²⁺) and CO₂ does not.
+
+### 10.3.6 Sodium carbonate — the Solvay (ammonia–soda) process in outline
+
+NH₃ + CO₂ + H₂O ⟶ NH₄HCO₃ ;   NH₄HCO₃ + NaCl ⟶ **NaHCO₃↓** + NH₄Cl   (NaHCO₃ least soluble, crystallises out)
+
+2NaHCO₃ [Δ] ⟶ Na₂CO₃ + CO₂ + H₂O   (CO₂ recycled)
+
+2NH₄Cl + Ca(OH)₂ [Δ] ⟶ 2NH₃↑ + CaCl₂ + 2H₂O   (NH₃ recycled; CaCl₂ is the only waste)
+
+Solid Na₂CO₃ crystallises as the **decahydrate Na₂CO₃·10H₂O (washing soda)**, which **effloresces** in dry air to the monohydrate and finally to the anhydrous "soda ash".
 
 > **MOT LENS — CO₃²⁻.** Trigonal planar, carbon **sp²**; the three σ(C–O) bonds use the sp² hybrids, and the perpendicular carbon 2p orbital forms **one delocalised π MO over all four atoms** containing one bonding electron pair. All three C–O bonds are equivalent, order ≈ 1.33 (between single and double). **CO₄⁴⁻ does not exist** — carbon is too small and cannot expand its octet — even though **SiO₄⁴⁻** underlies all silicate chemistry. Same argument: NO₃⁻ (planar, 3-coordinate) vs PO₄³⁻ (tetrahedral, 4-coordinate).
 
@@ -979,23 +1070,53 @@ C₃O₂ + 2NH₃ ⟶ CH₂(CONH₂)₂
 
 # 11. Carbon disulphide and sulphides of carbon
 
-CH₄ + 4S [about 600 °C, Al₂O₃ or silica-gel catalyst] ⟶ CS₂ + 2H₂S
+## 11.1 Preparation and character of CS₂
 
-(Older route: charcoal + S vapour at about 850 °C.)
+**Modern route** (from natural gas):
 
-- **CS₂** — colourless, very volatile liquid, b.p. **46 °C**; extremely flammable (flash point 30 °C, ignites near 100 °C), poisonous (attacks the central nervous system). Pure CS₂ smells like ether; impurities make it stink. **Linear** S=C=S, like CO₂, but forms complexes more readily.
+CH₄(g) + 4S(g) [≈ 600 °C, silica-gel or Al₂O₃ catalyst] ⟶ CS₂(g) + 2H₂S(g)
 
-3CS₂ + 6NaOH ⟶ Na₂CO₃ + 2Na₂CS₃ + 3H₂O
+**Older route:**
 
-CS₂ + 2NH₃ ⟶ NH₄[H₂NCS₂] (ammonium dithiocarbamate)
+C(s) + 2S(g) [≈ 850–900 °C, electric furnace] ⟶ CS₂(g)
 
-CS₂ + cellulose–OH + NaOH ⟶ cellulose–O–C(=S)–SNa (sodium cellulose xanthate)
+- **CS₂** — colourless, very volatile, refractive liquid; **b.p. 46 °C**, density 1.26. **Dangerously flammable** — flash point −30 °C, autoignition ~90 °C (a hot steam pipe will light it), and it burns with a blue flame to CO₂ + SO₂.
+- **Toxic** — a cumulative poison attacking the central and peripheral nervous system (a recognised industrial hazard of the old viscose plants).
+- Pure CS₂ has a mild ethereal smell; the technical liquid stinks of organosulphur impurities.
+- **Structure:** linear **S=C=S**, carbon sp, isoelectronic and isostructural with CO₂ — but the larger, more polarisable sulphur makes CS₂ a **much better ligand and π-acceptor**, and far more reactive, than CO₂.
 
-- The **xanthate** is dissolved in dilute alkali as "viscose"; acidification regenerates cellulose as **rayon** fibres or **cellophane** film.
-- Passing an electric arc through CS₂ gives **C₃S₂** (S=C=C=C=S), a red liquid that polymerises like C₃O₂.
-- **Uses:** manufacture of viscose rayon and cellophane; manufacture of CCl₄; solvent for sulphur in the cold vulcanisation of rubber.
+## 11.2 Reactions of CS₂
 
-> **Comprehension-style link:** CS₂ + NaOH → Na₂CO₃ (B) + Na₂CS₃ (C). Both anions are **planar**, both salts **ionic** — but CO₃²⁻ and CS₃²⁻ have different electron counts, so B and C are **not** isoelectronic.
+**With alkali → thiocarbonate + carbonate** (a disproportionation of the C–S system):
+
+3CS₂(l) + 6NaOH(aq) ⟶ Na₂CO₃(aq) + 2Na₂CS₃(aq) + 3H₂O
+
+**With a metal hydrogensulphide → trithiocarbonate:**
+
+CS₂ + Na₂S ⟶ Na₂CS₃   (the salt of thiocarbonic acid H₂CS₃, a red oil)
+
+**With ammonia / amines → dithiocarbamates:**
+
+CS₂ + 2NH₃ ⟶ NH₄[H₂N–CS₂]   (ammonium dithiocarbamate; R₂NH gives R₂N–CS₂⁻, ligands and vulcanisation accelerators; the Zn salt "ziram" is a fungicide)
+
+**With an alkoxide / cellulose in alkali → xanthate** (the viscose reaction):
+
+RO⁻ + CS₂ ⟶ RO–CS–S⁻   (an O-alkyl xanthate)
+
+cellulose–OH + NaOH + CS₂ ⟶ cellulose–O–CS–SNa (sodium cellulose xanthate)
+
+- The orange xanthate dissolves in dilute NaOH to **"viscose"**; forcing it through a spinneret into acid **regenerates cellulose** as **rayon** fibre, or through a slit as **cellophane** film.
+- Potassium ethyl xanthate is the standard **froth-flotation collector** for sulphide ores.
+
+**With chlorine → carbon tetrachloride:**
+
+CS₂(l) + 3Cl₂(g) [FeCl₃ or I₂ catalyst] ⟶ CCl₄(l) + S₂Cl₂(l)
+
+**Electric arc through CS₂ → carbon subsulphide** C₃S₂ (S=C=C=C=S), a red liquid that polymerises like C₃O₂.
+
+**Uses:** manufacture of **viscose rayon and cellophane** (historically the largest use), **CCl₄** and other organosulphur chemicals, a **solvent for sulphur, P₄, iodine, fats and rubber**, and the sulphur carrier in **cold (solution) vulcanisation** of thin rubber goods.
+
+> **Comprehension link:** CS₂ + NaOH → Na₂CO₃ + Na₂CS₃. The anions CO₃²⁻ and CS₃²⁻ are **both trigonal planar** and both salts are ionic — but they have **different valence-electron counts** (S has more than O), so CO₃²⁻ and CS₃²⁻ are **not isoelectronic**. (A common "which statement is wrong" trap.)
 
 # 12. Silicon — preparation, purification and reactivity
 

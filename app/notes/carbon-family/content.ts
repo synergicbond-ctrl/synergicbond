@@ -858,6 +858,11 @@ CO(g) + PdCl₂(aq) + H₂O ⟶ CO₂(g) + Pd↓ (black) + 2HCl   — a black st
 
 5CO(g) + I₂O₅(s) [warm] ⟶ 5CO₂(g) + I₂ ;   I₂ + 2S₂O₃²⁻ ⟶ 2I⁻ + S₄O₆²⁻
 
+> **WORKED EXAMPLE — separate and quantify a CO + CO₂ mixture** (a standard gas-analysis question).
+> **Step 1 — take out and measure the CO₂.** Pass the mixture through **KOH (or limewater)**: CO₂ + 2KOH → K₂CO₃ + H₂O. The **volume lost** = volume of CO₂ (or precipitate the BaCO₃ and weigh it). The gas leaving is **pure CO**.
+> **Step 2 — measure the CO.** Pass that CO over **warm I₂O₅**: 5CO + I₂O₅ → 5CO₂ + I₂. Titrate the liberated **I₂ against standard thiosulphate** (I₂ + 2S₂O₃²⁻ → 2I⁻ + S₄O₆²⁻). Then **n(CO) = 5⁄2 × n(S₂O₃²⁻ used)**.
+> **The template** — an *absorbent* for the acidic/reactive component, then a *selective redox reaction + iodometric titration* for the other — separates and quantifies almost any two-gas mixture (CO/CO₂, O₂/O₃, CO/H₂, etc.).
+
 **Toxicity**
 
 CO binds the Fe(II) of haemoglobin to give **carboxyhaemoglobin**, a complex **≈ 200–250 times more stable** than the oxygen complex, so even a small partial pressure of CO ties up most of the haemoglobin and blocks O₂ transport → headache, confusion, cherry-red skin, unconsciousness, death. It is odourless, so there is no warning.
@@ -1058,15 +1063,21 @@ Solid Na₂CO₃ crystallises as the **decahydrate Na₂CO₃·10H₂O (washing 
 
 ## 10.4 Carbon suboxide, C₃O₂
 
-HOOC–CH₂–COOH (malonic acid) [P₄O₁₀, about 150 °C] ⟶ O=C=C=C=O + 2H₂O
+**Preparation** — double dehydration of malonic (propanedioic) acid:
 
-- Linear, foul-smelling gas, b.p. about **6 °C**; stable at very low temperature, polymerises to yellow and then red-purple solids on warming.
+HOOC–CH₂–COOH(s) [P₄O₁₀, ≈ 150 °C] ⟶ O=C=C=C=O + 2H₂O
 
-C₃O₂ + 2HCl ⟶ CH₂(COCl)₂
+- **Structure:** linear (or very nearly — a shallow bend), **cumulated** O=C=C=C=O; carbon **sp** throughout; an inorganic analogue of allene/ketene.
+- Colourless, foul-smelling (onion/mustard) gas, b.p. **≈ 7 °C**; **stable only cold** — above ~25 °C it polymerises to yellow, then red, then violet-black solids (poly-C₃O₂).
+- It is the **anhydride of malonic acid** — hydrolysis reverses the preparation:
 
-C₃O₂ + 2NH₃ ⟶ CH₂(CONH₂)₂
+C₃O₂ + 2H₂O ⟶ CH₂(COOH)₂
 
-**C₁₂O₉** (the anhydride of mellitic acid, C₆(COOH)₆) is another stable suboxide; C₅O₂ reports are disputed.
+C₃O₂ + 2HCl ⟶ CH₂(COCl)₂ (malonyl chloride) ;   C₃O₂ + 2NH₃ ⟶ CH₂(CONH₂)₂ (malonamide)
+
+- **Other carbon suboxides:** **C₁₂O₉**, the anhydride of **mellitic acid C₆(COOH)₆** (benzenehexacarboxylic acid — itself the hot-HNO₃ oxidation product of graphite, §6.1); C₅O₂ (O=C=C=C=C=C=O) is claimed but not well characterised.
+
+> **The full list of carbon oxides (a "how many oxides of carbon" trap):** **CO, CO₂, C₃O₂, C₁₂O₉** are the well-defined ones; add graphite oxide and the unstable C₅O₂. Carbon forms more oxides than any other Group 14 element.
 
 # 11. Carbon disulphide and sulphides of carbon
 
@@ -1235,6 +1246,17 @@ SiO₂(s) + 2F₂(g) ⟶ SiF₄(g) + O₂(g)
 > **QUALITATIVE SILICATE / BORATE-type TEST:** warm the solid with **CaF₂ + conc. H₂SO₄** → HF generated *in situ* attacks any silica/silicate to volatile **SiF₄**; a drop of water held at the tube mouth deposits a **white gelatinous ring of hydrated silica** — the confirmatory test for a silicate.
 
 > **Key Point — uses of silica:** sand → mortar, concrete, glass; **quartz crystal oscillators** → watches, radio/TV frequency control (piezoelectricity); **fused-silica** optics and crucibles; **silica gel** desiccant and chromatography; **kieselguhr** filter aid and dynamite absorbent; **fumed silica** thickener/filler; silica bricks for furnace roofs.
+
+## 13.3 Silicic acids and the silicon nitrogen compounds
+
+**Silicic acids.** Acidifying a soluble silicate slowly releases **orthosilicic acid, Si(OH)₄ (H₄SiO₄)**:
+
+Na₂SiO₃(aq) + 2HCl(aq) ⟶ Si(OH)₄ + 2NaCl
+
+- Si(OH)₄ is a **very weak acid** (pK_a1 ≈ 9.8) and is **unstable in the free state** — it **condenses** by losing water (Si–OH + HO–Si → Si–O–Si + H₂O), first to **metasilicic acid (H₂SiO₃)ₙ**, then to **disilicic / polysilicic acids**, and finally to a gel of hydrated SiO₂. A rapid, strong acidification gives the **white gelatinous precipitate** used as the confirmatory silicate test (§13.2); a slow, controlled one gives a clear **sol → gel → xerogel** (the basis of **silica gel** and the **sol–gel** route to glasses and ceramic coatings).
+- Because Si(OH)₄ always condenses, **there is no discrete "silicate ion" in the way there is a carbonate ion** — silicate chemistry is the chemistry of *polymerised* SiO₄ tetrahedra (§14), exactly the C-vs-Si contrast again.
+
+**Silicon nitride, Si₃N₄** (from §6.1): a hard (Mohs ~9), light, thermal-shock-resistant, chemically inert **covalent ceramic** — SiN₄ and NSi₃ units in a 3-D network. Used for turbine blades, bearings, cutting tools, and as an **insulating / diffusion-barrier layer in silicon chips**. **Sialons** (Si–Al–O–N) are tougher engineering variants.
 
 # 14. Silicates — the full seven-class structural system
 
@@ -1674,22 +1696,59 @@ ClO• + O• ⟶ Cl• + O₂
 
 **overall: 2O₃ ⟶ 3O₂** (Cl• is a catalyst — one radical destroys thousands of O₃ molecules before it is removed)
 
-## 18.5 Cyanides and cyanates
+## 18.5 The cyanide family — CN⁻, HCN, (CN)₂ and the pseudohalide idea
 
-CN⁻ is the major carbon-based ligand; this sits outside the Group 14 core but is useful for Advanced linkage.
+**Cyanide ion CN⁻ is a "pseudohalide"** — it behaves like a halide ion: it forms a molecular "pseudohalogen" **cyanogen (CN)₂**, an acid **HCN**, insoluble salts (AgCN, Hg(CN)₂, Pb(CN)₂), and strong complexes ([Fe(CN)₆]³⁻/⁴⁻, [Ag(CN)₂]⁻). Other pseudohalides: **OCN⁻ (cyanate), SCN⁻ (thiocyanate), N₃⁻ (azide), SeCN⁻**.
 
-Na + NH₃ ⟶ NaNH₂ + ½H₂
+### 18.5.1 Hydrogen cyanide, HCN
 
-NaNH₂ + C [high T; Castner process] ⟶ NaCN + H₂
+**Preparation:**
 
-CH₄ + NH₃ [about 1200 °C, Pt] ⟶ HCN + 3H₂
+CaCN₂ + C + Na₂CO₃ [fuse] ⟶ 2NaCN + CaCO₃ ;   NaCN + H₂SO₄(dil.) ⟶ HCN↑ + NaHSO₄
 
-4Au + 8CN⁻ + O₂ + 2H₂O [cyanide leaching of gold ore] ⟶ 4[Au(CN)₂]⁻ + 4OH⁻
+CH₄ + NH₃ + 3⁄2 O₂ [Pt/Rh gauze, ~1200 °C; Andrussow process — industrial] ⟶ HCN + 3H₂O
 
-(CN)₂ + 2OH⁻ [alkaline disproportionation, like a halogen] ⟶ CN⁻ + NCO⁻ + H₂O
+- **Structure:** linear **H–C≡N**, isoelectronic with N₂ and CO. Two tautomers exist — H–C≡N (nitrile, major) ⇌ H–N=C: (isocyanide).
+- **Physical:** colourless liquid/gas, b.p. **26 °C**, bitter-almond smell; the high b.p. and its miscibility with water come from **N···H–C hydrogen bonding** and a very high dielectric constant.
+- **Extremely poisonous** — CN⁻ binds the Fe(III) of **cytochrome oxidase** and shuts down cellular respiration (antidotes: amyl nitrite / Na₂S₂O₃ → SCN⁻, or hydroxocobalamin).
+- **Weak acid** (K_a ≈ 6×10⁻¹⁰, pK_a ≈ 9.2) — weaker than carbonic acid; CO₂ liberates HCN from KCN solution.
 
-- **HCN** — extremely poisonous, weakly acidic; its high boiling point comes from H-bonded association. Like CO, CN⁻ is a σ-donor / π-acceptor: the negative charge makes it a **stronger** σ-donor but a **weaker** π-acceptor than CO.
-- **Isoelectronic pair:** NCO⁻ (cyanate) and CO₂ — both linear, N=C=O and O=C=O.
+### 18.5.2 Reactions and uses of cyanide
+
+**Complexation — the basis of gold/silver metallurgy (Mac Arthur–Forrest cyanide-leaching):**
+
+4Au(s) + 8CN⁻(aq) + O₂(g) + 2H₂O ⟶ 4[Au(CN)₂]⁻(aq) + 4OH⁻
+
+2[Au(CN)₂]⁻ + Zn ⟶ [Zn(CN)₄]²⁻ + 2Au↓   (recovery by zinc-dust cementation)
+
+**Other:**
+
+CN⁻ + ½O₂ [slow air oxidation / detox of effluent] ⟶ OCN⁻
+
+2Cu²⁺ + 4CN⁻ ⟶ 2CuCN↓ + (CN)₂ ;   (like 2Cu²⁺ + 4I⁻ → 2CuI + I₂ — the pseudohalide parallel)
+
+FeSO₄ + 6KCN ⟶ K₄[Fe(CN)₆] (potassium hexacyanoferrate(II), "yellow prussiate") → used in the CO prep (§9.1) and in **Prussian-blue** tests for Fe.
+
+**Uses:** gold/silver extraction; electroplating baths ([Au(CN)₂]⁻, [Ag(CN)₂]⁻ give smooth deposits); case-hardening of steel; the CN⁻ source for nitriles in organic synthesis.
+
+### 18.5.3 Cyanogen, (CN)₂ — the pseudohalogen
+
+Hg(CN)₂ [Δ] ⟶ Hg + (CN)₂ ;   or  2Cu²⁺ + 4CN⁻ ⟶ 2CuCN + (CN)₂
+
+- Linear **N≡C–C≡N**, colourless, very toxic gas, **burns with a peach/violet flame** (2(CN)₂ + ... one of the hottest flames known, ~4500 °C with O₂).
+- **Disproportionates in alkali, exactly like a halogen:**
+
+(CN)₂ + 2OH⁻ ⟶ CN⁻ + OCN⁻ + H₂O   (cf. Cl₂ + 2OH⁻ → Cl⁻ + OCl⁻ + H₂O)
+
+### 18.5.4 Cyanates, thiocyanates and fulminates — isomers to keep straight
+
+| Ion | Structure | Note |
+|:--|:--|:--|
+| **cyanate OCN⁻** | linear [O=C=N]⁻ | isoelectronic with **CO₂** and N₃⁻; from CN⁻ + [O]. Wöhler's **NH₄OCN → (NH₂)₂CO (urea)** (1828) ended vitalism |
+| **fulminate CNO⁻** | [C≡N–O]⁻ | a **less stable linkage isomer** of cyanate; Hg(CNO)₂ is the shock-sensitive **detonator** primer |
+| **thiocyanate SCN⁻** | [S=C=N]⁻ | an **ambidentate** ligand — binds through S (soft metals: Hg, Pd) or N (hard metals: Cr, Co); Fe³⁺ + SCN⁻ → blood-red [Fe(SCN)]²⁺, the standard Fe(III) test |
+
+> **Isoelectronic set (16 valence e⁻, all linear):** **CO₂, N₂O, OCN⁻, SCN⁻ (with S), N₃⁻, NO₂⁺, CN₂²⁻ (cyanamide)**.
 
 # 19. Complexes and internal pπ–dπ bonding
 
@@ -2254,7 +2313,7 @@ Use this as a last-night revision sweep — for each line, recall the reasoning,
 - Carbides: the three classes; hydrolysis identifies the carbon anion (CH₄ / C₂H₂ / propyne); interstitial-carbide property changes [8].
 - CO: preparations (including from methanoic acid and from the hexacyanoferrate(II)); water / producer / coal gas; detection and estimation; the MO picture and bond order 3; toxicity and carbogen [9.1, 9.2].
 - CO as a reducing agent (blast furnace) and as a ligand — synergic σ-donation + π back-donation; C–O stretch drops on coordination; Fe₂(CO)₉ has 12 Fe–C bonds [9.3].
-- COCl₂, COS, CS₂, C₃O₂; CS₂ → xanthate → viscose rayon [9.4, 11].
+- COCl₂, COS, CS₂; carbon suboxide **C₃O₂** (malonic-acid anhydride, linear O=C=C=C=O) and **C₁₂O₉** (mellitic anhydride); the full carbon-oxide list; CS₂ → xanthate → viscose rayon [9.4, 10.4, 11].
 - CO₂: linear structure, zero dipole, resonance; carbonic acid, the blood buffer, the greenhouse effect; uses [10.1, 10.2].
 - Carbonates and hydrogencarbonates: two salt series, solubility, thermal-stability trend, the limewater test (clears in excess CO₂) [10.3].
 - CO₃²⁻ is planar and CO₄⁴⁻ cannot exist; contrast SiO₄⁴⁻ [10.3].
@@ -2262,7 +2321,8 @@ Use this as a last-night revision sweep — for each line, recall the reasoning,
 ## 28.4 Silicon, silica and the silicates
 
 - Silicon: metallurgical-grade extraction; purification to 11-nines (Siemens trichlorosilane → polysilicon; zone refining and its k < 1 argument; Czochralski single-crystal ingot); reactivity — inert except to F₂, hot alkali and HF [12].
-- Silica: the giant network, polymorphs, vitreous silica, silica gel, kieselguhr, piezoelectricity; why SiO₂ is a solid but CO₂ a gas; reactions with HF and with fused alkali [13].
+- Silica: the giant network, polymorphs (α/β-quartz, tridymite, cristobalite), vitreous silica, silica gel, kieselguhr, fumed silica, piezoelectricity; why SiO₂ is a solid but CO₂ a gas; reactions with HF and with fused alkali [13.1, 13.2].
+- **Silicic acids** Si(OH)₄ → metasilicic → polysilicic → SiO₂ gel (always condenses — no discrete silicate ion); the sol–gel route; **silicon nitride Si₃N₄** and sialons [13.3].
 - The silicate master rule: classification by shared corners per SiO₄ tetrahedron; O:Si = 4 − x/2, charge/Si = −(4 − x) [14.1].
 - The seven classes with type minerals: ortho, pyro, cyclic, single chain, double chain, sheet, framework [14.2–14.7].
 - A ring and a single chain share the empirical formula (SiO₃)ₙ²ⁿ⁻; pyroxene vs amphibole cleavage angles [14.4, 14.5].
@@ -2280,7 +2340,7 @@ Use this as a last-night revision sweep — for each line, recall the reasoning,
 - Tetrahalides: all MX₄ except PbI₄; SnF₄ and PbF₄ are ionic solids; the SiCl₄ vs CCl₄ hydrolysis mechanism; charge-transfer colour of SnI₄/GeI₄; catenated silicon halides [18.1, 18.2].
 - Dihalides: stability rises down the group; bent gas-phase SnCl₂ [18.3].
 - Fluorocarbons: PTFE; the Freon–ozone catalytic cycle [18.4].
-- Cyanides and cyanates as carbon-based ligands; isoelectronic NCO⁻ / CO₂ [18.5].
+- The cyanide family: CN⁻ as a **pseudohalide**; HCN (structure, Andrussow prep, toxicity/cytochrome oxidase, weak acid); gold/silver **cyanide leaching**; **cyanogen (CN)₂** and its halogen-like alkali disproportionation; cyanate OCN⁻ / fulminate CNO⁻ (linkage isomers) / thiocyanate SCN⁻ (ambidentate, Fe(III) test); the CO₂/N₂O/N₃⁻ isoelectronic set [18.5].
 - Coordination-number expansion 4 → 6 for the heavier elements ([SiF₆]²⁻, [GeCl₆]²⁻, [Sn(OH)₆]²⁻) [19.1].
 - N(SiH₃)₃ planar vs N(CH₃)₃ pyramidal — the pπ–dπ explanation [19.2].
 - Lead(IV) acetate — a selective oxidant, glycol cleavage [19.3].

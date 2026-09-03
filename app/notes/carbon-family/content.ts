@@ -884,15 +884,7 @@ Na₂SiO₃ dissolves in hot water under pressure as **"water glass"** (about Na
 
 Orthoclases are more symmetrical because K⁺ and Ba²⁺ fit the lattice exactly; the smaller Na⁺ and Ca²⁺ distort it (plagioclase).
 
-**Zeolites** — much more open frameworks; the anion skeleton is threaded by channels wide enough to exchange ions and adsorb small molecules without collapsing.
-
-Na₂Z(s) + Ca²⁺(aq) [water softening; Permutit process] ⟶ CaZ(s) + 2Na⁺(aq)
-
-CaZ(s) + 2NaCl(aq) [regeneration with brine] ⟶ Na₂Z(s) + CaCl₂(aq)
-
-- **Molecular sieves:** zeolites adsorb H₂O, CO₂, NH₃, EtOH; separate straight-chain from branched hydrocarbons by pore size.
-- **Catalysis:** **ZSM-5** converts methanol/alcohols directly into gasoline-range hydrocarbons; zeolites are shape-selective catalysts for cracking and isomerisation in petrochemical plants.
-- Natrolite Na₂[Al₂Si₃O₁₀]·2H₂O is a natural ion exchanger; the general framework formula is Mₓ/ₙ[(AlO₂)ₓ(SiO₂)ᵧ]·zH₂O.
+**Zeolites** are open-framework aluminosilicates — treated in full in §14.8. Their frameworks enclose a regular system of molecule-sized cages and channels, which makes them ion exchangers, molecular sieves and shape-selective catalysts.
 
 **Ultramarines** — coloured aluminosilicates with **no water** but enclosed anions (Cl⁻, SO₄²⁻, polysulphide S₂⁻/S₃⁻). Lapis lazuli's blue is due to the polysulphide radical anion.
 
@@ -903,6 +895,101 @@ CaZ(s) + 2NaCl(aq) [regeneration with brine] ⟶ Na₂Z(s) + CaCl₂(aq)
 | nosean | Na₈[(AlSiO₄)₆]SO₄ |
 
 > **JEE TRAP:** All silicates trace back to corner-sharing SiO₄⁴⁻ tetrahedra sharing **1, 2, 3 or 4** oxygens per silicon. Isomorphous Al-for-Si substitution converts a neutral framework into a charged aluminosilicate. A ring and a single chain have the **same** empirical formula; a sheet silicate cleaves like graphite because bonding within a sheet is strong but between sheets is weak.
+
+## 14.8 Zeolites — the open-framework aluminosilicates
+
+Feldspars are *dense* frameworks — every cavity is filled, nothing can move through. **Zeolites** are frameworks built so openly that a connected system of **cages and channels of molecular dimensions (about 3–10 Å)** runs right through the crystal. The exchangeable cations and the "zeolitic" water sit loosely in those voids. This one structural difference — *porosity* — is the source of every zeolite application.
+
+The name is from Greek *zeo* (to boil) + *lithos* (stone): the first zeolite (stilbite, A. Cronstedt, 1756) froths and "boils" as its water is driven off on the blowpipe.
+
+### 14.8.1 Framework, formula and the aluminium rule
+
+- The framework is built **only** from corner-sharing **(Si,Al)O₄ tetrahedra** — every oxygen bridges two tetrahedral centres, exactly as in quartz, so the framework itself is 3-D and, for the SiO₂ part, neutral.
+- Each **AlO₄** tetrahedron replaces an SiO₄ and puts **−1** on the framework (Al is +3, Si is +4). That charge is neutralised by **exchangeable cations** — Na⁺, K⁺, Ca²⁺, Mg²⁺ — held electrostatically in the cavities, not bonded into the framework.
+- **General formula:** **Mₓ/ₙ[(AlO₂)ₓ(SiO₂)ᵧ]·wH₂O**, where M is a cation of charge n; x = number of Al (= framework charge), y = number of Si, w = zeolitic water.
+- **Löwenstein's (aluminium-avoidance) rule:** two AlO₄ tetrahedra are **never** joined through the same oxygen — there is no Al–O–Al linkage. An Al must always have Si as each of its four neighbours. Consequence: **Si/Al ≥ 1** in every zeolite; the Al-richest zeolites (A, X) sit exactly at Si/Al = 1 with strictly alternating Si and Al.
+
+> **Key Point — dehydration is reversible.** Heating a zeolite drives off the zeolitic water **without collapsing the framework**, leaving an evacuated pore network. Cool it in moist air and the water returns. An ordinary salt hydrate cannot do this — its lattice reorganises when the water leaves. This reversible, framework-preserving dehydration is what makes a zeolite a re-usable desiccant and adsorbent.
+
+### 14.8.2 How the pores are built — cages and windows
+
+Zeolite frameworks are described by stacking a few **secondary building units**: 4-rings, 6-rings, the **double-4-ring (D4R)**, the **double-6-ring (D6R)**, and the **sodalite cage (β-cage)** — a truncated octahedron of 24 tetrahedra with 6 four-rings and 8 six-rings.
+
+| Zeolite (framework type) | How the cages link | Window (ring size) | Free aperture | Typical Si/Al |
+|:--|:--|:--:|:--:|:--:|
+| **Zeolite A** (LTA) | sodalite cages joined through **D4R** → large α-cage | 8-membered | ≈ 4.1 Å (Na form) | 1 |
+| **Faujasite — zeolite X / Y** (FAU) | sodalite cages joined through **D6R** → large supercage | 12-membered | ≈ 7.4 Å | X: 1–1.5 · Y: 1.5–3 |
+| **ZSM-5** (MFI) | 5-ring chains → intersecting straight + zig-zag channels | 10-membered | ≈ 5.5 Å | ≫ 10 (up to ∞) |
+| **Chabazite, natrolite, mordenite** (natural) | various | 8- or 12-ring | 3.7–7 Å | 1–5 |
+
+- **The window, not the cavity, sets the size cut-off.** An 8-ring aperture (≈ 4 Å) admits H₂O, CO₂, NH₃, straight-chain alkanes; a 10-ring (≈ 5.5 Å) admits benzene and p-xylene; a 12-ring (≈ 7.4 Å) admits branched and cyclic molecules.
+- **The exchange cation fine-tunes the aperture.** In zeolite A the K⁺ form ("**3A**", ≈ 3 Å) is tighter than the Na⁺ form ("**4A**", ≈ 4 Å), which is tighter than the Ca²⁺ form ("**5A**", ≈ 5 Å — two Na⁺ replaced by one Ca²⁺, so a site is vacated and the window opens).
+
+> **Aperture of zeolite A** — Increasing order: 3A (K⁺) < 4A (Na⁺) < 5A (Ca²⁺)
+> Note: fewer / smaller / higher-charge cations near the 8-ring → wider effective window.
+
+### 14.8.3 Ion exchange and water softening
+
+The framework cations are mobile and **stoichiometrically exchangeable** with cations in a contacting solution. Selectivity depends on cation charge, hydrated size and the framework Si/Al ratio.
+
+**Base-exchange softening (Permutit process):**
+
+Na₂Z(s) + Ca²⁺(aq) [hard water percolating through the bed] ⟶ CaZ(s) + 2Na⁺(aq)
+
+Na₂Z(s) + Mg²⁺(aq) ⟶ MgZ(s) + 2Na⁺(aq)
+
+**Regeneration (back-washing with brine):**
+
+CaZ(s) + 2Na⁺(aq) [10% NaCl, large excess drives the equilibrium back] ⟶ Na₂Z(s) + Ca²⁺(aq)
+
+- The bed removes **both** temporary and permanent hardness (unlike lime–soda, which needs different treatment for each) and gives water of near-zero hardness.
+- Natural exchangers: **natrolite** Na₂[Al₂Si₃O₁₀]·2H₂O, **clinoptilolite** (used to strip **NH₄⁺** from sewage and **¹³⁷Cs⁺ / ⁹⁰Sr²⁺** from nuclear waste liquor because it holds those large low-charge cations tightly).
+- Modern synthetic **zeolite A** is the **detergent "builder"** that replaced sodium tripolyphosphate: it sequesters the wash-water Ca²⁺/Mg²⁺ that would otherwise scum the surfactant, without the phosphate that caused lake eutrophication.
+
+> **JEE TRAP:** zeolite softening is **ion exchange**, not precipitation — no sludge is formed, and the resin/bed is regenerated, not consumed. It exchanges cations only; anions (Cl⁻, SO₄²⁻) pass straight through, so Permutit-softened water is not de-ionised.
+
+### 14.8.4 Molecular sieves — separation by size
+
+A dehydrated zeolite adsorbs any molecule small enough to pass its windows and **completely excludes** larger ones — a sieve with pores of exact, uniform, sub-nanometre size. Adsorption is strong (the pore walls polarise the guest) yet fully reversible on heating or evacuation.
+
+| Sieve (cation form) | Admits | Excludes | Use |
+|:--|:--|:--|:--|
+| **3A** (K–A) | H₂O only | almost everything else | drying reactive gases and solvents where even O₂/N₂ uptake is unwanted |
+| **4A** (Na–A) | H₂O, CO₂, H₂S, SO₂, C₂H₆ | C₃H₈ and larger | general gas/solvent drying; CO₂ scrub |
+| **5A** (Ca–A) | *n*-alkanes | iso- and cyclo-alkanes, benzene | **separating straight- from branched-chain hydrocarbons** to raise petrol octane; O₂/N₂ separation (N₂ held more strongly → pressure-swing adsorption gives 90–95% O₂ for medical use) |
+| **13X** (Na–X) | most molecules up to ≈ 8 Å | large branched / polycyclic species | bulk drying, CO₂ removal from air ahead of cryogenic O₂ plants, sweetening (H₂S/mercaptan removal) from natural gas |
+
+> **Key Point:** a molecular sieve works because the pore diameter is **fixed and uniform** — silica gel and activated alumina adsorb water too, but their pores are a broad range of sizes, so they cannot *sieve*. Only a crystalline zeolite gives a sharp size cut-off.
+
+### 14.8.5 Shape-selective catalysis
+
+Exchanging the cations for **H⁺** (via NH₄⁺ exchange then calcination: NH₄–Z → H–Z + NH₃↑) leaves a proton on a bridging **Si–O(H)–Al** oxygen. This is a **strong Brønsted acid site** — comparable to concentrated H₂SO₄ — anchored inside a pore. Because catalysis then happens *only* inside the channels, the pore geometry selects the chemistry three ways:
+
+1. **Reactant selectivity** — only feed molecules that fit the pore reach the acid sites.
+2. **Product selectivity** — only products small enough to diffuse back out are collected; bulkier ones stay trapped and crack further.
+3. **Transition-state selectivity** — reactions whose transition state is too bulky for the cavity simply do not occur.
+
+**ZSM-5 (10-ring, high-silica, strongly acidic) — the workhorse:**
+
+CH₃OH [H–ZSM-5, about 400 °C; methanol-to-gasoline] ⟶ hydrocarbons (C₅–C₁₁, gasoline range) + H₂O
+
+- The route runs CH₃OH ⇌ CH₃OCH₃ → light alkenes → aromatics + alkanes; the 5.5 Å pore caps the aromatic product near **1,2,4,5-tetramethylbenzene (durene)** and stops coke-forming polycyclics, so the catalyst stays active far longer than an amorphous acid.
+- **Xylene isomerisation / toluene disproportionation → p-xylene:** *para*-xylene is slimmer than the *ortho* and *meta* isomers and diffuses out of the 10-ring channel far faster, so the product is enriched in the *para* isomer well beyond its equilibrium share.
+- **Ethylbenzene** (benzene + ethene) and **cumene** (benzene + propene) are made over acidic zeolites, replacing AlCl₃ / H₃PO₄.
+
+**Zeolite Y (12-ring, dealuminated "USY") — fluid catalytic cracking (FCC):** the acidic component of the FCC catalyst that turns heavy petroleum fractions into petrol and diesel. It replaced amorphous silica–alumina and gives more gasoline with much less coke.
+
+> **Key Point — why a solid acid beats a liquid acid:** a zeolite catalyst is **filtered off** (no neutralisation, no acid waste), is **non-corrosive**, is **regenerated** by burning off coke in air, is **thermally stable** to ~600–800 °C, and is **shape-selective** — none of which H₂SO₄, HF or AlCl₃ can offer.
+
+### 14.8.6 Where zeolites sit among the silicates
+
+| Silicate class | Framework | Porosity | Behaviour |
+|:--|:--|:--|:--|
+| **sheet** (mica, clay) | 2-D layers | between layers only | swelling / cleaving / cation exchange *at surfaces* |
+| **feldspar** | 3-D, dense | none | inert rock-former |
+| **zeolite** | 3-D, open | continuous molecular channels | ion exchange, sieving, catalysis |
+
+> **JEE TRAP:** clays (**sheet** silicates) and zeolites (**framework** silicates) are both cation exchangers, but for different structural reasons — clays exchange the loosely held interlayer cations between the sheets; zeolites exchange the cations sitting in the framework cavities. A feldspar, though also a framework aluminosilicate, exchanges nothing because it has no open channels.
 
 # 15. Glass
 
@@ -1278,7 +1365,7 @@ PbO₂ + H₂C₂O₄ + 2HNO₃ ⟶ Pb(NO₃)₂ + 2CO₂ + 2H₂O
 
 ## 22.2 Silicon, silica and silicates
 
-> **Key Point:** **Ultrapure silicon** — transistors, diodes, solar cells, computer chips. **Ferrosilicon / silicon steel** — deoxidiser in steelmaking; acid-resistant and electrical (transformer-core) steels. **Sand** — mortar, cement, and glass. **Quartz** — optical lenses/prisms (UV-transparent), piezoelectric oscillators and clocks. **Silica gel** — desiccant, catalyst support, chromatography. **Kieselguhr** — filtration aid, absorbent for nitroglycerine (dynamite). **Sodium silicate (water glass)** — adhesive, detergent builder, fireproofing. **Zeolites** — water softeners (Permutit), molecular sieves, shape-selective catalysts (ZSM-5 for alcohol → gasoline). **Ceramics, bricks, cement, glass** are all silicate materials.
+> **Key Point:** **Ultrapure silicon** — transistors, diodes, solar cells, computer chips. **Ferrosilicon / silicon steel** — deoxidiser in steelmaking; acid-resistant and electrical (transformer-core) steels. **Sand** — mortar, cement, and glass. **Quartz** — optical lenses/prisms (UV-transparent), piezoelectric oscillators and clocks. **Silica gel** — desiccant, catalyst support, chromatography. **Kieselguhr** — filtration aid, absorbent for nitroglycerine (dynamite). **Sodium silicate (water glass)** — adhesive, detergent builder, fireproofing. **Zeolites** — water softeners (Permutit base-exchange), detergent builders (replacing phosphates), molecular sieves (3A/4A/5A/13X: drying, n-/iso-alkane separation, O₂ from air), and shape-selective solid-acid catalysts (H-ZSM-5 for methanol → gasoline and p-xylene; zeolite Y for catalytic cracking) — see §14.8. **Ceramics, bricks, cement, glass** are all silicate materials.
 
 ## 22.3 Silicones
 
@@ -1415,6 +1502,7 @@ Pb₃O₄ ─(glacial CH₃COOH)→ Pb(OAc)₄ ─(1,2-diol)→ 2 carbonyl compo
 32. **Mosaic gold** is SnS₂; **butter of tin** is SnCl₄·5H₂O; **pink salt** is (NH₄)₂[SnCl₆]; **purple of Cassius** is colloidal Au on hydrated SnO₂.
 33. **¹⁴C half-life** — use **5770 y** for this syllabus (the modern accepted value is 5730 y).
 34. Expanded covalence and hydrolysis at Si/Ge/Sn/Pb are explained by the **empty valence d orbitals** that carbon lacks — keep to that one picture in an answer rather than mixing bonding models.
+35. **Zeolite = open framework aluminosilicate.** Löwenstein's rule (no Al–O–Al) ⇒ Si/Al ≥ 1. Water leaves reversibly without framework collapse. Permutit softening is **ion exchange** (regenerated with brine), not precipitation. The **window** ring-size, tuned by the exchange cation (3A < 4A < 5A), sets the molecular-sieve cut-off. The H-form has a strong **Si–O(H)–Al** Brønsted site → shape-selective catalysis (H-ZSM-5: methanol → gasoline, p-xylene; zeolite Y: catalytic cracking).
 
 # 26. Ultra-fast final revision
 
@@ -1586,7 +1674,8 @@ Use this as a last-night revision sweep — for each line, recall the reasoning,
 - The seven classes with type minerals: ortho, pyro, cyclic, single chain, double chain, sheet, framework [14.2–14.7].
 - A ring and a single chain share the empirical formula (SiO₃)ₙ²ⁿ⁻; pyroxene vs amphibole cleavage angles [14.4, 14.5].
 - Sheet silicates: 1:1 vs 2:1 layers, Al-for-Si substitution and interlayer cations, swelling clays, chrysotile vs crocidolite [14.6].
-- Framework silicates: aluminosilicates, feldspars, zeolites (ion exchange, molecular sieves, shape-selective catalysis), ultramarines [14.7].
+- Framework silicates: aluminosilicates, feldspars (dense), ultramarines [14.7].
+- **Zeolites in depth:** framework + general formula + Löwenstein's rule; cages and windows (zeolite A, faujasite X/Y, ZSM-5); reversible dehydration; ion exchange and the Permutit softening cycle; molecular sieves 3A/4A/5A/13X; H-form Brønsted acidity and the three shape-selectivities; MTG and FCC [14.8].
 - Water glass — preparation and uses [14.1].
 
 ## 28.5 Glass, silicones, hydrides, halides, complexes

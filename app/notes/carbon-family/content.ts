@@ -1512,70 +1512,93 @@ R₂SiCl₂ + 2H₂O ⟶ R₂Si(OH)₂ + 2HCl ;   n R₂Si(OH)₂ [−(n−1)H�
 
 # 17. Hydrides of Group 14
 
+The hydrides **MₙH₂ₙ₊₂** run from the endless catenated carbon series (all of organic chemistry) to a single barely-real PbH₄. The stark contrast between **inert alkanes** and **pyrophoric, hydrolysable silanes** is one of the clean tests of "why carbon is different".
+
 ## 17.1 Silanes
 
-- Saturated series **SiₙH₂ₙ₊₂** (silanes), analogous to alkanes but far shorter — Si–Si catenation is weak (Section 5.2). Straight and branched silanes up to about Si₈H₁₈ are known; there are **no** silicon analogues of alkenes, alkynes or aromatic rings.
+- Saturated series **SiₙH₂ₙ₊₂**. Straight and branched chains are known only to about **Si₈H₁₈** — Si–Si catenation is weak (§5.2) and the chains are attacked before they can grow. There are **no** silicon analogues of alkenes, alkynes or aromatics (no stable Si=Si, Si≡Si; §5.3).
 
 **Preparation:**
 
-2Mg + Si [Δ, absence of air] ⟶ Mg₂Si
+2Mg(s) + Si(s) [Δ, no air] ⟶ Mg₂Si(s)   (a salt-like silicide)
 
-Mg₂Si + H₂SO₄(dil.) ⟶ a mixture of silanes: mainly SiH₄, with decreasing amounts of Si₂H₆, Si₃H₈, Si₄H₁₀ and a little higher material
+Mg₂Si(s) + H₂SO₄(dil.) [or HCl] ⟶ **a mixture** of silanes (mainly SiH₄, then Si₂H₆, Si₃H₈, Si₄H₁₀ …) + MgSO₄
 
-SiCl₄ + LiAlH₄ [dry ether, low T] ⟶ SiH₄ + AlCl₃ + LiCl (single product, quantitative — the better route)
+SiCl₄(l) + LiAlH₄ [dry ether, low T] ⟶ SiH₄(g) + LiCl + AlCl₃   — **clean, single-product, high-yield** (the preferred lab route)
 
 Si₂Cl₆ + 6LiH ⟶ Si₂H₆ + 6LiCl
 
-## 17.2 Why silanes are far more reactive than alkanes
+## 17.2 Why silanes are so much more reactive than alkanes
 
-1. **The Si–H bond polarity is reversed.** Pauling electronegativity **Si 1.8 < H 2.1 < C 2.5**, so Si–H is **Si(δ+)–H(δ−)** — the opposite of C(δ−)–H(δ+). The electrophilic silicon is open to **nucleophilic attack** (alkanes have no such site).
-2. The larger silicon atom is easier for a reagent to approach.
-3. Silicon has accessible d orbitals, so a higher-coordinate transition state can form, lowering the activation energy.
+| | Alkane C–H | Silane Si–H |
+|:--|:--|:--|
+| **bond polarity** | C(δ−)–H(δ+) (EN: C 2.5 > H 2.1) | **Si(δ+)–H(δ−)** (EN: Si 1.8 < H 2.1) — **reversed** |
+| **electrophilic site** | none | **Si** — open to attack by any nucleophile (OH⁻, H₂O) |
+| **size of central atom** | small, well shielded | large — easy for a reagent to approach |
+| **vacant d orbitals** | none | present — allow a low-energy 5-coordinate transition state |
+| **result** | inert to air, water, dilute acid/base | **pyrophoric**, explodes with Cl₂, strong reducing agent, hydrolysed by a trace of base |
 
-Consequences: silanes are **spontaneously flammable in air**, explode with Cl₂, are **strong reducing agents**, and are hydrolysed even by pure water in a glass vessel (the trace of alkali leached from the glass is enough):
+SiH₄(g) + 2O₂(g) [ignites in air] ⟶ SiO₂(s) + 2H₂O
 
-Si₂H₆ + (4+n)H₂O [trace OH⁻] ⟶ 2SiO₂·nH₂O + 7H₂
+Si₂H₆(g) + (4+n)H₂O [trace OH⁻ — even the alkali leached from glass is enough] ⟶ 2SiO₂·nH₂O + 7H₂(g)
 
-**Hydrosilation** (route into the silicone industry):
+SiH₄ + 4Cl₂ [explosive] ⟶ SiCl₄ + 4HCl
 
-RCH=CH₂ + HSiCl₃ [Pt catalyst] ⟶ RCH₂CH₂SiCl₃
+SiH₄ reduces AgNO₃ → Ag, KMnO₄ → MnO₂, and forms **[SiH₃]⁻** with KH — a nucleophilic silyl anion.
 
-> **JEE TRAP (assertion–reasoning):** "Silane is more reactive than methane" (true) / "Si and C are both sp³-hybridised in the two hydrides" (true, but this does **not** explain the reactivity — the cause is the reversed Si–H polarity and the availability of silicon d orbitals).
+**Hydrosilylation** — the industrial reaction that couples silanes into the silicone/organosilicon world:
 
-## 17.3 Down the group
+RCH=CH₂ + HSiCl₃ [Pt (Speier / Karstedt) catalyst] ⟶ RCH₂CH₂SiCl₃   (syn addition, B/Si at the terminal C)
 
-| Hydride | Behaviour |
-|:--|:--|
-| SiₙH₂ₙ₊₂ | up to Si₈H₁₈; pyrophoric; strong reductants |
-| GeₙH₂ₙ₊₂ | up to about Ge₅H₁₂; less volatile/flammable, more resistant to water and acid/base |
-| SnH₄ (stannane) | much less stable, strongly reducing; only Sn₂H₆ beyond it |
-| PbH₄ (plumbane) | barely characterised, trace amounts only |
+> **JEE TRAP (assertion–reason):** "Silane is more reactive than methane" (true) / "both C and Si are sp³ in their hydrides" (true) — but the second statement **does not explain** the first. The real causes are the **reversed Si–H polarity** and **silicon's accessible d orbitals**. → mark (B).
 
-> **Thermal stability of MH₄** — Decreasing order: CH₄ ≫ SiH₄ > GeH₄ > SnH₄ > PbH₄
-> Note: The M–H bond weakens as the atom grows; carbon hydrides (all of organic chemistry) are in a class of their own because of strong C–H and C–C bonds.
+## 17.3 Trends down the group
+
+| Hydride series | Longest chain | Stability / reactivity |
+|:--|:--|:--|
+| CₙH₂ₙ₊₂ | unlimited | thermally robust, inert to water/acid/base |
+| SiₙH₂ₙ₊₂ | ~Si₈ | pyrophoric, hydrolysed by base, strong reductants |
+| GeₙH₂ₙ₊₂ | ~Ge₅ | less volatile and flammable; **not** hydrolysed by water or dilute acid/base (Ge–H less polar) |
+| Sn: **SnH₄** (+ trace Sn₂H₆) | Sn₂ | thermally unstable (decomposes to Sn + H₂ near room T), strongly reducing |
+| Pb: **PbH₄** | none | barely detected, made only in trace amounts electrochemically |
+
+> **Thermal stability of MH₄** — Decreasing: **CH₄ ≫ SiH₄ > GeH₄ > SnH₄ > PbH₄**.
+> Note: tracks the **falling M–H bond enthalpy** (C–H ≈ 413, Si–H ≈ 318, Ge–H ≈ 288, Sn–H ≈ 253 kJ mol⁻¹). Carbon's hydrides are a class apart — strong C–H *and* strong C–C.
+
+> **Reducing power of MH₄** — Increasing: CH₄ ≪ SiH₄ < GeH₄ < SnH₄ < PbH₄ (opposite trend — the weaker the M–H bond, the more easily H is given up).
+
+> **Boiling points of the tetrahydrides** — CH₄ (−161) < SiH₄ (−112) < GeH₄ (−88) < SnH₄ (−52 °C): a smooth rise with molar mass (dispersion forces); **no H-bonding anomaly** because none of C, Si, Ge, Sn is electronegative enough — contrast NH₃, H₂O, HF.
 
 # 18. Halides of Group 14
 
 ## 18.1 Tetrahalides MX₄
 
-- **All MX₄ are known except PbI₄.** Most are covalent, tetrahedral, volatile liquids/gases; the central atom is sp³.
-- **Exceptions: SnF₄ and PbF₄** are three-dimensional, ionic-type, high-melting solids (SnF₄ sublimes 705 °C, PbF₄ melts 600 °C).
-- **Hydrolysis:** CX₄ resist; SiX₄ … PbX₄ hydrolyse readily.
+- **All sixteen MX₄ are known except PbBr₄ and PbI₄** (§4.3). Almost all are **covalent, tetrahedral (sp³), volatile** liquids or gases — CF₄, SiF₄, CO... CCl₄ (b.p. 77 °C), SiCl₄ (57 °C), SnCl₄ (114 °C), GeCl₄ (83 °C).
+- **Ionic exceptions: SnF₄ and PbF₄** — 3-D fluorine-bridged lattices, high-melting solids (SnF₄ sublimes ~705 °C; PbF₄ m.p. ~600 °C). Small F⁻ and strong M–F bonds tip them ionic.
+- **Preparation:** direct halogenation of the element (§6.5); SiCl₄ from SiO₂ + C + Cl₂; CCl₄ from CS₂ + Cl₂.
 
-SiCl₄ + 4H₂O ⟶ Si(OH)₄ + 4HCl
+| Property | Trend down the group | Reason |
+|:--|:--|:--|
+| covalent character | fairly constant (all covalent, SnF₄/PbF₄ aside) | small EN differences |
+| **M–X bond enthalpy** | **falls** | larger, more diffuse orbitals |
+| **thermal / oxidative stability** | **CX₄ > SiX₄ > GeX₄ > SnX₄ > PbX₄** | weaker M–X + inert-pair effect (PbX₄ decomposes to PbX₂ + X₂) |
+| **ease of hydrolysis** | **CX₄ ≪ SiX₄ < GeX₄ < SnX₄ < PbX₄** | the heavier atom accepts the water lone pair more readily |
 
-SiF₄ + 2HF ⟶ 2H⁺ + [SiF₆]²⁻
+**Hydrolysis:**
 
-> **MOT LENS — SiCl₄ hydrolyses but CCl₄ does not.** Water's oxygen lone pair attacks silicon into a **five-coordinate (trigonal-bipyramidal) transition state**, using a silicon 3d orbital; loss of HCl and repetition gives Si(OH)₄, with **inversion** at silicon at each step (an SN2-like pathway). Carbon has no accessible d orbital and cannot exceed four bonds, so **there is no low-energy pathway** — CCl₄ is kinetically inert to water (only superheated steam forces CCl₄ + H₂O → COCl₂ + 2HCl).
->
-> **[SiF₆]²⁻ exists, [SiCl₆]²⁻ does not:** (1) six large Cl⁻ cannot be packed around the small Si⁴⁺; (2) the Si–Cl donor interaction is much weaker than Si–F. The stable fluoro-complex is why SiO₂ dissolves in HF.
+SiCl₄(l) + 4H₂O(l) ⟶ Si(OH)₄ + 4HCl   (fumes in moist air; violent with liquid water)
 
-**Charge-transfer colour.** SnI₄ and GeI₄ are **orange** — unusual for a main-group halide. The absorption corresponds to transfer of an electron from I⁻ to the metal (a momentary Sn(IV) → Sn(III)); it occurs only because iodine and tin have similar orbital energies. The chloride and bromide are colourless.
+SnCl₄ + 2H₂O ⟶ SnO₂·xH₂O + 4HCl   (suppressed by excess HCl → keeps SnCl₄ in solution)
 
-**PbI₄ does not exist** — Pb(IV) is a strong oxidant, I⁻ a reductant, so the system relaxes to **PbI₂ + I₂** (Section 4.3).
+SiF₄ + 2HF ⟶ H₂[SiF₆]   (SiF₄ hydrolysis stops here — the fluoro-complex is stable)
 
-> **Thermal / chemical stability of MX₄** — Decreasing order: **CX₄ > SiX₄ > GeX₄ > SnX₄ > PbX₄**
-> Note: the fall tracks the decreasing M–X bond energy and the inert-pair effect; PbX₄ (except PbF₄) is barely stable.
+> **MOT LENS — SiCl₄ hydrolyses, CCl₄ does not.** A water O lone pair attacks Si into a **5-coordinate trigonal-bipyramidal transition state** (using a Si 3d orbital); HCl leaves, Si inverts, and four such steps give Si(OH)₄ — an SN2-at-silicon pathway. **Carbon has no accessible d orbital and cannot exceed four bonds, so there is no low-energy pathway**: CCl₄ is kinetically inert to water and only superheated steam forces CCl₄ + H₂O → COCl₂ + 2HCl. This is the cleanest single demonstration of the "carbon cannot expand its octet" rule.
+
+> **[SiF₆]²⁻ exists but [SiCl₆]²⁻ does not:** (i) six large Cl⁻ cannot pack around the small Si; (ii) the Si–Cl → Si donor bond is far weaker than Si–F. (The same for [SnCl₆]²⁻ which *does* form — Sn is bigger.) The stability of [SiF₆]²⁻ is what lets HF dissolve glass.
+
+**Charge-transfer colour:** SnI₄ and GeI₄ are **orange** (dark red as solids) — an I⁻ → M(IV) charge-transfer absorption reaching into the visible because the iodine and metal orbital energies are close. The chlorides and bromides are colourless. A standard "exception to *p*-block halides are colourless".
+
+**PbI₄ / PbBr₄ do not exist** — Pb(IV) oxidises Br⁻ / I⁻ (§4.3); "PbBr₄" and "PbI₄" collapse to PbX₂ + X₂.
 
 ## 18.2 Catenated silicon halides
 
@@ -1585,13 +1608,15 @@ SiCl₄ + Si [Δ] ⟶ Si₂Cl₆ + higher SiₙCl₂ₙ₊₂
 
 ## 18.3 Dihalides MX₂
 
-- Stability rises sharply down the group: **CX₂ ≪ SiX₂ < GeX₂ < SnX₂ < PbX₂**.
-- **SiF₂** — generated at high T, trapped cold; polymerises on warming.
-- **SnF₂, SnCl₂** — white solids; SnCl₂ partially hydrolyses to basic Sn(OH)Cl; both give halide complexes [SnF₃]⁻ (pK ≈ 1), [SnCl₃]⁻ (pK ≈ 2). Gas-phase SnCl₂ is **bent** (about 95°) — stereochemically active lone pair.
-- **PbX₂** far more stable than PbX₄; all four PbX₂ can be made from a soluble Pb²⁺ salt + halide ion.
+- **Stability rises sharply down the group** (the inert-pair effect, §4.2): **CX₂ ≪ SiX₂ < GeX₂ < SnX₂ < PbX₂** — the exact mirror of the MX₄ order.
+- **CX₂** — only the fleeting carbenes (:CCl₂ etc.), never isolable.
+- **SiX₂, GeX₂** — SiF₂ is made at high T and trapped cold, then polymerises; **GeCl₂ disproportionates on warming** (2GeCl₂ → Ge + GeCl₄) — Ge(II) still wants to be Ge(IV).
+- **SnX₂** — genuine, stable solids. **SnCl₂** (white) partially hydrolyses in water to basic **Sn(OH)Cl** (why its solution goes cloudy and needs excess acid + a tin bar, §20.2); it is a **bent** molecule in the gas (∠Cl–Sn–Cl ≈ 95°, lone pair active) and a good **reducing agent** (§20.3). SnX₂ form halide complexes **[SnX₃]⁻**.
+- **PbX₂** — all four are stable, and are the **normal** lead halides (PbF₂, PbCl₂, PbBr₂, PbI₂ — the last three sparingly soluble, PbI₂ a bright yellow "golden rain" precipitate). Made simply from **Pb²⁺(aq) + X⁻(aq)**.
 
-> **Thermal / chemical stability of MX₂** — Increasing order: CX₂ ≪ SiX₂ < GeX₂ < SnX₂ < PbX₂
-> Note: the exact opposite trend to MX₄ — the inert-pair effect makes the lower halide more stable for the heavier atoms. Net effect: **GeX₄ is more stable than GeX₂, but PbX₂ is more stable than PbX₄.**
+> **Stability of MX₂** — Increasing: **CX₂ ≪ SiX₂ < GeX₂ < SnX₂ < PbX₂**.
+> **Stability of MX₄** — the reverse: CX₄ > SiX₄ > GeX₄ > SnX₄ > PbX₄.
+> Net: **GeX₄ ≫ GeX₂** (Ge(II) reducing / disproportionates) but **PbX₂ ≫ PbX₄** (Pb(IV) oxidising) — the crossover between Ge and Pb.
 
 ## 18.4 Carbon halides and fluorocarbons
 

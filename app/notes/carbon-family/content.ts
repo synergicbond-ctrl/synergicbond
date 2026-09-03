@@ -23,13 +23,15 @@ Non-metallic character decreases down a group, so heavier members are more metal
 
 ## 1.2 First-member anomaly, covalence and pi bonding
 
-The first member of a p-block group differs sharply from the rest because of its very small size, high ionisation enthalpy and high electronegativity, and — decisively — because the n = 2 valence shell has **only 2s and 2p orbitals, no d**. Three consequences follow and every carbon anomaly traces to one of them:
+The first member of a p-block group differs sharply from the rest for four linked reasons: its **very small size**, its **high ionisation enthalpy**, its **high electronegativity**, and — the decisive one — the n = 2 valence shell has **only 2s and 2p orbitals, no d**. Almost every "carbon is special" fact traces to one of three consequences.
 
-1. **Maximum covalence is 4** (one 2s + three 2p). CCl₄ exists; a "CCl₆²⁻" does not. Heavier congeners reach 6: [SiF₆]²⁻, [GeCl₆]²⁻, [Sn(OH)₆]²⁻.
-2. **Strong pπ–pπ multiple bonding** is possible only for period-2 atoms, whose 2p orbitals are compact and overlap each other well: C=C, C≡C, C=O, C=S, C≡N. The heavier atoms have large, diffuse p orbitals with poor lateral overlap, so they avoid pπ–pπ and instead form single-bonded catenated or three-dimensional network structures, sometimes with pπ–dπ character. **CO₂ is a discrete linear molecule; SiO₂ is a giant network of Si–O single bonds** — the single most important illustration in this chapter.
-3. Small size also makes the **C–C bond exceptionally strong** (≈ 348 kJ mol⁻¹, comparable to C–O), which is why catenation is extensive for carbon and collapses down the group.
+**Consequence 1 — maximum covalence is 4** (one 2s + three 2p, eight electrons around the atom). CCl₄ exists; a hypothetical "CCl₆²⁻" does not, because carbon has no fifth or sixth valence orbital to use. The heavier congeners have empty, energetically accessible nd orbitals and reach six: **[SiF₆]²⁻, [GeCl₆]²⁻, [Sn(OH)₆]²⁻, [PbCl₆]²⁻**. This one difference governs the whole "CCl₄ inert / SiCl₄ hydrolyses" contrast (§18.1) and the "N(CH₃)₃ pyramidal / N(SiH₃)₃ planar" contrast (§19.2).
 
-> **Key Point:** Carbon cannot expand its octet and has a maximum covalence of four. In tetravalent compounds it has exactly eight electrons around it and no low-lying vacant orbital, so it is "electron precise" — it neither donates nor accepts an extra pair. This is why CCl₄ is not hydrolysed while SiCl₄ hydrolyses instantly.
+**Consequence 2 — strong pπ–pπ multiple bonding.** Two 2p orbitals on adjacent period-2 atoms are compact and similar in size, so their sideways (π) overlap integral is large: carbon forms **C=C, C≡C, C=O, C=S, C≡N** readily. A 3p (or larger) orbital is diffuse and node-bearing; sideways overlap between two large p orbitals, or between a large 3p and a compact 2p, is poor, so silicon and the heavier atoms **avoid pπ–pπ** and instead build **single-bonded catenated or three-dimensional networks** (with some pπ–dπ character). The textbook illustration: **CO₂ is a discrete linear O=C=O molecule; SiO₂ is a giant covalent network of Si–O single bonds** — different physical states from the same stoichiometry.
+
+**Consequence 3 — an exceptionally strong homonuclear bond.** Small atoms with no inner-shell repulsion between the bonded cores give short, strong single bonds. The **C–C bond (≈ 348 kJ mol⁻¹) is about as strong as C–O (≈ 358) and stronger than C–Cl (≈ 328)** — so carbon has no energetic reason to prefer an oxide or halide over a C–C chain, and **catenation is unlimited**. Down the group M–M bond enthalpy collapses (Si–Si ≈ 297, Ge–Ge ≈ 260, Sn–Sn ≈ 240 kJ mol⁻¹) while M–O stays strong (**Si–O ≈ 452**), so catenation dies out and oxide/network chemistry takes over (§5.2).
+
+> **Key Point:** Carbon cannot expand its octet and has a maximum covalence of four. In a tetravalent compound it has exactly eight electrons around it and **no low-lying vacant orbital**, so it is "electron precise" — it neither donates nor accepts an extra pair. Silicon, with empty 3d orbitals just above the valence level, is **not** electron precise: it can accept a lone pair into a five- or six-coordinate transition state. This is the single reason CCl₄ is not hydrolysed while SiCl₄ hydrolyses instantly.
 
 ## 1.3 Group 14 master data
 
@@ -54,41 +56,87 @@ The first member of a p-block group differs sharply from the rest because of its
 
 *Covalent radii (Å), useful for order questions: C 0.77, Si 1.17, Ge 1.22, Sn 1.40, Pb 1.46.*
 
-## 1.4 Occurrence facts that are easy to miss
+**Reading the irregular steps.** Effective nuclear charge on the outer electron rises down the group even though a shell is added, because the newly interposed core electrons shield badly:
 
-- **Carbon** is the 17th most abundant element by mass in the crust. Free: graphite, diamond, coal. Combined: metal carbonates, hydrocarbons (petroleum, natural gas), and CO₂ (about **0.03%** of air by volume). Naturally occurring carbon is stable ¹²C and ¹³C; trace radioactive **¹⁴C** (half-life **5770 years**) forms continuously in the upper atmosphere and is the basis of radiocarbon dating.
-- **Silicon** is the **second most abundant** crustal element (**27.7%** by mass) after oxygen (45.5%). It never occurs free — only as **silica** (sand, quartz, flint) and **silicates**. Basis of ceramics, glass and cement.
-- **Germanium** occurs only in traces (in some zinc ores and in coal ash).
-- **Tin** — chief ore **cassiterite, SnO₂**.
-- **Lead** — chief ore **galena, PbS**; also anglesite PbSO₄ and cerussite PbCO₃.
+| Step | Interposed core | Shielding quality | Size increase |
+|:--|:--|:--|:--|
+| C → Si | 8 (a full 2p³ + 3s) — a normal Ne core | good | **large** (77 → 118 pm) |
+| Si → Ge | + **3d¹⁰** (first transition series) | poor (d-block contraction) | **small** (118 → 122 pm) |
+| Sn → Pb | + **4f¹⁴** (the lanthanoids) *and* 5d¹⁰ | very poor (lanthanoid contraction) | **small** (140 → 146 pm) |
 
-> **JEE TRAP:** Metallic character *increases* down Group 14 (C, Si non-metals; Ge metalloid; Sn, Pb metals) — the opposite of the trend across a period. Ultrapure Si and Ge are the classic semiconductors; doping with a Group 15 element gives n-type, with a Group 13 element gives p-type material.
+The same poor d/f shielding is why ΔᵢH rises Sn → Pb (§3.2), why Ge and Pb electronegativities do not fall as expected (§3.3), and why the +2 state gains ground down the group (§4.2).
 
-## 1.5 Radiocarbon dating
+## 1.4 Occurrence, abundance and isotopes
 
-Cosmic-ray neutrons convert atmospheric ¹⁴N into radioactive ¹⁴C:
+| Element | Crustal abundance (by mass) | Free / native | Principal combined forms |
+|:--|:--|:--|:--|
+| **C** | ≈ 0.02 % (17th) | graphite, diamond, coal | metal **carbonates** (limestone, dolomite, magnesite), **hydrocarbons** (petroleum, natural gas, coal), atmospheric **CO₂** (≈ 0.03 % by volume), dissolved HCO₃⁻ in the oceans, all living matter |
+| **Si** | **27.7 %** (2nd, after O 45.5 %) | never free | **silica** — sand, quartz, flint, agate, opal; **silicates and aluminosilicates** — feldspar, mica, clay, asbestos, zeolite (the bulk of the crust and mantle) |
+| **Ge** | ≈ 1.5 ppm (54th) | none | trace substituent in **zinc sulphide ores** and in **coal ash / flue dust** (the main commercial source) |
+| **Sn** | ≈ 2 ppm | rare native metal | **cassiterite SnO₂** (the only important ore); stannite Cu₂FeSnS₄ |
+| **Pb** | ≈ 14 ppm | rare native metal | **galena PbS** (chief ore); anglesite PbSO₄; cerussite PbCO₃; pyromorphite Pb₅(PO₄)₃Cl |
 
-¹⁴N + n [upper atmosphere] ⟶ ¹⁴C + ¹H
+**Isotopes — the examinable points.**
 
-The ¹⁴C is oxidised to CO₂, fixed by photosynthesis and passed up the food chain, so every living organism keeps an approximately steady ¹⁴C activity. After death, intake stops and β-decay slowly lowers the activity. Comparing the residual activity of once-living carbonaceous material with a modern reference gives its age. Take t½ = **5770 y** for this syllabus (the modern accepted value is 5730 y). The method applies only to once-living material and cannot date ordinary inorganic rock.
+| Element | Stable isotopes | Notes |
+|:--|:--|:--|
+| C | ¹²C (98.9 %), ¹³C (1.1 %) | ¹²C is the atomic-mass standard (exactly 12); ¹³C is the NMR-active nucleus; radioactive **¹⁴C** (trace, t½ ≈ 5730 y) is made continuously in the upper atmosphere |
+| Si | ²⁸Si (92.2 %), ²⁹Si (4.7 %), ³⁰Si (3.1 %) | ²⁸Si is being adopted as a mass/kilogram standard (the "silicon sphere") |
+| Sn | **ten** stable isotopes (¹¹²–¹²⁴Sn) | **the largest number of stable isotopes of any element** — a consequence of Z = 50 being a "magic number" |
+| Pb | ²⁰⁴, ²⁰⁶, ²⁰⁷, ²⁰⁸Pb | ²⁰⁶Pb, ²⁰⁷Pb, ²⁰⁸Pb are the stable **end-products of the ²³⁸U, ²³⁵U and ²³²Th decay series** — so the Pb isotope ratio of a rock dates it (U–Pb dating); the atomic mass of lead varies slightly with its geological source |
+
+> **JEE TRAP:** Metallic character *increases* down Group 14 (C, Si non-metals; Ge metalloid; Sn, Pb metals) — the opposite of the trend across a period. Ultrapure Si and Ge are the classic **semiconductors**; doping with a Group 15 element (extra electron) gives **n-type**, with a Group 13 element (electron hole) gives **p-type**.
+
+## 1.5 Radiocarbon dating — the method and the arithmetic
+
+**Formation.** Cosmic-ray secondary neutrons in the upper atmosphere convert ¹⁴N to radioactive ¹⁴C:
+
+¹⁴₇N + ¹₀n [upper atmosphere] ⟶ ¹⁴₆C + ¹₁H
+
+**Uptake.** The ¹⁴C is oxidised to ¹⁴CO₂, mixed through the atmosphere, fixed by photosynthesis and passed along every food chain, so a **living** organism holds its ¹⁴C : ¹²C ratio at the (roughly constant) atmospheric value — an activity of about **15.3 disintegrations per minute per gram of carbon**.
+
+**Decay.** At death, intake stops. The ¹⁴C decays by β⁻ emission back to ¹⁴N:
+
+¹⁴₆C ⟶ ¹⁴₇N + ⁰₋₁e   (t½ = 5730 y; take **5770 y** for this syllabus)
+
+**Age from activity.** First-order decay: $A = A_0 e^{-\lambda t}$ with $\lambda = \dfrac{\ln 2}{t_{1/2}}$, so
+
+$$t = \frac{t_{1/2}}{\ln 2}\,\ln\!\frac{A_0}{A} = \frac{2.303\,t_{1/2}}{0.693}\,\log\frac{A_0}{A}$$
+
+- Activity fallen to **½** of modern → **one half-life** ≈ 5730 y.
+- Activity fallen to **¼** → **two half-lives** ≈ 11 460 y.
+- A worked case: a wooden sample gives 7.65 dis min⁻¹ g⁻¹ against a modern 15.3 → $A_0/A = 2$ → t = one half-life ≈ **5730 y**.
+
+**Limits.** Works only on **once-living carbonaceous** material; useless on ordinary inorganic rock (no biological ¹⁴C uptake). The practical ceiling is about **50 000 y** (≈ 9 half-lives — the residual activity becomes too small to measure); recent fossil-fuel CO₂ (dead carbon) and 20th-century bomb ¹⁴C both perturb the modern reference.
 
 # 2. Group 14 identity and electronic configuration
 
-Carbon is a typical non-metal that forms an astonishing range of compounds. Silicon is the backbone of mineral chemistry and of the electronics industry. Germanium is a metalloid bridge. Tin and lead are soft, low-melting metals known since antiquity — lead sheet lined the floor of the Hanging Gardens of Babylon to stop water escaping.
+Carbon is a typical non-metal that forms an astonishing range of compounds — an entire branch of chemistry. Silicon is the backbone of mineral chemistry and of the electronics industry. Germanium is a metalloid bridge (a genuine semiconductor, valued before ultrapure silicon was available). Tin and lead are soft, low-melting metals known since antiquity; lead sheet is said to have lined the floor of the Hanging Gardens of Babylon to stop water escaping.
 
-## 2.1 Electronic configurations and oxidation states
+## 2.1 Electronic configurations, valence state and oxidation states
 
-| Element | Z / atomic mass | Ground-state configuration | Valence shell | Important oxidation states |
-|:--:|:--:|:--:|:--:|:--:|
-| C | 6 / 12.01 | [He] 2s² 2p² | 2s² 2p² | −4, +2, **+4** |
-| Si | 14 / 28.09 | [Ne] 3s² 3p² | 3s² 3p² | **+4**, (+2) |
-| Ge | 32 / 72.60 | [Ar] 3d¹⁰ 4s² 4p² | 4s² 4p² | **+4**, +2 (few) |
-| Sn | 50 / 118.71 | [Kr] 4d¹⁰ 5s² 5p² | 5s² 5p² | **+2**, **+4** |
-| Pb | 82 / 207.2 | [Xe] 4f¹⁴ 5d¹⁰ 6s² 6p² | 6s² 6p² | **+2**, +4 |
+| Element | Z / atomic mass | Ground-state configuration | Core type | Valence shell | Common oxidation states |
+|:--:|:--:|:--:|:--|:--:|:--:|
+| C | 6 / 12.011 | [He] 2s² 2p² | noble gas | 2s² 2p² | −4, −3 … +2, **+4** |
+| Si | 14 / 28.086 | [Ne] 3s² 3p² | noble gas | 3s² 3p² | **+4**, (+2 at high T) |
+| Ge | 32 / 72.63 | [Ar] **3d¹⁰** 4s² 4p² | pseudo-noble-gas (+ d¹⁰) | 4s² 4p² | **+4**, +2 (reducing) |
+| Sn | 50 / 118.71 | [Kr] **4d¹⁰** 5s² 5p² | pseudo-noble-gas (+ d¹⁰) | 5s² 5p² | **+2**, **+4** (both common) |
+| Pb | 82 / 207.2 | [Xe] **4f¹⁴ 5d¹⁰** 6s² 6p² | + f¹⁴ + d¹⁰ | 6s² 6p² | **+2**, +4 (oxidising) |
 
-C and Si have noble-gas cores; Ge additionally carries a filled 3d¹⁰; Sn a filled 4d¹⁰; Pb both 4f¹⁴ and 5d¹⁰. Poor shielding by these d and (especially) f electrons is the root of the irregular radius and ionisation-enthalpy trends.
+- **C and Si** have clean noble-gas cores. **Ge and Sn** carry an extra filled d¹⁰; **Pb** carries 4f¹⁴ *and* 5d¹⁰. These d and (especially) f electrons **shield the nuclear charge poorly**, and that single fact drives the irregular radius trend (§1.3, §3.1), the rise in ΔᵢH from Sn to Pb (§3.2), and the growing stability of the +2 state (§4.2).
 
-> **JEE TRAP:** Group 14 "other oxidation states" are **+2 and −4**. Carbon's negative states (−4 in CH₄, in methanide carbides) are examinable; Si/Ge/Sn/Pb do not show negative states.
+**Valence state and the +4 oxidation state.** The ground state ns²np² has only **two unpaired electrons**, so it would be divalent. To become tetravalent (as in CH₄, SiF₄), one ns electron is **promoted** to the empty np orbital: ns²np² → ns¹np³, giving four unpaired electrons in a set of **sp³ hybrids**. The promotion costs energy, but it is more than repaid by forming **two extra bonds** (four strong M–X bonds instead of two). Down the group the ns–np gap widens (the ns level sinks relative to np — most sharply at Pb, from relativistic contraction of the 6s orbital), the promotion cost rises, and the M–X bonds that must repay it get weaker — so the divalent (+2) state becomes competitive and finally dominant (§4.2).
+
+> **JEE TRAP:** Group 14 "other oxidation states" are **+2 and −4**. Carbon's negative states (−4 in CH₄ and in the methanide carbides Be₂C, Al₄C₃; −3, −2, −1 in longer hydrocarbons) are real and examinable; **Si, Ge, Sn and Pb do not form negative oxidation states** — SiH₄ is written with H as δ⁻ only because EN(H) > EN(Si), not because Si is −4 in any ionic sense.
+
+## 2.2 Discovery and the place in history
+
+| Element | Known since | Note |
+|:--|:--|:--|
+| **C** | prehistory (charcoal, soot); diamond antiquity | recognised as an element by Lavoisier (1789); ¹⁴C dating (Libby, Nobel 1960); fullerenes (1985, Nobel 1996) |
+| **Sn, Pb** | prehistory | **Bronze Age** = Cu + Sn alloy; Roman plumbing (*plumbum* → "plumber", symbol Pb) and lead cosmetics/wine sweeteners (chronic poisoning) |
+| **Si** | isolated 1824 (Berzelius, by K reduction of K₂SiF₆) | the second most abundant element took until the 19th century to isolate because SiO₂/silicates are so stable |
+| **Ge** | 1886 (Winkler) | Mendeleev had **predicted it as "eka-silicon"** in 1871 (density, oxide formula, chloride b.p.) — a landmark confirmation of the periodic law |
 
 # 3. Atomic and physical properties — data and complete orders
 
@@ -104,13 +152,21 @@ A new shell is added at each step, but the increase is very uneven. **C → Si**
 | Sn | 140 | 69 | 118 | – |
 | Pb | 146 | 78 | 119 | small Sn→Pb step (4f¹⁴ shielding) |
 
-> **Covalent radius** — Increasing order: C < Si < Ge < Sn < Pb
+> **Covalent (atomic) radius** — Increasing order: C < Si < Ge < Sn < Pb
 > Decreasing order: Pb > Sn > Ge > Si > C
-> Note: The order itself is regular; what is irregular is the *size of each step* — large C→Si, small Si→Ge and Sn→Pb.
+> Note: the *order* is regular; what is irregular is the *size of each step* — a large C→Si jump, then small Si→Ge and Sn→Pb steps because of d-block and lanthanoid contraction.
 
-> **Shielding efficiency within a shell** — Increasing order: f < d < p < s
+> **M⁴⁺ ionic radius** (crystal values; no free aqueous M⁴⁺) — Increasing order: Si⁴⁺ (40) < Ge⁴⁺ (53) < Sn⁴⁺ (69) < Pb⁴⁺ (78 pm)
+> Note: even the largest, Pb⁴⁺, is tiny and enormously polarising, so a bare M⁴⁺ salt is never formed — every M(IV) compound is covalent (§4.1).
+
+> **M²⁺ ionic radius** — Increasing order: Ge²⁺ (73) < Sn²⁺ (118) < Pb²⁺ (119 pm)
+> Note: Sn²⁺ and Pb²⁺ are large, low-charge ions, so their salts (SnF₂, PbCl₂, Pb(NO₃)₂, PbSO₄) *can* be genuinely ionic — the +2 state is where Group 14 ionic chemistry lives.
+
+> **Ionic potential (z/r)** — for M²⁺: Ge²⁺ > Sn²⁺ ≈ Pb²⁺; for M⁴⁺ all values are huge. Note: high z/r → strong polarisation of anions → covalency and cationic hydrolysis; this is why aqueous Sn⁴⁺/Pb⁴⁺ exist only as hydroxo/oxo species and why even Sn²⁺ solutions are acidic and need excess acid to stop them going cloudy.
+
+> **Shielding efficiency of one electron within a shell** — Increasing order: f < d < p < s
 > Decreasing order: s > p > d > f
-> Note: Poor d/f shielding raises effective nuclear charge and is the reason Ge and Pb are barely larger than Si and Sn.
+> Note: an s electron penetrates close to the nucleus and shields well; d and especially f electrons are held out in lobes and shield poorly. Poor d/f shielding raises the effective nuclear charge on the valence electrons and is why Ge and Pb are barely larger than Si and Sn, and why their outer electrons are held unexpectedly tightly.
 
 ## 3.2 Ionisation enthalpy
 
@@ -135,9 +191,14 @@ A new shell is added at each step, but the increase is very uneven. **C → Si**
 > Note: two irregularities break the "decreases down the group" expectation. (i) **Sn → Pb rises** at every ionisation: the 4f¹⁴ and 5d¹⁰ electrons of Pb shield the 6s/6p electrons poorly, so Zₑff on them is high — this is why **Pb > Sn** throughout. (ii) From ΔᵢH₃ onward **Ge overtakes Si**: the third and fourth electrons of Ge come out against the poorly shielding 3d¹⁰ core (which Si does not have), so Ge's later ionisations — and therefore the **sum** — cost more than Si's. The old "Pb before Si in the sum" ranking is wrong: Si (9945) > Pb (9328).
 
 > **Sum of the first four ionisation enthalpies** — Decreasing order: **C ≫ Ge > Si > Pb > Sn**
-> Note: For every element the sum is enormous (about 9 000–14 000 kJ mol⁻¹). Removing four electrons is never repaid by lattice or hydration energy, so **all M⁴⁺ compounds are covalent** — there is no ionic M⁴⁺ salt.
+> Note: For every element the sum is enormous (**≈ 9 000–14 300 kJ mol⁻¹**). Compare that with the lattice enthalpy of a hypothetical ionic "MCl₄" (a small M⁴⁺ plus 4 Cl⁻ would give at most ~5 000–6 000 kJ mol⁻¹) or the hydration enthalpy of M⁴⁺ (~−4 000 to −6 000 kJ mol⁻¹): the four-electron cost is never repaid, so **a free M⁴⁺ ion is never formed and every M(IV) compound is covalent**.
 
-> **JEE TRAP:** "ΔᵢH decreases regularly down Group 14" is **wrong**. Also note "How many Group 14 elements have ΔᵢH₁ higher than Pb?" → answer **3** (C, Si, Ge).
+**The IE pattern in one look.** Each successive electron is pulled from a more positive ion, so IE₁ < IE₂ < IE₃ < IE₄ for every element (roughly IE₂ ≈ 2× IE₁, IE₃ ≈ 4× IE₁). There is **no huge jump** between IE₄ and IE₅ of the type seen at the end of a valence shell (Group 1 shows it after IE₁, Group 2 after IE₂) — because after four electrons Group 14 has emptied only its np and ns, not broken into a noble-gas core.
+
+> **Electron gain enthalpy ΔₑgH** (kJ mol⁻¹, more negative = more favourable) — C ≈ −122, Si ≈ **−134**, Ge ≈ −119, Sn ≈ −107, Pb ≈ −35.
+> Order (most to least exothermic): **Si > C > Ge > Sn > Pb**. Note: Si releases *more* energy than C on adding an electron because the small 2p sub-shell of carbon is already crowded (electron–electron repulsion), exactly the C-vs-Si anomaly seen in Groups 15–17. Pb's value is small — consistent with its reluctance to reach −4 or +4 and its preference for +2.
+
+> **JEE TRAP:** "ΔᵢH decreases regularly down Group 14" is **wrong** on two counts: (i) Sn → Pb *rises* at every ionisation; (ii) from ΔᵢH₃ onward Ge exceeds Si. "How many Group 14 elements have ΔᵢH₁ higher than Pb?" → **3** (C, Si, Ge).
 
 ## 3.3 Electronegativity and metallic character
 
@@ -149,17 +210,26 @@ A new shell is added at each step, but the increase is very uneven. **C → Si**
 | Sn | 1.8 | soft metal |
 | Pb | 1.9 | soft metal |
 
-> **Electronegativity** — Decreasing order: C > Pb ≈ Si ≈ Ge ≈ Sn
-> Note: Falls sharply C → Si, then stays almost constant Si → Pb because d/f contraction holds the outer electrons of the heavier atoms about as tightly as size increase loosens them.
+> **Electronegativity** — Decreasing order: C (2.5) > Pb (1.9) ≳ Si ≈ Ge ≈ Sn (1.8)
+> Increasing order: Si ≈ Ge ≈ Sn < Pb < C.
+> Note: falls sharply C → Si, then stays almost flat (a slight rise to Pb). Size increase down the group would lower EN steadily, but the poorly shielding d/f cores hold the heavier atoms' bonding electrons about as tightly, so the two effects cancel. The **C–Si electronegativity gap (0.7)** is what makes Si–H polarised **Siδ⁺–Hδ⁻** (reverse of Cδ⁻–Hδ⁺) — the root of silane reactivity (§17.2).
 
-> **Metallic / electropositive character** — Increasing order: C < Si < Ge < Sn < Pb
-> Note: Reflected in structure (covalent network → metallic lattice), in appearance (lustre), in physical properties (malleability, conductivity) and in chemistry (tendency to form M²⁺ ions, oxide/hydroxide basicity).
+> **Metallic / electropositive character** — Increasing order: **C < Si < Ge < Sn < Pb**
+> Note: shows up in every layer of the chemistry — structure (covalent 3-D network → close-packed metal lattice), appearance (dull → lustrous), mechanical/electrical behaviour (brittle insulator → malleable conductor), and reactions (no cation → genuine M²⁺ salts; acidic oxide CO₂/SiO₂ → amphoteric SnO/SnO₂/PbO → almost basic; no reaction with acid → dissolves in acid). C and Si are non-metals, Ge is a **metalloid** (a true semiconductor: σ rises with T, opposite to a metal), Sn and Pb are metals.
+
+> **Nature of the dioxide MO₂** — acidic strength decreasing: **CO₂ > SiO₂ > GeO₂ > SnO₂ > PbO₂** (CO₂, SiO₂, GeO₂ acidic; SnO₂, PbO₂ amphoteric). Nature of the monoxide MO: CO neutral; GeO acidic (weakly, tending amphoteric); SnO, PbO amphoteric. Note: for a given element the **higher oxide is the more acidic** (CO₂ > CO; PbO₂ > PbO) — the metal is in a higher, more polarising oxidation state.
 
 ## 3.4 Physical state, allotropy, melting and boiling points
 
-1. **C, Si, Ge** have the diamond-type covalent network; α-Sn (grey) is also diamond-type, β-Sn (white) is metallic; Pb exists only in the metallic form. Melting a covalent network means breaking strong C–C / Si–Si bonds, so melting points are very high; Sn and Pb are metals and melt low.
-2. **Ge is unusual** — the liquid *expands* on freezing (like Ga and Bi), so solid Ge is less dense than liquid Ge.
-3. **α-Sn ⇌ β-Sn** at 13.2 °C. In very cold weather white metallic tin slowly crumbles to the grey powder — "tin pest" / "tin disease".
+1. **C, Si, Ge and α-Sn** all take the **diamond-type covalent network** (each atom sp³, four neighbours). Melting it means breaking strong M–M covalent bonds, so the melting points are very high and fall as the bond weakens: C (m.p. ≈ 4373 K — **the highest of any element**, as graphite/diamond) > Si (1693) > Ge (1218). **Pb** and (above 13 °C) **Sn** are close-packed **metals** held only by metallic bonding, so they melt far lower (505–600 K).
+2. **Ge and Sn(grey) expand on freezing** (like water, Ga, Bi): the open diamond-type solid is less dense than the liquid, so solid Ge floats on molten Ge.
+3. **Allotropy of tin** — three forms:
+   - **α-tin (grey)**, diamond-type, non-metallic, stable **below 13.2 °C**;
+   - **β-tin (white)**, tetragonal, metallic, the ordinary form, stable 13.2–161 °C;
+   - **γ-tin (brittle, rhombic)** above 161 °C.
+   The α ⇌ β change is slow but real: in prolonged cold, white tin crumbles to grey powder — **"tin pest" / "tin disease"** (blamed for failed organ pipes and Scott's Antarctic fuel cans). Traces of Bi or Sb suppress it.
+4. **Allotropy of carbon** is covered in full in Section 7 (diamond, graphite, fullerenes, amorphous forms) — the richest allotropy of any element.
+5. Silicon and germanium have only the one (diamond-type) crystal form under ordinary pressure; **Pb has only the metallic (fcc) form**.
 
 | Element | Density / g cm⁻³ | m.p. / K | b.p. / K |
 |:--:|:--:|:--:|:--:|
@@ -182,11 +252,15 @@ A new shell is added at each step, but the increase is very uneven. **C → Si**
 
 ## 4.1 The +4 state and why its compounds are covalent
 
-The configuration ns²np² gives group state +4. Carbon and silicon are almost always +4; even so, the four bonds are **covalent**, because:
+The configuration ns²np² gives the group oxidation state **+4**. Carbon and silicon are almost always +4; germanium prefers +4; and yet **every M(IV) compound is covalent** — there is no ionic M⁴⁺ salt anywhere in the group. Three arguments, all energetic:
 
-1. The sum ΔᵢH₁ + ΔᵢH₂ + ΔᵢH₃ + ΔᵢH₄ (Section 3.2) is far too large to be repaid by any lattice or hydration energy — a bare M⁴⁺ ion is never formed.
-2. Group 14 electronegativities are moderate, so the electronegativity gap with most partners is too small for ionic bonding.
-3. The four bonds are made by promoting one 2s electron to 2p, giving four unpaired electrons and a tetrahedral (sp³) arrangement; the promotion cost is repaid by forming two extra strong bonds.
+1. **The ionisation cost is prohibitive.** ΔᵢH₁ + ΔᵢH₂ + ΔᵢH₃ + ΔᵢH₄ is ≈ 9 000–14 300 kJ mol⁻¹ (§3.2). No lattice enthalpy (a small, highly charged M⁴⁺ with four anions would give at best ~5 000–6 000 kJ mol⁻¹) and no hydration enthalpy (~−4 000 to −6 000 kJ mol⁻¹ for M⁴⁺) can repay it. So the four electrons are **shared, not transferred**.
+2. **Fajans' rules point the same way.** A putative M⁴⁺ would be small and 4+ charged → enormous polarising power; its partner anions are polarisable → the "ionic" bond is pulled over to covalent. High charge, small cation, large anion — all three Fajans factors favour covalency, most strongly for the +4 state.
+3. **The electronegativity gap is too small.** Group 14 EN values (1.8–2.5) sit close to those of common bonding partners (Cl 3.0, O 3.5, H 2.1), so the difference rarely exceeds the ~1.7–2 needed for appreciable ionic character.
+
+**Making the four bonds.** The ground state ns²np² has two unpaired electrons. Promotion ns²np² → ns¹np³ (one s electron into the empty p orbital) gives **four unpaired electrons** and, after sp³ hybridisation, a **regular tetrahedron**. The promotion energy is small compared with the energy released by forming **two additional M–X bonds**, so tetravalency is favourable — for carbon and silicon, overwhelmingly so.
+
+**Aqueous M(IV).** Because M⁴⁺ cannot exist free, "Sn⁴⁺(aq)" and "Pb⁴⁺(aq)" are really **hydroxo / hydrated-oxide species** — [Sn(OH)₆]²⁻ in base, SnO₂·xH₂O (metastannic/α-stannic acid) from strong acid; Si(IV) in water is SiO₂·xH₂O or [SiF₆]²⁻, never [Si(H₂O)₆]⁴⁺.
 
 > **MOT LENS — the isoelectronic C/O linear species.** Several linear molecules and ions built from C, O and N recur through this chapter and share a common MO description:
 > - **CO** — isoelectronic with N₂ (14 valence electrons): σ2s² σ*2s² π2p⁴ σ2p², **bond order 3**, with a σ lone pair on carbon and a small lone pair on oxygen. The carbon lone pair, in a weakly antibonding σ orbital, is the electron pair that makes CO a ligand.
@@ -197,29 +271,61 @@ The configuration ns²np² gives group state +4. Carbon and silicon are almost a
 
 ## 4.2 The +2 state and the inert-pair effect
 
-Down the group the valence **ns² pair takes progressively less part in bonding** and stays as a lone pair on the atom in its lower oxidation state. The energetic cause: forming M(IV) needs promotion/reorganisation of the ns² pair, and the extra M–X bond energy must repay that cost. Down Group 14 the **M–X bond energy falls** while the promotion cost stays high — and for lead the 6s pair is further stabilised by **relativistic contraction**. So +2 wins for the heavy members.
+Down the group the valence **ns² pair takes progressively less part in bonding** and stays behind as a non-bonding "lone pair" on the atom in its lower (+2) oxidation state. This is the **inert-pair effect** — a name for the *observation*, not the *cause*.
 
-| Element | +4 behaviour | +2 behaviour |
-|:--:|:--|:--|
-| C | essentially the only state | rare (CO, carbenes) |
-| Si | essentially the only state | high-T / transient only (SiF₂) |
-| Ge | stable | few compounds; **Ge(II) is a reducing agent** |
-| Sn | stable, but only mildly favoured over +2 | common; **Sn(II) is a reducing agent** |
-| Pb | strongly **oxidising** (PbO₂, PbCl₄) | the normal, stable state |
+**The energetics.** Going from M(II) to M(IV) means unpairing and reorganising the ns² pair and forming **two extra M–X bonds**. It is favourable only if those two bond energies exceed the reorganisation cost. Down the group:
 
-> **Stability of +2 state** — Increasing order: C < Si < Ge < Sn < Pb
-> **Stability of +4 state** — Increasing order: Pb < Sn < Ge < Si ≈ C
-> Note: The crossover sits between **Ge and Pb**: GeX₄ is more stable than GeX₂, but PbX₂ is far more stable than PbX₄.
+- the **M–X bond enthalpy falls steadily** (larger, more diffuse orbitals; longer, weaker bonds);
+- the **ns → np promotion / reorganisation cost stays high** and, for the 6th period, actually *rises* — the **6s orbital is contracted and stabilised by relativistic effects** (inner electrons in a high-Z atom move fast enough for relativistic mass increase to shrink the s orbitals), so the 6s² pair of lead is held especially tightly.
 
-> **REDOX ANCHOR (predicts most reactions in Sections 20–21):** Ge(II) reducing · **Sn(II) reducing** · **Pb(IV) / PbO₂ oxidising** · Tl(III) oxidising (Group 13 analogy). Sn²⁺ → Sn⁴⁺ and Pb⁴⁺ → Pb²⁺ are the two half-reactions you will use again and again.
+So the "extra two bonds" stop paying for themselves. The crossover is between Ge and Pb.
+
+| M–Cl bond | Mean bond enthalpy / kJ mol⁻¹ (representative) | Consequence |
+|:--:|:--:|:--|
+| C–Cl | ≈ 327 | +4 is the only state |
+| Si–Cl | ≈ 381 | +4 only |
+| Ge–Cl | ≈ 340 | +4 dominant; GeCl₂ known but disproportionates on heating (GeCl₂ → Ge + GeCl₄) |
+| Sn–Cl | ≈ 315 | **both** SnCl₂ and SnCl₄ stable and common; SnCl₂ is a mild reductant |
+| Pb–Cl | ≈ 244 | PbCl₂ is the stable chloride; PbCl₄ is an unstable yellow oil that decomposes to PbCl₂ + Cl₂ near room T |
+
+**Row-by-row.**
+
+- **C** — +4 only. C(II) exists only as CO (stabilised by π back-bonding), the carbenes, and isocyanides — all with special bonding, never a simple C²⁺.
+- **Si** — +4 only under ordinary conditions. SiF₂ and SiCl₂ are generated at high temperature and trapped cold; they polymerise on warming.
+- **Ge** — +4 strongly preferred; **Ge(II) is a reducing agent** (Ge²⁺ → Ge⁴⁺). GeO and GeX₂ exist but are easily oxidised.
+- **Sn** — the balance point. Sn(II) and Sn(IV) are both everyday; **Sn(II) is a moderate reducing agent** (E°(Sn⁴⁺/Sn²⁺) ≈ +0.15 V) — the basis of the whole §20 reaction map.
+- **Pb** — **+2 is normal and stable; Pb(IV) is a powerful oxidising agent** (E°(Pb⁴⁺/Pb²⁺) ≈ +1.7 V; PbO₂, Pb₃O₄, PbCl₄, Pb(OAc)₄ all oxidise). PbBr₄ and PbI₄ do not exist at all (§4.3).
+
+> **Stability of the +2 state** — Increasing order: **C < Si < Ge < Sn < Pb**
+> **Stability of the +4 state** — Increasing order: **Pb < Sn < Ge < Si ≈ C**
+> Note: the two orders are exact mirror images. The crossover: GeX₄ ≫ GeX₂ but PbX₂ ≫ PbX₄.
+
+> **"Inert pair" is partly a misnomer.** The 6s² pair of Pb is *not chemically inert* — it is stereochemically active (it makes gas-phase PbCl₂ bent, SnCl₂ bent) and it is given up readily as a reductant when M is Ge or Sn. What is "inert" is only its reluctance to be *promoted and bonded* in the heaviest members. Prefer the bond-energy / promotion-energy argument in an answer.
+
+> **REDOX ANCHOR (predicts most reactions in Sections 20–21):** **Ge(II) reducing · Sn(II) reducing · Pb(IV) / PbO₂ oxidising** · Tl(III) oxidising (the Group 13 analogue). The two half-reactions **Sn²⁺ → Sn⁴⁺** and **Pb⁴⁺ → Pb²⁺** appear again and again — memorise them and most of the tin and lead chemistry follows.
 
 > **MOT LENS — SnCl₂ is bent.** Gas-phase SnCl₂ is V-shaped (∠Cl–Sn–Cl ≈ 95°): Sn(II) keeps a stereochemically active lone pair in an sp²-type orbital, so the two Sn–Cl bonds are pushed together (VSEPR: AX₂E). SnCl₄, by contrast, is regular tetrahedral (AX₄). The lone pair is also why Sn(II) is a good reductant — it is readily given up as Sn goes to +4.
 
-## 4.3 Why PbI₄ does not exist — an energetics argument
+## 4.3 Why PbI₄ does not exist — two equivalent arguments
 
-Pb(IV) is a strong oxidant; I⁻ is a reductant. Any attempt to make PbI₄ ends as **PbI₂ + I₂**: the Pb(IV)–I⁻ combination immediately undergoes internal redox. Equivalently, the Pb–I bond energy released on forming four bonds is **not enough to unpair and promote the 6s² electrons** of lead, so lead stays in +2. The same reasoning explains why Pb reacts with Cl₂ only to PbCl₂ (not PbCl₄) and why PbBr₄ is unknown, while PbF₄ (very strong Pb–F bonds) *is* known.
+**Redox argument.** Pb(IV) is a strong oxidant (E° ≈ +1.7 V); I⁻ is an easily oxidised reductant (E°(I₂/I⁻) = +0.54 V). Put them together and an internal electron transfer is spontaneous: **4 e⁻ move from I⁻ to Pb(IV)**, giving
 
-> **JEE TRAP:** PbI₄ absent → the chemically self-consistent products are **PbI₂ + I₂**. This is a favourite "which tetrahalide does not exist and why" question.
+PbI₄ ⟶ PbI₂ + I₂
+
+so the compound relaxes to Pb(II) the instant it might form.
+
+**Thermochemical argument.** Forming PbI₄ from PbI₂ + I₂ would need: (unpair + promote the Pb 6s² pair) + (Pb–I bond-making energy for two extra bonds) − (I–I bond broken). The **Pb–I bond is weak** (large, diffuse orbitals; poor size match) and the **6s promotion cost is high** (relativistic stabilisation), so the two extra Pb–I bonds cannot pay for the promotion — ΔH for PbI₂ + I₂ → PbI₄ comes out **positive**. Pb stays +2.
+
+**The halide series for Pb(IV):**
+
+| Halide | Exists? | Why |
+|:--:|:--:|:--|
+| PbF₄ | **yes** | Pb–F bonds are strong enough (small F, large lattice/bond energy) to repay promotion; F⁻ is not oxidisable |
+| PbCl₄ | **marginally** | yellow oil, needs cold conc. HCl saturated with Cl₂; decomposes to PbCl₂ + Cl₂ near room T; stabilised only as [PbCl₆]²⁻ |
+| PbBr₄ | **no** | Pb–Br too weak; Br⁻ oxidised by Pb(IV) |
+| PbI₄ | **no** | Pb–I weakest; I⁻ most easily oxidised → PbI₂ + I₂ |
+
+> **JEE TRAP:** "which Group 14 tetrahalide does not exist and why" → **PbI₄**, and the self-consistent products are **PbI₂ + I₂**. Extend the logic: it is the *combination* of a weak M–X bond and an oxidisable X⁻ with a strongly oxidising M(IV) — the same reasoning rules out TlI₃ as true Tl(III) (it is Tl⁺I₃⁻).
 
 # 5. Anomalous behaviour of carbon; the C → Si → rest gradation
 
@@ -238,26 +344,50 @@ Carbon is a non-metal that forms strong pπ–pπ multiple bonds and catenates w
 | Hydride reactivity | alkanes almost inert | silanes pyrophoric, hydrolysed by trace base |
 | Aqueous M⁴⁺ | none | none (Si(IV) as SiO₂·xH₂O, Sn/Pb as hydroxo/aquo complexes) |
 
-## 5.2 Catenation — the evidence is the bond enthalpy
+## 5.2 Catenation — read it from the bond enthalpies
 
-| Bond | Bond enthalpy / kJ mol⁻¹ | How far catenation runs |
-|:--|:--:|:--|
-| C–C | 348 | effectively unlimited (all of organic chemistry) |
-| Si–Si | 297 | silanes to about Si₈; catenated halides run somewhat further |
-| Ge–Ge | 260 | germanes to about Ge₅ |
-| Sn–Sn | 240 | barely — only Sn₂H₆ beyond the monomer |
+**Catenation** = the self-linking of like atoms into chains, rings and cages. Its extent tracks two things: how strong the M–M bond is, and how strong it is *relative to* the M–O and M–H bonds that compete for the same atom.
 
-> **Catenation tendency** — Decreasing order: **C ≫ Si > Ge ≈ Sn ≫ Pb** (Pb: none)
-> Note: The decisive reason is the fall in M–M bond enthalpy (plus increasing size and increasing susceptibility of the M–M bond to nucleophilic attack). It is **not** simply "carbon is small".
+| Bond | Enthalpy / kJ mol⁻¹ (representative) | Bond | Enthalpy / kJ mol⁻¹ |
+|:--|:--:|:--|:--:|
+| **C–C** | ≈ **348** | **Si–Si** | ≈ 297 |
+| C–H | ≈ 413 | Si–H | ≈ 318 |
+| C–O | ≈ 358 | **Si–O** | ≈ **452** |
+| C–Cl | ≈ 327 | Si–Cl | ≈ 381 |
 
-## 5.3 Multiple bonding down the group
+| M | M–M enthalpy | How far catenation runs |
+|:--:|:--:|:--|
+| C | ≈ 348 | **effectively unlimited** — every hydrocarbon; the basis of organic chemistry |
+| Si | ≈ 297 | silanes to roughly Si₈; catenated halides run somewhat further (pπ–dπ help) |
+| Ge | ≈ 260 | germanes to about Ge₅ |
+| Sn | ≈ 240 | barely — only Sn₂H₆ beyond the monomer |
+| Pb | ≈ 155 | none |
 
-Carbon forms C=C, C≡C, C=O, C=S, C≡N readily. Silicon and the heavier atoms form pπ–pπ bonds only as rare, matrix-isolated exceptions (e.g. the disilene Mes₂Si=SiMes₂). Instead they use **pπ–dπ** bonding, where a filled p orbital on N/O donates into an empty d orbital on Si/Ge (Section 19). Consequences:
+**Why carbon and not silicon:**
 
-- **CO₂ molecular, SiO₂ network** (Section 13).
-- **(SiH₃)₃N planar, (CH₃)₃N pyramidal** (Section 19).
-- **Silicones** form –Si–O–Si– chains rather than Si=O "silicon ketones" (Section 16).
-- CO₃²⁻ exists, SiO₃²⁻ exists only as chains/rings in silicates.
+1. **Absolute strength.** C–C (348) is strong; it weakens fast down the group as the atoms enlarge and the shared cores start to repel.
+2. **Relative strength — the decisive point.** For carbon, **C–C (348) ≈ C–O (358) ≈ C–H (413)**, so a C atom has *no thermodynamic incentive* to swap a C–C bond for a C–O bond — long carbon skeletons survive in the presence of oxygen. For silicon, **Si–O (452) ≫ Si–Si (297)**: an Si–Si bond in contact with any oxygen source is replaced by the much stronger Si–O. That is why long silanes do not exist, why silicon's stable form is the **SiO₂ network and the silicates**, and why silicones are **–Si–O–Si–** chains, not –Si–Si– chains.
+3. **Kinetic vulnerability.** The larger Si atom (and its accessible d orbitals) leaves the Si–Si bond open to nucleophilic attack; silanes are hydrolysed by a trace of base, alkanes are not (§17.2).
+
+> **Catenation tendency** — Decreasing order: **C ≫ Si > Ge ≈ Sn ≫ Pb** (Pb: essentially none).
+> Note: it is **not** simply "carbon is small". State it as *strong C–C bond, comparable in strength to C–O and C–H, that weakens down the group while M–O stays strong*.
+
+## 5.3 Multiple bonding — why carbon has π and silicon does not
+
+Carbon forms **C=C, C≡C, C=O, C=S, C≡N** as a matter of course; the whole of unsaturated organic chemistry depends on it. Silicon and the heavier atoms form true pπ–pπ multiple bonds **only as fragile, kinetically-protected laboratory curiosities** (the disilene Mes₂Si=SiMes₂, isolable only with huge shielding groups). Why:
+
+- A **2p orbital** is compact and node-free in its radial part; two of them on adjacent atoms give a large **π overlap integral**, so a strong second (and third) bond forms.
+- A **3p orbital** is larger and radially node-bearing; sideways overlap of two 3p orbitals — or of a 3p with a 2p — is small and partly cancelling. The π "bond" that results is too weak to compete with two σ bonds to different partners.
+
+So the heavier atoms do one of two things instead: (i) form **more σ single bonds** by polymerising (SiO₂, silicates, silicones), or (ii) use **pπ–dπ** bonding — a filled p (or lone-pair) orbital on N/O/F donates *into* an empty d orbital on Si/Ge (§19).
+
+| Carbon (pπ–pπ) | Silicon (σ networks / pπ–dπ) |
+|:--|:--|
+| CO₂ — discrete linear O=C=O molecule | SiO₂ — 3-D network of Si–O single bonds (§13) |
+| CO₃²⁻ — discrete trigonal-planar ion | "SiO₃²⁻" exists only as **infinite chains and rings** in the pyroxenes and cyclosilicates (§14) |
+| (CH₃)₃N pyramidal, strongly basic | N(SiH₃)₃ **planar**, very weak base — N lone pair donated into Si 3d (§19.2) |
+| ketone R₂C=O stable | "R₂Si=O" cannot form — the silanols condense to **–Si–O–Si–** silicone (§16) |
+| C=S in CS₂, thioketones | Si=S unknown; SiS₂ is a chain of edge-sharing SiS₄ tetrahedra |
 
 ## 5.4 Diagonal relationship
 
@@ -276,49 +406,77 @@ Within Group 14, carbon stands apart as the first-row anomaly and Ge–Sn–Pb f
 
 # 6. Elemental chemical reactivity — conditions included
 
-The elements are fairly unreactive at room temperature; reactivity **increases down the group**, and the M(II) state becomes more accessible. Diamond is almost inert; graphite is appreciably more reactive.
+At room temperature all five elements are **fairly unreactive** — strong covalent networks (C, Si, Ge) or protective oxide films (Sn, Pb) get in the way. On heating, the free-element reactivity **rises down the group**, and the product increasingly reflects the **+2** state rather than +4. Within the allotropes, **diamond is nearly inert; graphite and amorphous carbon are far more reactive** (open sheets, reactive edge carbons).
+
+> **General reactivity of the free element** — Increasing order: C(diamond) < C(graphite) ≈ Si < Ge < Sn < Pb.
+> Note: this is the *element's* reactivity; the *accessibility of the +4 product* runs the opposite way (easy for C–Sn, impossible for Pb beyond PbO/PbF₄).
 
 ## 6.1 Air, oxygen and nitrogen
 
-Diamond is unreactive; graphite burns in air/O₂ above about 700 °C. Si and Ge burn only on strong heating. Sn burns with a bright flame to SnO₂; Pb forms a surface film of PbO (then Pb₃O₄ on prolonged heating in air).
+Diamond is unattacked by air; graphite and amorphous carbon burn above about 700 °C. Si and Ge burn only on strong heating. Sn burns with a bright white flame to SnO₂; Pb forms a surface film of PbO, then (on prolonged heating in air) the mixed oxide Pb₃O₄.
 
 **Carbon in oxygen:**
 
-C + O₂ [excess O₂] ⟶ CO₂
+C(s) + O₂(g) [excess air, Δ] ⟶ CO₂(g)   Δ_cH ≈ −393 kJ mol⁻¹
 
-2C + O₂ [limited O₂] ⟶ 2CO
+2C(s) + O₂(g) [limited air, Δ] ⟶ 2CO(g)   Δ_cH ≈ −111 kJ mol⁻¹ per CO
 
-Complete combustion gives CO₂ (Δ_cH ≈ −393 kJ mol⁻¹); a limited air supply gives the poisonous CO — the basis of every incomplete-combustion hazard.
+- Complete combustion → CO₂; a restricted air supply → the poisonous, colourless **CO** — the mechanism behind every faulty-heater and blocked-flue poisoning (§9.2).
+- **Hot conc. HNO₃** oxidises graphite (attack at the sheet edges) all the way to **mellitic acid, C₆(COOH)₆**; a strong KClO₃/HNO₃ mixture gives **graphite oxide** (§7.5).
+
+**Carbon with other non-metals:**
+
+C(s) + 2S(g) [≈ 900 °C] ⟶ CS₂(g)   (industrial route now uses CH₄ + S, §11)
+
+C(s) + 2H₂(g) [≈ 1200 K, Ni catalyst] ⟶ CH₄(g)   (equilibrium; the basis of catalytic methanation)
+
+3C(s) + CaO(s) [≈ 2000–2200 °C, electric furnace] ⟶ CaC₂(s) + CO(g)
+
+C(s) + Si(s) [≈ 2500 °C] ⟶ SiC(s)   (carborundum, §8.4)
+
+Many metals and metal oxides give **carbides** on heating with carbon (§8); this is also the reducing action exploited throughout metallurgy (C or CO reduces oxides of metals below Al in the reactivity series).
 
 **Silicon in oxygen and nitrogen:**
 
-Si + O₂ [1173 K] ⟶ SiO₂
+Si(s) + O₂(g) [≈ 1173 K] ⟶ SiO₂(s)   (a thin, self-protecting oxide layer forms first)
 
-3Si + 2N₂ [1673 K] ⟶ Si₃N₄
+3Si(s) + 2N₂(g) [≈ 1673 K] ⟶ Si₃N₄(s)
 
-Silicon nitride, Si₃N₄, is a hard, thermal-shock-resistant ceramic (turbine parts, cutting tools).
+Silicon nitride, Si₃N₄, is a hard, thermal-shock-resistant ceramic (turbine blades, cutting tools, bearings). Silicon does **not** react with hydrogen directly.
 
-**Tin and lead in oxygen:**
+**Germanium** burns to GeO₂ on strong heating; it does not fix nitrogen.
 
-Sn + O₂ [strong heating, bright flame] ⟶ SnO₂
+**Tin and lead in air:**
 
-2Pb + O₂ [warm air] ⟶ 2PbO
+Sn(s) + O₂(g) [strong heating, bright white flame] ⟶ SnO₂(s)
 
-6PbO + O₂ [about 350–450 °C] ⟶ 2Pb₃O₄
+2Pb(s) + O₂(g) [warm air] ⟶ 2PbO(s)
 
-> **Reactivity toward O₂** — Increasing order (of the free element): C(diamond) < Si < Ge < C(graphite) < Sn < Pb
-> Note: The dioxide is the product for C, Si, Ge, Sn; lead stops at the monoxide/mixed oxide because Pb(IV) is disfavoured.
+6PbO(s) + O₂(g) [≈ 350–450 °C, air] ⟶ 2Pb₃O₄(s)
+
+- **Lead stops at Pb(II)/mixed oxide** — no PbO₂ forms directly from the metal, because Pb(IV) is disfavoured (§4.2).
+- A clean lead surface tarnishes at once in moist air (a grey PbO/basic-carbonate film); this coherent film is what makes lead corrosion-resistant.
+
+> **Reactivity toward O₂** — Increasing order (free element): C(diamond) < Si < Ge < C(graphite/amorphous) < Sn < Pb
+> Note: the dioxide MO₂ is the product for C, Si, Ge, Sn; **lead gives only PbO / Pb₃O₄** because Pb(IV) is disfavoured.
 
 ## 6.2 Water and steam
 
-- **C, Si, Ge:** not attacked by water.
-- **Sn:** attacked by **steam**:
+| Element | Cold water | Steam / hot water |
+|:--|:--|:--|
+| **C** | no reaction | red-hot coke + steam → **water gas** CO + H₂ (§9.1) |
+| **Si** | no reaction (a self-protecting SiO₂ skin) | slowly attacked at red heat: Si + 2H₂O(g) → SiO₂ + 2H₂ |
+| **Ge** | no reaction | no reaction |
+| **Sn** | no reaction | **attacked by steam** |
+| **Pb** | no reaction (protective film) | no reaction |
 
-Sn + 2H₂O [steam, Δ] ⟶ SnO₂ + 2H₂
+**Tin with steam:**
 
-- **Pb:** unaffected by water — a protective film (PbO / basic carbonate / PbSO₄) forms. Soft, aerated water can slowly dissolve lead (historic plumbosolvency and lead-poisoning problem).
+Sn(s) + 2H₂O(g) [steam, Δ] ⟶ SnO₂(s) + 2H₂(g)
 
-> **Ordinary conditions:** C, Si, Ge inert to water; **Sn + steam → SnO₂ + H₂**; Pb protected by an oxide film.
+**Lead and water — plumbosolvency.** Pb is thermodynamically able to reduce H⁺, but a coherent surface film (PbO, then basic carbonate 2PbCO₃·Pb(OH)₂, or PbSO₄ in hard/sulphate-bearing water) normally blocks the reaction. **Soft, well-aerated, slightly acidic water** dissolves that film and slowly takes lead into solution as Pb(HCO₃)₂ / Pb²⁺ — the reason old lead service pipes are a public-health problem and lead plumbing is banned. Hard water is *protective* because CaSO₄/CaCO₃ help seal the pipe with insoluble lead salts.
+
+> **Ordinary conditions:** C, Si, Ge, Pb inert to water; only **Sn + steam → SnO₂ + H₂**. Carbon + steam (red-hot) is the industrial water-gas reaction, not a "corrosion".
 
 ## 6.3 Acids
 
@@ -330,51 +488,95 @@ Sn + 2H₂O [steam, Δ] ⟶ SnO₂ + 2H₂
 | Sn | dil. HCl slow; dil. HNO₃ dissolves it | hot conc. HNO₃ → metastannic acid; hot conc. H₂SO₄ → Sn(SO₄)₂ |
 | Pb | dil. HCl slow (PbCl₂ coat); dil. HNO₃ readily → Pb(NO₃)₂ | **passivated by H₂SO₄** (PbSO₄ film); does not dissolve in conc. HCl |
 
-Sn + 2HCl [hot concentrated] ⟶ SnCl₂ + H₂
+**Carbon with hot conc. oxidising acid:**
 
-4Sn + 10HNO₃ [cold dilute] ⟶ 4Sn(NO₃)₂ + NH₄NO₃ + 3H₂O
+C(graphite) + 4HNO₃(conc.) [hot] ⟶ CO₂ + 4NO₂ + 2H₂O   (amorphous carbon; graphite edges → mellitic acid)
 
-Sn + 4HNO₃ [hot concentrated] ⟶ SnO₂·xH₂O (metastannic acid) + 4NO₂ + H₂O
+**Silicon — only HF attacks it:**
 
-3Pb + 8HNO₃ [dilute] ⟶ 3Pb(NO₃)₂ + 2NO + 4H₂O
+Si(s) + 4HF(aq) ⟶ SiF₄(g) + 2H₂(g)
 
-> **JEE TRAP:** Concentrated HNO₃ **passivates** aluminium (Group 13) and also renders **lead** less reactive toward H₂SO₄ by a PbSO₄ film. Tin gives *ionic* Sn(NO₃)₂ with dilute HNO₃ but the *covalent* hydrated oxide (metastannic acid) with hot concentrated HNO₃ — a Sn(II) vs Sn(IV) distinction.
+Si(s) + 6HF(aq) [with HNO₃ present] ⟶ H₂[SiF₆](aq) + ...   (HNO₃ oxidises, HF complexes the Si)
+
+**Germanium:**
+
+Ge(s) + 4HNO₃(conc.) [hot] ⟶ GeO₂·xH₂O + 4NO₂ + 2H₂O
+
+**Tin:**
+
+Sn(s) + 2HCl(conc.) [hot] ⟶ SnCl₂ + H₂   (Sn → +2 with a non-oxidising acid)
+
+4Sn(s) + 10HNO₃(dil., cold) ⟶ 4Sn(NO₃)₂ + NH₄NO₃ + 3H₂O   (dilute, cold → **ionic Sn(II)** nitrate, no gas)
+
+Sn(s) + 4HNO₃(conc.) [hot] ⟶ SnO₂·xH₂O↓ (metastannic acid) + 4NO₂ + H₂O   (hot conc. → **covalent Sn(IV)** hydrated oxide)
+
+Sn(s) + 2H₂SO₄(conc.) [hot] ⟶ SnSO₄ + SO₂ + 2H₂O   (further oxidised to Sn(SO₄)₂ in excess hot acid)
+
+**Lead:**
+
+3Pb(s) + 8HNO₃(dil.) ⟶ 3Pb(NO₃)₂ + 2NO + 4H₂O
+
+Pb(s) + 2HCl(dil.) ⟶ PbCl₂↓ + H₂   (very slow — an insoluble PbCl₂ coat stops it)
+
+Pb + H₂SO₄ → **no sustained reaction** — an insoluble PbSO₄ skin passivates the metal (why lead-lined vessels and lead-acid battery plates survive sulphuric acid).
+
+> **JEE TRAP:** three passivation cases to keep straight — **Al** by cold conc. HNO₃ (oxide film); **Pb** by any H₂SO₄ (PbSO₄ film); **Pb** by dil. HCl (PbCl₂ coat). And the **Sn(II) vs Sn(IV)** switch: cold dilute HNO₃ → ionic Sn(NO₃)₂; hot concentrated HNO₃ → covalent metastannic acid.
 
 ## 6.4 Alkalis
 
-- **C:** no reaction.
-- **Si:** attacked by hot aqueous NaOH:
+- **C** — no reaction with alkali (fused NaOH slowly attacks it in air, but this is oxidation by O₂, not an acid–base reaction).
+- **Si** — attacked by **hot aqueous or fused NaOH**, giving off H₂ (the alkali strips the protective SiO₂ film, exposing fresh Si):
 
-Si + 2NaOH + H₂O [hot] ⟶ Na₂SiO₃ + 2H₂
+Si(s) + 2NaOH(aq) + H₂O(l) [hot] ⟶ Na₂SiO₃(aq) + 2H₂(g)
 
-- **Sn, Pb:** slowly by cold, rapidly by hot alkali — both **amphoteric**:
+- **Ge** — attacked by fused alkali / alkaline oxidisers → germanates.
+- **Sn, Pb** — dissolve **slowly in cold, rapidly in hot** alkali; both metals are **amphoteric** (they also dissolve in acid, §6.3):
 
-Sn + 2NaOH + 2H₂O [hot] ⟶ Na₂[Sn(OH)₄] + H₂
+Sn(s) + 2NaOH(aq) + 2H₂O(l) [hot] ⟶ Na₂[Sn(OH)₄](aq) + H₂(g)   (stannite, Sn II)
 
-Pb + 2NaOH + 2H₂O [hot] ⟶ Na₂[Pb(OH)₄] + H₂
+Pb(s) + 2NaOH(aq) + 2H₂O(l) [hot] ⟶ Na₂[Pb(OH)₄](aq) + H₂(g)   (plumbite, Pb II)
+
+> **Amphoteric elements of Group 14:** **Sn and Pb** dissolve in *both* acid and base. Si dissolves in base (and HF) but not ordinary acid — it is acidic-leaning. C and Ge(metal) are essentially unreactive to both.
 
 ## 6.5 Halogens
 
-- Diamond inert; graphite + F₂ (about 500 °C) → graphite fluoride / intercalation.
-- Si, Ge react readily → volatile **SiX₄, GeX₄**.
-- Sn: with Cl₂/Br₂ in the cold, F₂/I₂ on warming → **SnX₄**.
-- Pb (inert pair): **F₂ (cold) → PbF₂**, **Cl₂ (hot) → PbCl₂** — never PbX₄ directly.
+| Element | With F₂ | With Cl₂ / Br₂ | With I₂ | Product |
+|:--|:--|:--|:--|:--|
+| C(graphite) | 500 °C → graphite fluoride (CF)ₙ / intercalate | — | — | not simple CX₄ |
+| Si | room T → SiF₄ | on warming → SiX₄ | on warming → SiI₄ | **SiX₄** (volatile, tetrahedral) |
+| Ge | → GeF₄ | → GeX₄ | → GeI₄ (orange) | **GeX₄** |
+| Sn | on warming → SnF₄ | cold → SnX₄ | on warming → SnI₄ (orange) | **SnX₄** |
+| Pb | cold → **PbF₂** | hot → **PbCl₂** | → **PbI₂** | **PbX₂ only** — never PbX₄ directly |
 
-Si + 2Cl₂ ⟶ SiCl₄
+Si(s) + 2Cl₂(g) [Δ] ⟶ SiCl₄(l)
 
-Sn + 2Cl₂ [dry, molten Sn] ⟶ SnCl₄
+Sn(s) + 2Cl₂(g) [dry, molten Sn] ⟶ SnCl₄(l)
 
-Pb + Cl₂ [hot] ⟶ PbCl₂
+Pb(s) + Cl₂(g) [hot] ⟶ PbCl₂(s)
 
-> **Reactivity toward halogens:** the *element* reactivity rises down the group, but the accessible *product* changes — MX₄ for C–Sn, only MX₂ for Pb.
+> **Reactivity toward halogens** rises down the group, but the accessible **product** falls: MX₄ for C(as a fluoride)–Si–Ge–Sn, only **MX₂ for lead** — a direct read-out of the inert-pair effect. SnI₄ and GeI₄ are **orange** (halide-to-metal charge transfer), an exception to "main-group halides are colourless" (§18.1).
 
-## 6.6 Hydrogen and other non-metals
+## 6.6 Hydrogen, carbon and other non-metals
 
-No Group 14 element reacts directly with H₂ to give a stable hydride; the hydrides are made indirectly (Section 17). Carbon and silicon combine at very high temperature:
+**Hydrogen.** No Group 14 element gives a stable hydride by direct combination with H₂ — the hydrides are all made indirectly (§17). Carbon and hydrogen reach a slow equilibrium over Ni near 1200 K (C + 2H₂ ⇌ CH₄), used industrially in methanation.
 
-Si + C [about 2500 °C] ⟶ SiC
+**Carbon and silicon:**
 
-CaO + 3C [about 2200 °C] ⟶ CaC₂ + CO
+Si(s) + C(s) [≈ 2500 °C] ⟶ SiC(s)   (carborundum)
+
+SiO₂(s) + 3C(s) [2000–2500 °C, excess coke] ⟶ SiC(s) + 2CO(g)   (the actual industrial route, §8.4)
+
+**Carbon with metals and metal oxides** → carbides (§8) and, in metallurgy, the reduced metal + CO/CO₂.
+
+**Calcium carbide:**
+
+CaO(s) + 3C(s) [≈ 2000–2200 °C, electric furnace; strongly endothermic] ⟶ CaC₂(s) + CO(g)
+
+**Carbon with sulphur:**
+
+C(s) + 2S(g) [≈ 900 °C] ⟶ CS₂(g)
+
+**Silicon with metals** → **silicides** (Mg₂Si, Ca₂Si, FeSi, CaSi₂ …), some salt-like (Mg₂Si hydrolyses to silanes, §17.1), some interstitial and refractory.
 
 # 7. Allotropes of carbon
 

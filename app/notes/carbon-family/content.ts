@@ -580,49 +580,83 @@ C(s) + 2S(g) [≈ 900 °C] ⟶ CS₂(g)
 
 # 7. Allotropes of carbon
 
-Carbon has more allotropes than any other element: **diamond, α- and β-graphite, hexagonal diamond (lonsdaleite), fullerenes**, and amorphous forms (coke, charcoal, carbon black — really microcrystalline graphite/fullerene). Diamond, graphite and fullerene were discovered in that historical order; fullerenes date from **1985** (Kroto, Smalley, Curl — Nobel Prize 1996).
+Carbon has the **richest allotropy of any element** because it can bond in three different hybridisation states: **sp³** (diamond — 3-D network), **sp²** (graphite — sheets; fullerenes and nanotubes — curved sheets), and **sp** (carbyne, –C≡C–C≡C–, only marginally characterised). Add the disordered forms (coke, charcoal, carbon black) and carbon has more forms than the rest of the group put together.
+
+| Allotrope | Hybridisation | Dimensionality | Discovered |
+|:--|:--:|:--|:--|
+| **diamond** | sp³ | 3-D network | antiquity |
+| **graphite** (α ABAB, β ABCABC) | sp² | 2-D sheets | antiquity |
+| **lonsdaleite** (hexagonal diamond) | sp³ | 3-D | meteorites, 1967 |
+| **fullerenes** (C₆₀, C₇₀ …) | sp² (pyramidalised) | 0-D molecules | 1985 (Kroto, Smalley, Curl — Nobel 1996) |
+| **carbon nanotubes** | sp² | 1-D | 1991 |
+| **graphene** (one graphite sheet) | sp² | 2-D | 2004 (Nobel 2010) |
 
 ## 7.1 Diamond
 
-**Structure.** Each carbon is **sp³**, tetrahedrally bonded to four others; **C–C = 154 pm**. Six-membered chair rings run through a rigid three-dimensional giant covalent network; the ordinary unit cell is cubic (a rare hexagonal modification is lonsdaleite).
+**Structure.** Each carbon is **sp³**, σ-bonded to **four** others at 109.5°; **C–C = 154 pm** — an ordinary single bond, but repeated rigidly in every direction. The lattice is **cubic**: an fcc array of carbon with a second carbon in **half the tetrahedral holes** (the same arrangement as ZnS sphalerite with one kind of atom), giving **8 atoms per unit cell**. Six-membered rings run through the crystal in the chair conformation. The whole crystal is one giant covalent molecule. Lonsdaleite is the rarer hexagonal (wurtzite-type) packing of the same tetrahedra.
 
-**Properties.**
-1. Hardest natural substance (Mohs 10) — directional covalent bonds in every direction; abnormally high melting point (about 4100 °C).
-2. Electrical **insulator** (resistivity 10¹⁴–10¹⁶ Ω cm) — no free electrons.
-3. **Thermal conductivity greater than graphite** (and than copper) — heat travels well as lattice vibrations through the stiff network.
-4. Density 3.51 g cm⁻³. Refractive index high (brilliance). Chemically extremely inert.
-5. Trace impurities: most natural diamonds contain a little N; "blue" diamonds contain Al; industrial diamonds are often black.
+**Properties — and their causes:**
 
-> **Key Point — uses of diamond:** Diamond is used as an **abrasive** for sharpening hard tools, in rock drills, in dies for drawing wires, and in jewellery (1 carat = 200 mg).
+| Property | Value | Cause |
+|:--|:--|:--|
+| hardness | Mohs **10** (hardest natural solid) | strong C–C bonds in *every* direction; no easy slip plane |
+| melting point | ≈ 4400 K (sublimes/graphitises) | melting = breaking the covalent network, not intermolecular forces |
+| electrical | **insulator**, ρ 10¹⁴–10¹⁶ Ω cm; band gap **≈ 5.5 eV** | all four valence electrons are in localised σ bonds — no mobile carriers |
+| thermal conductivity | **higher than copper** | heat carried by lattice vibrations (phonons) through the very stiff, light lattice |
+| density | 3.51 g cm⁻³ | efficient tetrahedral packing |
+| optical | transparent, refractive index **2.42**, high dispersion | wide band gap (no visible absorption); the "fire" of cut gems |
+| chemical | extremely inert | no reactive site; burns only above ~900 °C in O₂ to pure CO₂ |
 
-C(graphite) [about 1600 °C, 50 000–60 000 atm; metal-solvent catalyst] ⟶ C(diamond)
+- **Impurity colours:** most natural stones carry trace **N** (yellowish "Cape" series); **B** gives semiconducting **blue** diamonds; plastic deformation gives pink/brown; radiation damage gives green.
 
-> **JEE TRAP:** Diamond is covalent yet has a very high melting point — because melting requires breaking the strong three-dimensional C–C network, not overcoming weak intermolecular forces.
+**Making diamond from graphite** (ΔG > 0 at 1 atm, so pressure is needed):
+
+C(graphite) [≈ 1800 K, ≈ 6 GPa (60 000 atm), molten-metal solvent catalyst; HPHT] ⟶ C(diamond)
+
+Modern **chemical vapour deposition (CVD)** grows diamond films from a CH₄/H₂ plasma at *low* pressure — the atomic H etches away any sp² carbon as it forms, leaving only sp³.
+
+> **JEE TRAP:** diamond is covalent yet melts higher than most ionic solids — because melting means breaking the 3-D **C–C covalent** network. Contrast: it is an **electrical insulator** but the **best thermal conductor** known — electrons are locked in bonds (no electrical conduction) while the rigid light lattice carries heat superbly.
 
 ## 7.2 Graphite
 
-**Structure.** Flat hexagonal sheets; each carbon **sp²**, σ-bonded to three neighbours; the fourth electron enters a **delocalised π system** over the whole sheet (the sheet is a fused system of benzene rings). **C–C within a sheet = 141.5 pm**; **interlayer spacing = 340 pm** — more than twice the covalent radius, so only weak van der Waals forces hold the sheets. **α-graphite** stacks ABAB…; **β-graphite** ABCABC…; heating β → α, grinding α → β.
+**Structure.** Infinite flat **hexagonal sheets**; each carbon **sp²**, forming three σ bonds to its neighbours at 120°. The **fourth (2p_z) electron** on every carbon enters a **π system delocalised over the whole sheet** — the sheet is effectively one enormous fused-benzene aromatic. **In-plane C–C = 141.5 pm** (between a single 154 and a double 134 — bond order ≈ 1⅓); **interlayer spacing = 340 pm**, more than twice the covalent radius, so the sheets are held only by **van der Waals / weak π–π forces**. Stacking: **α-graphite ABAB…** (hexagonal, the common form), **β-graphite ABCABC…** (rhombohedral); grinding converts α → β, heating to ~1300 K restores β → α.
 
-**Properties.**
-1. **Soft and slippery** — sheets slide over each other → dry lubricant.
-2. Good electrical conductor **within** a sheet (mobile π electrons), poor **perpendicular** to the sheets. Electrical conductivity graphite > diamond; thermal conductivity diamond > graphite.
-3. Density 2.22 g cm⁻³ — lower than diamond because sheets are widely spaced.
-4. **Graphite is thermodynamically more stable than diamond** at ordinary conditions: Δ_fH°(graphite) = 0 by convention, Δ_fH°(diamond) = **+1.90 kJ mol⁻¹**. Diamond persists only because the conversion has a huge activation barrier (diamond-tipped drills burn out and turn to graphite if overheated).
+**Properties — and their causes:**
 
-> **Key Point — uses of graphite:** Graphite is used as a **dry lubricant** in hot machinery (where oil would fail), as **electrodes** in batteries and industrial electrolysis, in **pencil "lead"**, in **crucibles** (inert to dilute acid/alkali), as a **neutron moderator**, and — as graphite fibres in plastic composites — in tennis rackets, fishing rods and aircraft parts.
+| Property | Behaviour | Cause |
+|:--|:--|:--|
+| mechanical | soft, greasy, marks paper (Mohs 1–2) | sheets slip over one another on the weak interlayer forces — a **dry lubricant** even in vacuum/hot machinery where oil fails |
+| electrical | **conducts** (a semimetal, zero band gap) — in-plane conductivity ≈ 10³× the perpendicular value | the delocalised π electrons are mobile *within* a sheet, blocked *between* sheets |
+| thermal | good conductor in-plane | same π electrons + phonons |
+| density | 2.22 g cm⁻³ (< diamond) | the widely spaced sheets waste volume |
+| chemistry | **more reactive than diamond** — burns from ~700 °C; oxidised by hot HNO₃; intercalates | reactive edge/π carbons; open galleries between sheets |
+| thermodynamics | **the stable allotrope at 1 atm**: Δ_fH°(graphite) ≡ 0; Δ_fH°(diamond) = +1.90, Δ_fH°(C₆₀) = +38.1 kJ mol⁻¹ | diamond survives only kinetically — a huge activation barrier to rebonding |
+
+> **Electrical conductivity:** graphite ≫ diamond. **Thermal conductivity:** diamond > graphite. **Thermodynamic stability at 1 atm:** graphite > diamond > C₆₀.
+
+> **Key Point — uses of graphite:** dry lubricant for hot/vacuum machinery; **electrodes** (steel arc furnaces, Al electrolysis, batteries); pencil "lead" (graphite + clay); inert **crucibles**; **neutron moderator** in reactors (slows neutrons without absorbing them); as **carbon fibre** in composites (aircraft, sports goods).
 
 ## 7.3 Fullerenes
 
-**Preparation.** An **electric arc struck between graphite electrodes in an inert (He/Ar) atmosphere** produces soot (mainly carbon black, but containing fullerenes); the soot is extracted with benzene/toluene to a wine-red solution and the fullerenes are separated chromatographically as mustard-coloured crystals. Major product **C₆₀**; also C₇₀, C₇₆, C₈₄ … (only **even** n; clusters up to about 350 C).
+**Preparation.** Strike an **electric arc between graphite electrodes in ~100 torr of He**; the vaporised carbon condenses to a soot containing a few % fullerenes. Extract the soot with toluene → a **wine-red solution**; separate by chromatography → **C₆₀** (mustard/magenta crystals, the major product) and **C₇₀** (red-brown), with smaller amounts of C₇₆, C₈₄ …. Only **even** vertex counts occur; the smallest possible is C₂₀ (all-pentagon dodecahedron), the practical range runs to ~C₃₅₀.
 
-**C₆₀ — buckminsterfullerene ("bucky ball").**
-1. Soccer-ball cage: **20 six-membered rings + 12 five-membered rings**, **60 vertices**, one C at each vertex.
-2. Every carbon is **sp²** and three-coordinate, bonded to three others; the remaining electron per carbon is delocalised in molecular orbitals, giving the cage **aromatic** character.
-3. Two C–C lengths: **143.5 pm** (in a hexagon, single-bond-like) and **138.3 pm** (at a ring fusion, double-bond-like).
-4. Each pentagon is fused only to hexagons; a hexagon fuses to both hexagons and pentagons — "a five-membered ring can only fuse with six-membered rings".
-5. Fullerenes are **discrete molecules** — soluble in organic solvents, unlike diamond/graphite lattices. Fullerenes are the **only pure form of carbon** (smooth cage, no "dangling" bonds).
-6. Chemistry: C₆₀ is a good electron acceptor; **K₃C₆₀** is superconducting below 18 K; C₆₀ + OsO₄ adds across one cage double bond; forms Pt complexes.
-7. Δ_fH°(C₆₀) ≈ **+38.1 kJ mol⁻¹**, so stability order **graphite > diamond > C₆₀**.
+**C₆₀ — buckminsterfullerene ("bucky ball"):**
+
+1. A **truncated icosahedron**: **20 hexagons + 12 pentagons**, **60 vertices** (one C each), **90 edges**. Same shape as a football.
+2. Every carbon is **sp²** and three-coordinate, but the cage curvature forces a slight **pyramidalisation** (≈ 11.6° off planar), so the "aromatic" π system is strained and the double bonds are somewhat reactive.
+3. **Two distinct C–C bonds:** the **[6,6] bond** shared by two hexagons is short (**≈ 138 pm**, more double-bond) and the **[6,5] bond** shared by a hexagon and a pentagon is longer (**≈ 145 pm**, more single-bond). The double bonds lie only on [6,6] edges — none inside a pentagon (that would be an unstable "double bond in a five-ring").
+4. **Isolated-pentagon rule:** every pentagon is surrounded entirely by hexagons; two fused pentagons are strongly destabilising. C₆₀ is the smallest fullerene that satisfies this.
+5. Fullerenes are **discrete molecules** — soluble in benzene, toluene, CS₂ (unlike the diamond and graphite lattices). They are the **only molecular allotrope of carbon** and the only one with **no dangling bonds** at a surface.
+
+**Chemistry of C₆₀:**
+
+- **A good electron acceptor** — it takes up to **six electrons reversibly** (C₆₀⁻ … C₆₀⁶⁻) at readily accessible potentials.
+- **Fulleride superconductors:** K₃C₆₀ (each C₆₀ gets 3 e⁻ into a half-filled band) is superconducting below **18 K**; Rb₃C₆₀ below 28 K; Cs₃C₆₀ (under pressure) up to 38 K.
+- **Addition across the reactive [6,6] double bonds** — hydrogenation (C₆₀H₃₆), halogenation (C₆₀F₄₈), OsO₄ (cis-diol), Diels–Alder, [2+2] with benzyne; forms **η²** transition-metal complexes, e.g. [(Ph₃P)₂Pt(η²-C₆₀)].
+- **Endohedral fullerenes** M@C₆₀ trap a metal atom or small molecule *inside* the cage.
+- Structurally related: **carbon nanotubes** (a rolled graphene sheet, metallic or semiconducting depending on the roll angle) and **graphene** (a single isolated graphite sheet).
+
+> **Stability order (Δ_fH°, 1 atm):** graphite (0) > diamond (+1.90) > C₆₀ (+38.1 kJ mol⁻¹). Per-carbon strain energy in C₆₀ ≈ 0.4 eV.
 
 > **DERIVED TOOL — fullerene topology.** For any closed fullerene Cₙ with every C three-coordinate:
 > - pentagons P = **12** (always)
@@ -655,58 +689,100 @@ Because graphite sheets are far apart and weakly held, atoms, ions and molecules
 
 # 8. Carbides
 
-A carbide is a binary compound of carbon with a **less electronegative** element; compounds with N, P, O, S and the halogens are excluded from the term. All three classes — **salt-like (ionic), interstitial (metallic), covalent** — are made by heating the metal or its oxide with carbon or a hydrocarbon at about 2000 °C.
+A **carbide** is a binary compound of carbon with an element of **equal or lower electronegativity** — so the metals, boron and silicon. Compounds of carbon with N, P, O, S and the halogens are *not* called carbides. Carbides are made by heating the element or its oxide with carbon (or a hydrocarbon) at ≈ 2000 °C. Three structural classes, told apart by **what happens on hydrolysis**:
+
+| Class | Bonding | Example | Water / dilute acid |
+|:--|:--|:--|:--|
+| **salt-like (ionic)** | C anions + s-/p-block cations | CaC₂, Al₄C₃ | **hydrolyses** → a hydrocarbon |
+| **interstitial (metallic)** | C atoms in metal-lattice holes | TiC, WC, Fe₃C | **inert** (no hydrolysis) |
+| **covalent (network)** | C in a giant covalent lattice | SiC, B₄C | **inert** (attacked only by harsh reagents) |
 
 ## 8.1 Salt-like carbides — the hydrolysis fingerprint
 
-| Anion unit | Carbides | Hydrolysis product |
-|:--|:--|:--|
-| C⁴⁻ (methanide) | Be₂C, Al₄C₃ | CH₄ |
-| C₂²⁻ (acetylide / carbide ion) | CaC₂, SrC₂, BaC₂; Na₂C₂, K₂C₂; Cu₂C₂, Ag₂C₂; LnC₂ | HC≡CH (ethyne) |
-| C₃⁴⁻ (allylenide, a C₃ unit) | Mg₂C₃ | CH₃–C≡CH (propyne) |
+The carbon in a salt-like carbide is present as one of three discrete anions; the **gas released on hydrolysis identifies which**:
 
-Be₂C + 4H₂O ⟶ 2Be(OH)₂ + CH₄
+| Anion | Name | Isoelectronic with | Carbides | Hydrolysis gas |
+|:--|:--|:--|:--|:--|
+| **C⁴⁻** | methanide (a lone C) | — | **Be₂C, Al₄C₃** | **CH₄** |
+| **C₂²⁻** | acetylide / dicarbide [–C≡C–]²⁻ | N₂, CO, CN⁻ (b.o. 3) | CaC₂, SrC₂, BaC₂; Na₂C₂, K₂C₂; Cu₂C₂, Ag₂C₂ (explosive); LnC₂ | **HC≡CH** (ethyne) |
+| **C₃⁴⁻** | (a bent [C=C=C]⁴⁻ unit) | CO₂, N₃⁻ | **Mg₂C₃** | **CH₃–C≡CH** (propyne) |
 
-Al₄C₃ + 12H₂O ⟶ 4Al(OH)₃ + 3CH₄
+**Balanced hydrolyses:**
 
-CaC₂ + 2H₂O ⟶ Ca(OH)₂ + C₂H₂
+Be₂C(s) + 4H₂O(l) ⟶ 2Be(OH)₂(s) + CH₄(g)
 
-Mg₂C₃ + 4H₂O ⟶ 2Mg(OH)₂ + CH₃C≡CH
+Al₄C₃(s) + 12H₂O(l) ⟶ 4Al(OH)₃(s) + 3CH₄(g)
 
-The gas evolved on hydrolysis names the carbon anion — methane ⇒ C⁴⁻; ethyne ⇒ C₂²⁻; propyne ⇒ a C₃ unit. CaC₂ contains the acetylide ion [–C≡C–]²⁻, isoelectronic with N₂ (bond order 3).
+CaC₂(s) + 2H₂O(l) ⟶ Ca(OH)₂(aq) + C₂H₂(g)
 
-> **JEE TRAP:** Be₂C and Al₄C₃ are the **only** common methanides. The written formula "4Al³⁺·3C⁴⁻" is a convenient fiction — such a large charge separation is unreal; the true Al₄C₃ structure is more complex. In assertion–reasoning: "Mg₂C₃ is a C₃-type carbide" (true) / "Mg₂C₃ contains three carbon atoms per formula unit" (true, and it explains the classification).
+Mg₂C₃(s) + 4H₂O(l) ⟶ 2Mg(OH)₂(s) + C₃H₄(g)  (propyne)
 
-## 8.2 Calcium carbide and calcium cyanamide
+- **Ionic acetylides** (Group 1, 2) contain the [C≡C]²⁻ ion — isoelectronic with N₂, C–C stretch close to that of N₂. **Covalent acetylides** (Cu₂C₂, Ag₂C₂) are shock-sensitive explosives (a hazard when C₂H₂ meets copper alloys).
+- CaC₂ is not colourless because of lattice defects — pure CaC₂ is white, technical CaC₂ grey-black.
 
-CaO + 3C [about 2200 °C; Δ_rH ≈ +466 kJ mol⁻¹, strongly endothermic] ⟶ CaC₂ + CO
+> **JEE TRAP:** Be₂C and Al₄C₃ are the **only common methanides** — "Al₄C₃ gives methane" is a standard identification. The written 4Al³⁺·3C⁴⁻ is a formal fiction (a 4− point charge is unreal); the real structure has C in distorted octahedral holes. In A–R format: "Mg₂C₃ is a C₃-type carbide" (true) *because* "it contains a three-carbon anion" (true, and it explains it) → mark (A).
 
-CaC₂ + N₂ [about 1100 °C] ⟶ CaNCN + C
+## 8.2 Calcium carbide — the "acetylene from coal" chemistry
 
-CaC₂ was once the major industrial source of ethyne (oxy-acetylene welding). **Calcium cyanamide, CaNCN** ("nitrolim") is a slow-release nitrogenous fertiliser (it hydrolyses in soil to NH₃) and a route to urea and melamine.
+**Manufacture** (electrothermal, in an electric-arc furnace):
 
-## 8.3 Interstitial carbides
+CaO(s) + 3C(s) [≈ 2000–2200 °C; Δ_rH ≈ +466 kJ mol⁻¹, strongly endothermic] ⟶ CaC₂(l) + CO(g)
 
-- Formed by transition metals (and some lanthanoids/actinoids): small carbon atoms slot into the **octahedral holes** of a close-packed metal lattice. When the metal atoms are large enough the holes accept carbon with little distortion of the lattice, and complete filling gives the 1 : 1 composition **MC**.
-- They **retain** metallic lustre and electrical conductivity (carbon does not disturb the metallic bonding), but become much **harder, denser** and less malleable/ductile, with extreme melting points — **TaC ≈ 3900 °C**, WC used for lathe tools. Examples: TiC, ZrC, VC, WC, Mo₂C, Fe₃C (cementite).
-- Chemically unreactive; do **not** hydrolyse like the salt-like carbides; slowly attacked by hot concentrated HF/HNO₃.
+**Hydrolysis to ethyne** (the old feedstock for the whole acetylene-based organic industry, and still used for **oxy-acetylene welding**, ≈ 3300 °C flame):
 
-> **JEE TRAP:** For interstitial carbides — metallic lustre and conductivity are **unchanged**; hardness and density **increase**; malleability and ductility **decrease**. "No chemical bond is present" is a memory slogan, not a physical statement.
+CaC₂(s) + 2H₂O(l) ⟶ Ca(OH)₂(s) + C₂H₂(g)
 
-## 8.4 Covalent carbides — SiC and B₄C
+**Nitrogen fixation → calcium cyanamide** (the "Frank–Caro" process, a route to fixed nitrogen before Haber):
 
-SiO₂ + 3C [2000–2500 °C, electric furnace, excess coke] ⟶ SiC + 2CO
+CaC₂(s) + N₂(g) [≈ 1000–1100 °C] ⟶ CaNCN(s) + C(s)
 
-Si + C [about 2500 °C] ⟶ SiC
+- **CaNCN ("nitrolim")** — a slow-release nitrogenous fertiliser: in the soil it hydrolyses through cyanamide H₂NCN and urea to NH₃. It is also the industrial precursor of **melamine, dicyandiamide and thiourea**.
+- The **cyanamide ion NCN²⁻** is linear and isoelectronic with CO₂ and N₃⁻.
 
-- **Silicon carbide (carborundum)** — diamond/wurtzite-type tetrahedral network, each atom bonded to four of the other kind. **Mohs 9.5** (next to diamond), infusible, chemically almost inert. Pure SiC is pale yellow/colourless; commercial SiC is dark purple/black (Fe and other impurities). Used as an **abrasive** and refractory.
-- Attacked only by harsh reagents (no ordinary acid except H₃PO₄):
+## 8.3 Interstitial (metallic) carbides
 
-SiC + 2NaOH + 2O₂ [molten, air] ⟶ Na₂SiO₃ + CO₂ + H₂O
+- Formed by the **transition metals** (and some lanthanoids/actinoids): carbon atoms sit in the **octahedral holes** of a close-packed metal lattice.
+- **Hägg's rule:** when the metallic radius exceeds roughly 130 pm the holes are big enough to take carbon with little lattice distortion, and simple phases like **MC** (rock-salt structure: NbC, TiC, ZrC, TaC) and **M₂C** (Mo₂C, W₂C) form. Smaller metals (Cr, Mn, Fe, Co, Ni) give more complex, distorted carbides — **Fe₃C (cementite)**, Cr₃C₂, Mn₃C.
+- The carbon **donates electrons into the metal band** and pins the layers together, so relative to the parent metal:
 
-SiC + 2Cl₂ [about 100 °C] ⟶ SiCl₄ + C
+| Property | Change | Why |
+|:--|:--:|:--|
+| metallic lustre | **unchanged** | metal band still full/conducting |
+| electrical & thermal conductivity | **unchanged** (often slightly better) | electrons still delocalised |
+| hardness | **greatly increased** (TiC, WC near diamond) | C atoms lock the slip planes |
+| melting point | **very high** — **TaC ≈ 3985 °C** (one of the highest known) | extra M–C bonding |
+| density | **increased** | holes filled |
+| malleability / ductility | **decreased** | slip is blocked |
+| chemical reactivity | **very low** — do **not** hydrolyse; slowly attacked only by hot conc. HF/HNO₃ or fused oxidising alkali | strong, saturated bonding |
 
-- **Boron carbide** — written **B₄C** for exams; the true stoichiometry (nearer B₁₃C₂) and structure are complex. Even harder than SiC; abrasive, and a neutron-absorbing shield.
+- **Uses:** **WC** (bonded with Co, "cemented carbide") for cutting tools and drill bits; **TiC / TaC** in rocket nozzles and armour; **Fe₃C** is the hard phase that makes steel strong (its amount and distribution set the mechanical properties).
+
+> **JEE TRAP:** for interstitial carbides — lustre and conductivity **unchanged**; hardness, m.p. and density **up**; ductility **down**. "No chemical bond is present" is a slogan, not physics — there is genuine M–C bonding.
+
+## 8.4 Covalent (network) carbides — SiC and B₄C
+
+**Silicon carbide (carborundum):**
+
+SiO₂(s) + 3C(s) [2000–2500 °C, Acheson electric furnace, excess coke] ⟶ SiC(s) + 2CO(g)
+
+Si(s) + C(s) [≈ 2500 °C] ⟶ SiC(s)
+
+- **Structure:** a giant covalent lattice like diamond, but with **alternating Si and C**, each atom sp³ and bonded to **four of the other kind** (β-SiC = zinc-blende; α-SiC = wurtzite; over 250 stacking **polytypes** are known).
+- **Properties:** **Mohs 9.5**, second only to diamond; infusible (sublimes ~2700 °C); a **wide-band-gap semiconductor** (used in high-power/high-temperature electronics and blue LEDs); pale yellow when pure, blue-black in commercial grade (Fe, Al impurities).
+- **Chemically almost inert** — no ordinary acid attacks it; it succumbs only to fused alkali + oxidiser, or hot HF/HNO₃, or Cl₂:
+
+2SiC(s) + 4NaOH(l) + 3O₂(g) [fused, air] ⟶ 2Na₂SiO₃(s) + 2CO(g) + 2H₂O(g)
+
+SiC(s) + 2Cl₂(g) [≈ 1000 °C] ⟶ SiCl₄(g) + C(s)
+
+- **Uses:** grinding wheels and abrasives, refractory bricks and kiln furniture, car brake discs and clutch plates, bulletproof ceramic plates, heating elements ("Globar"), semiconductor substrates.
+
+**Boron carbide, B₄C:**
+
+2B₂O₃(s) + 7C(s) [≈ 2500 °C, electric furnace] ⟶ B₄C(s) + 6CO(g)
+
+- Written **B₄C** for exams; the real phase is boron-rich and variable (≈ B₄C to B₁₀·₅C), built from **B₁₂ icosahedra** linked by C–B–C chains.
+- **Harder than SiC** (Mohs ~9.5–10), very light (2.52 g cm⁻³), and a strong **neutron absorber** (¹⁰B) → tank/body armour, blast nozzles, and **reactor control rods / shielding**.
 
 # 9. Oxides of carbon — carbon monoxide
 

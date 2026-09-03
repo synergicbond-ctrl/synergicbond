@@ -1120,90 +1120,121 @@ CS₂(l) + 3Cl₂(g) [FeCl₃ or I₂ catalyst] ⟶ CCl₄(l) + S₂Cl₂(l)
 
 # 12. Silicon — preparation, purification and reactivity
 
-## 12.1 Extraction
+## 12.1 Extraction — metallurgical-grade silicon
 
-Elemental silicon is obtained by high-temperature **carbothermic reduction of silica** with high-purity coke:
+**Carbothermic reduction** of silica with high-purity coke in a submerged-arc electric furnace:
 
-SiO₂ + 2C [about 1800–2000 °C, electric furnace] ⟶ Si + 2CO
+SiO₂(s) + 2C(s) [≈ 1800–2000 °C, electric furnace] ⟶ Si(l) + 2CO(g)
 
-Excess SiO₂ is used to suppress SiC formation. **Ferrosilicon** (SiO₂ + scrap iron + coke) is made for the steel industry.
+- A **slight excess of SiO₂** is kept in the charge — an excess of carbon would form the very stable carbide instead: SiO₂ + 3C → SiC + 2CO, and SiC + SiO₂ → 2Si + 2CO reverses it only at higher T.
+- The product is **metallurgical-grade silicon (~98–99 %)** — good enough for alloys but a billion times too impure for electronics.
+- **Ferrosilicon** (silica + scrap iron + coke) is made the same way as a **deoxidiser** for steel and the source of the "silicon steels".
 
-## 12.2 Ultrapurification for semiconductors
+## 12.2 Purification to semiconductor grade
 
-Semiconductor-grade silicon must be about 99.9999999% pure. Route: convert crude Si to a **volatile halide or silane**, purify by fractional distillation, reduce back, then zone-refine.
+Electronic silicon must be **≈ 99.999999999 % (11-nines)** pure — a few impurity atoms per 10¹⁰ Si. The route has three stages.
 
-Si + 2Cl₂ ⟶ SiCl₄
+**(1) Chemical purification via a volatile hydride — the Siemens process.** Crude Si is converted to **trichlorosilane** (b.p. 32 °C), which is repeatedly fractionally distilled and then decomposed on a hot silicon rod:
 
-SiCl₄ + 2H₂ [Δ] ⟶ Si + 4HCl
+Si(s) + 3HCl(g) [≈ 300 °C] ⟶ SiHCl₃(g) + H₂(g)
 
-SiHCl₃ + H₂ [Δ] ⟶ Si + 3HCl
+SiHCl₃(g) + H₂(g) [hot Si rod, ≈ 1100 °C; CVD] ⟶ Si(s) + 3HCl(g)   — deposits **polycrystalline "polysilicon"**
 
-Na₂[SiF₆] + 4Na ⟶ Si + 6NaF
+(SiCl₄ + 2H₂ → Si + 4HCl and Na₂[SiF₆] + 4Na → Si + 6NaF are alternative reductions.)
 
-- **Zone refining:** a narrow molten zone is passed slowly along a silicon rod; impurities are more soluble in the liquid than the solid, so they concentrate in the molten zone and are swept to one end, which is cut off. Repeated passes give ultrapure silicon.
+**(2) Zone refining** removes the last traces of dissolved impurity:
+
+- A short **molten zone** is moved slowly along a polysilicon bar (radio-frequency heating).
+- For almost every impurity the **distribution coefficient k = (conc. in solid)/(conc. in liquid) < 1**, so the impurity stays preferentially in the *liquid* zone and is **dragged to one end** of the bar, which is cut off.
+- Several passes in a controlled atmosphere give ultrapure silicon. (Same principle purifies Ge, Ga, B, and many organics.)
+
+**(3) Single-crystal growth — the Czochralski process.** A seed crystal is dipped into molten ultrapure silicon and withdrawn slowly while rotating; a **single crystal ingot** (up to 300 mm diameter) grows on the seed, which is then sawn into the wafers used to make chips. A controlled dose of B or P is added to the melt to set the wafer's p- or n-type doping.
 
 ## 12.3 Physical properties
 
-Elemental silicon is very hard with a **diamond-type structure**, has a metallic lustre, m.p. 1693 K, b.p. 3550 K. It occurs as ²⁸Si (most abundant), ²⁹Si and ³⁰Si.
+| Property | Value |
+|:--|:--|
+| structure | **diamond-type** covalent lattice (each Si sp³, 4 neighbours) |
+| appearance | dark grey, metallic lustre, brittle, very hard |
+| m.p. / b.p. | ≈ 1687 K / ≈ 3538 K (open lattice → **expands on freezing**) |
+| electrical | intrinsic **semiconductor**, band gap ≈ **1.1 eV** (conductivity rises with T and with doping) |
+| isotopes | ²⁸Si (92.2 %), ²⁹Si (4.7 %), ³⁰Si (3.1 %) |
 
 ## 12.4 Chemical reactivity
 
-Silicon is very unreactive at room temperature toward everything **except fluorine**.
+Silicon is **unreactive at room temperature** toward air, water and acids — a self-limiting SiO₂ skin protects it. It reacts only with **F₂** (cold), and with everything else only on **strong heating** or with **alkali / HF**.
 
-Si + O₂ [1173 K] ⟶ SiO₂
+Si(s) + O₂(g) [≈ 1173 K] ⟶ SiO₂(s)
 
-3Si + 2N₂ [1673 K] ⟶ Si₃N₄
+3Si(s) + 2N₂(g) [≈ 1673 K] ⟶ Si₃N₄(s)
 
-Si + 2H₂O(g) [red heat] ⟶ SiO₂ + 2H₂
+Si(s) + 2H₂O(g) [red heat] ⟶ SiO₂(s) + 2H₂(g)
 
-Si + 2F₂ [room temperature; spontaneous] ⟶ SiF₄
+Si(s) + 2F₂(g) [room temperature, spontaneous — ignites] ⟶ SiF₄(g)
 
-Si + 2X₂ [Cl₂, Br₂, I₂; high temperature] ⟶ SiX₄
+Si(s) + 2X₂(g) [X = Cl, Br, I; on warming] ⟶ SiX₄
 
-Si + C [about 2500 °C] ⟶ SiC
+Si(s) + C(s) [≈ 2500 °C] ⟶ SiC(s)
 
-Si + 2NaOH + H₂O [hot aqueous] ⟶ Na₂SiO₃ + 2H₂
+Si(s) + 2NaOH(aq) + H₂O(l) [hot alkali strips the SiO₂ skin] ⟶ Na₂SiO₃(aq) + 2H₂(g)
 
-> **Key Point — uses of silicon:** ultrapure Si → transistors, diodes, solar cells and computer chips; **ferrosilicon** and silicon steels (silicon makes the steel acid-resistant); silicon–bronze and Al–Si alloys.
+3Si(s) + 4HNO₃ + 18HF ⟶ 3H₂[SiF₆] + 4NO + 8H₂O   — the only acid attack (HNO₃ oxidises, HF dissolves the oxide)
+
+> **Key Point — uses of silicon:** ultrapure single-crystal Si → **transistors, integrated circuits, photovoltaic cells, detectors**; **ferrosilicon** (steel deoxidiser; corrosion- and acid-resistant "duriron"; grain-oriented **electrical steel** for transformer cores); silicon–bronze, Al–Si (piston) and Mg–Si alloys; the starting material for **silicones** (§16) and fumed silica.
 
 # 13. Silicon dioxide (silica)
 
 ## 13.1 Structure — and why it is a solid, not a gas
 
-- SiO₂ is a **giant three-dimensional covalent network**: every silicon is **sp³**, bonded to four oxygens; every oxygen bridges two silicons. Eight-membered Si–O rings run through the crystal; the whole crystal is one giant molecule.
-- Polymorphs: **quartz, tridymite, cristobalite**, each with a low- and a high-temperature form, interconverting on heating. **α-quartz** is the room-temperature stable form; its SiO₄ tetrahedra form helices, so left- and right-handed (enantiomorphic) crystals occur. Cristobalite has the silicons arranged like carbon in diamond, with oxygens between.
-- **Vitreous (fused) silica:** melt and quench → a disordered network. Very low thermal-expansion coefficient, transmits UV → optical cells, high-temperature ware.
-- **Silica gel:** porous amorphous hydrated SiO₂ (about 4% H₂O) — desiccant, catalyst support, chromatographic adsorbent. **Kieselguhr / diatomaceous earth:** fine SiO₂ powder — filtration aid, mild abrasive, absorbent (used to stabilise nitroglycerine as dynamite).
-- **Quartz is piezoelectric** — mechanical stress generates a voltage and vice versa → oscillators, accurate clocks, radio-frequency control.
+- SiO₂ is a **giant three-dimensional covalent network**: every silicon is **sp³** and bonded to **four O**; every O **bridges two Si** (Si–O–Si angle ≈ 144°). The whole crystal is one macromolecule — there is no "SiO₂ molecule".
+- **Si–O ≈ 161 pm**, shorter than the sum of covalent radii — partial **pπ–dπ** (O lone pair → empty Si 3d) shortens and strengthens it. This strong, abundant Si–O bond is why silica melts near **1983 K** and is chemically almost inert.
+- **Crystalline polymorphs** — all built of the same corner-linked SiO₄ tetrahedra, differing only in how the tetrahedra are tilted and linked:
 
-> **MOT LENS — why CO₂ is molecular but SiO₂ is a network.**
-> - Carbon (2p) overlaps oxygen 2p efficiently, so C forms strong **pπ–pπ** C=O double bonds → the discrete linear O=C=O molecule.
-> - Silicon (3p) is large and diffuse; Si–O pπ–pπ overlap is poor. Silicon instead maximises the number of strong **Si–O σ single bonds** (further reinforced by O→Si **pπ–dπ** back-donation) by polymerising into a three-dimensional lattice. The huge Si–O lattice enthalpy gives SiO₂ its very high melting point and chemical inertness.
-> - Same reason: CO₃²⁻ is a discrete planar ion but "SiO₃²⁻" occurs only as infinite chains/rings in pyroxenes and cyclosilicates.
+| Polymorph | Stable range (1 atm) | Note |
+|:--|:--|:--|
+| **α-quartz** | < 573 °C | the everyday form; helical tetrahedra → **chiral** (left- and right-handed crystals); **piezoelectric** |
+| β-quartz | 573–870 °C | α ⇌ β is a fast, reversible "displacive" change |
+| tridymite | 870–1470 °C | |
+| cristobalite | 1470–1723 °C | Si arranged like C in diamond, O in between |
+| molten SiO₂ | > 1723 °C | very **viscous** melt (network survives partly) → quenches to a **glass** |
+
+- **Vitreous (fused) silica** — the quenched melt, a random Si–O network. **Near-zero thermal-expansion coefficient** (survives being heated red-hot and plunged into water), transmits **UV** → prism/lens optics, crucibles, high-temperature ware.
+- **Silica gel** — amorphous, highly porous hydrated SiO₂ (~4 % H₂O); large surface area → **desiccant** (the sachets), chromatographic stationary phase, catalyst support.
+- **Kieselguhr / diatomaceous earth** — fossil-diatom SiO₂ powder → filter aid, mild abrasive (toothpaste), and the absorbent that made nitroglycerine safe to handle as **dynamite**.
+- **Fumed silica** — flame-hydrolysis of SiCl₄ → ultrafine powder used as a **thixotropic thickener** and reinforcing filler (in silicone rubber, §16).
+
+> **MOT LENS — CO₂ molecular, SiO₂ network (the chapter's signature contrast).**
+> - Carbon's compact 2p overlaps O 2p well → strong **pπ–pπ** C=O → the octet is satisfied in a small **discrete O=C=O** molecule → **gas**.
+> - Silicon's diffuse 3p gives poor π overlap → silicon forms **four Si–O σ single bonds** (reinforced by O→Si pπ–dπ) and **polymerises** into a 3-D lattice → one giant molecule → **high-melting solid**.
+> - Same cause: CO₃²⁻ is a discrete planar ion, but "SiO₃²⁻" exists only as the **infinite chains and rings** of the pyroxenes and cyclosilicates (§14).
 
 ## 13.2 Reactions of silica
 
-SiO₂ + 4HF ⟶ SiF₄ + 2H₂O
+**Acidic oxide — reacts with base, not with ordinary acid:**
 
-SiO₂ + 6HF [concentrated] ⟶ H₂SiF₆ + 2H₂O
+SiO₂(s) + 2NaOH(l) [fused] ⟶ Na₂SiO₃(s) + H₂O(g)
 
-SiF₄ + 2H₂O ⟶ SiO₂·2H₂O (or Si(OH)₄) + 4HF
+SiO₂(s) + Na₂CO₃(l) [fused] ⟶ Na₂SiO₃(s) + CO₂(g)   (SiO₂ displaces the volatile CO₂ from its salt at high T)
 
-SiO₂ + 2F₂ ⟶ SiF₄ + O₂
+SiO₂(s) + CaO(s) [Δ] ⟶ CaSiO₃(s)   (slag formation — SiO₂ is the "acid" flux that carries away basic gangue in a blast furnace)
 
-SiO₂ + 2NaOH [fused] ⟶ Na₂SiO₃ + H₂O
+3SiO₂ + Ca₃(PO₄)₂ [high T] ⟶ 3CaSiO₃ + P₂O₅↑
 
-SiO₂ + Na₂CO₃ [fused] ⟶ Na₂SiO₃ + CO₂
+**The one acid that attacks it — HF (used to etch glass):**
 
-SiO₂ + CaO [Δ; blast-furnace slag] ⟶ CaSiO₃
+SiO₂(s) + 4HF(aq) ⟶ SiF₄(g) + 2H₂O
 
-3SiO₂ + Ca₃(PO₄)₂ [high T; superphosphate manufacture, glass making] ⟶ 3CaSiO₃ + P₂O₅
+SiO₂(s) + 6HF(conc.) ⟶ H₂[SiF₆](aq) + 2H₂O
 
-- SiO₂ is **acidic**: no reaction with ordinary acids (only HF), slow with aqueous alkali, fast with **fused** alkali/carbonates → silicates. This is why ground-glass stoppers seize in bottles of strong alkali, and why NaOH is stored in plastic.
+SiF₄(g) + 2H₂O ⟶ SiO₂·2H₂O (Si(OH)₄) + 4HF   (SiF₄ re-hydrolyses on contact with a water drop)
 
-> **QUALITATIVE SILICATE TEST:** generate HF in situ (CaF₂ + conc. H₂SO₄); it attacks SiO₂ to volatile SiF₄, which on contact with a drop of water deposits **white gelatinous hydrated silica / silicic acid** — the confirmatory test for a silicate.
+SiO₂(s) + 2F₂(g) ⟶ SiF₄(g) + O₂(g)
 
-> **Key Point — uses of silica:** sand → mortar, cement, glass; large quartz crystals → lenses and prisms (UV-transparent) and radio-frequency control; **silica gel** → drying agent and chromatographic support; kieselguhr → filtration plants; powdered quartz → silica bricks for furnace linings.
+> **Practical consequences of "SiO₂ is acidic":** ground-glass stoppers **seize** in bottles of strong alkali (the alkali slowly dissolves the contact film); **NaOH is stored in plastic**, not glass; **HF is kept in polythene** (it eats glass); glassware is permanently frosted by HF vapour.
+
+> **QUALITATIVE SILICATE / BORATE-type TEST:** warm the solid with **CaF₂ + conc. H₂SO₄** → HF generated *in situ* attacks any silica/silicate to volatile **SiF₄**; a drop of water held at the tube mouth deposits a **white gelatinous ring of hydrated silica** — the confirmatory test for a silicate.
+
+> **Key Point — uses of silica:** sand → mortar, concrete, glass; **quartz crystal oscillators** → watches, radio/TV frequency control (piezoelectricity); **fused-silica** optics and crucibles; **silica gel** desiccant and chromatography; **kieselguhr** filter aid and dynamite absorbent; **fumed silica** thickener/filler; silica bricks for furnace roofs.
 
 # 14. Silicates — the full seven-class structural system
 
@@ -1392,64 +1423,92 @@ CH₃OH [H–ZSM-5, about 400 °C; methanol-to-gasoline] ⟶ hydrocarbons (C₅�
 
 # 15. Glass
 
-- Pure fused silica has superb properties but needs a very high working temperature. Added oxides (**network modifiers**) break some Si–O–Si links and lower the melting range.
-- Glass is an **amorphous, supercooled liquid / solid solution** — no long-range order — so its composition varies continuously.
-- Common modifiers: Na₂O, K₂O, CaO, MgO, BaO, B₂O₃, Al₂O₃, PbO, ZnO. If **only** Na₂O or K₂O is added, the glass is water-soluble (water glass); CaO is added to make it insoluble.
+## 15.1 What glass is
 
-| Glass | Composition family | Character / use |
-|:--|:--|:--|
-| **Soda-lime (crown) glass** | Na₂O·CaO·SiO₂ | windows, bottles, cheap labware; from Na₂CO₃ + CaCO₃ + SiO₂ (carbonates decompose to oxides on fusion) |
-| **Potash glass ("hard glass")** | K₂O·CaO·SiO₂ | higher softening point → combustion tubing |
-| **Lead (flint) glass** | K₂O·PbO·SiO₂ | high refractive index and density → optical lenses, prisms, "crystal" ware |
-| **Borosilicate (Pyrex)** | Na₂O·B₂O₃·Al₂O₃·SiO₂ | low thermal expansion, chemically resistant, low alkali → labware, ovenware |
-| **Silica (quartz) glass** | pure SiO₂ | UV-transparent, near-zero thermal expansion → optics, high-temperature ware |
+- Glass is an **amorphous solid** — a **supercooled liquid** frozen with no long-range order. It has **no fixed formula and no sharp melting point**: it *softens* over a temperature range (the working range), which is exactly what lets it be blown, drawn and moulded.
+- A **glass-former** oxide (SiO₂, B₂O₃, P₂O₅, GeO₂) makes a random covalent network on cooling. Pure fused silica is superb but needs a working temperature ~1700 °C.
+- **Network modifiers** (Na₂O, K₂O, CaO, MgO, BaO, PbO) each donate an O²⁻ that **breaks one Si–O–Si bridge** into two "non-bridging" Si–O⁻ …M⁺ ends. Fewer bridges → the network softens and the working temperature drops.
+- **Intermediates** (Al₂O₃, ZnO) can act either way and are used to tune durability.
+- **Alkali alone** (only Na₂O or K₂O + SiO₂) gives a **water-soluble** glass ("water glass", §14.1); **CaO** is added to make it insoluble and weather-resistant.
 
-- **Colouring agents** (added as oxides during the melt): Fe³⁺ gives yellow-brown, Fe²⁺ pale blue, a Fe²⁺/Fe³⁺ mix green, **Co²⁺ deep blue**, Cu²⁺ blue-green, **colloidal copper ruby-red**, colloidal gold the purple "purple of Cassius" tint; a fluoride addition makes translucent opal glass.
-- Small amounts of other additives are used to clear dissolved gas bubbles from the melt and to mask the residual green iron tint.
+## 15.2 The common glasses
 
-> **JEE TRAP:** two important man-made silicates are **glass and cement**. Glass has no fixed formula (it is a solution); Pyrex resists thermal shock because B₂O₃/low-alkali content lowers its expansion coefficient.
+| Glass | Oxide family | Batch | Character | Use |
+|:--|:--|:--|:--|:--|
+| **soda-lime (crown)** | Na₂O·CaO·6SiO₂ | Na₂CO₃ + CaCO₃ + SiO₂ (carbonates → oxides + CO₂ on fusion) | cheap, easy-working, moderate durability | ~90 % of all glass — windows (float process), bottles, jars, cheap labware |
+| **potash (hard) glass** | K₂O·CaO·SiO₂ | K₂CO₃ replacing Na₂CO₃ | **higher softening point** | combustion tubing, older chemical glassware |
+| **lead (flint) glass** | K₂O·PbO·SiO₂ | add PbO (or Pb₃O₄) | **high refractive index and dispersion**, dense, soft, "rings" | optical lenses and prisms, "crystal" tableware, radiation-shielding windows |
+| **borosilicate (Pyrex, Borosil)** | Na₂O·B₂O₃·Al₂O₃·SiO₂ | add borax/B₂O₃, low alkali | **very low thermal-expansion coefficient**, chemically resistant | labware, ovenware, telescope mirror blanks, pharma vials |
+| **fused-silica (quartz) glass** | ~100 % SiO₂ | melt pure silica | **near-zero expansion**, transmits **UV**, service to ~1000 °C | UV cuvettes, halogen-lamp envelopes, semiconductor furnace tubes, optical fibre |
+| **aluminosilicate** | Al₂O₃·CaO·SiO₂ | high alumina | very high softening point, chemically tough | halogen-lamp glass, cookware, some display cover glass |
+
+> **Why Pyrex survives thermal shock:** thermal-shock resistance ∝ (strength) / (expansion coefficient × Young's modulus). B₂O₃ and low alkali give borosilicate an expansion coefficient about **⅓ that of soda-lime**, so a steep temperature gradient sets up much smaller internal stresses — it does not crack when heated unevenly.
+
+## 15.3 Colour, and finishing the melt
+
+- **Colouring agents** (transition-metal oxides / colloids dissolved in the melt): Fe³⁺ yellow-brown; Fe²⁺ pale blue-green; Fe²⁺+Fe³⁺ bottle-green; **Co²⁺ deep blue**; Cu²⁺ blue-green; Cr³⁺ green; Mn³⁺ purple; Ni brown-purple; **colloidal Cu → ruby red**; **colloidal Au → "purple of Cassius"**; CdS/CdSe → yellow-to-red; U compounds → fluorescent yellow-green ("vaseline glass").
+- **Decolourisers** (a trace of Mn³⁺ or Se, or Co) mask the green Fe²⁺ tint by adding the complementary colour.
+- **Fining agents** (small additions such as a sulphate or nitrate) release gas that sweeps the fine bubbles ("seeds") out of the melt.
+- **Opacifiers** (a fluoride, SnO₂, Caₓ(PO₄)ᵧ) throw a fine crystalline dispersion → translucent **opal glass**.
+- **Toughened / laminated / photochromic / self-cleaning** glasses are surface or additive modifications of ordinary soda-lime glass.
+
+> **JEE TRAP:** the two great **man-made silicates are glass and cement**. Glass is a *solution* (no formula, no melting point, isotropic, conchoidal fracture); cement (Portland: mainly Ca silicates + aluminates) sets by *hydration*, not by cooling.
 
 # 16. Silicones
 
-Silicones are synthetic **organosilicon polymers** with an **–Si–O–Si–O–** (siloxane) backbone and organic (usually methyl or phenyl) groups on silicon. the repeating unit is **(R₂SiO)ₙ**.
+Silicones (poly**siloxanes**) are synthetic polymers with an inorganic **–Si–O–Si–O–** backbone and organic groups (usually **–CH₃**, sometimes **–C₆H₅** or **–H**) on every silicon. The name is a historical misnomer: R₂SiO looks formally like a ketone R₂CO ("silicoketone" → "silicone"), but there is **no Si=O** — the unit is part of a chain.
 
-## 16.1 Making the chlorosilanes
+## 16.1 Step 1 — the chlorosilanes
 
-**Rochow direct process (industrial):**
+**Rochow (Müller–Rochow) direct process** — the industrial route:
 
-2CH₃Cl + Si [Cu catalyst, about 570 K] ⟶ (CH₃)₂SiCl₂ as the major product, together with smaller amounts of MeSiCl₃, Me₃SiCl, Me₄Si and MeSiHCl₂
+2CH₃Cl(g) + Si(s) [Cu catalyst, ≈ 570 K] ⟶ (CH₃)₂SiCl₂  (major)  + MeSiCl₃ + Me₃SiCl + Me₄Si + MeSiHCl₂  (minor)
 
-**Grignard / organolithium (laboratory):**
+**Grignard route** — to make aryl or mixed chlorosilanes, or in the lab:
 
-SiCl₄ + CH₃MgCl ⟶ CH₃SiCl₃ + MgCl₂ (then stepwise to Me₂SiCl₂, Me₃SiCl, Me₄Si)
+SiCl₄ + CH₃MgCl ⟶ CH₃SiCl₃ + MgCl₂  (and stepwise on to Me₂SiCl₂, Me₃SiCl, Me₄Si)
 
-4LiR + SiCl₄ ⟶ SiR₄ + 4LiCl
+The mixed methylchlorosilanes boil within a few degrees of one another (~55–70 °C), so the plant's key operation is a very efficient **fractional-distillation train** that separates Me₂SiCl₂ (the bulk product) from Me₃SiCl and MeSiCl₃.
 
-Careful fractional distillation is essential because the methylchlorosilanes boil within a few degrees of one another (all roughly 55–70 °C).
+## 16.2 Step 2 — hydrolysis, and the functionality rule
 
-## 16.2 Hydrolysis and the functionality rule
+Each Si–Cl hydrolyses to Si–OH, and the silanols then **condense** (lose H₂O) into Si–O–Si links:
 
-R₂SiCl₂ + 2H₂O ⟶ R₂Si(OH)₂ + 2HCl
+R₂SiCl₂ + 2H₂O ⟶ R₂Si(OH)₂ + 2HCl ;   n R₂Si(OH)₂ [−(n−1)H₂O] ⟶ [–R₂Si–O–]ₙ
 
-The silanols then **condense** (−H₂O) into the siloxane backbone.
+**The number of Si–Cl bonds (the "functionality") fixes what the monomer can build:**
 
-| Monomer | Silanol on hydrolysis | Role in the polymer |
+| Monomer | Cl / OH | Functionality | Role |
+|:--|:--:|:--:|:--|
+| **R₃SiCl** | 1 | **1** | **chain end-cap** — after one link it is "dead"; two of them give hexamethyldisiloxane |
+| **R₂SiCl₂** | 2 | **2** | **linear chain builder** (also cyclic 3-, 4-, 5-, 6-siloxanes) — the backbone unit |
+| **RSiCl₃** | 3 | **3** | **cross-link / branch point** → ladder and 3-D network resins |
+| **SiCl₄** | 4 | 4 | fully cross-linked SiO₂-like network |
+
+> **The single most examined idea:** the **mole ratio R₃SiCl : R₂SiCl₂ : RSiCl₃** in the feed sets the product.
+> - **more R₃SiCl** → shorter chains → thinner **oils**;
+> - **almost all R₂SiCl₂** → long linear chains → **greases and gums** (→ rubber after cross-linking);
+> - **more RSiCl₃ / SiCl₄** → dense cross-linking → hard **resins**.
+
+> **JEE TRAP:** R₂Si(OH)₂ does **not** dehydrate to a "silicon ketone" R₂Si=O — silicon does not form stable pπ–pπ bonds (§5.3). The silanols condense to the **polymeric siloxane** instead (bond preference: Si–O–Si single bonds, never Si=O — the same reason SiO₂ is a network, not "O=Si=O"). RSiCl₃ hydrolysed alone → a **cross-linked 3-D network silicone resin**.
+
+## 16.3 Why the properties are what they are
+
+- The **Si–O backbone bond is very strong (~450–500 kJ mol⁻¹)** and the Si–C bond is strong too → **thermal stability and oxidation resistance** to ~250 °C (far beyond a hydrocarbon polymer).
+- The backbone is **very flexible** (wide, easily bent Si–O–Si angle, low rotational barrier) → the material stays rubbery down to about **−90 °C** and its viscosity barely changes with temperature (a good **hydraulic / damping fluid**).
+- The **methyl groups point outward** and shield the polar backbone, so the surface behaves like a hydrocarbon → **water-repellent (hydrophobic)** and **low surface tension** (→ release agent, anti-foam, spreads to a thin film).
+- **Electrically insulating**, chemically inert, **physiologically inert and non-toxic** (medical grade).
+
+## 16.4 Forms and uses
+
+| Form | Made from | Use |
 |:--|:--|:--|
-| **R₃SiCl** (one OH) | R₃SiOH | **chain stopper / end-cap** — two of these condense to hexamethyldisiloxane and can grow no further |
-| **R₂SiCl₂** (two OH) | R₂Si(OH)₂ | **linear chain builder**; also gives cyclic (3-, 4-, 5-, 6-membered) siloxanes |
-| **RSiCl₃** (three OH) | RSi(OH)₃ | **cross-linker → 3-D resin network** |
+| **fluids / oils** | short-to-medium linear chains | hydraulic and heat-transfer fluids, damping fluids, brake fluid, water-repellent sprays for masonry/textiles, car and shoe polish, cosmetics, **anti-foaming agents** (sewage plants, fermenters, frying oils), release agents for moulds |
+| **greases** | oil + fumed-silica or soap thickener | high- and low-temperature lubrication (vacuum, aerospace, o-rings) |
+| **elastomers (silicone rubber)** | long dimethylsiloxane gum + fumed-silica reinforcement, then lightly cross-linked | seals, gaskets, tubing, baking moulds, keypads, **medical implants and prostheses**; stays elastic **≈ −90 °C to +250 °C** — a far wider range than natural rubber |
+| **resins** | RSiCl₃-rich, highly cross-linked | high-temperature electrical varnishes and laminates, weatherproof paints, encapsulants |
 
-The **ratio R₃SiCl : R₂SiCl₂ : RSiCl₃** in the feed sets the average chain length and cross-link density — the single most examined idea about silicones. Adding a little Me₃SiCl to a Me₂SiCl₂ hydrolysis caps the chains and controls the molecular weight; adding a little MeSiCl₃ introduces cross-links.
-
-> **JEE TRAP:** R₂Si(OH)₂ does **not** dehydrate to a "silicon ketone" R₂Si=O — silicon does not form stable pπ–pπ bonds. Instead the silanols condense to the polymeric silicone. (Bond-strength order C=O > Si=O; silicon prefers Si–O–Si single bonds — the same reason SiO₂ is a network.) If the starting material is RSiCl₃ alone, the product is a **cross-linked 3-D network silicone**.
-
-## 16.3 Properties and uses
-
-- The backbone is stabilised by a very strong **Si–O bond (about 502 kJ mol⁻¹)** plus a strong Si–C bond; the organic groups point outward so the surface behaves like a hydrocarbon → **water-repellent** (hydrophobic in nature).
-- Heat-stable, oxidation- and chemical-resistant, excellent **electrical insulators**, non-stick, anti-foaming, non-toxic, physiologically inert (used in surgical and cosmetic implants).
-- **Forms:** fluids/oils, greases, elastomers (silicone rubber), resins.
-
-> **Key Point — uses of silicones:** water-repellent treatment of masonry and fabrics; car and shoe polish; **transformer dielectric and hydraulic fluids**; high- and low-temperature lubricants (a phenyl-substituted grade for gearboxes); **anti-foaming agents** (sewage disposal, fermentation, cooking-oil frying); sealants and greases; electrical insulation; surgical/cosmetic implants. **Silicone rubber** — very long dimethylsiloxane chains reinforced with finely divided SiO₂ filler; it stays elastic over a far wider temperature span than natural rubber (roughly −90 °C to +250 °C).
+> **Key Point:** silicones are the practical demonstration of "silicon does σ, not π" — a flexible Si–O single-bonded chain, tunable from a thin oil to a hard resin purely by the **R₃/R₂/R₁ chlorosilane ratio**.
 
 # 17. Hydrides of Group 14
 
@@ -2067,7 +2126,7 @@ Use this as a last-night revision sweep — for each line, recall the reasoning,
 
 ## 28.4 Silicon, silica and the silicates
 
-- Silicon extraction, ultrapurification (halide route + zone refining), reactivity — unreactive except toward fluorine [12].
+- Silicon: metallurgical-grade extraction; purification to 11-nines (Siemens trichlorosilane → polysilicon; zone refining and its k < 1 argument; Czochralski single-crystal ingot); reactivity — inert except to F₂, hot alkali and HF [12].
 - Silica: the giant network, polymorphs, vitreous silica, silica gel, kieselguhr, piezoelectricity; why SiO₂ is a solid but CO₂ a gas; reactions with HF and with fused alkali [13].
 - The silicate master rule: classification by shared corners per SiO₄ tetrahedron; O:Si = 4 − x/2, charge/Si = −(4 − x) [14.1].
 - The seven classes with type minerals: ortho, pyro, cyclic, single chain, double chain, sheet, framework [14.2–14.7].
@@ -2079,8 +2138,8 @@ Use this as a last-night revision sweep — for each line, recall the reasoning,
 
 ## 28.5 Glass, silicones, hydrides, halides, complexes
 
-- Glass as a supercooled solution; the common families (soda-lime, potash, lead, borosilicate, silica); network modifiers; colouring agents [15].
-- Silicones: chlorosilane synthesis; the functionality rule (R₃SiCl caps, R₂SiCl₂ builds, RSiCl₃ cross-links); why no Si=O; properties and uses; silicone rubber [16].
+- Glass: supercooled solution (no formula, no m.p.); glass-formers vs **network modifiers** (break Si–O–Si bridges); the families (soda-lime, potash, lead/flint, borosilicate, fused-silica, aluminosilicate) with batch and use; why Pyrex resists thermal shock (low α); colouring/decolourising/fining/opacifying agents; glass vs cement [15].
+- Silicones: Rochow direct process → chlorosilanes; hydrolysis + condensation; the **functionality rule** (R₃SiCl caps → oils, R₂SiCl₂ builds → gums/rubber, RSiCl₃ cross-links → resins) set by the chlorosilane ratio; why no Si=O; property→cause list (strong flexible Si–O, outward CH₃); oils/greases/elastomers/resins and their uses; silicone rubber −90 to +250 °C [16].
 - Silanes: preparation; why they are far more reactive than alkanes (reversed Si–H polarity, accessible d orbitals); thermal-stability order down the group [17].
 - Tetrahalides: all MX₄ except PbI₄; SnF₄ and PbF₄ are ionic solids; the SiCl₄ vs CCl₄ hydrolysis mechanism; charge-transfer colour of SnI₄/GeI₄; catenated silicon halides [18.1, 18.2].
 - Dihalides: stability rises down the group; bent gas-phase SnCl₂ [18.3].

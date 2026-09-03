@@ -858,6 +858,11 @@ CO(g) + PdCl₂(aq) + H₂O ⟶ CO₂(g) + Pd↓ (black) + 2HCl   — a black st
 
 5CO(g) + I₂O₅(s) [warm] ⟶ 5CO₂(g) + I₂ ;   I₂ + 2S₂O₃²⁻ ⟶ 2I⁻ + S₄O₆²⁻
 
+> **WORKED EXAMPLE — separate and quantify a CO + CO₂ mixture** (a standard gas-analysis question).
+> **Step 1 — take out and measure the CO₂.** Pass the mixture through **KOH (or limewater)**: CO₂ + 2KOH → K₂CO₃ + H₂O. The **volume lost** = volume of CO₂ (or precipitate the BaCO₃ and weigh it). The gas leaving is **pure CO**.
+> **Step 2 — measure the CO.** Pass that CO over **warm I₂O₅**: 5CO + I₂O₅ → 5CO₂ + I₂. Titrate the liberated **I₂ against standard thiosulphate** (I₂ + 2S₂O₃²⁻ → 2I⁻ + S₄O₆²⁻). Then **n(CO) = 5⁄2 × n(S₂O₃²⁻ used)**.
+> **The template** — an *absorbent* for the acidic/reactive component, then a *selective redox reaction + iodometric titration* for the other — separates and quantifies almost any two-gas mixture (CO/CO₂, O₂/O₃, CO/H₂, etc.).
+
 **Toxicity**
 
 CO binds the Fe(II) of haemoglobin to give **carboxyhaemoglobin**, a complex **≈ 200–250 times more stable** than the oxygen complex, so even a small partial pressure of CO ties up most of the haemoglobin and blocks O₂ transport → headache, confusion, cherry-red skin, unconsciousness, death. It is odourless, so there is no warning.
@@ -1058,15 +1063,21 @@ Solid Na₂CO₃ crystallises as the **decahydrate Na₂CO₃·10H₂O (washing 
 
 ## 10.4 Carbon suboxide, C₃O₂
 
-HOOC–CH₂–COOH (malonic acid) [P₄O₁₀, about 150 °C] ⟶ O=C=C=C=O + 2H₂O
+**Preparation** — double dehydration of malonic (propanedioic) acid:
 
-- Linear, foul-smelling gas, b.p. about **6 °C**; stable at very low temperature, polymerises to yellow and then red-purple solids on warming.
+HOOC–CH₂–COOH(s) [P₄O₁₀, ≈ 150 °C] ⟶ O=C=C=C=O + 2H₂O
 
-C₃O₂ + 2HCl ⟶ CH₂(COCl)₂
+- **Structure:** linear (or very nearly — a shallow bend), **cumulated** O=C=C=C=O; carbon **sp** throughout; an inorganic analogue of allene/ketene.
+- Colourless, foul-smelling (onion/mustard) gas, b.p. **≈ 7 °C**; **stable only cold** — above ~25 °C it polymerises to yellow, then red, then violet-black solids (poly-C₃O₂).
+- It is the **anhydride of malonic acid** — hydrolysis reverses the preparation:
 
-C₃O₂ + 2NH₃ ⟶ CH₂(CONH₂)₂
+C₃O₂ + 2H₂O ⟶ CH₂(COOH)₂
 
-**C₁₂O₉** (the anhydride of mellitic acid, C₆(COOH)₆) is another stable suboxide; C₅O₂ reports are disputed.
+C₃O₂ + 2HCl ⟶ CH₂(COCl)₂ (malonyl chloride) ;   C₃O₂ + 2NH₃ ⟶ CH₂(CONH₂)₂ (malonamide)
+
+- **Other carbon suboxides:** **C₁₂O₉**, the anhydride of **mellitic acid C₆(COOH)₆** (benzenehexacarboxylic acid — itself the hot-HNO₃ oxidation product of graphite, §6.1); C₅O₂ (O=C=C=C=C=C=O) is claimed but not well characterised.
+
+> **The full list of carbon oxides (a "how many oxides of carbon" trap):** **CO, CO₂, C₃O₂, C₁₂O₉** are the well-defined ones; add graphite oxide and the unstable C₅O₂. Carbon forms more oxides than any other Group 14 element.
 
 # 11. Carbon disulphide and sulphides of carbon
 
@@ -1235,6 +1246,17 @@ SiO₂(s) + 2F₂(g) ⟶ SiF₄(g) + O₂(g)
 > **QUALITATIVE SILICATE / BORATE-type TEST:** warm the solid with **CaF₂ + conc. H₂SO₄** → HF generated *in situ* attacks any silica/silicate to volatile **SiF₄**; a drop of water held at the tube mouth deposits a **white gelatinous ring of hydrated silica** — the confirmatory test for a silicate.
 
 > **Key Point — uses of silica:** sand → mortar, concrete, glass; **quartz crystal oscillators** → watches, radio/TV frequency control (piezoelectricity); **fused-silica** optics and crucibles; **silica gel** desiccant and chromatography; **kieselguhr** filter aid and dynamite absorbent; **fumed silica** thickener/filler; silica bricks for furnace roofs.
+
+## 13.3 Silicic acids and the silicon nitrogen compounds
+
+**Silicic acids.** Acidifying a soluble silicate slowly releases **orthosilicic acid, Si(OH)₄ (H₄SiO₄)**:
+
+Na₂SiO₃(aq) + 2HCl(aq) ⟶ Si(OH)₄ + 2NaCl
+
+- Si(OH)₄ is a **very weak acid** (pK_a1 ≈ 9.8) and is **unstable in the free state** — it **condenses** by losing water (Si–OH + HO–Si → Si–O–Si + H₂O), first to **metasilicic acid (H₂SiO₃)ₙ**, then to **disilicic / polysilicic acids**, and finally to a gel of hydrated SiO₂. A rapid, strong acidification gives the **white gelatinous precipitate** used as the confirmatory silicate test (§13.2); a slow, controlled one gives a clear **sol → gel → xerogel** (the basis of **silica gel** and the **sol–gel** route to glasses and ceramic coatings).
+- Because Si(OH)₄ always condenses, **there is no discrete "silicate ion" in the way there is a carbonate ion** — silicate chemistry is the chemistry of *polymerised* SiO₄ tetrahedra (§14), exactly the C-vs-Si contrast again.
+
+**Silicon nitride, Si₃N₄** (from §6.1): a hard (Mohs ~9), light, thermal-shock-resistant, chemically inert **covalent ceramic** — SiN₄ and NSi₃ units in a 3-D network. Used for turbine blades, bearings, cutting tools, and as an **insulating / diffusion-barrier layer in silicon chips**. **Sialons** (Si–Al–O–N) are tougher engineering variants.
 
 # 14. Silicates — the full seven-class structural system
 
@@ -1421,7 +1443,7 @@ CH₃OH [H–ZSM-5, about 400 °C; methanol-to-gasoline] ⟶ hydrocarbons (C₅�
 
 > **JEE TRAP:** clays (**sheet** silicates) and zeolites (**framework** silicates) are both cation exchangers, but for different structural reasons — clays exchange the loosely held interlayer cations between the sheets; zeolites exchange the cations sitting in the framework cavities. A feldspar, though also a framework aluminosilicate, exchanges nothing because it has no open channels.
 
-# 15. Glass
+# 15. Glass and cement — the two man-made silicates
 
 ## 15.1 What glass is
 
@@ -1452,7 +1474,41 @@ CH₃OH [H–ZSM-5, about 400 °C; methanol-to-gasoline] ⟶ hydrocarbons (C₅�
 - **Opacifiers** (a fluoride, SnO₂, Caₓ(PO₄)ᵧ) throw a fine crystalline dispersion → translucent **opal glass**.
 - **Toughened / laminated / photochromic / self-cleaning** glasses are surface or additive modifications of ordinary soda-lime glass.
 
-> **JEE TRAP:** the two great **man-made silicates are glass and cement**. Glass is a *solution* (no formula, no melting point, isotropic, conchoidal fracture); cement (Portland: mainly Ca silicates + aluminates) sets by *hydration*, not by cooling.
+> **JEE TRAP:** the two great **man-made silicates are glass and cement**. Glass is a *solution* (no formula, no melting point, isotropic, conchoidal fracture) that sets by *cooling*; cement sets by *hydration* — a chemical reaction with water.
+
+## 15.4 Portland cement
+
+**Raw mix.** Limestone (CaCO₃) + clay/shale (aluminosilicate) — supplying **CaO, SiO₂, Al₂O₃, Fe₂O₃** in roughly the ratio 62 : 22 : 8 : 3 % — plus a little gypsum added *after* firing.
+
+**Manufacture (the dry process).** The ground slurry passes down a **rotary kiln** to ≈ 1450 °C:
+
+- 100–500 °C — water driven off;
+- ~900 °C — **CaCO₃ → CaO + CO₂** (calcination);
+- 1300–1450 °C — the oxides react in a partly molten "clinkering" zone to give hard grey **cement clinker** nodules.
+
+The clinker is ground with **~3–5 % gypsum, CaSO₄·2H₂O** → grey powder, **Portland cement**.
+
+**The four clinker phases** (cement chemists' shorthand: C = CaO, S = SiO₂, A = Al₂O₃, F = Fe₂O₃):
+
+| Phase | Formula | Cement notation | Role |
+|:--|:--|:--:|:--|
+| tricalcium silicate ("alite") | 3CaO·SiO₂ | **C₃S** (≈ 50 %) | the main strength-giver; hydrates fast → **early strength** |
+| dicalcium silicate ("belite") | 2CaO·SiO₂ | **C₂S** (≈ 25 %) | hydrates slowly → **late strength** (gains for months) |
+| tricalcium aluminate | 3CaO·Al₂O₃ | **C₃A** (≈ 10 %) | flash-sets with water — **gypsum is added to slow it down** |
+| tetracalcium aluminoferrite | 4CaO·Al₂O₃·Fe₂O₃ | **C₄AF** (≈ 8 %) | gives the grey colour; little strength |
+
+**Setting and hardening (hydration).** On mixing with water the calcium silicates react:
+
+2(3CaO·SiO₂) + 6H₂O ⟶ 3CaO·2SiO₂·3H₂O ("**C–S–H gel**") + 3Ca(OH)₂
+
+- The **C–S–H gel** is a nanoporous, interlocking calcium-silicate-hydrate — it is what glues the aggregate together and carries almost all the strength.
+- The free **Ca(OH)₂** keeps the pore water at pH ≈ 13, which passivates the steel reinforcement.
+- **C₃A + gypsum → ettringite** (a calcium sulpho-aluminate) — a controlled early reaction that stops the aluminate from flash-setting.
+- **"Setting" ≠ "drying":** cement hardens *by reacting with water*, so it will set and gain strength **under water** (indeed it must be kept damp — "curing" — for weeks).
+
+**Special cements:** high-alumina (rapid, refractory), Portland-pozzolana (fly ash / slag replaces some clinker — cheaper, more durable), white cement (low Fe₂O₃), sulphate-resisting (low C₃A).
+
+> **JEE points on cement:** (i) the shorthand **C₃S, C₂S, C₃A, C₄AF**; (ii) **gypsum retards the flash set** of C₃A; (iii) hydration gives **C–S–H gel + Ca(OH)₂**; (iv) it sets by **hydration**, not evaporation; (v) both glass and cement rest on the **SiO₄ tetrahedron** — glass a random silicate network, cement a hydrated calcium-silicate gel.
 
 # 16. Silicones
 
@@ -1640,22 +1696,59 @@ ClO• + O• ⟶ Cl• + O₂
 
 **overall: 2O₃ ⟶ 3O₂** (Cl• is a catalyst — one radical destroys thousands of O₃ molecules before it is removed)
 
-## 18.5 Cyanides and cyanates
+## 18.5 The cyanide family — CN⁻, HCN, (CN)₂ and the pseudohalide idea
 
-CN⁻ is the major carbon-based ligand; this sits outside the Group 14 core but is useful for Advanced linkage.
+**Cyanide ion CN⁻ is a "pseudohalide"** — it behaves like a halide ion: it forms a molecular "pseudohalogen" **cyanogen (CN)₂**, an acid **HCN**, insoluble salts (AgCN, Hg(CN)₂, Pb(CN)₂), and strong complexes ([Fe(CN)₆]³⁻/⁴⁻, [Ag(CN)₂]⁻). Other pseudohalides: **OCN⁻ (cyanate), SCN⁻ (thiocyanate), N₃⁻ (azide), SeCN⁻**.
 
-Na + NH₃ ⟶ NaNH₂ + ½H₂
+### 18.5.1 Hydrogen cyanide, HCN
 
-NaNH₂ + C [high T; Castner process] ⟶ NaCN + H₂
+**Preparation:**
 
-CH₄ + NH₃ [about 1200 °C, Pt] ⟶ HCN + 3H₂
+CaCN₂ + C + Na₂CO₃ [fuse] ⟶ 2NaCN + CaCO₃ ;   NaCN + H₂SO₄(dil.) ⟶ HCN↑ + NaHSO₄
 
-4Au + 8CN⁻ + O₂ + 2H₂O [cyanide leaching of gold ore] ⟶ 4[Au(CN)₂]⁻ + 4OH⁻
+CH₄ + NH₃ + 3⁄2 O₂ [Pt/Rh gauze, ~1200 °C; Andrussow process — industrial] ⟶ HCN + 3H₂O
 
-(CN)₂ + 2OH⁻ [alkaline disproportionation, like a halogen] ⟶ CN⁻ + NCO⁻ + H₂O
+- **Structure:** linear **H–C≡N**, isoelectronic with N₂ and CO. Two tautomers exist — H–C≡N (nitrile, major) ⇌ H–N=C: (isocyanide).
+- **Physical:** colourless liquid/gas, b.p. **26 °C**, bitter-almond smell; the high b.p. and its miscibility with water come from **N···H–C hydrogen bonding** and a very high dielectric constant.
+- **Extremely poisonous** — CN⁻ binds the Fe(III) of **cytochrome oxidase** and shuts down cellular respiration (antidotes: amyl nitrite / Na₂S₂O₃ → SCN⁻, or hydroxocobalamin).
+- **Weak acid** (K_a ≈ 6×10⁻¹⁰, pK_a ≈ 9.2) — weaker than carbonic acid; CO₂ liberates HCN from KCN solution.
 
-- **HCN** — extremely poisonous, weakly acidic; its high boiling point comes from H-bonded association. Like CO, CN⁻ is a σ-donor / π-acceptor: the negative charge makes it a **stronger** σ-donor but a **weaker** π-acceptor than CO.
-- **Isoelectronic pair:** NCO⁻ (cyanate) and CO₂ — both linear, N=C=O and O=C=O.
+### 18.5.2 Reactions and uses of cyanide
+
+**Complexation — the basis of gold/silver metallurgy (Mac Arthur–Forrest cyanide-leaching):**
+
+4Au(s) + 8CN⁻(aq) + O₂(g) + 2H₂O ⟶ 4[Au(CN)₂]⁻(aq) + 4OH⁻
+
+2[Au(CN)₂]⁻ + Zn ⟶ [Zn(CN)₄]²⁻ + 2Au↓   (recovery by zinc-dust cementation)
+
+**Other:**
+
+CN⁻ + ½O₂ [slow air oxidation / detox of effluent] ⟶ OCN⁻
+
+2Cu²⁺ + 4CN⁻ ⟶ 2CuCN↓ + (CN)₂ ;   (like 2Cu²⁺ + 4I⁻ → 2CuI + I₂ — the pseudohalide parallel)
+
+FeSO₄ + 6KCN ⟶ K₄[Fe(CN)₆] (potassium hexacyanoferrate(II), "yellow prussiate") → used in the CO prep (§9.1) and in **Prussian-blue** tests for Fe.
+
+**Uses:** gold/silver extraction; electroplating baths ([Au(CN)₂]⁻, [Ag(CN)₂]⁻ give smooth deposits); case-hardening of steel; the CN⁻ source for nitriles in organic synthesis.
+
+### 18.5.3 Cyanogen, (CN)₂ — the pseudohalogen
+
+Hg(CN)₂ [Δ] ⟶ Hg + (CN)₂ ;   or  2Cu²⁺ + 4CN⁻ ⟶ 2CuCN + (CN)₂
+
+- Linear **N≡C–C≡N**, colourless, very toxic gas, **burns with a peach/violet flame** (2(CN)₂ + ... one of the hottest flames known, ~4500 °C with O₂).
+- **Disproportionates in alkali, exactly like a halogen:**
+
+(CN)₂ + 2OH⁻ ⟶ CN⁻ + OCN⁻ + H₂O   (cf. Cl₂ + 2OH⁻ → Cl⁻ + OCl⁻ + H₂O)
+
+### 18.5.4 Cyanates, thiocyanates and fulminates — isomers to keep straight
+
+| Ion | Structure | Note |
+|:--|:--|:--|
+| **cyanate OCN⁻** | linear [O=C=N]⁻ | isoelectronic with **CO₂** and N₃⁻; from CN⁻ + [O]. Wöhler's **NH₄OCN → (NH₂)₂CO (urea)** (1828) ended vitalism |
+| **fulminate CNO⁻** | [C≡N–O]⁻ | a **less stable linkage isomer** of cyanate; Hg(CNO)₂ is the shock-sensitive **detonator** primer |
+| **thiocyanate SCN⁻** | [S=C=N]⁻ | an **ambidentate** ligand — binds through S (soft metals: Hg, Pd) or N (hard metals: Cr, Co); Fe³⁺ + SCN⁻ → blood-red [Fe(SCN)]²⁺, the standard Fe(III) test |
+
+> **Isoelectronic set (16 valence e⁻, all linear):** **CO₂, N₂O, OCN⁻, SCN⁻ (with S), N₃⁻, NO₂⁺, CN₂²⁻ (cyanamide)**.
 
 # 19. Complexes and internal pπ–dπ bonding
 
@@ -1685,9 +1778,34 @@ Pb₃O₄ + 8CH₃COOH [glacial] ⟶ Pb(CH₃COO)₄ + 2Pb(CH₃COO)₂ + 4H₂O
 
 Colourless, moisture-sensitive solid; a selective oxidant in organic chemistry, especially for the **oxidative cleavage of 1,2-diols (glycols)** into two carbonyl compounds (cf. periodic acid; used in carbohydrate structure determination).
 
-# 20. Tin chemistry — reaction map
+# 20. Tin — metallurgy and reaction map
 
-## 20.1 Oxides SnO and SnO₂
+## 20.1 Occurrence, extraction and refining of tin
+
+**Ore.** The only important ore is **cassiterite (tin stone), SnO₂**. The deposits also carry wolframite (Fe,Mn)WO₄, and sulphides of Fe, Cu and Pb.
+
+**Concentration** (SnO₂ is dense, 7.0 g cm⁻³):
+
+1. **Gravity separation** — hydraulic washing / shaking tables float off the lighter siliceous gangue.
+2. **Magnetic separation** — removes the magnetic wolframite.
+3. **Roasting** in a current of air (reverberatory furnace) — burns off S and As as SO₂ and As₂O₃, and converts sulphide impurities (FeS, CuS) to oxides that are later leached out with acid.
+
+**Reduction (smelting).** The concentrated, roasted ore is mixed with **powdered anthracite/coke** and a little **limestone flux** and heated in a reverberatory (or electric-arc) furnace at ≈ 1200–1400 °C:
+
+SnO₂(s) + 2C(s) [≈ 1300 °C] ⟶ Sn(l) + 2CO(g)
+
+- Iron oxide is reduced along with the tin and dissolves in it as an Fe–Sn alloy (**"hardhead"**), which is skimmed off and re-smelted.
+- Slag = CaSiO₃ / FeSiO₃.
+
+**Refining** of the crude "block tin":
+
+| Method | How | Removes |
+|:--|:--|:--|
+| **Liquation** | crude tin heated on a sloping hearth just above its m.p. (232 °C); molten Sn drains away | higher-melting Fe, Cu, W (left as "dross") |
+| **Poling / boiling** | molten tin stirred with **green (wet) wood poles**; the steam churns the melt and floats oxide impurities to the top as skimmable scum | dissolved oxide impurities |
+| **Electrolytic refining** | impure-Sn anode, pure-Sn cathode; electrolyte **H₂SiF₆ (or SnSO₄ + H₂SO₄)** + a cresol-sulphonic acid additive | everything → **99.99 % Sn**; anode mud yields Ag, Au, Bi, Sb |
+
+## 20.2 Oxides SnO and SnO₂
 
 - **SnO** grey; **SnO₂** white. **Both amphoteric.**
 
@@ -1713,7 +1831,7 @@ SnO₂ + 2H₂SO₄ [hot concentrated — the **only** acid that dissolves SnO�
 
 SnO₂ + 2NaOH + 2H₂O ⟶ Na₂[Sn(OH)₆]
 
-## 20.2 SnCl₂ / SnCl₄ and the preservation trick
+## 20.3 SnCl₂ / SnCl₄ and the preservation trick
 
 Sn + 2HCl [hot concentrated] ⟶ SnCl₂ + H₂
 
@@ -1734,7 +1852,7 @@ SnCl₄ + 2NH₄Cl ⟶ (NH₄)₂[SnCl₆] ("**pink salt**", a calico-printing m
 - SnCl₄·5H₂O = "**butter of tin**" (mordant); 5 water molecules.
 - Making SnCl₄: Sn + 2Cl₂ (excess, dry, molten Sn); 2HgCl₂ + SnCl₂ → SnCl₄ + Hg₂Cl₂; Sn + aqua regia.
 
-## 20.3 Sn(II) as a reducing agent — the named set
+## 20.4 Sn(II) as a reducing agent — the named set
 
 SnCl₂ + 2FeCl₃ ⟶ SnCl₄ + 2FeCl₂
 
@@ -1754,16 +1872,49 @@ SnCl₂ + I₂ ⟶ SnCl₂I₂ (used to estimate tin)
 
 > **ANALYTICAL TRAP (SnCl₂ + HgCl₂):** limited SnCl₂ → white Hg₂Cl₂; **excess** SnCl₂ → grey/black Hg metal. Same chemistry underlies **"purple of Cassius"** — SnCl₂ reduces AuCl₃ to colloidal gold carried on hydrated tin(IV) oxide, a purple pigment and a test for Au(III).
 
-## 20.4 Other tin facts
+## 20.5 Other tin facts
 
 Sn + 2S [with NH₄Cl, Δ] ⟶ SnS₂ ("**mosaic gold**" — golden flaky solid, a bronzing pigment)
 
 - **Sn²⁺ vs Sn⁴⁺ test:** Sn²⁺ gives brown/black SnS with H₂S, reduces HgCl₂, and gives a Prussian-blue colour with Fe³⁺/K₃[Fe(CN)₆]; Sn⁴⁺ gives yellow SnS₂ with H₂S.
 - **α-Sn (grey, diamond structure) ⇌ β-Sn (white, metallic)** at 13.2 °C ("tin pest").
 
-# 21. Lead chemistry — mixed oxides and Pb(IV) oxidation
+# 21. Lead — metallurgy, mixed oxides and Pb(IV) oxidation
 
-## 21.1 The four oxides
+## 21.1 Occurrence, extraction and refining of lead
+
+**Ore.** Chief ore **galena, PbS** (usually **argentiferous** — it carries recoverable silver); also cerussite PbCO₃ and anglesite PbSO₄.
+
+**Concentration.** **Froth flotation** — galena is *the* textbook flotation ore (pine oil frother + a xanthate/ethyl-collector; the sulphide surface goes to the froth, the siliceous gangue sinks).
+
+**Roasting** (partial, in a current of air, on a sinter machine):
+
+2PbS(s) + 3O₂(g) [Δ] ⟶ 2PbO(s) + 2SO₂(g)
+
+PbS(s) + 2O₂(g) [Δ] ⟶ PbSO₄(s)
+
+Roasting is **stopped when about two-thirds of the PbS is converted**, leaving a PbS + PbO + PbSO₄ mixture.
+
+**Self-reduction (the "roast–reaction" / air-reduction process).** The air is cut off and the temperature raised; the **remaining PbS reduces its own oxide and sulphate**:
+
+PbS(s) + 2PbO(s) [Δ] ⟶ 3Pb(l) + SO₂(g)
+
+PbS(s) + PbSO₄(s) [Δ] ⟶ 2Pb(l) + 2SO₂(g)
+
+- A little **carbon (coke) reduction** also runs in a blast/ore hearth: PbO + C → Pb + CO.
+- The crude product is **"base bullion"** — lead containing Cu, Ag, Au, Bi, Sb, As, Sn, Zn.
+
+**Refining of base bullion** — a sequence, each step removing one group of impurities:
+
+| Step | Process | Removes | How it works |
+|:--:|:--|:--|:--|
+| 1 | **Liquation** (softening bed) | Cu (as dross / matte) | gently melt on a sloping hearth; Pb runs off, higher-melting Cu compounds stay |
+| 2 | **Air oxidation ("softening")** | As, Sb, Sn | blow air through molten Pb; these oxidise to a skimmed slag (As₂O₃, Sb₂O₃, SnO₂) |
+| 3 | **Desilverisation — Parkes process** | **Ag, Au** | stir in molten **Zn**; Ag/Au are far more soluble in Zn than in Pb → they rise in a **Zn–Ag crust** that is skimmed; the crust is distilled to recover Zn, leaving Ag–Pb → cupelled to silver. (Older **Pattinson process** = fractional crystallisation: pure Pb crystallises first, enriching the melt in Ag.) |
+| 4 | **Debismuthising — Kroll–Betterton process** | **Bi** | add **Ca + Mg**; high-melting Ca₃Bi₂ / Mg₃Bi₂ float off as dross |
+| 5 | **Electrolytic refining — Betts process** | everything → **99.99 %+ Pb** | anode = impure Pb, cathode = pure Pb, electrolyte = **PbSiF₆ + H₂SiF₆** (lead fluorosilicate) with gelatin; anode mud (Ag, Au, Bi, Sb, Cu) is worked up separately |
+
+## 21.2 The four oxides
 
 | Oxide | Colour / identity | Notes |
 |:--|:--|:--|
@@ -1772,7 +1923,7 @@ Sn + 2S [with NH₄Cl, Δ] ⟶ SnS₂ ("**mosaic gold**" — golden flaky solid,
 | **Pb₂O₃** | reddish-yellow (sesquioxide) | mixed oxide **PbO·PbO₂** |
 | **Pb₃O₄** | bright red ("red lead", "minium", "sindoor") | mixed oxide **2PbO·PbO₂** |
 
-## 21.2 Preparation
+## 21.3 Preparation
 
 2Pb(NO₃)₂ [Δ] ⟶ 2PbO + 4NO₂ + O₂
 
@@ -1794,7 +1945,7 @@ PbO + C [Δ] ⟶ Pb + CO
 
 PbO + H₂ [Δ] ⟶ Pb + H₂O
 
-## 21.3 Mixed-oxide proof and PbO amphoterism
+## 21.4 Mixed-oxide proof and PbO amphoterism
 
 > **MIXED-OXIDE PROOF:** dilute HNO₃ dissolves only the **PbO** part of Pb₃O₄ / Pb₂O₃, leaving insoluble **brown PbO₂**.
 > Pb₃O₄ + 4HNO₃ → 2Pb(NO₃)₂ + PbO₂↓ + 2H₂O confirms **Pb₃O₄ = 2PbO·PbO₂**.
@@ -1806,7 +1957,7 @@ PbO + 2HCl ⟶ PbCl₂ + H₂O
 
 PbO + 2NaOH + H₂O ⟶ Na₂[Pb(OH)₄]
 
-## 21.4 PbO₂ — amphoteric but a powerful oxidant
+## 21.5 PbO₂ — amphoteric but a powerful oxidant
 
 PbO₂ + 4HCl [hot] ⟶ PbCl₂ + Cl₂ + 2H₂O
 
@@ -1830,7 +1981,7 @@ PbO₂ + H₂C₂O₄ + 2HNO₃ ⟶ Pb(NO₃)₂ + 2CO₂ + 2H₂O
 > - **with HNO₃** → no reaction (NO₃⁻ cannot be oxidised, Pb is already at its highest state) — so PbO₂ **survives** the HNO₃ test as the brown residue.
 > The Mn(II) → MnO₄⁻ and oxalate oxidation tests must be done in **HNO₃**, not HCl or H₂SO₄, or the Pb(IV) is consumed by the acid's anion first.
 
-## 21.5 Lead(IV) chloride and tetraethyllead
+## 21.6 Lead(IV) chloride and tetraethyllead
 
 - PbCl₄ — yellow oil; exists only in cold concentrated Cl⁻; decomposes to PbCl₂ + Cl₂ on warming; stabilised as H₂[PbCl₆] or (NH₄)₂[PbCl₆].
 
@@ -1839,6 +1990,21 @@ PbO₂ + H₂C₂O₄ + 2HNO₃ ⟶ Pb(NO₃)₂ + 2CO₂ + 2H₂O
 **Tetraethyllead** — historic petrol "anti-knock" additive; a toxic, now-banned organolead compound. Treat as historical chemistry, not a current use.
 
 > **PbX₂ vs PbX₄ stability** — PbX₂ ≫ PbX₄ for every halogen. PbF₄ is the most stable PbX₄ (strong Pb–F bonds); PbCl₄ needs cold excess Cl⁻; PbBr₄ and PbI₄ do not exist (Pb(IV) oxidises Br⁻/I⁻).
+
+## 21.7 Sparingly-soluble lead(II) salts — the qualitative-analysis picture
+
+Pb²⁺ is the one cation that shows up in **two groups** of the classical scheme, because two of its salts are insoluble:
+
+| Salt | Colour | K_sp (25 °C, order of magnitude) | Analysis note |
+|:--|:--|:--:|:--|
+| **PbCl₂** | white | ≈ 1.7×10⁻⁵ | precipitates in **Group I** (with dil. HCl) with Ag⁺, Hg₂²⁺; but **dissolves in hot water** — this separates Pb²⁺ from AgCl/Hg₂Cl₂ |
+| **PbSO₄** | white | ≈ 2×10⁻⁸ | dissolves in hot ammonium acetate / conc. H₂SO₄ |
+| **PbCrO₄** | **yellow** | ≈ 3×10⁻¹³ | the confirmatory test (also "chrome yellow" pigment); soluble in NaOH and in dil. HNO₃ |
+| **PbS** | **black** | ≈ 3×10⁻²⁸ | precipitates in **Group II** (H₂S in dil. acid) — the very low K_sp is why sulphide is the definitive test |
+| **PbI₂** | **golden yellow** | ≈ 8×10⁻⁹ | "golden rain" — recrystallises as spangles from hot water |
+| **PbCO₃, Pb(OH)₂** | white | very low | Pb(OH)₂ is **amphoteric** — redissolves in excess NaOH as [Pb(OH)₄]²⁻ |
+
+> **JEE / practical points:** (i) PbCl₂ is in **Group I** *and* Pb²⁺ carries over to **Group II** as PbS (an incomplete Group-I precipitation); (ii) **hot water** dissolves PbCl₂ (not AgCl) — the Group-I separation step; (iii) **yellow PbCrO₄** and **black PbS** are the two confirmations; (iv) Pb(NO₃)₂ and Pb(CH₃COO)₂ ("sugar of lead") are the only common **soluble** Pb(II) salts.
 
 # 22. Uses of Group 14 elements and their compounds
 
@@ -1856,7 +2022,25 @@ PbO₂ + H₂C₂O₄ + 2HNO₃ ⟶ Pb(NO₃)₂ + 2CO₂ + 2H₂O
 
 ## 22.4 Tin and lead
 
-> **Key Point:** **Tin** — tin-plating steel (food cans), solder (Sn–Pb), bronze and pewter alloys, SnO₂ glazes and opacifiers, "pink salt" and "butter of tin" mordants in dyeing, mosaic gold (SnS₂) bronzing pigment. **Lead** — lead–acid storage batteries (Pb / PbO₂ electrodes), radiation shielding (X-ray aprons), cable sheathing, solder, "red lead" (Pb₃O₄) anti-corrosive primer paint, litharge in lead glass and ceramic glazes. Historic uses (lead pipes, tetraethyllead, white-lead paint) are now abandoned because of lead's toxicity.
+> **Key Point:** **Tin** — tin-plating steel (food cans — tin is non-toxic and protects the iron), solder, bronze and pewter, SnO₂ glazes/opacifiers, "pink salt" and "butter of tin" dyeing mordants, mosaic gold (SnS₂) pigment. **Lead** — **lead–acid storage batteries** (Pb / PbO₂ electrodes in H₂SO₄), **radiation shielding** (X-ray aprons, γ-ray casks), cable sheathing, solder, "red lead" Pb₃O₄ anti-rust primer, litharge in lead "crystal" glass and glazes. The historic uses (lead pipes, **tetraethyllead** petrol additive, white-lead PbCO₃·Pb(OH)₂ paint, lead water tanks) are all abandoned because of cumulative **lead poisoning** (anaemia — Pb²⁺ blocks haem synthesis; nephropathy; neurotoxicity, especially in children).
+
+## 22.5 Alloys of tin and lead
+
+Tin and lead are soft, low-melting and un-reactive — ideal alloying metals.
+
+| Alloy | Approximate composition | Property / use |
+|:--|:--|:--|
+| **soft solder** | Sn 50 / Pb 50 (or 60/40) | low, *narrow* melting range (~183–190 °C, near the 62 % Sn eutectic) → joining electrical and plumbing work (now largely **lead-free**: Sn–Ag–Cu) |
+| **plumber's solder** | Sn 33 / Pb 67 | *wide* pasteable melting range → wiped joints |
+| **bronze** | Cu ~90 / **Sn ~10** | hard, castable, corrosion-resistant → bearings, bells, statuary, coins (the Bronze Age) |
+| **gun-metal** | Cu 88 / Sn 10 / Zn 2 | tough, machinable → valves, gears, marine fittings |
+| **pewter** | **Sn ~90** / Sb / Cu (formerly Sn/Pb) | soft, workable, low-melting → tableware, ornaments |
+| **Babbitt (white) metal** | Sn ~90 / Sb ~7 / Cu ~3 | hard antifriction crystals in a soft matrix → machine **bearings** |
+| **type metal** | **Pb ~82 / Sb ~15 / Sn ~3** | *expands slightly on freezing* → sharp cast letters for printing |
+| **fusible alloys** — Wood's (Bi 50 / Pb 25 / Sn 12.5 / Cd 12.5, m.p. 70 °C), Rose's (Bi/Pb/Sn, ~98 °C) | Bi-rich, very low melting | fire-sprinkler links, electrical fuses, low-temperature baths, dental/anatomical casts |
+| **terne / tin-plate / solder-coat** | Sn (± Pb) surface layer on steel | corrosion-protective coatings |
+
+> **JEE point:** two alloys that **expand on solidifying** (so they fill a mould sharply) are **type metal** (Pb–Sb–Sn) and Bi-rich fusible alloys — the same anomaly as water, Ga, Ge and grey tin.
 
 # 23. p-Block overview and Group 14 connections
 
@@ -1874,18 +2058,43 @@ Down heavier p-block groups the valence ns² pair resists bonding and stays as a
 
 ## 23.3 Complete high-yield orders (memorise)
 
-1. Covalent radius: **C < Si < Ge < Sn < Pb**.
-2. First ionisation enthalpy: **C > Si > Ge > Pb > Sn**.
-3. Electronegativity: **C > Si ≈ Ge ≈ Sn ≈ Pb**.
-4. Metallic / electropositive character: **C < Si < Ge < Sn < Pb**.
-5. Melting point: **C > Si > Ge > Pb > Sn**.
-6. Catenation: **C ≫ Si > Ge ≈ Sn ≫ Pb**.
-7. Stability of +2: **C < Si < Ge < Sn < Pb**; stability of +4: **Pb < Sn < Ge < Si ≈ C**.
-8. Acidic strength of MO₂: **CO₂ > SiO₂ > GeO₂ > SnO₂ > PbO₂**.
-9. Nature of MO: CO neutral; GeO acidic; SnO, PbO amphoteric.
-10. Stability of MX₄: **CX₄ > SiX₄ > GeX₄ > SnX₄ > PbX₄**; of MX₂: the reverse.
-11. Thermal stability of MH₄: **CH₄ ≫ SiH₄ > GeH₄ > SnH₄ > PbH₄**.
-12. Reducing power: **Sn(II)**, Ge(II); oxidising power: **Pb(IV) / PbO₂**.
+**Atomic / physical**
+
+1. Covalent (atomic) radius: **C < Si < Ge < Sn < Pb** (big C→Si jump; small Si→Ge, Sn→Pb).
+2. M⁴⁺ ionic radius: Si⁴⁺ < Ge⁴⁺ < Sn⁴⁺ < Pb⁴⁺ · M²⁺: Ge²⁺ < Sn²⁺ < Pb²⁺.
+3. ΔᵢH₁ (and ΔᵢH₂): **C > Si > Ge > Pb > Sn**. ΔᵢH₃, ΔᵢH₄ and the **sum**: **C ≫ Ge > Si > Pb > Sn**.
+4. Electron gain enthalpy (most exothermic first): **Si > C > Ge > Sn > Pb**.
+5. Electronegativity: **C ≫ Pb ≳ Si ≈ Ge ≈ Sn**.
+6. Metallic / electropositive character: **C < Si < Ge < Sn < Pb**.
+7. Melting point: **C > Si > Ge > Pb > Sn** (m.p. of Pb > Sn). Boiling point (regular): **Si > Ge > Sn > Pb**.
+8. Density: **Si < C(graph) < C(diam) < Ge < Sn < Pb**.
+9. Reactivity of the free element: **C(diamond) < C(graphite) ≈ Si < Ge < Sn < Pb**.
+
+**Bonding / structure**
+
+10. Catenation: **C ≫ Si > Ge ≈ Sn ≫ Pb**.
+11. M–M bond enthalpy: **C–C (348) > Si–Si (297) > Ge–Ge (260) > Sn–Sn (240) > Pb–Pb (~155)** kJ mol⁻¹.
+12. M–H bond enthalpy: **C–H (413) > Si–H (318) > Ge–H (288) > Sn–H (253)**.
+13. Stability of the **+2** state: **C < Si < Ge < Sn < Pb**; of the **+4** state: **Pb < Sn < Ge < Si ≈ C** (mirror images).
+
+**Oxides and hydroxides**
+
+14. Acidic strength of MO₂: **CO₂ > SiO₂ > GeO₂ > SnO₂ > PbO₂** (last two amphoteric).
+15. Nature of MO: **CO neutral < GeO (weakly acidic) < SnO ≈ PbO (amphoteric)**.
+16. For one element, higher oxide is more acidic: **CO₂ > CO**, **PbO₂ > PbO**.
+
+**Halides and hydrides**
+
+17. Thermal / oxidative stability of MX₄: **CX₄ > SiX₄ > GeX₄ > SnX₄ > PbX₄**; of MX₂: exactly the reverse.
+18. Ease of hydrolysis of MX₄: **CX₄ ≪ SiX₄ < GeX₄ < SnX₄ < PbX₄**.
+19. Thermal stability of MH₄: **CH₄ ≫ SiH₄ > GeH₄ > SnH₄ > PbH₄**; reducing power of MH₄: the reverse.
+20. Boiling point of MH₄: **CH₄ (−161) < SiH₄ (−112) < GeH₄ (−88) < SnH₄ (−52 °C)** — no H-bond anomaly.
+
+**Redox / acid–base**
+
+21. Reducing power: **Sn(II), Ge(II)** (given up as M → +4); oxidising power: **Pb(IV) / PbO₂** (falls to Pb²⁺).
+22. Calorific value of the fuel gases: **water gas > coal gas > producer gas**.
+23. Silicate condensation with shared-corner count x: charge/Si = **−(4 − x)**, O:Si = **4 − x/2**.
 
 ## 23.4 Important structures — recall gallery
 
@@ -2144,7 +2353,7 @@ Use this as a last-night revision sweep — for each line, recall the reasoning,
 - Carbides: the three classes; hydrolysis identifies the carbon anion (CH₄ / C₂H₂ / propyne); interstitial-carbide property changes [8].
 - CO: preparations (including from methanoic acid and from the hexacyanoferrate(II)); water / producer / coal gas; detection and estimation; the MO picture and bond order 3; toxicity and carbogen [9.1, 9.2].
 - CO as a reducing agent (blast furnace) and as a ligand — synergic σ-donation + π back-donation; C–O stretch drops on coordination; Fe₂(CO)₉ has 12 Fe–C bonds [9.3].
-- COCl₂, COS, CS₂, C₃O₂; CS₂ → xanthate → viscose rayon [9.4, 11].
+- COCl₂, COS, CS₂; carbon suboxide **C₃O₂** (malonic-acid anhydride, linear O=C=C=C=O) and **C₁₂O₉** (mellitic anhydride); the full carbon-oxide list; CS₂ → xanthate → viscose rayon [9.4, 10.4, 11].
 - CO₂: linear structure, zero dipole, resonance; carbonic acid, the blood buffer, the greenhouse effect; uses [10.1, 10.2].
 - Carbonates and hydrogencarbonates: two salt series, solubility, thermal-stability trend, the limewater test (clears in excess CO₂) [10.3].
 - CO₃²⁻ is planar and CO₄⁴⁻ cannot exist; contrast SiO₄⁴⁻ [10.3].
@@ -2152,7 +2361,8 @@ Use this as a last-night revision sweep — for each line, recall the reasoning,
 ## 28.4 Silicon, silica and the silicates
 
 - Silicon: metallurgical-grade extraction; purification to 11-nines (Siemens trichlorosilane → polysilicon; zone refining and its k < 1 argument; Czochralski single-crystal ingot); reactivity — inert except to F₂, hot alkali and HF [12].
-- Silica: the giant network, polymorphs, vitreous silica, silica gel, kieselguhr, piezoelectricity; why SiO₂ is a solid but CO₂ a gas; reactions with HF and with fused alkali [13].
+- Silica: the giant network, polymorphs (α/β-quartz, tridymite, cristobalite), vitreous silica, silica gel, kieselguhr, fumed silica, piezoelectricity; why SiO₂ is a solid but CO₂ a gas; reactions with HF and with fused alkali [13.1, 13.2].
+- **Silicic acids** Si(OH)₄ → metasilicic → polysilicic → SiO₂ gel (always condenses — no discrete silicate ion); the sol–gel route; **silicon nitride Si₃N₄** and sialons [13.3].
 - The silicate master rule: classification by shared corners per SiO₄ tetrahedron; O:Si = 4 − x/2, charge/Si = −(4 − x) [14.1].
 - The seven classes with type minerals: ortho, pyro, cyclic, single chain, double chain, sheet, framework [14.2–14.7].
 - A ring and a single chain share the empirical formula (SiO₃)ₙ²ⁿ⁻; pyroxene vs amphibole cleavage angles [14.4, 14.5].
@@ -2163,29 +2373,34 @@ Use this as a last-night revision sweep — for each line, recall the reasoning,
 
 ## 28.5 Glass, silicones, hydrides, halides, complexes
 
-- Glass: supercooled solution (no formula, no m.p.); glass-formers vs **network modifiers** (break Si–O–Si bridges); the families (soda-lime, potash, lead/flint, borosilicate, fused-silica, aluminosilicate) with batch and use; why Pyrex resists thermal shock (low α); colouring/decolourising/fining/opacifying agents; glass vs cement [15].
+- Glass: supercooled solution (no formula, no m.p.); glass-formers vs **network modifiers** (break Si–O–Si bridges); the families (soda-lime, potash, lead/flint, borosilicate, fused-silica, aluminosilicate) with batch and use; why Pyrex resists thermal shock (low α); colouring/decolourising/fining/opacifying agents [15.1–15.3].
+- **Portland cement:** raw mix (limestone + clay), rotary-kiln clinkering, grinding with gypsum; the four phases **C₃S / C₂S / C₃A / C₄AF**; hydration → **C–S–H gel + Ca(OH)₂**; gypsum retards the C₃A flash-set; sets by hydration, not drying [15.4].
 - Silicones: Rochow direct process → chlorosilanes; hydrolysis + condensation; the **functionality rule** (R₃SiCl caps → oils, R₂SiCl₂ builds → gums/rubber, RSiCl₃ cross-links → resins) set by the chlorosilane ratio; why no Si=O; property→cause list (strong flexible Si–O, outward CH₃); oils/greases/elastomers/resins and their uses; silicone rubber −90 to +250 °C [16].
 - Silanes: preparation; why they are far more reactive than alkanes (reversed Si–H polarity, accessible d orbitals); thermal-stability order down the group [17].
 - Tetrahalides: all MX₄ except PbI₄; SnF₄ and PbF₄ are ionic solids; the SiCl₄ vs CCl₄ hydrolysis mechanism; charge-transfer colour of SnI₄/GeI₄; catenated silicon halides [18.1, 18.2].
 - Dihalides: stability rises down the group; bent gas-phase SnCl₂ [18.3].
 - Fluorocarbons: PTFE; the Freon–ozone catalytic cycle [18.4].
-- Cyanides and cyanates as carbon-based ligands; isoelectronic NCO⁻ / CO₂ [18.5].
+- The cyanide family: CN⁻ as a **pseudohalide**; HCN (structure, Andrussow prep, toxicity/cytochrome oxidase, weak acid); gold/silver **cyanide leaching**; **cyanogen (CN)₂** and its halogen-like alkali disproportionation; cyanate OCN⁻ / fulminate CNO⁻ (linkage isomers) / thiocyanate SCN⁻ (ambidentate, Fe(III) test); the CO₂/N₂O/N₃⁻ isoelectronic set [18.5].
 - Coordination-number expansion 4 → 6 for the heavier elements ([SiF₆]²⁻, [GeCl₆]²⁻, [Sn(OH)₆]²⁻) [19.1].
 - N(SiH₃)₃ planar vs N(CH₃)₃ pyramidal — the pπ–dπ explanation [19.2].
 - Lead(IV) acetate — a selective oxidant, glycol cleavage [19.3].
 
 ## 28.6 Tin and lead
 
-- SnO / SnO₂ — both amphoteric; preparations and reactions [20.1].
-- SnCl₂ and SnCl₄ — hydrolysis, why anhydrous SnCl₂ cannot be got by evaporation, why a tin bar is kept in the solution; hexachlorostannate, pink salt, butter of tin [20.2].
-- Sn(II) as a reducing agent — the full named set (Fe³⁺, Cu²⁺, Hg²⁺, Cr₂O₇²⁻, Bi(III), nitro → amine); purple of Cassius; mosaic gold [20.3, 20.4].
-- The four lead oxides; PbO amphoterism; the mixed-oxide proof for Pb₃O₄ and Pb₂O₃ (dilute HNO₃ leaves brown PbO₂) [21.1–21.3].
-- PbO₂: amphoteric but strongly oxidising — HCl → Cl₂, hot conc. H₂SO₄ → O₂, HNO₃ → no reaction; the Mn²⁺ → MnO₄⁻ test must use HNO₃ [21.4].
-- PbCl₄ and tetraethyllead as historical chemistry [21.5].
+- **Metallurgy of tin:** cassiterite → gravity + magnetic concentration → roast → carbon reduction (SnO₂ + 2C → Sn + 2CO; "hardhead" Fe–Sn); refining by liquation, poling, electrolysis (H₂SiF₆) [20.1].
+- **Metallurgy of lead:** galena → froth flotation → partial roast (stop at ⅔) → **self-reduction** (PbS + 2PbO → 3Pb + SO₂; PbS + PbSO₄ → 2Pb + 2SO₂); base-bullion refining — liquation (Cu), air oxidation (As/Sb/Sn), **Parkes** desilverisation (Zn), **Betterton** debismuthising (Ca/Mg), **Betts** electrolysis (PbSiF₆) [21.1].
+
+- SnO / SnO₂ — both amphoteric; preparations and reactions [20.2].
+- SnCl₂ and SnCl₄ — hydrolysis, why anhydrous SnCl₂ cannot be got by evaporation, why a tin bar is kept in the solution; hexachlorostannate, pink salt, butter of tin [20.3].
+- Sn(II) as a reducing agent — the full named set (Fe³⁺, Cu²⁺, Hg²⁺, Cr₂O₇²⁻, Bi(III), nitro → amine); purple of Cassius; mosaic gold [20.4, 20.5].
+- The four lead oxides; PbO amphoterism; the mixed-oxide proof for Pb₃O₄ and Pb₂O₃ (dilute HNO₃ leaves brown PbO₂) [21.2–21.4].
+- **Sparingly-soluble Pb(II) salts** and their qual-analysis role: white PbCl₂ (Group I, dissolves in hot water) / white PbSO₄ / yellow PbCrO₄ / black PbS (Group II) / golden PbI₂ / amphoteric Pb(OH)₂; only Pb(NO₃)₂ and Pb(OAc)₂ are soluble [21.7].
+- PbO₂: amphoteric but strongly oxidising — HCl → Cl₂, hot conc. H₂SO₄ → O₂, HNO₃ → no reaction; the Mn²⁺ → MnO₄⁻ test must use HNO₃ [21.5].
+- PbCl₄ and tetraethyllead as historical chemistry [21.6].
 
 ## 28.7 Synthesis and revision layers
 
-- Uses of every element and compound [22].
+- Uses of every element and compound; the **alloys** of tin and lead (solder, bronze, pewter, Babbitt, type metal, fusible alloys) [22].
 - p-block first-member anomaly and inert-pair effect across the whole block; the complete high-yield order set; the structure recall gallery [23].
 - One-page reaction networks for carbon, silicon, tin and lead [24].
 - The JEE-trap list and the derived tools (fullerene topology, the silicate charge shortcut) [25].

@@ -25,7 +25,7 @@ export const CARBON_FAMILY_PARTS: CarbonFamilyPartDef[] = [
   { slug: "part12", number: 12, title: "Silicon — preparation, purification and reactivity", section: 12 },
   { slug: "part13", number: 13, title: "Silicon dioxide (silica)", section: 13 },
   { slug: "part14", number: 14, title: "Silicates — the full seven-class structural system", section: 14 },
-  { slug: "part15", number: 15, title: "Glass", section: 15 },
+  { slug: "part15", number: 15, title: "Glass and cement", section: 15 },
   { slug: "part16", number: 16, title: "Silicones", section: 16 },
   { slug: "part17", number: 17, title: "Hydrides of Group 14", section: 17 },
   { slug: "part18", number: 18, title: "Halides of Group 14", section: 18 },

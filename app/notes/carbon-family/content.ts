@@ -1991,6 +1991,21 @@ PbO₂ + H₂C₂O₄ + 2HNO₃ ⟶ Pb(NO₃)₂ + 2CO₂ + 2H₂O
 
 > **PbX₂ vs PbX₄ stability** — PbX₂ ≫ PbX₄ for every halogen. PbF₄ is the most stable PbX₄ (strong Pb–F bonds); PbCl₄ needs cold excess Cl⁻; PbBr₄ and PbI₄ do not exist (Pb(IV) oxidises Br⁻/I⁻).
 
+## 21.7 Sparingly-soluble lead(II) salts — the qualitative-analysis picture
+
+Pb²⁺ is the one cation that shows up in **two groups** of the classical scheme, because two of its salts are insoluble:
+
+| Salt | Colour | K_sp (25 °C, order of magnitude) | Analysis note |
+|:--|:--|:--:|:--|
+| **PbCl₂** | white | ≈ 1.7×10⁻⁵ | precipitates in **Group I** (with dil. HCl) with Ag⁺, Hg₂²⁺; but **dissolves in hot water** — this separates Pb²⁺ from AgCl/Hg₂Cl₂ |
+| **PbSO₄** | white | ≈ 2×10⁻⁸ | dissolves in hot ammonium acetate / conc. H₂SO₄ |
+| **PbCrO₄** | **yellow** | ≈ 3×10⁻¹³ | the confirmatory test (also "chrome yellow" pigment); soluble in NaOH and in dil. HNO₃ |
+| **PbS** | **black** | ≈ 3×10⁻²⁸ | precipitates in **Group II** (H₂S in dil. acid) — the very low K_sp is why sulphide is the definitive test |
+| **PbI₂** | **golden yellow** | ≈ 8×10⁻⁹ | "golden rain" — recrystallises as spangles from hot water |
+| **PbCO₃, Pb(OH)₂** | white | very low | Pb(OH)₂ is **amphoteric** — redissolves in excess NaOH as [Pb(OH)₄]²⁻ |
+
+> **JEE / practical points:** (i) PbCl₂ is in **Group I** *and* Pb²⁺ carries over to **Group II** as PbS (an incomplete Group-I precipitation); (ii) **hot water** dissolves PbCl₂ (not AgCl) — the Group-I separation step; (iii) **yellow PbCrO₄** and **black PbS** are the two confirmations; (iv) Pb(NO₃)₂ and Pb(CH₃COO)₂ ("sugar of lead") are the only common **soluble** Pb(II) salts.
+
 # 22. Uses of Group 14 elements and their compounds
 
 ## 22.1 Carbon and its allotropes
@@ -2043,18 +2058,43 @@ Down heavier p-block groups the valence ns² pair resists bonding and stays as a
 
 ## 23.3 Complete high-yield orders (memorise)
 
-1. Covalent radius: **C < Si < Ge < Sn < Pb**.
-2. First ionisation enthalpy: **C > Si > Ge > Pb > Sn**.
-3. Electronegativity: **C > Si ≈ Ge ≈ Sn ≈ Pb**.
-4. Metallic / electropositive character: **C < Si < Ge < Sn < Pb**.
-5. Melting point: **C > Si > Ge > Pb > Sn**.
-6. Catenation: **C ≫ Si > Ge ≈ Sn ≫ Pb**.
-7. Stability of +2: **C < Si < Ge < Sn < Pb**; stability of +4: **Pb < Sn < Ge < Si ≈ C**.
-8. Acidic strength of MO₂: **CO₂ > SiO₂ > GeO₂ > SnO₂ > PbO₂**.
-9. Nature of MO: CO neutral; GeO acidic; SnO, PbO amphoteric.
-10. Stability of MX₄: **CX₄ > SiX₄ > GeX₄ > SnX₄ > PbX₄**; of MX₂: the reverse.
-11. Thermal stability of MH₄: **CH₄ ≫ SiH₄ > GeH₄ > SnH₄ > PbH₄**.
-12. Reducing power: **Sn(II)**, Ge(II); oxidising power: **Pb(IV) / PbO₂**.
+**Atomic / physical**
+
+1. Covalent (atomic) radius: **C < Si < Ge < Sn < Pb** (big C→Si jump; small Si→Ge, Sn→Pb).
+2. M⁴⁺ ionic radius: Si⁴⁺ < Ge⁴⁺ < Sn⁴⁺ < Pb⁴⁺ · M²⁺: Ge²⁺ < Sn²⁺ < Pb²⁺.
+3. ΔᵢH₁ (and ΔᵢH₂): **C > Si > Ge > Pb > Sn**. ΔᵢH₃, ΔᵢH₄ and the **sum**: **C ≫ Ge > Si > Pb > Sn**.
+4. Electron gain enthalpy (most exothermic first): **Si > C > Ge > Sn > Pb**.
+5. Electronegativity: **C ≫ Pb ≳ Si ≈ Ge ≈ Sn**.
+6. Metallic / electropositive character: **C < Si < Ge < Sn < Pb**.
+7. Melting point: **C > Si > Ge > Pb > Sn** (m.p. of Pb > Sn). Boiling point (regular): **Si > Ge > Sn > Pb**.
+8. Density: **Si < C(graph) < C(diam) < Ge < Sn < Pb**.
+9. Reactivity of the free element: **C(diamond) < C(graphite) ≈ Si < Ge < Sn < Pb**.
+
+**Bonding / structure**
+
+10. Catenation: **C ≫ Si > Ge ≈ Sn ≫ Pb**.
+11. M–M bond enthalpy: **C–C (348) > Si–Si (297) > Ge–Ge (260) > Sn–Sn (240) > Pb–Pb (~155)** kJ mol⁻¹.
+12. M–H bond enthalpy: **C–H (413) > Si–H (318) > Ge–H (288) > Sn–H (253)**.
+13. Stability of the **+2** state: **C < Si < Ge < Sn < Pb**; of the **+4** state: **Pb < Sn < Ge < Si ≈ C** (mirror images).
+
+**Oxides and hydroxides**
+
+14. Acidic strength of MO₂: **CO₂ > SiO₂ > GeO₂ > SnO₂ > PbO₂** (last two amphoteric).
+15. Nature of MO: **CO neutral < GeO (weakly acidic) < SnO ≈ PbO (amphoteric)**.
+16. For one element, higher oxide is more acidic: **CO₂ > CO**, **PbO₂ > PbO**.
+
+**Halides and hydrides**
+
+17. Thermal / oxidative stability of MX₄: **CX₄ > SiX₄ > GeX₄ > SnX₄ > PbX₄**; of MX₂: exactly the reverse.
+18. Ease of hydrolysis of MX₄: **CX₄ ≪ SiX₄ < GeX₄ < SnX₄ < PbX₄**.
+19. Thermal stability of MH₄: **CH₄ ≫ SiH₄ > GeH₄ > SnH₄ > PbH₄**; reducing power of MH₄: the reverse.
+20. Boiling point of MH₄: **CH₄ (−161) < SiH₄ (−112) < GeH₄ (−88) < SnH₄ (−52 °C)** — no H-bond anomaly.
+
+**Redox / acid–base**
+
+21. Reducing power: **Sn(II), Ge(II)** (given up as M → +4); oxidising power: **Pb(IV) / PbO₂** (falls to Pb²⁺).
+22. Calorific value of the fuel gases: **water gas > coal gas > producer gas**.
+23. Silicate condensation with shared-corner count x: charge/Si = **−(4 − x)**, O:Si = **4 − x/2**.
 
 ## 23.4 Important structures — recall gallery
 
@@ -2354,6 +2394,7 @@ Use this as a last-night revision sweep — for each line, recall the reasoning,
 - SnCl₂ and SnCl₄ — hydrolysis, why anhydrous SnCl₂ cannot be got by evaporation, why a tin bar is kept in the solution; hexachlorostannate, pink salt, butter of tin [20.3].
 - Sn(II) as a reducing agent — the full named set (Fe³⁺, Cu²⁺, Hg²⁺, Cr₂O₇²⁻, Bi(III), nitro → amine); purple of Cassius; mosaic gold [20.4, 20.5].
 - The four lead oxides; PbO amphoterism; the mixed-oxide proof for Pb₃O₄ and Pb₂O₃ (dilute HNO₃ leaves brown PbO₂) [21.2–21.4].
+- **Sparingly-soluble Pb(II) salts** and their qual-analysis role: white PbCl₂ (Group I, dissolves in hot water) / white PbSO₄ / yellow PbCrO₄ / black PbS (Group II) / golden PbI₂ / amphoteric Pb(OH)₂; only Pb(NO₃)₂ and Pb(OAc)₂ are soluble [21.7].
 - PbO₂: amphoteric but strongly oxidising — HCl → Cl₂, hot conc. H₂SO₄ → O₂, HNO₃ → no reaction; the Mn²⁺ → MnO₄⁻ test must use HNO₃ [21.5].
 - PbCl₄ and tetraethyllead as historical chemistry [21.6].
 

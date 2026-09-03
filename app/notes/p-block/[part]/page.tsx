@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { AppShell } from "@/components/AppShell";
 import { P_BLOCK_PARTS, pBlockPartBySlug, pBlockPartMarkdown } from "../parts";
 import { pBlockLessonRef, pBlockTabs, sectionRangeLabel } from "../_chapter";
@@ -21,6 +21,10 @@ export async function generateMetadata({ params }: { params: Promise<{ part: str
 export default async function PBlockPartPage({ params }: { params: Promise<{ part: string }> }) {
   const part = pBlockPartBySlug((await params).part);
   if (!part) notFound();
+
+  // Group 14 (survey lessons 4–6) has its own dedicated 29-lesson deep-dive
+  // chapter — send readers straight there.
+  if (part.number >= 4 && part.number <= 6) redirect("/notes/carbon-family");
 
   const prevRef = pBlockLessonRef(part.number - 1);
   const nextRef = pBlockLessonRef(part.number + 1);

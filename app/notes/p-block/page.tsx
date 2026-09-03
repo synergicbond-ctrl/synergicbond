@@ -23,12 +23,26 @@ export default function PBlockHub() {
           <span className="rounded-xl bg-[var(--surface)] px-3 py-2">Structure + reaction decision trees</span>
         </div>
         <ChapterLessonGrid
-          lessons={P_BLOCK_PARTS.map((part) => ({
-            href: pBlockHref(part.number),
-            number: `Lesson ${part.number}`,
-            title: part.title,
-            meta: sectionRangeLabel(part),
-          }))}
+          lessons={[
+            ...P_BLOCK_PARTS.filter((part) => part.number < 4).map((part) => ({
+              href: pBlockHref(part.number),
+              number: `Lesson ${part.number}`,
+              title: part.title,
+              meta: sectionRangeLabel(part),
+            })),
+            {
+              href: "/notes/carbon-family",
+              number: "Lessons 4–6",
+              title: "Group 14 — Carbon family (full 29-lesson deep dive)",
+              meta: "Dedicated chapter →",
+            },
+            ...P_BLOCK_PARTS.filter((part) => part.number > 6).map((part) => ({
+              href: pBlockHref(part.number),
+              number: `Lesson ${part.number}`,
+              title: part.title,
+              meta: sectionRangeLabel(part),
+            })),
+          ]}
         />
       </div>
     </AppShell>

@@ -7,7 +7,15 @@ export const sectionRangeLabel = (part: PBlockPartDef) =>
     : part.fromSection === part.toSection
       ? `Section ${part.fromSection}`
       : `Sections ${part.fromSection}–${part.toSection}`;
-export function pBlockLessonRef(number: number): LessonRef | undefined { const part = P_BLOCK_PARTS.find((item) => item.number === number); return part ? { href: pBlockHref(part.number), number: `Lesson ${part.number}`, title: part.title, meta: sectionRangeLabel(part) } : undefined; }
+export function pBlockLessonRef(number: number): LessonRef | undefined {
+  // Group 14 (lessons 4–6) lives in the dedicated 29-lesson Carbon Family
+  // deep-dive chapter; the survey's prev/next chain points there.
+  if (number >= 4 && number <= 6) {
+    return { href: "/notes/carbon-family", number: "Carbon Family", title: "Group 14 — the full 29-lesson deep dive", meta: "Dedicated chapter" };
+  }
+  const part = P_BLOCK_PARTS.find((item) => item.number === number);
+  return part ? { href: pBlockHref(part.number), number: `Lesson ${part.number}`, title: part.title, meta: sectionRangeLabel(part) } : undefined;
+}
 
 // Grouped top-nav tabs (matches the s-block/redox-reactions convention for
 // chapters with many parts): one tab per real topic group, not per lesson —
@@ -16,7 +24,9 @@ export function pBlockLessonRef(number: number): LessonRef | undefined { const p
 const P_BLOCK_NAV_GROUPS = [
   { label: "Intro & trends", first: 1, last: 1 },
   { label: "Group 13 — Boron family", first: 2, last: 3 },
-  { label: "Group 14 — Carbon family", first: 4, last: 6 },
+  // Group 14 has its own 29-lesson deep-dive chapter; the survey lessons
+  // (parts 4–6) redirect there, and this tab points straight at it.
+  { label: "Group 14 — Carbon family", first: 4, last: 6, href: "/notes/carbon-family" },
   { label: "Group 15 — Nitrogen family", first: 7, last: 10 },
   { label: "Group 16 — Oxygen family", first: 11, last: 14 },
   { label: "Group 17 — Halogens", first: 15, last: 17 },
@@ -29,7 +39,7 @@ export function pBlockTabs(currentPart?: number): ChapterTab[] {
     { label: "All 20 lessons", href: "/notes/p-block", active: currentPart === undefined },
     ...P_BLOCK_NAV_GROUPS.map((group) => ({
       label: group.label,
-      href: pBlockHref(group.first),
+      href: "href" in group ? group.href : pBlockHref(group.first),
       active: currentPart !== undefined && currentPart >= group.first && currentPart <= group.last,
     })),
   ];

@@ -188,6 +188,33 @@ present.
 
 ---
 
+## SVG ID collision audit — real bug found and fixed
+
+Checked every hardcoded `id="..."` (gradient/marker/filter/clipPath defs)
+across the React-component visual files for components that render more
+than once on the same page (a genuine DOM duplicate-id risk, since
+`url(#id)` resolves to the first matching element).
+
+- `app/notes/boron-family/visuals.tsx`: **0** hardcoded ids — no risk.
+- `app/notes/carbon-family/visuals.tsx`: **0** hardcoded ids — no risk.
+- `app/learn/.../s-block/visuals.tsx`: **11** hardcoded ids. Cross-referenced
+  against `content/*.ts` — 3 visual keys are genuinely invoked twice on one
+  page (`solvated-electron`, `becl2`, `be4o-acetate`).
+  - 🔧 **FIXED**: `SolvatedElectronVisual` defined `<radialGradient
+    id="electronGlow">` and referenced `url(#electronGlow)` — since this
+    component is used twice on the page, this produced two DOM elements
+    with the same id (invalid markup; the second instance's circle would
+    resolve to the first instance's gradient node). Fixed with React's
+    `useId()` to generate a collision-proof per-instance id.
+  - `BeCl2Visual` and `Be4OCluster` (used by `Be4OAcetateVisual`): audited,
+    confirmed **no** hardcoded ids — safe despite being rendered twice.
+  - The other 8 hardcoded ids (`trendArrow`, `processArrow`, `posBg`,
+    `pidgeonArrow`, `limeArrow`, `g2Fill`, `g1Fill`, `energyBg`,
+    `energyArrow`, `dowArrow`, `cyanArrow`) belong to components whose
+    visual keys are each invoked exactly once — no collision risk.
+
+---
+
 ## Legend for remaining chapters (not yet touched this pass)
 
 Hydrogen (26 other figures), S-block (34 React components), Group 13

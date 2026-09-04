@@ -724,6 +724,8 @@ Mg₂C₃(s) + 4H₂O(l) ⟶ 2Mg(OH)₂(s) + C₃H₄(g)  (propyne)
 
 ## 8.2 Calcium carbide — the "acetylene from coal" chemistry
 
+![Fig. Manufacture of calcium carbide (electric furnace).](/notes/carbon-family/c_caco2furnace.svg)
+
 **Manufacture** (electrothermal, in an electric-arc furnace):
 
 CaO(s) + 3C(s) [≈ 2000–2200 °C; Δ_rH ≈ +466 kJ mol⁻¹, strongly endothermic] ⟶ CaC₂(l) + CO(g)
@@ -761,6 +763,8 @@ CaC₂(s) + N₂(g) [≈ 1000–1100 °C] ⟶ CaNCN(s) + C(s)
 
 ## 8.4 Covalent (network) carbides — SiC and B₄C
 
+![Fig. Carborundum (SiC) — the Acheson furnace.](/notes/carbon-family/c_sicfurnace.svg)
+
 **Silicon carbide (carborundum):**
 
 SiO₂(s) + 3C(s) [2000–2500 °C, Acheson electric furnace, excess coke] ⟶ SiC(s) + 2CO(g)
@@ -789,6 +793,8 @@ SiC(s) + 2Cl₂(g) [≈ 1000 °C] ⟶ SiCl₄(g) + C(s)
 Carbon forms **more oxides than any other Group 14 element**: the two important ones — **CO** and **CO₂** — plus the linear suboxide **C₃O₂**, the higher suboxide **C₁₂O₉** (anhydride of mellitic acid), disputed C₅O₂, and non-stoichiometric **graphite oxide**. All of them are **molecular** (or, for graphite oxide, layered) — the direct consequence of carbon's strong **pπ–pπ** bonding to oxygen. Contrast Si → Pb, whose only oxides are the network solid SiO₂ and the ionic-lattice monoxides/dioxides.
 
 ## 9.1 Carbon monoxide — preparation
+
+![Fig. Laboratory preparation of carbon monoxide.](/notes/carbon-family/c_prepco.svg)
 
 **Direct oxidation of carbon in limited air:**
 
@@ -871,6 +877,8 @@ CO binds the Fe(II) of haemoglobin to give **carboxyhaemoglobin**, a complex **�
 
 ## 9.3 CO as a reducing agent and as a ligand
 
+![Fig. Blast furnace — CO reduces iron ore in the cooler upper zones.](/notes/carbon-family/c_blastfurnace.svg)
+
 ### Reduction of metal oxides (the heart of pyrometallurgy)
 
 Fe₂O₃(s) + 3CO(g) [blast furnace, 500–900 K "indirect-reduction" zone] ⟶ 2Fe(s/l) + 3CO₂(g)
@@ -944,6 +952,8 @@ Industrially phosgene is made in bulk for **isocyanates** (R–N=C=O) → **poly
 
 ## 10.1 CO₂ — preparation and recovery
 
+![Fig. Laboratory preparation of carbon dioxide (Kipp's apparatus).](/notes/carbon-family/c_prepco2.svg)
+
 **Laboratory:**
 
 CaCO₃ + 2HCl [dilute] ⟶ CaCl₂ + CO₂ + H₂O
@@ -994,6 +1004,8 @@ Linear **O=C=O** (D_∞h), carbon **sp** hybridised. The two sp hybrids make the
 > **Key Point — uses of CO₂:** carbonating drinks; **fire extinguishers** (heavy, inert — blankets the fuel and excludes O₂; *not* for burning metals or electrical fires vs water though); **dry ice** refrigerant; **supercritical-CO₂** extraction/solvent; manufacture of **urea** (2NH₃ + CO₂ → NH₂CONH₂ + H₂O) and of **Na₂CO₃** (Solvay ammonia–soda); inert/modified atmosphere packaging; a **plant growth booster** in greenhouses; the working fluid in some gas-cooled reactors.
 
 ## 10.3 Carbonic acid, carbonates and hydrogencarbonates
+
+![Fig. Rotary lime kiln — CaCO3 to CaO.](/notes/carbon-family/c_limekiln.svg)
 
 ### 10.3.1 The equilibria
 
@@ -1142,6 +1154,8 @@ SiO₂(s) + 2C(s) [≈ 1800–2000 °C, electric furnace] ⟶ Si(l) + 2CO(g)
 - **Ferrosilicon** (silica + scrap iron + coke) is made the same way as a **deoxidiser** for steel and the source of the "silicon steels".
 
 ## 12.2 Purification to semiconductor grade
+
+![Fig. Ultrapure silicon — Siemens CVD, zone refining, Czochralski pull.](/notes/carbon-family/c_siliconpure.svg)
 
 Electronic silicon must be **≈ 99.999999999 % (11-nines)** pure — a few impurity atoms per 10¹⁰ Si. The route has three stages.
 
@@ -1478,6 +1492,8 @@ CH₃OH [H–ZSM-5, about 400 °C; methanol-to-gasoline] ⟶ hydrocarbons (C₅�
 
 ## 15.4 Portland cement
 
+![Fig. Portland cement — the rotary kiln.](/notes/carbon-family/c_cementkiln.svg)
+
 **Raw mix.** Limestone (CaCO₃) + clay/shale (aluminosilicate) — supplying **CaO, SiO₂, Al₂O₃, Fe₂O₃** in roughly the ratio 62 : 22 : 8 : 3 % — plus a little gypsum added *after* firing.
 
 **Manufacture (the dry process).** The ground slurry passes down a **rotary kiln** to ≈ 1450 °C:
@@ -1527,6 +1543,8 @@ SiCl₄ + CH₃MgCl ⟶ CH₃SiCl₃ + MgCl₂  (and stepwise on to Me₂SiCl₂
 The mixed methylchlorosilanes boil within a few degrees of one another (~55–70 °C), so the plant's key operation is a very efficient **fractional-distillation train** that separates Me₂SiCl₂ (the bulk product) from Me₃SiCl and MeSiCl₃.
 
 ## 16.2 Step 2 — hydrolysis, and the functionality rule
+
+![Fig. Silicones — the Rochow direct process and the functionality rule.](/notes/carbon-family/c_silicone.svg)
 
 Each Si–Cl hydrolyses to Si–OH, and the silanols then **condense** (lose H₂O) into Si–O–Si links:
 

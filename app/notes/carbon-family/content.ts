@@ -1305,6 +1305,8 @@ Na₂SiO₃ dissolves in hot water under pressure as **"water glass"** (about Na
 | 3 | **Sheet / phyllo**silicate | (Si₂O₅)ₙ²ⁿ⁻ | −2 per 2 Si | talc; pyrophyllite; kaolinite; micas (muscovite, biotite); chrysotile |
 | 4 | **Framework / tecto**silicate | (SiO₂)ₙ neutral | 0 | quartz; feldspars; zeolites; ultramarines (last two need Al) |
 
+![Fig. The seven structural classes of silicate — corner-sharing SiO₄ tetrahedra from the isolated island to the neutral 3-D framework.](/notes/carbon-family/c_silicates.svg)
+
 ## 14.3 Ortho- and pyrosilicates
 
 - **Orthosilicates** contain discrete SiO₄⁴⁻ tetrahedra held together only by cation–oxygen bonds. Structure depends on cation coordination number: Zn/Be are 4-coordinate (willemite, phenacite); Mg is 6-coordinate (forsterite); Zr is 8-coordinate (zircon). SiO₄⁴⁻ is the conjugate base of very weak **orthosilicic acid Si(OH)₄**, so orthosilicate minerals occur only with cations that give highly insoluble salts.

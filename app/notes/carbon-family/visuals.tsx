@@ -401,10 +401,12 @@ function CarbideMap() {
 
 /* =========================== PART 6 — carbon oxides ====================== */
 
-function COxides() {
-  const glow = glowUrl("COxides");
+/** `ns` distinguishes the two mount points (part 9 via Part6Visual, and part 10) so the
+ * glow-filter id stays unique when both render into the same document. */
+function COxides({ ns = "COxides" }: { ns?: string }) {
+  const glow = glowUrl(ns);
   return (
-    <Svg w={600} h={300} glowNs="COxides">
+    <Svg w={600} h={300} glowNs={ns}>
       <rect x="8" y="8" width="584" height="284" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <rect x="26" y="26" width="220" height="248" rx="14" fill="#0a1420" stroke="#233247" />
       <g filter={glow}>
@@ -495,7 +497,7 @@ function Part6Visual() {
   return (
     <>
       <Frame title="Carbon–oxygen bonding at a glance" caption="CO₂ is a linear molecule with two equivalent C=O bonds; CO₃²⁻ is trigonal planar with a delocalised π system spread over three equivalent C–O bonds. CO binds transition metals synergically: σ-donation from the carbon lone pair plus π back-donation from filled metal d orbitals into CO π* — the reason metal carbonyls are stable and the C–O stretch drops on coordination.">
-        <COxides />
+        <COxides ns="COxides-p9" />
       </Frame>
       <Frame title="Fe₂(CO)₉ — bridging vs terminal carbonyls" caption="Six terminal CO groups (three on each iron) and three CO groups bridging the Fe–Fe bond. When counting metal–carbon bonds, each bridging CO contributes two M–C contacts, so the total is 6 + 2×3 = 12.">
         <Fe2CO9 />
@@ -983,7 +985,7 @@ const FIGURES: Record<number, Fig[]> = {
     { id: "como", el: <Frame key="como" title="CO molecular-orbital picture" caption="CO is isoelectronic with N₂: filling the MOs gives bond order 3 (one σ + two π). The highest occupied orbital is a σ orbital concentrated on carbon — this is the lone pair that lets CO act as a ligand — and the empty π* accepts π back-donation from a metal."><COmoDiagram /></Frame> },
     { id: "gas", el: <Frame key="gas" title="Water gas, producer gas and coal gas" caption="Blowing steam through red-hot coke gives water gas (CO + H₂, high calorific value); blowing air gives producer gas (CO + N₂, low value because the nitrogen is inert ballast); destructive distillation of coal gives coal gas (CO + H₂ + CH₄ + CO₂)."><GasProcesses /></Frame> },
   ],
-  10: [{ id: "co2", el: <Frame key="co2" title="Carbon–oxygen bonding at a glance" caption="CO₂ is linear with two equivalent C–O bonds (115 pm); CO₃²⁻ is trigonal planar with a delocalised π system over three equivalent C–O bonds. CO binds metals synergically — σ-donation from the C lone pair plus π back-donation into CO π*."><COxides /></Frame> }],
+  10: [{ id: "co2", el: <Frame key="co2" title="Carbon–oxygen bonding at a glance" caption="CO₂ is linear with two equivalent C–O bonds (115 pm); CO₃²⁻ is trigonal planar with a delocalised π system over three equivalent C–O bonds. CO binds metals synergically — σ-donation from the C lone pair plus π back-donation into CO π*."><COxides ns="COxides-co2" /></Frame> }],
   13: [
     { id: "sio4", el: <Frame key="sio4" title="The SiO₄ tetrahedron — the one building block" caption="Silicon is tetrahedrally surrounded by four oxygens (Si sp³, ∠O–Si–O ≈ 109.5°, Si–O ≈ 162 pm). In silica every corner O is shared between two Si, giving a giant 3-D network — the reason SiO₂ is a solid while CO₂ is a gas."><SiO4Unit /></Frame> },
     { id: "sinet", el: <Frame key="sinet" title="Silica is a giant 3-D network" caption="A two-dimensional slice of quartz: every silicon (sp³) is joined to four oxygens and every oxygen bridges two silicons through single Si–O σ bonds. Carbon instead forms pπ–pπ double bonds, so CO₂ is a small discrete molecule while SiO₂ is an infinite solid with a very high melting point."><SilicaNetwork /></Frame> },

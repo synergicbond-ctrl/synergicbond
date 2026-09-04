@@ -40,6 +40,24 @@ function VseprShape({
   angleLabel?: string;
   color?: string;
 }) {
+  // Place the geometry/angle captions clear of the drawn structure instead of at a
+  // fixed cy+70/cy+90, which sat on top of downward ligand atoms and lone-pair lobes.
+  // Measure the real vertical extent of every ligand (atom circles r=22; lone-pair
+  // ellipses are drawn at the midpoint with ry=12 plus an "lp" text at the tip), then
+  // caption below the structure when the 320-tall card has room, otherwise above it.
+  const CARD_H = 320;
+  const extents = ligands.map((l) => {
+    const p = polar(cx, cy, l.dist ?? 120, l.angleDeg);
+    return l.lone
+      ? { bottom: Math.max((cy + p.y) / 2 + 14, p.y + 8), top: Math.min((cy + p.y) / 2 - 14, p.y - 14) }
+      : { bottom: p.y + 24, top: p.y - 24 };
+  });
+  const bottomMost = Math.max(cy + 30, ...extents.map((e) => e.bottom));
+  const topMost = Math.min(cy - 30, ...extents.map((e) => e.top));
+  const fitsBelow = bottomMost + 44 <= CARD_H - 6;
+  const geomY = fitsBelow ? bottomMost + 24 : Math.max(topMost - 24, 18);
+  const angleY = fitsBelow ? geomY + 18 : Math.max(geomY - 18, 16);
+
   return (
     <g>
       {ligands.map((l, i) => {
@@ -64,8 +82,8 @@ function VseprShape({
       })}
       <circle cx={cx} cy={cy} r="26" fill="#3a2059" stroke="#e879f9" strokeWidth="3" />
       <text x={cx} y={cy + 6} textAnchor="middle" fill="#ffeaff" fontSize="16" fontWeight="900">{centralLabel}</text>
-      <text x={cx} y={cy + 70} textAnchor="middle" fill="#c9d6df" fontSize="14" fontWeight="800">{geometryLabel}</text>
-      {angleLabel ? <text x={cx} y={cy + 90} textAnchor="middle" fill="#8fa4b4" fontSize="12.5">{angleLabel}</text> : null}
+      <text x={cx} y={geomY} textAnchor="middle" fill="#c9d6df" fontSize="14" fontWeight="800">{geometryLabel}</text>
+      {angleLabel ? <text x={cx} y={angleY} textAnchor="middle" fill="#8fa4b4" fontSize="12.5">{angleLabel}</text> : null}
     </g>
   );
 }
@@ -96,8 +114,8 @@ function Part1Visual() {
   ];
   return (
     <Frame title="The six groups of the p-block" caption="Groups 13–18 fill the p-subshell (np¹ to np⁶). The first member of every group (B, C, N, O, F, He/Ne) is anomalous: small size, no d-orbitals, high electronegativity and a tendency to multiple bonding that heavier congeners lack.">
-      <svg viewBox="0 0 1040 380" className="min-w-[780px] w-full" role="img" aria-label="P-block groups 13 to 18 overview">
-        <rect width="1040" height="380" rx="28" fill="#070d18" />
+      <svg viewBox="0 0 1040 440" className="min-w-[780px] w-full" role="img" aria-label="P-block groups 13 to 18 overview">
+        <rect width="1040" height="440" rx="28" fill="#070d18" />
         <text x="520" y="42" textAnchor="middle" fill="#f6efff" fontSize="24" fontWeight="800">np¹ → np⁶ across Groups 13–18</text>
         {groups.map((row, i) => {
           const y = 70 + i * 50;
@@ -110,8 +128,9 @@ function Part1Visual() {
             </g>
           );
         })}
-        <rect x="150" y="336" width="740" height="34" rx="10" fill="#422052" stroke="#e879f9" />
-        <text x="520" y="359" textAnchor="middle" fill="#fff0ff" fontSize="13.5" fontWeight="800">First-member anomaly: small size + no vacant d-orbitals + higher electronegativity + pπ–pπ bonding</text>
+        {/* Sits BELOW the six group rows (last row spans y 320-360); at y=336 it overlapped Group 18. */}
+        <rect x="150" y="382" width="740" height="34" rx="10" fill="#422052" stroke="#e879f9" />
+        <text x="520" y="405" textAnchor="middle" fill="#fff0ff" fontSize="13.5" fontWeight="800">First-member anomaly: small size + no vacant d-orbitals + higher electronegativity + pπ–pπ bonding</text>
       </svg>
     </Frame>
   );
@@ -178,8 +197,10 @@ function Part5Visual() {
                 ))}
               </g>
             ))}
+            {/* Caption sits clear below the stacked sheets — at y=120 it previously ran straight
+                through the second hexagon layer. */}
             <path d="M -10 90 L 20 145" stroke="#fde68a" strokeWidth="2" strokeDasharray="3 3" markerEnd="url(#gap)" />
-            <text x="130" y="120" fill="#fde68a" fontSize="11.5" fontWeight="700">weak van der Waals gap → layers slide</text>
+            <text x="30" y="185" fill="#fde68a" fontSize="11.5" fontWeight="700">weak van der Waals gap → layers slide</text>
           </g>
         </ShapeCard>
       </div>
@@ -190,13 +211,43 @@ function Part5Visual() {
 // ============================================================================
 // PART 6 — Silicates, zeolites & silicones
 // ============================================================================
+/** One SiO4 tetrahedron seen end-on: shaded triangle, Si at the centroid, O at the corners. */
+function siTetra(cx: number, cy: number, s: number, up: boolean, key: string) {
+  const d = up
+    ? `M${cx} ${cy - s} L${cx - s * 0.9} ${cy + s * 0.55} L${cx + s * 0.9} ${cy + s * 0.55} Z`
+    : `M${cx} ${cy + s} L${cx - s * 0.9} ${cy - s * 0.55} L${cx + s * 0.9} ${cy - s * 0.55} Z`;
+  const corners = up
+    ? [[cx, cy - s], [cx - s * 0.9, cy + s * 0.55], [cx + s * 0.9, cy + s * 0.55]]
+    : [[cx, cy + s], [cx - s * 0.9, cy - s * 0.55], [cx + s * 0.9, cy - s * 0.55]];
+  return (
+    <g key={key}>
+      <path d={d} fill="#173247" stroke="#57d4ec" strokeWidth="2" opacity={0.92} />
+      <circle cx={cx} cy={cy + (up ? s * 0.05 : -s * 0.05)} r={3.4} fill="#e879f9" />
+      {corners.map(([ox, oy], k) => (
+        <circle key={k} cx={ox} cy={oy} r={3.6} fill="#0a1220" stroke="#9fd8ee" strokeWidth={1.6} />
+      ))}
+    </g>
+  );
+}
+
+/** Draws the real connectivity for each silicate class inside a 110-wide slot. */
+function silicateGlyph(shares: number) {
+  const S = 17;
+  if (shares === 0) return <g>{siTetra(55, 48, S, true, "o0")}</g>;              // isolated
+  if (shares === 1) return <g>{siTetra(35, 48, S, true, "p0")}{siTetra(75, 48, S, true, "p1")}</g>; // corner-linked pair
+  if (shares === 2) return <g>{[0, 1, 2, 3].map((k) => siTetra(16 + k * 26, 48, S * 0.86, k % 2 === 0, `c${k}`))}</g>; // infinite chain
+  if (shares === 3)                                                              // sheet: 2 rows
+    return <g>{[0, 1].flatMap((r) => [0, 1, 2, 3].map((k) => siTetra(16 + k * 26 + (r % 2 ? 13 : 0), 32 + r * 32, S * 0.72, k % 2 === 0, `s${r}${k}`)))}</g>;
+  return <g>{[0, 1, 2].flatMap((r) => [0, 1, 2, 3].map((k) => siTetra(14 + k * 26 + (r % 2 ? 13 : 0), 24 + r * 26, S * 0.6, (r + k) % 2 === 0, `f${r}${k}`)))}</g>; // 3-D framework
+}
+
 function Part6Visual() {
   const forms = [
-    { n: "Ortho-silicate", shared: "0 O shared", ex: "SiO₄⁴⁻ (isolated tetrahedron)" },
-    { n: "Pyro-silicate", shared: "1 O shared", ex: "Si₂O₇⁶⁻" },
-    { n: "Chain (pyroxene)", shared: "2 O shared", ex: "(SiO₃²⁻)ₙ" },
-    { n: "Sheet (mica, talc)", shared: "3 O shared", ex: "(Si₂O₅²⁻)ₙ" },
-    { n: "3-D framework", shared: "4 O shared", ex: "quartz, feldspar, zeolite" },
+    { n: "Ortho-silicate", shared: "0 O shared", ex: "SiO₄⁴⁻ (isolated tetrahedron)", shares: 0 },
+    { n: "Pyro-silicate", shared: "1 O shared", ex: "Si₂O₇⁶⁻", shares: 1 },
+    { n: "Chain (pyroxene)", shared: "2 O shared", ex: "(SiO₃²⁻)ₙ", shares: 2 },
+    { n: "Sheet (mica, talc)", shared: "3 O shared", ex: "(Si₂O₅²⁻)ₙ", shares: 3 },
+    { n: "3-D framework", shared: "4 O shared", ex: "quartz, feldspar, zeolite", shares: 4 },
   ];
   return (
     <Frame title="The SiO₄ tetrahedron — one building block, five structures" caption="Every silicate is built from corner-sharing SiO₄ tetrahedra. The number of oxygen atoms shared between adjacent tetrahedra (0 → 4) determines whether you get an isolated ion, a chain, a sheet, or a rigid 3-D framework like quartz or a zeolite.">
@@ -206,8 +257,11 @@ function Part6Visual() {
           const x = 60 + i * 190;
           return (
             <g key={f.n} transform={`translate(${x},70)`}>
-              <polygon points="55,0 100,40 80,95 30,95 10,40" fill="#173247" stroke="#57d4ec" strokeWidth="2" opacity={0.9} />
-              <circle cx="55" cy="45" r="10" fill="#4b1d60" stroke="#e879f9" />
+              {/* Each class is drawn with its ACTUAL corner-sharing connectivity — a shaded
+                  triangle is one SiO4 tetrahedron seen end-on (apex dot = Si, open circles = the
+                  shared/terminal O corners). Previously all five classes reused one identical
+                  pentagon, which is neither a tetrahedron nor distinguishable between classes. */}
+              {silicateGlyph(f.shares)}
               <text x="55" y="140" textAnchor="middle" fill="#eaf7fb" fontSize="12.5" fontWeight="800">{f.n}</text>
               <text x="55" y="160" textAnchor="middle" fill="#fde68a" fontSize="11.5" fontWeight="700">{f.shared}</text>
               <text x="55" y="180" textAnchor="middle" fill="#8fa4b4" fontSize="10.5">{f.ex}</text>
@@ -394,26 +448,35 @@ function Part12Visual() {
   return (
     <Frame title="S₈ — the puckered crown" caption="Both rhombic (α) and monoclinic (β) sulphur are built from the same S₈ ring, puckered into a crown shape to relieve angle strain. The two allotropes differ only in how these S₈ crowns pack together in the crystal.">
       <ShapeCard title="S₈ ring — crown conformation, ∠S–S–S ≈ 105°">
-        <g transform="translate(300,170)">
-          {Array.from({ length: 8 }).map((_, i) => {
-            const ang = i * 45;
-            const puck = i % 2 === 0 ? 90 : 70;
-            const p = polar(0, 0, puck, ang);
-            return <circle key={i} cx={p.x} cy={p.y} r="15" fill="#3a2059" stroke="#e879f9" strokeWidth="2.5" />;
-          })}
-          {Array.from({ length: 8 }).map((_, i) => {
-            const a1 = i * 45, a2 = ((i + 1) % 8) * 45;
-            const puck1 = i % 2 === 0 ? 90 : 70, puck2 = (i + 1) % 8 % 2 === 0 ? 90 : 70;
-            const p1 = polar(0, 0, puck1, a1), p2 = polar(0, 0, puck2, a2);
-            return <line key={i} x1={p1.x} y1={p1.y} x2={p2.x} y2={p2.y} stroke="#57d4ec" strokeWidth="2.5" />;
-          })}
-          {Array.from({ length: 8 }).map((_, i) => {
-            const ang = i * 45;
-            const puck = i % 2 === 0 ? 90 : 70;
-            const p = polar(0, 0, puck, ang);
-            return <text key={i} x={p.x} y={p.y + 4} textAnchor="middle" fill="#ffeaff" fontSize="10.5" fontWeight="900">S</text>;
-          })}
-          <text y="130" textAnchor="middle" fill="#c9d6df" fontSize="12.5" fontWeight="700">Same S₈ crown in both rhombic and monoclinic sulphur</text>
+        {/* A crown is puckered PERPENDICULAR to the ring plane, so the eight atoms sit on a
+            perspective ellipse with alternate atoms lifted/dropped in z (drawn as ±y offset).
+            Varying the in-plane radius instead would only draw a flat star, which is what this
+            figure previously did while its own caption promised a puckered crown. */}
+        <g transform="translate(300,165)">
+          {(() => {
+            const RX = 140, RY = 54, LIFT = 20;
+            const pt = (i: number) => {
+              const a = (i * 45 - 90) * Math.PI / 180;
+              return { x: RX * Math.cos(a), y: RY * Math.sin(a) + (i % 2 === 0 ? -LIFT : LIFT) };
+            };
+            const pts = Array.from({ length: 8 }, (_, i) => pt(i));
+            return (
+              <>
+                {pts.map((p, i) => {
+                  const q = pts[(i + 1) % 8];
+                  return <line key={`b${i}`} x1={p.x} y1={p.y} x2={q.x} y2={q.y} stroke="#57d4ec" strokeWidth="2.8" strokeLinecap="round" />;
+                })}
+                {pts.map((p, i) => (
+                  <g key={`a${i}`}>
+                    <circle cx={p.x} cy={p.y} r="15" fill="#3a2059" stroke="#e879f9" strokeWidth="2.5" />
+                    <text x={p.x} y={p.y + 4} textAnchor="middle" fill="#ffeaff" fontSize="10.5" fontWeight="900">S</text>
+                  </g>
+                ))}
+                <text x={0} y={-104} textAnchor="middle" fill="#fde68a" fontSize="11">alternate atoms lie above / below the mean ring plane</text>
+              </>
+            );
+          })()}
+          <text y="118" textAnchor="middle" fill="#c9d6df" fontSize="12.5" fontWeight="700">Same S₈ crown in both rhombic and monoclinic sulphur</text>
         </g>
       </ShapeCard>
     </Frame>
@@ -522,7 +585,8 @@ function Part16Visual() {
   ];
   return (
     <Frame title="Chlorine oxoacids: adding O = raising oxidation state" caption="Each extra Cl=O added to the HOCl core raises chlorine's oxidation state by 2 and increases acid strength (more O atoms stabilise the conjugate base by delocalising negative charge) — HClO₄ is the strongest of the four.">
-      <svg viewBox="0 0 1000 260" className="min-w-[720px] w-full">
+      {/* 290 not 260: the acid-name / oxidation-state labels sit at absolute y up to 264. */}
+      <svg viewBox="0 0 1000 290" className="min-w-[720px] w-full">
         <rect width="1000" height="260" rx="24" fill="#070d18" />
         {acids.map((a, i) => {
           const x = 90 + i * 220;

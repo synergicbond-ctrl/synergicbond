@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useId, type ReactNode } from "react";
 
 function VisualFrame({
   eyebrow,
@@ -282,6 +282,7 @@ function ReactionAtlasVisual() {
 }
 
 function SolvatedElectronVisual() {
+  const gradientId = useId();
   const ammonia = [
     [250, 100], [315, 82], [380, 112], [220, 170], [410, 176], [250, 246], [330, 270], [410, 246],
   ] as const;
@@ -289,14 +290,14 @@ function SolvatedElectronVisual() {
     <VisualFrame eyebrow="Liquid ammonia" title="The blue colour belongs to a solvated electron">
       <svg viewBox="0 0 900 420" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Solvated electron cavity in liquid ammonia">
         <defs>
-          <radialGradient id="electronGlow">
+          <radialGradient id={gradientId}>
             <stop offset="0%" stopColor="#dbeafe" />
             <stop offset="22%" stopColor="#60a5fa" stopOpacity=".95" />
             <stop offset="100%" stopColor="#2563eb" stopOpacity="0" />
           </radialGradient>
         </defs>
         <rect x="8" y="8" width="884" height="404" rx="26" fill="#050b16" stroke="#24364a" />
-        <circle cx="325" cy="180" r="112" fill="url(#electronGlow)" />
+        <circle cx="325" cy="180" r="112" fill={`url(#${gradientId})`} />
         <circle cx="325" cy="180" r="24" fill="#e0f2fe" />
         <text x="325" y="188" textAnchor="middle" fill="#1e3a8a" fontSize="26" fontWeight="900">e⁻</text>
         {ammonia.map(([x, y]) => (

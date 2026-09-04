@@ -7,11 +7,24 @@ export const sectionRangeLabel = (part: PBlockPartDef) =>
     : part.fromSection === part.toSection
       ? `Section ${part.fromSection}`
       : `Sections ${part.fromSection}–${part.toSection}`;
+// Groups 14–18 each live in a dedicated deep-dive chapter; the p-block survey's
+// prev/next chain and nav tabs point straight there.
+const DEEP_DIVE_RANGES: { first: number; last: number; href: string; label: string; title: string }[] = [
+  { first: 4, last: 6, href: "/notes/carbon-family", label: "Carbon Family", title: "Group 14 — the full 29-lesson deep dive" },
+  { first: 7, last: 10, href: "/notes/nitrogen-family", label: "Nitrogen Family", title: "Group 15 — the full 28-lesson deep dive" },
+  { first: 11, last: 14, href: "/notes/oxygen-family", label: "Oxygen Family", title: "Group 16 — the full 25-lesson deep dive" },
+  { first: 15, last: 17, href: "/notes/halogen-family", label: "Halogen Family", title: "Group 17 — the full 21-lesson deep dive" },
+  { first: 18, last: 19, href: "/notes/noble-gases", label: "Noble Gases", title: "Group 18 — the full 14-lesson deep dive" },
+];
+
+export function deepDiveFor(number: number) {
+  return DEEP_DIVE_RANGES.find((range) => number >= range.first && number <= range.last);
+}
+
 export function pBlockLessonRef(number: number): LessonRef | undefined {
-  // Group 14 (lessons 4–6) lives in the dedicated 29-lesson Carbon Family
-  // deep-dive chapter; the survey's prev/next chain points there.
-  if (number >= 4 && number <= 6) {
-    return { href: "/notes/carbon-family", number: "Carbon Family", title: "Group 14 — the full 29-lesson deep dive", meta: "Dedicated chapter" };
+  const deep = deepDiveFor(number);
+  if (deep) {
+    return { href: deep.href, number: deep.label, title: deep.title, meta: "Dedicated chapter" };
   }
   const part = P_BLOCK_PARTS.find((item) => item.number === number);
   return part ? { href: pBlockHref(part.number), number: `Lesson ${part.number}`, title: part.title, meta: sectionRangeLabel(part) } : undefined;
@@ -24,13 +37,13 @@ export function pBlockLessonRef(number: number): LessonRef | undefined {
 const P_BLOCK_NAV_GROUPS = [
   { label: "Intro & trends", first: 1, last: 1 },
   { label: "Group 13 — Boron family", first: 2, last: 3 },
-  // Group 14 has its own 29-lesson deep-dive chapter; the survey lessons
-  // (parts 4–6) redirect there, and this tab points straight at it.
+  // Groups 14–18 each have their own deep-dive chapter; the survey lessons in
+  // those ranges redirect there, and these tabs point straight at them.
   { label: "Group 14 — Carbon family", first: 4, last: 6, href: "/notes/carbon-family" },
-  { label: "Group 15 — Nitrogen family", first: 7, last: 10 },
-  { label: "Group 16 — Oxygen family", first: 11, last: 14 },
-  { label: "Group 17 — Halogens", first: 15, last: 17 },
-  { label: "Group 18 — Noble gases", first: 18, last: 19 },
+  { label: "Group 15 — Nitrogen family", first: 7, last: 10, href: "/notes/nitrogen-family" },
+  { label: "Group 16 — Oxygen family", first: 11, last: 14, href: "/notes/oxygen-family" },
+  { label: "Group 17 — Halogens", first: 15, last: 17, href: "/notes/halogen-family" },
+  { label: "Group 18 — Noble gases", first: 18, last: 19, href: "/notes/noble-gases" },
   { label: "JEE synthesis & revision", first: 20, last: 20 },
 ] as const;
 

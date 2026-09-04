@@ -36,7 +36,31 @@ export default function PBlockHub() {
               title: "Group 14 — Carbon family (full 29-lesson deep dive)",
               meta: "Dedicated chapter →",
             },
-            ...P_BLOCK_PARTS.filter((part) => part.number > 6).map((part) => ({
+            {
+              href: "/notes/nitrogen-family",
+              number: "Lessons 7–10",
+              title: "Group 15 — Nitrogen family (full 28-lesson deep dive)",
+              meta: "Dedicated chapter →",
+            },
+            {
+              href: "/notes/oxygen-family",
+              number: "Lessons 11–14",
+              title: "Group 16 — Oxygen family (full 25-lesson deep dive)",
+              meta: "Dedicated chapter →",
+            },
+            {
+              href: "/notes/halogen-family",
+              number: "Lessons 15–17",
+              title: "Group 17 — Halogen family (full 21-lesson deep dive)",
+              meta: "Dedicated chapter →",
+            },
+            {
+              href: "/notes/noble-gases",
+              number: "Lessons 18–19",
+              title: "Group 18 — Noble gases (full 14-lesson deep dive)",
+              meta: "Dedicated chapter →",
+            },
+            ...P_BLOCK_PARTS.filter((part) => part.number > 19).map((part) => ({
               href: pBlockHref(part.number),
               number: `Lesson ${part.number}`,
               title: part.title,

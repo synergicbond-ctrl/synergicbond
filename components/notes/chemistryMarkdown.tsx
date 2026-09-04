@@ -473,6 +473,29 @@ const makeComponents = (figureFor?: (key: string) => ReactNode): Components => (
       {children}
     </a>
   ),
+  img: ({ src, alt }) => {
+    const caption = (alt ?? "").replace(/^Fig\.\s*/i, "");
+    return (
+      <figure className="my-6 overflow-hidden rounded-xl" style={{ border: `1px solid ${tint(C.cyan, 0.22)}`, background: "#fbfdff" }}>
+        {/* Static schematic SVGs served from /public — next/image gives no benefit and needs dangerouslyAllowSVG. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={typeof src === "string" ? src : undefined}
+          alt={alt ?? ""}
+          loading="lazy"
+          className="mx-auto block h-auto w-full max-w-[640px]"
+        />
+        {caption ? (
+          <figcaption
+            className="border-t px-4 py-2.5 text-[13px] leading-6"
+            style={{ borderColor: tint(C.cyan, 0.18), color: C.faint, background: "rgba(255,255,255,0.02)" }}
+          >
+            {caption}
+          </figcaption>
+        ) : null}
+      </figure>
+    );
+  },
   code: ({ children }) => (
     <code
       className="rounded px-1.5 py-0.5 font-mono text-[0.88em]"

@@ -63,28 +63,87 @@ function T({ x, y, children, fill = "#c9d6df", size = 12, anchor = "middle" as c
 function Svg({ children, w = 560, h = 320 }: { children: ReactNode; w?: number; h?: number }) {
   return (
     <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto block h-auto w-full max-w-[600px]" role="img">
+      <defs>
+        <filter id="cfGlow" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="3.4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
       {children}
     </svg>
+  );
+}
+
+/** Small checklist-row insight panel, reused across the elevated Group 14 figures
+ * for the same "derive the number, don't just state it" density as Fullerene's
+ * cage-algorithm panel — kept generic so each figure supplies its own rows/tone. */
+/** Fixed 40px row pitch (label line + note line, comfortably spaced) — callers must
+ * size their panel's `h` as `44 + rows.length * 40` or taller, never smaller. */
+function InsightPanel({
+  x, y, w, heading, tone, rows,
+}: { x: number; y: number; w: number; heading: string; tone: string; rows: { label: string; value?: string; note: string }[] }) {
+  const rowH = 40;
+  const h = 44 + rows.length * rowH;
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={h} rx="18" fill="#08111c" stroke={tone} strokeOpacity=".35" />
+      <T x={x + 20} y={y + 30} size={11.5} weight={800} fill={tone} anchor="start">{heading}</T>
+      {rows.map((r, i) => {
+        const ry = y + 56 + i * rowH;
+        return (
+          <g key={r.label}>
+            <circle cx={x + 24} cy={ry - 5} r="3.2" fill={tone} />
+            <T x={x + 38} y={ry} size={12} weight={800} fill="#e7eef7" anchor="start">{r.label}</T>
+            {r.value ? <T x={x + w - 20} y={ry} size={12.5} weight={900} fill={COL.amber} anchor="end">{r.value}</T> : null}
+            <T x={x + 38} y={ry + 17} size={10} fill="#8fa4b4" anchor="start">{r.note}</T>
+          </g>
+        );
+      })}
+    </g>
   );
 }
 
 /* =========================== PART 1 — trend ribbon ======================== */
 
 function TrendRibbon() {
-  const els = ["C", "Si", "Ge", "Sn", "Pb"];
+  const els: { s: string; note: string }[] = [
+    { s: "C", note: "+4 only" },
+    { s: "Si", note: "+4 only" },
+    { s: "Ge", note: "+4 usual" },
+    { s: "Sn", note: "+2 rising" },
+    { s: "Pb", note: "+2 favoured" },
+  ];
   return (
-    <Svg h={260}>
+    <Svg w={620} h={400}>
+      <rect x="8" y="8" width="604" height="384" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={310} y={38} size={12.5} weight={800} fill="#e7eef7">Group 14 — one trend line, four consequences</T>
+      <Bond x1={70} y1={100} x2={550} y2={100} color="#2a4257" w={2} />
+      <path d="M550 100 l-10 -6 l0 12 z" fill="#2a4257" />
+      {els.map((e, i) => {
+        const x = 70 + i * 120;
+        return (
+          <g key={e.s} filter="url(#cfGlow)">
+            <circle cx={x} cy={100} r={22} fill="#132433" stroke={COL.C} strokeWidth="2" />
+            <text x={x} y={106} textAnchor="middle" fontSize="15" fontWeight="800" fill="#eef6ff">{e.s}</text>
+          </g>
+        );
+      })}
       {els.map((e, i) => (
-        <g key={e}>
-          <rect x={40 + i * 100} y={70} width={70} height={44} rx={9} fill="#132433" stroke={COL.C} strokeWidth="2" />
-          <T x={75 + i * 100} y={97} size={15} weight={800} fill="#eef6ff">{e}</T>
-        </g>
+        <T key={`n${e.s}`} x={70 + i * 120} y={138} size={10} fill={i >= 3 ? COL.amber : "#7b93a8"}>{e.note}</T>
       ))}
-      <Bond x1={40} y1={150} x2={520} y2={150} color="#33506c" w={2} />
-      <T x={40} y={172} anchor="start" size={11.5}>+4 most stable ────────────▶ +2 most stable (inert-pair effect)</T>
-      <T x={40} y={198} anchor="start" size={11.5}>non-metal ── metalloid ──────────▶ metal</T>
-      <T x={40} y={224} anchor="start" size={11.5}>catenation: C ≫ Si &gt; Ge ≈ Sn ≫ Pb</T>
-      <T x={40} y={48} anchor="start" size={12} fill={COL.amber} weight={800}>IE₁: C &gt; Si &gt; Ge &gt; Pb &gt; Sn  (note Pb &gt; Sn)</T>
+      <InsightPanel
+        x={30} y={162} w={560} heading="WHAT MOVES TOGETHER DOWN THE GROUP" tone={COL.green}
+        rows={[
+          { label: "Oxidation state", note: "+4 stability falls, +2 rises (inert-pair effect) — Pb²⁺ is the endpoint" },
+          { label: "Character", note: "non-metal → metalloid → metal, tracking the same shielding trend" },
+          { label: "Catenation", note: "C ≫ Si > Ge ≈ Sn ≫ Pb, set by falling M–M bond enthalpy" },
+        ]}
+      />
+      <rect x="30" y="352" width="560" height="30" rx="9" fill={COL.amber} fillOpacity=".08" stroke={COL.amber} strokeOpacity=".4" />
+      <T x={310} y={372} size={10} fill={COL.amber}>anomaly: IE₁ order is C &gt; Si &gt; Ge &gt; Pb &gt; Sn — Pb exceeds Sn from poor d/f shielding</T>
     </Svg>
   );
 }
@@ -93,17 +152,27 @@ function TrendRibbon() {
 
 function CatenationBars() {
   const data: [string, number][] = [["C–C", 348], ["Si–Si", 297], ["Ge–Ge", 260], ["Sn–Sn", 240]];
+  const scale = 0.42;
+  const baseline = 260;
   return (
-    <Svg h={260}>
-      {data.map(([k, v], i) => (
-        <g key={k}>
-          <rect x={70 + i * 115} y={210 - v * 0.5} width={64} height={v * 0.5} rx={5} fill={COL.C} opacity={0.85} />
-          <T x={102 + i * 115} y={230} size={12} weight={800}>{k}</T>
-          <T x={102 + i * 115} y={200 - v * 0.5} size={11.5} fill={COL.amber}>{v}</T>
-        </g>
-      ))}
-      <T x={280} y={30} size={12.5} fill="#c9d6df">M–M bond enthalpy / kJ mol⁻¹ — the real driver of catenation</T>
-      <T x={280} y={250} size={11} fill="#8fa4b4">Pb–Pb is negligible; lead is treated as non-catenating.</T>
+    <Svg w={600} h={330}>
+      <rect x="8" y="8" width="584" height="314" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={300} y={38} size={12.5} weight={800} fill="#e7eef7">Catenation tracks M–M bond enthalpy, not group position</T>
+      <Bond x1={64} y1={baseline} x2={536} y2={baseline} color="#2a4257" w={2} />
+      {data.map(([k, v], i) => {
+        const x = 100 + i * 110;
+        const barH = v * scale;
+        return (
+          <g key={k}>
+            <rect x={x - 32} y={baseline - barH} width={64} height={barH} rx={6} fill={i === 0 ? COL.amber : COL.C} opacity={i === 0 ? 0.95 : 0.7} filter="url(#cfGlow)" />
+            <T x={x} y={baseline - barH - 12} size={13} weight={900} fill={i === 0 ? COL.amber : "#c9d6df"}>{v}</T>
+            <T x={x} y={baseline + 22} size={12} weight={800}>{k}</T>
+          </g>
+        );
+      })}
+      <T x={470} y={70} size={10} fill={COL.amber} anchor="end">C–C ≈ C–O — this is why carbon catenates</T>
+      <rect x="30" y="292" width="540" height="26" rx="8" fill={COL.red} fillOpacity=".08" stroke={COL.red} strokeOpacity=".4" />
+      <T x={300} y={310} size={10.5} fill={COL.red}>Pb–Pb bond enthalpy is negligible — lead is treated as non-catenating</T>
     </Svg>
   );
 }
@@ -120,9 +189,11 @@ function Diamond() {
   ];
   return (
     <g>
-      {v.map((p, i) => (
-        <Bond key={i} x1={c.x} y1={c.y} x2={p.x} y2={p.y} color={COL.C} w={3} />
-      ))}
+      <g filter="url(#cfGlow)">
+        {v.map((p, i) => (
+          <Bond key={i} x1={c.x} y1={c.y} x2={p.x} y2={p.y} color={COL.C} w={3} />
+        ))}
+      </g>
       {v.map((p, i) => (
         <Atom key={i} x={p.x} y={p.y} label="C" stroke={COL.C} fill={COL.Cfill} r={13} />
       ))}
@@ -152,9 +223,11 @@ function Graphite() {
     });
   return (
     <g>
-      {layer(110, COL.C)}
-      {layer(175, "#4f6f8c")}
-      {layer(240, COL.C)}
+      <g filter="url(#cfGlow)">
+        {layer(110, COL.C)}
+        {layer(175, "#4f6f8c")}
+        {layer(240, COL.C)}
+      </g>
       <Bond x1={470} y1={110} x2={470} y2={240} color="#3a5a74" w={1.6} dash="4 4" />
       <T x={520} y={178} size={11} fill="#8fa4b4">3.35 Å</T>
       <T x={400} y={280} size={12}>Graphite — sp², ABAB layers, C–C 1.42 Å</T>
@@ -274,22 +347,36 @@ function Part3Visual() {
 /* =========================== PART 5 — carbides =========================== */
 
 function CarbideMap() {
+  const rows = [
+    ["Be₂C, Al₄C₃", "methanide", "C⁴⁻", "→ CH₄", COL.green],
+    ["CaC₂, BaC₂", "acetylide", "C₂²⁻", "→ HC≡CH", COL.amber],
+    ["Mg₂C₃", "allylenide", "C₃⁴⁻", "→ CH₃–C≡CH", COL.red],
+  ] as const;
   return (
-    <Svg h={280}>
-      <T x={280} y={28} size={13} fill="#c9d6df" weight={800}>Hydrolysis identifies the carbon unit</T>
-      {[
-        ["Be₂C, Al₄C₃", "methanide C⁴⁻", "→ CH₄", COL.green],
-        ["CaC₂, BaC₂", "acetylide C₂²⁻", "→ HC≡CH", COL.amber],
-        ["Mg₂C₃", "allylenide C₃⁴⁻", "→ CH₃–C≡CH", COL.red],
-      ].map(([a, b, c, col], i) => (
-        <g key={i}>
-          <rect x={40} y={55 + i * 60} width={150} height={40} rx={7} fill="#132433" stroke={col as string} strokeWidth="1.8" />
-          <T x={115} y={80 + i * 60} size={12} weight={800}>{a}</T>
-          <T x={250} y={80 + i * 60} size={12} fill="#c9d6df">{b}</T>
-          <T x={430} y={80 + i * 60} size={13} fill={col as string} weight={800}>{c}</T>
-        </g>
-      ))}
-      <T x={280} y={262} size={11} fill="#8fa4b4">Interstitial carbides (TiC, WC) — metallic, very hard, high-melting; covalent SiC, B₄C — inert networks.</T>
+    <Svg w={600} h={410}>
+      <rect x="8" y="8" width="584" height="394" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={300} y={36} size={12.5} weight={800} fill="#e7eef7">Hydrolysis gas reveals the carbon anion</T>
+      {rows.map(([source, name, anion, gas, col], i) => {
+        const y = 60 + i * 60;
+        return (
+          <g key={source}>
+            <rect x={44} y={y} width={168} height={42} rx={9} fill="#132433" stroke={col} strokeWidth="1.8" filter="url(#cfGlow)" />
+            <T x={128} y={y + 26} size={12} weight={800}>{source}</T>
+            <T x={228} y={y + 18} size={10.5} fill="#8fa4b4" anchor="start">{name}</T>
+            <T x={228} y={y + 34} size={12} fill="#c9d6df" weight={800} anchor="start">{anion}</T>
+            <path d={`M330 ${y + 21} H400`} stroke={col} strokeWidth="2" />
+            <path d={`M400 ${y + 21} l-9 -5 l0 10 z`} fill={col} />
+            <T x={412} y={y + 26} size={13.5} fill={col} weight={900} anchor="start">{gas}</T>
+          </g>
+        );
+      })}
+      <InsightPanel
+        x={30} y={258} w={540} heading="NOT ALL CARBIDES HYDROLYSE" tone={COL.C}
+        rows={[
+          { label: "Interstitial (TiC, WC)", note: "metallic, very hard, high-melting — hydrolytically inert" },
+          { label: "Covalent (SiC, B₄C)", note: "extended network solids — hydrolytically inert" },
+        ]}
+      />
     </Svg>
   );
 }
@@ -298,72 +385,88 @@ function CarbideMap() {
 
 function COxides() {
   return (
-    <Svg h={280}>
-      {/* CO2 linear */}
-      <Bond x1={70} y1={80} x2={120} y2={80} color={COL.O} w={4} />
-      <Bond x1={70} y1={86} x2={120} y2={86} color={COL.O} w={4} />
-      <Bond x1={150} y1={80} x2={200} y2={80} color={COL.O} w={4} />
-      <Bond x1={150} y1={86} x2={200} y2={86} color={COL.O} w={4} />
-      <Atom x={60} y={83} label="O" stroke={COL.O} fill={COL.Ofill} />
-      <Atom x={135} y={83} label="C" stroke={COL.C} fill={COL.Cfill} />
-      <Atom x={210} y={83} label="O" stroke={COL.O} fill={COL.Ofill} />
-      <T x={135} y={120} size={11.5}>CO₂ — linear O=C=O, acidic</T>
+    <Svg w={600} h={300}>
+      <rect x="8" y="8" width="584" height="284" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <rect x="26" y="26" width="220" height="248" rx="14" fill="#0a1420" stroke="#233247" />
+      <g filter="url(#cfGlow)">
+        {/* CO2 linear */}
+        <Bond x1={70} y1={90} x2={120} y2={90} color={COL.O} w={4} />
+        <Bond x1={70} y1={96} x2={120} y2={96} color={COL.O} w={4} />
+        <Bond x1={150} y1={90} x2={200} y2={90} color={COL.O} w={4} />
+        <Bond x1={150} y1={96} x2={200} y2={96} color={COL.O} w={4} />
+      </g>
+      <Atom x={60} y={93} label="O" stroke={COL.O} fill={COL.Ofill} />
+      <Atom x={135} y={93} label="C" stroke={COL.C} fill={COL.Cfill} />
+      <Atom x={210} y={93} label="O" stroke={COL.O} fill={COL.Ofill} />
+      <T x={135} y={130} size={11.5}>CO₂ — linear O=C=O, acidic</T>
 
       {/* carbonate trigonal planar */}
-      <Bond x1={135} y1={200} x2={135} y2={155} color={COL.O} w={3} />
-      <Bond x1={135} y1={200} x2={98} y2={225} color={COL.O} w={3} />
-      <Bond x1={135} y1={200} x2={172} y2={225} color={COL.O} w={3} />
-      <Atom x={135} y={200} label="C" stroke={COL.C} fill={COL.Cfill} />
-      <Atom x={135} y={148} label="O" stroke={COL.O} fill={COL.Ofill} r={13} />
-      <Atom x={92} y={231} label="O" stroke={COL.O} fill={COL.Ofill} r={13} />
-      <Atom x={178} y={231} label="O" stroke={COL.O} fill={COL.Ofill} r={13} />
-      <T x={135} y={262} size={11.5}>CO₃²⁻ — trigonal planar, delocalised π</T>
+      <g filter="url(#cfGlow)">
+        <Bond x1={135} y1={215} x2={135} y2={170} color={COL.O} w={3} />
+        <Bond x1={135} y1={215} x2={98} y2={240} color={COL.O} w={3} />
+        <Bond x1={135} y1={215} x2={172} y2={240} color={COL.O} w={3} />
+      </g>
+      <Atom x={135} y={215} label="C" stroke={COL.C} fill={COL.Cfill} />
+      <Atom x={135} y={163} label="O" stroke={COL.O} fill={COL.Ofill} r={13} />
+      <Atom x={92} y={246} label="O" stroke={COL.O} fill={COL.Ofill} r={13} />
+      <Atom x={178} y={246} label="O" stroke={COL.O} fill={COL.Ofill} r={13} />
+      <T x={135} y={268} size={10.5}>CO₃²⁻ — trigonal planar, delocalised π</T>
 
       {/* CO synergic bonding */}
-      <Atom x={360} y={110} label="M" stroke={COL.Fe} fill="#2a1414" />
-      <Atom x={430} y={110} label="C" stroke={COL.C} fill={COL.Cfill} />
-      <Atom x={500} y={110} label="O" stroke={COL.O} fill={COL.Ofill} />
-      <Bond x1={378} y1={110} x2={412} y2={110} color="#c9d6df" w={3} />
-      <Bond x1={448} y1={104} x2={482} y2={104} color={COL.O} w={3} />
-      <Bond x1={448} y1={116} x2={482} y2={116} color={COL.O} w={3} />
-      <path d="M378 128 q52 34 104 0" fill="none" stroke={COL.green} strokeWidth={2.4} markerEnd="" />
-      <T x={430} y={165} size={11} fill={COL.green}>M dπ → CO π*  (back-donation)</T>
-      <path d="M412 92 q-20 -22 -40 0" fill="none" stroke={COL.amber} strokeWidth={2.4} />
-      <T x={430} y={78} size={11} fill={COL.amber}>C lone pair → M  (σ)</T>
-      <T x={430} y={200} size={11.5}>CO — synergic σ-donation + π back-bonding</T>
-      <T x={430} y={220} size={10.5} fill="#8fa4b4">back-donation strengthens M–C, weakens C–O</T>
+      <rect x="270" y="26" width="304" height="248" rx="14" fill="#0a1420" stroke="#233247" />
+      <T x={422} y={50} size={11.5} weight={800} fill="#e7eef7">CO — synergic σ-donation + π back-bonding</T>
+      <g filter="url(#cfGlow)">
+        <Atom x={330} y={140} label="M" stroke={COL.Fe} fill="#2a1414" />
+        <Atom x={400} y={140} label="C" stroke={COL.C} fill={COL.Cfill} />
+        <Atom x={470} y={140} label="O" stroke={COL.O} fill={COL.Ofill} />
+        <Bond x1={348} y1={140} x2={382} y2={140} color="#c9d6df" w={3} />
+        <Bond x1={418} y1={134} x2={452} y2={134} color={COL.O} w={3} />
+        <Bond x1={418} y1={146} x2={452} y2={146} color={COL.O} w={3} />
+      </g>
+      <path d="M348 158 q52 34 104 0" fill="none" stroke={COL.green} strokeWidth={2.4} />
+      <T x={400} y={210} size={11} fill={COL.green}>M dπ → CO π* (back-donation)</T>
+      <path d="M382 122 q-20 -22 -40 0" fill="none" stroke={COL.amber} strokeWidth={2.4} />
+      <T x={400} y={92} size={11} fill={COL.amber}>C lone pair → M (σ)</T>
+      <rect x="300" y="228" width="244" height="34" rx="9" fill={COL.green} fillOpacity=".08" stroke={COL.green} strokeOpacity=".4" />
+      <T x={422} y={249} size={10} fill={COL.green}>back-donation strengthens M–C, weakens C–O</T>
     </Svg>
   );
 }
 
 function Fe2CO9() {
   return (
-    <Svg h={280}>
-      <Atom x={230} y={140} label="Fe" stroke={COL.Fe} fill="#2a1414" r={17} />
-      <Atom x={340} y={140} label="Fe" stroke={COL.Fe} fill="#2a1414" r={17} />
-      <Bond x1={247} y1={140} x2={323} y2={140} color={COL.Fe} w={3} />
-      {[110, 140, 170].map((y, i) => (
-        <g key={i}>
-          <Bond x1={285} y1={y} x2={247} y2={140} color={COL.amber} w={2.4} />
-          <Bond x1={285} y1={y} x2={323} y2={140} color={COL.amber} w={2.4} />
-          <circle cx={285} cy={y} r={6} fill={COL.Ofill} stroke={COL.O} strokeWidth={2} />
-        </g>
-      ))}
-      <T x={285} y={95} size={10.5} fill={COL.amber}>3 bridging CO</T>
-      {[[190, 90], [175, 140], [190, 190]].map(([x, y], i) => (
-        <g key={i}>
-          <Bond x1={230} y1={140} x2={x} y2={y} color="#c9d6df" w={2.2} />
-          <circle cx={x} cy={y} r={5} fill={COL.Cfill} stroke={COL.C} strokeWidth={1.8} />
-        </g>
-      ))}
-      {[[380, 90], [395, 140], [380, 190]].map(([x, y], i) => (
-        <g key={i}>
-          <Bond x1={340} y1={140} x2={x} y2={y} color="#c9d6df" w={2.2} />
-          <circle cx={x} cy={y} r={5} fill={COL.Cfill} stroke={COL.C} strokeWidth={1.8} />
-        </g>
-      ))}
-      <T x={285} y={235} size={12}>Fe₂(CO)₉ — 6 terminal + 3 bridging CO, one Fe–Fe bond</T>
-      <T x={285} y={255} size={11} fill="#8fa4b4">count a bridge twice → Fe–C bonds = 6 + 2×3 = 12</T>
+    <Svg w={600} h={360}>
+      <rect x="8" y="8" width="584" height="344" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={300} y={38} size={12.5} weight={800} fill="#e7eef7">Two coordination environments, one Fe–Fe bond</T>
+      <g filter="url(#cfGlow)">
+        <Atom x={245} y={160} label="Fe" stroke={COL.Fe} fill="#2a1414" r={17} />
+        <Atom x={355} y={160} label="Fe" stroke={COL.Fe} fill="#2a1414" r={17} />
+        <Bond x1={262} y1={160} x2={338} y2={160} color={COL.Fe} w={3} />
+        {[130, 160, 190].map((y, i) => (
+          <g key={i}>
+            <Bond x1={300} y1={y} x2={262} y2={160} color={COL.amber} w={2.4} />
+            <Bond x1={300} y1={y} x2={338} y2={160} color={COL.amber} w={2.4} />
+            <circle cx={300} cy={y} r={6} fill={COL.Ofill} stroke={COL.O} strokeWidth={2} />
+          </g>
+        ))}
+        {[[205, 110], [190, 160], [205, 210]].map(([x, y], i) => (
+          <g key={i}>
+            <Bond x1={245} y1={160} x2={x} y2={y} color="#c9d6df" w={2.2} />
+            <circle cx={x} cy={y} r={5} fill={COL.Cfill} stroke={COL.C} strokeWidth={1.8} />
+          </g>
+        ))}
+        {[[395, 110], [410, 160], [395, 210]].map(([x, y], i) => (
+          <g key={i}>
+            <Bond x1={355} y1={160} x2={x} y2={y} color="#c9d6df" w={2.2} />
+            <circle cx={x} cy={y} r={5} fill={COL.Cfill} stroke={COL.C} strokeWidth={1.8} />
+          </g>
+        ))}
+      </g>
+      <T x={300} y={112} size={10.5} fill={COL.amber}>3 bridging CO</T>
+      <InsightPanel
+        x={30} y={244} w={540} heading="COUNTING THE Fe–C BONDS" tone={COL.amber}
+        rows={[{ label: "6 terminal + 3 bridging CO, one Fe–Fe bond", note: "each bridge counts twice → Fe–C bonds = 6 + 2×3 = 12" }]}
+      />
     </Svg>
   );
 }
@@ -388,7 +491,7 @@ function tetra(cx: number, cy: number, s = 26, color: string = COL.Si, key?: str
   const b = { x: cx - s * 0.87, y: cy + s * 0.5 };
   const c = { x: cx + s * 0.87, y: cy + s * 0.5 };
   return (
-    <g key={key}>
+    <g key={key} filter="url(#cfGlow)">
       <path d={`M${a.x} ${a.y} L${b.x} ${b.y} L${c.x} ${c.y} Z`} fill={color} opacity={0.28} stroke={color} strokeWidth={2} />
       <circle cx={cx} cy={cy - 2} r={3.5} fill={color} />
       {[a, b, c].map((p, i) => (
@@ -401,7 +504,8 @@ function tetra(cx: number, cy: number, s = 26, color: string = COL.Si, key?: str
 function SilicateAtlas() {
   return (
     <Svg h={430} w={620}>
-      <T x={310} y={22} size={13} weight={800} fill="#c9d6df">Seven silicate classes — corners shared per SiO₄ tetrahedron</T>
+      <rect x="8" y="8" width="604" height="414" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={310} y={30} size={13} weight={800} fill="#e7eef7">Seven silicate classes — corners shared per SiO₄ tetrahedron</T>
 
       {/* 0 shared - ortho */}
       {tetra(70, 80, 26, COL.Si, "o0")}
@@ -443,29 +547,37 @@ function SilicateAtlas() {
       <T x={512} y={330} size={10.5}>4 → (SiO₂)ₙ neutral</T>
       <T x={512} y={345} size={9.5} fill="#8fa4b4">tecto (quartz, feldspar, zeolite)</T>
 
-      <T x={310} y={400} size={10.5} fill={COL.amber}>x corners shared per Si → O:Si = 4 − x/2 · charge/Si = −(4 − x)</T>
-      <T x={310} y={418} size={9.5} fill="#8fa4b4">apex dot = Si · open circles = O · shaded triangle = one SiO₄ tetrahedron</T>
+      <rect x="30" y="378" width="560" height="34" rx="10" fill={COL.amber} fillOpacity=".08" stroke={COL.amber} strokeOpacity=".45" />
+      <T x={310} y={399} size={10.5} fill={COL.amber}>x corners shared per Si → O:Si = 4 − x/2  ·  charge/Si = −(4 − x)</T>
+      <T x={310} y={418} size={9.5} fill="#7b93a8">apex dot = Si · open circles = O · shaded triangle = one SiO₄ tetrahedron</T>
     </Svg>
   );
 }
 
 function SiO4Unit() {
   return (
-    <Svg h={250}>
-      <Bond x1={200} y1={130} x2={200} y2={70} color={COL.O} w={3} />
-      <Bond x1={200} y1={130} x2={150} y2={165} color={COL.O} w={3} />
-      <Bond x1={200} y1={130} x2={250} y2={165} color={COL.O} w={3} />
-      <Bond x1={200} y1={130} x2={200} y2={185} color={COL.O} w={3} dash="4 3" />
-      <Atom x={200} y={130} label="Si" stroke={COL.Si} fill={COL.Sifill} r={16} />
-      <Atom x={200} y={62} label="O" stroke={COL.O} fill={COL.Ofill} />
-      <Atom x={144} y={171} label="O" stroke={COL.O} fill={COL.Ofill} />
-      <Atom x={256} y={171} label="O" stroke={COL.O} fill={COL.Ofill} />
-      <Atom x={200} y={193} label="O" stroke={COL.O} fill={COL.Ofill} />
-      <T x={370} y={110} size={12} fill="#c9d6df">SiO₄⁴⁻</T>
-      <T x={370} y={132} size={11} fill="#8fa4b4">regular tetrahedron</T>
-      <T x={370} y={152} size={11} fill="#8fa4b4">∠O–Si–O ≈ 109.5°</T>
-      <T x={370} y={172} size={11} fill="#8fa4b4">Si–O ≈ 1.62 Å</T>
-      <T x={200} y={230} size={11}>every silicate is built by corner-sharing these units</T>
+    <Svg w={560} h={270}>
+      <rect x="8" y="8" width="544" height="254" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <g filter="url(#cfGlow)">
+        <Bond x1={200} y1={140} x2={200} y2={80} color={COL.O} w={3} />
+        <Bond x1={200} y1={140} x2={150} y2={175} color={COL.O} w={3} />
+        <Bond x1={200} y1={140} x2={250} y2={175} color={COL.O} w={3} />
+        <Bond x1={200} y1={140} x2={200} y2={195} color={COL.O} w={3} dash="4 3" />
+      </g>
+      <Atom x={200} y={140} label="Si" stroke={COL.Si} fill={COL.Sifill} r={16} />
+      <Atom x={200} y={72} label="O" stroke={COL.O} fill={COL.Ofill} />
+      <Atom x={144} y={181} label="O" stroke={COL.O} fill={COL.Ofill} />
+      <Atom x={256} y={181} label="O" stroke={COL.O} fill={COL.Ofill} />
+      <Atom x={200} y={203} label="O" stroke={COL.O} fill={COL.Ofill} />
+      <InsightPanel
+        x={330} y={50} w={196} heading="SiO₄⁴⁻ GEOMETRY" tone={COL.Si}
+        rows={[
+          { label: "Shape", value: "tetrahedron", note: "regular, all 4 O equivalent" },
+          { label: "∠O–Si–O", value: "≈ 109.5°", note: "ideal tetrahedral angle" },
+          { label: "Si–O length", value: "≈ 1.62 Å", note: "shorter than a pure single bond" },
+        ]}
+      />
+      <T x={200} y={240} size={11} fill="#8fa4b4">every silicate class is built by corner-sharing this one unit</T>
     </Svg>
   );
 }
@@ -487,32 +599,34 @@ function Part8Visual() {
 
 function SiliconeFunctionality() {
   return (
-    <Svg h={300}>
-      <T x={280} y={26} size={13} weight={800} fill="#c9d6df">Chlorosilane functionality controls the polymer</T>
+    <Svg w={600} h={400}>
+      <rect x="8" y="8" width="584" height="384" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={300} y={36} size={12.5} weight={800} fill="#e7eef7">Chlorosilane functionality controls the polymer</T>
       {[
         ["R₃SiCl", "R₃Si–OH", "chain stopper / end-cap", COL.green],
         ["R₂SiCl₂", "R₂Si(OH)₂", "linear chain builder", COL.amber],
         ["RSiCl₃", "RSi(OH)₃", "cross-linker / 3-D resin", COL.red],
       ].map(([a, b, c, col], i) => (
         <g key={i}>
-          <rect x={40} y={50 + i * 55} width={120} height={38} rx={7} fill="#132433" stroke={col as string} strokeWidth="1.8" />
-          <T x={100} y={74 + i * 55} size={12.5} weight={800}>{a}</T>
-          <T x={210} y={74 + i * 55} size={12} fill="#c9d6df">─(+H₂O)→ {b}</T>
-          <T x={420} y={74 + i * 55} size={12} fill={col as string} weight={700}>{c}</T>
+          <rect x={40} y={58 + i * 46} width={120} height={36} rx={7} fill="#132433" stroke={col as string} strokeWidth="1.8" filter="url(#cfGlow)" />
+          <T x={100} y={81 + i * 46} size={12} weight={800}>{a}</T>
+          <T x={210} y={81 + i * 46} size={11.5} fill="#c9d6df" anchor="start">─(+H₂O)→ {b}</T>
+          <T x={560} y={81 + i * 46} size={11.5} fill={col as string} weight={700} anchor="end">{c}</T>
         </g>
       ))}
-      {/* siloxane backbone */}
+      <rect x="30" y="212" width="540" height="76" rx="14" fill="#0a1420" stroke="#233247" />
       {[0, 1, 2, 3].map((k) => (
-        <g key={k}>
-          <Atom x={90 + k * 110} y={250} label="Si" stroke={COL.Si} fill={COL.Sifill} r={13} />
-          {k < 3 && <Atom x={145 + k * 110} y={250} label="O" stroke={COL.O} fill={COL.Ofill} r={11} />}
-          {k < 3 && <Bond x1={103 + k * 110} y1={250} x2={134 + k * 110} y2={250} />}
-          {k < 3 && <Bond x1={156 + k * 110} y1={250} x2={187 + k * 110} y2={250} />}
-          <Bond x1={90 + k * 110} y1={237} x2={90 + k * 110} y2={218} color="#7f8fa0" w={2} />
-          <Bond x1={90 + k * 110} y1={263} x2={90 + k * 110} y2={282} color="#7f8fa0" w={2} />
+        <g key={k} filter="url(#cfGlow)">
+          <Atom x={100 + k * 130} y={250} label="Si" stroke={COL.Si} fill={COL.Sifill} r={13} />
+          {k < 3 && <Atom x={165 + k * 130} y={250} label="O" stroke={COL.O} fill={COL.Ofill} r={11} />}
+          {k < 3 && <Bond x1={113 + k * 130} y1={250} x2={154 + k * 130} y2={250} />}
+          {k < 3 && <Bond x1={176 + k * 130} y1={250} x2={217 + k * 130} y2={250} />}
         </g>
       ))}
-      <T x={280} y={205} size={11} fill="#8fa4b4">…–Si–O–Si–O– siloxane backbone (strong Si–O ≈ 452 kJ mol⁻¹); R groups point outward → water-repellent</T>
+      <InsightPanel
+        x={30} y={296} w={540} heading="THE BACKBONE" tone={COL.C}
+        rows={[{ label: "…–Si–O–Si–O– siloxane chain", note: "strong Si–O ≈ 452 kJ mol⁻¹; R groups point outward → water-repellent" }]}
+      />
     </Svg>
   );
 }
@@ -521,22 +635,25 @@ function SiliconeFunctionality() {
 
 function SilanevsAlkane() {
   return (
-    <Svg h={230}>
-      <Atom x={140} y={110} label="C" stroke={COL.C} fill={COL.Cfill} r={18} />
-      <Atom x={210} y={110} label="H" stroke={COL.H} fill="#2a2410" r={13} />
-      <Bond x1={158} y1={110} x2={197} y2={110} w={3} />
-      <T x={140} y={150} size={11} fill={COL.red}>δ−</T>
-      <T x={210} y={150} size={11} fill={COL.green}>δ+</T>
-      <T x={175} y={185} size={11.5}>C–H : EN(C 2.5) &gt; EN(H 2.1)</T>
-
-      <Atom x={380} y={110} label="Si" stroke={COL.Si} fill={COL.Sifill} r={18} />
-      <Atom x={450} y={110} label="H" stroke={COL.H} fill="#2a2410" r={13} />
-      <Bond x1={398} y1={110} x2={437} y2={110} w={3} />
-      <T x={380} y={150} size={11} fill={COL.green}>δ+</T>
-      <T x={450} y={150} size={11} fill={COL.red}>δ−</T>
-      <T x={415} y={185} size={11.5}>Si–H : EN(Si 1.8) &lt; EN(H 2.1)</T>
-      <T x={280} y={30} size={12.5} fill="#c9d6df">Polarity is reversed — Si is electrophilic</T>
-      <T x={280} y={210} size={11} fill="#8fa4b4">so silanes are pyrophoric, hydrolysed by trace base, and strong reductants</T>
+    <Svg w={560} h={260}>
+      <rect x="8" y="8" width="544" height="244" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={280} y={38} size={12.5} weight={800} fill="#e7eef7">Polarity is reversed — Si is electrophilic</T>
+      <g filter="url(#cfGlow)">
+        <Atom x={140} y={120} label="C" stroke={COL.C} fill={COL.Cfill} r={18} />
+        <Atom x={210} y={120} label="H" stroke={COL.H} fill="#2a2410" r={13} />
+        <Bond x1={158} y1={120} x2={197} y2={120} w={3} />
+        <Atom x={380} y={120} label="Si" stroke={COL.Si} fill={COL.Sifill} r={18} />
+        <Atom x={450} y={120} label="H" stroke={COL.H} fill="#2a2410" r={13} />
+        <Bond x1={398} y1={120} x2={437} y2={120} w={3} />
+      </g>
+      <T x={140} y={160} size={11} fill={COL.red}>δ−</T>
+      <T x={210} y={160} size={11} fill={COL.green}>δ+</T>
+      <T x={175} y={190} size={11}>C–H : EN(C 2.5) &gt; EN(H 2.1)</T>
+      <T x={380} y={160} size={11} fill={COL.green}>δ+</T>
+      <T x={450} y={160} size={11} fill={COL.red}>δ−</T>
+      <T x={415} y={190} size={11}>Si–H : EN(Si 1.8) &lt; EN(H 2.1)</T>
+      <rect x="30" y="212" width="500" height="26" rx="8" fill={COL.amber} fillOpacity=".08" stroke={COL.amber} strokeOpacity=".4" />
+      <T x={280} y={230} size={10.5} fill={COL.amber}>so silanes are pyrophoric, hydrolysed by trace base, and strong reductants</T>
     </Svg>
   );
 }
@@ -545,28 +662,35 @@ function SilanevsAlkane() {
 
 function HalideGeometry() {
   return (
-    <Svg h={250}>
+    <Svg w={560} h={270}>
+      <rect x="8" y="8" width="544" height="254" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <rect x="26" y="24" width="220" height="222" rx="14" fill="#0a1420" stroke="#233247" />
       {/* SiF6 octahedral */}
-      <Atom x={130} y={120} label="Si" stroke={COL.Si} fill={COL.Sifill} r={15} />
-      {[[130, 60], [130, 180], [75, 120], [185, 120], [95, 90], [165, 150]].map(([x, y], i) => (
-        <g key={i}>
-          <Bond x1={130} y1={120} x2={x} y2={y} w={2.4} />
-          <circle cx={x} cy={y} r={10} fill="#12261c" stroke={COL.green} strokeWidth={2} />
-          <text x={x} y={y + 3.5} textAnchor="middle" fontSize={9} fontWeight={800} fill="#eef6ff">F</text>
-        </g>
-      ))}
-      <T x={130} y={218} size={11}>[SiF₆]²⁻ octahedral — stable</T>
-      <T x={130} y={234} size={9.5} fill="#8fa4b4">[SiCl₆]²⁻ not favoured: Cl too large</T>
+      <g filter="url(#cfGlow)">
+        <Atom x={130} y={130} label="Si" stroke={COL.Si} fill={COL.Sifill} r={15} />
+        {[[130, 70], [130, 190], [75, 130], [185, 130], [95, 100], [165, 160]].map(([x, y], i) => (
+          <g key={i}>
+            <Bond x1={130} y1={130} x2={x} y2={y} w={2.4} />
+            <circle cx={x} cy={y} r={10} fill="#12261c" stroke={COL.green} strokeWidth={2} />
+            <text x={x} y={y + 3.5} textAnchor="middle" fontSize={9} fontWeight={800} fill="#eef6ff">F</text>
+          </g>
+        ))}
+      </g>
+      <T x={136} y={218} size={10.5}>[SiF₆]²⁻ octahedral — stable</T>
+      <T x={136} y={234} size={9.5} fill="#8fa4b4">[SiCl₆]²⁻ not favoured: Cl too large</T>
 
       {/* SnCl2 bent */}
-      <Atom x={360} y={110} label="Sn" stroke={COL.Sn} fill={COL.Snfill} r={15} />
-      <Bond x1={360} y1={110} x2={315} y2={150} w={2.6} />
-      <Bond x1={360} y1={110} x2={405} y2={150} w={2.6} />
-      <Atom x={310} y={156} label="Cl" stroke={COL.green} fill="#12261c" r={12} />
-      <Atom x={410} y={156} label="Cl" stroke={COL.green} fill="#12261c" r={12} />
-      <T x={360} y={90} size={10} fill={COL.amber}>lone pair</T>
-      <T x={360} y={205} size={11}>SnCl₂ — bent (≈ 95°), Sn(II) lone pair</T>
-      <T x={360} y={221} size={9.5} fill="#8fa4b4">reducing; SnCl₄ is tetrahedral, covalent, fuming</T>
+      <rect x="294" y="24" width="228" height="222" rx="14" fill="#0a1420" stroke="#233247" />
+      <g filter="url(#cfGlow)">
+        <Atom x={408} y={120} label="Sn" stroke={COL.Sn} fill={COL.Snfill} r={15} />
+        <Bond x1={408} y1={120} x2={363} y2={160} w={2.6} />
+        <Bond x1={408} y1={120} x2={453} y2={160} w={2.6} />
+      </g>
+      <Atom x={358} y={166} label="Cl" stroke={COL.green} fill="#12261c" r={12} />
+      <Atom x={458} y={166} label="Cl" stroke={COL.green} fill="#12261c" r={12} />
+      <T x={408} y={98} size={10} fill={COL.amber}>lone pair</T>
+      <T x={408} y={218} size={10.5}>SnCl₂ — bent (≈ 95°), Sn(II) lone pair</T>
+      <T x={408} y={234} size={9.5} fill="#8fa4b4">reducing; SnCl₄ is tetrahedral, covalent, fuming</T>
     </Svg>
   );
 }
@@ -575,35 +699,46 @@ function HalideGeometry() {
 
 function PbO2Fork() {
   return (
-    <Svg h={250}>
-      <Atom x={280} y={60} label="PbO₂" stroke={COL.Pb} fill={COL.Pbfill} r={24} />
+    <Svg w={600} h={320}>
+      <rect x="8" y="8" width="584" height="304" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <g filter="url(#cfGlow)">
+        <Atom x={300} y={70} label="PbO₂" stroke={COL.Pb} fill={COL.Pbfill} r={26} />
+      </g>
       {[
-        ["+ hot HCl", "PbCl₂ + Cl₂", -170, COL.green],
+        ["+ hot HCl", "PbCl₂ + Cl₂", -190, COL.green],
         ["+ hot conc. H₂SO₄", "PbSO₄ + O₂", 0, COL.amber],
-        ["+ HNO₃", "no reaction — stays brown", 175, COL.red],
+        ["+ HNO₃", "no reaction — stays brown", 190, COL.red],
       ].map(([r, p, dx, col], i) => (
         <g key={i}>
-          <Bond x1={280} y1={84} x2={280 + (dx as number) * 0.6} y2={150} color={col as string} w={2.4} />
-          <T x={280 + (dx as number)} y={168} size={11.5} fill={col as string} weight={800}>{r}</T>
-          <T x={280 + (dx as number)} y={188} size={11} fill="#c9d6df">{p}</T>
+          <Bond x1={300} y1={96} x2={300 + (dx as number) * 0.6} y2={160} color={col as string} w={2.4} />
+          <T x={300 + (dx as number)} y={178} size={11} fill={col as string} weight={800}>{r}</T>
+          <T x={300 + (dx as number)} y={196} size={10.5} fill="#c9d6df">{p}</T>
         </g>
       ))}
-      <T x={280} y={222} size={11} fill="#8fa4b4">Pb(IV) is a strong oxidant: any oxidisable anion (Cl⁻, and in H₂SO₄ the O) is oxidised; NO₃⁻ cannot be, so PbO₂ survives.</T>
+      <InsightPanel
+        x={30} y={216} w={540} heading="WHY THE FORK" tone={COL.Pb}
+        rows={[{ label: "Pb(IV) is a strong oxidant", note: "any oxidisable anion (Cl⁻, or the O in H₂SO₄) is oxidised; NO₃⁻ cannot be, so PbO₂ survives" }]}
+      />
     </Svg>
   );
 }
 
 function MixedOxide() {
   return (
-    <Svg h={210}>
-      <rect x={90} y={70} width={150} height={60} rx={9} fill="#132433" stroke={COL.Pb} strokeWidth={2} />
-      <T x={165} y={100} size={13} weight={800}>Pb₃O₄</T>
-      <T x={165} y={118} size={10} fill="#8fa4b4">= 2PbO·PbO₂ (red lead)</T>
-      <Bond x1={240} y1={100} x2={320} y2={100} w={2.4} />
-      <T x={300} y={90} size={10} fill={COL.amber}>+ HNO₃</T>
-      <T x={430} y={85} size={12} fill="#c9d6df">2 Pb(NO₃)₂  (PbO part dissolves)</T>
-      <T x={430} y={112} size={12} fill={COL.red}>+ PbO₂↓  (brown residue, Pb(IV) part)</T>
-      <T x={300} y={175} size={11} fill="#8fa4b4">selective acid attack proves the mixed-oxide composition</T>
+    <Svg w={600} h={220}>
+      <rect x="8" y="8" width="584" height="204" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <g filter="url(#cfGlow)">
+        <rect x={80} y={70} width={150} height={60} rx={9} fill="#132433" stroke={COL.Pb} strokeWidth={2} />
+      </g>
+      <T x={155} y={100} size={13} weight={800}>Pb₃O₄</T>
+      <T x={155} y={118} size={10} fill="#8fa4b4">= 2PbO·PbO₂ (red lead)</T>
+      <path d="M232 100 H300" stroke={COL.amber} strokeWidth="2" />
+      <path d="M300 100 l-9 -5 l0 10 z" fill={COL.amber} />
+      <T x={266} y={90} size={10} fill={COL.amber}>+ HNO₃</T>
+      <T x={420} y={85} size={11.5} fill="#c9d6df">2 Pb(NO₃)₂ (PbO part dissolves)</T>
+      <T x={420} y={112} size={11.5} fill={COL.red}>+ PbO₂↓ (brown residue, Pb(IV) part)</T>
+      <rect x="30" y="160" width="540" height="30" rx="9" fill={COL.green} fillOpacity=".08" stroke={COL.green} strokeOpacity=".4" />
+      <T x={300} y={180} size={10.5} fill={COL.green}>selective acid attack proves the mixed-oxide composition</T>
     </Svg>
   );
 }
@@ -612,34 +747,42 @@ function MixedOxide() {
 
 function Trisilylamine() {
   return (
-    <Svg h={300} w={600}>
-      {/* N(CH3)3 pyramidal */}
-      <T x={150} y={26} size={12.5} fill="#c9d6df" weight={800}>N(CH₃)₃ — pyramidal</T>
-      <Atom x={150} y={120} label="N" stroke={COL.green} fill="#12291f" r={15} />
-      <Bond x1={150} y1={120} x2={95} y2={165} w={2.4} />
-      <Bond x1={150} y1={120} x2={205} y2={165} w={2.4} />
-      <Bond x1={150} y1={120} x2={150} y2={185} w={2.4} />
-      {[[90, 172], [210, 172], [150, 193]].map(([x, y], i) => (
+    <Svg h={340} w={600}>
+      <rect x="8" y="8" width="584" height="324" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <rect x="26" y="24" width="248" height="240" rx="14" fill="#0a1420" stroke="#233247" />
+      <T x={150} y={50} size={12} fill="#e7eef7" weight={800}>N(CH₃)₃ — pyramidal</T>
+      <g filter="url(#cfGlow)">
+        <Atom x={150} y={130} label="N" stroke={COL.green} fill="#12291f" r={15} />
+        <Bond x1={150} y1={130} x2={95} y2={175} w={2.4} />
+        <Bond x1={150} y1={130} x2={205} y2={175} w={2.4} />
+        <Bond x1={150} y1={130} x2={150} y2={195} w={2.4} />
+      </g>
+      {[[90, 182], [210, 182], [150, 203]].map(([x, y], i) => (
         <Atom key={i} x={x} y={y} label="CH₃" stroke={COL.C} fill={COL.Cfill} r={13} fs={8.5} />
       ))}
-      <Bond x1={150} y1={120} x2={150} y2={82} color={COL.amber} w={3} dash="3 3" />
-      <T x={150} y={72} size={10} fill={COL.amber}>lone pair (sp³)</T>
-      <T x={150} y={230} size={10.5} fill="#8fa4b4">N is sp³ · lone pair localised · good donor (basic)</T>
+      <Bond x1={150} y1={130} x2={150} y2={92} color={COL.amber} w={3} dash="3 3" />
+      <T x={150} y={82} size={10} fill={COL.amber}>lone pair (sp³)</T>
+      <T x={150} y={244} size={10} fill="#8fa4b4">N is sp³ · lone pair localised</T>
+      <T x={150} y={258} size={10} fill="#8fa4b4">good donor (basic)</T>
 
-      {/* N(SiH3)3 planar */}
-      <T x={440} y={26} size={12.5} fill="#c9d6df" weight={800}>N(SiH₃)₃ — planar</T>
-      <Atom x={440} y={140} label="N" stroke={COL.green} fill="#12291f" r={15} />
-      {[[380, 110], [500, 110], [440, 200]].map(([x, y], i) => (
-        <g key={i}>
-          <Bond x1={440} y1={140} x2={x} y2={y} w={2.4} />
-          <Atom x={x} y={y} label="SiH₃" stroke={COL.Si} fill={COL.Sifill} r={13} fs={8.5} />
-        </g>
-      ))}
-      <ellipse cx={440} cy={110} rx={16} ry={9} fill="none" stroke={COL.amber} strokeWidth={2} />
-      <ellipse cx={440} cy={170} rx={16} ry={9} fill="none" stroke={COL.amber} strokeWidth={2} />
-      <T x={440} y={95} size={9.5} fill={COL.amber}>N p orbital → empty Si 3d (pπ–dπ)</T>
-      <T x={440} y={245} size={10.5} fill="#8fa4b4">N is sp² · p-lone pair delocalised onto Si · weak base</T>
-      <T x={300} y={285} size={10.5} fill={COL.red}>carbon has no 3d orbital, so pπ–dπ is impossible → N(CH₃)₃ stays pyramidal</T>
+      <rect x="300" y="24" width="280" height="240" rx="14" fill="#0a1420" stroke="#233247" />
+      <T x={440} y={50} size={12} fill="#e7eef7" weight={800}>N(SiH₃)₃ — planar</T>
+      <g filter="url(#cfGlow)">
+        <Atom x={440} y={150} label="N" stroke={COL.green} fill="#12291f" r={15} />
+        {[[380, 120], [500, 120], [440, 210]].map(([x, y], i) => (
+          <g key={i}>
+            <Bond x1={440} y1={150} x2={x} y2={y} w={2.4} />
+            <Atom x={x} y={y} label="SiH₃" stroke={COL.Si} fill={COL.Sifill} r={13} fs={8.5} />
+          </g>
+        ))}
+        <ellipse cx={440} cy={120} rx={16} ry={9} fill="none" stroke={COL.amber} strokeWidth={2} />
+        <ellipse cx={440} cy={180} rx={16} ry={9} fill="none" stroke={COL.amber} strokeWidth={2} />
+      </g>
+      <T x={440} y={100} size={9.5} fill={COL.amber}>N p orbital → empty Si 3d (pπ–dπ)</T>
+      <T x={440} y={244} size={10} fill="#8fa4b4">N is sp² · lone pair delocalised onto Si</T>
+      <T x={440} y={258} size={10} fill="#8fa4b4">weak base</T>
+      <rect x="30" y="280" width="540" height="34" rx="10" fill={COL.red} fillOpacity=".08" stroke={COL.red} strokeOpacity=".4" />
+      <T x={300} y={302} size={10} fill={COL.red}>carbon has no 3d orbital, so pπ–dπ is impossible → N(CH₃)₃ stays pyramidal</T>
     </Svg>
   );
 }
@@ -650,20 +793,24 @@ function SilicaNetwork() {
   const xs = [90, 180, 270, 360, 450];
   const ys = [70, 145, 220];
   return (
-    <Svg h={280} w={560}>
-      {ys.map((y, r) =>
-        xs.map((x, c) => (
-          <g key={`si-${r}-${c}`}>
-            {c < xs.length - 1 && <Bond x1={x + 13} y1={y} x2={xs[c + 1] - 13} y2={y} color={COL.O} w={2.6} />}
-            {r < ys.length - 1 && <Bond x1={x} y1={y + 13} x2={x} y2={ys[r + 1] - 13} color={COL.O} w={2.6} />}
-            {c < xs.length - 1 && <circle cx={(x + xs[c + 1]) / 2} cy={y} r={5} fill={COL.Ofill} stroke={COL.O} strokeWidth={1.8} />}
-            {r < ys.length - 1 && <circle cx={x} cy={(y + ys[r + 1]) / 2} r={5} fill={COL.Ofill} stroke={COL.O} strokeWidth={1.8} />}
-          </g>
-        )),
-      )}
-      {ys.map((y, r) => xs.map((x, c) => <Atom key={`a-${r}-${c}`} x={x} y={y} label="Si" stroke={COL.Si} fill={COL.Sifill} r={13} fs={9.5} />))}
-      <T x={280} y={258} size={11.5}>SiO₂ — each Si sp³ bonded to 4 O; each O bridges 2 Si (giant 3-D network)</T>
-      <T x={280} y={26} size={12.5} fill="#c9d6df" weight={800}>Why silica is a solid and CO₂ a gas</T>
+    <Svg h={300} w={560}>
+      <rect x="8" y="8" width="544" height="284" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={280} y={38} size={12.5} weight={800} fill="#e7eef7">Why silica is a solid and CO₂ a gas</T>
+      <g filter="url(#cfGlow)">
+        {ys.map((y, r) =>
+          xs.map((x, c) => (
+            <g key={`si-${r}-${c}`}>
+              {c < xs.length - 1 && <Bond x1={x + 13} y1={y + 20} x2={xs[c + 1] - 13} y2={y + 20} color={COL.O} w={2.6} />}
+              {r < ys.length - 1 && <Bond x1={x} y1={y + 33} x2={x} y2={ys[r + 1] - 13 + 20} color={COL.O} w={2.6} />}
+              {c < xs.length - 1 && <circle cx={(x + xs[c + 1]) / 2} cy={y + 20} r={5} fill={COL.Ofill} stroke={COL.O} strokeWidth={1.8} />}
+              {r < ys.length - 1 && <circle cx={x} cy={(y + ys[r + 1]) / 2 + 20} r={5} fill={COL.Ofill} stroke={COL.O} strokeWidth={1.8} />}
+            </g>
+          )),
+        )}
+      </g>
+      {ys.map((y, r) => xs.map((x, c) => <Atom key={`a-${r}-${c}`} x={x} y={y + 20} label="Si" stroke={COL.Si} fill={COL.Sifill} r={13} fs={9.5} />))}
+      <rect x="30" y="256" width="500" height="30" rx="9" fill={COL.green} fillOpacity=".08" stroke={COL.green} strokeOpacity=".4" />
+      <T x={280} y={276} size={10.5} fill={COL.green}>each Si sp³ bonded to 4 O; each O bridges 2 Si — a giant 3-D network</T>
     </Svg>
   );
 }
@@ -676,16 +823,22 @@ function ChainSilicates() {
     return <path key={key} d={d} fill={COL.Si} opacity={0.3} stroke={COL.Si} strokeWidth={2} />;
   };
   return (
-    <Svg h={330} w={560}>
-      <T x={280} y={22} size={12.5} weight={800} fill="#c9d6df">Chain silicates — corner-sharing along a line</T>
-      {/* single chain */}
-      {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 80, k % 2 === 0, 22, `sc${k}`))}
-      <T x={70} y={125} anchor="start" size={11}>Single chain (pyroxene): repeat SiO₃²⁻ → (SiO₃)ₙ²ⁿ⁻ · e.g. diopside CaMg(SiO₃)₂ · cleavage ≈ 87°/93°</T>
-      {/* double chain */}
-      {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 190, k % 2 === 0, 20, `dcA${k}`))}
-      {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 232, k % 2 === 1, 20, `dcB${k}`))}
-      <T x={70} y={272} anchor="start" size={11}>Double chain (amphibole): repeat Si₄O₁₁⁶⁻ · OH in ring cavities · e.g. tremolite · cleavage ≈ 56°/124°</T>
-      <T x={280} y={310} size={10.5} fill="#8fa4b4">shaded triangle = one SiO₄ tetrahedron seen end-on · shared corners join neighbours</T>
+    <Svg h={350} w={560}>
+      <rect x="8" y="8" width="544" height="334" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={280} y={36} size={12.5} weight={800} fill="#e7eef7">Chain silicates — corner-sharing along a line</T>
+      <rect x="30" y="52" width="500" height="90" rx="14" fill="#0a1420" stroke="#233247" />
+      <g filter="url(#cfGlow)">
+        {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 100, k % 2 === 0, 22, `sc${k}`))}
+      </g>
+      <T x={280} y={130} size={10.5}>Single chain (pyroxene): (SiO₃)ₙ²ⁿ⁻ · diopside CaMg(SiO₃)₂ · cleavage ≈ 87°/93°</T>
+      <rect x="30" y="160" width="500" height="120" rx="14" fill="#0a1420" stroke="#233247" />
+      <g filter="url(#cfGlow)">
+        {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 210, k % 2 === 0, 20, `dcA${k}`))}
+        {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 252, k % 2 === 1, 20, `dcB${k}`))}
+      </g>
+      <T x={280} y={272} size={10.5}>Double chain (amphibole): Si₄O₁₁⁶⁻ · OH in ring cavities · tremolite · cleavage ≈ 56°/124°</T>
+      <rect x="30" y="292" width="500" height="30" rx="9" fill={COL.Si} fillOpacity=".08" stroke={COL.Si} strokeOpacity=".4" />
+      <T x={280} y={312} size={10} fill={COL.Si}>shaded triangle = one SiO₄ tetrahedron seen end-on · shared corners join neighbours</T>
     </Svg>
   );
 }
@@ -694,23 +847,28 @@ function FrameworkSilicate() {
   const pts: Array<[number, number]> = [];
   for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) pts.push([90 + c * 90 + (r % 2 ? 45 : 0), 70 + r * 55]);
   return (
-    <Svg h={300} w={560}>
-      <T x={280} y={24} size={12.5} weight={800} fill="#c9d6df">3-D framework (tectosilicate): all 4 corners shared</T>
-      {pts.map(([x, y], i) => (
-        <g key={i}>
-          {pts.map(([x2, y2], j) => {
-            const d = Math.hypot(x - x2, y - y2);
-            return j > i && d < 100 ? <Bond key={j} x1={x} y1={y} x2={x2} y2={y2} color={COL.O} w={2} /> : null;
-          })}
-        </g>
-      ))}
-      {pts.map(([x, y], i) => (
-        <circle key={`t${i}`} cx={x} cy={y} r={7} fill={i % 7 === 3 ? "#3a5570" : COL.Sifill} stroke={i % 7 === 3 ? "#7cc4ff" : COL.Si} strokeWidth={2} />
-      ))}
-      <circle cx={270} cy={150} r={12} fill="#2a2410" stroke={COL.amber} strokeWidth={2.4} />
-      <text x={270} y={154} textAnchor="middle" fontSize={9} fontWeight={800} fill="#eef6ff">K⁺</text>
-      <T x={280} y={262} size={11}>Replace one Si⁴⁺ by Al³⁺ → framework charge −1, balanced by a cavity cation (Na⁺, K⁺, Ca²⁺)</T>
-      <T x={280} y={280} size={10.5} fill="#8fa4b4">feldspar K[AlSi₃O₈] · zeolite (open channels) · ultramarine (enclosed S₃⁻)</T>
+    <Svg h={360} w={560}>
+      <rect x="8" y="8" width="544" height="344" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={280} y={38} size={12.5} weight={800} fill="#e7eef7">3-D framework (tectosilicate): all 4 corners shared</T>
+      <g filter="url(#cfGlow)">
+        {pts.map(([x, y], i) => (
+          <g key={i}>
+            {pts.map(([x2, y2], j) => {
+              const d = Math.hypot(x - x2, y - y2);
+              return j > i && d < 100 ? <Bond key={j} x1={x} y1={y + 14} x2={x2} y2={y2 + 14} color={COL.O} w={2} /> : null;
+            })}
+          </g>
+        ))}
+        {pts.map(([x, y], i) => (
+          <circle key={`t${i}`} cx={x} cy={y + 14} r={7} fill={i % 7 === 3 ? "#3a5570" : COL.Sifill} stroke={i % 7 === 3 ? "#7cc4ff" : COL.Si} strokeWidth={2} />
+        ))}
+        <circle cx={270} cy={164} r={12} fill="#2a2410" stroke={COL.amber} strokeWidth={2.4} />
+      </g>
+      <text x={270} y={168} textAnchor="middle" fontSize={9} fontWeight={800} fill="#eef6ff">K⁺</text>
+      <InsightPanel
+        x={30} y={260} w={500} heading="CHARGE BALANCE" tone={COL.amber}
+        rows={[{ label: "Al³⁺ for Si⁴⁺ → framework charge −1", note: "balanced by a cavity cation — feldspar K[AlSi₃O₈], zeolite (open channels), ultramarine (encloses S₃⁻)" }]}
+      />
     </Svg>
   );
 }
@@ -726,7 +884,8 @@ function COmoDiagram() {
   );
   return (
     <Svg h={310} w={560}>
-      <T x={280} y={22} size={12.5} weight={800} fill="#c9d6df">CO molecular-orbital picture — isoelectronic with N₂</T>
+      <rect x="8" y="8" width="544" height="294" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={280} y={34} size={12.5} weight={800} fill="#e7eef7">CO molecular-orbital picture — isoelectronic with N₂</T>
       {/* C AO */}
       <T x={90} y={50} size={11} fill={COL.C}>C 2p</T>
       {[[80, 90], [110, 90], [140, 90]].map(([x, y], i) => <Bond key={i} x1={x - 12} y1={y} x2={x + 12} y2={y} color={COL.C} w={2} />)}
@@ -738,8 +897,8 @@ function COmoDiagram() {
       <T x={470} y={210} size={11} fill={COL.O}>O 2s</T>
       <Bond x1={458} y1={195} x2={482} y2={195} color={COL.O} w={2} />
       {/* MOs */}
-      {lvl(55, "σ*2p (LUMO region → accepts M dπ, π*)", 0)}
-      {lvl(85, "σ2p  ← HOMO: lone pair mostly on C", 2)}
+      {lvl(55, "σ*2p — LUMO, accepts M dπ", 0)}
+      {lvl(85, "σ2p ← HOMO: lone pair on C", 2)}
       {lvl(115, "π2p (×2)", 4)}
       {lvl(175, "σ*2s", 2)}
       {lvl(205, "σ2s", 2)}
@@ -750,21 +909,28 @@ function COmoDiagram() {
 }
 
 function GasProcesses() {
+  const rows = [
+    ["Water gas", "C + H₂O(g) →", "CO + H₂", "high — both burn", COL.green],
+    ["Producer gas", "2C + O₂ + 4N₂ →", "2CO + 4N₂", "low — N₂ is ballast", COL.amber],
+    ["Coal gas", "coal, destructive distillation →", "CO + H₂ + CH₄ + CO₂", "moderate–high", COL.C],
+  ] as const;
   return (
-    <Svg h={250} w={560}>
-      <T x={280} y={24} size={12.5} weight={800} fill="#c9d6df">Three industrial fuel gases from coke</T>
-      {[
-        ["Water gas", "C + H₂O(g) →", "CO + H₂", "high — both burn", COL.green],
-        ["Producer gas", "2C + O₂ + 4N₂ →", "2CO + 4N₂", "low — N₂ is ballast", COL.amber],
-        ["Coal gas", "coal, destructive distillation →", "CO + H₂ + CH₄ + CO₂", "moderate–high", COL.C],
-      ].map(([name, lhs, rhs, cv, col], i) => (
-        <g key={i}>
-          <T x={40} y={70 + i * 55} anchor="start" size={12} weight={800} fill={col as string}>{name}</T>
-          <T x={40} y={88 + i * 55} anchor="start" size={10.5}>{lhs} <tspan fill={col as string}>{rhs}</tspan></T>
-          <T x={40} y={104 + i * 55} anchor="start" size={9.5} fill="#8fa4b4">calorific value: {cv}</T>
-        </g>
-      ))}
-      <T x={280} y={240} size={10.5} fill={COL.red}>do not interchange: water gas = CO+H₂ · producer gas = CO+N₂</T>
+    <Svg h={310} w={560}>
+      <rect x="8" y="8" width="544" height="294" rx="20" fill="#060c14" stroke="#1c2c3d" />
+      <T x={280} y={36} size={12.5} weight={800} fill="#e7eef7">Three industrial fuel gases from coke</T>
+      {rows.map(([name, lhs, rhs, cv, col], i) => {
+        const y = 62 + i * 60;
+        return (
+          <g key={name}>
+            <rect x={30} y={y} width={500} height={48} rx={10} fill="#0a1420" stroke={col} strokeOpacity=".5" filter="url(#cfGlow)" />
+            <T x={44} y={y + 20} anchor="start" size={11.5} weight={800} fill={col}>{name}</T>
+            <T x={44} y={y + 38} anchor="start" size={10}>{lhs} <tspan fill={col}>{rhs}</tspan></T>
+            <T x={510} y={y + 30} anchor="end" size={9.5} fill="#8fa4b4">{cv}</T>
+          </g>
+        );
+      })}
+      <rect x="30" y="252" width="500" height="30" rx="9" fill={COL.red} fillOpacity=".08" stroke={COL.red} strokeOpacity=".4" />
+      <T x={280} y={272} size={10} fill={COL.red}>do not interchange: water gas = CO + H₂ · producer gas = CO + N₂</T>
     </Svg>
   );
 }

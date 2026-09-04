@@ -1,27 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="700" height="430" viewBox="0 0 700 430">
-<title>Atomic hydrogen torch</title>
-<style>
-.title{font:700 25px Arial,sans-serif;fill:#111} .subtitle{font:600 16px Arial,sans-serif;fill:#222}
-.label{font:14px Arial,sans-serif;fill:#222} .small{font:12px Arial,sans-serif;fill:#333} .tiny{font:11px Arial,sans-serif;fill:#444}
-.box{fill:#f6f8fb;stroke:#30445f;stroke-width:2;rx:12;ry:12}
-.blue{fill:#eef4ff;stroke:#355c9a;stroke-width:2;rx:12;ry:12}
-.green{fill:#eefaf0;stroke:#39814f;stroke-width:2;rx:12;ry:12}
-.orange{fill:#fef6ea;stroke:#b8740b;stroke-width:2;rx:12;ry:12}
-.red{fill:#fff1f1;stroke:#b24848;stroke-width:2;rx:12;ry:12}
-.arrow{stroke:#333;stroke-width:2.2;fill:none;marker-end:url(#a)}
-.bond{stroke:#222;stroke-width:3;fill:none} .dash{stroke:#596b7d;stroke-width:2;fill:none;stroke-dasharray:5 5}
-.hbond{stroke:#2e6da4;stroke-width:2.3;fill:none;stroke-dasharray:4 5}
-</style>
-<defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#333"/></marker></defs>
-
-<text x="25" y="38" class="title">Atomic Hydrogen Torch — Principle</text>
-<rect x="35" y="90" width="150" height="80" class="blue"/><text x="75" y="120" class="subtitle">H₂ feed</text><text x="52" y="145" class="small">molecular hydrogen</text>
-<line x1="185" y1="130" x2="255" y2="130" class="arrow"/>
-<rect x="255" y="75" width="190" height="110" class="orange"/><text x="290" y="108" class="subtitle">Electric arc</text><text x="276" y="136" class="small">H₂ → 2H</text><text x="276" y="158" class="small">strong H–H bond is broken</text>
-<line x1="445" y1="130" x2="520" y2="130" class="arrow"/>
-<rect x="520" y="85" width="145" height="90" class="green"/><text x="550" y="116" class="subtitle">Atomic H</text><text x="536" y="143" class="small">very reactive stream</text>
-<line x1="590" y1="175" x2="590" y2="245" class="arrow"/>
-<rect x="490" y="245" width="175" height="105" class="red"/><text x="525" y="275" class="subtitle">Metal surface</text><text x="506" y="301" class="small">2H → H₂ + heat</text><text x="506" y="324" class="small">local temperature ~4000 K</text>
-<path d="M565 210 C545 225 610 225 585 245" fill="none" stroke="#b24848" stroke-width="4"/>
-<rect x="35" y="235" width="390" height="115" class="box"/><text x="55" y="265" class="subtitle">Why it becomes extremely hot</text><text x="55" y="291" class="small">Energy absorbed to dissociate H₂ is released again when H atoms recombine on the work surface.</text><text x="55" y="315" class="small">The torch exploits the large H–H bond dissociation enthalpy rather than “burning” atomic H alone.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 44px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 22px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 26px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 21px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 17px Inter,Arial,sans-serif;fill:#aebbd0} .tiny{font:400 15px Inter,Arial,sans-serif;fill:#8ba0b8}
+    .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff} .coral{fill:#ff9c7a} .green{fill:#7be6ab}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/><rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/><text x="78" y="96" class="title">The Atomic Hydrogen Torch</text><rect x="78" y="118" width="430" height="5" rx="3" fill="url(#accent)"/><text x="78" y="158" class="sub">Recombination of atomic hydrogen releases intense, localised heat</text><rect x="78" y="240" width="380" height="140" rx="16" fill="#0d1023" stroke="#62e8ff" stroke-width="2"/><text x="102" y="280" class="h" style="fill:#62e8ff;font-size:22px">H₂ feed</text><text x="102" y="312" class="t">molecular hydrogen</text><line x1="468" y1="310" x2="540" y2="310" stroke="#62e8ff" stroke-width="4"/><path d="M 540 310 L 528 317 L 528 303 Z" fill="#62e8ff"/><rect x="550" y="240" width="420" height="140" rx="16" fill="#0d1023" stroke="#ffc866" stroke-width="2"/><text x="574" y="280" class="h" style="fill:#ffc866;font-size:22px">Electric arc</text><text x="574" y="312" class="t">H₂ → 2 H</text><text x="574" y="338" class="t">the strong H-H bond is broken</text><line x1="970" y1="310" x2="1040" y2="310" stroke="#62e8ff" stroke-width="4"/><path d="M 1040 310 L 1028 317 L 1028 303 Z" fill="#62e8ff"/><rect x="1050" y="240" width="410" height="140" rx="16" fill="#0d1023" stroke="#7be6ab" stroke-width="2"/><text x="1074" y="280" class="h" style="fill:#7be6ab;font-size:22px">Atomic H stream</text><text x="1074" y="312" class="t">highly reactive, short-lived</text><line x1="1255" y1="380" x2="1255" y2="440" stroke="#62e8ff" stroke-width="4"/><path d="M 1255 440 L 1248 428 L 1262 428 Z" fill="#62e8ff"/><rect x="950" y="450" width="510" height="200" rx="16" fill="#0d1023" stroke="#ff9c7a" stroke-width="2"/><text x="974" y="490" class="h" style="fill:#ff9c7a;font-size:22px">Metal surface</text><text x="974" y="522" class="t">2 H → H₂ + heat (released)</text><text x="974" y="548" class="t">H atoms recombine on the work surface,</text><text x="974" y="574" class="t">local temperature ~4000 K</text><rect x="78" y="690" width="800" height="140" rx="14" fill="#0a2630" stroke="#2aaec0"/><text x="100" y="766.0" class="small">Why it becomes so hot: the large H-H bond dissociation enthalpy (~436 kJ/mol) is absorbed to make atomic H, then released again in full when the atoms recombine on the metal — used for high-temperature welding.</text></svg>

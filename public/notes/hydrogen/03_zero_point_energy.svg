@@ -1,51 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="520" viewBox="0 0 600 520">
-<title>Zero point energy</title>
-<style>
-    .title { font: 700 26px Arial, sans-serif; fill: #111; }
-    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
-    .label { font: 14px Arial, sans-serif; fill: #222; }
-    .small { font: 12px Arial, sans-serif; fill: #333; }
-    .tiny { font: 11px Arial, sans-serif; fill: #444; }
-    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
-    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
-    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
-    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
-    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
-    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
-    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
-    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
-    .bond { stroke: #222; stroke-width: 3; fill: none; }
-    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
-    .axis { stroke: #333; stroke-width: 2; }
-    .tick { stroke: #444; stroke-width: 1.5; }
-</style>
-<defs>
-  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 44px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 22px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 26px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 21px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 17px Inter,Arial,sans-serif;fill:#aebbd0} .tiny{font:400 15px Inter,Arial,sans-serif;fill:#8ba0b8}
+    .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff} .coral{fill:#ff9c7a} .green{fill:#7be6ab}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
 </defs>
-
-<text x="26" y="36" class="title">Zero-Point Energy and Isotope Effect</text>
-<line x1="70" y1="420" x2="530" y2="420" class="axis"/>
-<line x1="70" y1="420" x2="70" y2="70" class="axis"/>
-<text x="480" y="445" class="label">Bond distance</text>
-<text x="20" y="90" class="label" transform="rotate(-90 20 90)">Potential energy</text>
-
-<path d="M95,390 C150,190 220,150 300,150 C380,150 450,190 505,390" fill="none" stroke="#355c9a" stroke-width="3"/>
-<text x="362" y="135" class="subtitle">Same potential well shape</text>
-
-<line x1="175" y1="300" x2="425" y2="300" class="thin"/>
-<line x1="175" y1="335" x2="425" y2="335" class="thin"/>
-<text x="433" y="304" class="small">E₀(H–H)</text>
-<text x="433" y="339" class="small">E₀(D–D)</text>
-
-<line x1="300" y1="150" x2="300" y2="300" class="dash"/>
-<line x1="300" y1="150" x2="300" y2="335" class="dash"/>
-
-<text x="115" y="470" class="small">Heavier D₂ has lower vibrational frequency → lower zero-point energy.</text>
-<text x="115" y="492" class="small">Therefore D–D bond is effectively stronger than H–H, and deuterated compounds often react more slowly.</text>
-
-<rect x="96" y="95" width="175" height="42" class="box2"/>
-<text x="109" y="120" class="small">E₀ = ½hν and ν ∝ 1/√μ</text>
-
-</svg>
+<rect width="1600" height="900" fill="url(#bg)"/><rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/><text x="78" y="96" class="title">Zero-Point Energy and the Isotope Effect</text><rect x="78" y="118" width="430" height="5" rx="3" fill="url(#accent)"/><text x="78" y="158" class="sub">Why a D–D bond is effectively stronger than an H–H bond</text><rect x="78" y="210" width="1460" height="470" rx="26" class="panel"/><text x="112" y="260" class="h">Same electronic potential well, different vibrational floor</text><path d="M 220 600 L 235 591 L 250 581 L 265 570 L 280 559 L 295 548 L 310 536 L 325 524 L 340 512 L 355 499 L 370 487 L 385 474 L 400 462 L 415 449 L 430 438 L 445 426 L 460 416 L 475 406 L 490 397 L 505 389 L 520 382 L 535 376 L 550 371 L 565 367 L 580 365 L 595 364 L 610 364 L 625 366 L 640 369 L 655 373 L 670 379 L 685 386 L 700 393 L 715 402 L 730 412 L 745 422 L 760 433 L 775 445 L 790 457 L 805 469 L 820 482 L 835 494 L 850 507 L 865 519 L 880 531 L 895 543 L 910 555 L 925 566 L 940 577 L 955 587 L 970 596 L 985 605 L 1000 614 L 1015 622 L 1030 629 L 1045 635 L 1060 641 L 1075 647 L 1090 652 L 1105 656 L 1120 661" class="line"/><line x1="200" y1="660" x2="200" y2="250" class="thin"/><path d="M 200 250 l -10 20 h 20 z" fill="#8ba0b8"/><text x="150" y="290" class="small" transform="rotate(-90 150 290)">Potential</text><text x="1060" y="690" class="small">H–H / D–D distance</text><line x1="400" y1="402.0" x2="740" y2="402.0" stroke="#62e8ff" stroke-width="3"/><text x="760" y="408.0" class="t" style="fill:#62e8ff">E₀(H–H)</text><line x1="400" y1="440.0" x2="740" y2="440.0" stroke="#7be6ab" stroke-width="3"/><text x="760" y="446.0" class="t" style="fill:#7be6ab">E₀(D–D)  — lower</text><line x1="570" y1="402.0" x2="570" y2="440.0" stroke="#ff9c7a" stroke-width="2" stroke-dasharray="4 4"/><text x="1140" y="240" class="t" text-anchor="middle">E₀ = ½hν,  ν ∝ 1/√μ  (μ = reduced mass)</text><rect x="78" y="700" width="1460" height="100" rx="14" fill="#0a2630" stroke="#2aaec0"/><text x="100" y="756.0" class="small">The heavier D–D bond vibrates at a lower frequency, so it sits at a lower zero-point energy — effectively a deeper, stronger bond. This is why deuterated compounds often react more slowly (the kinetic isotope effect).</text></svg>

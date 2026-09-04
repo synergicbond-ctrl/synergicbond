@@ -1,76 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="530" viewBox="0 0 600 530">
-<title>Hydrogen periodic position</title>
-<style>
-    .title { font: 700 26px Arial, sans-serif; fill: #111; }
-    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
-    .label { font: 14px Arial, sans-serif; fill: #222; }
-    .small { font: 12px Arial, sans-serif; fill: #333; }
-    .tiny { font: 11px Arial, sans-serif; fill: #444; }
-    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
-    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
-    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
-    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
-    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
-    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
-    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
-    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
-    .bond { stroke: #222; stroke-width: 3; fill: none; }
-    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
-    .axis { stroke: #333; stroke-width: 2; }
-    .tick { stroke: #444; stroke-width: 1.5; }
-</style>
-<defs>
-  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 44px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 22px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 26px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 21px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 17px Inter,Arial,sans-serif;fill:#aebbd0} .tiny{font:400 15px Inter,Arial,sans-serif;fill:#8ba0b8}
+    .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff} .coral{fill:#ff9c7a} .green{fill:#7be6ab}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
 </defs>
-
-<text x="30" y="38" class="title">Hydrogen: Unique Position in the Periodic Table</text>
-<rect x="40" y="80" width="95" height="75" class="box2"/>
-<text x="74" y="108" class="subtitle">H</text>
-<text x="57" y="130" class="small">1s¹</text>
-<text x="48" y="145" class="tiny">Can form H⁺, H⁻,</text>
-<text x="56" y="158" class="tiny">and covalent bonds</text>
-
-<rect x="180" y="80" width="150" height="75" class="green"/>
-<text x="198" y="108" class="subtitle">Resembles Group 1</text>
-<text x="196" y="128" class="small">• ns¹ valence shell</text>
-<text x="196" y="145" class="small">• can show +1 state</text>
-
-<rect x="380" y="80" width="160" height="75" class="box3"/>
-<text x="399" y="108" class="subtitle">Resembles Group 17</text>
-<text x="396" y="128" class="small">• needs one electron</text>
-<text x="396" y="145" class="small">• forms H⁻ and H₂</text>
-
-<line x1="135" y1="117" x2="180" y2="117" class="arrow"/>
-<line x1="135" y1="117" x2="380" y2="117" class="arrow"/>
-
-<text x="44" y="212" class="subtitle">Mini schematic</text>
-<g transform="translate(40,225)">
-  <rect x="0" y="0" width="55" height="45" class="green"/>
-  <text x="20" y="25" class="label">H</text>
-  <rect x="0" y="60" width="55" height="45" class="green"/>
-  <text x="20" y="86" class="label">Li</text>
-  <rect x="0" y="115" width="55" height="45" class="green"/>
-  <text x="18" y="141" class="label">Na</text>
-
-  <rect x="420" y="60" width="55" height="45" class="box3"/>
-  <text x="440" y="86" class="label">F</text>
-  <rect x="420" y="115" width="55" height="45" class="box3"/>
-  <text x="438" y="141" class="label">Cl</text>
-
-  <rect x="480" y="60" width="55" height="45" class="box"/>
-  <text x="497" y="86" class="label">Ne</text>
-  <rect x="480" y="115" width="55" height="45" class="box"/>
-  <text x="497" y="141" class="label">Ar</text>
-
-  <line x1="55" y1="22" x2="420" y2="82" class="dash"/>
-  <text x="145" y="42" class="small">Placed separately because it shares features with both sides</text>
-</g>
-
-<rect x="50" y="420" width="500" height="80" class="red"/>
-<text x="68" y="447" class="subtitle">Takeaway</text>
-<text x="68" y="470" class="small">Hydrogen resembles both alkali metals and halogens, but is not identical to either.</text>
-<text x="68" y="489" class="small">Its very high ionisation enthalpy and the unique behaviour of H⁺ justify a special position.</text>
-
-</svg>
+<rect width="1600" height="900" fill="url(#bg)"/><rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/><text x="78" y="96" class="title">Hydrogen: a Unique Position in the Periodic Table</text><rect x="78" y="118" width="430" height="5" rx="3" fill="url(#accent)"/><text x="78" y="158" class="sub">Resembles Group 1 and Group 17, but belongs fully to neither</text><rect x="78" y="210" width="1460" height="210" rx="26" class="panel"/><text x="112" y="260" class="h">Three-way comparison</text><rect x="120" y="284" width="380" height="120" rx="14" fill="#0d1023" stroke="#62e8ff" stroke-width="2"/><text x="144" y="316" class="h" style="fill:#62e8ff;font-size:22px">Group 1 (alkali metals)</text><text x="144" y="344" class="small">ns¹ valence configuration</text><text x="144" y="366" class="small">loses e⁻ readily → M⁺</text><text x="144" y="388" class="small">H can also form H⁺</text><rect x="600" y="284" width="380" height="120" rx="14" fill="#0d1023" stroke="#ffc866" stroke-width="2"/><text x="624" y="316" class="h" style="fill:#ffc866;font-size:22px">Hydrogen, H</text><text x="624" y="344" class="small">1s¹</text><text x="624" y="366" class="small">forms H⁺, H⁻, and covalent bonds</text><text x="624" y="388" class="small">smallest atom, no core electrons</text><rect x="1080" y="284" width="380" height="120" rx="14" fill="#0d1023" stroke="#ff9c7a" stroke-width="2"/><text x="1104" y="316" class="h" style="fill:#ff9c7a;font-size:22px">Group 17 (halogens)</text><text x="1104" y="344" class="small">needs one electron to complete ns²np⁶</text><text x="1104" y="366" class="small">forms X⁻ and covalent bonds</text><text x="1104" y="388" class="small">H can also form H⁻</text><rect x="78" y="450" width="1460" height="300" rx="26" class="panel"/><text x="112" y="500" class="h">Why hydrogen sits apart</text><circle cx="230" cy="610" r="76" fill="#0e3b70" stroke="#ffc866" stroke-width="4" filter="url(#glow)"/><text x="230" y="618" class="title" text-anchor="middle" style="font-size:36px">H</text><line x1="130" y1="610" x2="100" y2="610" stroke="#62e8ff" stroke-width="3"/><path d="M 100 610 L 112 603 L 112 617 Z" fill="#62e8ff"/><text x="70" y="588" class="small" text-anchor="middle" style="fill:#62e8ff">Group 1</text><line x1="330" y1="610" x2="460" y2="610" stroke="#ff9c7a" stroke-width="3"/><path d="M 460 610 L 448 617 L 448 603 Z" fill="#ff9c7a"/><text x="500" y="616" class="small" style="fill:#ff9c7a">Group 17</text><rect x="560" y="545" width="920" height="100" rx="14" fill="#0a2630" stroke="#2aaec0"/><text x="582" y="601.0" class="small">Very high ionisation enthalpy (1312 kJ/mol) and the tiny, bare H⁺ proton give hydrogen genuinely unique chemistry — most modern periodic tables place it separately from both flanking groups.</text><text x="808" y="700" class="small" text-anchor="middle">H⁺ has no electron shell at all — a bare proton, unlike any alkali-metal cation</text><text x="808" y="726" class="small" text-anchor="middle">H⁻ (hydride) is a strong reducing agent, unlike any halide ion</text></svg>

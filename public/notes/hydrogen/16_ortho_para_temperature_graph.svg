@@ -1,28 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="700" height="450" viewBox="0 0 700 450">
-<title>Ortho para temperature graph</title>
-<style>
-.title{font:700 25px Arial,sans-serif;fill:#111} .subtitle{font:600 16px Arial,sans-serif;fill:#222}
-.label{font:14px Arial,sans-serif;fill:#222} .small{font:12px Arial,sans-serif;fill:#333} .tiny{font:11px Arial,sans-serif;fill:#444}
-.box{fill:#f6f8fb;stroke:#30445f;stroke-width:2;rx:12;ry:12}
-.blue{fill:#eef4ff;stroke:#355c9a;stroke-width:2;rx:12;ry:12}
-.green{fill:#eefaf0;stroke:#39814f;stroke-width:2;rx:12;ry:12}
-.orange{fill:#fef6ea;stroke:#b8740b;stroke-width:2;rx:12;ry:12}
-.red{fill:#fff1f1;stroke:#b24848;stroke-width:2;rx:12;ry:12}
-.arrow{stroke:#333;stroke-width:2.2;fill:none;marker-end:url(#a)}
-.bond{stroke:#222;stroke-width:3;fill:none} .dash{stroke:#596b7d;stroke-width:2;fill:none;stroke-dasharray:5 5}
-.hbond{stroke:#2e6da4;stroke-width:2.3;fill:none;stroke-dasharray:4 5}
-</style>
-<defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#333"/></marker></defs>
-
-<text x="25" y="38" class="title">Ortho/Para H₂: Equilibrium Composition vs Temperature</text>
-<line x1="85" y1="360" x2="650" y2="360" stroke="#333" stroke-width="2"/>
-<line x1="85" y1="360" x2="85" y2="80" stroke="#333" stroke-width="2"/>
-<text x="570" y="390" class="label">Temperature →</text><text x="18" y="105" class="label" transform="rotate(-90 18 105)">Mole fraction</text>
-<line x1="80" y1="290" x2="90" y2="290" stroke="#333"/><text x="48" y="295" class="small">25%</text>
-<line x1="80" y1="150" x2="90" y2="150" stroke="#333"/><text x="48" y="155" class="small">75%</text>
-<path d="M95,335 C170,320 230,265 310,205 C390,165 510,150 640,150" fill="none" stroke="#355c9a" stroke-width="4"/>
-<path d="M95,85 C170,100 230,155 310,215 C390,255 510,290 640,290" fill="none" stroke="#39814f" stroke-width="4"/>
-<text x="530" y="136" class="subtitle">ortho ≈ 75%</text><text x="530" y="315" class="subtitle">para ≈ 25%</text>
-<text x="105" y="105" class="subtitle">very low T: para dominates</text>
-<rect x="95" y="390" width="520" height="40" class="box"/><text x="112" y="415" class="small">Para-H₂ is lower in energy; high-T statistical limit approaches ortho:para ≈ 3:1.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 44px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 22px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 26px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 21px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 17px Inter,Arial,sans-serif;fill:#aebbd0} .tiny{font:400 15px Inter,Arial,sans-serif;fill:#8ba0b8}
+    .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff} .coral{fill:#ff9c7a} .green{fill:#7be6ab}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/><rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/><text x="78" y="96" class="title">Ortho/Para-H₂: Equilibrium Composition vs Temperature</text><rect x="78" y="118" width="430" height="5" rx="3" fill="url(#accent)"/><text x="78" y="158" class="sub">The high-T statistical limit approaches 3:1 ortho:para</text><line x1="220" y1="640" x2="220" y2="260" class="thin"/><line x1="220" y1="640" x2="1380" y2="640" class="thin"/><text x="160" y="280" class="small" transform="rotate(-90 160 280)">Mole fraction</text><text x="1320" y="680" class="small">Temperature →</text><line x1="212" y1="545.0" x2="220" y2="545.0" class="thin"/><text x="204" y="550.0" class="tiny" text-anchor="end">25%</text><line x1="212" y1="355.0" x2="220" y2="355.0" class="thin"/><text x="204" y="360.0" class="tiny" text-anchor="end">75%</text><path d="M 220 450 L 249 442 L 278 435 L 307 429 L 336 423 L 365 417 L 394 412 L 423 407 L 452 403 L 481 399 L 510 396 L 539 392 L 568 389 L 597 386 L 626 384 L 655 382 L 684 379 L 713 377 L 742 376 L 771 374 L 800 372 L 829 371 L 858 370 L 887 368 L 916 367 L 945 366 L 974 365 L 1003 365 L 1032 364 L 1061 363 L 1090 362 L 1119 362 L 1148 361 L 1177 361 L 1206 360 L 1235 360 L 1264 359 L 1293 359 L 1322 359 L 1351 358 L 1380 358" class="line"/><path d="M 220 450 L 249 458 L 278 465 L 307 471 L 336 477 L 365 483 L 394 488 L 423 493 L 452 497 L 481 501 L 510 504 L 539 508 L 568 511 L 597 514 L 626 516 L 655 518 L 684 521 L 713 523 L 742 524 L 771 526 L 800 528 L 829 529 L 858 530 L 887 532 L 916 533 L 945 534 L 974 535 L 1003 535 L 1032 536 L 1061 537 L 1090 538 L 1119 538 L 1148 539 L 1177 539 L 1206 540 L 1235 540 L 1264 541 L 1293 541 L 1322 541 L 1351 542 L 1380 542" stroke="#7be6ab" stroke-width="4" fill="none" stroke-dasharray="10 8"/><text x="1200" y="336.0" class="t" style="fill:#62e8ff">ortho ≈ 75%</text><text x="1200" y="564.0" class="t" style="fill:#7be6ab">para ≈ 25%</text><text x="360" y="275.2" class="small">very low T: para dominates</text><rect x="78" y="690" width="1460" height="100" rx="14" fill="#0a2630" stroke="#2aaec0"/><text x="100" y="746.0" class="small">Para-H₂ (antiparallel nuclear spins, I = 0) is the lower-energy species; ortho-H₂ (parallel spins, I = 1) is 3-fold spin-degenerate. As T → ∞, the statistical ortho:para ratio approaches 3:1.</text></svg>

@@ -51,8 +51,11 @@ function Bond({ x1, y1, x2, y2, color = "#9fb2c4", w = 3, dash }: { x1: number; 
 }
 
 function Svg({ children, w = 520, h = 300 }: { children: ReactNode; w?: number; h?: number }) {
+  // aria-hidden: this figure's title+caption are already real, visible text right next to it
+  // via the Frame wrapper every caller uses — role="img" with no name here would just announce
+  // a redundant, unlabelled "image" to screen readers instead of the adjacent text.
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto block h-auto w-full max-w-[560px]" role="img">
+    <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto block h-auto w-full max-w-[560px]" aria-hidden="true">
       {children}
     </svg>
   );

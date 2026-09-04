@@ -73,7 +73,10 @@ function T({ x, y, children, fill = "#c9d6df", size = 12, anchor = "middle" as c
 
 function Svg({ children, w = 560, h = 320, glowNs }: { children: ReactNode; w?: number; h?: number; glowNs: string }) {
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto block h-auto w-full max-w-[600px]" role="img">
+    // aria-hidden: this figure's title+caption are already real, visible text right next to it
+    // via the Frame wrapper every caller uses — role="img" with no name here would just announce
+    // a redundant, unlabelled "image" to screen readers instead of the adjacent text.
+    <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto block h-auto w-full max-w-[600px]" aria-hidden="true">
       <defs>
         <filter id={`cfGlow-${glowNs}`} x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="3.4" result="blur" />

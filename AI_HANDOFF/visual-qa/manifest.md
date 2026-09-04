@@ -347,6 +347,50 @@ login this session.
 
 ---
 
+## Group 14 (carbon family) — original premium visual redesign (PRs #158, #159)
+
+Mid-session, the user sent a design-direction clarification with reference
+images (AI-generated "blueprint/circuit-board" style cards covering Group 14
+topics: fullerene topology, gas separation, metal carbonyls, CO₂ vs SiO₂,
+silicon metallurgy, silicate chain/sheet, zeolite frameworks, silicone chain
+regulation, hydride reactivity, pπ–dπ bonding, Group 14 unified synthesis).
+Explicit instruction: match the references' information density/annotation
+quality/technical sophistication, but redesign from scratch as **original**
+Synergic Bond visuals — not a copy of their layout, palette, or iconography.
+
+Confirmed scope with the user via AskUserQuestion (their choice: **Group 14
+only**, not the other chapters). Built one calibration exemplar first
+(Fullerene, PR #158) before committing to the full pass, per the honest
+calibration that the references' exact rendering fidelity (volumetric glow,
+painted circuit-board chrome) isn't achievable via hand-authored SVG — the
+achievable target is denser data panels, explicit formula/algorithm
+call-outs, checklist annotations, and topic-specific original layouts.
+
+**All ~20 Group 14 React components redesigned** (PR #159, building on the
+Fullerene exemplar): TrendRibbon, CatenationBars, Diamond/Graphite, Fullerene,
+CarbideMap, COxides, Fe₂(CO)₉, SilicateAtlas, SiO₄ unit, SiliconeFunctionality,
+SilaneVsAlkane, HalideGeometry, PbO₂Fork, MixedOxide, Trisilylamine,
+SilicaNetwork, ChainSilicates, FrameworkSilicate, COmoDiagram, GasProcesses.
+Added two shared helpers to `carbon-family/visuals.tsx`: a glow filter
+(`cfGlow`) and a reusable `InsightPanel` checklist component, used
+consistently rather than one-off per figure.
+
+No chemistry changed anywhere in this pass — every figure's science was
+already verified correct in the QA rounds above; this was visual-design only.
+**3 real defects found and fixed** via harness pixel-verification during the
+redesign itself: a text collision in the shared InsightPanel's row-height
+math (systemic fix, not a one-off patch), a bar-vs-title collision in
+CatenationBars, and one pre-existing (not introduced by this batch) label
+collision in COmoDiagram. Pixel-verified all 13 parts after the redesign —
+zero remaining collisions, zero overflow.
+
+**S-block/Group 13 (boron-family) were explicitly excluded from this
+redesign scope** per the user's decision — they remain at their prior
+"flagship, already excellent" QA verdict from earlier in this session, not
+touched by the new visual-identity direction.
+
+---
+
 ## Legend for remaining chapters (not yet touched this pass)
 
 Hydrogen (26 other figures), S-block (34 React components), Group 13

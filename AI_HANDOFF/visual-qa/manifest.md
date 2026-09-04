@@ -306,6 +306,47 @@ user remain unverified this session, since no working login was available.
 
 ---
 
+## Full component pixel-verification sweep — boron-family + carbon-family remainder
+
+Rebuilt the harness (same pattern, deleted again after this round — confirmed
+absent via `git status --short`) and worked through the rest of both
+component sets that hadn't been individually pixel/text-verified yet.
+
+**Boron family / Group 13 — additionally verified this round**: `borazine`
+(+ h-BN sheet fragment), `al2cl6` (2 μ-Cl bridges, correct tetrahedral Al,
+correct ~800°C dissociation-to-monomer temperature note), `al2me6` (2
+bridging + 4 terminal CH₃, correctly identified 3c-2e Al-C-Al bridges as
+analogous to diborane's B-H-B), `icosahedron` (genuine 12-vertex/20-face
+B₁₂ polyhedron, not a flat placeholder), `peroxoborate` (correctly modelled
+as the true dimeric [B₂(O₂)₂(OH)₄]²⁻ anion with genuine O-O peroxo
+bridges — a well-known JEE misconception trap, handled correctly), `bf3-mo`
+(correct 4-centre delocalised π-MO picture, explicitly NOT three localised
+B=F double bonds), `al-qual` (Al³⁺ vs Mg²⁺ vs Zn²⁺ qualitative-analysis
+distinction, correct). All 7 confirmed correct — zero defects.
+
+**Carbon family / Group 14 — all remaining parts verified this round**
+(3, 5, 7, 8, 9, 10, 13, 16, 17, 18, 19, 21 — 13 of 13 parts, ~20
+components): Group 14 trend ribbon, catenation-vs-bond-enthalpy bars,
+diamond/graphite/C₆₀ (correct Euler-relation fullerene topology formulas),
+carbide hydrolysis map (correct methanide/acetylide/allylenide → CH₄ /
+C₂H₂ / propyne), CO₂/CO₃²⁻/CO bonding + Fe₂(CO)₉ bridging-carbonyl count +
+CO MO diagram, silicone functionality rule (correct Si-O bond enthalpy),
+Si-H vs C-H reversed polarity (correct EN values cited), SiF₆²⁻ vs SiCl₆²⁻
++ SnCl₂/SnCl₄ geometry, N(SiH₃)₃ pπ-dπ planarisation vs N(CH₃)₃ (a
+notoriously tricky topic, correctly explained), Pb₃O₄ mixed-oxide acid
+proof, PbO₂ acid-specific reactivity. All confirmed correct — zero defects.
+
+**Session-wide conclusion for these two chapters**: every single boron-family
+and carbon-family component checked this session (source-level + this
+pixel-verification round combined) is chemically correct with no visual
+hard-fails. Combined with the earlier s-block sweep, **component-level
+pixel QA for the S-block/Group13/Group14 auth-gated figure set is now
+complete** — the only remaining gap is authenticated full-page QA (page
+chrome, live access-gate behaviour), which stays blocked without a working
+login this session.
+
+---
+
 ## Legend for remaining chapters (not yet touched this pass)
 
 Hydrogen (26 other figures), S-block (34 React components), Group 13

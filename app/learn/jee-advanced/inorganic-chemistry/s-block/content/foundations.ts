@@ -331,6 +331,8 @@ Standard reduction potentials become more negative from Be toward Ba overall, so
       md(String.raw`
 ## 8.1 Origin of flame colour
 
+![Fig. The flame test — characteristic colours of the s-block cations.](/notes/s-block/s_flametest.svg)
+
 Flame heat excites an outer electron to a higher energy level; on relaxation, a photon of characteristic energy (and therefore characteristic wavelength/colour) is emitted:
 
 $$\Delta E=h\nu=\frac{hc}{\lambda}$$

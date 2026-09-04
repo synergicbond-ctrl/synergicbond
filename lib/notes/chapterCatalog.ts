@@ -340,6 +340,46 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     premium: true,
     description: "Group 14 (C, Si, Ge, Sn, Pb) in full: every property with increasing/decreasing/note order blocks, a MOT lens or JEE trap on each key species, energetics of the inert-pair effect, the carbon anomaly and catenation, allotropes and fullerene topology, carbides, CO/CO₂/carbonates and metal carbonyls, silicon extraction, silica, the full seven-class silicate system, glass, silicones, hydrides, halides, pπ–dπ complexes, tin/lead reaction maps, a uses section, a coverage checklist, 30 review questions with worked answers, and a full JEE question bank with answer key.",
   },
+  {
+    id: "nitrogen-family",
+    syllabusId: "p-block-elements",
+    sectionLabel: "Group 15 deep dive",
+    title: "The Nitrogen Family",
+    href: "/notes/nitrogen-family",
+    lessonLabel: "28 lessons",
+    premium: true,
+    description: "Group 15 (N, P, As, Sb, Bi) in full: periodic trends and the inert-pair effect, the nitrogen anomaly and pπ–pπ bonding, allotropes of phosphorus, nitrides and phosphides, dinitrogen and the Haber process, ammonia, hydrazine / hydroxylamine / azides, the oxides and oxoacids of nitrogen, nitric acid and the Ostwald process, phosphine, phosphorus halides, the oxides and oxoacids of phosphorus, As/Sb/Bi comparative chemistry, one-page reaction networks, an NCERT Unit-7 ledger and an extended question-bank reaction set — with schematic structure and apparatus figures on every lesson.",
+  },
+  {
+    id: "oxygen-family",
+    syllabusId: "p-block-elements",
+    sectionLabel: "Group 16 deep dive",
+    title: "The Oxygen Family",
+    href: "/notes/oxygen-family",
+    lessonLabel: "25 lessons",
+    premium: true,
+    description: "Group 16 (O, S, Se, Te, Po) in full: periodic trends and the O-vs-S anomalies, the MO picture of O₂, ozone, the hydrides H₂E, the classification of oxides, hydrogen peroxide, allotropes of sulphur, sulphur dioxide, the oxoacids of sulphur, sulphuric acid and the Contact process, SF₆/SF₄, Se/Te/Po, one-page reaction networks, an NCERT Unit-7 ledger and an extended question-bank reaction set — with schematic structure and apparatus figures on every lesson.",
+  },
+  {
+    id: "halogen-family",
+    syllabusId: "p-block-elements",
+    sectionLabel: "Group 17 deep dive",
+    title: "The Halogen Family",
+    href: "/notes/halogen-family",
+    lessonLabel: "21 lessons",
+    premium: true,
+    description: "Group 17 (F, Cl, Br, I, At) in full: periodic trends and the fluorine anomaly, oxidising power and the ½ΔdissH + ΔegH + ΔhydH cycle, preparation of the halogens, chlorine and bleaching powder, the oxoacids of the halogens, the hydrogen halides, interhalogen compounds, pseudohalogens, one-page reaction networks, an NCERT Unit-7 ledger and an extended question-bank reaction set — with schematic structure and apparatus figures on every lesson.",
+  },
+  {
+    id: "noble-gases",
+    syllabusId: "p-block-elements",
+    sectionLabel: "Group 18 deep dive",
+    title: "The Noble Gases",
+    href: "/notes/noble-gases",
+    lessonLabel: "14 lessons",
+    premium: true,
+    description: "Group 18 (He, Ne, Ar, Kr, Xe, Rn) in full: why the noble gases are unreactive, isolation by fractional distillation of liquid air, clathrate compounds, Bartlett's discovery, the xenon fluorides and oxofluorides with full VSEPR, xenon–oxygen compounds and perxenates, compounds of krypton and radon, the uses of every noble gas, an NCERT Unit-7 ledger and an extended question-bank reaction set — with schematic structure and apparatus figures on every lesson.",
+  },
   // ── Organic Chemistry (JEE Advanced) ─────────────────────────────────────
   {
     id: "general-organic-chemistry",
@@ -446,7 +486,7 @@ export const COURSE_GROUP_CARDS: Record<string, CourseGroupCard> = {
   "p-block-elements": {
     href: "/notes/p-block",
     description:
-      "Three courses — the full P-block Elements route across Groups 13–18, a 14-lesson Boron Family deep dive (Group 13), and a 29-lesson Carbon Family deep dive (Group 14: trends and the inert-pair effect, allotropes and fullerenes, carbides, carbon oxide and carbonate chemistry, silicon, silica and the seven silicate classes, glass, silicones, halides, pπ–dπ complexes, tin/lead reaction maps, a coverage checklist and a full question bank).",
+      "The full P-block Elements route across Groups 13–18, plus six group-by-group deep dives: Boron (13), Carbon (14), Nitrogen (15), Oxygen (16), Halogen (17) and Noble Gases (18) — each with order blocks, structure and apparatus figures, an NCERT Unit-7 ledger, an extended question-bank reaction set, reaction networks, JEE traps and a coverage checklist.",
   },
 };
 

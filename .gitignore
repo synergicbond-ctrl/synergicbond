@@ -57,3 +57,9 @@ synergic-bond-clone/
 docs/notes-source/
 docs/thermodynamics-local-review/
 docs/ui-audit/
+
+# p-block family notes deliverables (built from app/notes/*-family/content.ts; not source)
+/*_Family_Notes.docx
+/*_Family_Notes.pdf
+/*_Gases_Notes.docx
+/*_Gases_Notes.pdf

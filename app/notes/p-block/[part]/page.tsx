@@ -1,7 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import { AppShell } from "@/components/AppShell";
 import { P_BLOCK_PARTS, pBlockPartBySlug, pBlockPartMarkdown } from "../parts";
-import { pBlockLessonRef, pBlockTabs, sectionRangeLabel } from "../_chapter";
+import { deepDiveFor, pBlockLessonRef, pBlockTabs, sectionRangeLabel } from "../_chapter";
 import { PBlockMarkdown } from "../_markdown";
 import { PBlockVisual } from "../visuals";
 
@@ -22,9 +22,10 @@ export default async function PBlockPartPage({ params }: { params: Promise<{ par
   const part = pBlockPartBySlug((await params).part);
   if (!part) notFound();
 
-  // Group 14 (survey lessons 4–6) has its own dedicated 29-lesson deep-dive
+  // Groups 14–18 (survey lessons 4–19) each have their own dedicated deep-dive
   // chapter — send readers straight there.
-  if (part.number >= 4 && part.number <= 6) redirect("/notes/carbon-family");
+  const deep = deepDiveFor(part.number);
+  if (deep) redirect(deep.href);
 
   const prevRef = pBlockLessonRef(part.number - 1);
   const nextRef = pBlockLessonRef(part.number + 1);

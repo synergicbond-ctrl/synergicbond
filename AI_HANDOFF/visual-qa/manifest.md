@@ -391,6 +391,39 @@ touched by the new visual-identity direction.
 
 ---
 
+## Accessibility sweep + a second SVG-ID collision (both fixed, NOT yet merged)
+
+**22 empty-alt images fixed**: repo-wide grep for `![]( ... )` (empty markdown
+alt) found 22 instances, all isolated to `app/notes/hydrogen/content.ts` —
+every other chapter already used `![Fig. <description>](...)` consistently.
+Empty alt renders as `alt=""`, which screen readers treat as decorative and
+skip — these are real educational figures, not decorative. Wrote a specific,
+content-accurate caption for each (also visible on-page, since
+`ChemistryMarkdown`'s img renderer uses the caption for both `alt` and the
+figure caption text).
+
+**A second, larger SVG-ID collision found and fixed**: the `cfGlow` filter
+added to `carbon-family/visuals.tsx` during the Group 14 redesign was a
+literal `id="cfGlow"` baked into the shared `Svg()` wrapper — since nearly
+every redesigned figure uses `Svg()`, and several chapter "parts" render 4+
+of these figures on one page (e.g. part 9), this produced many DOM elements
+sharing one id on the same page. Fixed with an explicit `glowNs` prop per
+figure (this file is a Server Component, so the React-Context/`useId()`
+approach used for the earlier s-block fix doesn't work here — hooks are
+client-only). Verified live via `document.querySelectorAll('[id]')` on part
+9 (the exact multi-figure scenario): 0 duplicate ids, was previously several.
+
+Final broken-reference reconciliation re-run after all fixes: **0 missing,
+0 orphaned** SVGs project-wide — still clean.
+
+**NOT MERGED**: the user hit Vercel's free-tier 100-deployments/day cap
+mid-session (each `main` merge auto-deploys). Per their explicit instruction,
+all further work stays as local commits on feature branches, verified via
+`next build` + the local dev server only — no pushes/PRs/merges until they
+say to ship. See [[synergicbond-pr-workflow]] for the deploy-quota note.
+
+---
+
 ## Legend for remaining chapters (not yet touched this pass)
 
 Hydrogen (26 other figures), S-block (34 React components), Group 13

@@ -476,14 +476,14 @@ const makeComponents = (figureFor?: (key: string) => ReactNode): Components => (
   img: ({ src, alt }) => {
     const caption = (alt ?? "").replace(/^Fig\.\s*/i, "");
     return (
-      <figure className="my-6 overflow-hidden rounded-xl" style={{ border: `1px solid ${tint(C.cyan, 0.22)}`, background: "#fbfdff" }}>
+      <figure className="my-7 overflow-hidden rounded-xl" style={{ border: `1px solid ${tint(C.cyan, 0.22)}`, background: "#0a0c11" }}>
         {/* Static schematic SVGs served from /public — next/image gives no benefit and needs dangerouslyAllowSVG. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={typeof src === "string" ? src : undefined}
           alt={alt ?? ""}
           loading="lazy"
-          className="mx-auto block h-auto w-full max-w-[640px]"
+          className="mx-auto block h-auto w-full max-w-[680px]"
         />
         {caption ? (
           <figcaption

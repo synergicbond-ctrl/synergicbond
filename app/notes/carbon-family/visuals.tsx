@@ -173,42 +173,87 @@ function AllotropeStack() {
 }
 
 function Fullerene() {
-  const cx = 175;
-  const cy = 155;
+  const cx = 195;
+  const cy = 236;
   const pent = (r: number, off: number) =>
     Array.from({ length: 5 }, (_, i) => {
       const a = ((i * 72 + off - 90) * Math.PI) / 180;
       return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
     });
-  const inner = pent(40, 0);
-  const mid = pent(88, 36);
-  const outer = pent(120, 0);
+  const inner = pent(42, 0);
+  const mid = pent(92, 36);
+  const outer = pent(124, 0);
+  // one representative [6,6] (fusing two hexagons, shorter) and [6,5] (hexagon/pentagon edge) bond, picked
+  // off the outer ring so a real leader line can point at each — not a generic label. Both sit on the
+  // right-hand side of the cage, well clear of the title above, so their leader labels never crowd it.
+  const sixSix = { p1: outer[1], p2: mid[1] };
+  const sixFive = { p1: mid[2], p2: outer[2] };
+  const rows = [
+    ["Pentagons", "12", "fixed by Euler's theorem — every closed sp² cage has exactly 12"],
+    ["Hexagons", "n/2 − 10 = 20", "the only part that grows with cage size"],
+    ["C–C edges", "3n/2 = 90", "each C is 3-connected, so edges = 3n/2"],
+    ["Faces", "n/2 + 2 = 32", "Euler: V − E + F = 2 → 60 − 90 + F = 2"],
+  ] as const;
   return (
-    <Svg h={300}>
-      {inner.map((p, i) => (
-        <Bond key={`i${i}`} x1={p.x} y1={p.y} x2={inner[(i + 1) % 5].x} y2={inner[(i + 1) % 5].y} color={COL.amber} w={2.6} />
-      ))}
-      {inner.map((p, i) => (
-        <Bond key={`s${i}`} x1={p.x} y1={p.y} x2={mid[i].x} y2={mid[i].y} color={COL.C} w={2} />
-      ))}
-      {mid.map((p, i) => (
-        <Bond key={`m${i}`} x1={p.x} y1={p.y} x2={outer[i].x} y2={outer[i].y} color={COL.C} w={2} />
-      ))}
-      {mid.map((p, i) => (
-        <Bond key={`mm${i}`} x1={p.x} y1={p.y} x2={outer[(i + 1) % 5].x} y2={outer[(i + 1) % 5].y} color={COL.C} w={2} />
-      ))}
-      {outer.map((p, i) => (
-        <Bond key={`o${i}`} x1={p.x} y1={p.y} x2={outer[(i + 1) % 5].x} y2={outer[(i + 1) % 5].y} color={COL.C} w={2} />
-      ))}
+    <Svg w={940} h={460}>
+      <defs>
+        <filter id="fullereneGlow" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="4.2" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      <rect x="8" y="8" width="410" height="444" rx="22" fill="#060c14" stroke="#1c2c3d" />
+      <T x={213} y={40} size={13} weight={800} fill="#e7eef7">C₆₀ · buckminsterfullerene</T>
+      <g filter="url(#fullereneGlow)">
+        {inner.map((p, i) => (
+          <Bond key={`i${i}`} x1={p.x} y1={p.y} x2={inner[(i + 1) % 5].x} y2={inner[(i + 1) % 5].y} color={COL.amber} w={2.4} />
+        ))}
+        {inner.map((p, i) => (
+          <Bond key={`s${i}`} x1={p.x} y1={p.y} x2={mid[i].x} y2={mid[i].y} color={COL.C} w={2} />
+        ))}
+        {mid.map((p, i) => (
+          <Bond key={`m${i}`} x1={p.x} y1={p.y} x2={outer[i].x} y2={outer[i].y} color={COL.C} w={2} />
+        ))}
+        {mid.map((p, i) => (
+          <Bond key={`mm${i}`} x1={p.x} y1={p.y} x2={outer[(i + 1) % 5].x} y2={outer[(i + 1) % 5].y} color={COL.C} w={2} />
+        ))}
+        {outer.map((p, i) => (
+          <Bond key={`o${i}`} x1={p.x} y1={p.y} x2={outer[(i + 1) % 5].x} y2={outer[(i + 1) % 5].y} color="#9fc8e8" w={2.6} />
+        ))}
+      </g>
       {[...inner, ...mid, ...outer].map((p, i) => (
         <circle key={i} cx={p.x} cy={p.y} r={5} fill={COL.Cfill} stroke={COL.C} strokeWidth={1.8} />
       ))}
-      <T x={410} y={110} size={12.5} fill="#c9d6df">C₆₀ buckminsterfullerene</T>
-      <T x={410} y={135} size={11.5} fill="#8fa4b4">12 pentagons + 20 hexagons</T>
-      <T x={410} y={157} size={11.5} fill="#8fa4b4">all C three-coordinate, sp²</T>
-      <T x={410} y={179} size={11.5} fill="#8fa4b4">90 C–C edges · faces = n/2 + 2</T>
-      <T x={410} y={205} size={11.5} fill={COL.amber}>hexagons for Cₙ = n/2 − 10</T>
-      <T x={175} y={295} size={11} fill="#8fa4b4">central pentagon highlighted; discrete molecular cage</T>
+      {/* [6,6] and [6,5] bond call-outs, each anchored to a real bond via a leader line to a fixed
+          label slot — kept well clear of both the title above and the caption below. */}
+      <Bond x1={(sixSix.p1.x + sixSix.p2.x) / 2} y1={(sixSix.p1.y + sixSix.p2.y) / 2} x2={392} y2={150} color="#9fc8e8" w={1.2} dash="3 3" />
+      <T x={396} y={148} size={10.5} fill="#9fc8e8" anchor="end">[6,6] fused bond</T>
+      <T x={396} y={163} size={9.5} fill="#7b93a8" anchor="end">≈138 pm · more double-bond</T>
+      <Bond x1={(sixFive.p1.x + sixFive.p2.x) / 2} y1={(sixFive.p1.y + sixFive.p2.y) / 2} x2={392} y2={330} color={COL.C} w={1.2} dash="3 3" />
+      <T x={396} y={328} size={10.5} fill={COL.C} anchor="end">[6,5] fused bond</T>
+      <T x={396} y={343} size={9.5} fill="#7b93a8" anchor="end">≈145 pm · single-bond only</T>
+      <T x={213} y={438} size={10.5} fill="#7b93a8">all 60 vertices equivalent · discrete molecular cage, not a lattice</T>
+
+      <rect x="452" y="8" width="480" height="444" rx="22" fill="#08111c" stroke="#2a3c2f" />
+      <T x={476} y={44} size={11.5} weight={800} fill={COL.green} anchor="start">CAGE ALGORITHM — fixed once n = 60</T>
+      {rows.map(([label, value, note], i) => {
+        const y = 84 + i * 84;
+        return (
+          <g key={label}>
+            <rect x="476" y={y - 24} width="20" height="20" rx="5" fill="none" stroke={COL.green} strokeWidth="2" />
+            <path d={`M481 ${y - 15} l3 5 l7 -9`} stroke={COL.green} strokeWidth="2.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            <T x={506} y={y - 8} size={13} weight={800} fill="#e7eef7" anchor="start">{label}</T>
+            <T x={906} y={y - 8} size={14} weight={900} fill={COL.amber} anchor="end">{value}</T>
+            <T x={506} y={y + 14} size={10.5} fill="#8fa4b4" anchor="start">{note}</T>
+            {i < rows.length - 1 ? <Bond x1={476} y1={y + 34} x2={906} y2={y + 34} color="#1c2c22" w={1} /> : null}
+          </g>
+        );
+      })}
+      <rect x="476" y="404" width="430" height="34" rx="10" fill={COL.amber} fillOpacity=".08" stroke={COL.amber} strokeOpacity=".5" />
+      <T x={691} y={426} size={10.5} fill={COL.amber} anchor="middle">reactive site: [6,6] pyramidalisation strain drives addition chemistry (e.g. K₃C₆₀)</T>
     </Svg>
   );
 }

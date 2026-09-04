@@ -1,28 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="650" height="450" viewBox="0 0 650 450">
-<title>Zeolite column</title>
-<style>
-.title{font:700 25px Arial,sans-serif;fill:#111} .subtitle{font:600 16px Arial,sans-serif;fill:#222}
-.label{font:14px Arial,sans-serif;fill:#222} .small{font:12px Arial,sans-serif;fill:#333} .tiny{font:11px Arial,sans-serif;fill:#444}
-.box{fill:#f6f8fb;stroke:#30445f;stroke-width:2;rx:12;ry:12}
-.blue{fill:#eef4ff;stroke:#355c9a;stroke-width:2;rx:12;ry:12}
-.green{fill:#eefaf0;stroke:#39814f;stroke-width:2;rx:12;ry:12}
-.orange{fill:#fef6ea;stroke:#b8740b;stroke-width:2;rx:12;ry:12}
-.red{fill:#fff1f1;stroke:#b24848;stroke-width:2;rx:12;ry:12}
-.arrow{stroke:#333;stroke-width:2.2;fill:none;marker-end:url(#a)}
-.bond{stroke:#222;stroke-width:3;fill:none} .dash{stroke:#596b7d;stroke-width:2;fill:none;stroke-dasharray:5 5}
-.hbond{stroke:#2e6da4;stroke-width:2.3;fill:none;stroke-dasharray:4 5}
-</style>
-<defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#333"/></marker></defs>
-
-<text x="24" y="38" class="title">Zeolite / Permutit Water-Softening Column</text>
-<line x1="170" y1="70" x2="170" y2="110" class="arrow"/><text x="95" y="84" class="small">Hard water: Ca²⁺, Mg²⁺</text>
-<rect x="95" y="110" width="150" height="240" class="orange"/>
-<text x="130" y="140" class="subtitle">Na-zeolite bed</text>
-<circle cx="135" cy="190" r="13" fill="#c9d2dc"/><text x="129" y="194" class="tiny">Na</text>
-<circle cx="190" cy="220" r="13" fill="#c9d2dc"/><text x="184" y="224" class="tiny">Na</text>
-<circle cx="140" cy="270" r="13" fill="#d9d9d9"/><text x="131" y="274" class="tiny">Ca</text>
-<circle cx="195" cy="300" r="13" fill="#d9d9d9"/><text x="184" y="304" class="tiny">Mg</text>
-<line x1="170" y1="350" x2="170" y2="395" class="arrow"/><text x="105" y="420" class="small">Softened water out</text>
-<rect x="315" y="105" width="290" height="130" class="blue"/><text x="340" y="135" class="subtitle">Exchange</text><text x="340" y="165" class="small">Na₂Z + Ca²⁺ → CaZ + 2Na⁺</text><text x="340" y="190" class="small">Na₂Z + Mg²⁺ → MgZ + 2Na⁺</text>
-<rect x="315" y="260" width="290" height="110" class="green"/><text x="340" y="290" class="subtitle">Regeneration</text><text x="340" y="320" class="small">CaZ + 2NaCl → Na₂Z + CaCl₂</text><text x="340" y="345" class="small">Use concentrated brine to restore Na-form.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 44px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 22px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 26px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 21px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 17px Inter,Arial,sans-serif;fill:#aebbd0} .tiny{font:400 15px Inter,Arial,sans-serif;fill:#8ba0b8}
+    .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff} .coral{fill:#ff9c7a} .green{fill:#7be6ab}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/><rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/><text x="78" y="96" class="title">Zeolite (Permutit) Water-Softening Column</text><rect x="78" y="118" width="430" height="5" rx="3" fill="url(#accent)"/><text x="78" y="158" class="sub">Ion exchange removes hard-water Ca²⁺ / Mg²⁺</text><line x1="220" y1="250" x2="220" y2="300" stroke="#7be6ab" stroke-width="4"/><path d="M 220 300 L 213 288 L 227 288 Z" fill="#7be6ab"/><text x="240" y="250" class="small">hard water: Ca²⁺, Mg²⁺ in</text><rect x="120" y="300" width="220" height="340" rx="16" fill="#241c0e" stroke="#ffc866" stroke-width="2"/><text x="230" y="340" class="h" text-anchor="middle" style="fill:#ffc866;font-size:22px">Na-zeolite bed</text><circle cx="192" cy="403" r="18" fill="#0d1023" stroke="#ff9c7a" stroke-width="2"/><text x="192.4886561527382" y="407.69652753075746" class="tiny" text-anchor="middle" style="fill:#ff9c7a">Ca</text><circle cx="221" cy="414" r="18" fill="#0d1023" stroke="#b9a2ff" stroke-width="2"/><text x="221.2904836699226" y="419.09389957653025" class="tiny" text-anchor="middle" style="fill:#b9a2ff">Mg</text><circle cx="162" cy="468" r="18" fill="#0d1023" stroke="#62e8ff" stroke-width="2"/><text x="161.9727172223262" y="473.3500231867165" class="tiny" text-anchor="middle" style="fill:#62e8ff">Na</text><circle cx="315" cy="556" r="18" fill="#0d1023" stroke="#62e8ff" stroke-width="2"/><text x="315.2319077557894" y="561.0995173290779" class="tiny" text-anchor="middle" style="fill:#62e8ff">Na</text><circle cx="288" cy="429" r="18" fill="#0d1023" stroke="#ff9c7a" stroke-width="2"/><text x="287.7292684509789" y="433.8241986518699" class="tiny" text-anchor="middle" style="fill:#ff9c7a">Ca</text><circle cx="247" cy="441" r="18" fill="#0d1023" stroke="#b9a2ff" stroke-width="2"/><text x="246.60240147146644" y="445.87018155711905" class="tiny" text-anchor="middle" style="fill:#b9a2ff">Mg</text><circle cx="181" cy="403" r="18" fill="#0d1023" stroke="#62e8ff" stroke-width="2"/><text x="181.0796152713664" y="408.36032433493665" class="tiny" text-anchor="middle" style="fill:#62e8ff">Na</text><circle cx="189" cy="584" r="18" fill="#0d1023" stroke="#62e8ff" stroke-width="2"/><text x="188.59207786420495" y="589.0446389141733" class="tiny" text-anchor="middle" style="fill:#62e8ff">Na</text><circle cx="299" cy="557" r="18" fill="#0d1023" stroke="#ff9c7a" stroke-width="2"/><text x="299.2056087801155" y="562.4635162745112" class="tiny" text-anchor="middle" style="fill:#ff9c7a">Ca</text><circle cx="294" cy="423" r="18" fill="#0d1023" stroke="#b9a2ff" stroke-width="2"/><text x="294.0806109377339" y="427.5558359642328" class="tiny" text-anchor="middle" style="fill:#b9a2ff">Mg</text><line x1="230" y1="650" x2="230" y2="700" stroke="#7be6ab" stroke-width="4"/><path d="M 230 700 L 223 688 L 237 688 Z" fill="#7be6ab"/><text x="250" y="680" class="small">softened water out</text><rect x="430" y="300" width="1000" height="150" rx="26" class="panel"/><text x="464" y="350" class="h">Exchange</text><text x="466" y="372" class="t">Na₂Z + Ca²⁺ → CaZ + 2 Na⁺</text><text x="466" y="404" class="t">Na₂Z + Mg²⁺ → MgZ + 2 Na⁺</text><rect x="430" y="470" width="1000" height="150" rx="26" class="panel"/><text x="464" y="520" class="h">Regeneration</text><text x="466" y="542" class="t">CaZ + 2 NaCl → Na₂Z + CaCl₂</text><text x="466" y="574" class="small">Concentrated brine restores the Na-form of the resin.</text></svg>

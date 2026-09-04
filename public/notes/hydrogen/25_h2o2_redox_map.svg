@@ -1,24 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="700" height="430" viewBox="0 0 700 430">
-<title>H2O2 redox map</title>
-<style>
-.title{font:700 25px Arial,sans-serif;fill:#111} .subtitle{font:600 16px Arial,sans-serif;fill:#222}
-.label{font:14px Arial,sans-serif;fill:#222} .small{font:12px Arial,sans-serif;fill:#333} .tiny{font:11px Arial,sans-serif;fill:#444}
-.box{fill:#f6f8fb;stroke:#30445f;stroke-width:2;rx:12;ry:12}
-.blue{fill:#eef4ff;stroke:#355c9a;stroke-width:2;rx:12;ry:12}
-.green{fill:#eefaf0;stroke:#39814f;stroke-width:2;rx:12;ry:12}
-.orange{fill:#fef6ea;stroke:#b8740b;stroke-width:2;rx:12;ry:12}
-.red{fill:#fff1f1;stroke:#b24848;stroke-width:2;rx:12;ry:12}
-.arrow{stroke:#333;stroke-width:2.2;fill:none;marker-end:url(#a)}
-.bond{stroke:#222;stroke-width:3;fill:none} .dash{stroke:#596b7d;stroke-width:2;fill:none;stroke-dasharray:5 5}
-.hbond{stroke:#2e6da4;stroke-width:2.3;fill:none;stroke-dasharray:4 5}
-</style>
-<defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#333"/></marker></defs>
-
-<text x="24" y="38" class="title">H₂O₂ Redox Map — Oxygen at –1</text>
-<circle cx="350" cy="205" r="70" fill="#fff3e0" stroke="#b8740b" stroke-width="3"/>
-<text x="310" y="195" class="subtitle">H₂O₂</text><text x="312" y="222" class="small">O oxidation state = –1</text>
-<rect x="55" y="120" width="205" height="150" class="blue"/><text x="90" y="150" class="subtitle">Acts as oxidising agent</text><text x="80" y="185" class="small">oxygen: –1 → –2</text><text x="78" y="215" class="small">Example: Fe²⁺ → Fe³⁺</text><text x="78" y="242" class="small">PbS → PbSO₄</text>
-<rect x="440" y="120" width="205" height="150" class="green"/><text x="480" y="150" class="subtitle">Acts as reducing agent</text><text x="468" y="185" class="small">oxygen: –1 → 0</text><text x="468" y="215" class="small">MnO₄⁻ → Mn²⁺ (acid)</text><text x="468" y="242" class="small">H₂O₂ → O₂</text>
-<line x1="280" y1="200" x2="260" y2="200" class="arrow"/><line x1="420" y1="200" x2="440" y2="200" class="arrow"/>
-<rect x="85" y="325" width="530" height="55" class="red"/><text x="105" y="357" class="small">Fast role test: track oxygen in H₂O₂. To –2 ⇒ H₂O₂ is oxidant; to 0 ⇒ H₂O₂ is reductant.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 44px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 22px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 26px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 21px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 17px Inter,Arial,sans-serif;fill:#aebbd0} .tiny{font:400 15px Inter,Arial,sans-serif;fill:#8ba0b8}
+    .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff} .coral{fill:#ff9c7a} .green{fill:#7be6ab}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/><rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/><text x="78" y="96" class="title">H₂O₂ Redox Map — Oxygen at Oxidation State -1</text><rect x="78" y="118" width="430" height="5" rx="3" fill="url(#accent)"/><text x="78" y="158" class="sub">The intermediate state lets H₂O₂ act as both oxidant and reductant</text><circle cx="760" cy="420" r="90" fill="#241c0e" stroke="#ffc866" stroke-width="4" filter="url(#glow)"/><text x="760" y="412" class="t" text-anchor="middle" style="font-weight:800;font-size:22px">H₂O₂</text><text x="760" y="440" class="tiny" text-anchor="middle">O at -1</text><rect x="120" y="300" width="480" height="240" rx="18" fill="#07111f" stroke="#62e8ff" stroke-width="2"/><text x="360" y="350" class="h" text-anchor="middle" style="fill:#62e8ff;font-size:22px">Acts as oxidising agent</text><text x="150" y="400" class="t">oxygen: -1 → -2</text><text x="150" y="432" class="t">example: Fe²⁺ → Fe³⁺</text><text x="150" y="464" class="t">PbS → PbSO₄</text><rect x="1000" y="300" width="480" height="240" rx="18" fill="#07111f" stroke="#7be6ab" stroke-width="2"/><text x="1240" y="350" class="h" text-anchor="middle" style="fill:#7be6ab;font-size:22px">Acts as reducing agent</text><text x="1030" y="400" class="t">oxygen: -1 → 0</text><text x="1030" y="432" class="t">MnO₄⁻ → Mn²⁺ (acidic)</text><text x="1030" y="464" class="t">H₂O₂ → O₂</text><line x1="670" y1="400" x2="600" y2="350" stroke="#62e8ff" stroke-width="4"/><path d="M 600 350 L 614 351 L 606 363 Z" fill="#62e8ff"/><line x1="850" y1="400" x2="1000" y2="350" stroke="#7be6ab" stroke-width="4"/><path d="M 1000 350 L 991 361 L 986 347 Z" fill="#7be6ab"/><rect x="78" y="600" width="1460" height="90" rx="14" fill="#0a2630" stroke="#2aaec0"/><text x="100" y="651.0" class="small">Fast role test: track the oxidation state of oxygen in H₂O₂. If it moves to -2, H₂O₂ is the oxidant; if it moves to 0, H₂O₂ is the reductant.</text></svg>

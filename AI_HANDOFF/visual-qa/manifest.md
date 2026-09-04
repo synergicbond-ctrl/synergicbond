@@ -424,6 +424,29 @@ say to ship. See [[synergicbond-pr-workflow]] for the deploy-quota note.
 
 ---
 
+## Accessibility — role="img" with no name (~50 figures, now fixed)
+
+`boron-family` and `carbon-family`'s shared `Svg()` wrappers set
+`role="img"` with **no accessible name** — affecting all figures using them
+(~30 boron-family + ~19 carbon-family). Screen readers landing on any of
+these would announce a generic, unlabelled "image". Every figure using this
+wrapper is always immediately surrounded by a `Frame` with a real visible
+title (`h3`) + caption (`figcaption`) already describing the content, so
+fixed by setting `aria-hidden="true"` on the inner `<svg>` instead of
+writing ~50 duplicate bespoke labels — the standard pattern for a graphic
+whose content is already conveyed by adjacent visible text. `s-block`
+checked too: already correct (38 real per-figure `aria-label`s found
+earlier).
+
+Found and fixed a real build-breaking typo while writing this patch (a
+`{/* */}` JSX comment placed directly inside `return ( ... )`, invalid
+syntax) — caught by `next build`, fixed immediately. Verified post-fix via
+`document.querySelectorAll('svg')` in-browser: `role=null,
+aria-hidden="true"` confirmed on every rendered figure; rendering is
+pixel-identical to before (semantic-only change).
+
+---
+
 ## Legend for remaining chapters (not yet touched this pass)
 
 Hydrogen (26 other figures), S-block (34 React components), Group 13

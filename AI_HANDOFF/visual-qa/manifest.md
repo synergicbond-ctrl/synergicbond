@@ -76,6 +76,65 @@ in PR #144 — ⏳ pending this pass's individual re-open, not re-audited yet.
 
 ---
 
+## Group 1 + Group 2 (S-block) and Group 13 (Boron family) — access note
+
+Both chapters render their figures as **React/SVG components embedded in the
+page** (`app/learn/jee-advanced/inorganic-chemistry/s-block/visuals.tsx`,
+`app/notes/boron-family/visuals.tsx`), not standalone static SVG files —
+unlike every other chapter (hydrogen/oxygen/halogen/noble-gas/carbon/nitrogen
+all serve `public/notes/<chapter>/*.svg` directly, which bypasses the site's
+auth gate). `/learn/**` and `/notes/**` pages themselves ARE auth-gated
+(`PROTECTED_SUBPREFIXES`), and this session has no working login (the
+"Try as Guest" button did not create a session against the local dev
+server). **Pixel-level in-browser re-verification (mobile/desktop/200%-zoom,
+console errors, hydration) of these two chapters' figures is blocked this
+session** — flagging honestly rather than skipping silently.
+
+Fell back to a genuine source-level re-audit instead (reading the actual
+component JSX/SVG markup, not relying on the earlier pass's memory):
+
+| component | file | verdict | notes |
+|---|---|---|---|
+| BeCl2Visual | s-block visuals.tsx:321 | ✅ re-confirmed | correctly draws 3 phases: solid polymer chain, vapour dimer (µ-Cl bridged), hot monomer (linear terminal-only) — exactly the phase-dependent care required |
+| ProcessVisual (Downs cell / Solvay / chlor-alkali map) | s-block visuals.tsx:402 | ✅ re-confirmed | explicitly separates aqueous-brine paths (chlor-alkali, Solvay) from molten-salt path (Downs cell) with a caption calling out the distinction — matches the "do not confuse aqueous vs molten" mandate |
+| Diborane | boron-family visuals.tsx:233 | ✅ re-confirmed | 4 terminal 2c-2e B-H + 2 bridging 3c-2e B-H-B, bridge H's correctly drawn above/below the B₂H₄ plane, captioned correctly |
+| Borazine | boron-family visuals.tsx:260 | ✅ re-confirmed | correct alternating B-N hexagon with substituent H; separately renders an h-BN *layered sheet* fragment so the ring and the extended lattice aren't conflated |
+| Al(BH₄)₃ / (AlH₃)ₙ | boron-family visuals.tsx:313 | ✅ re-confirmed | η²-bidentate BH₄ bridging drawn correctly (2 H bridging each B-Al edge), distinct from the AlH₃ Al-H-Al polymer bridge model |
+| Al₂Cl₆ | boron-family visuals.tsx:356 | ✅ re-confirmed (partial read) | dimer with 2 bridging Cl between the two Al centres, correct starting geometry |
+
+Not re-read this pass (relying on the earlier full-file audit documented in
+memory `synergicbond-figure-system.md`): lime kiln/cement kiln distinction,
+flame-test figure, Hall–Héroult cell, BF₃ back-bonding, borazine MO/derivatives,
+BN structures, remaining ~50 components across both files.
+
+**Recommendation for the user**: to get real pixel/mobile/200%-zoom
+verification of these two chapters specifically, either share a working
+guest/test login for the local dev server, or verify visually in a normal
+logged-in browser session — this environment cannot self-serve it.
+
+---
+
+## Group 14 (Carbon family) — allotropes/silicates, source-verified
+
+`app/notes/carbon-family/visuals.tsx` also renders its flagship allotrope
+and silicate figures as React components (same auth-block as S-block/Group13
+above). Source-audited the named flagship set directly:
+
+| component | verdict | notes |
+|---|---|---|
+| Diamond | ✅ | sp³, C–C 1.54 Å, correct tetrahedral network |
+| Graphite | ✅ | sp², ABAB stacking, correct 1.42 Å in-plane / 3.35 Å interlayer bond lengths |
+| Fullerene (C₆₀) | ✅ | 12 pentagons + 20 hexagons correctly stated, all-sp² 3-coordinate, Euler-relation face count noted |
+| SilicaNetwork (SiO₂ / SiO₄) | ✅ | each Si sp³ bonded to 4 O, each O bridges 2 Si — correct giant 3-D network, correctly contrasted with molecular CO₂ |
+| ChainSilicates (single + double) | ✅ | single-chain pyroxene (SiO₃²⁻)ₙ and double-chain amphibole (Si₄O₁₁⁶⁻) both correct formulae, **and correct real mineral cleavage angles cited** (87°/93° pyroxene, 56°/124° amphibole) — this is the exact "wrong silicate connectivity" failure mode the QA brief calls out, and it's right |
+| FrameworkSilicate (tectosilicate) | ✅ | correct Al³⁺-for-Si⁴⁺ substitution → −1 framework charge balanced by cavity cation, correctly distinguishes feldspar/zeolite/ultramarine |
+
+All 6 confirmed correct on this pass. Remaining carbon-family React components
+(CarbideMap, Fe₂(CO)₉, SilaneVsAlkane, HalideGeometry, PbO2Fork, MixedOxide,
+Trisilylamine, COmoDiagram, and others) not yet individually re-read this pass.
+
+---
+
 ## Legend for remaining chapters (not yet touched this pass)
 
 Hydrogen (26 other figures), S-block (34 React components), Group 13

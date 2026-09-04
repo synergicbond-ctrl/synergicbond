@@ -155,6 +155,39 @@ with the PR #142/#143 full rebuild already done for this chapter.
 
 ---
 
+## Group 16 (Oxygen family) — flagship recheck (PR #144 batch), pixel-verified
+
+| file | topic | overall | status | notes |
+|---|---|---|---|---|
+| o_o2mo | O₂ MO diagram | ✅ | 5/5 | π*2p correctly half-filled → paramagnetic, bond order 2; correctly DIFFERENT filling order from N₂'s diagram (the exact O₂-vs-N₂ MO mix-up the QA brief warns about — it's right) |
+| o_s8 | S₈ puckered crown | ✅ | 4.5/5 | genuine non-planar crown geometry (not a flat octagon), correct bond length/angle/dihedral data |
+| o_ozone | O₃ resonance hybrid | ✅ | 4.5/5 | correct bent 117°, bond order 1.5, diamagnetic, correct decomposition ΔH and oxidising half-reactions |
+| o_contact | Contact process | ✅ | 4.7/5 | correct 4-stage flow, correct Le Chatelier reasoning, explicitly correct that SO₃ is never absorbed directly in water (must use conc. H₂SO₄) — catches the classic misconception |
+| o_prepso2 | Lab prep SO₂ | ✅ | 4.3/5 | correct upward-displacement-of-air collection (SO₂ denser than air), correct drying tower |
+| o_ozoniser | Silent electric discharge | ✅ | 4.4/5 | correct endothermic conversion, correct back-decomposition side reaction noted, correct liquefaction-based separation |
+| o_kipp | Kipp's apparatus (H₂S) | ✅ | 4.6/5 | genuine 3-bulb apparatus rendering (not a placeholder shape), correct FeS+H₂SO₄ reaction, correct self-regulating design note |
+
+**Group 16 flagship recheck: 7/7 confirmed correct, zero defects.**
+
+---
+
+## Group 14 (Carbon family) apparatus — lime-kiln-vs-cement-kiln check
+
+Explicitly re-verified the exact confusion risk named in the QA brief.
+
+| file | overall | status | notes |
+|---|---|---|---|
+| c_limekiln | ✅ 4.6/5 | genuinely distinct apparatus: single-reaction rotary kiln (CaCO₃→CaO+CO₂), coal burner, 3 temperature zones, "CaO" output |
+| c_cementkiln | ✅ 4.7/5 | genuinely distinct: cyclone preheater stage, 4 temperature zones up to 1450°C, correct belite/alite clinker chemistry (2CaO+SiO₂→Ca₂SiO₄, 3CaO+SiO₂→Ca₃SiO₅), "clinker + gypsum → cement" output |
+| c_siliconpure (zone refining) | ✅ 4.5/5 | correct moving molten-zone concept, correct segregation coefficient k<1 note, impurities swept to discard end |
+| c_blastfurnace | 🟡 4.0/5 | correct multi-zone CO-reduction cascade (Fe₂O₃→Fe₃O₄→FeO→Fe with realistic temperatures) and correct limestone-flux slag chemistry, but rendered as a plain labelled shaft outline rather than a detailed cutaway like its neighbours — visually plainer, not a hard-fail (no placeholder-geometry problem, science is correct), logged as a minor stylistic gap not currently blocking |
+
+**Confirms**: lime kiln and cement kiln are NOT the same asset reused, and are NOT
+confused with each other — this was the specific risk called out and it is not
+present.
+
+---
+
 ## Legend for remaining chapters (not yet touched this pass)
 
 Hydrogen (26 other figures), S-block (34 React components), Group 13

@@ -215,6 +215,27 @@ than once on the same page (a genuine DOM duplicate-id risk, since
 
 ---
 
+## Duplicate-structure cross-chapter audit
+
+Checked the named examples (P₄, S₈, NH₃, BF₃, SiO₄, H₂/N₂/O₂ MO, XeF₄, BeCl₂)
+for cross-chapter reuse/contradiction:
+
+- P₄: appears only within nitrogen-family (6 files) — self-consistent, no
+  cross-chapter duplication.
+- N₂ MO / O₂ MO: one file each, in their own chapters — no duplication.
+- XeF₄: appears only within noble-gases (2 files) — self-consistent.
+- BeCl₂: appears in the live `s-block/visuals.tsx` (`BeCl2Visual`) AND
+  `s-block/question-bank/visuals.tsx` (`BeCl2Phases`) — **two independent
+  renderings, cross-checked against each other**: both agree on solid =
+  edge/corner-sharing BeCl₄ chain (Be CN 4), vapour = Be₂Cl₄ dimer (Be CN 3,
+  2 bridging + 1 terminal Cl), hot vapour = linear monomer (Be CN 2). No
+  contradiction — consistent, complementary (main chapter vs question-bank
+  drill), not duplicated content.
+
+No cross-chapter contradictions found for the checked set.
+
+---
+
 ## Legend for remaining chapters (not yet touched this pass)
 
 Hydrogen (26 other figures), S-block (34 React components), Group 13

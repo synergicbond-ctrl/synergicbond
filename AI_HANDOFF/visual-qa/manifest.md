@@ -135,6 +135,26 @@ Trisilylamine, COmoDiagram, and others) not yet individually re-read this pass.
 
 ---
 
+## Group 15 (Nitrogen family) — flagship recheck, pixel-verified
+
+Standalone SVGs (public/notes/nitrogen-family/), directly browser-verified.
+
+| file | topic | overall | status | notes |
+|---|---|---|---|---|
+| n_n2mo | N₂ MO diagram | ✅ | 5/5 | correct π2p below σ2p ordering, bond order 3, diamagnetic — right MO filling, unlike O₂ |
+| n_nh3 | NH₃ pyramidal | ✅ | 4.5/5 | correct 107.3° H-N-H angle (real value, not idealised 109.5°), lone-pair compression noted |
+| n_haber | Haber–Bosch | ✅ | 4.5/5 | staged 3-box process with recycle loop, correct equilibrium-vs-kinetics tradeoff explanation for conditions chosen |
+| n_ostwald | Ostwald process | ✅ | 4.5/5 | correct 3-stage catalytic oxidation → further oxidation → absorption, NO recycle shown correctly |
+| n_p4 | White phosphorus P₄ | ✅ | 4.5/5 | correct tetrahedral 60° strained-angle cage, correct reactions, ring-strain note |
+| n_allotropes | P allotrope comparison | ✅ | 4.5/5 | white/red/black correctly drawn (molecular/polymeric chain/layered), correct stability AND reactivity trend both stated |
+| n_p4furnace | Electric-furnace P₄ manufacture | ✅ | 4.5/5 | real submerged-arc 3-electrode furnace, correct half-reaction, not a primitive placeholder |
+| n_prepn2 | Lab prep of N₂ | ✅ | 4.3/5 | correct NH₄Cl+NaNO₂ reaction, correct purification note (acidified K₂Cr₂O₇ to remove NO/HNO₂ traces) |
+
+**Group 15 flagship recheck: 8/8 confirmed correct, zero defects.** Consistent
+with the PR #142/#143 full rebuild already done for this chapter.
+
+---
+
 ## Legend for remaining chapters (not yet touched this pass)
 
 Hydrogen (26 other figures), S-block (34 React components), Group 13

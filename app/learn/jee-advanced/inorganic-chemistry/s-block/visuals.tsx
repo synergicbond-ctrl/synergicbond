@@ -1345,6 +1345,270 @@ function BeOxalateVisual() {
   );
 }
 
+/* ---- data-table card helper, shared by the comparison charts below ---- */
+function DataCard({
+  x,
+  y,
+  w,
+  rows,
+  headTone,
+}: {
+  x: number;
+  y: number;
+  w: number;
+  rows: { label: string; value: string; tone?: string }[];
+  headTone: string;
+}) {
+  const rowH = 40;
+  const h = rows.length * rowH + 16;
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={h} rx="16" fill="#0a1622" stroke={headTone} strokeOpacity=".5" />
+      {rows.map((r, i) => (
+        <g key={r.label}>
+          {i > 0 ? <line x1={x + 14} y1={y + 8 + i * rowH} x2={x + w - 14} y2={y + 8 + i * rowH} stroke="#1e2c3d" /> : null}
+          <text x={x + 16} y={y + 34 + i * rowH} fill="#94a3b8" fontSize="14">{r.label}</text>
+          <text x={x + w - 16} y={y + 34 + i * rowH} textAnchor="end" fill={r.tone ?? "#e2e8f0"} fontSize="14" fontWeight="800">{r.value}</text>
+        </g>
+      ))}
+    </g>
+  );
+}
+
+function PeriodicCompetitionVisual() {
+  return (
+    <VisualFrame eyebrow="Two chemistries, one block" title="M⁺ (size effects) vs M²⁺ (charge density)">
+      <svg viewBox="0 0 900 340" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Group 1 single valence electron chemistry compared with Group 2 double valence electron chemistry">
+        <rect x="8" y="8" width="884" height="324" rx="26" fill="#06101a" stroke="#24364a" />
+        <text x="228" y="52" textAnchor="middle" fill="#67e8f9" fontSize="20" fontWeight="900">Group 1 (M⁺)</text>
+        <DataCard x={44} y={70} w={368} headTone="#22d3ee" rows={[
+          { label: "Valence electrons", value: "1", tone: "#67e8f9" },
+          { label: "Metallic bonding", value: "weak", tone: "#67e8f9" },
+          { label: "Lattice energies", value: "low", tone: "#67e8f9" },
+          { label: "Chemistry driven by", value: "size effects", tone: "#67e8f9" },
+        ]} />
+        <text x="672" y="52" textAnchor="middle" fill="#c4b5fd" fontSize="20" fontWeight="900">Group 2 (M²⁺)</text>
+        <DataCard x={488} y={70} w={368} headTone="#a78bfa" rows={[
+          { label: "Valence electrons", value: "2", tone: "#c4b5fd" },
+          { label: "Metallic bonding", value: "strong", tone: "#c4b5fd" },
+          { label: "Lattice/hydration energies", value: "high", tone: "#c4b5fd" },
+          { label: "Chemistry driven by", value: "charge density", tone: "#c4b5fd" },
+        ]} />
+        <rect x="140" y="256" width="620" height="52" rx="14" fill="#78350f" fillOpacity=".22" stroke="#fbbf24" />
+        <text x="450" y="288" textAnchor="middle" fill="#fde68a" fontSize="15" fontWeight="800">Li &amp; Be exception: unusually small, high charge density → polarise everything → covalent character, reduced solubility</text>
+      </svg>
+    </VisualFrame>
+  );
+}
+
+function OxygenSpeciesComparisonVisual() {
+  const rows = [
+    { title: "Oxide", formula: "Li₂O, Na₂O", swatch: "#f8fafc", swatchLabel: "white", magnetic: "diamagnetic", test: "reacts with H₂O → base" },
+    { title: "Peroxide", formula: "Na₂O₂", swatch: "#fde047", swatchLabel: "pale yellow", magnetic: "diamagnetic", test: "gives H₂O₂ with dilute acid" },
+    { title: "Superoxide", formula: "KO₂", swatch: "#fb923c", swatchLabel: "orange", magnetic: "paramagnetic", test: "gives O₂ + H₂O₂ with water" },
+  ];
+  return (
+    <VisualFrame eyebrow="Size-matching rule" title="Bigger cations stabilise bigger, more complex oxygen anions">
+      <svg viewBox="0 0 900 300" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Table comparing oxide, peroxide and superoxide colour, formula, magnetism and characteristic test">
+        <rect x="8" y="8" width="884" height="284" rx="26" fill="#06101a" stroke="#24364a" />
+        <text x="44" y="42" fill="#64748b" fontSize="13" fontWeight="800">SPECIES</text>
+        <text x="270" y="42" fill="#64748b" fontSize="13" fontWeight="800">COLOUR</text>
+        <text x="470" y="42" fill="#64748b" fontSize="13" fontWeight="800">MAGNETIC</text>
+        <text x="640" y="42" fill="#64748b" fontSize="13" fontWeight="800">KEY TEST</text>
+        {rows.map((r, i) => {
+          const y = 62 + i * 70;
+          return (
+            <g key={r.title}>
+              {i > 0 ? <line x1="44" y1={y - 12} x2="856" y2={y - 12} stroke="#1e2c3d" /> : null}
+              <text x="44" y={y + 22} fill="#f8fafc" fontSize="18" fontWeight="900">{r.title}</text>
+              <text x="44" y={y + 44} fill="#94a3b8" fontSize="14">{r.formula}</text>
+              <circle cx="284" cy={y + 20} r="14" fill={r.swatch} stroke="#334155" strokeWidth="1.5" />
+              <text x="308" y={y + 26} fill="#cbd5e1" fontSize="14">{r.swatchLabel}</text>
+              <text x="470" y={y + 26} fill={r.magnetic === "paramagnetic" ? "#fb923c" : "#94a3b8"} fontSize="14" fontWeight="700">{r.magnetic}</text>
+              <text x="640" y={y + 20} fill="#cbd5e1" fontSize="13">{r.test.split(" → ")[0] ?? r.test}</text>
+              <text x="640" y={y + 40} fill="#cbd5e1" fontSize="13">{r.test.includes(" → ") ? "→ " + r.test.split(" → ")[1] : ""}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </VisualFrame>
+  );
+}
+
+function BerylliumAnomalyChartVisual() {
+  return (
+    <VisualFrame eyebrow="Diagonal relationship" title="Be behaves more like Al than like its own Mg neighbour">
+      <svg viewBox="0 0 900 320" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Table comparing beryllium, magnesium and aluminium hydroxide, oxide passivation, carbide product and diagonal resemblance">
+        <rect x="8" y="8" width="884" height="304" rx="26" fill="#06101a" stroke="#24364a" />
+        <text x="330" y="42" textAnchor="middle" fill="#f472b6" fontSize="16" fontWeight="900">Be²⁺</text>
+        <text x="562" y="42" textAnchor="middle" fill="#64748b" fontSize="16" fontWeight="900">Mg²⁺</text>
+        <text x="794" y="42" textAnchor="middle" fill="#67e8f9" fontSize="16" fontWeight="900">Al³⁺</text>
+        {[
+          ["Hydroxide", "amphoteric", "basic", "amphoteric"],
+          ["Oxide passivation", "yes", "no", "no"],
+          ["Carbide → gas", "Be₂C → CH₄", "MgC₂ → C₂H₂", "Al₄C₃ → CH₄"],
+        ].map(([label, be, mg, al], i) => {
+          const y = 70 + i * 62;
+          return (
+            <g key={label}>
+              {i > 0 ? <line x1="44" y1={y - 18} x2="856" y2={y - 18} stroke="#1e2c3d" /> : null}
+              <text x="44" y={y} fill="#94a3b8" fontSize="14">{label}</text>
+              <text x="330" y={y} textAnchor="middle" fill="#fbcfe8" fontSize="15" fontWeight="800">{be}</text>
+              <text x="562" y={y} textAnchor="middle" fill="#cbd5e1" fontSize="15">{mg}</text>
+              <text x="794" y={y} textAnchor="middle" fill="#a5f3fc" fontSize="15" fontWeight="800">{al}</text>
+            </g>
+          );
+        })}
+        <path d="M330 268 C450 300 674 300 794 268" fill="none" stroke="#fbbf24" strokeWidth="3" strokeDasharray="7 6" />
+        <text x="562" y="300" textAnchor="middle" fill="#fde68a" fontSize="15" fontWeight="800">Be resembles Al, not Mg — the diagonal relationship</text>
+      </svg>
+    </VisualFrame>
+  );
+}
+
+function ReactionFlowchartVisual() {
+  return (
+    <VisualFrame eyebrow="Reaction map" title="Water, oxygen, halogens — and the anomalies that break the pattern">
+      <svg viewBox="0 0 900 430" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Flowchart of s-block metal reactions with water, oxygen, halogens and the lithium nitride and beryllium hydrolysis anomalies">
+        <rect x="8" y="8" width="884" height="414" rx="26" fill="#06101a" stroke="#24364a" />
+        <circle cx="450" cy="120" r="66" fill="#0e7490" fillOpacity=".22" stroke="#22d3ee" strokeWidth="3" />
+        <text x="450" y="126" textAnchor="middle" fill="#f8fafc" fontSize="24" fontWeight="900">M</text>
+        {[
+          ["+ H₂O", "2M+2H₂O→2MOH+H₂↑", 132, 236, "#60a5fa"],
+          ["+ O₂", "Li₂O · Na₂O₂ · KO₂", 668, 236, "#fbbf24"],
+          ["+ X₂", "2M+X₂→2MX (ionic)", 450, 300, "#34d399"],
+        ].map(([label, sub, x, y, tone]) => (
+          <g key={label as string}>
+            <line x1="450" y1="120" x2={x as number} y2={y as number} stroke={tone as string} strokeWidth="2.5" strokeDasharray="7 6" />
+            <rect x={(x as number) - 132} y={(y as number) - 34} width="264" height="66" rx="14" fill={tone as string} fillOpacity=".1" stroke={tone as string} strokeWidth="2" />
+            <text x={x as number} y={(y as number) - 8} textAnchor="middle" fill="#f8fafc" fontSize="17" fontWeight="900">{label as string}</text>
+            <text x={x as number} y={(y as number) + 16} textAnchor="middle" fill="#cbd5e1" fontSize="12">{sub as string}</text>
+          </g>
+        ))}
+        <rect x="60" y="352" width="360" height="56" rx="14" fill="#7f1d1d" fillOpacity=".2" stroke="#fb7185" />
+        <text x="240" y="376" textAnchor="middle" fill="#fecdd3" fontSize="13" fontWeight="800">6Li+N₂→2Li₃N — only Group 1 metal to form a nitride</text>
+        <text x="240" y="396" textAnchor="middle" fill="#fda4af" fontSize="12">high lattice energy of Li₃N drives it</text>
+        <rect x="480" y="352" width="360" height="56" rx="14" fill="#7f1d1d" fillOpacity=".2" stroke="#fb7185" />
+        <text x="660" y="376" textAnchor="middle" fill="#fecdd3" fontSize="13" fontWeight="800">Be²⁺+H₂O⇌Be(OH)⁺+H⁺ — hydrolysis, acidic</text>
+        <text x="660" y="396" textAnchor="middle" fill="#fda4af" fontSize="12">extreme charge density polarises coordinated water</text>
+      </svg>
+    </VisualFrame>
+  );
+}
+
+function TrendsComparisonChartVisual() {
+  const g1 = [
+    ["Atomic radius", "↑", "none"],
+    ["IE₁", "↓", "none"],
+    ["Melting point", "↓", "K < Na"],
+    ["Density", "↑", "K < Na"],
+  ];
+  const g2 = [
+    ["Atomic radius", "↑", "none"],
+    ["IE₁", "↓", "Ra ≈ Ba"],
+    ["Hydroxide solubility", "↑", "none"],
+    ["Sulfate solubility", "↓", "BeSO₄, MgSO₄ soluble"],
+  ];
+  const rowsBlock = (rows: string[][], x: number, tone: string) =>
+    rows.map(([label, dir, exc], i) => {
+      const y = 96 + i * 52;
+      return (
+        <g key={label}>
+          <text x={x} y={y} fill="#cbd5e1" fontSize="14">{label}</text>
+          <text x={x + 210} y={y} fill={tone} fontSize="20" fontWeight="900">{dir}</text>
+          <text x={x + 246} y={y} fill="#64748b" fontSize="12">{exc}</text>
+        </g>
+      );
+    });
+  return (
+    <VisualFrame eyebrow="Same block, opposite anion behaviour" title="Group 1 vs Group 2 trends — and why hydroxide/sulfate solubility diverge">
+      <svg viewBox="0 0 900 360" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Side by side periodic trend comparison for Group 1 and Group 2, highlighting opposing hydroxide and sulfate solubility trends">
+        <rect x="8" y="8" width="884" height="344" rx="26" fill="#06101a" stroke="#24364a" />
+        <text x="44" y="52" fill="#67e8f9" fontSize="17" fontWeight="900">GROUP 1</text>
+        {rowsBlock(g1, 44, "#67e8f9")}
+        <line x1="452" y1="30" x2="452" y2="230" stroke="#1e2c3d" />
+        <text x="480" y="52" fill="#c4b5fd" fontSize="17" fontWeight="900">GROUP 2</text>
+        {rowsBlock(g2, 480, "#c4b5fd")}
+        <rect x="44" y="256" width="812" height="76" rx="16" fill="#78350f" fillOpacity=".18" stroke="#fbbf24" />
+        <text x="450" y="284" textAnchor="middle" fill="#fde68a" fontSize="14" fontWeight="800">Opposing trends: hydroxide solubility ↑ down Group 2 (lattice energy falls) but sulfate solubility ↓ (large SO₄²⁻ keeps lattice energy high)</text>
+        <text x="450" y="308" textAnchor="middle" fill="#fde68a" fontSize="13">it's the size of the anion, small OH⁻ vs large SO₄²⁻, that decides which trend wins</text>
+      </svg>
+    </VisualFrame>
+  );
+}
+
+function IndustrialFlowchartVisual() {
+  const boxes = [
+    [58, 60, 210, 84, "Chlor-alkali", "2NaCl+2H₂O→2NaOH+H₂+Cl₂", "#22d3ee"],
+    [326, 60, 210, 84, "Solvay", "NaCl+NH₃+CO₂+H₂O→NaHCO₃→Na₂CO₃", "#a78bfa"],
+    [594, 60, 250, 84, "Lime cycle", "CaCO₃⇌CaO⇌Ca(OH)₂⇌CaCO₃", "#34d399"],
+    [326, 220, 250, 84, "Gypsum → Plaster", "CaSO₄·2H₂O⇌CaSO₄·½H₂O", "#fbbf24"],
+  ] as const;
+  return (
+    <VisualFrame eyebrow="Master organiser" title="Four industrial routes built on Group 1 and 2 chemistry">
+      <svg viewBox="0 0 900 360" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Overview of chlor-alkali, Solvay, lime cycle and plaster of Paris industrial processes">
+        <rect x="8" y="8" width="884" height="344" rx="26" fill="#06101a" stroke="#24364a" />
+        {boxes.map(([x, y, w, h, title, sub, tone]) => (
+          <g key={title}>
+            <rect x={x} y={y} width={w} height={h} rx="16" fill={tone} fillOpacity=".1" stroke={tone} strokeWidth="2" />
+            <text x={x + w / 2} y={y + 30} textAnchor="middle" fill="#f8fafc" fontSize="17" fontWeight="900">{title}</text>
+            <text x={x + w / 2} y={y + 58} textAnchor="middle" fill="#cbd5e1" fontSize="10.5">{sub}</text>
+          </g>
+        ))}
+        <text x="450" y="330" textAnchor="middle" fill="#94a3b8" fontSize="14">chlor-alkali: redox + Faraday's law · Solvay: atom-efficient synthesis · lime cycle: equilibrium · plaster: hydrate chemistry</text>
+      </svg>
+    </VisualFrame>
+  );
+}
+
+/** Word-boundary wrap — never split mid-word, unlike a blind char-count slice. */
+function wrapWords(text: string, maxChars: number): string[] {
+  const words = text.split(" ");
+  const lines: string[] = [];
+  let line = "";
+  for (const word of words) {
+    const candidate = line ? `${line} ${word}` : word;
+    if (candidate.length > maxChars && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = candidate;
+    }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+
+function ChargeDensityImpactVisual() {
+  const items = [
+    { title: "Passivation", body: "No reaction with steam — thin BeO layer blocks it", tone: "#22d3ee" },
+    { title: "Amphoterism", body: "Be(OH)₂+2NaOH→Na₂[Be(OH)₄], dissolves in excess base", tone: "#a78bfa" },
+    { title: "Covalency", body: "BeCl₂ molecular, dimerises via bridging Cl in vapour", tone: "#fbbf24" },
+    { title: "Diagonal relation", body: "Be is to Al what Li is to Mg", tone: "#f472b6" },
+  ];
+  return (
+    <VisualFrame eyebrow="Master rule" title="Every Group 1/2 anomaly traces back to charge density">
+      <svg viewBox="0 0 900 340" className="mx-auto block h-auto w-full max-w-[540px]" role="img" aria-label="Four consequences of beryllium's high charge density: passivation, amphoterism, covalency and the diagonal relationship">
+        <rect x="8" y="8" width="884" height="324" rx="26" fill="#06101a" stroke="#24364a" />
+        {items.map((item, i) => {
+          const x = 44 + (i % 2) * 416;
+          const y = 40 + Math.floor(i / 2) * 140;
+          const lines = wrapWords(item.body, 46);
+          return (
+            <g key={item.title}>
+              <rect x={x} y={y} width="396" height="120" rx="16" fill={item.tone} fillOpacity=".08" stroke={item.tone} strokeWidth="2" />
+              <text x={x + 20} y={y + 34} fill={item.tone} fontSize="17" fontWeight="900">{item.title}</text>
+              {lines.map((ln, li) => (
+                <text key={li} x={x + 20} y={y + 68 + li * 22} fill="#cbd5e1" fontSize="12.5">{ln}</text>
+              ))}
+            </g>
+          );
+        })}
+      </svg>
+    </VisualFrame>
+  );
+}
+
 const VISUALS: Record<string, () => ReactNode> = {
   position: PositionVisual,
   trends: TrendVisual,
@@ -1380,6 +1644,13 @@ const VISUALS: Record<string, () => ReactNode> = {
   "pidgeon-process": PidgeonProcessVisual,
   "dow-process": DowProcessVisual,
   "cyanamide-network": CyanamideNetworkVisual,
+  "periodic-competition": PeriodicCompetitionVisual,
+  "oxygen-species-comparison": OxygenSpeciesComparisonVisual,
+  "beryllium-anomaly-chart": BerylliumAnomalyChartVisual,
+  "reaction-flowchart": ReactionFlowchartVisual,
+  "trends-comparison-chart": TrendsComparisonChartVisual,
+  "industrial-flowchart": IndustrialFlowchartVisual,
+  "charge-density-impact": ChargeDensityImpactVisual,
 };
 
 export function SBlockVisual({ id }: { id: string }) {

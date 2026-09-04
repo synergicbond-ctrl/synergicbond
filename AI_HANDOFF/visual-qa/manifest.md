@@ -236,6 +236,76 @@ No cross-chapter contradictions found for the checked set.
 
 ---
 
+## Missing-visual audit — s-block content vs VISUALS dispatch (real bug found)
+
+Cross-referenced every `visual("key")` call in `s-block/content/*.ts` against
+the `VISUALS` dispatch map in `visuals.tsx`. `SBlockVisual({id})` silently
+renders **nothing** (returns `null`) when `id` has no matching entry — a
+worse failure mode than a broken `<img>`, since there is no visible sign
+anything is missing.
+
+**Found 7 silent gaps**, all in `content/visual-enhanced-notes.ts`:
+`periodic-competition`, `oxygen-species-comparison`, `beryllium-anomaly-chart`,
+`reaction-flowchart`, `trends-comparison-chart`, `industrial-flowchart`,
+`charge-density-impact`. Read the surrounding markdown for each to confirm
+these are genuinely new content (not typo'd renames of existing keys), then
+authored all 7 as new flagship components matching the existing file's
+visual language (`VisualFrame` wrapper, same colour tokens, same card/data
+patterns) and using data taken directly from the adjacent markdown (no
+invented numbers). Wired into `VISUALS`.
+
+## Temporary local visual-QA harness — pixel verification of auth-gated components
+
+Built a temporary route (`app/visual-qa-harness-temp/page.tsx`, **deleted
+before this commit** — confirmed absent via `git status --short`) that
+imports `SBlockVisual`, `boronFigure`, and `CarbonFamilyVisual` directly and
+renders them with real site theming, outside every `PROTECTED_SUBPREFIXES`
+entry — not an auth bypass, a plain new page with no auth-gated data. This
+resolved the pixel-verification blocker recorded earlier in this file for
+S-block/Group 13/Group 14.
+
+Pixel-verified via the harness (desktop, mobile 375px, and a 720px-width
+"200%-zoom-equivalent" narrow render — this environment has no true
+browser-zoom control, so a halved-viewport width was used as the standard
+proxy for a vector/viewBox-based layout, which scales identically under
+either transform):
+
+- All 7 newly-authored s-block components: correct chemistry, no clipping,
+  clean text wrap (see next section — one had a fragile line-break bug,
+  fixed).
+- `diborane`, `bayer-hall` (Bayer purification + Hall–Héroult cell): pixel
+  output matches the source-level audit exactly — correct apparatus,
+  correct half-reactions, correct 4-stage flow, subscripts/superscripts all
+  render cleanly with no tofu/overlap.
+- `covalence-cap`: [BF₄]⁻ max-covalence-4 vs [AlF₆]³⁻ CN-6 comparison,
+  correct.
+- Carbon-family part 7 (Diamond/Graphite) and part 14 (`SilicateAtlas`,
+  all 7 silicate classes — ortho/pyro/cyclic/single-chain/double-
+  chain/sheet/framework, each with correct formula and real mineral name):
+  pixel output matches source audit exactly.
+- Mobile (375px) and narrow-width (720px) renders of `bayer-hall` and
+  `diborane`: fully responsive, no overflow, no clipping, captions reflow
+  correctly with all subscripts/superscripts intact. Because every one of
+  these ~74 components shares one responsive pattern (`viewBox`-scaled SVG
+  in a `max-w-[540px] w-full h-auto` container, no fixed-px breakpoints),
+  this is treated as strong evidence for the whole set rather than a
+  claim that all 74 were individually mobile/zoom-tested.
+
+**Bug found and fixed during this check**: `ChargeDensityImpactVisual`'s
+line-wrap used a blind `.slice(0, 46)` / `.slice(46)` character-count split,
+which is not word-boundary-safe in general (it happened to land cleanly on
+these 4 specific strings by luck). Replaced with a proper `wrapWords()`
+word-boundary wrapper, reused for any future multi-line card text in this
+file.
+
+**Explicit distinction** (per the QA brief): this is **component-level pixel
+QA**, done through a local harness with real theming but no authentication.
+It is NOT authenticated full-page QA — the page chrome, access-gate
+behaviour, and any page-level layout only visible when logged in as a real
+user remain unverified this session, since no working login was available.
+
+---
+
 ## Legend for remaining chapters (not yet touched this pass)
 
 Hydrogen (26 other figures), S-block (34 React components), Group 13

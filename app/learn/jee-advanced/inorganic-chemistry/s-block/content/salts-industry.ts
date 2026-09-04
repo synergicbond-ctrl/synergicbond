@@ -88,11 +88,15 @@ Sea water contains roughly 2.7–2.9% NaCl by mass. Solar evaporation gives crud
 
 ## 20.2 The Downs cell: metallic sodium
 
+![Fig. The Downs cell — electrolysis of molten NaCl/CaCl2 to sodium.](/notes/s-block/s_downs.svg)
+
 $$\text{Cathode: }\mathrm{Na^++e^-\rightarrow Na(l)}\qquad\text{Anode: }\mathrm{2Cl^-\rightarrow Cl_2(g)+2e^-}$$
 
 Molten NaCl alone melts at 1081 K; mixing in $\mathrm{CaCl_2}$ lowers the operating temperature to roughly 850 K. This lower temperature (i) cuts fuel cost, (ii) reduces sodium's vapour pressure — sodium vapour ignites in air — and (iii) stops the liberated sodium from redissolving into the melt, which would otherwise short-circuit the cell. Water must be absent, since it would be reduced preferentially over $\mathrm{Na^+}$. An iron-gauze screen physically separates the electrodes to stop the products recombining.
 
 ## 20.3 Chlor-alkali process (aqueous electrolysis)
+
+![Fig. Chlor-alkali membrane cell — NaOH, Cl2 and H2 from brine.](/notes/s-block/s_chloralkali.svg)
 
 $$\mathrm{2NaCl+2H_2O\rightarrow2NaOH+Cl_2+H_2}$$
 
@@ -122,6 +126,8 @@ $$\mathrm{3Cl_2+6NaOH\ (hot,\ concentrated)\rightarrow5NaCl+NaClO_3+3H_2O}$$
     blocks: [
       md(String.raw`
 ## 21.1 Washing soda, soda ash and the Solvay sequence
+
+![Fig. The Solvay (ammonia–soda) tower and calciner.](/notes/s-block/s_solvay.svg)
 
 - Anhydrous $\mathrm{Na_2CO_3}$: soda ash. $\mathrm{Na_2CO_3\cdot10H_2O}$: washing soda. $\mathrm{Na_2CO_3\cdot H_2O}$: the monohydrate.
 - In solution: $\mathrm{CO_3^{2-}+H_2O\rightleftharpoons HCO_3^-+OH^-}$ — basic, because carbonate is the conjugate base of a weak acid.

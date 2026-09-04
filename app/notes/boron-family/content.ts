@@ -656,6 +656,8 @@ SiO2(s) + 6HF(aq, conc.) ⟶ H2SiF6(aq) + 2H2O(l)
 
 ## 7.1 Industrial and laboratory preparation
 
+![Fig. Amorphous boron by magnesiothermic reduction of B₂O₃.](/notes/boron-family/b_boronprep.svg)
+
 ### High-purity crystalline boron
 
 Reduction of B₂O₃ with an active metal gives mainly amorphous boron. High-purity crystalline boron is obtained by decomposition or reduction of volatile boron compounds on a heated filament.
@@ -997,6 +999,8 @@ Bead colours depend on oxidation state, flame atmosphere and temperature; theref
 - It is therefore used as a flux in soldering and welding and in some metallurgical refining operations, where it helps remove oxide films and other metal-oxide impurities.
 
 ## 8.4 Orthoboric acid, H₃BO₃ or B(OH)₃
+
+![Fig. Orthoboric acid H₃BO₃ prepared from borax and crystallised as plates.](/notes/boron-family/b_boricacid.svg)
 
 > **Key Point: Orthoboric acid is a white crystalline solid with a soapy touch. It is sparingly soluble in cold water and much more soluble in hot water. It is a weak monobasic Lewis acid rather than a conventional proton donor.**
 
@@ -1352,6 +1356,8 @@ Several neutral boranes are known. When a simple name is ambiguous, the hydrogen
 In the STYX description, s = number of B-H-B bridges, t = number of three-centre B-B-B framework bonds, y = number of ordinary two-centre B-B bonds, and x = number of BH₂ groups. Thus diborane is represented as 2002: two hydrogen bridges, no B-B-B 3c bond, no assigned ordinary B-B 2c bond in this bookkeeping scheme, and two BH₂ units. STYX is a bonding inventory; Wade's rules are the broader cluster-electron framework.
 
 ## 10.2 Diborane: preparation
+
+![Fig. Diborane B₂H₆ — laboratory and larger-scale routes.](/notes/boron-family/b_diborane.svg)
 
 **From magnesium boride:**
 

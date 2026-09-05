@@ -608,19 +608,6 @@ function SiO4Unit() {
   );
 }
 
-function Part8Visual() {
-  return (
-    <>
-      <Frame title="The SiO₄ tetrahedron — the one building block" caption="Silicon is tetrahedrally surrounded by four oxygens. Silicates differ only in how many of the four corner oxygens are shared with neighbouring tetrahedra. Sharing zero corners gives the isolated SiO₄⁴⁻ ion; sharing all four gives neutral SiO₂.">
-        <SiO4Unit />
-      </Frame>
-      <Frame title="Seven silicate classes from one sharing rule" caption="From isolated ions to infinite frameworks: ortho (0 shared) → pyro (1) → cyclic ring and single chain (2) → double chain amphibole (2.5) → sheet (3) → three-dimensional framework (4). The number of shared corners fixes both the oxygen-to-silicon ratio and the charge per silicon.">
-        <SilicateAtlas />
-      </Frame>
-    </>
-  );
-}
-
 /* =========================== PART 9 — silicones ========================= */
 
 function SiliconeFunctionality() {

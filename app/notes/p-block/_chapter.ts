@@ -2,14 +2,19 @@ import type { ChapterTab, LessonRef } from "@/components/notes/canonical";
 import { P_BLOCK_PARTS, type PBlockPartDef } from "./parts";
 export const pBlockHref = (number: number) => `/notes/p-block/part${number}`;
 export const sectionRangeLabel = (part: PBlockPartDef) =>
-  part.number === 2 || part.number === 3
-    ? `Boron Family · §${part.fromSection}–${part.toSection}`
-    : part.fromSection === part.toSection
-      ? `Section ${part.fromSection}`
-      : `Sections ${part.fromSection}–${part.toSection}`;
-// Groups 14–18 each live in a dedicated deep-dive chapter; the p-block survey's
-// prev/next chain and nav tabs point straight there.
+  part.fromSection === part.toSection
+    ? `Section ${part.fromSection}`
+    : `Sections ${part.fromSection}–${part.toSection}`;
+// Every group from 13 to 18 now lives in its own dedicated deep-dive chapter;
+// the p-block survey's prev/next chain, nav tabs and [part] route all point
+// straight there instead of rendering a second copy on a p-block URL. Group
+// 13 (parts 2-3) used to be the one exception — it rendered a live slice of
+// boron-family's own markdown on a separate /notes/p-block/partN URL, which
+// is a duplicate-canonical-page (same content, two URLs) even though the
+// text itself was never a second authored copy. Folded in here so all six
+// groups follow the identical pattern.
 const DEEP_DIVE_RANGES: { first: number; last: number; href: string; label: string; title: string }[] = [
+  { first: 2, last: 3, href: "/notes/boron-family", label: "Boron Family", title: "Group 13 — the full 13-lesson deep dive + question bank" },
   { first: 4, last: 6, href: "/notes/carbon-family", label: "Carbon Family", title: "Group 14 — the full 29-lesson deep dive" },
   { first: 7, last: 10, href: "/notes/nitrogen-family", label: "Nitrogen Family", title: "Group 15 — the full 28-lesson deep dive" },
   { first: 11, last: 14, href: "/notes/oxygen-family", label: "Oxygen Family", title: "Group 16 — the full 25-lesson deep dive" },
@@ -36,9 +41,9 @@ export function pBlockLessonRef(number: number): LessonRef | undefined {
 // all page content below the fold.
 const P_BLOCK_NAV_GROUPS = [
   { label: "Intro & trends", first: 1, last: 1 },
-  { label: "Group 13 — Boron family", first: 2, last: 3 },
-  // Groups 14–18 each have their own deep-dive chapter; the survey lessons in
+  // Groups 13–18 each have their own deep-dive chapter; the survey lessons in
   // those ranges redirect there, and these tabs point straight at them.
+  { label: "Group 13 — Boron family", first: 2, last: 3, href: "/notes/boron-family" },
   { label: "Group 14 — Carbon family", first: 4, last: 6, href: "/notes/carbon-family" },
   { label: "Group 15 — Nitrogen family", first: 7, last: 10, href: "/notes/nitrogen-family" },
   { label: "Group 16 — Oxygen family", first: 11, last: 14, href: "/notes/oxygen-family" },
@@ -49,7 +54,7 @@ const P_BLOCK_NAV_GROUPS = [
 
 export function pBlockTabs(currentPart?: number): ChapterTab[] {
   return [
-    { label: "All 20 lessons", href: "/notes/p-block", active: currentPart === undefined },
+    { label: "P-block hub", href: "/notes/p-block", active: currentPart === undefined },
     ...P_BLOCK_NAV_GROUPS.map((group) => ({
       label: group.label,
       href: "href" in group ? group.href : pBlockHref(group.first),

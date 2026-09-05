@@ -1,16 +1,17 @@
 import "server-only";
 import { P_BLOCK_MASTER_MARKDOWN } from "./content";
-import { BORON_FAMILY_MASTER_MARKDOWN } from "../boron-family/content";
 
 export interface PBlockPartDef { slug: string; number: number; title: string; fromSection: number; toSection: number; }
 
+// Parts 2-19 (Groups 13-18) are kept here only so their old
+// /notes/p-block/partN URLs keep resolving (generateStaticParams,
+// pBlockPartBySlug, the prev/next chain) — [part]/page.tsx redirects every
+// one of them to its dedicated deep-dive chapter before ever rendering
+// (see deepDiveFor in ./_chapter), so pBlockPartMarkdown below is only ever
+// actually called for parts 1 and 20. Their title/fromSection/toSection
+// values are cosmetic labels only (used by prev/next and generateMetadata on
+// the way to the redirect) and no longer index into any live content source.
 export const P_BLOCK_PARTS: PBlockPartDef[] = [
-  // Ordered group by group — foundations then deep dive within each group,
-  // Groups 13 → 18, closing with the cross-group synthesis lesson.
-  //
-  // Parts 2–3 (Group 13) render the faithful "Boron Family" master notes
-  // (the same content as /notes/boron-family, split across two lessons);
-  // fromSection/toSection there refer to the BORON_FAMILY_MASTER_MARKDOWN.
   { slug: "part1", number: 1, title: "P-block map, trends & first-element anomaly", fromSection: 1, toSection: 1 },
   { slug: "part2", number: 2, title: "Group 13 — Boron family: trends, elemental boron & bonding", fromSection: 1, toSection: 7 },
   { slug: "part3", number: 3, title: "Group 13 — Boron family: B–O compounds, halides, boranes & aluminium", fromSection: 8, toSection: 13 },
@@ -46,18 +47,7 @@ function splitSections(markdown: string) {
   return { preamble: preamble.join("\n"), result };
 }
 
-function slice(markdown: string, from: number, to: number) {
-  return splitSections(markdown).result
-    .filter((item) => item.num >= from && item.num <= to)
-    .map((item) => item.text)
-    .join("\n");
-}
-
 export function pBlockPartMarkdown(part: PBlockPartDef) {
-  // Group 13 lessons draw from the faithful Boron Family master notes.
-  if (part.number === 2 || part.number === 3) {
-    return slice(BORON_FAMILY_MASTER_MARKDOWN, part.fromSection, part.toSection);
-  }
   const split = splitSections(P_BLOCK_MASTER_MARKDOWN);
   const body = split.result
     .filter((item) => item.num >= part.fromSection && item.num <= part.toSection)

@@ -55,8 +55,11 @@ function VseprShape({
   const bottomMost = Math.max(cy + 30, ...extents.map((e) => e.bottom));
   const topMost = Math.min(cy - 30, ...extents.map((e) => e.top));
   const fitsBelow = bottomMost + 44 <= CARD_H - 6;
-  const geomY = fitsBelow ? bottomMost + 24 : Math.max(topMost - 24, 18);
-  const angleY = fitsBelow ? geomY + 18 : Math.max(geomY - 18, 16);
+  // When the captions have to go above the structure the angle line sits above the
+  // geometry line, so the floor must leave room for BOTH — clamping each of them
+  // separately collapsed the 18px gap and printed one across the other (XeF₄).
+  const geomY = fitsBelow ? bottomMost + 24 : Math.max(topMost - 24, 34);
+  const angleY = fitsBelow ? geomY + 18 : geomY - 18;
 
   return (
     <g>
@@ -197,10 +200,11 @@ function Part5Visual() {
                 ))}
               </g>
             ))}
-            {/* Caption sits clear below the stacked sheets — at y=120 it previously ran straight
-                through the second hexagon layer. */}
-            <path d="M -10 90 L 20 145" stroke="#fde68a" strokeWidth="2" strokeDasharray="3 3" markerEnd="url(#gap)" />
-            <text x="30" y="185" fill="#fde68a" fontSize="11.5" fontWeight="700">weak van der Waals gap → layers slide</text>
+            {/* Caption sits between the lower sheet (ends at local y=123) and the foot of the
+                600x320 card: at y=120 it ran through the second hexagon layer, at y=185 it fell
+                off the bottom edge entirely. */}
+            <path d="M -10 90 L 20 138" stroke="#fde68a" strokeWidth="2" strokeDasharray="3 3" markerEnd="url(#gap)" />
+            <text x="30" y="145" fill="#fde68a" fontSize="11.5" fontWeight="700">weak van der Waals gap → layers slide</text>
           </g>
         </ShapeCard>
       </div>

@@ -1449,9 +1449,9 @@ Al, Cr and Fe are **passivated** by conc. HNO₃ (a protective oxide layer forms
 
 **White phosphorus (P₄):** discrete tetrahedral molecules, each P bonded to 3 others with a strained 60° P–P–P bond angle (far from the ideal ~99° for pure p-orbital bonding — this "banana bond" strain is exactly why white P is so reactive). Waxy, soft, translucent solid; **highly toxic**; glows in the dark (chemiluminescence from slow aerial oxidation, giving the name "phosphorus" — light-bearer); spontaneously ignites in air above ~35 °C, so it is stored under water. Soluble in CS₂.
 
-**Red phosphorus:** a polymeric chain structure formed by breaking one P–P bond per P₄ tetrahedron and linking the units — no ring strain, hence far less reactive, non-toxic, does not glow, does not ignite spontaneously. Obtained by heating white P in an inert atmosphere at ~573 K.
+**Red phosphorus:** the standard teaching model is a polymeric chain formed by breaking one P–P bond per P₄ tetrahedron and linking the units — no ring strain, hence far less reactive, non-toxic, does not glow, does not ignite spontaneously. (Real red phosphorus is structurally more varied — amorphous and Hittorf's crystalline forms both exist — but the linked-tetrahedra chain is the model used at this level.) Obtained by heating white P in an inert atmosphere at ~573 K.
 
-**Black phosphorus:** the thermodynamically most stable allotrope, with a layered structure resembling graphite; obtained from red or white phosphorus under high pressure. Densest and least reactive form.
+**Black phosphorus:** the thermodynamically most stable allotrope, with a puckered, graphite-like layered structure (each P bonded to three others in corrugated sheets); obtained from red or white phosphorus under high pressure. Densest and least reactive form.
 
 > **Fast recall:** reactivity order white ≫ red > black, mirroring exactly how ring/lattice strain (not oxidation state or formula) governs reactivity — the same "small, strained unit is more reactive" logic as diborane's electron deficiency or borazine's polar bonds.
 

@@ -95,7 +95,7 @@
 .wordmark {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
   white-space: nowrap;
   color: var(--foreground);
   font-family: var(--font-display), Georgia, "Times New Roman", serif;
@@ -107,13 +107,13 @@
 .synergic {
   font-family: inherit;
   font-weight: 510;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.09em;
 }
 
 .bond {
   font-family: inherit;
   font-weight: 650;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.06em;
 }
 
 .subtitle {

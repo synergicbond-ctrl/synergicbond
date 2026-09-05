@@ -107,7 +107,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
                 </div>
                 <h3 className="mt-2 text-xl font-black text-white">P-Block Elements</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
-                  Groups 15, 16, 17 and 18 — trends, structures, preparations,
+                  Groups 13 to 18 — trends, structures, preparations,
                   reactions, exceptions and comparison orders.
                 </p>
                 <div className="mt-4 font-bold text-[var(--accent)]">Open P-Block Notes →</div>

@@ -460,6 +460,16 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     premium: true,
     description: "Drug classifications, mechanism of drug action, antiseptics vs disinfectants, food preservatives, cleansing agents, and 25 JEE-pattern questions.",
   },
+  // ── General Inorganic Chemistry ───────────────────────────────────────────
+  {
+    id: "hydrolysis",
+    syllabusId: "general-inorganic-chemistry",
+    title: "Hydrolysis",
+    href: "/notes/hydrolysis",
+    lessonLabel: "8 lessons",
+    premium: true,
+    description: "Concept, mechanism and JEE traps: a single mental model for predicting hydrolysis, full curly-arrow mechanisms and structures for every reaction family (A/D/I, addition–elimination, push–pull, redox) across Groups 13–18, aqua-ion and salt hydrolysis, master tables, forty high-yield traps, worked examples and a complete practice set.",
+  },
   // ── Coordination Compounds ────────────────────────────────────────────────
   {
     id: "coordination-compounds",

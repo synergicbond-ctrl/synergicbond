@@ -165,6 +165,7 @@ export const AUTHORED_NOTES: Record<string, string> = {
   "f-block-elements": "/notes/f-block",
   "metallurgy": "/notes/metallurgy",
   "qualitative-analysis": "/learn/jee-advanced/salt-analysis",
+  "general-inorganic-chemistry": "/notes/hydrolysis",
   "environmental-chemistry": "/learn/jee-advanced/environmental-chemistry",
   "polymers": "/learn/jee-advanced/polymers",
 };

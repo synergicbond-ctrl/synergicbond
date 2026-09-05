@@ -4,7 +4,6 @@ import { CanonicalChapterPage } from "@/components/notes/canonical";
 import { C, tint } from "@/components/notes/chemistryMarkdown";
 import { HYDROGEN_SECTIONS } from "./content";
 import HydrogenMarkdown from "./_markdown";
-import HydrogenVisual from "./visuals";
 
 export const metadata: Metadata = {
   title: "Hydrogen & Hydrogen Peroxide (H₂O₂) — JEE Advanced | Synergic Bond",
@@ -39,13 +38,9 @@ export default function HydrogenNotesPage() {
               {section.label}
             </h2>
             <div className="space-y-5">
-              {section.blocks.map((block, index) =>
-                block.kind === "md" ? (
-                  <HydrogenMarkdown key={index} text={block.text} />
-                ) : (
-                  <HydrogenVisual key={index} id={block.id} />
-                ),
-              )}
+              {section.blocks.map((block, index) => (
+                <HydrogenMarkdown key={index} text={block.text} />
+              ))}
             </div>
           </section>
         ))}

@@ -15,7 +15,7 @@
 //   mole-concept 15 · stoichiometry 9 · concentration-terms 6 · eudiometry 6 ·
 //   redox 10 lessons (15 sections) · hydrogen 8 lessons (22 chapters) ·
 //   solid-state 10 parts · periodic-table master notes · s-block-elements 18 lessons ·
-//   p-block-elements 20 lessons · d-block-elements 10 theory parts ·
+//   p-block-elements hub (2 lessons + links to Groups 13-18) · d-block-elements 10 theory parts ·
 //   isomerism 40 parts (169 source modules).
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -310,15 +310,22 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
       "Polymer classification, chain architecture, polymerisation mechanisms, tacticity, molecular mass, plastics, rubbers, fibres, resins, biodegradable and conducting polymers.",
   },
   // ── P-block Elements ──────────────────────────────────────────────────────
+  // Hub only: block-wide trends + a final cross-group synthesis, linking out
+  // to the six dedicated Group 13-18 chapters below for every group's actual
+  // detailed chemistry (each already independently catalogued). Previously
+  // labelled "20 lessons" as if it were itself a full detailed treatment of
+  // all six groups — it never rendered a second copy of Groups 14-18 (those
+  // always redirected), and Group 13 has now been folded into the same
+  // pattern, so the label is corrected here to match reality.
   {
     id: "p-block-elements",
     syllabusId: "p-block-elements",
     sectionLabel: "Full block",
     title: "P-block Elements",
     href: "/notes/p-block",
-    lessonLabel: "20 lessons",
+    lessonLabel: "2 lessons + Groups 13–18 hub",
     premium: true,
-    description: "JEE Advanced notes for Groups 13–18: trends, boron and carbon chemistry, nitrogen and sulphur oxoacids, halogens, interhalogens and xenon compounds.",
+    description: "Block-wide trends across Groups 13–18 and a final cross-group decision-tree/trap-bank synthesis, with direct links into the six dedicated deep-dive chapters below for the detailed chemistry of each group.",
   },
   {
     id: "boron-family",

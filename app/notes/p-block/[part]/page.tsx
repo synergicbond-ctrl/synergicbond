@@ -22,7 +22,7 @@ export default async function PBlockPartPage({ params }: { params: Promise<{ par
   const part = pBlockPartBySlug((await params).part);
   if (!part) notFound();
 
-  // Groups 14–18 (survey lessons 4–19) each have their own dedicated deep-dive
+  // Groups 13–18 (survey lessons 2–19) each have their own dedicated deep-dive
   // chapter — send readers straight there.
   const deep = deepDiveFor(part.number);
   if (deep) redirect(deep.href);
@@ -38,7 +38,7 @@ export default async function PBlockPartPage({ params }: { params: Promise<{ par
       description="P-block JEE Advanced notes"
       free={false}
       tabs={pBlockTabs(part.number)}
-      lessonNumber={`Lesson ${part.number} of ${P_BLOCK_PARTS.length} · ${sectionRangeLabel(part)}`}
+      lessonNumber={`Lesson ${part.number} · ${sectionRangeLabel(part)}`}
       lessonTitle={part.title}
       hubRef={{ href: "/notes/p-block", label: "All lessons" }}
       prevRef={prevRef ? { href: prevRef.href, label: prevRef.number } : undefined}

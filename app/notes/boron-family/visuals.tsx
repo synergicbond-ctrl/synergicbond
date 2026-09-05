@@ -51,8 +51,11 @@ function Bond({ x1, y1, x2, y2, color = "#9fb2c4", w = 3, dash }: { x1: number; 
 }
 
 function Svg({ children, w = 520, h = 300 }: { children: ReactNode; w?: number; h?: number }) {
+  // aria-hidden: this figure's title+caption are already real, visible text right next to it
+  // via the Frame wrapper every caller uses — role="img" with no name here would just announce
+  // a redundant, unlabelled "image" to screen readers instead of the adjacent text.
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto block h-auto w-full max-w-[560px]" role="img">
+    <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto block h-auto w-full max-w-[560px]" aria-hidden="true">
       {children}
     </svg>
   );
@@ -282,7 +285,7 @@ function Borazine() {
           </g>
         );
       })}
-      <text x={cx} y={cy + 108} textAnchor="middle" fontSize="11.5" fill="#c9d6df">borazine B₃N₃H₆</text>
+      <text x={cx} y={cy + 120} textAnchor="middle" fontSize="11.5" fill="#c9d6df">borazine B₃N₃H₆</text>
       {/* h-BN fragment */}
       <g transform="translate(330,60)">
         {[0, 1].map((row) =>
@@ -447,7 +450,7 @@ function AlChelate() {
   const cx = 200;
   const cy = 130;
   return (
-    <Svg h={250}>
+    <Svg h={292}>
       <Atom x={cx} y={cy} label="Al" stroke={COL.Al} fill={COL.Alfill} r={18} />
       {Array.from({ length: 6 }, (_, i) => {
         const a = ((i * 60 - 90) * Math.PI) / 180;
@@ -637,7 +640,7 @@ function OxideTrend() {
 
 function AquoIons() {
   return (
-    <Svg h={220}>
+    <Svg h={240}>
       <g transform="translate(20,0)">
         <Atom x={120} y={110} label="Al" stroke={COL.Al} fill={COL.Alfill} r={17} />
         {[0, 60, 120, 180, 240, 300].map((deg, i) => {
@@ -654,7 +657,7 @@ function AquoIons() {
         <text x={120} y={200} textAnchor="middle" fontSize="11.5" fill="#c9d6df">[Al(H₂O)₆]³⁺ octahedral (acidic)</text>
       </g>
       <text x={300} y={112} textAnchor="middle" fontSize="16" fontWeight="900" fill={COL.amber ?? "#e3b341"}>+ OH⁻ ⇌</text>
-      <g transform="translate(360,0)">
+      <g transform="translate(318,0)">
         <Bond x1={110} y1={112} x2={110} y2={60} color={COL.O} />
         <Bond x1={110} y1={112} x2={66} y2={92} color={COL.O} />
         <Bond x1={110} y1={112} x2={154} y2={92} color={COL.O} />
@@ -705,7 +708,9 @@ function DiagonalBSi() {
 
 function OxStateMap() {
   return (
-    <Svg h={230}>
+    // Wider canvas so the legend clears the Tl bar (bars span x 34-486) instead of
+    // being painted on top of it.
+    <Svg h={230} w={600}>
       {["B", "Al", "Ga", "In", "Tl"].map((el, i) => {
         const x = 60 + i * 100;
         const p3 = [96, 88, 70, 46, 20][i];
@@ -720,10 +725,10 @@ function OxStateMap() {
           </g>
         );
       })}
-      <rect x={430} y={62} width={12} height={12} fill={COL.B} opacity={0.35} />
-      <text x={448} y={72} fontSize="11" fill="#cfe7ff">+3 state</text>
-      <rect x={430} y={82} width={12} height={12} fill={COL.amber ?? "#e3b341"} opacity={0.4} />
-      <text x={448} y={92} fontSize="11" fill="#f0dca8">+1 state</text>
+      <rect x={505} y={62} width={12} height={12} fill={COL.B} opacity={0.35} />
+      <text x={523} y={72} fontSize="11" fill="#cfe7ff">+3 state</text>
+      <rect x={505} y={82} width={12} height={12} fill={COL.amber ?? "#e3b341"} opacity={0.4} />
+      <text x={523} y={92} fontSize="11" fill="#f0dca8">+1 state</text>
       <text x={230} y={210} textAnchor="middle" fontSize="11" fill="#8fa4b4">
         inert-pair effect: +1 grows, +3 shrinks down the group; Tl(I) dominant
       </text>
@@ -774,7 +779,7 @@ function MiniIcosa({ cx, cy, s = 1, dim = false }: { cx: number; cy: number; s?:
 /** Pentagonal-pyramid construction of the B12 icosahedron. */
 function IcosaFromPyramids() {
   return (
-    <Svg h={220}>
+    <Svg h={240}>
       {/* top pyramid */}
       {(() => {
         const cx = 70, cy = 120, apex = { x: cx, y: cy - 48 };
@@ -832,7 +837,7 @@ function IcosaFromPyramids() {
       })()}
       <text x={418} y={124} textAnchor="middle" fontSize="20" fill={COL.amber}>=</text>
       <MiniIcosa cx={468} cy={110} s={1.15} />
-      <text x={210} y={205} textAnchor="middle" fontSize="11" fill="#8fa4b4">
+      <text x={260} y={205} textAnchor="middle" fontSize="10" fill="#8fa4b4">
         two pentagonal pyramids sharing a staggered pentagonal belt → 12 vertices, 20 triangular faces
       </text>
     </Svg>
@@ -861,14 +866,26 @@ function AlphaRhombLattice() {
 
 /* -------- new figures for the forensic rebuild (inline placement) -------- */
 
-function Level({ x, y, w = 90, label, electrons = 0, color = "#9fb2c4" }: { x: number; y: number; w?: number; label?: string; electrons?: number; color?: string }) {
+function Level({ x, y, w = 90, label, electrons = 0, color = "#9fb2c4", labelLeft = false }: { x: number; y: number; w?: number; label?: string; electrons?: number; color?: string; labelLeft?: boolean }) {
   return (
     <g>
       <line x1={x} y1={y} x2={x + w} y2={y} stroke={color} strokeWidth={3} strokeLinecap="round" />
-      {label ? <text x={x + w + 8} y={y + 4} fontSize="11" fill="#c9d6df">{label}</text> : null}
-      {Array.from({ length: electrons }).map((_, i) => (
-        <text key={i} x={x + w / 2 + (i - (electrons - 1) / 2) * 12} y={y - 6} fontSize="13" textAnchor="middle" fill={COL.amber}>↑{i % 2 ? "" : "↓"}</text>
-      ))}
+      {/* right-hand levels need the label on the inside, or it runs off the canvas */}
+      {label ? (labelLeft
+        ? <text x={x - 8} y={y + 4} fontSize="11" textAnchor="end" fill="#c9d6df">{label}</text>
+        : <text x={x + w + 8} y={y + 4} fontSize="11" fill="#c9d6df">{label}</text>) : null}
+      {/* `electrons` counts individual electrons, not glyphs: pair them up into "up-down"
+          arrows (2 electrons per orbital) with any odd one left singly-occupied, rather
+          than drawing one glyph per electron -- the previous version rendered 3 arrow
+          glyphs for a 2-electron level ("up-down" then a stray extra "up"). */}
+      {Array.from({ length: Math.ceil(electrons / 2) }).map((_, i, arr) => {
+        const isLastOdd = electrons % 2 === 1 && i === arr.length - 1;
+        return (
+          <text key={i} x={x + w / 2 + (i - (arr.length - 1) / 2) * 22} y={y - 6} fontSize="13" textAnchor="middle" fill={COL.amber}>
+            {isLastOdd ? "↑" : "↑↓"}
+          </text>
+        );
+      })}
     </g>
   );
 }
@@ -879,8 +896,8 @@ function BF3FourCentreMO() {
       <text x={260} y={20} textAnchor="middle" fontSize="12" fill="#8fa4b4">four-centre π interaction in BF₃ — one delocalised bonding π-MO, not three B=F double bonds</text>
       {/* fragment orbitals */}
       <Level x={40} y={70} w={70} label="empty B 2pᵤ" color={COL.B} />
-      <Level x={400} y={150} w={70} label="filled F 2p π-set" color={COL.O} electrons={0} />
-      <text x={435} y={172} fontSize="10" fill="#8fa4b4">(3 combinations)</text>
+      <Level x={400} y={150} w={70} label="filled F 2p π-set" color={COL.O} electrons={0} labelLeft />
+      <text x={392} y={172} fontSize="10" textAnchor="end" fill="#8fa4b4">(3 combinations)</text>
       {/* MO ladder centre */}
       <Level x={210} y={45} w={100} label="π*  (antibonding)" color={COL.red} />
       <Level x={210} y={110} w={100} label="2 × non-bonding" color="#9fb2c4" electrons={4} />
@@ -983,7 +1000,7 @@ function BorazineMO() {
             <Atom x={a.x} y={a.y} label={a.el === "B" ? "B⁻" : "N⁺"} stroke={a.el === "B" ? COL.B : COL.N} fill={a.el === "B" ? COL.Bfill : COL.Nfill} r={13} />
           </g>
         ))}
-        <text x={0} y={125} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">important charge-separated contributor</text>
+        <text x={0} y={138} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">important charge-separated contributor</text>
       </g>
     </Svg>
   );
@@ -998,28 +1015,28 @@ function MiniBorazine({ cx, cy, r, bLabel, nLabel, title }: { cx: number; cy: nu
       ))}
       {ring.map((a, i) => {
         const sub = a.el === "B" ? bLabel : nLabel;
-        const ox = (a.x - cx) * 0.85;
-        const oy = (a.y - cy) * 0.85;
+        const ox = (a.x - cx) * 0.45;
+        const oy = (a.y - cy) * 0.45;
         return (
           <g key={i}>
             <Bond x1={a.x} y1={a.y} x2={a.x + ox} y2={a.y + oy} color="#8fa4b4" w={1.2} />
-            <text x={a.x + ox * 1.5} y={a.y + oy * 1.5 + 3} textAnchor="middle" fontSize="9" fill="#c9d6df">{sub}</text>
+            <text x={a.x + ox * 1.6} y={a.y + oy * 1.6 + 3} textAnchor="middle" fontSize="9" fill="#c9d6df">{sub}</text>
             <Atom x={a.x} y={a.y} label={a.el} stroke={a.el === "B" ? COL.B : COL.N} fill={a.el === "B" ? COL.Bfill : COL.Nfill} r={10} />
           </g>
         );
       })}
-      <text x={cx} y={cy + r + 30} textAnchor="middle" fontSize="10" fontWeight="700" fill="#c9d6df">{title}</text>
+      <text x={cx} y={cy + r + 46} textAnchor="middle" fontSize="10" fontWeight="700" fill="#c9d6df">{title}</text>
     </g>
   );
 }
 
 function BorazineDerivatives() {
   return (
-    <Svg h={240}>
+    <Svg h={300}>
       <MiniBorazine cx={90} cy={95} r={40} bLabel="Cl" nLabel="H" title="B-trichloroborazine" />
       <MiniBorazine cx={250} cy={95} r={40} bLabel="CH₃" nLabel="H" title="B-trimethylborazine" />
       <MiniBorazine cx={410} cy={95} r={40} bLabel="Cl" nLabel="H₂" title="+3HCl adduct (Cl→B, H→N)" />
-      <g transform="translate(250,175)">
+      <g transform="translate(250,205)">
         <text x={0} y={-8} textAnchor="middle" fontSize="10.5" fill="#8fa4b4">borazine–Cr(CO)₃: ring η⁶-bound to Cr(CO)₃ through its π system</text>
         <ellipse cx={0} cy={12} rx={46} ry={12} fill="none" stroke="#6b7f92" strokeWidth={2} />
         <Bond x1={0} y1={20} x2={0} y2={40} color="#8fa4b4" w={1.4} dash="3 3" />
@@ -1107,7 +1124,11 @@ function AlQualitative() {
   return (
     <Svg h={260}>
       <FlowBox x={200} y={20} w={110} text={"Al³⁺ (aq)"} />
-      <Arrow x1={255} y1={40} x2={255} y2={65} label="OH⁻ / NH₃" />
+      {/* The gap between these two boxes is only 5px tall -- too narrow for a label on the
+          arrow itself without printing over one of them -- so the reagent is named to the
+          side of the arrow instead of at its midpoint. */}
+      <Arrow x1={255} y1={40} x2={255} y2={65} />
+      <text x={330} y={56} fontSize="9" fill="#8fa4b4">OH⁻ / NH₃</text>
       <FlowBox x={185} y={65} w={140} text={"white gelatinous\nAl(OH)₃ ↓"} color="#9fb2c4" />
       <Arrow x1={200} y1={95} x2={110} y2={135} label="excess NaOH" />
       <Arrow x1={255} y1={105} x2={255} y2={135} label="excess NH₃" />

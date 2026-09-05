@@ -1,5 +1,16 @@
 import type { ReactNode } from "react";
 
+/** This file renders as a Server Component (no "use client"), so React
+ * hooks/context (useId, createContext/useContext) aren't available here.
+ * Each figure instead passes its own component name as a namespace so its
+ * glow filter gets a document-unique id — plain, deterministic, and safe for
+ * a page that renders several of these figures' separate <svg> roots
+ * together (multiple figures per chapter "part" share one DOM, so a bare
+ * literal id like "cfGlow" would collide across them). */
+function glowUrl(ns: string) {
+  return `url(#cfGlow-${ns})`;
+}
+
 /* ------------------------------------------------------------------------- *
  * Original schematic structural figures for the Carbon Family chapter.
  * Connectivity, coordination and geometry only — computed, nothing traced.
@@ -60,11 +71,14 @@ function T({ x, y, children, fill = "#c9d6df", size = 12, anchor = "middle" as c
   );
 }
 
-function Svg({ children, w = 560, h = 320 }: { children: ReactNode; w?: number; h?: number }) {
+function Svg({ children, w = 560, h = 320, glowNs }: { children: ReactNode; w?: number; h?: number; glowNs: string }) {
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto block h-auto w-full max-w-[600px]" role="img">
+    // aria-hidden: this figure's title+caption are already real, visible text right next to it
+    // via the Frame wrapper every caller uses — role="img" with no name here would just announce
+    // a redundant, unlabelled "image" to screen readers instead of the adjacent text.
+    <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto block h-auto w-full max-w-[600px]" aria-hidden="true">
       <defs>
-        <filter id="cfGlow" x="-60%" y="-60%" width="220%" height="220%">
+        <filter id={`cfGlow-${glowNs}`} x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="3.4" result="blur" />
           <feMerge>
             <feMergeNode in="blur" />
@@ -109,6 +123,7 @@ function InsightPanel({
 /* =========================== PART 1 — trend ribbon ======================== */
 
 function TrendRibbon() {
+  const glow = glowUrl("TrendRibbon");
   const els: { s: string; note: string }[] = [
     { s: "C", note: "+4 only" },
     { s: "Si", note: "+4 only" },
@@ -117,7 +132,7 @@ function TrendRibbon() {
     { s: "Pb", note: "+2 favoured" },
   ];
   return (
-    <Svg w={620} h={400}>
+    <Svg w={620} h={400} glowNs="TrendRibbon">
       <rect x="8" y="8" width="604" height="384" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={310} y={38} size={12.5} weight={800} fill="#e7eef7">Group 14 — one trend line, four consequences</T>
       <Bond x1={70} y1={100} x2={550} y2={100} color="#2a4257" w={2} />
@@ -125,7 +140,7 @@ function TrendRibbon() {
       {els.map((e, i) => {
         const x = 70 + i * 120;
         return (
-          <g key={e.s} filter="url(#cfGlow)">
+          <g key={e.s} filter={glow}>
             <circle cx={x} cy={100} r={22} fill="#132433" stroke={COL.C} strokeWidth="2" />
             <text x={x} y={106} textAnchor="middle" fontSize="15" fontWeight="800" fill="#eef6ff">{e.s}</text>
           </g>
@@ -151,11 +166,12 @@ function TrendRibbon() {
 /* =========================== PART 2 — catenation ========================= */
 
 function CatenationBars() {
+  const glow = glowUrl("CatenationBars");
   const data: [string, number][] = [["C–C", 348], ["Si–Si", 297], ["Ge–Ge", 260], ["Sn–Sn", 240]];
   const scale = 0.42;
   const baseline = 260;
   return (
-    <Svg w={600} h={330}>
+    <Svg w={600} h={330} glowNs="CatenationBars">
       <rect x="8" y="8" width="584" height="314" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={300} y={38} size={12.5} weight={800} fill="#e7eef7">Catenation tracks M–M bond enthalpy, not group position</T>
       <Bond x1={64} y1={baseline} x2={536} y2={baseline} color="#2a4257" w={2} />
@@ -164,7 +180,7 @@ function CatenationBars() {
         const barH = v * scale;
         return (
           <g key={k}>
-            <rect x={x - 32} y={baseline - barH} width={64} height={barH} rx={6} fill={i === 0 ? COL.amber : COL.C} opacity={i === 0 ? 0.95 : 0.7} filter="url(#cfGlow)" />
+            <rect x={x - 32} y={baseline - barH} width={64} height={barH} rx={6} fill={i === 0 ? COL.amber : COL.C} opacity={i === 0 ? 0.95 : 0.7} filter={glow} />
             <T x={x} y={baseline - barH - 12} size={13} weight={900} fill={i === 0 ? COL.amber : "#c9d6df"}>{v}</T>
             <T x={x} y={baseline + 22} size={12} weight={800}>{k}</T>
           </g>
@@ -179,7 +195,7 @@ function CatenationBars() {
 
 /* =========================== PART 3 — allotropes ========================= */
 
-function Diamond() {
+function Diamond({ glow }: { glow: string }) {
   const c = { x: 150, y: 160 };
   const v = [
     { x: 150, y: 95 },
@@ -189,7 +205,7 @@ function Diamond() {
   ];
   return (
     <g>
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         {v.map((p, i) => (
           <Bond key={i} x1={c.x} y1={c.y} x2={p.x} y2={p.y} color={COL.C} w={3} />
         ))}
@@ -204,7 +220,7 @@ function Diamond() {
   );
 }
 
-function Graphite() {
+function Graphite({ glow }: { glow: string }) {
   const hex = (cx: number, cy: number) =>
     Array.from({ length: 6 }, (_, i) => {
       const a = ((i * 60 - 30) * Math.PI) / 180;
@@ -223,7 +239,7 @@ function Graphite() {
     });
   return (
     <g>
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         {layer(110, COL.C)}
         {layer(175, "#4f6f8c")}
         {layer(240, COL.C)}
@@ -237,10 +253,11 @@ function Graphite() {
 }
 
 function AllotropeStack() {
+  const glow = glowUrl("AllotropeStack");
   return (
-    <Svg h={310}>
-      <Diamond />
-      <Graphite />
+    <Svg h={310} glowNs="AllotropeStack">
+      <Diamond glow={glow} />
+      <Graphite glow={glow} />
     </Svg>
   );
 }
@@ -268,9 +285,9 @@ function Fullerene() {
     ["Faces", "n/2 + 2 = 32", "Euler: V − E + F = 2 → 60 − 90 + F = 2"],
   ] as const;
   return (
-    <Svg w={940} h={460}>
+    <Svg w={940} h={460} glowNs="Fullerene">
       <defs>
-        <filter id="fullereneGlow" x="-60%" y="-60%" width="220%" height="220%">
+        <filter id="fullereneGlow-Fullerene" x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="4.2" result="blur" />
           <feMerge>
             <feMergeNode in="blur" />
@@ -280,7 +297,7 @@ function Fullerene() {
       </defs>
       <rect x="8" y="8" width="410" height="444" rx="22" fill="#060c14" stroke="#1c2c3d" />
       <T x={213} y={40} size={13} weight={800} fill="#e7eef7">C₆₀ · buckminsterfullerene</T>
-      <g filter="url(#fullereneGlow)">
+      <g filter="url(#fullereneGlow-Fullerene)">
         {inner.map((p, i) => (
           <Bond key={`i${i}`} x1={p.x} y1={p.y} x2={inner[(i + 1) % 5].x} y2={inner[(i + 1) % 5].y} color={COL.amber} w={2.4} />
         ))}
@@ -347,20 +364,21 @@ function Part3Visual() {
 /* =========================== PART 5 — carbides =========================== */
 
 function CarbideMap() {
+  const glow = glowUrl("CarbideMap");
   const rows = [
     ["Be₂C, Al₄C₃", "methanide", "C⁴⁻", "→ CH₄", COL.green],
     ["CaC₂, BaC₂", "acetylide", "C₂²⁻", "→ HC≡CH", COL.amber],
     ["Mg₂C₃", "allylenide", "C₃⁴⁻", "→ CH₃–C≡CH", COL.red],
   ] as const;
   return (
-    <Svg w={600} h={410}>
+    <Svg w={600} h={410} glowNs="CarbideMap">
       <rect x="8" y="8" width="584" height="394" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={300} y={36} size={12.5} weight={800} fill="#e7eef7">Hydrolysis gas reveals the carbon anion</T>
       {rows.map(([source, name, anion, gas, col], i) => {
         const y = 60 + i * 60;
         return (
           <g key={source}>
-            <rect x={44} y={y} width={168} height={42} rx={9} fill="#132433" stroke={col} strokeWidth="1.8" filter="url(#cfGlow)" />
+            <rect x={44} y={y} width={168} height={42} rx={9} fill="#132433" stroke={col} strokeWidth="1.8" filter={glow} />
             <T x={128} y={y + 26} size={12} weight={800}>{source}</T>
             <T x={228} y={y + 18} size={10.5} fill="#8fa4b4" anchor="start">{name}</T>
             <T x={228} y={y + 34} size={12} fill="#c9d6df" weight={800} anchor="start">{anion}</T>
@@ -383,12 +401,15 @@ function CarbideMap() {
 
 /* =========================== PART 6 — carbon oxides ====================== */
 
-function COxides() {
+/** `ns` distinguishes the two mount points (part 9 via Part6Visual, and part 10) so the
+ * glow-filter id stays unique when both render into the same document. */
+function COxides({ ns = "COxides" }: { ns?: string }) {
+  const glow = glowUrl(ns);
   return (
-    <Svg w={600} h={300}>
+    <Svg w={600} h={300} glowNs={ns}>
       <rect x="8" y="8" width="584" height="284" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <rect x="26" y="26" width="220" height="248" rx="14" fill="#0a1420" stroke="#233247" />
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         {/* CO2 linear */}
         <Bond x1={70} y1={90} x2={120} y2={90} color={COL.O} w={4} />
         <Bond x1={70} y1={96} x2={120} y2={96} color={COL.O} w={4} />
@@ -401,7 +422,7 @@ function COxides() {
       <T x={135} y={130} size={11.5}>CO₂ — linear O=C=O, acidic</T>
 
       {/* carbonate trigonal planar */}
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         <Bond x1={135} y1={215} x2={135} y2={170} color={COL.O} w={3} />
         <Bond x1={135} y1={215} x2={98} y2={240} color={COL.O} w={3} />
         <Bond x1={135} y1={215} x2={172} y2={240} color={COL.O} w={3} />
@@ -415,7 +436,7 @@ function COxides() {
       {/* CO synergic bonding */}
       <rect x="270" y="26" width="304" height="248" rx="14" fill="#0a1420" stroke="#233247" />
       <T x={422} y={50} size={11.5} weight={800} fill="#e7eef7">CO — synergic σ-donation + π back-bonding</T>
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         <Atom x={330} y={140} label="M" stroke={COL.Fe} fill="#2a1414" />
         <Atom x={400} y={140} label="C" stroke={COL.C} fill={COL.Cfill} />
         <Atom x={470} y={140} label="O" stroke={COL.O} fill={COL.Ofill} />
@@ -434,11 +455,12 @@ function COxides() {
 }
 
 function Fe2CO9() {
+  const glow = glowUrl("Fe2CO9");
   return (
-    <Svg w={600} h={360}>
+    <Svg w={600} h={360} glowNs="Fe2CO9">
       <rect x="8" y="8" width="584" height="344" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={300} y={38} size={12.5} weight={800} fill="#e7eef7">Two coordination environments, one Fe–Fe bond</T>
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         <Atom x={245} y={160} label="Fe" stroke={COL.Fe} fill="#2a1414" r={17} />
         <Atom x={355} y={160} label="Fe" stroke={COL.Fe} fill="#2a1414" r={17} />
         <Bond x1={262} y1={160} x2={338} y2={160} color={COL.Fe} w={3} />
@@ -475,7 +497,7 @@ function Part6Visual() {
   return (
     <>
       <Frame title="Carbon–oxygen bonding at a glance" caption="CO₂ is a linear molecule with two equivalent C=O bonds; CO₃²⁻ is trigonal planar with a delocalised π system spread over three equivalent C–O bonds. CO binds transition metals synergically: σ-donation from the carbon lone pair plus π back-donation from filled metal d orbitals into CO π* — the reason metal carbonyls are stable and the C–O stretch drops on coordination.">
-        <COxides />
+        <COxides ns="COxides-p9" />
       </Frame>
       <Frame title="Fe₂(CO)₉ — bridging vs terminal carbonyls" caption="Six terminal CO groups (three on each iron) and three CO groups bridging the Fe–Fe bond. When counting metal–carbon bonds, each bridging CO contributes two M–C contacts, so the total is 6 + 2×3 = 12.">
         <Fe2CO9 />
@@ -486,12 +508,14 @@ function Part6Visual() {
 
 /* =========================== PART 8 — silicates ========================== */
 
-function tetra(cx: number, cy: number, s = 26, color: string = COL.Si, key?: string | number) {
+/** Plain helper (not a component) — takes the glow filter url as a parameter
+ * from its caller rather than computing it itself. */
+function tetra(cx: number, cy: number, s = 26, color: string = COL.Si, key: string | number | undefined, glow: string) {
   const a = { x: cx, y: cy - s };
   const b = { x: cx - s * 0.87, y: cy + s * 0.5 };
   const c = { x: cx + s * 0.87, y: cy + s * 0.5 };
   return (
-    <g key={key} filter="url(#cfGlow)">
+    <g key={key} filter={glow}>
       <path d={`M${a.x} ${a.y} L${b.x} ${b.y} L${c.x} ${c.y} Z`} fill={color} opacity={0.28} stroke={color} strokeWidth={2} />
       <circle cx={cx} cy={cy - 2} r={3.5} fill={color} />
       {[a, b, c].map((p, i) => (
@@ -502,48 +526,49 @@ function tetra(cx: number, cy: number, s = 26, color: string = COL.Si, key?: str
 }
 
 function SilicateAtlas() {
+  const glow = glowUrl("SilicateAtlas");
   return (
-    <Svg h={430} w={620}>
+    <Svg h={430} w={620} glowNs="SilicateAtlas">
       <rect x="8" y="8" width="604" height="414" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={310} y={30} size={13} weight={800} fill="#e7eef7">Seven silicate classes — corners shared per SiO₄ tetrahedron</T>
 
       {/* 0 shared - ortho */}
-      {tetra(70, 80, 26, COL.Si, "o0")}
+      {tetra(70, 80, 26, COL.Si, "o0", glow)}
       <T x={70} y={125} size={10.5}>0 → SiO₄⁴⁻</T>
       <T x={70} y={140} size={9.5} fill="#8fa4b4">ortho (olivine)</T>
 
       {/* 1 shared - pyro */}
-      {tetra(190, 80, 26, COL.Si, "py0")}
-      {tetra(232, 80, 26, COL.Si, "py1")}
+      {tetra(190, 80, 26, COL.Si, "py0", glow)}
+      {tetra(232, 80, 26, COL.Si, "py1", glow)}
       <T x={211} y={125} size={10.5}>1 → Si₂O₇⁶⁻</T>
       <T x={211} y={140} size={9.5} fill="#8fa4b4">pyro (thortveitite)</T>
 
       {/* 2 shared - cyclic ring */}
-      {tetra(360, 70, 20, COL.Si, "cy0")}
-      {tetra(392, 92, 20, COL.Si, "cy1")}
-      {tetra(360, 114, 20, COL.Si, "cy2")}
-      {tetra(328, 92, 20, COL.Si, "cy3")}
+      {tetra(360, 70, 20, COL.Si, "cy0", glow)}
+      {tetra(392, 92, 20, COL.Si, "cy1", glow)}
+      {tetra(360, 114, 20, COL.Si, "cy2", glow)}
+      {tetra(328, 92, 20, COL.Si, "cy3", glow)}
       <T x={360} y={140} size={10.5}>2 → (SiₙO₃ₙ)²ⁿ⁻ ring</T>
       <T x={360} y={155} size={9.5} fill="#8fa4b4">cyclic (beryl Si₆O₁₈)</T>
 
       {/* 2 shared - single chain */}
-      {[0, 1, 2, 3].map((k) => tetra(490 + k * 30, k % 2 ? 90 : 72, 18, COL.Si, `sc${k}`))}
+      {[0, 1, 2, 3].map((k) => tetra(490 + k * 30, k % 2 ? 90 : 72, 18, COL.Si, `sc${k}`, glow))}
       <T x={535} y={140} size={10.5}>2 → (SiO₃)ₙ²ⁿ⁻ chain</T>
       <T x={535} y={155} size={9.5} fill="#8fa4b4">pyroxene (diopside)</T>
 
       {/* double chain */}
-      {[0, 1, 2, 3, 4].map((k) => tetra(70 + k * 26, k % 2 ? 250 : 232, 16, COL.Si, `dcA${k}`))}
-      {[0, 1, 2, 3, 4].map((k) => tetra(70 + k * 26, k % 2 ? 286 : 304, 16, COL.Si, `dcB${k}`))}
+      {[0, 1, 2, 3, 4].map((k) => tetra(70 + k * 26, k % 2 ? 250 : 232, 16, COL.Si, `dcA${k}`, glow))}
+      {[0, 1, 2, 3, 4].map((k) => tetra(70 + k * 26, k % 2 ? 286 : 304, 16, COL.Si, `dcB${k}`, glow))}
       <T x={130} y={335} size={10.5}>2.5 → (Si₄O₁₁)ₙ⁶ⁿ⁻</T>
       <T x={130} y={350} size={9.5} fill="#8fa4b4">amphibole (tremolite)</T>
 
       {/* sheet */}
-      {[0, 1, 2, 3].flatMap((r) => [0, 1, 2, 3].map((c) => tetra(300 + c * 24 + (r % 2 ? 12 : 0), 232 + r * 24, 13, COL.Si, `sh${r}-${c}`)))}
+      {[0, 1, 2, 3].flatMap((r) => [0, 1, 2, 3].map((c) => tetra(300 + c * 24 + (r % 2 ? 12 : 0), 232 + r * 24, 13, COL.Si, `sh${r}-${c}`, glow)))}
       <T x={340} y={345} size={10.5}>3 → (Si₂O₅)ₙ²ⁿ⁻ sheet</T>
       <T x={340} y={360} size={9.5} fill="#8fa4b4">phyllo (talc, mica, clay)</T>
 
       {/* framework */}
-      {[0, 1, 2].flatMap((r) => [0, 1, 2].map((c) => tetra(470 + c * 26, 232 + r * 26, 12, r % 2 ? "#4f6f8c" : COL.Si, `fw${r}-${c}`)))}
+      {[0, 1, 2].flatMap((r) => [0, 1, 2].map((c) => tetra(470 + c * 26, 232 + r * 26, 12, r % 2 ? "#4f6f8c" : COL.Si, `fw${r}-${c}`, glow)))}
       <T x={512} y={330} size={10.5}>4 → (SiO₂)ₙ neutral</T>
       <T x={512} y={345} size={9.5} fill="#8fa4b4">tecto (quartz, feldspar, zeolite)</T>
 
@@ -555,10 +580,11 @@ function SilicateAtlas() {
 }
 
 function SiO4Unit() {
+  const glow = glowUrl("SiO4Unit");
   return (
-    <Svg w={560} h={270}>
+    <Svg w={560} h={270} glowNs="SiO4Unit">
       <rect x="8" y="8" width="544" height="254" rx="20" fill="#060c14" stroke="#1c2c3d" />
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         <Bond x1={200} y1={140} x2={200} y2={80} color={COL.O} w={3} />
         <Bond x1={200} y1={140} x2={150} y2={175} color={COL.O} w={3} />
         <Bond x1={200} y1={140} x2={250} y2={175} color={COL.O} w={3} />
@@ -598,8 +624,9 @@ function Part8Visual() {
 /* =========================== PART 9 — silicones ========================= */
 
 function SiliconeFunctionality() {
+  const glow = glowUrl("SiliconeFunctionality");
   return (
-    <Svg w={600} h={400}>
+    <Svg w={600} h={400} glowNs="SiliconeFunctionality">
       <rect x="8" y="8" width="584" height="384" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={300} y={36} size={12.5} weight={800} fill="#e7eef7">Chlorosilane functionality controls the polymer</T>
       {[
@@ -608,7 +635,7 @@ function SiliconeFunctionality() {
         ["RSiCl₃", "RSi(OH)₃", "cross-linker / 3-D resin", COL.red],
       ].map(([a, b, c, col], i) => (
         <g key={i}>
-          <rect x={40} y={58 + i * 46} width={120} height={36} rx={7} fill="#132433" stroke={col as string} strokeWidth="1.8" filter="url(#cfGlow)" />
+          <rect x={40} y={58 + i * 46} width={120} height={36} rx={7} fill="#132433" stroke={col as string} strokeWidth="1.8" filter={glow} />
           <T x={100} y={81 + i * 46} size={12} weight={800}>{a}</T>
           <T x={210} y={81 + i * 46} size={11.5} fill="#c9d6df" anchor="start">─(+H₂O)→ {b}</T>
           <T x={560} y={81 + i * 46} size={11.5} fill={col as string} weight={700} anchor="end">{c}</T>
@@ -616,7 +643,7 @@ function SiliconeFunctionality() {
       ))}
       <rect x="30" y="212" width="540" height="76" rx="14" fill="#0a1420" stroke="#233247" />
       {[0, 1, 2, 3].map((k) => (
-        <g key={k} filter="url(#cfGlow)">
+        <g key={k} filter={glow}>
           <Atom x={100 + k * 130} y={250} label="Si" stroke={COL.Si} fill={COL.Sifill} r={13} />
           {k < 3 && <Atom x={165 + k * 130} y={250} label="O" stroke={COL.O} fill={COL.Ofill} r={11} />}
           {k < 3 && <Bond x1={113 + k * 130} y1={250} x2={154 + k * 130} y2={250} />}
@@ -634,11 +661,12 @@ function SiliconeFunctionality() {
 /* =========================== PART 10 — silanes ========================== */
 
 function SilanevsAlkane() {
+  const glow = glowUrl("SilanevsAlkane");
   return (
-    <Svg w={560} h={260}>
+    <Svg w={560} h={260} glowNs="SilanevsAlkane">
       <rect x="8" y="8" width="544" height="244" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={280} y={38} size={12.5} weight={800} fill="#e7eef7">Polarity is reversed — Si is electrophilic</T>
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         <Atom x={140} y={120} label="C" stroke={COL.C} fill={COL.Cfill} r={18} />
         <Atom x={210} y={120} label="H" stroke={COL.H} fill="#2a2410" r={13} />
         <Bond x1={158} y1={120} x2={197} y2={120} w={3} />
@@ -661,12 +689,13 @@ function SilanevsAlkane() {
 /* =========================== PART 11 — halides ========================== */
 
 function HalideGeometry() {
+  const glow = glowUrl("HalideGeometry");
   return (
-    <Svg w={560} h={270}>
+    <Svg w={560} h={270} glowNs="HalideGeometry">
       <rect x="8" y="8" width="544" height="254" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <rect x="26" y="24" width="220" height="222" rx="14" fill="#0a1420" stroke="#233247" />
       {/* SiF6 octahedral */}
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         <Atom x={130} y={130} label="Si" stroke={COL.Si} fill={COL.Sifill} r={15} />
         {[[130, 70], [130, 190], [75, 130], [185, 130], [95, 100], [165, 160]].map(([x, y], i) => (
           <g key={i}>
@@ -681,7 +710,7 @@ function HalideGeometry() {
 
       {/* SnCl2 bent */}
       <rect x="294" y="24" width="228" height="222" rx="14" fill="#0a1420" stroke="#233247" />
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         <Atom x={408} y={120} label="Sn" stroke={COL.Sn} fill={COL.Snfill} r={15} />
         <Bond x1={408} y1={120} x2={363} y2={160} w={2.6} />
         <Bond x1={408} y1={120} x2={453} y2={160} w={2.6} />
@@ -698,10 +727,11 @@ function HalideGeometry() {
 /* =========================== PART 13 — lead oxides ====================== */
 
 function PbO2Fork() {
+  const glow = glowUrl("PbO2Fork");
   return (
-    <Svg w={600} h={320}>
+    <Svg w={600} h={320} glowNs="PbO2Fork">
       <rect x="8" y="8" width="584" height="304" rx="20" fill="#060c14" stroke="#1c2c3d" />
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         <Atom x={300} y={70} label="PbO₂" stroke={COL.Pb} fill={COL.Pbfill} r={26} />
       </g>
       {[
@@ -724,10 +754,11 @@ function PbO2Fork() {
 }
 
 function MixedOxide() {
+  const glow = glowUrl("MixedOxide");
   return (
-    <Svg w={600} h={220}>
+    <Svg w={600} h={220} glowNs="MixedOxide">
       <rect x="8" y="8" width="584" height="204" rx="20" fill="#060c14" stroke="#1c2c3d" />
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         <rect x={80} y={70} width={150} height={60} rx={9} fill="#132433" stroke={COL.Pb} strokeWidth={2} />
       </g>
       <T x={155} y={100} size={13} weight={800}>Pb₃O₄</T>
@@ -746,12 +777,13 @@ function MixedOxide() {
 /* ===================== PART 16 — pπ–dπ / trisilylamine ================= */
 
 function Trisilylamine() {
+  const glow = glowUrl("Trisilylamine");
   return (
-    <Svg h={340} w={600}>
+    <Svg h={340} w={600} glowNs="Trisilylamine">
       <rect x="8" y="8" width="584" height="324" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <rect x="26" y="24" width="248" height="240" rx="14" fill="#0a1420" stroke="#233247" />
       <T x={150} y={50} size={12} fill="#e7eef7" weight={800}>N(CH₃)₃ — pyramidal</T>
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         <Atom x={150} y={130} label="N" stroke={COL.green} fill="#12291f" r={15} />
         <Bond x1={150} y1={130} x2={95} y2={175} w={2.4} />
         <Bond x1={150} y1={130} x2={205} y2={175} w={2.4} />
@@ -767,7 +799,7 @@ function Trisilylamine() {
 
       <rect x="300" y="24" width="280" height="240" rx="14" fill="#0a1420" stroke="#233247" />
       <T x={440} y={50} size={12} fill="#e7eef7" weight={800}>N(SiH₃)₃ — planar</T>
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         <Atom x={440} y={150} label="N" stroke={COL.green} fill="#12291f" r={15} />
         {[[380, 120], [500, 120], [440, 210]].map(([x, y], i) => (
           <g key={i}>
@@ -790,13 +822,14 @@ function Trisilylamine() {
 /* ================= extra source-matched structural figures ============= */
 
 function SilicaNetwork() {
+  const glow = glowUrl("SilicaNetwork");
   const xs = [90, 180, 270, 360, 450];
   const ys = [70, 145, 220];
   return (
-    <Svg h={300} w={560}>
+    <Svg h={300} w={560} glowNs="SilicaNetwork">
       <rect x="8" y="8" width="544" height="284" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={280} y={38} size={12.5} weight={800} fill="#e7eef7">Why silica is a solid and CO₂ a gas</T>
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         {ys.map((y, r) =>
           xs.map((x, c) => (
             <g key={`si-${r}-${c}`}>
@@ -816,6 +849,7 @@ function SilicaNetwork() {
 }
 
 function ChainSilicates() {
+  const glow = glowUrl("ChainSilicates");
   const tri = (cx: number, cy: number, up: boolean, s: number, key: string) => {
     const d = up
       ? `M${cx} ${cy - s} L${cx - s * 0.9} ${cy + s * 0.5} L${cx + s * 0.9} ${cy + s * 0.5} Z`
@@ -823,16 +857,16 @@ function ChainSilicates() {
     return <path key={key} d={d} fill={COL.Si} opacity={0.3} stroke={COL.Si} strokeWidth={2} />;
   };
   return (
-    <Svg h={350} w={560}>
+    <Svg h={350} w={560} glowNs="ChainSilicates">
       <rect x="8" y="8" width="544" height="334" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={280} y={36} size={12.5} weight={800} fill="#e7eef7">Chain silicates — corner-sharing along a line</T>
       <rect x="30" y="52" width="500" height="90" rx="14" fill="#0a1420" stroke="#233247" />
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 100, k % 2 === 0, 22, `sc${k}`))}
       </g>
       <T x={280} y={130} size={10.5}>Single chain (pyroxene): (SiO₃)ₙ²ⁿ⁻ · diopside CaMg(SiO₃)₂ · cleavage ≈ 87°/93°</T>
       <rect x="30" y="160" width="500" height="120" rx="14" fill="#0a1420" stroke="#233247" />
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 210, k % 2 === 0, 20, `dcA${k}`))}
         {[0, 1, 2, 3, 4, 5].map((k) => tri(70 + k * 70, 252, k % 2 === 1, 20, `dcB${k}`))}
       </g>
@@ -844,13 +878,14 @@ function ChainSilicates() {
 }
 
 function FrameworkSilicate() {
+  const glow = glowUrl("FrameworkSilicate");
   const pts: Array<[number, number]> = [];
   for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) pts.push([90 + c * 90 + (r % 2 ? 45 : 0), 70 + r * 55]);
   return (
-    <Svg h={360} w={560}>
+    <Svg h={360} w={560} glowNs="FrameworkSilicate">
       <rect x="8" y="8" width="544" height="344" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={280} y={38} size={12.5} weight={800} fill="#e7eef7">3-D framework (tectosilicate): all 4 corners shared</T>
-      <g filter="url(#cfGlow)">
+      <g filter={glow}>
         {pts.map(([x, y], i) => (
           <g key={i}>
             {pts.map(([x2, y2], j) => {
@@ -883,7 +918,7 @@ function COmoDiagram() {
     </g>
   );
   return (
-    <Svg h={310} w={560}>
+    <Svg h={310} w={560} glowNs="COmoDiagram">
       <rect x="8" y="8" width="544" height="294" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={280} y={34} size={12.5} weight={800} fill="#e7eef7">CO molecular-orbital picture — isoelectronic with N₂</T>
       {/* C AO */}
@@ -909,20 +944,21 @@ function COmoDiagram() {
 }
 
 function GasProcesses() {
+  const glow = glowUrl("GasProcesses");
   const rows = [
     ["Water gas", "C + H₂O(g) →", "CO + H₂", "high — both burn", COL.green],
     ["Producer gas", "2C + O₂ + 4N₂ →", "2CO + 4N₂", "low — N₂ is ballast", COL.amber],
     ["Coal gas", "coal, destructive distillation →", "CO + H₂ + CH₄ + CO₂", "moderate–high", COL.C],
   ] as const;
   return (
-    <Svg h={310} w={560}>
+    <Svg h={310} w={560} glowNs="GasProcesses">
       <rect x="8" y="8" width="544" height="294" rx="20" fill="#060c14" stroke="#1c2c3d" />
       <T x={280} y={36} size={12.5} weight={800} fill="#e7eef7">Three industrial fuel gases from coke</T>
       {rows.map(([name, lhs, rhs, cv, col], i) => {
         const y = 62 + i * 60;
         return (
           <g key={name}>
-            <rect x={30} y={y} width={500} height={48} rx={10} fill="#0a1420" stroke={col} strokeOpacity=".5" filter="url(#cfGlow)" />
+            <rect x={30} y={y} width={500} height={48} rx={10} fill="#0a1420" stroke={col} strokeOpacity=".5" filter={glow} />
             <T x={44} y={y + 20} anchor="start" size={11.5} weight={800} fill={col}>{name}</T>
             <T x={44} y={y + 38} anchor="start" size={10}>{lhs} <tspan fill={col}>{rhs}</tspan></T>
             <T x={510} y={y + 30} anchor="end" size={9.5} fill="#8fa4b4">{cv}</T>
@@ -949,7 +985,7 @@ const FIGURES: Record<number, Fig[]> = {
     { id: "como", el: <Frame key="como" title="CO molecular-orbital picture" caption="CO is isoelectronic with N₂: filling the MOs gives bond order 3 (one σ + two π). The highest occupied orbital is a σ orbital concentrated on carbon — this is the lone pair that lets CO act as a ligand — and the empty π* accepts π back-donation from a metal."><COmoDiagram /></Frame> },
     { id: "gas", el: <Frame key="gas" title="Water gas, producer gas and coal gas" caption="Blowing steam through red-hot coke gives water gas (CO + H₂, high calorific value); blowing air gives producer gas (CO + N₂, low value because the nitrogen is inert ballast); destructive distillation of coal gives coal gas (CO + H₂ + CH₄ + CO₂)."><GasProcesses /></Frame> },
   ],
-  10: [{ id: "co2", el: <Frame key="co2" title="Carbon–oxygen bonding at a glance" caption="CO₂ is linear with two equivalent C–O bonds (115 pm); CO₃²⁻ is trigonal planar with a delocalised π system over three equivalent C–O bonds. CO binds metals synergically — σ-donation from the C lone pair plus π back-donation into CO π*."><COxides /></Frame> }],
+  10: [{ id: "co2", el: <Frame key="co2" title="Carbon–oxygen bonding at a glance" caption="CO₂ is linear with two equivalent C–O bonds (115 pm); CO₃²⁻ is trigonal planar with a delocalised π system over three equivalent C–O bonds. CO binds metals synergically — σ-donation from the C lone pair plus π back-donation into CO π*."><COxides ns="COxides-co2" /></Frame> }],
   13: [
     { id: "sio4", el: <Frame key="sio4" title="The SiO₄ tetrahedron — the one building block" caption="Silicon is tetrahedrally surrounded by four oxygens (Si sp³, ∠O–Si–O ≈ 109.5°, Si–O ≈ 162 pm). In silica every corner O is shared between two Si, giving a giant 3-D network — the reason SiO₂ is a solid while CO₂ is a gas."><SiO4Unit /></Frame> },
     { id: "sinet", el: <Frame key="sinet" title="Silica is a giant 3-D network" caption="A two-dimensional slice of quartz: every silicon (sp³) is joined to four oxygens and every oxygen bridges two silicons through single Si–O σ bonds. Carbon instead forms pπ–pπ double bonds, so CO₂ is a small discrete molecule while SiO₂ is an infinite solid with a very high melting point."><SilicaNetwork /></Frame> },

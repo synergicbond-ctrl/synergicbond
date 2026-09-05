@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
+import { SVG_MOBILE_MIN_WIDTH, SVG_MOBILE_MIN_WIDTH_DEFAULT } from "@/lib/notes/svgMobileWidths";
 
 /* ------------------------------------------------------------------ *
  * Shared chemistry notes renderer (p-block, boron-family, …).
@@ -475,16 +476,28 @@ const makeComponents = (figureFor?: (key: string) => ReactNode): Components => (
   ),
   img: ({ src, alt }) => {
     const caption = (alt ?? "").replace(/^Fig\.\s*/i, "");
+    // Static schematic SVGs served from /public — next/image gives no benefit and needs
+    // dangerouslyAllowSVG. These are dense technical figures drawn on 460-1600 unit
+    // canvases, each authored so 1 viewBox unit == 1 CSS px at its native size. Below the
+    // `sm` breakpoint that native size (or the old blanket 720px floor) let several
+    // figures' smallest annotations render under 6px — genuinely unreadable, not just
+    // small. SVG_MOBILE_MIN_WIDTH holds, per figure, the exact width at which its own
+    // smallest label reaches 10px, computed from a real render (see the module's header).
+    // Below `sm` the figure is held at that floor and scrolls inside its own card if it
+    // doesn't fit; at `sm` and above this is inert and desktop keeps its original fixed
+    // 680px-cap, page-width-filling rendering.
+    const mobileMinWidth = (typeof src === "string" && SVG_MOBILE_MIN_WIDTH[src]) || SVG_MOBILE_MIN_WIDTH_DEFAULT;
     return (
       <figure className="my-7 overflow-hidden rounded-xl" style={{ border: `1px solid ${tint(C.cyan, 0.22)}`, background: "#0a0c11" }}>
-        {/* Static schematic SVGs served from /public — next/image gives no benefit and needs dangerouslyAllowSVG. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={typeof src === "string" ? src : undefined}
-          alt={alt ?? ""}
-          loading="lazy"
-          className="mx-auto block h-auto w-full max-w-[680px]"
-        />
+        <div className="overflow-x-auto" style={{ "--sb-mobile-min-w": `${mobileMinWidth}px` } as CSSProperties}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={typeof src === "string" ? src : undefined}
+            alt={alt ?? ""}
+            loading="lazy"
+            className="mx-auto block h-auto w-full min-w-[var(--sb-mobile-min-w)] max-w-[680px] sm:min-w-0"
+          />
+        </div>
         {caption ? (
           <figcaption
             className="border-t px-4 py-2.5 text-[13px] leading-6"

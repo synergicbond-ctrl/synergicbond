@@ -28,10 +28,10 @@
 <ellipse cx="330" cy="365" rx="62" ry="30" fill="#563c87" stroke="#b9a2ff" stroke-width="3"/><ellipse cx="510" cy="365" rx="62" ry="30" fill="#563c87" stroke="#b9a2ff" stroke-width="3"/><text x="285" y="325" class="small">two lone pairs</text>
 <rect x="815" y="220" width="707" height="540" rx="28" class="panel2"/>
 <text x="852" y="270" class="h">Qualitative MO / symmetry picture</text>
-<text x="870" y="345" class="t">O 2s, 2p orbitals combine with symmetry-adapted</text><text x="870" y="380" class="t">linear combinations of the two H 1s orbitals.</text>
-<line x1="900" y1="470" x2="1040" y2="470" stroke="#62e8ff" stroke-width="6"/><text x="920" y="455" class="small">bonding MOs</text>
-<line x1="1130" y1="410" x2="1270" y2="410" stroke="#b9a2ff" stroke-width="6"/><line x1="1130" y1="530" x2="1270" y2="530" stroke="#b9a2ff" stroke-width="6"/><text x="1160" y="385" class="small">lone-pair MOs</text>
-<line x1="1325" y1="470" x2="1465" y2="470" stroke="#ffc866" stroke-width="6"/><text x="1330" y="455" class="small">antibonding MOs</text>
-<rect x="865" y="615" width="580" height="90" rx="18" fill="#0a2630" stroke="#2aaec0"/><text x="895" y="650" class="small">Electron-pair repulsion and orbital mixing give a bent, polar molecule.</text><text x="895" y="680" class="small">The dipole moment and lone pairs enable extensive hydrogen bonding.</text>
+<text x="870" y="320" class="t">O 2s, 2p orbitals combine with symmetry-adapted</text><text x="870" y="352" class="t">linear combinations of the two H 1s orbitals.</text>
+<line x1="900" y1="560" x2="1040" y2="560" stroke="#62e8ff" stroke-width="6"/><text x="920" y="545" class="small">bonding MOs</text>
+<line x1="1130" y1="470" x2="1270" y2="470" stroke="#b9a2ff" stroke-width="6"/><line x1="1130" y1="495" x2="1270" y2="495" stroke="#b9a2ff" stroke-width="6"/><text x="1160" y="455" class="small">lone-pair MOs</text>
+<line x1="1325" y1="400" x2="1465" y2="400" stroke="#ffc866" stroke-width="6"/><text x="1330" y="385" class="small">antibonding MOs</text>
+<rect x="865" y="615" width="610" height="90" rx="18" fill="#0a2630" stroke="#2aaec0"/><text x="895" y="650" class="small">Electron-pair repulsion and orbital mixing give a bent, polar molecule.</text><text x="895" y="680" class="small">The dipole moment and lone pairs enable extensive hydrogen bonding.</text>
 
 </svg>

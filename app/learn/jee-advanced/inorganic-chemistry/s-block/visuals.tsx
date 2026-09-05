@@ -737,7 +737,7 @@ function BeCl2StructureCompactVisual() {
         <text x="600" y="138" textAnchor="middle" fill="#ecfeff" fontSize="17" fontWeight="900">Be</text>
         <line x1="320" y1="118" x2="432" y2="88" stroke="#a3e635" strokeWidth="4" />
         <line x1="468" y1="88" x2="580" y2="118" stroke="#a3e635" strokeWidth="3" strokeDasharray="6 5" />
-        <text x="360" y="96" fill="#a3e635" fontSize="13" fontWeight="800">normal covalent</text>
+        <text x="335" y="115" fill="#a3e635" fontSize="13" fontWeight="800">normal covalent</text>
         <text x="560" y="70" fill="#fbbf24" fontSize="13" fontWeight="800">dative (lone-pair)</text>
         <text x="450" y="200" textAnchor="middle" fill="#94a3b8" fontSize="15">one Cl bridges two Be: one bond ordinary, one a coordinate (dative) bond — not a delocalised 3c–2e bond</text>
       </svg>
@@ -775,11 +775,19 @@ function Be4OCluster({
         {edges.map(([a, b], index) => {
           const mx = (a.x + b.x) / 2;
           const my = (a.y + b.y) / 2;
+          // The top-bottom and left-right edges both bisect at the cluster centre, so their
+          // ligand chips landed on top of the central oxide (and on each other). Push those
+          // two out along the edge normal; the other four sit at their true midpoints.
+          const ex = b.x - a.x, ey = b.y - a.y;
+          const el = Math.hypot(ex, ey) || 1;
+          const off = Math.hypot(mx - center.x, my - center.y) < 24 ? 62 : 0;
+          const lx = mx + (-ey / el) * off;
+          const ly = my + (ex / el) * off;
           return (
             <g key={index}>
               <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={tone} strokeWidth="2.5" strokeOpacity=".85" />
-              <rect x={mx - 34} y={my - 12} width="68" height="20" rx="6" fill="#06101a" stroke={tone} strokeOpacity=".5" />
-              <text x={mx} y={my + 3} textAnchor="middle" fill={tone} fontSize="10.5" fontWeight="800">{ligand}</text>
+              <rect x={lx - 34} y={ly - 12} width="68" height="20" rx="6" fill="#06101a" stroke={tone} strokeOpacity=".5" />
+              <text x={lx} y={ly + 3} textAnchor="middle" fill={tone} fontSize="10.5" fontWeight="800">{ligand}</text>
             </g>
           );
         })}
@@ -1095,7 +1103,9 @@ function CyanamideNetworkVisual() {
         <text x="710" y="410" textAnchor="middle" fill="#f5f3ff" fontSize="15" fontWeight="900">dicyandiamide</text>
 
         <path d="M710 432 V470" fill="none" stroke="#a78bfa" strokeWidth="3" markerEnd="url(#cyanArrow)" />
-        <text x="770" y="454" textAnchor="middle" fill="#e9d5ff" fontSize="11" fontWeight="800">pyrolysis</text>
+        <text x="630" y="452" textAnchor="middle" fill="#e9d5ff" fontSize="11" fontWeight="800">pyrolysis</text>
+        {/* moved clear of the melamine ring's upper-right -NH2 label, which lands at
+            roughly (772, 448) and previously sat almost exactly under this text */}
 
         {(() => {
           // 1,3,5-triazine ring: N and C(NH2) MUST alternate around the hexagon
@@ -1531,7 +1541,7 @@ function TrendsComparisonChartVisual() {
         {rowsBlock(g2, 480, "#c4b5fd")}
         <rect x="44" y="256" width="812" height="76" rx="16" fill="#78350f" fillOpacity=".18" stroke="#fbbf24" />
         <text x="450" y="284" textAnchor="middle" fill="#fde68a" fontSize="14" fontWeight="800">Opposing trends: hydroxide solubility ↑ down Group 2 (lattice energy falls) but sulfate solubility ↓ (large SO₄²⁻ keeps lattice energy high)</text>
-        <text x="450" y="308" textAnchor="middle" fill="#fde68a" fontSize="13">it's the size of the anion, small OH⁻ vs large SO₄²⁻, that decides which trend wins</text>
+        <text x="450" y="308" textAnchor="middle" fill="#fde68a" fontSize="13">it&apos;s the size of the anion, small OH⁻ vs large SO₄²⁻, that decides which trend wins</text>
       </svg>
     </VisualFrame>
   );
@@ -1555,7 +1565,7 @@ function IndustrialFlowchartVisual() {
             <text x={x + w / 2} y={y + 58} textAnchor="middle" fill="#cbd5e1" fontSize="10.5">{sub}</text>
           </g>
         ))}
-        <text x="450" y="330" textAnchor="middle" fill="#94a3b8" fontSize="14">chlor-alkali: redox + Faraday's law · Solvay: atom-efficient synthesis · lime cycle: equilibrium · plaster: hydrate chemistry</text>
+        <text x="450" y="330" textAnchor="middle" fill="#94a3b8" fontSize="14">chlor-alkali: redox + Faraday&apos;s law · Solvay: atom-efficient synthesis · lime cycle: equilibrium · plaster: hydrate chemistry</text>
       </svg>
     </VisualFrame>
   );

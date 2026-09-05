@@ -1999,7 +1999,9 @@ notes.*
 
 - **Red phosphorus:** obtained by heating white P at **573 K in an inert atmosphere for
   several days**; iron-grey lustre; odourless, non-poisonous, insoluble in water and CS₂;
-  polymeric (chains of P₄ tetrahedra); much less reactive; does not glow.
+  polymeric — the simplified teaching model is P₄ tetrahedra opened and linked into chains
+  (real red phosphorus is structurally more varied, with amorphous and Hittorf's crystalline
+  forms); much less reactive; does not glow.
 - **Black phosphorus:** α-black from heating red P in a sealed tube at **803 K**; β-black by
   heating white P at **473 K under high pressure**; does not burn in air up to 673 K.
 

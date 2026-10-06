@@ -1,0 +1,1611 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stereochemistry Studio – Optical Isomerism</title>
+<style>
+:root{--pink:#d6336c;--green:#2b9348;--blue:#1c6dd0;--ink:#1f2430;--mut:#5b6472;--bg:#f4f6fa;--card:#fff;--line:#dfe3ec;--acc:#5b3fd1}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:linear-gradient(135deg,#2a1b6e,#5b3fd1);color:#fff;padding:34px 20px 26px}
+header .in,main,nav .in{max-width:1000px;margin:0 auto}
+header h1{margin:0 0 6px;font-size:30px}
+header p{margin:0;opacity:.9}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.chip{padding:3px 12px;border-radius:99px;font-size:13px;font-weight:600;background:#fff}
+nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+nav .in{display:flex;gap:4px;overflow-x:auto;padding:8px 14px;white-space:nowrap}
+nav a{color:var(--acc);text-decoration:none;font-size:13.5px;font-weight:600;padding:5px 10px;border-radius:8px}
+nav a:hover{background:#eee9ff}
+nav button{margin-left:auto;border:1px solid var(--acc);color:var(--acc);background:#fff;border-radius:8px;padding:4px 10px;font-weight:600;cursor:pointer;font-size:13px}
+main{padding:20px 14px 60px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:20px 0;box-shadow:0 1px 3px rgba(20,20,60,.05)}
+h2{margin:0 0 4px;font-size:23px;color:#2a1b6e}
+h2 span{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;font-size:15px;padding:1px 9px;margin-right:8px;vertical-align:3px}
+h3{margin:22px 0 6px;font-size:17px;color:#3b2b99}
+p{margin:8px 0}
+ol,ul{padding-left:22px;margin:8px 0}
+li{margin:5px 0}
+svg,canvas{display:block;width:100%;height:auto;background:#fbfcfe;border:1px solid var(--line);border-radius:12px;margin:12px 0 4px}
+canvas.drag{cursor:grab;touch-action:none}
+svg text{font-family:system-ui,sans-serif}
+.cap{font-size:13.5px;color:var(--mut);margin:2px 2px 10px}
+.box{border-left:5px solid var(--acc);background:#f1eeff;padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0}
+.warn{border-left-color:#e08a00;background:#fff6e6}
+.ok{border-left-color:var(--green);background:#eaf7ee}
+.bad{border-left-color:#c0392b;background:#fdeeee}
+.ctl{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:14px;margin:6px 0}
+.ctl label{display:flex;gap:8px;align-items:center;font-weight:600}
+.ctl input[type=range]{width:190px}
+.ctl button,.ctl select,.ctl input[type=number]{font:inherit;font-size:14px;padding:4px 10px;border-radius:8px;border:1px solid #b9bfd0;background:#fff;cursor:pointer}
+.ctl input[type=number]{width:80px;cursor:text}
+.val{font-variant-numeric:tabular-nums;min-width:58px;display:inline-block;color:var(--acc)}
+.flex{display:flex;gap:14px;flex-wrap:wrap}
+.flex>*{flex:1 1 300px}
+.p{color:var(--pink);font-weight:700}.g{color:var(--green);font-weight:700}.b{color:var(--blue);font-weight:700}
+.formula{font-size:18px;text-align:center;background:#f7f8fc;border:1px dashed #b9bfd0;border-radius:10px;padding:8px;margin:10px 0}
+.why{font-size:15px}
+.why b.d{color:#111}.why b.l{color:#b86e00}
+.crit h3{margin-top:26px}
+.crit .m{color:#1d7a3a;font-weight:700}.crit .c{color:#b86e00;font-weight:700}.crit .x{color:#c0392b;font-weight:700}
+details{border:1px solid var(--line);border-radius:10px;padding:8px 14px;margin:8px 0;background:#fafbff}
+details summary{cursor:pointer;font-weight:700;color:var(--acc)}
+details[open]{background:#f3f1ff}
+.q li{margin:10px 0}
+@media(max-width:600px){section{padding:16px}h2{font-size:20px}}
+
+.tabs{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:8px max(14px,calc((100vw - 1000px)/2));white-space:nowrap}
+.tabs button{border:1px solid var(--line);background:#fff;color:var(--acc);border-radius:10px;padding:6px 12px;font-weight:700;font-size:13.5px;cursor:pointer}
+.tabs button:hover{background:#eee9ff}.tabs button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.tabs button.pz{margin-left:auto;border-color:var(--acc)}
+.tabs button:focus-visible,.ctl button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+.panel{display:none}.panel.on{display:block}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:6px;background:#fbfcfe}.tile b{display:block;color:var(--acc);font-size:13px;padding:2px 6px}.tile svg{margin:0;border:none;background:transparent}
+.vbar button.on,.ctl button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.ctl button:disabled{opacity:.4;cursor:not-allowed}
+.verdict{font-size:19px;padding:14px 18px;border-radius:12px;margin:12px 0;border:2px solid}
+.verdict .vb{display:inline-block;font-weight:800;border-radius:8px;padding:2px 12px;margin-right:8px;color:#fff;letter-spacing:.04em}
+.verdict.must{background:#eaf7ee;border-color:#2b9348}.verdict.must .vb{background:#2b9348}
+.verdict.can{background:#fff6e6;border-color:#e08a00}.verdict.can .vb{background:#e08a00}
+.verdict.cannot{background:#fdeeee;border-color:#c0392b}.verdict.cannot .vb{background:#c0392b}
+.cksteps{list-style:none;padding:0;margin:8px 0}.cksteps li{display:flex;gap:10px;padding:8px 12px;border-radius:10px;margin:6px 0;border:1px solid var(--line);background:#fbfcfe}
+.cksteps li .ic{flex:0 0 26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:#9aa3b5}
+.cksteps li.ok .ic{background:#2b9348}.cksteps li.no .ic{background:#c0392b}.cksteps li.warn .ic{background:#e08a00}
+.cksteps li.skip{opacity:.55}
+.resbadge{display:inline-block;border-radius:8px;padding:1px 10px;font-weight:800}.resbadge.ok{background:#eaf7ee;color:#1d6a35}.resbadge.bad{background:#fdeeee;color:#a02a1e}
+.result{font-size:22px;font-weight:800;margin:10px 0 2px}.result.idn{color:#5b6472}.result.enan{color:#d6336c}.result.dias{color:#1c6dd0}
+.qzq{font-size:18px;font-weight:600}
+#qz_box button.o{font-size:16px;padding:8px 18px;font-weight:700}
+#qz_box svg{max-width:560px}
+@media(max-width:760px){.grid2,.tiles{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="in"><h1>Stereochemistry Studio</h1><p>Optical isomerism from first principles: chirality checker, projections and R/S from one 3-D model, polarimetry, axial and helical chirality, amine inversion, and a practice mode.</p><div class="legend"><span class="chip" style="color:var(--pink);border:2px solid var(--pink)">pink = toward you</span><span class="chip" style="color:var(--green);border:2px solid var(--green)">green = away from you</span><span class="chip" style="color:var(--blue);border:2px solid var(--blue)">blue = in the plane of the paper</span></div></div></header>
+<nav class="tabs" id="tabs" role="tablist"><button data-tab="t1" role="tab">1 · Check chirality</button><button data-tab="t2" role="tab">2 · Projections &amp; R/S</button><button data-tab="t3" role="tab">3 · Compare isomers</button><button data-tab="t4" role="tab">4 · Light &amp; rotation</button><button data-tab="t5" role="tab">5 · Axial &amp; helical</button><button data-tab="t6" role="tab">6 · N, P, S &amp; inversion</button><button data-tab="t7" role="tab">7 · Practice</button><button id="pause" class="pz">⏸ Pause animations</button></nav>
+<main>
+<div class="panel" id="t1">
+<section id="checker"><h2>Chirality checker: must be, can be or cannot be?</h2>
+<p>Pick a class of compound, set its features, and the checker walks through the four checks and gives the verdict.</p>
+<div class="ctl"><label>Type <select id="ck_type"></select></label><label>Sample <select id="ck_sample"><option value="pure">single enantiomer</option><option value="racemic">racemic mixture (1 : 1)</option><option value="unspec">not specified</option></select></label></div>
+<div class="ctl" id="ck_fields"></div>
+<div class="verdict" id="ck_verdict"></div>
+<ol class="cksteps" id="ck_steps"></ol></section>
+<section id="essential"><h2>Which term is essential: chiral carbon, asymmetry, dissymmetry, chirality, helicity, chiral axis?</h2>
+<p>Only <b>chirality</b> is essential. Every other term is a special case of it or a way of producing it.</p>
+<ol>
+<li><b>Chirality = dissymmetry. ESSENTIAL (necessary).</b> The molecule must be non-superimposable on its mirror image, that is, have no σ, no i and no Sₙ. It may keep rotation axes (C₂, D₂ …). Without it optical activity cannot occur. With it, activity is <i>possible</i>; it is observed only if the form is stable and the sample is not racemic.</li>
+<li><b>Asymmetry (no symmetry at all, point group C₁). Sufficient but not necessary.</b> Every asymmetric molecule is chiral, but many chiral molecules are only <i>dissymmetric</i>: the chiral spirane, biphenyl, allene, helicene and twisted terphenyl models in this studio all keep a C₂ axis. So the correct requirement is dissymmetry (Pasteur’s word), not asymmetry.</li>
+<li><b>Chiral carbon (asymmetric carbon, stereocentre). Neither necessary nor sufficient.</b> Not necessary: allenes, spiranes, hemispiranes, biphenyls, terphenyls and helicenes are active with none. Not sufficient: a meso compound has chiral carbons and a mirror plane.</li>
+<li><b>Chiral axis, helicity, chiral plane, pyramidal atom. Ways of being chiral.</b> Each is sufficient when it is present alone and stable, and none is necessary. Two chiral elements can cancel (meso with two centres, meso terphenyl with two axes), so judge the molecule as a whole.</li>
+</ol>
+<div class="box warn"><b>Practical order:</b> (1) no σ, i, Sₙ → chiral; (2) find the chiral element; (3) check the form is stable; (4) check the sample is not racemic. Use the checker above to try it for every class.</div></section>
+<section id="s1">
+<h2>What is optical isomerism?</h2>
+<p>Two compounds with the same constitution that differ only in 3-D arrangement, and that rotate plane-polarised light, are <b>optical isomers</b>. A molecule is optically active when it is <b>chiral</b>: it cannot be superimposed on its mirror image. The test is symmetry:</p>
+<ol>
+<li>A molecule with a <b>mirror plane (σ)</b>, a <b>centre of inversion (i)</b> or an <b>alternating axis (Sₙ)</b> is achiral (superimposable on its mirror image).</li>
+<li>A molecule with none of these is chiral. It <i>may</i> still have ordinary rotation axes (C₂, C₃ …); these do not stop it being chiral.</li>
+<li>The mirror image of a chiral molecule is its <b>enantiomer</b>: identical m.p., b.p. and solubility, equal and opposite optical rotation.</li>
+<li>Optical isomers that are not mirror images are <b>diastereomers</b>; they differ in all physical properties.</li>
+</ol>
+<svg id="d_enant" viewBox="0 0 560 210"></svg>
+<p class="cap">CHFClBr and its mirror image. The mirror (dashed line) turns the left molecule into the right one; no rotation can make them identical.</p>
+<div class="box"><b>Chirality does not need a chiral carbon.</b> Every compound class below has its own animated 3-D ball-and-stick model with all bonds and atoms. Each model is reflected in a mirror and the mirror image is turned and fitted onto the original, so you <i>see</i> whether it superimposes.</div>
+</section>
+<section id="s13" class="crit">
+<h2>Criteria for optical activity: must be, can be, cannot be</h2>
+<p>Use these words exactly as defined here, and the questions become routine.</p>
+<ul>
+<li><b>Chiral</b> = no mirror plane (σ), no centre of inversion (i), no alternating axis (Sₙ). C₂ and other rotation axes do not matter.</li>
+<li><span class="m">MUST BE optically active</span>: the molecule is chiral, it is configurationally stable, and the sample is a single enantiomer.</li>
+<li><span class="c">CAN BE optically active</span>: it is chiral on paper, but stability or the type of sample is not settled by the question (bulky or small groups, racemic or pure).</li>
+<li><span class="x">CANNOT BE optically active</span>: a σ, i or Sₙ is present (achiral, meso), or the two mirror-image forms swap too fast to isolate.</li>
+</ul>
+<div class="box warn"><b>Absence of symmetry does not guarantee activity.</b> It makes the molecule <i>capable</i> of activity. It still shows no rotation if (1) the forms interconvert fast (amine inversion, [4]helicene, small-group biphenyl), (2) the sample is racemic, (3) the rotation passes through zero at the wavelength used, or (4) the rotation is too small to measure (isotopic chirality).</div>
+
+<h3>The five checks, in this order</h3>
+<ol>
+<li><b>Symmetry.</b> σ, i or Sₙ present → <span class="x">cannot be</span> active. Stop.</li>
+<li><b>Chiral element.</b> No σ, i, Sₙ → chiral. Find the element: stereocentre, chiral axis, helix, plane, or pyramidal N/P/S.</li>
+<li><b>Stability.</b> Can the two forms swap quickly? If yes → <span class="x">cannot be</span> resolved.</li>
+<li><b>Sample.</b> Racemic mixture or meso compound → zero rotation. Only a single enantiomer or an enriched sample rotates light.</li>
+<li><b>Counting.</b> n unlike stereogenic units → 2ⁿ stereoisomers. If the molecule has symmetrical halves, some become meso.</li>
+</ol>
+
+<h3>1. Stereocentre (C, Si, Ge, N⁺, P⁺, S⁺)</h3>
+<ul>
+<li><span class="m">MUST BE</span> chiral: Cabcd, all four groups different, as a single enantiomer.</li>
+<li><span class="x">CANNOT BE</span>: Caabc, Caabb, Caaaa (a mirror plane exists).</li>
+<li><span class="c">CAN BE</span>: a centre that racemises under the conditions (for example the α-carbon of a ketone with acid or base).</li>
+<li>A <b>pseudoasymmetric</b> centre (two groups that are an R and an S form of the same thing) occurs only in achiral or specific forms. A compound containing one is often meso.</li>
+</ul>
+
+<h3>2. Two or more stereocentres</h3>
+<ul>
+<li><b>Unlike ends</b> (A–X–Y–B): 2ⁿ stereoisomers, all chiral. For n = 2 there are 4: two enantiomeric pairs, each pair a set of diastereomers of the other. Each pure isomer <span class="m">MUST BE</span> active.</li>
+<li><b>Like ends</b> (A–X–X–A, symmetrical): n even gives 2ⁿ⁻¹ + 2^(n/2 − 1); n odd gives 2ⁿ⁻¹. For n = 2: 3 isomers (a pair plus one meso). For n = 3: 4 (a pair plus two meso). For n = 4: 10.</li>
+<li><b>Meso</b>: σ or i present, <span class="x">CANNOT BE</span> active, however many stereocentres it has (internal compensation).</li>
+<li><b>Racemic (±)</b>: every molecule is chiral, but the mixture gives zero rotation (external compensation). It <span class="c">CAN BE</span> resolved.</li>
+</ul>
+
+<h3>3. Cyclic compounds</h3>
+<p>Judge each ring by its average flat shape unless the ring flipping is frozen.</p>
+<ul>
+<li><b>1,2- or 1,3-disubstituted, same groups:</b> cis is meso (<span class="x">CANNOT BE</span> active); trans is a pair of enantiomers (<span class="m">MUST BE</span> chiral, resolvable).</li>
+<li><b>1,4-disubstituted:</b> cis and trans both have a mirror plane (<span class="x">CANNOT BE</span> active). They are only geometric isomers.</li>
+<li><b>Different groups:</b> chiral if no plane exists; count centres as in section 2.</li>
+<li>Ring flipping (cyclohexane) averages the structure, so the flipping conformers are not counted as separate isomers.</li>
+</ul>
+
+<h3>4. Allenes and cumulenes (chiral axis)</h3>
+<ul>
+<li><span class="m">MUST BE</span>: abC=C=Cab, with a ≠ b on <b>each</b> end carbon.</li>
+<li><span class="x">CANNOT BE</span>: either end has two identical groups.</li>
+<li><b>Cumulenes:</b> an <i>even</i> number of C=C bonds (allene = 2) gives a chiral axis. An <i>odd</i> number (alkene = 1, butatriene = 3) puts the groups in one plane, so the isomerism is cis/trans, not optical.</li>
+</ul>
+
+<h3>5. Spiranes (chiral axis)</h3>
+<ul>
+<li><span class="m">MUST BE</span>: each ring is unsymmetrical about the axis through the spiro atom (for example COOH and H on the axis carbon of <b>both</b> rings), as one enantiomer.</li>
+<li><span class="x">CANNOT BE</span>: either ring is symmetrical (two identical groups on its axis carbon), because a mirror plane appears.</li>
+<li><span class="c">CAN BE</span> chiral in addition if the rings themselves carry stereocentres. Check those separately.</li>
+</ul>
+
+<h3>6. Hemispiranes (alkylidene-cycloalkanes)</h3>
+<ul>
+<li><span class="m">MUST BE</span>: the exocyclic carbon has two <b>different</b> groups <b>and</b> the ring carbon opposite the C=C has two different groups (for example 4-methylcyclohexylideneacetic acid).</li>
+<li><span class="x">CANNOT BE</span>: the exocyclic carbon has two identical groups, or the ring carbon has two identical groups (cyclohexylideneacetic acid, which has H and H on C4).</li>
+</ul>
+
+<h3>7. Biphenyls (atropisomerism)</h3>
+<p>All four conditions must hold.</p>
+<ol>
+<li><b>Bulky ortho groups</b>, usually three or four (NO₂, COOH, I, Br, CH₃, OCH₃). F, H and OH are too small.</li>
+<li><b>Each ring unsymmetrical:</b> its two ortho groups must differ. A symmetrical ring (2,6 identical) creates a mirror plane.</li>
+<li><b>High barrier:</b> about 90–100 kJ/mol or more, so the isomers last hours at room temperature.</li>
+<li><b>Not bridged flat:</b> a ring locked planar is achiral.</li>
+</ol>
+<ul>
+<li><span class="m">MUST BE</span>: all four hold and the sample is one enantiomer (6,6′-dinitrodiphenic acid).</li>
+<li><span class="c">CAN BE</span>: three ortho groups, or two very large ones (binaphthyl compounds are an example). It depends on the size.</li>
+<li><span class="x">CANNOT BE</span>: a ring is symmetrical, or the groups are small and the form racemises.</li>
+</ul>
+
+<h3>8. Terphenyls</h3>
+<ul>
+<li>Check every biaryl bond with the biphenyl rules above.</li>
+<li><b>p-Terphenyl</b> (X at 2 and 5 of the central ring, Y on one ortho position of each end ring): two stereogenic axes give 2² = 4 stereoisomers if the end rings are different, as two pairs of enantiomers.</li>
+<li>If the ends are identical and the central ring is symmetrical, there are 3: a pair <span class="m">(MUST BE active)</span> plus one meso form with a centre of symmetry <span class="x">(CANNOT BE active)</span>.</li>
+<li><b>o-Terphenyl</b> is a twisted helix that flips quickly: <span class="x">CANNOT BE</span> isolated, unless bulky groups or a long ortho-linked chain lock it <span class="c">(CAN BE)</span>.</li>
+</ul>
+
+<h3>9. Helicenes and other helices</h3>
+<ul>
+<li><span class="m">MUST BE</span>: [6]helicene or larger, as one helix (P or M). The barrier is about 150 kJ/mol.</li>
+<li><span class="c">CAN BE</span>: [5]helicene. It is chiral, but the barrier of about 100 kJ/mol lets it racemise slowly at room temperature.</li>
+<li><span class="x">CANNOT BE</span> isolated: [4]helicene (barrier about 17 kJ/mol).</li>
+<li><b>Octahedral tris-chelate complexes</b> such as [Co(en)₃]³⁺ are helical (Δ/Λ) and chiral. cis-[M(AA)₂X₂] is chiral. trans isomers are achiral.</li>
+</ul>
+
+<h3>10. Nitrogen, phosphorus and sulfur</h3>
+<ul>
+<li><b>Amines NR¹R²R³:</b> the nitrogen flips about 10¹⁰ times per second (barrier about 25–35 kJ/mol). <span class="x">CANNOT BE</span> resolved, even with three different groups.</li>
+<li><span class="c">CAN BE</span> resolved: quaternary ammonium (four different groups), amine oxides, a nitrogen locked in a rigid frame (Tröger's base), and N in a three-membered ring with a high barrier (aziridines, at low temperature).</li>
+<li><b>Phosphines PR¹R²R³</b> and <b>sulfoxides R–S(=O)–R′</b> (R ≠ R′): barrier about 100 kJ/mol or more, so they <span class="m">MUST BE</span> chiral and resolvable. The same holds for sulfonium salts.</li>
+<li>Sulfides, sulfones, and phosphates with identical groups are achiral.</li>
+</ul>
+
+<h3>11. Planar chirality</h3>
+<ul>
+<li><span class="c">CAN BE</span>: paracyclophanes with the right substituent pattern, ansa compounds, trans-cyclooctene. The ring must be small enough that the chain cannot swing through.</li>
+<li><span class="x">CANNOT BE</span>: the ring is large enough for the flipping to occur.</li>
+</ul>
+
+<h3>12. Conformational chirality</h3>
+<ul>
+<li>Conformers that interconvert quickly (gauche butane, chair and boat forms) <span class="x">CANNOT BE</span> counted as isolable isomers.</li>
+<li>Use the time-averaged shape. It is achiral unless the interconversion is frozen, as in a hindered biphenyl.</li>
+</ul>
+
+<h3>13. Isotopic chirality</h3>
+<ul>
+<li><span class="c">CAN BE</span> chiral by isotopes alone (CHDTX, or a CH₂D–R pattern). It is chiral in principle (<b>cryptochirality</b>), but the rotation is usually too small to measure.</li>
+</ul>
+
+<h3>Common traps</h3>
+<ul>
+<li>"No symmetry, so active": wrong when the sample is racemic or the form flips fast.</li>
+<li>"Has stereocentres, so active": wrong for meso compounds.</li>
+<li>"No stereocentre, so inactive": wrong for allenes, spiranes, hemispiranes, biphenyls and helicenes.</li>
+<li>A C₂ axis does not make a molecule achiral.</li>
+</ul>
+
+<h3>Practice problems</h3>
+<p>For each, decide <b>must be</b>, <b>can be</b> or <b>cannot be</b> optically active and say why. Open each answer to check.</p>
+<ol class="q">
+<li>CH₃–CH=C=CH–CH₃<details><summary>Answer</summary><span class="m">Must be</span> (single enantiomer). Both ends have two different groups, so it is chiral.</details></li>
+<li>(CH₃)₂C=C=CH–CH₃<details><summary>Answer</summary><span class="x">Cannot be.</span> One end has two identical CH₃, so there is a mirror plane.</details></li>
+<li>Spiro[3.3]heptane-2,6-dicarboxylic acid<details><summary>Answer</summary><span class="m">Must be.</span> Each ring has COOH and H on the axis carbon.</details></li>
+<li>Spiro[3.3]heptane-2-carboxylic acid (only one ring substituted)<details><summary>Answer</summary><span class="x">Cannot be.</span> The other ring has H, H on the axis carbon, so a mirror plane exists.</details></li>
+<li>4-Methylcyclohexylideneacetic acid<details><summary>Answer</summary><span class="m">Must be.</span> The exocyclic carbon has COOH and H, and C4 has CH₃ and H.</details></li>
+<li>Cyclohexylideneacetic acid<details><summary>Answer</summary><span class="x">Cannot be.</span> C4 has two H.</details></li>
+<li>6,6′-Dinitrodiphenic acid, pure (+) form<details><summary>Answer</summary><span class="m">Must be.</span> It is a pure enantiomer, and four bulky ortho groups lock it.</details></li>
+<li>2,2′,6,6′-Tetranitrobiphenyl<details><summary>Answer</summary><span class="x">Cannot be.</span> Each ring is symmetrical, so a mirror plane exists.</details></li>
+<li>2,2′-Difluoro-6,6′-dicarboxybiphenyl<details><summary>Answer</summary><span class="x">Cannot be isolated.</span> F is too small, so the ring rotates and the form racemises.</details></li>
+<li>p-Terphenyl, I at C2 and C5, Br at one ortho position of each identical end ring: the (up, down) isomer<details><summary>Answer</summary><span class="x">Cannot be.</span> It is meso, with a centre of symmetry.</details></li>
+<li>The same terphenyl, (up, up) isomer<details><summary>Answer</summary><span class="c">Can be.</span> It is chiral (only a C₂ axis). It rotates light only if the sample is non-racemic.</details></li>
+<li>[6]Helicene<details><summary>Answer</summary><span class="m">Must be</span> for a pure enantiomer. The barrier is about 150 kJ/mol.</details></li>
+<li>[4]Helicene<details><summary>Answer</summary><span class="x">Cannot be isolated.</span> The barrier is only about 17 kJ/mol.</details></li>
+<li>CH₃–NH–C₂H₅ (N has three different groups)<details><summary>Answer</summary><span class="x">Cannot be</span> observed. The N inverts rapidly, so the amine is racemic.</details></li>
+<li>Tröger's base<details><summary>Answer</summary><span class="m">Must be</span> for a resolved sample. The nitrogens are locked at the bridgeheads (resolved by Prelog and Wieland).</details></li>
+<li>Meso-tartaric acid, and (±)-tartaric acid<details><summary>Answer</summary>Meso: <span class="x">cannot be</span>, internal compensation. (±): shows no rotation, external compensation, but it can be resolved.</details></li>
+<li>trans-Cyclohexane-1,2-diol, and cis-cyclohexane-1,2-diol<details><summary>Answer</summary>trans: <span class="c">can be</span> (it is chiral). cis: <span class="x">cannot be</span> (meso, and the ring flips fast).</details></li>
+<li>How many stereoisomers has 2,3-dibromobutane? And 2,3,4-trihydroxyglutaric acid?<details><summary>Answer</summary>2,3-Dibromobutane: <b>3</b> (a pair plus meso). 2,3,4-Trihydroxyglutaric acid: <b>4</b> (a pair plus two meso forms).</details></li>
+<li>A 2 dm tube holds 0.10 g/mL sucrose, [α] = +66.5°. What is α<sub>obs</sub>? A reading of +30° where the pure enantiomer gives +60°: what is the optical purity and the enantiomer ratio?<details><summary>Answer</summary>α = 66.5 × 2 × 0.10 = <b>+13.3°</b>. Optical purity = 30/60 = <b>50 %</b>, which is a 75 : 25 mixture of the two enantiomers.</details></li>
+<li>A reading of +40° could also be −140°. How do you tell?<details><summary>Answer</summary>Halve the concentration. A true +40° gives +20°. A true −140° gives −70°.</details></li>
+</ol>
+</section>
+<section id="s12">
+<h2>Quick revision</h2>
+<ol>
+<li>Chiral = no σ, no i, no Sₙ = non-superimposable on its mirror image = optically active. C₂ axes are allowed.</li>
+<li>PPL: E vibrates in one plane. It is the sum of equal clockwise and anticlockwise circular beams. A chiral medium has n<sub>L</sub> ≠ n<sub>R</sub>, which turns the plane by α = π l (n<sub>L</sub> − n<sub>R</sub>) / λ. Malus: I = I₀cos²β.</li>
+<li>Clockwise looking at the source = (+) dextro. Enantiomers: equal angle, opposite sign. Racemic: external compensation. Meso: internal compensation.</li>
+<li>Polarimeter: crossed analyser = dark; sample turns the plane = bright; turn the analyser by α = dark again. Half-shade: set equal halves. [α] = α / (l·c).</li>
+<li><b>Spirane</b>: different groups on the axis atom of <b>both</b> rings; rings perpendicular; chiral axis.</li>
+<li><b>Hemispirane</b>: different groups on the exocyclic carbon <b>and</b> on the ring carbon opposite the C=C.</li>
+<li><b>Biphenyl</b>: 3–4 bulky ortho groups (blocked rotation) <b>and</b> each ring unsymmetrical (ortho groups differ).</li>
+<li><b>Terphenyl</b>: each stereogenic axis obeys the biphenyl rule; two axes give up to 4 stereoisomers (3, including a meso form with a centre of symmetry, if the molecule is symmetrical).</li>
+<li><b>Helicity</b>: a coiled backbone (helicene, twisted o-terphenyl) is chiral as P or M; it is stable only if the helix cannot unwind (barrier ≳ 100 kJ/mol, as in [6]helicene).</li>
+<li><b>Amines</b>: the pyramid flips through a planar, achiral transition state (barrier about 25–35 kJ mol⁻¹), so chiral amines racemise at once, unless N is quaternary, locked in a frame (Tröger's base) or strained in a ring.</li>
+</ol>
+</section>
+</div>
+<div class="panel" id="t2">
+<section id="proj"><h2>Fischer, wedge–dash, sawhorse and Newman: one molecule, one R/S</h2>
+<p>Every drawing below is <b>generated from one 3-D model</b> of the molecule, and the R/S descriptor is <b>computed from the drawing itself</b>, so the four views cannot disagree. Pick a molecule and a configuration, then switch the view, turn the C2–C3 bond with the slider, or press Play tour to watch the model untwist from the eclipsed Fischer form to the zigzag.</p>
+<div class="ctl"><label>Molecule <select id="pj_mol"></select></label><label>Configuration <select id="pj_cfg"></select></label><label><input type="checkbox" id="pj_pri" checked> show CIP priorities (purple circles)</label></div>
+<h3 id="pj_title"></h3>
+<div class="grid2">
+<div><canvas id="pj_3d" class="drag" width="560" height="430"></canvas>
+<div class="ctl" id="pj_tauwrap"><label>Torsion about C2–C3 <input type="range" id="pj_tau" min="0" max="360" value="180"> <span class="val" id="pj_tauv">180°</span></label></div>
+<div class="ctl"><button id="pj_spin">▶ Spin the bond</button><button id="pj_tour">▶ Play tour</button></div>
+<p class="cap">0° = eclipsed (the Fischer conformer), 180° = anti (the zigzag), 60° and 300° = gauche-staggered. Turning the bond changes the conformation, never the configuration.</p></div>
+<div><div class="ctl vbar" id="pj_views"><button data-v="fischer">Fischer</button><button data-v="wedge">Wedge–dash</button><button data-v="sawhorse">Sawhorse</button><button data-v="newman">Newman</button></div>
+<svg id="pj_main" viewBox="0 0 560 430"></svg>
+<p class="cap">Colour code: pink = toward you, green = away from you, blue = in the plane of the paper.</p></div></div>
+<div class="box" id="pj_read"></div>
+<h3>All views at once</h3><div class="tiles" id="pj_all"></div>
+<h3>The rules, step by step</h3>
+<ol>
+<li><b>Rank the four groups</b> at each stereocentre with the CIP rules. Keep each priority attached to its atom, whatever the drawing.</li>
+<li><b>Fischer:</b> horizontal bonds point toward you, vertical bonds away. Turning the formula 180° in the page gives the same molecule. Turning it 90° does not. Swapping any two groups at a centre inverts it.</li>
+<li><b>Lowest priority toward you</b> (a horizontal group in Fischer, a solid wedge): trace 1 → 2 → 3, then reverse the answer.</li>
+<li><b>Lowest priority away</b> (hashed wedge, vertical in a one-centre Fischer): read 1 → 2 → 3 directly, clockwise = R.</li>
+<li><b>Newman and sawhorse:</b> one of the four groups points along the line of sight (the other carbon). Trace the other three in priority order. If that group has priority 2 and points away, read directly; if it points toward you, reverse. If its priority is 3 (or 1), reverse once more. The reading box above applies exactly this.</li>
+<li><b>Converting between drawings</b> is only a change of viewpoint: put the same atom on the same carbon, keep each group on the same side relative to the bond, and recheck R/S afterwards.</li>
+</ol></section>
+</div>
+<div class="panel" id="t3">
+<section id="cmp"><h2>Compare two stereoisomers</h2>
+<p>Choose a molecule and two configurations. The relationship (identical, enantiomers, diastereomers) is computed from the descriptors and the symmetry of the molecule, and B can be drawn in any style.</p>
+<div class="ctl"><label>Molecule <select id="cm_mol"></select></label></div>
+<div class="grid2">
+<div><label>A <select id="cm_a"></select></label> <span class="cap">drawn as Fischer</span><svg id="cm_sa" viewBox="0 0 560 430"></svg></div>
+<div><label>B <select id="cm_b"></select></label> <label>drawn as <select id="cm_fmt"><option value="fischer">Fischer</option><option value="wedge">Wedge–dash</option><option value="sawhorse">Sawhorse</option><option value="newman">Newman</option></select></label><svg id="cm_sb" viewBox="0 0 560 430"></svg></div></div>
+<p id="cm_rel" class="result"></p><p id="cm_why"></p><p id="cm_note" class="cap"></p>
+<h3>The naming trap</h3>
+<p>(3R,2R) is the same as (2R,3R): the locants refer to the same numbered atoms and have simply been written in reverse order. Always put the locants in ascending order before comparing two names, and never compare just the printed order of the letters.</p>
+<div class="ctl"><label>Type descriptors <input type="text" id="nm_in" value="(3R,2R)" style="font:inherit;padding:4px 10px;border:1px solid #b9bfd0;border-radius:8px;width:160px"></label><span class="val" id="nm_out" style="min-width:260px"></span></div>
+<ol>
+<li>(2R,3R) and (2S,3S): both centres inverted, so <b>enantiomers</b>.</li>
+<li>(2R,3R) and (2R,3S): one centre changed, <b>diastereomers</b>.</li>
+<li>(2R,3S) and (2S,3R) in a symmetrical molecule: <b>identical</b> (one meso compound). In an unsymmetrical one (2-bromo-3-chlorobutane) they are enantiomers.</li>
+</ol></section>
+</div>
+<div class="panel" id="t4">
+<section id="s2">
+<h2>Plane-polarised light (PPL)</h2>
+<p>Light is a transverse electromagnetic wave. The electric vector <b>E</b> and magnetic vector <b>B</b> are perpendicular to each other and to the direction of travel. In <b>ordinary (unpolarised) light</b> E vibrates in <i>all</i> planes around the beam, changing randomly. In <b>plane-polarised light</b> E vibrates in <i>one</i> plane only.</p>
+<ol>
+<li>Ordinary light from a lamp is a mixture of many waves, each vibrating in its own plane (animation: the coloured ribbons on the left).</li>
+<li>A <b>polariser</b> contains a preferred direction. It lets through only the component of E along its transmission axis and removes the rest.</li>
+<li>After the polariser, one ribbon remains: all vibrations lie in a single plane, the <b>plane of vibration</b>. (Historically the "plane of polarisation" is the plane perpendicular to this, the one containing B.)</li>
+<li>An unpolarised beam loses half its intensity at an ideal polariser: I = I₀/2.</li>
+</ol>
+<canvas id="cv_ppl" width="760" height="340"></canvas>
+<div class="ctl"><label><input type="checkbox" id="ppl_B"> also show the magnetic-field wave (green, dashed)</label></div>
+<p class="cap">Side view, drawn in perspective. Light travels to the right. Each translucent ribbon is the plane in which E vibrates. The slotted plate is the polariser (the slots show its transmission axis). The circles underneath show the same light end-on, as the eye sees it.</p>
+
+<h3>Ways of producing plane-polarised light</h3>
+<ol>
+<li><b>Nicol prism</b> (calcite): calcite splits a ray into an ordinary (o) and an extraordinary (e) ray. The prism is cut and cemented with Canada balsam (n = 1.55). The o-ray (n<sub>o</sub> = 1.658) meets the balsam beyond the critical angle (about 69°) and is totally reflected onto a blackened face. The e-ray (n<sub>e</sub> = 1.486) goes straight through, polarised in one plane.</li>
+<li><b>Polaroid sheet</b>: a stretched polymer (poly-vinyl alcohol) dyed with iodine. The aligned chains absorb E parallel to them and transmit E perpendicular to them.</li>
+<li><b>Reflection</b> at the <b>Brewster angle</b>, tan θ<sub>B</sub> = n (about 56° for glass): the reflected beam is completely polarised, with E perpendicular to the plane of incidence.</li>
+<li><b>Double refraction</b> (calcite, quartz) and scattering also give polarised light.</li>
+</ol>
+<svg id="d_nicol" viewBox="0 0 640 250"></svg>
+<p class="cap">Schematic Nicol prism (not to scale).</p>
+
+<h3>Malus's law: the analyser</h3>
+<p>A second polariser, the <b>analyser</b>, turned by an angle β from the first, passes only the component of E along its own axis: amplitude E₀ cos β, so the intensity is</p>
+<div class="formula">I = I₀ cos²β</div>
+<p>β = 0° gives full transmission, β = 45° gives half, β = 90° (crossed) gives <b>no light</b>. A polarimeter uses this dark, crossed setting as its reference.</p>
+<canvas id="cv_malus" width="760" height="340"></canvas>
+<div class="ctl"><label>Analyser angle β <input type="range" id="mal_b" min="0" max="180" value="30" step="1"> <span class="val" id="mal_bv">30°</span></label></div>
+<p class="cap">Turn the analyser. After it, the wave vibrates in the analyser's plane with amplitude cos β. The graph shows I/I₀ = cos²β and the moving dot is your setting.</p>
+</section>
+<section id="s3">
+<h2>Optical rotation</h2>
+<p>When PPL passes through an optically active substance (a pure liquid or a solution), its plane of vibration is <b>rotated</b> by an angle α.</p>
+<ol>
+<li>Look <b>toward the light source</b> (light coming at your eye).</li>
+<li>If the plane turns <b>clockwise</b>, the substance is <b>dextrorotatory</b>, labelled <b>(+)</b> or <i>d</i>.</li>
+<li>If it turns <b>anticlockwise</b>, it is <b>laevorotatory</b>, labelled <b>(−)</b> or <i>l</i>.</li>
+<li>The two enantiomers rotate by the <b>same angle in opposite directions</b> under identical conditions.</li>
+</ol>
+<canvas id="cv_rot" width="760" height="280"></canvas>
+<div class="ctl">
+<label>Rotation of the sample, α <input type="range" id="rot_a" min="-70" max="70" value="35" step="1"> <span class="val" id="rot_av">+35°</span></label>
+</div>
+<p class="cap">The ribbon (the plane of vibration) twists gradually while the light crosses the tube, and leaves turned by α. The dials show the result as the observer sees it.</p>
+
+<h3>Biot's laws and specific rotation</h3>
+<ul>
+<li>α is proportional to the path length l and to the concentration c of the active substance.</li>
+<li>α depends on wavelength (roughly ∝ 1/λ²; this is optical rotatory dispersion), on temperature and on solvent. So the sodium D line (589 nm) is used.</li>
+</ul>
+<div class="formula">[α]<sub>λ</sub><sup>t</sup> = α<sub>obs</sub> / ( l × c ) &nbsp; (l in dm, c in g mL⁻¹)</div>
+<ul>
+<li>If c is in g per 100 mL, use [α] = 100·α / (l·c).</li>
+<li>Written like [α]<sub>D</sub><sup>20</sup> = +66.5° (sucrose in water). Others: D-glucose +52.7° (equilibrium), D-fructose −92°.</li>
+<li><b>Mutarotation</b>: fresh α-D-glucose (+112°) or β-D-glucose (+19°) drifts to +52.7° as the two forms interconvert in water.</li>
+</ul>
+<h3>Cancelling cases (no net rotation)</h3>
+<ul>
+<li><b>Racemic mixture (±)</b>: 1 : 1 mixture of enantiomers; rotations cancel (<i>external</i> compensation). It can be resolved into (+) and (−).</li>
+<li><b>Meso compound</b>: a single molecule with a mirror plane or centre of symmetry; one half cancels the other (<i>internal</i> compensation). Cannot be resolved.</li>
+<li><b>Optical purity</b> (enantiomeric excess) = [α]<sub>observed</sub> / [α]<sub>pure</sub> × 100 %.</li>
+</ul>
+<div class="box warn">(+) / (−) is measured by experiment. It has <b>no fixed relation</b> to D / L (relative configuration) or to R / S (CIP rules).</div>
+</section>
+<section id="s4">
+<h2>How is the plane of PPL rotated?</h2>
+<p>The key idea: plane-polarised light is the <b>sum of two circularly polarised beams</b> of equal amplitude, one whose E vector spirals clockwise and one anticlockwise (two helices of opposite handedness). Their vector sum always lies in one fixed plane.</p>
+<ol>
+<li>Split the PPL into a clockwise (R, pink) and an anticlockwise (L, blue) circular component. In the animation the two helices add to the dark planar wave.</li>
+<li>In an <b>achiral</b> medium both travel at the same speed (n<sub>L</sub> = n<sub>R</sub>), stay in step, and the resultant stays in its original plane. No rotation.</li>
+<li>A <b>chiral</b> molecule is "handed" (like a screw thread), so it interacts differently with the two helices: n<sub>L</sub> ≠ n<sub>R</sub>.</li>
+<li>One component therefore travels slower; its phase lags more and more as it goes through the tube (the lag grows with path length l).</li>
+<li>On leaving the sample the two components recombine into a plane-polarised wave whose plane is <b>turned by half the phase difference</b>.</li>
+<li>In formula form: α = π l (n<sub>L</sub> − n<sub>R</sub>) / λ (radians). If n<sub>L</sub> &gt; n<sub>R</sub> the rotation is clockwise, (+).</li>
+<li>The enantiomer swaps the roles of L and R, so it gives exactly −α.</li>
+<li>An <b>achiral</b> molecule, in every orientation, has a mirror-image orientation that cancels its effect, so liquids of achiral molecules do not rotate. A chiral molecule's mirror image is a <i>different</i> molecule, so there is no cancellation.</li>
+</ol>
+<canvas id="cv_helix" width="760" height="300"></canvas>
+<div class="ctl">
+<label>Sample rotation α <input type="range" id="circ_a" min="-70" max="70" value="30" step="1"> <span class="val" id="circ_av">+30°</span></label>
+</div>
+<p class="cap">Blue and pink helices are the two circular components; the dark ribbon is their sum. Inside the tube the pink helix is delayed, so the dark plane swings.</p>
+<canvas id="cv_circ" width="760" height="300"></canvas>
+<p class="cap">The same thing end-on. Set α = 0: the resultant just oscillates along the vertical dashed line. Move α: one component is delayed by 2α, and the line of vibration swings by α, half of that.</p>
+</section>
+<section id="s5">
+<h2>Measuring the angle: the polarimeter</h2>
+<h3>Parts, in the order the light meets them</h3>
+<ol>
+<li><b>Monochromatic source</b>: sodium lamp (589 nm).</li>
+<li><b>Polariser</b> (fixed Nicol) makes the PPL.</li>
+<li><b>Sample tube</b> of known length l (1 or 2 dm) filled with solution of known concentration c.</li>
+<li><b>Analyser</b>: a second Nicol that can be rotated, fixed to a graduated circular scale with a vernier.</li>
+<li><b>Eyepiece / telescope</b>, usually with a <b>half-shade (Laurent) plate</b> covering half the field.</li>
+</ol>
+<h3>Why is the field dark or bright?</h3>
+<ol>
+<li>The polariser passes only light vibrating in one plane (take it as vertical, 0°).</li>
+<li><b>Dark (zero reading).</b> The analyser is turned to 90° to the polariser ("crossed"). Its axis is horizontal, but the light vibrates vertically, so the component along the analyser axis is cos 90° = 0. <b class="d">No light passes: the field is dark.</b></li>
+<li><b>Bright (sample inserted).</b> The optically active sample turns the vibration plane by α. Now the light is tilted by α from vertical, so it has a component sin α along the analyser axis. The analyser passes I₀ sin²α. <b class="l">Light gets through: the field turns bright</b>, and the larger α is, the brighter it is (maximum at 90°).</li>
+<li><b>Dark again (measurement).</b> Turn the analyser by the same angle α so that its axis is again at 90° to the new vibration plane. The component along it is zero again, <b class="d">the field goes dark</b>, and the angle you turned it through is the rotation α.</li>
+<li><b>Why a half-shade?</b> Near the dark setting the brightness changes only slowly (I ∝ (α − reading)²), so the eye cannot find the darkest point to better than a few degrees. In a half-shade instrument a small plate tilts the vibration plane in the two halves of the field by +ε and −ε. They pass sin²(δ + ε) and sin²(δ − ε), where δ = α − reading. They are <b>equal only at δ = 0</b>, and the eye is extremely sensitive to a brightness step between neighbouring halves, so the end-point can be set to a fraction of a degree. At the end-point both halves are equally, faintly lit (not black).</li>
+</ol>
+<h3>Procedure</h3>
+<ol>
+<li>With the empty (or solvent-filled) tube, rotate the analyser to the <b>crossed</b> position: dark field, or equal halves in a half-shade instrument. Note the scale reading: the <b>zero reading</b>.</li>
+<li>Fill the tube with the solution. The plain field brightens and the half-shade field shows <b>unequal halves</b>.</li>
+<li>Rotate the analyser until the original dark / equal-halves appearance returns.</li>
+<li>The angle through which the analyser was turned is the observed rotation α: clockwise = (+), anticlockwise = (−).</li>
+<li>Repeat several times, take the mean and compute [α] = α / (l·c).</li>
+<li><b>Ambiguity of 180°</b>: a reading of +30° could also be −150°. Halve the concentration: a true +30° gives +15°, a true −150° gives −75°.</li>
+</ol>
+<canvas id="cv_pol" width="760" height="360"></canvas>
+<div class="ctl">
+<label>Sample α <input type="range" id="pol_a" min="-70" max="70" value="30" step="1"> <span class="val" id="pol_av">+30°</span></label>
+<label>Analyser reading <input type="range" id="pol_r" min="-90" max="90" value="0" step="0.5"> <span class="val" id="pol_rv">0.0°</span></label>
+<button id="pol_seek">Find the end-point</button>
+</div>
+<div class="box why" id="pol_why"></div>
+<p class="cap">The analyser starts crossed (reading 0°, empty tube: dark). Turn it and read the live explanation above. (Brightness of the eyepiece circles is exaggerated for visibility.)</p>
+
+<h3>Calculator</h3>
+<div class="ctl">
+<label>[α] (°) <input type="number" id="c_spec" value="66.5" step="0.1"></label>
+<label>l (dm) <input type="number" id="c_l" value="2" step="0.5"></label>
+<label>c (g/mL) <input type="number" id="c_c" value="0.10" step="0.01"></label>
+<button id="c_go">Calculate &amp; send to simulator</button>
+</div>
+<p>Predicted α<sub>obs</sub> = [α] × l × c = <b id="c_out">+13.3°</b> &nbsp; (defaults: sucrose, 2 dm tube, 10 g per 100 mL).</p>
+</section>
+</div>
+<div class="panel" id="t5">
+<section id="s6">
+<h2>Optical isomerism in spiranes</h2>
+<p>A <b>spirane</b> has two rings joined at a single common atom (the spiro atom, sp³). The two rings lie in planes at right angles. Replace both C=C bonds of an allene by rings and you get a spirane; the chirality has the same origin: a <b>chiral axis</b>.</p>
+<h3>Condition for optical activity</h3>
+<ol>
+<li>The chiral axis runs through the spiro atom and the atom of each ring that lies opposite it (C2, C4, C6 in spiro[3.3]heptane).</li>
+<li>On <b>each ring</b>, the two groups on the axis atom must be <b>different</b> (here COOH and H on C2, and COOH and H on C6).</li>
+<li>Because the rings are perpendicular, no mirror plane survives. The molecule is chiral.</li>
+<li>If either ring carries two identical groups (COOH, COOH), a mirror plane exists and the compound is achiral.</li>
+</ol>
+<p><b>Classic example:</b> spiro[3.3]heptane-2,6-dicarboxylic acid. C2 is <i>not</i> a stereocentre (its two ring arms are the same), yet the molecule is resolvable.</p>
+<svg id="d_spiro" viewBox="0 0 780 230"></svg>
+<p class="cap">Ring 1 (C1–C4) lies in the paper. Ring 2 (C4–C7) is perpendicular to the paper, so C5 comes toward you and C7 goes away. On C2 the groups are in the perpendicular plane (wedge and hash); on C6 they are in the paper plane. The right-hand molecule is the mirror image.</p>
+<h3>Animated 3-D model</h3>
+<div id="th_spiro"></div>
+</section>
+<section id="s7">
+<h2>Hemispiranes (alkylidene-cycloalkanes)</h2>
+<p>A <b>hemispirane</b> is the half-way molecule between an allene and a spirane: <b>one</b> end is a ring, the other is an exocyclic C=C–(a,b). The chiral axis runs along the C=C and through the ring (C1 to C4).</p>
+<p class="g">allene (a,b at both ends) → hemispirane (one end = ring) → spirane (both ends = rings)</p>
+<h3>Condition for optical activity</h3>
+<ol>
+<li>The exocyclic carbon of the C=C must carry two <b>different</b> groups (COOH and H).</li>
+<li>The ring atom opposite the double bond (C4) must carry two <b>different</b> groups (CH₃ and H).</li>
+<li>The groups on the exocyclic carbon lie <b>in the plane of the ring</b> (all the sp² atoms are coplanar), while those on C4 lie above and below the ring. The two end planes are perpendicular, as in allenes.</li>
+<li>No mirror plane is left, so the compound is chiral. If the exocyclic carbon has two identical groups, or C4 has two identical groups, a mirror plane appears and it is achiral.</li>
+</ol>
+<p><b>Example:</b> 4-methylcyclohexylideneacetic acid. It has no stereocentre (C4's two ring arms are identical) yet it is chiral.</p>
+<svg id="d_hemi" viewBox="0 0 760 230"></svg>
+<p class="cap">The ring is drawn flat in the paper. The exocyclic carbon's COOH and H lie in the paper (blue); the CH₃ and H on C4 stick out of the paper. Right: mirror image.</p>
+<h3>Animated 3-D model</h3>
+<div id="th_hemi"></div>
+</section>
+<section id="s8">
+<h2>Allenes: the parent, and the symmetry rules</h2>
+<p>Allenes (C=C=C) are the model for all the axial cases. The two C=C bonds are at 90°, so the groups at one end lie in a plane perpendicular to the groups at the other end. Spiranes, hemispiranes and biphenyls are allene-like in exactly this sense.</p>
+<ol>
+<li>Each end carbon needs two <b>different</b> groups (here CH₃ and H) for the molecule to be chiral.</li>
+<li>If either end carries two identical groups there is a <b>mirror plane</b> and the allene is achiral.</li>
+<li>The page finds <b>all</b> the symmetry elements of the model by testing every operation that swaps or flips the x, y, z axes (48 operations), then lists them under the animation.</li>
+<li>Choose "Symmetry operation" in the test menu to watch a mirror, an inversion or a C₂ rotation being carried out on the molecule, and see whether it reproduces itself.</li>
+</ol>
+<h3>Animated 3-D model: penta-2,3-diene</h3>
+<div id="th_allene"></div>
+<div class="box warn"><b>Rule to remember:</b> a molecule is chiral when it has <b>no σ, no i and no Sₙ</b>. It is allowed to have C₂ axes. The chiral models here (allene, spirane, biphenyl) keep one C₂ axis (point group C₂) and are still chiral.</div>
+</section>
+<section id="s9">
+<h2>Optical isomerism in biphenyls (atropisomerism)</h2>
+<p>Biphenyl has no stereocentre, but when rotation about the C1–C1′ single bond is <b>blocked</b>, the molecule is frozen in a twisted shape that can be chiral. Stereoisomers produced by hindered rotation are called <b>atropisomers</b> (<i>a</i> = not, <i>tropos</i> = turning).</p>
+<h3>Conditions</h3>
+<ol>
+<li><b>Bulky ortho groups</b>: usually three, and best four, large groups in the 2, 2′, 6, 6′ positions (such as –NO₂, –COOH, –OCH₃, –I, –Br, –CH₃). They collide if the rings try to become coplanar. Small groups (F, H, OH) are not enough.</li>
+<li>The rings are therefore twisted, close to perpendicular, and cannot rotate past each other at room temperature.</li>
+<li><b>Each ring must be unsymmetrical</b>: its two ortho groups must differ (2 ≠ 6 and 2′ ≠ 6′).</li>
+<li>Why? If one ring has identical ortho groups (e.g. 2,6-dinitro), the plane of the <i>other</i> ring is a mirror plane, so the molecule is achiral (tick "ring A ortho groups identical" below and watch it).</li>
+<li>Barrier: roughly 90–100 kJ mol⁻¹ or more is needed so that isomers survive for hours (t½ ≥ about 1000 s at room temperature).</li>
+</ol>
+<p><b>Classic example:</b> 6,6′-dinitrodiphenic acid (2,2′-dicarboxy-6,6′-dinitrobiphenyl), the first biphenyl to be resolved (Christie and Kenner, 1922). Each ring carries NO₂ and COOH at its ortho positions.</p>
+<svg id="d_biph" viewBox="0 0 660 255"></svg>
+<p class="cap">Ring A is in the paper; ring B is perpendicular to it. Ring A's ortho groups are in the paper (blue), ring B's ortho groups point toward (pink) and away (green). Right: mirror image.</p>
+<h3>Animated 3-D model: mirror test</h3>
+<div id="th_biph"></div>
+
+<h3>Why bulky groups matter: racemisation animation (3-D)</h3>
+<p>To turn into its mirror image the ring must rotate about the C1–C1′ bond through a <b>planar</b> arrangement, where the ortho groups collide. That planar form has a mirror plane (the ring plane): it is achiral. Switch between the two cases:</p>
+<canvas id="cv_biph" class="drag" width="760" height="360"></canvas>
+<div class="ctl">
+<label>Molecule:
+<select id="biph_mode"><option value="large">6,6′-dinitrodiphenic acid (4 bulky ortho groups): locked</option><option value="small">biphenyl itself (ortho H only): free rotation</option></select></label>
+</div>
+<p class="cap">Ring B (right) turns about the C1–C1′ bond. With bulky groups the energy at the planar form is so high that the ring only wobbles near 90°. With ortho H only, the barrier is tiny: the ring swings through the flat form (amber plane = its mirror plane) and the enantiomeric twisted forms interconvert, so no optical activity can be isolated. The energy curve is schematic.</p>
+</section>
+<section id="s10">
+<h2>Optical isomerism in terphenyls</h2>
+<p>A terphenyl has three benzene rings in a chain (o-, m- or p-), so it has <b>two biaryl axes</b>. Each axis follows the biphenyl rules, and the number of stereoisomers depends on how many axes are stereogenic.</p>
+<ol>
+<li>The two biaryl bonds of p-terphenyl are <b>collinear</b>: they lie on one common <b>chiral axis</b> running through all three rings (green dashed line in the drawings and in the 3-D model). Each biaryl bond is its own stereogenic element (axis 1 and axis 2, orange).</li>
+<li>For an axis to be stereogenic, rotation about it must be blocked by bulky ortho groups.</li>
+<li>The two rings flanking that axis must each be unsymmetrical (their ortho groups must differ).</li>
+<li>In <b>p-terphenyl</b> the central ring sits between both axes. A central ring with bulky groups X at <b>2 and 5</b> is unsymmetrical at <i>both</i> axes. Each end ring carries one bulky ortho group Y.</li>
+<li>Each axis can be set one of two ways (Y up or Y down relative to the central ring), so with two axes there are up to <b>2² = 4</b> combinations.</li>
+<li>If the two end rings are <b>different</b>, all four are distinct: <b>two pairs of enantiomers</b> (the pairs are diastereomers, "syn" and "anti").</li>
+<li>If the end rings are <b>identical</b> (and the central ring is 2,5-symmetric), the molecule behaves like tartaric acid: <b>3 stereoisomers</b>, a pair of enantiomers plus one <b>meso</b> form.</li>
+</ol>
+<div class="flex">
+<div><svg id="d_t1" viewBox="0 0 400 235"></svg><p class="cap"><b>(up, up)</b>: enantiomer 1; only a C₂ axis.</p></div>
+<div><svg id="d_t2" viewBox="0 0 400 235"></svg><p class="cap"><b>(down, down)</b>: enantiomer 2.</p></div>
+<div><svg id="d_t3" viewBox="0 0 400 235"></svg><p class="cap"><b>(up, down)</b>: meso, has a centre of symmetry.</p></div>
+</div>
+<p class="cap">The central ring is drawn perpendicular to the paper (foreshortened; its near edge pink, its far edge green) and the two end rings face you. X is on C2 (near) and C5 (far) of the central ring; Y is on one ortho carbon of each end ring. The two Ar–Ar bonds (orange) are the two stereogenic axes and lie on one straight chiral axis. This is a model: X and Y must be large (I, Br, NO₂ …) to block rotation.</p>
+<h3>Animated 3-D model (X = iodine on the central ring, Y = bromine on the end rings)</h3>
+<ol>
+<li><b>(up, up)</b> and <b>(down, down)</b>: only the C₂ axis about the vertical maps the molecule onto itself. No mirror plane and no centre exist, so each is chiral, and each is the mirror image of the other.</li>
+<li><b>(up, down)</b>: inversion through the centre of the central ring maps it onto itself. It has a centre of symmetry, so it is achiral (meso) and does not rotate light.</li>
+</ol>
+<div id="th_terph"></div>
+</section>
+<section id="s11h">
+<h2>Optical isomerism due to helicity (helicenes and twisted terphenyls)</h2>
+<p>A molecule can be chiral simply because its whole backbone is coiled like a screw or a spring. This is <b>helical chirality</b>: no stereocentre, and no single chiral axis, only a helix. A right-handed helix is called <b>P</b> (plus), a left-handed one <b>M</b> (minus). The two are mirror images, cannot be superimposed, and are enantiomers.</p>
+<h3>Helicenes</h3>
+<ol>
+<li>A <b>[n]helicene</b> is made of n benzene rings fused <b>ortho</b> to each other, always turning the same way (like phenanthrene, benzo[c]phenanthrene …).</li>
+<li>With four or more rings the two ends crowd each other: the inner hydrogens would collide if the molecule were flat.</li>
+<li>To relieve the strain the rings stack above each other and the molecule coils into a <b>helix</b>, right-handed (P) or left-handed (M).</li>
+<li>The helix is rigid: to turn P into M the molecule would have to pass through a strained, nearly planar form. The barrier grows with n: about 17 kJ/mol for [4]helicene (cannot be resolved), about 100 kJ/mol for [5]helicene (racemises slowly) and about 150 kJ/mol for [6]helicene (stable).</li>
+<li>Because the molecule is itself a screw, it interacts very differently with the clockwise and anticlockwise circular components of light (see “How is the plane of PPL rotated?” in the Light tab). The specific rotation of [6]helicene is huge, of the order of ±3700°, thousands of times larger than for a typical chiral carbon compound.</li>
+<li>The helix has a <b>C₂ axis</b> (perpendicular to the helix axis) but no mirror plane and no centre, so it is chiral. Look for this in the model: the symmetry search finds only C₂.</li>
+</ol>
+<h3>Twisted terphenyls (o-terphenyl)</h3>
+<ol>
+<li>In o-terphenyl both outer rings sit on neighbouring carbons of the central ring and cannot all lie flat.</li>
+<li>Both outer rings therefore twist in the <b>same sense</b> about their bonds to the central ring. The result is a propeller or short helix with a C₂ axis, P or M.</li>
+<li>For plain o-terphenyl this twist reverses very easily, so it is a racemic, rapidly flipping mixture and shows no optical activity.</li>
+<li>It becomes resolvable only if bulky groups (or a long chain of ortho-linked rings, an ortho-phenylene oligomer) lock the helix, exactly as bulky ortho groups lock a biphenyl.</li>
+</ol>
+<h3>Animated 3-D model: is the helix superimposable on its mirror image?</h3>
+<p>The mirror-image helix is fitted onto the original. The red ✗ marks show atoms that cannot be made to coincide, whatever way the mirror image is turned. The green dashed line is the helix axis.</p>
+<div id="th_helix"></div>
+<div class="box warn">The helicene geometry is an idealised model (rings stacked along a helix with a pitch of 3.4 Å) built for the animation, not an optimised structure.</div>
+</section>
+</div>
+<div class="panel" id="t6">
+<section id="s11">
+<h2>Amine inversion (the "umbrella flip")</h2>
+<p>A tertiary or secondary amine NR¹R²R³ is pyramidal: the nitrogen is sp³ and its fourth "substituent" is a lone pair. With three different groups the molecule has no mirror plane, so it <i>looks</i> chiral. Yet such amines <b>cannot be resolved</b>, because the molecule turns inside out like an umbrella in a gale.</p>
+<ol>
+<li>Start with the pyramid: N at the top, three groups as the ribs, lone pair pointing up.</li>
+<li>The nitrogen moves toward the plane of the three groups while the ribs flatten.</li>
+<li>At the top of the barrier N is <b>planar and sp²</b>; the lone pair sits in a p orbital. This planar form has a mirror plane (σh, the plane of N and its three substituents): it is achiral.</li>
+<li>N then emerges on the other side: the lone pair now points down. That is the <b>mirror image</b> of the first pyramid (the flip is a reflection in σh; the dashed ghost shows it).</li>
+<li>No bond is broken. The barrier is only about 25–35 kJ mol⁻¹ for simple amines (ammonia ≈ 24 kJ mol⁻¹), so the flip happens roughly 10¹⁰–10¹¹ times per second at room temperature.</li>
+<li>The two enantiomers are in rapid equilibrium, so the amine is always racemic and shows no optical activity.</li>
+</ol>
+<canvas id="cv_amine" class="drag" width="760" height="380"></canvas>
+<div class="ctl">
+<label>Amine
+<select id="am_mode"><option value="diff">ethylmethylamine, CH₃–NH–C₂H₅ (three different groups)</option><option value="two">dimethylamine, CH₃–NH–CH₃ (two identical groups)</option><option value="same">trimethylamine, (CH₃)₃N (all identical)</option></select></label>
+<label>Speed <input type="range" id="am_sp" min="0.2" max="2" step="0.1" value="1"></label>
+</div>
+<p class="cap">Left: the real molecule flipping (N dark blue, C grey, H white; the translucent lobes are the lone pair), with the amber σh plane and a dashed mirror-image ghost. Right: energy against the position of N. Change the amine to see which symmetry elements the pyramid has (amber planes, C₃ axis). Drag to turn the model.</p>
+<h3>When can a nitrogen stereocentre be resolved?</h3>
+<ul>
+<li><b>Quaternary ammonium salts</b> (four different groups on N⁺) and <b>amine oxides</b>: no lone pair, so nothing to flip.</li>
+<li><b>Tröger's base</b>: the nitrogens sit at bridgeheads of a rigid frame, so they cannot invert. It was resolved by Prelog and Wieland (1944).</li>
+<li><b>Aziridines</b> (N in a three-membered ring): the planar transition state is strained, so the barrier is much higher and invertomers can be separated.</li>
+<li>For comparison, <b>phosphines</b> and <b>sulfoxides</b> invert far more slowly (barriers of the order of 100 kJ mol⁻¹ or more), so chiral ones are resolvable.</li>
+</ul>
+</section>
+</div>
+<div class="panel" id="t7">
+<section id="quiz"><h2>Practice</h2>
+<p>Three kinds of question are mixed at random: must / can / cannot be optically active, assign R/S from a drawing, and decide the relationship between two drawn stereoisomers. The R/S and relationship answers are computed from the same model as the drawings.</p>
+<div class="ctl"><span id="qz_score" class="val" style="min-width:240px">0 / 0 correct</span><button id="qz_reset">Reset score</button></div>
+<div id="qz_box"></div><div id="qz_fb"></div>
+<div class="ctl"><button id="qz_next" style="display:none">Next question →</button></div></section>
+</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const NS='http://www.w3.org/2000/svg';
+const COL={pink:'#d6336c',green:'#2b9348',blue:'#1c6dd0',ink:'#2a2f3b',grey:'#8a92a3'};
+function S(tag,attrs,parent,text){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(text!==undefined)e.textContent=text;if(parent)parent.appendChild(e);return e;}
+function line(g,a,b,col,w,dash){const at={x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:col,'stroke-width':w||2.5,'stroke-linecap':'round'};if(dash)at['stroke-dasharray']=dash;return S('line',at,g);}
+function wedge(g,a,b,col){const dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy),px=-dy/L*5.5,py=dx/L*5.5;S('polygon',{points:`${a[0]},${a[1]} ${b[0]+px},${b[1]+py} ${b[0]-px},${b[1]-py}`,fill:col},g);}
+function hash(g,a,b,col){const dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy),px=-dy/L,py=dx/L;for(let i=1;i<=6;i++){const t=i/6,x=a[0]+dx*t,y=a[1]+dy*t,w=t*5.5;S('line',{x1:x-px*w,y1:y-py*w,x2:x+px*w,y2:y+py*w,stroke:col,'stroke-width':2},g);}}
+function T(g,x,y,s,col,size,anchor){return S('text',{x:x,y:y,fill:col||COL.ink,'font-size':size||15,'text-anchor':anchor||'middle','font-weight':600},g,s);}
+function bond(g,a,b,type){if(type==='wedge')wedge(g,a,b,COL.pink);else if(type==='hash')hash(g,a,b,COL.green);else line(g,a,b,COL.blue,2.6);}
+function lab(g,a,b,s,type){const dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy);const col=type==='wedge'?COL.pink:type==='hash'?COL.green:COL.blue;T(g,b[0]+dx/L*(8+s.length*3.6),b[1]+dy/L*12+5,s,col,15);}
+function ring(g,pts,col,w){S('polygon',{points:pts.map(p=>p.join(',')).join(' '),fill:'none',stroke:col,'stroke-width':w||2.5,'stroke-linejoin':'round'},g);}
+function hexPts(cx,cy,r){const p=[];for(let i=0;i<6;i++){const a=Math.PI/3*i;p.push([cx+r*Math.cos(a),cy+r*Math.sin(a)]);}return p;}
+function mirrorLine(g,x,y0,y1,label){line(g,[x,y0],[x,y1],COL.grey,1.5,'6 5');T(g,x,y0-6,label||'mirror',COL.grey,12);}
+
+/* ---------- static 2-D diagrams ---------- */
+(function(){const g=$('d_enant');
+function mol(cx,cy,items){items.forEach(([s,dx,dy,t])=>{const a=[cx,cy],b=[cx+dx,cy+dy];bond(g,a,b,t);lab(g,a,b,s,t);});T(g,cx,cy+5,'C',COL.ink,14);}
+const L=[['Cl',-50,-45,'plane'],['Br',50,-45,'plane'],['F',-45,50,'wedge'],['H',45,50,'hash']];
+mol(140,105,L);mol(420,105,L.map(([s,dx,dy,t])=>[s,-dx,dy,t]));
+mirrorLine(g,280,28,190);})();
+
+(function(){const g=$('d_nicol');
+S('polygon',{points:'110,60 500,60 545,175 155,175',fill:'rgba(120,180,240,.16)',stroke:'#5b8fd0','stroke-width':2},g);
+line(g,[300,60],[345,175],'#7a3db8',4);
+T(g,322,48,'Canada balsam (n = 1.55)',COL.ink,12);
+line(g,[30,117],[132,117],'#d9820a',2.5);
+for(let i=0;i<5;i++){const x=40+i*16,a=i*Math.PI/5+0.3;line(g,[x-9*Math.cos(a),117-9*Math.sin(a)],[x+9*Math.cos(a),117+9*Math.sin(a)],'#d9820a',1.5);}
+T(g,60,98,'ordinary light',COL.ink,12);
+line(g,[132,117],[620,117],COL.blue,3);
+line(g,[575,102],[575,132],COL.blue,2.5);line(g,[595,102],[595,132],COL.blue,2.5);
+T(g,585,150,'e-ray: plane-polarised',COL.blue,12);
+line(g,[132,117],[332,140],COL.pink,3);line(g,[332,140],[308,175],COL.pink,3);
+T(g,205,152,'o-ray',COL.pink,13);
+T(g,250,205,'o-ray: total internal reflection at the balsam (angle > 69°)',COL.pink,12);
+T(g,250,222,'→ absorbed on the blackened face',COL.pink,12);
+T(g,330,240,'calcite: n(o) = 1.658, n(e) = 1.486',COL.grey,11);
+})();
+
+function spiro(g,ox,oy,swap){
+const C2=[ox+20,oy+115],C1=[ox+70,oy+65],C3=[ox+70,oy+165],C4=[ox+120,oy+115],C5=[ox+170,oy+133],C7=[ox+170,oy+97],C6=[ox+220,oy+115];
+line(g,[ox-10,oy+115],[ox+250,oy+115],COL.grey,1.2,'2 5');
+[[C2,C1],[C1,C4],[C4,C3],[C3,C2]].forEach(p=>line(g,p[0],p[1],COL.blue,2.6));
+line(g,C4,C5,COL.pink);line(g,C5,C6,COL.pink);line(g,C4,C7,COL.green);line(g,C7,C6,COL.green);
+const tw=[ox-8,oy+148],aw=[ox-8,oy+82];
+wedge(g,C2,tw,COL.pink);hash(g,C2,aw,COL.green);
+T(g,tw[0]-8,tw[1]+16,swap?'H':'COOH',COL.pink);T(g,aw[0]-8,aw[1]-8,swap?'COOH':'H',COL.green);
+const u=[ox+255,oy+68],d=[ox+255,oy+162];
+line(g,C6,u,COL.blue,2.6);line(g,C6,d,COL.blue,2.6);
+T(g,u[0]+22,u[1]-2,'COOH',COL.blue);T(g,d[0]+10,d[1]+16,'H',COL.blue);
+T(g,ox+20,oy+138,'C2',COL.grey,11);T(g,ox+120,oy+140,'spiro C4',COL.grey,11);T(g,ox+222,oy+138,'C6',COL.grey,11);}
+(function(){const g=$('d_spiro');spiro(g,50,10,false);spiro(g,430,10,true);mirrorLine(g,380,20,215,'mirror = plane of paper');})();
+
+function hemi(g,ox,oy,swap){
+const cx=ox+150,cy=oy+115,r=50;const h=hexPts(cx,cy,r);
+ring(g,h,COL.blue,2.6);
+const C1=h[3],C4=h[0],E=[ox+52,cy];
+line(g,[C1[0],C1[1]-3],[E[0],E[1]-3],COL.blue,2.6);line(g,[C1[0],C1[1]+3],[E[0],E[1]+3],COL.blue,2.6);
+const up=[ox+22,cy-38],dn=[ox+22,cy+38];
+line(g,E,up,COL.blue,2.6);line(g,E,dn,COL.blue,2.6);
+T(g,up[0]-14,up[1]-4,swap?'H':'COOH',COL.blue);T(g,dn[0]-14,dn[1]+16,swap?'COOH':'H',COL.blue);
+const w=[C4[0]+34,C4[1]+30],hs=[C4[0]+34,C4[1]-30];
+wedge(g,C4,w,COL.pink);hash(g,C4,hs,COL.green);
+T(g,w[0]+22,w[1]+12,'CH₃',COL.pink);T(g,hs[0]+12,hs[1]-6,'H',COL.green);
+T(g,C1[0]+18,cy-6,'C1',COL.grey,11);T(g,C4[0]-16,cy-6,'C4',COL.grey,11);
+line(g,[ox+40,oy+195],[ox+280,oy+195],COL.grey,1.2,'2 5');T(g,ox+160,oy+212,'chiral axis',COL.grey,11);}
+(function(){const g=$('d_hemi');hemi(g,40,5,false);hemi(g,420,5,true);mirrorLine(g,380,20,215,'mirror');})();
+
+function biph(g,ox,oy,swap){
+const cx=ox+70,cy=oy+115,r=45;const h=hexPts(cx,cy,r);ring(g,h,COL.blue,2.6);
+S('circle',{cx:cx,cy:cy,r:22,fill:'none',stroke:COL.blue,'stroke-width':1.2,opacity:.5},g);
+const C1=h[0],C2=h[5],C6=h[1];
+const t1=[C2[0],oy+38],t2=[C6[0],oy+192];
+line(g,C2,t1,COL.blue,2.6);line(g,C6,t2,COL.blue,2.6);
+T(g,t1[0],t1[1]-6,'COOH',COL.blue);T(g,t2[0],t2[1]+18,'NO₂',COL.blue);
+const B1=[C1[0]+34,cy];line(g,C1,B1,COL.blue,2.6);
+const n=[ox+172,cy+20],f=[ox+172,cy-20],n2=[ox+205,cy+20],f2=[ox+205,cy-20],e=[ox+226,cy];
+line(g,B1,n,COL.pink);line(g,n,n2,COL.pink);line(g,n2,e,COL.pink);
+line(g,B1,f,COL.green);line(g,f,f2,COL.green);line(g,f2,e,COL.green);
+const wn=[ox+172,cy+66],wf=[ox+172,cy-66];
+wedge(g,n,wn,COL.pink);hash(g,f,wf,COL.green);
+T(g,wn[0],wn[1]+18,swap?'NO₂':'COOH',COL.pink);T(g,wf[0],wf[1]-8,swap?'COOH':'NO₂',COL.green);
+T(g,cx,oy+244,'ring A (in paper)',COL.grey,11);T(g,ox+200,oy+244,'ring B (⟂ paper)',COL.grey,11);}
+(function(){const g=$('d_biph');biph(g,10,0,false);biph(g,345,0,true);mirrorLine(g,320,26,235,'mirror = plane of paper');})();
+
+function terph(g,upL,upR){
+const cy=118;
+line(g,[8,cy],[392,cy],COL.green,2,'9 6');T(g,200,22,'chiral axis: both Ar–Ar bonds lie on it',COL.green,12);
+function end(cx,dir,up){ring(g,hexPts(cx,cy,38),COL.blue,2.6);S('circle',{cx:cx,cy:cy,r:19,fill:'none',stroke:COL.blue,'stroke-width':1.1,opacity:.45},g);
+const ortho=[cx+dir*19,cy+(up?-32.9:32.9)];const t=[ortho[0]+dir*13,ortho[1]+(up?-22.5:22.5)];line(g,ortho,t,COL.blue,2.6);T(g,t[0]+dir*8,t[1]+(up?-3:15),'Y',COL.blue,16);}
+end(75,1,upL);end(325,-1,upR);
+const C=[[150,cy],[175,cy+24],[225,cy+24],[250,cy],[225,cy-24],[175,cy-24]];
+line(g,C[0],C[1],COL.pink);line(g,C[1],C[2],COL.pink);line(g,C[2],C[3],COL.pink);
+line(g,C[0],C[5],COL.green);line(g,C[5],C[4],COL.green);line(g,C[4],C[3],COL.green);
+line(g,[113,cy],[150,cy],'#e8590c',5);line(g,[250,cy],[287,cy],'#e8590c',5);
+T(g,131,cy+17,'axis 1',"#c2410c",11);T(g,268,cy+17,'axis 2',"#c2410c",11);
+wedge(g,C[1],[165,cy+62],COL.pink);T(g,162,cy+80,'X',COL.pink,16);
+hash(g,C[4],[235,cy-62],COL.green);T(g,240,cy-68,'X',COL.green,16);
+T(g,200,cy+106,'central ring ⟂ paper: near edge pink, far edge green',COL.grey,11);}
+terph($('d_t1'),true,true);terph($('d_t2'),false,false);terph($('d_t3'),true,false);
+
+/* ---------- animation helpers ---------- */
+let paused=matchMedia('(prefers-reduced-motion: reduce)').matches,clock=0,lastTs=null;
+$('pause').onclick=()=>{paused=!paused;$('pause').textContent=paused?'▶ Play animations':'⏸ Pause animations';};
+function fit(c){const dpr=Math.min(window.devicePixelRatio||1,2);const W=c.width,H=c.height;c.width=W*dpr;c.height=H*dpr;c._W=W;c._H=H;c._dpr=dpr;}
+function ctx2(c){const x=c.getContext('2d');x.setTransform(c._dpr,0,0,c._dpr,0,0);x.clearRect(0,0,c._W,c._H);x.lineCap='round';x.lineJoin='round';return x;}
+function txt(x,s,px,py,col,size,al,wt){x.fillStyle=col||'#2a2f3b';x.font=(wt||'600')+' '+(size||13)+'px system-ui,sans-serif';x.textAlign=al||'center';x.fillText(s,px,py);}
+function ln(x,a,b,c,w,dash){x.beginPath();x.moveTo(a[0],a[1]);x.lineTo(b[0],b[1]);x.strokeStyle=c;x.lineWidth=w||2;x.setLineDash(dash||[]);x.stroke();x.setLineDash([]);}
+function rad(d){return d*Math.PI/180;}
+function rgba(h,a){const n=parseInt(h.slice(1),16);return `rgba(${n>>16},${(n>>8)&255},${n&255},${a})`;}
+function dial(x,cx,cy,r,th,col,label,sub,arcTo){
+x.beginPath();x.arc(cx,cy,r,0,7);x.strokeStyle='#b9bfd0';x.lineWidth=1.5;x.stroke();
+ln(x,[cx,cy-r],[cx,cy+r],'#d5d9e5',1,[3,3]);
+if(arcTo!==undefined&&Math.abs(arcTo)>0.01){x.beginPath();x.arc(cx,cy,r+6,-Math.PI/2,-Math.PI/2+arcTo,arcTo<0);x.strokeStyle=col;x.lineWidth=2;x.stroke();}
+if(th!==null){const v=[Math.sin(th)*r,-Math.cos(th)*r];ln(x,[cx-v[0],cy-v[1]],[cx+v[0],cy+v[1]],col,4);}
+txt(x,label,cx,cy+r+19,'#2a2f3b',12);if(sub)txt(x,sub,cx,cy+r+34,'#5b6472',11,'center','500');}
+function arrow(x,a,b,col,w){ln(x,a,b,col,w||2.5);const d=Math.atan2(b[1]-a[1],b[0]-a[0]);x.beginPath();x.moveTo(b[0],b[1]);x.lineTo(b[0]-9*Math.cos(d-0.4),b[1]-9*Math.sin(d-0.4));x.lineTo(b[0]-9*Math.cos(d+0.4),b[1]-9*Math.sin(d+0.4));x.closePath();x.fillStyle=col;x.fill();}
+function pathPoly(x,pts){x.beginPath();pts.forEach((p,i)=>i?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1]));}
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const ease=u=>{u=clamp(u,0,1);return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;};
+
+/* ---------- beam scene (PPL, Malus, rotation, polarimeter) ---------- */
+function beamScene(id,o){
+const c=$(id);fit(c);const H=c._H;const st={alpha:o.alpha||0,r:o.r||0,seek:false,B:false};
+const AX=112,polX=170,s0=250,s1=480,anaX=o.malus?430:545,eyeX=737,sdX=o.analyser?300:s1;
+const xs=[];for(let x=36;x<=730;x+=4)xs.push(x);
+const PAL=['#d9820a','#c0392b','#2b9348','#7a3db8','#0f8b8d','#b8860b'];
+const proj=(px,ey,ez)=>[px-0.45*ez,AX-ey+0.3*ez];
+const ta=()=>rad(o.malus?st.r:90+st.r);
+const thSample=px=>{const a=rad(st.alpha);if(o.sample&&px>=s0&&px<=s1)return a*(px-s0)/(s1-s0);if(o.sample&&px>s1)return a;return 0;};
+const wv=(px,t)=>Math.sin(2*Math.PI*px/70-t*4.4);
+function curve(th,amp,from,to,t){const p=[];for(const px of xs){if(px<from||px>to)continue;const s=wv(px,t)*amp;const a=th(px);p.push(proj(px,Math.cos(a)*s,-Math.sin(a)*s));}return p;}
+function ribbon(x,p,col,fa,lw,dash){if(p.length<2)return;x.beginPath();x.moveTo(p[0][0],AX);p.forEach(q=>x.lineTo(q[0],q[1]));x.lineTo(p[p.length-1][0],AX);x.closePath();x.fillStyle=rgba(col,fa);x.fill();pathPoly(x,p);x.strokeStyle=col;x.lineWidth=lw||2.4;x.setLineDash(dash||[]);x.stroke();x.setLineDash([]);}
+function plate(x,xc,phi,col){const C=[[-66,-66],[66,-66],[66,66],[-66,66]].map(([ey,ez])=>proj(xc,ey,ez));
+x.save();pathPoly(x,C);x.closePath();x.fillStyle=rgba(col,.12);x.fill();x.clip();
+const d=[Math.cos(phi),-Math.sin(phi)],n=[Math.sin(phi),Math.cos(phi)];
+for(let k=-14;k<=14;k++){const q=k*9;ln(x,proj(xc,n[0]*q-d[0]*120,n[1]*q-d[1]*120),proj(xc,n[0]*q+d[0]*120,n[1]*q+d[1]*120),rgba(col,.5),1.1);}
+x.restore();pathPoly(x,C);x.closePath();x.strokeStyle=col;x.lineWidth=1.8;x.stroke();}
+let lastWhy='';
+function why(){if(!o.analyser||o.malus||!o.why)return;
+const a=st.alpha,r=st.r,dl=rad(a-r),I=Math.pow(Math.sin(dl),2),e=0.07,Il=Math.pow(Math.sin(dl+e),2),Ir=Math.pow(Math.sin(dl-e),2);
+let h=`<b>Light after the sample</b> vibrates ${Math.abs(a).toFixed(0)}° ${a>0?'clockwise':a<0?'anticlockwise':''} from the polariser's plane. <b>The analyser axis</b> is turned ${(90+r).toFixed(1)}° from it. They differ by ${(90-(a-r)).toFixed(1)}°, so the analyser passes cos²(${(90-(a-r)).toFixed(1)}°) = sin²(${(a-r).toFixed(1)}°) = <b>${(I*100).toFixed(1)}%</b> of the light.<br>`;
+if(I<0.0005)h+=`<b class="d">Plain field: DARK.</b> The light vibrates exactly at 90° to the analyser axis, so nothing can pass. This is the end-point: <b>reading = α = ${a.toFixed(1)}°</b>. `;
+else if(I<0.1)h+=`<b class="l">Plain field: DIM.</b> A little light leaks through because the analyser is ${Math.abs(a-r).toFixed(1)}° away from the dark setting. `;
+else h+=`<b class="l">Plain field: BRIGHT.</b> The analyser is ${Math.abs(a-r).toFixed(1)}° away from the dark setting, so much of the light passes. `;
+h+=`<br><b>Half-shade:</b> the two halves pass ${(Il*100).toFixed(1)}% and ${(Ir*100).toFixed(1)}%. `;
+h+=Math.abs(Il-Ir)<0.0007?'<b class="d">They are equal: end-point reached</b> (both halves equally faint).':(Il>Ir?'The left half is brighter: turn the analyser the other way until they match.':'The right half is brighter: turn the analyser the other way until they match.');
+if(h!==lastWhy){lastWhy=h;$(o.why).innerHTML=h;}}
+function draw(t){
+if(o.analyser&&!o.malus&&st.seek){const d=st.alpha-st.r;if(Math.abs(d)<0.3){st.r=st.alpha;st.seek=false;}else st.r+=Math.sign(d)*0.6;if(o.onr)o.onr(st.r);}
+const x=ctx2(c);
+ln(x,[10,AX],[728,AX],'#cfd5e3',1.2,[4,4]);
+x.beginPath();x.arc(20,AX,10,0,7);x.fillStyle='#ffd23f';x.fill();for(let k=0;k<8;k++){const a=k*Math.PI/4;ln(x,[20+14*Math.cos(a),AX+14*Math.sin(a)],[20+19*Math.cos(a),AX+19*Math.sin(a)],'#e9a900',2);}
+txt(x,'Na lamp',24,AX+86,'#5b6472',12);
+if(o.sample){x.fillStyle='rgba(120,180,240,.16)';x.fillRect(s0,AX-34,s1-s0,68);x.strokeStyle='#5b8fd0';x.lineWidth=2;x.strokeRect(s0,AX-34,s1-s0,68);txt(x,'Sample tube (length l)',(s0+s1)/2,AX+86,'#2a2f3b',12);}
+const aOut=rad(o.sample?st.alpha:0),tA=ta();
+for(let k=0;k<6;k++){const thk=k*Math.PI/6+0.25*Math.sin(t*0.7+k)+k*0.1;ribbon(x,curve(()=>thk,34,36,polX,t),PAL[k],.14,1.8);}
+const endPol=o.analyser?anaX:735;
+ribbon(x,curve(thSample,44,polX,endPol,t),'#1c6dd0',.22,2.6);
+if(o.B)ribbon(x,curve(px=>thSample(px)+Math.PI/2,26,polX,endPol,t),'#2b9348',0,1.8,[5,4]);
+if(o.analyser){const amp=Math.cos(aOut-tA);ribbon(x,curve(()=>tA,44*amp,anaX,735,t),'#7a3db8',.22,2.6);}
+plate(x,polX,0,'#5b6472');txt(x,'Polariser',polX,AX+86,'#2a2f3b',12);
+if(o.analyser){plate(x,anaX,tA,'#7a3db8');txt(x,'Analyser',anaX,AX+86,'#7a3db8',12);
+if(!o.malus){x.beginPath();x.ellipse(eyeX,AX,14,9,0,0,7);x.fillStyle='#fff';x.fill();x.strokeStyle='#2a2f3b';x.lineWidth=1.5;x.stroke();x.beginPath();x.arc(eyeX-3,AX,4.5,0,7);x.fillStyle='#2a2f3b';x.fill();txt(x,'Eye',eyeX,AX+86,'#2a2f3b',12);}}
+const DY=H-72,r=27;
+txt(x,'as the eye sees it (looking toward the source):',10,DY-46,'#5b6472',11,'left','500');
+{const cx=62;x.beginPath();x.arc(cx,DY,r,0,7);x.strokeStyle='#b9bfd0';x.lineWidth=1.5;x.stroke();for(let k=0;k<6;k++){const th=k*Math.PI/6+0.25*Math.sin(t*0.7+k)+k*0.1;const v=[Math.sin(th)*r,-Math.cos(th)*r];ln(x,[cx-v[0],DY-v[1]],[cx+v[0],DY+v[1]],PAL[k],2);}txt(x,'unpolarised',cx,DY+r+19,'#2a2f3b',12);txt(x,'all planes',cx,DY+r+34,'#5b6472',11,'center','500');}
+dial(x,polX,DY,r,0,'#1c6dd0','after polariser','one plane');
+const A=rad(st.alpha);
+if(o.sample){dial(x,sdX,DY,r,A,'#1c6dd0','after sample',(st.alpha>0?'+':'')+st.alpha.toFixed(0)+'°  '+(st.alpha>0?'clockwise (+)':st.alpha<0?'anticlockwise (−)':'no rotation'),A);}
+if(o.analyser){
+const adx=o.malus?anaX:430;
+dial(x,adx,DY,r,tA,'#7a3db8','analyser axis',o.malus?'β = '+st.r.toFixed(0)+'°':'reading '+(st.r>0?'+':'')+st.r.toFixed(1)+'°');
+if(o.malus){const I=Math.pow(Math.cos(aOut-tA),2),v=Math.round(25+230*I);
+x.beginPath();x.arc(640,DY,r,0,7);x.fillStyle=`rgb(${v},${v},${v})`;x.fill();x.strokeStyle='#2a2f3b';x.lineWidth=1.5;x.stroke();
+txt(x,'light after analyser',640,DY+r+19,'#2a2f3b',12);txt(x,'I/I₀ = cos²β = '+(I*100).toFixed(0)+'%',640,DY+r+34,'#5b6472',11,'center','500');
+const gx0=235,gx1=385,gb=DY+18,gt=DY-30;
+ln(x,[gx0,gb],[gx1,gb],'#2a2f3b',1.3);ln(x,[gx0,gb],[gx0,gt],'#2a2f3b',1.3);
+txt(x,'I/I₀',gx0,gt-6,'#2a2f3b',11,'left');txt(x,'0°',gx0,gb+14,'#5b6472',10);txt(x,'90°',(gx0+gx1)/2,gb+14,'#5b6472',10);txt(x,'180°',gx1,gb+14,'#5b6472',10);
+x.beginPath();for(let d=0;d<=180;d+=3){const px=gx0+(gx1-gx0)*d/180,py=gb-(gb-gt)*Math.pow(Math.cos(rad(d)),2);d?x.lineTo(px,py):x.moveTo(px,py);}x.strokeStyle='#7a3db8';x.lineWidth=2;x.stroke();
+const bx=gx0+(gx1-gx0)*(st.r/180),by=gb-(gb-gt)*I;x.beginPath();x.arc(bx,by,6,0,7);x.fillStyle='#d6336c';x.fill();}
+else{
+const e=0.07;const dI=A-rad(st.r);
+const Ip=Math.pow(Math.sin(dI),2),Il=Math.pow(Math.sin(dI+e),2),Ir=Math.pow(Math.sin(dI-e),2);
+const g=I=>{const v=Math.round(25+230*Math.min(1,I*10));return `rgb(${v},${v},${v})`;};
+const c1=560,c2=672;
+x.beginPath();x.arc(c1,DY,r,0,7);x.fillStyle=g(Ip);x.fill();x.strokeStyle='#2a2f3b';x.lineWidth=1.5;x.stroke();
+x.beginPath();x.arc(c2,DY,r,Math.PI/2,Math.PI*1.5);x.closePath();x.fillStyle=g(Il);x.fill();
+x.beginPath();x.arc(c2,DY,r,-Math.PI/2,Math.PI/2);x.closePath();x.fillStyle=g(Ir);x.fill();
+x.beginPath();x.arc(c2,DY,r,0,7);x.strokeStyle='#2a2f3b';x.lineWidth=1.5;x.stroke();ln(x,[c2,DY-r],[c2,DY+r],'#2a2f3b',1);
+txt(x,'plain field',c1,DY+r+19,'#2a2f3b',12);txt(x,Ip<0.0005?'DARK = end-point':Ip<0.1?'dim':'BRIGHT',c1,DY+r+34,Ip<0.0005?'#2b9348':'#5b6472',11,'center','500');
+txt(x,'half-shade field',c2,DY+r+19,'#2a2f3b',12);const eq=Math.abs(Il-Ir)<0.0007;txt(x,eq?'EQUAL = end-point':'halves differ',c2,DY+r+34,eq?'#2b9348':'#5b6472',11,'center','500');}
+why();}
+}
+return {st,draw,cv:c};}
+
+/* ---------- two circular components as helices ---------- */
+function helixScene(id){
+const c=$(id);fit(c);const st={alpha:30};
+const AX=140,s0=250,s1=480,k=2*Math.PI/70;
+const xs=[];for(let x=36;x<=728;x+=3)xs.push(x);
+const proj=(px,ey,ez)=>[px-0.45*ez,AX-ey+0.3*ez];
+const aAt=px=>{const a=rad(st.alpha);return px<s0?0:px>s1?a:a*(px-s0)/(s1-s0);};
+function draw(t){
+const x=ctx2(c);const A=26,Hh=c._H;
+ln(x,[10,AX],[740,AX],'#cfd5e3',1.2,[4,4]);
+x.fillStyle='rgba(120,180,240,.14)';x.fillRect(s0,AX-62,s1-s0,124);x.strokeStyle='#5b8fd0';x.lineWidth=2;x.strokeRect(s0,AX-62,s1-s0,124);
+txt(x,'chiral sample: n_L ≠ n_R',(s0+s1)/2,AX+84,'#2a2f3b',12);
+const Lp=[],Rp=[],Sp=[];
+for(const px of xs){const a=aAt(px);
+const thL=-2.2*t+k*px,thR=2.2*t-k*px+2*a;
+const L=[A*Math.cos(thL),-A*Math.sin(thL)],R=[A*Math.cos(thR),-A*Math.sin(thR)];
+Lp.push(proj(px,L[0],L[1]));Rp.push(proj(px,R[0],R[1]));
+Sp.push(proj(px,L[0]+R[0],L[1]+R[1]));}
+pathPoly(x,Lp);x.strokeStyle='#1c6dd0';x.lineWidth=2.2;x.stroke();
+pathPoly(x,Rp);x.strokeStyle='#d6336c';x.lineWidth=2.2;x.stroke();
+x.beginPath();x.moveTo(Sp[0][0],AX);Sp.forEach(q=>x.lineTo(q[0],q[1]));x.lineTo(Sp[Sp.length-1][0],AX);x.closePath();x.fillStyle='rgba(42,47,59,.18)';x.fill();
+pathPoly(x,Sp);x.strokeStyle='#2a2f3b';x.lineWidth=3;x.stroke();
+txt(x,'●  anticlockwise helix (L)',20,30,'#1c6dd0',13,'left');
+txt(x,'●  clockwise helix (R)',20,50,'#d6336c',13,'left');
+txt(x,'●  sum = plane-polarised light',20,70,'#2a2f3b',13,'left');
+const a=st.alpha;
+txt(x,'Phase lag of one helix in the tube: 2α = '+(2*a).toFixed(0)+'°',20,Hh-40,'#2a2f3b',13,'left');
+txt(x,'Plane of the sum turns by α = '+(a>0?'+':'')+a.toFixed(0)+'°  (half the lag)',20,Hh-18,'#5b3fd1',14,'left');}
+return {st,draw,cv:c};}
+
+/* ---------- end-on circular components ---------- */
+function circScene(id){
+const c=$(id);fit(c);const st={alpha:30};
+function vec(th){return [Math.sin(th),-Math.cos(th)];}
+function draw(t){
+const x=ctx2(c);const cx=170,cy=150,R=118,len=52,a=rad(st.alpha),ph=t*2.2;
+x.beginPath();x.arc(cx,cy,R,0,7);x.strokeStyle='#cfd5e3';x.lineWidth=1.5;x.stroke();
+const v0=vec(0),va=vec(a);
+ln(x,[cx-v0[0]*R,cy-v0[1]*R],[cx+v0[0]*R,cy+v0[1]*R],'#b9bfd0',1.5,[5,5]);
+ln(x,[cx-va[0]*R,cy-va[1]*R],[cx+va[0]*R,cy+va[1]*R],'#2a2f3b',2.2);
+const L=vec(-ph).map(q=>q*len),Rv=vec(ph+2*a).map(q=>q*len);
+const sum=[L[0]+Rv[0],L[1]+Rv[1]];
+const tip=p=>[cx+p[0],cy+p[1]];
+ln(x,tip(L),tip(sum),'rgba(0,0,0,.25)',1,[4,3]);ln(x,tip(Rv),tip(sum),'rgba(0,0,0,.25)',1,[4,3]);
+arrow(x,[cx,cy],tip(L),'#1c6dd0');arrow(x,[cx,cy],tip(Rv),'#d6336c');arrow(x,[cx,cy],tip(sum),'#2a2f3b',3.5);
+txt(x,'original plane',cx-R+8,cy-R-4,'#8a92a3',11,'left','500');
+txt(x,'view: looking toward the source',cx,cy+R+22,'#5b6472',11,'center','500');
+const px=355;
+txt(x,'●  anticlockwise component (n_L)',px,60,'#1c6dd0',14,'left');
+txt(x,'●  clockwise component (n_R)',px,88,'#d6336c',14,'left');
+txt(x,'●  resultant = plane-polarised light',px,116,'#2a2f3b',14,'left');
+txt(x,'Phase lag of one component:  2α = '+(2*st.alpha).toFixed(0)+'°',px,168,'#2a2f3b',14,'left');
+txt(x,'Plane turns by half of it:    α = '+(st.alpha>0?'+':'')+st.alpha.toFixed(0)+'°',px,196,'#5b3fd1',15,'left');
+txt(x,st.alpha>0?'n_L > n_R → clockwise → dextrorotatory (+)':st.alpha<0?'n_L < n_R → anticlockwise → laevorotatory (−)':'n_L = n_R → no rotation (achiral medium)',px,230,'#5b6472',13,'left','500');}
+return {st,draw,cv:c};}
+
+/* =====================================================================
+   3-D MOLECULES: atoms, bonds, hydrogens, symmetry detection
+   ===================================================================== */
+const V3={add:(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]],sub:(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]],mul:(a,k)=>[a[0]*k,a[1]*k,a[2]*k],dot:(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],cross:(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],norm:a=>{const l=Math.hypot(a[0],a[1],a[2])||1;return [a[0]/l,a[1]/l,a[2]/l];}};
+const MI=[[1,0,0],[0,1,0],[0,0,1]],MM=[[-1,0,0],[0,0,1],[0,1,0]],SZ=[[1,0,0],[0,1,0],[0,0,-1]],SY=[[1,0,0],[0,-1,0],[0,0,1]];
+function applyM(M,p){return [0,1,2].map(i=>M[i][0]*p[0]+M[i][1]*p[1]+M[i][2]*p[2]);}
+function matMul(A,B){return [0,1,2].map(i=>[0,1,2].map(j=>A[i][0]*B[0][j]+A[i][1]*B[1][j]+A[i][2]*B[2][j]));}
+const dist=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1],a[2]-b[2]);
+function rodrigues(p,a,ang){const c=Math.cos(ang),s=Math.sin(ang),k=V3.dot(a,p)*(1-c),cr=V3.cross(a,p);return [p[0]*c+cr[0]*s+a[0]*k,p[1]*c+cr[1]*s+a[1]*k,p[2]*c+cr[2]*s+a[2]*k];}
+function newMol(){return {atoms:[],bonds:[],tags:[]};}
+function addAtom(m,e,p,hyb,sig){m.atoms.push({e,p:p.slice(),hyb:hyb||0,sig:!!sig});return m.atoms.length-1;}
+function addBond(m,i,j,o){m.bonds.push([i,j,o||1]);}
+function Fr(m,T){return {m,T,a(e,p,hyb,sig){return addAtom(m,e,applyM(T,p),hyb,sig);},b(i,j,o){addBond(m,i,j,o);},with(T2){return Fr(m,matMul(T,T2));}};}
+function group(F,type,att,P,d,n,tag){
+const m=V3.cross(n,d);let first;
+if(type==='CH3'){first=F.a('C',V3.add(P,V3.mul(d,1.52)),3);F.b(att,first,1);}
+else if(type==='Br'||type==='I'){first=F.a(type,V3.add(P,V3.mul(d,type==='I'?2.10:1.90)),0);F.b(att,first,1);}
+else if(type==='COOH'){const cp=V3.add(P,V3.mul(d,1.52));first=F.a('C',cp,2);F.b(att,first,1);
+const o1p=V3.add(cp,V3.mul(V3.add(V3.mul(d,.5),V3.mul(m,.866)),1.21)),o2p=V3.add(cp,V3.mul(V3.add(V3.mul(d,.5),V3.mul(m,-.866)),1.34));
+const o1=F.a('O',o1p,0),o2=F.a('O',o2p,0);F.b(first,o1,2);F.b(first,o2,1);
+const u=V3.norm(V3.sub(o2p,cp));const hp=V3.add(o2p,V3.mul(V3.norm(V3.add(V3.add(V3.mul(m,-.8),V3.mul(d,.4)),V3.mul(u,.4))),.97));
+const h=F.a('H',hp,0,false);F.b(o2,h,1);}
+else if(type==='NO2'){const np=V3.add(P,V3.mul(d,1.47));first=F.a('N',np,0);F.b(att,first,1);
+const o1=F.a('O',V3.add(np,V3.mul(V3.add(V3.mul(d,.5),V3.mul(m,.866)),1.22)),0),o2=F.a('O',V3.add(np,V3.mul(V3.add(V3.mul(d,.5),V3.mul(m,-.866)),1.22)),0);F.b(first,o1,2);F.b(first,o2,1);}
+if(tag!==undefined&&first!==undefined)F.m.tags.push({i:first,t:tag});
+return first;}
+function ringAt(F,loc,tagKek){const idx=loc.map(p=>F.a('C',p,2));for(let k=0;k<6;k++)F.b(idx[k],idx[(k+1)%6],k%2===0?2:1);return idx;}
+function addH(m){
+const nb=m.atoms.map(()=>[]);m.bonds.forEach(([i,j,o])=>{nb[i].push([j,o]);nb[j].push([i,o]);});
+const newAtoms=[];
+m.atoms.forEach((a,i)=>{if(a.e!=='C')return;const val=a.ar?nb[i].length+1:nb[i].reduce((s,q)=>s+q[1],0),need=4-val,k=nb[i].length;if(need<=0)return;
+const u=nb[i].map(q=>V3.norm(V3.sub(m.atoms[q[0]].p,a.p)));let dirs=[];
+if(k===3&&need===1)dirs=[V3.norm(V3.mul(V3.add(V3.add(u[0],u[1]),u[2]),-1))];
+else if(k===2&&need===2){const w=V3.norm(V3.mul(V3.add(u[0],u[1]),-1)),n=V3.norm(V3.cross(u[0],u[1]));dirs=[V3.add(V3.mul(w,.577),V3.mul(n,.816)),V3.add(V3.mul(w,.577),V3.mul(n,-.816))];}
+else if(k===2&&need===1)dirs=[V3.norm(V3.mul(V3.add(u[0],u[1]),-1))];
+else if(k===1&&need===3){const uu=u[0];let r=null;const j=nb[i][0][0];for(const q of nb[j]){if(q[0]!==i){r=V3.sub(m.atoms[q[0]].p,m.atoms[j].p);break;}}
+if(!r)r=Math.abs(uu[1])<.9?[0,1,0]:[1,0,0];let q=V3.sub(r,V3.mul(uu,V3.dot(r,uu)));q=V3.norm(q);const s=V3.cross(uu,q);
+dirs=[60,180,300].map(f=>{const c=Math.cos(rad(f)),sn=Math.sin(rad(f));return V3.add(V3.mul(uu,-.334),V3.mul(V3.add(V3.mul(q,c),V3.mul(s,sn)),.943));});}
+dirs.forEach(d=>newAtoms.push({e:'H',p:V3.add(a.p,V3.mul(V3.norm(d),1.09)),hyb:0,sig:false,par:i,grp:a.grp}));});
+newAtoms.forEach(h=>{m.atoms.push(h);addBond(m,h.par,m.atoms.length-1,1);});}
+
+/* compound builders (all coordinates in Å, symmetry frame: x = chiral axis) */
+function buildAllene(o){const m=newMol(),F=Fr(m,MI);const c3=F.a('C',[0,0,0],1);
+function end(Fx,pair){const c=Fx.a('C',[-1.31,0,0],2);Fx.b(c,c3,2);const d=[-0.5,0,0.866],n=[0,1,0];
+group(Fx,'CH3',c,[-1.31,0,0],d,n,'CH₃');if(pair)group(Fx.with(SZ),'CH3',c,[-1.31,0,0],d,n,'CH₃');}
+end(F,o.l);end(Fr(m,MM),o.r);addH(m);return m;}
+function buildSpirane(o){const m=newMol(),F=Fr(m,MI);const s=F.a('C',[0,0,0],3);
+function half(Fx,pair){const c1=Fx.a('C',[-1.095,1.095,0],3),c2=Fx.a('C',[-2.19,0,0],3),c3=Fx.a('C',[-1.095,-1.095,0],3);
+Fx.b(s,c1,1);Fx.b(c1,c2,1);Fx.b(c2,c3,1);Fx.b(c3,s,1);
+const d=[-0.574,0,0.819];group(Fx,'COOH',c2,[-2.19,0,0],d,[0,1,0],'COOH');if(pair)group(Fx.with(SZ),'COOH',c2,[-2.19,0,0],d,[0,1,0],'COOH');}
+half(F,o.l);half(Fr(m,MM),o.r);addH(m);return m;}
+function buildHemi(o){const m=newMol(),F=Fr(m,MI);
+const R=[[0,0,0],[0.7,1.212,0],[2.1,1.212,0],[2.8,0,0],[2.1,-1.212,0],[0.7,-1.212,0]];
+const ri=R.map((p,i)=>F.a('C',p,i===0?2:3));for(let i=0;i<6;i++)F.b(ri[i],ri[(i+1)%6],1);
+const ce=F.a('C',[-1.34,0,0],2);F.b(ri[0],ce,2);
+const dE=[-0.5,0.866,0];group(F,'COOH',ce,[-1.34,0,0],dE,[0,0,1],'COOH');if(o.l)group(F.with(SY),'COOH',ce,[-1.34,0,0],dE,[0,0,1],'COOH');
+const dC=[0.574,0,0.819];group(F,'CH3',ri[3],[2.8,0,0],dC,[0,1,0],'CH₃');if(o.r)group(F.with(SZ),'CH3',ri[3],[2.8,0,0],dC,[0,1,0],'CH₃');
+addH(m);return m;}
+function buildBiph(o){const m=newMol(),F=Fr(m,MI);
+const TG={COOH:'COOH',NO2:'NO₂'};
+function half(Fx,tp,tm,grp){const n0=m.atoms.length;const loc=[];for(let k=0;k<6;k++){const a=Math.PI/3*k;loc.push([-2.145+1.4*Math.cos(a),1.4*Math.sin(a),0]);}
+const idx=ringAt(Fx,loc);
+if(tp&&tp!=='none')group(Fx,tp,idx[1],loc[1],[.5,.866,0],[0,0,1],TG[tp]);
+if(tm&&tm!=='none')group(Fx,tm,idx[5],loc[5],[.5,-.866,0],[0,0,1],TG[tm]);
+if(grp)for(let i=n0;i<m.atoms.length;i++)m.atoms[i].grp='B';
+return idx[0];}
+const a1=half(F,o.tpA,o.tmA,false),b1=half(Fr(m,MM),o.tpB,o.tmB,true);F.b(a1,b1,1);addH(m);return m;}
+function buildTerph(o){const m=newMol(),F=Fr(m,MI);
+const cl=[[-1.4,0,0],[-0.7,0,1.212],[0.7,0,1.212],[1.4,0,0],[0.7,0,-1.212],[-0.7,0,-1.212]];
+const ci=ringAt(F,cl);
+group(F,'I',ci[1],cl[1],[-0.5,0,0.866],[0,1,0],'I');group(F,'I',ci[4],cl[4],[0.5,0,-0.866],[0,1,0],'I');
+function endRing(cx,dir,yUp,link){const loc=[];for(let k=0;k<6;k++){const a=dir>0?Math.PI/3*k:Math.PI-Math.PI/3*k;loc.push([cx+1.4*Math.cos(a),1.4*Math.sin(a),0]);}
+const idx=ringAt(F,loc);F.b(idx[0],link,1);const k=yUp>0?1:5;const sg=yUp>0?1:-1;group(F,'Br',idx[k],loc[k],[dir>0?.5:-.5,.866*sg,0],[0,0,1],'Br');}
+endRing(-4.29,1,o.yl,ci[0]);endRing(4.29,-1,o.yr,ci[3]);addH(m);return m;}
+
+
+function buildHelicene(o){const n=o.n,m=newMol();const pts=[],bset={};const Rc=1.4*Math.sqrt(3),pitch=3.4;
+const key=p=>(Math.round(p[0]*500)||0)+','+(Math.round(p[1]*500)||0);let prev={};
+for(let i=0;i<n;i++){const th=rad(60*i);const c=[Rc*Math.cos(th),Rc*Math.sin(th)];const idx=[],cur={};
+for(let k=0;k<6;k++){const a=rad(30+60*k);const p=[c[0]+1.4*Math.cos(a),c[1]+1.4*Math.sin(a)];const kk=key(p);let id;
+if(kk in prev)id=prev[kk];else{let ph=Math.atan2(p[1],p[0]);ph=th+(((ph-th+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI);id=pts.length;pts.push([p[0],p[1],pitch*ph/(2*Math.PI)]);}
+cur[kk]=id;idx.push(id);}
+for(let k=0;k<6;k++){const a=idx[k],b=idx[(k+1)%6];bset[Math.min(a,b)+'-'+Math.max(a,b)]=[a,b];}
+prev=cur;}
+const mid=rad(60*(n-1)/2),zmid=pitch*mid/(2*Math.PI),cs=Math.cos(-mid),sn=Math.sin(-mid);
+pts.forEach(p=>{const x=p[0]*cs-p[1]*sn,y=p[0]*sn+p[1]*cs;const id=addAtom(m,'C',[x,y,p[2]-zmid],2);m.atoms[id].ar=true;});
+for(const k in bset)addBond(m,bset[k][0],bset[k][1],1.5);
+addH(m);return m;}
+function buildOter(o){const m=newMol(),F=Fr(m,MI);
+const cl=[];for(let k=0;k<6;k++){const a=rad(60*k);cl.push([1.4*Math.cos(a),1.4*Math.sin(a),0]);}
+const ci=ringAt(F,cl);
+function arm(Fx,link){const u=[0.5,0.866,0],w0=[-0.866,0.5,0],tau=rad(55);const w=V3.add(V3.mul(w0,Math.cos(tau)),V3.mul([0,0,1],Math.sin(tau)));
+const ip=V3.add(cl[1],V3.mul(u,1.49)),c=V3.add(ip,V3.mul(u,1.4));const loc=[];
+for(let k=0;k<6;k++){const a=rad(180+60*k);loc.push(V3.add(c,V3.add(V3.mul(u,1.4*Math.cos(a)),V3.mul(w,1.4*Math.sin(a)))));}
+const idx=ringAt(Fx,loc);Fx.b(idx[0],link,1);}
+arm(F,ci[1]);
+const C2y=[[-1,0,0],[0,1,0],[0,0,-1]];
+// second arm = C2(y) image of the first, attached to C2 of the central ring (C6->index 2)
+(function(){const Fx=Fr(m,C2y);const u=[0.5,0.866,0],w0=[-0.866,0.5,0],tau=rad(55);const w=V3.add(V3.mul(w0,Math.cos(tau)),V3.mul([0,0,1],Math.sin(tau)));
+const ip=V3.add(cl[1],V3.mul(u,1.49)),c=V3.add(ip,V3.mul(u,1.4));const loc=[];
+for(let k=0;k<6;k++){const a=rad(180+60*k);loc.push(V3.add(c,V3.add(V3.mul(u,1.4*Math.cos(a)),V3.mul(w,1.4*Math.sin(a)))));}
+const idx=ringAt(Fx,loc);Fx.b(idx[0],ci[2],1);})();
+addH(m);return m;}
+
+/* symmetry detection on all heavy atoms (+ H flagged significant) */
+const SYMOPS=(function(){const out=[];const perms=[[0,1,2],[0,2,1],[1,0,2],[1,2,0],[2,0,1],[2,1,0]];
+for(const p of perms)for(let s=0;s<8;s++){const sg=[s&1?-1:1,s&2?-1:1,s&4?-1:1];const M=[[0,0,0],[0,0,0],[0,0,0]];for(let i=0;i<3;i++)M[i][p[i]]=sg[i];
+const tr=M[0][0]+M[1][1]+M[2][2];
+const det=M[0][0]*(M[1][1]*M[2][2]-M[1][2]*M[2][1])-M[0][1]*(M[1][0]*M[2][2]-M[1][2]*M[2][0])+M[0][2]*(M[1][0]*M[2][1]-M[1][1]*M[2][0]);
+out.push({M,tr,det});}return out;})();
+function sigList(m){return m.atoms.map((a,i)=>({a,i})).filter(q=>q.a.e!=='H'||q.a.sig).map(q=>({p:q.a.p,lab:q.a.e,i:q.i}));}
+function invariant(list,M){return list.every(s=>{const q=applyM(M,s.p);return list.some(t=>t.lab===s.lab&&dist(t.p,q)<1e-3);});}
+function detect(list){const found=[];let chiral=true;
+for(const e of SYMOPS){if(e.det===1&&e.tr===3)continue;if(!invariant(list,e.M))continue;
+let kind;
+if(e.det===-1){chiral=false;kind=e.tr===-3?'i':e.tr===1?'sigma':e.tr===-1?'S4':'S6';}
+else kind=e.tr===-1?'C2':e.tr===1?'C4':'C3';
+const f={kind};
+if(kind==='C2'){for(let j=0;j<3;j++){const v=[0,1,2].map(i=>e.M[i][j]+(i===j?1:0));const n=Math.hypot(...v);if(n>0.5){f.v=v.map(q=>q/n);break;}}}
+if(kind==='sigma'){for(let j=0;j<3;j++){const v=[0,1,2].map(i=>(i===j?1:0)-e.M[i][j]);const n=Math.hypot(...v);if(n>0.5){f.v=v.map(q=>q/n);break;}}}
+found.push(f);}
+return {found,chiral};}
+function describe(det){const cnt={};det.found.forEach(f=>{const nm=f.kind==='sigma'?'σ':f.kind==='C2'?'C₂':f.kind==='i'?'i':f.kind==='S4'?'S₄':f.kind;cnt[nm]=(cnt[nm]||0)+1;});
+return Object.keys(cnt).map(k=>cnt[k]>1?cnt[k]+' × '+k:k);}
+function bestRot(list,m){let best=MI,bc=-1;
+for(const e of SYMOPS){if(e.det!==1)continue;let c=0;
+for(const a of list){const q=applyM(e.M,[-a.p[0],a.p[1],a.p[2]]);if(list.some(b=>b.lab===a.lab&&dist(b.p,q)<0.3))c++;}
+if(c>bc){bc=c;best=e.M;}}
+const bad=[];list.forEach(a=>{const q=applyM(best,[-a.p[0],a.p[1],a.p[2]]);if(!list.some(b=>b.lab===a.lab&&dist(b.p,q)<0.3))bad.push(a.i);});
+return {M:best,matched:bc,total:list.length,bad};}
+function axisAngle(R){const tr=R[0][0]+R[1][1]+R[2][2];const ang=Math.acos(clamp((tr-1)/2,-1,1));
+if(ang<1e-6)return {axis:[0,1,0],ang:0};
+if(Math.abs(ang-Math.PI)<1e-4){let bestc=null,bl=-1;for(let j=0;j<3;j++){const v=[0,1,2].map(i=>R[i][j]+(i===j?1:0));const l=Math.hypot(...v);if(l>bl){bl=l;bestc=v;}}return {axis:V3.norm(bestc),ang};}
+return {axis:V3.norm([R[2][1]-R[1][2],R[0][2]-R[2][0],R[1][0]-R[0][1]]),ang};}
+const OPS={sxy:{type:'refl',k:2,name:'σ(xy): plane of the paper'},sxz:{type:'refl',k:1,name:'σ(xz): horizontal plane'},syz:{type:'refl',k:0,name:'σ(yz): plane ⟂ the axis'},i:{type:'inv',name:'i: inversion through the centre'},c2x:{type:'rot',k:0,name:'C₂ about x (long axis)'},c2y:{type:'rot',k:1,name:'C₂ about y (vertical)'},c2z:{type:'rot',k:2,name:'C₂ about z (toward you)'}};
+function opMatrix(op){const o=OPS[op];const M=[[1,0,0],[0,1,0],[0,0,1]];if(o.type==='refl')M[o.k][o.k]=-1;else if(o.type==='inv'){for(let i=0;i<3;i++)M[i][i]=-1;}else{for(let i=0;i<3;i++)M[i][i]=-1;M[o.k][o.k]=1;}return M;}
+
+/* rendering */
+const EL={Cl:{c:'#2f9e44',r:12},F:{c:'#69db7c',r:8},C:{c:'#59606e',r:9},H:{c:'#ffffff',r:5.2},O:{c:'#e03131',r:10},N:{c:'#3b5bdb',r:10},Br:{c:'#a0522d',r:12.5},I:{c:'#7b2fbe',r:14}};
+function pr(p,yaw,tilt,cx,cy,sc){const cw=Math.cos(yaw),sw=Math.sin(yaw);const x1=cw*p[0]+sw*p[2],z1=-sw*p[0]+cw*p[2];const ct=Math.cos(tilt),st=Math.sin(tilt);const y2=ct*p[1]-st*z1,z2=st*p[1]+ct*z1;return [cx+sc*x1,cy-sc*y2,z2];}
+function centroid(P,list){let c=[0,0,0];list.forEach(i=>{c=V3.add(c,P[i]);});return V3.mul(c,1/list.length);}
+function renderMol(x,mol,P,cx,cy,sc,yaw,tilt,o){
+const V=P.map(p=>pr(p,yaw,tilt,cx,cy,sc));const items=[];
+mol.bonds.forEach(b=>{if(!o.showH&&(mol.atoms[b[0]].e==='H'||mol.atoms[b[1]].e==='H'))return;items.push({z:(V[b[0]][2]+V[b[1]][2])/2,b});});
+mol.atoms.forEach((a,i)=>{if(a.e==='H'&&!o.showH)return;items.push({z:V[i][2],i});});
+items.sort((p,q)=>p.z-q.z);
+x.save();x.globalAlpha=o.alpha==null?1:o.alpha;const k=sc/32,out=o.style==='outline',gh=o.style==='ghost';
+items.forEach(it=>{
+if(it.b){const [i,j,ord]=it.b;const A=V[i],B=V[j];const ra=EL[mol.atoms[i].e].r*k*(1+0.03*A[2]),rb=EL[mol.atoms[j].e].r*k*(1+0.03*B[2]);
+const dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy)||1,ux=dx/L,uy=dy/L;
+const a=[A[0]+ux*ra*0.7,A[1]+uy*ra*0.7],b=[B[0]-ux*rb*0.7,B[1]-uy*rb*0.7];
+const hb=mol.atoms[i].e==='H'||mol.atoms[j].e==='H';
+const col=out?'#e8590c':gh?'rgba(120,130,150,.7)':'#6b7280',lw=out?1.6:(hb?2:3.2),dash=out||gh?[4,3]:null;
+if(ord===2){const nx=-uy*3.3,ny=ux*3.3;ln(x,[a[0]+nx,a[1]+ny],[b[0]+nx,b[1]+ny],col,lw*0.75,dash);ln(x,[a[0]-nx,a[1]-ny],[b[0]-nx,b[1]-ny],col,lw*0.75,dash);}else if(ord===1.5){ln(x,a,b,col,lw,dash);const nx=-uy*3.3,ny=ux*3.3;ln(x,[a[0]+nx+ux*4,a[1]+ny+uy*4],[b[0]+nx-ux*4,b[1]+ny-uy*4],col,lw*0.55,[3,3]);}else ln(x,a,b,col,lw,dash);}
+else{const i=it.i,a=mol.atoms[i],v=V[i],r=EL[a.e].r*k*(1+0.03*v[2]);
+x.beginPath();x.arc(v[0],v[1],r,0,7);
+if(out){x.strokeStyle='#e8590c';x.lineWidth=2;x.stroke();}
+else if(gh){x.strokeStyle='rgba(120,130,150,.7)';x.lineWidth=1.6;x.setLineDash([3,3]);x.stroke();x.setLineDash([]);}
+else{const g=x.createRadialGradient(v[0]-r/3,v[1]-r/3,r/8,v[0],v[1],r);g.addColorStop(0,'#ffffff');g.addColorStop(0.35,EL[a.e].c);g.addColorStop(1,a.e==='H'?'#b8bfcc':EL[a.e].c);x.fillStyle=a.e==='H'?'#f4f6fa':g;x.fill();x.strokeStyle=a.e==='H'?'#8a92a3':'rgba(0,0,0,.35)';x.lineWidth=1;x.stroke();}
+if(o.hl&&o.hl.includes(i)){x.beginPath();x.arc(v[0],v[1],r+7,0,7);x.strokeStyle='#e03131';x.lineWidth=2.5;x.setLineDash([4,3]);x.stroke();x.setLineDash([]);txt(x,'✗',v[0]+r+8,v[1]-r-2,'#e03131',17,'left','700');}}});
+if(o.tags&&!out&&!gh){mol.tags.forEach(t=>{const v=V[t.i],a=mol.atoms[t.i],r=EL[a.e].r*k;x.font='700 11px system-ui,sans-serif';x.textAlign='left';x.lineWidth=3;x.strokeStyle='rgba(255,255,255,.95)';x.strokeText(t.t,v[0]+r+3,v[1]-r-2);x.fillStyle='#2a2f3b';x.fillText(t.t,v[0]+r+3,v[1]-r-2);});}
+x.restore();return V;}
+function overlayEls(x,det,P0,ctr,cx,cy,sc,yaw,tilt){
+const view=p=>pr(V3.sub(p,ctr),yaw,tilt,cx,cy,sc);const seenC2=[],seenS=[];
+const key=v=>{let w=v.slice();const i=w.findIndex(q=>Math.abs(q)>1e-6);if(w[i]<0)w=w.map(q=>-q);return w.map(q=>q.toFixed(2)).join(',');};
+det.found.forEach(f=>{
+if(f.kind==='sigma'&&f.v){const kk=key(f.v);if(seenS.includes(kk))return;seenS.push(kk);const n=f.v;
+let u=[1-n[0]*n[0],-n[0]*n[1],-n[0]*n[2]];if(Math.hypot(...u)<0.2)u=[-n[1]*n[0],1-n[1]*n[1],-n[1]*n[2]];
+const ul=Math.hypot(...u);u=u.map(q=>q/ul);const v=V3.cross(n,u);
+const E=3.9,F=3.0,q=[[-E,-F],[E,-F],[E,F],[-E,F]].map(([a,b])=>view([u[0]*a+v[0]*b,u[1]*a+v[1]*b,u[2]*a+v[2]*b]));
+pathPoly(x,q);x.closePath();x.fillStyle='rgba(224,138,0,.13)';x.fill();x.strokeStyle='rgba(224,138,0,.9)';x.lineWidth=1.8;x.setLineDash([7,5]);x.stroke();x.setLineDash([]);txt(x,'σ',q[2][0]-8,q[2][1]-6,'#b86e00',14,'right');}
+else if(f.kind==='C2'&&f.v){const kk=key(f.v);if(seenC2.includes(kk))return;seenC2.push(kk);const E=4.6;const a=view(f.v.map(q=>-q*E)),b=view(f.v.map(q=>q*E));ln(x,a,b,'rgba(122,61,184,.85)',2.5,[9,5]);txt(x,'C₂',b[0]+4,b[1]-6,'#7a3db8',13,'left');}});
+if(det.found.some(f=>f.kind==='i')){const o=view([0,0,0]);x.beginPath();x.arc(o[0],o[1],7,0,7);x.fillStyle='#c0392b';x.fill();x.strokeStyle='#fff';x.lineWidth=2;x.stroke();txt(x,'i',o[0]+13,o[1]-9,'#c0392b',15,'left');}}
+
+function drawAxisEl(x,ax,ctr,cx,cy,sc,yaw,tilt){if(!ax)return;const P=p=>pr(V3.sub(p,ctr),yaw,tilt,cx,cy,sc);
+(ax.bonds||[]).forEach((bd,i)=>{const a=P(bd[0]),b=P(bd[1]);ln(x,a,b,'rgba(232,89,12,.45)',10);txt(x,'axis '+(i+1),(a[0]+b[0])/2,(a[1]+b[1])/2-14,'#c2410c',12);});
+const a=P(V3.mul(ax.d,-ax.len)),b=P(V3.mul(ax.d,ax.len));ln(x,a,b,'rgba(43,147,72,.9)',3,[10,6]);
+x.beginPath();x.arc(b[0],b[1],5,0,7);x.fillStyle='#2b9348';x.fill();txt(x,ax.label,b[0],b[1]-12,'#1d7a3a',12,'center','700');}
+/* ---------- theatre: mirror test + symmetry operations ---------- */
+const OPHTML='<option value="sxz">σ: reflect in the horizontal plane (xz)</option><option value="syz">σ: reflect in the plane ⟂ the axis (yz)</option><option value="sxy">σ: reflect in the plane of the paper (xy)</option><option value="i">i: inversion through the centre</option><option value="c2x">C₂ about the long axis (x)</option><option value="c2y">C₂ about the vertical axis (y)</option><option value="c2z">C₂ about the line toward you (z)</option>';
+function makeTheatre(rootId,def){
+const root=$(rootId);
+const optsHtml=def.opts.map(o=>o.type==='select'?`<label>${o.label} <select data-k="${o.k}">${o.options.map(q=>`<option value="${q[0]}">${q[1]}</option>`).join('')}</select></label>`:`<label><input type="checkbox" data-k="${o.k}" ${o.def?'checked':''}> ${o.label}</label>`).join('');
+root.innerHTML=`<div class="ctl">${optsHtml}<label><input type="checkbox" class="th-h" checked> show H atoms</label></div>
+<div class="ctl"><label>Test <select class="th-mode"><option value="mirror">Mirror test: can the mirror image be fitted on the original?</option><option value="op">Symmetry operation (σ, i, C₂) carried out on the molecule</option></select></label>
+<label class="th-oplab" style="display:none">Operation <select class="th-op">${OPHTML}</select></label>
+<label><input type="checkbox" class="th-el" checked> show symmetry elements</label>
+<label><input type="checkbox" class="th-ax" checked> show chiral axis</label>
+<button class="th-play">▶ Restart</button></div>
+<canvas class="drag" width="760" height="440"></canvas><p class="cap th-leg"></p><div class="box th-out"></div>`;
+const c=root.querySelector('canvas');fit(c);const W=c._W,H=c._H;
+const q=s=>root.querySelector(s);
+const st={mode:'mirror',op:def.op0||'sxz',t0:0,yaw0:0.55,tilt:0.38,yawView:0.55,drag:false};
+let mol,list,det,best,ctr0,sigIdx;
+function opts(){const o={};root.querySelectorAll('[data-k]').forEach(el=>{o[el.dataset.k]=el.type==='checkbox'?el.checked:el.value;});return o;}
+function rebuild(){const o=opts();mol=def.build(o);list=sigList(mol);sigIdx=list.map(s=>s.i);det=detect(list);best=bestRot(list,mol);
+ctr0=centroid(mol.atoms.map(a=>a.p),sigIdx);
+const parts=describe(det);q('.th-out').className='box th-out '+(det.chiral?'bad':'ok');
+q('.th-out').innerHTML=`<b>Symmetry elements found in the model:</b> ${parts.length?parts.join(', '):'none'}.<br><b>Mirror image fitted onto the original:</b> best fit matches ${best.matched} of ${best.total} heavy atoms → ${best.matched===best.total?'<b>superimposable</b>: the molecule is <b>achiral</b> (optically inactive).':'<b>NOT superimposable</b>: the mirror image is a different molecule (the enantiomer), so the molecule is <b>chiral</b> (optically active).'}`;
+q('.th-leg').textContent=def.legend(o);st.ax=def.axisFor?def.axisFor(o):def.axis;st.t0=clock;}
+rebuild();
+function Rext(){let r=1;list.forEach(s=>{r=Math.max(r,V3.add(V3.sub(s.p,ctr0),[0,0,0]).reduce((a,b)=>Math.hypot(a,b),0));});return r+0.7;}
+const R=Rext();
+q('.th-mode').onchange=e=>{st.mode=e.target.value;q('.th-oplab').style.display=st.mode==='op'?'':'none';st.t0=clock;};
+q('.th-op').onchange=e=>{st.op=e.target.value;st.t0=clock;};
+q('.th-play').onclick=()=>{st.t0=clock;};
+root.querySelectorAll('[data-k]').forEach(el=>el.onchange=()=>rebuild());
+let dr=null;
+c.addEventListener('pointerdown',e=>{dr=[e.clientX,e.clientY];c.setPointerCapture(e.pointerId);c.style.cursor='grabbing';});
+c.addEventListener('pointermove',e=>{if(!dr)return;st.yawView+=(e.clientX-dr[0])*0.01;st.tilt=clamp(st.tilt+(e.clientY-dr[1])*0.008,-1.2,1.3);dr=[e.clientX,e.clientY];});
+c.addEventListener('pointerup',()=>{dr=null;c.style.cursor='grab';});
+function tpos(p,op,s){let v=p.slice();if(op.type==='refl')v[op.k]*=1-2*s;else if(op.type==='inv')v=v.map(a=>a*(1-2*s));else{const k=op.k,u=(k+1)%3,w=(k+2)%3,a=Math.PI*s,cu=v[u],cw=v[w];v[u]=cu*Math.cos(a)-cw*Math.sin(a);v[w]=cu*Math.sin(a)+cw*Math.cos(a);}return v;}
+function drawMirror(x,t){
+const showH=q('.th-h').checked,showEl=q('.th-el').checked;
+const T1=7.5,T2=3.5,TH=4.5,TF=1.5,TT=T1+T2+TH+TF;const tt=(t-st.t0)%TT;
+const sc=Math.min(62,188/R),cx=W/2,cy=H/2-6,D=190;
+const f=ease((tt-T1)/T2);
+const yawO=st.yaw0+(tt<T1?2*Math.PI*tt/T1:2*Math.PI);
+const P0=mol.atoms.map(a=>a.p);
+const Pm0=P0.map(p=>[-p[0],p[1],p[2]]);
+const ab=axisAngle(best.M);
+const Pm=Pm0.map(p=>rodrigues(p,ab.axis,ab.ang*f));
+const yawM=tt<T1?-yawO:(-st.yaw0+2*st.yaw0*f);
+const yawOshow=tt<T1?yawO:st.yaw0;
+const cO=centroid(P0,sigIdx),cM=centroid(Pm,sigIdx);
+const xo=cx-D*(1-f),xm=cx+D*(1-f);
+const fade=tt>T1+T2+TH?1-(tt-(T1+T2+TH))/TF:1;
+const mAlpha=ease((tt-2.4)/1.4)*fade;
+// mirror plane
+if(tt<T1+0.3){const pa=ease((tt-1.8)/1.2)*(tt>T1?1-(tt-T1)/0.3:1);if(pa>0.02){x.save();x.globalAlpha=pa;const g=x.createLinearGradient(cx-40,0,cx+40,0);g.addColorStop(0,'rgba(120,180,240,0)');g.addColorStop(.5,'rgba(120,180,240,.45)');g.addColorStop(1,'rgba(120,180,240,0)');x.fillStyle=g;x.fillRect(cx-40,28,80,H-110);ln(x,[cx,28],[cx,H-82],'#5b8fd0',2,[7,5]);txt(x,'mirror',cx,22,'#5b8fd0',13);x.restore();}}
+// original
+const PO=P0.map(p=>V3.sub(p,cO));
+if(showEl&&tt<T1+T2+TH)overlayEls(x,det,P0,cO,xo,cy,sc,yawOshow,st.tilt);
+if(q('.th-ax').checked&&tt<T1+T2+TH)drawAxisEl(x,st.ax,cO,xo,cy,sc,yawOshow,st.tilt);
+renderMol(x,mol,PO,xo,cy,sc,yawOshow,st.tilt,{style:'solid',alpha:fade,showH,tags:true});
+// mirror copy
+const PM=Pm.map(p=>V3.sub(p,cM));
+if(mAlpha>0.02){
+if(f<0.999)renderMol(x,mol,PM,xm,cy,sc,yawM,st.tilt,{style:'solid',alpha:mAlpha*(1-f),showH,tags:true});
+if(f>0.02)renderMol(x,mol,PM,xm,cy,sc,yawM,st.tilt,{style:'outline',alpha:mAlpha*f,showH:false});}
+// result marks
+const hold=tt>T1+T2;
+if(hold){x.save();x.globalAlpha=fade;best.bad.forEach(i=>{const v=pr(PM[i],yawM,st.tilt,xm,cy,sc);x.beginPath();x.arc(v[0],v[1],14,0,7);x.strokeStyle='#e03131';x.lineWidth=2.5;x.setLineDash([4,3]);x.stroke();x.setLineDash([]);txt(x,'✗',v[0]+16,v[1]-10,'#e03131',18,'left','700');});x.restore();}
+// captions
+let stage;
+if(tt<2.4)stage='1 · The molecule (turning so that you can see it in 3-D)';
+else if(tt<T1)stage='2 · Its mirror image appears on the other side of the mirror (orange outline later = mirror image)';
+else if(tt<T1+T2)stage='3 · Turn the mirror image over and try to fit it on the original';
+else stage='4 · Result';
+txt(x,stage,12,24,'#2a2f3b',13,'left');
+if(hold){const ok=best.matched===best.total;
+const msg=ok?`All ${best.total} heavy atoms coincide: the mirror image fits exactly. Superimposable → achiral.`:`${best.total-best.matched} of ${best.total} heavy atoms do NOT coincide (red ✗). Not superimposable → the mirror image is the ENANTIOMER: chiral.`;
+x.fillStyle=ok?'rgba(43,147,72,.12)':'rgba(192,57,43,.1)';x.fillRect(10,H-48,W-20,38);x.strokeStyle=ok?'#2b9348':'#c0392b';x.lineWidth=1.5;x.strokeRect(10,H-48,W-20,38);txt(x,msg,W/2,H-24,ok?'#1d6a35':'#a02a1e',13);}
+else txt(x,'drag to turn the view · atoms: C grey, H white, O red, N blue',W/2,H-14,'#8a92a3',11,'center','500');}
+function drawOp(x,t){
+const showH=q('.th-h').checked,showEl=q('.th-el').checked;
+const op=OPS[st.op],run=2.6,hold=2.6,tt=(t-st.t0)%(run+hold);
+const s=tt<run?ease(tt/run):1;
+const sc=Math.min(75,250/R),cx=W/2,cy=H/2-6;
+const P0=mol.atoms.map(a=>a.p);
+const Pt=P0.map(p=>tpos(p,op,s));
+const ctr=ctr0;
+const PO=P0.map(p=>V3.sub(p,ctr)),PT=Pt.map(p=>V3.sub(p,ctr));
+if(showEl)overlayEls(x,det,P0,ctr,cx,cy,sc,st.yawView,st.tilt);
+if(q('.th-ax').checked)drawAxisEl(x,st.ax,ctr,cx,cy,sc,st.yawView,st.tilt);
+if(s>0.01)renderMol(x,mol,PO,cx,cy,sc,st.yawView,st.tilt,{style:'ghost',alpha:1,showH:false});
+renderMol(x,mol,PT,cx,cy,sc,st.yawView,st.tilt,{style:'solid',alpha:1,showH,tags:true});
+txt(x,'operation: '+op.name,12,24,'#2a2f3b',13,'left');
+txt(x,det.chiral?'molecule: CHIRAL (no σ, i or Sₙ)':'molecule: ACHIRAL',W-12,24,det.chiral?'#c0392b':'#2b9348',14,'right');
+if(s>=0.999&&tt>=run){const same=invariant(list,opMatrix(st.op));let ok,t2;
+if(same){ok=true;t2='IDENTICAL: '+op.name+' reproduces the molecule exactly, so it is a symmetry element.';}
+else if(op.type==='rot'){ok=false;t2='DIFFERENT: this C₂ does not map the molecule onto itself, so it is not a symmetry element.';}
+else if(det.chiral){ok=false;t2='DIFFERENT: the image is the ENANTIOMER. No rotation can superimpose it: the molecule is chiral.';}
+else{ok=false;t2='Differs only in orientation: not a symmetry element, but the molecule has another one (σ or i), so it is achiral.';}
+x.fillStyle=ok?'rgba(43,147,72,.12)':'rgba(192,57,43,.1)';x.fillRect(10,H-48,W-20,38);x.strokeStyle=ok?'#2b9348':'#c0392b';x.lineWidth=1.5;x.strokeRect(10,H-48,W-20,38);txt(x,t2,W/2,H-24,ok?'#1d6a35':'#a02a1e',13);}
+else txt(x,'dashed = original position · drag to turn the view',W/2,H-14,'#8a92a3',11,'center','500');}
+return {cv:c,draw(t){const x=ctx2(c);if(st.mode==='mirror')drawMirror(x,t);else drawOp(x,t);}};}
+
+/* ---------- theatre definitions ---------- */
+const th_allene=makeTheatre('th_allene',{opts:[{k:'l',label:'left end: two CH₃ (identical)',def:false},{k:'r',label:'right end: two CH₃ (identical)',def:false}],op0:'sxz',axis:{d:[1,0,0],len:4.0,label:'chiral axis'},
+build:o=>buildAllene({l:o.l,r:o.r}),legend:o=>'Penta-2,3-diene, CH₃–CH=C=CH–CH₃ (chiral). Left end groups lie in the vertical (xz) plane, right end groups in the horizontal (xy) plane. Tick a box to put two CH₃ on that end: a mirror plane appears and the allene becomes achiral.'});
+const th_spiro=makeTheatre('th_spiro',{opts:[{k:'l',label:'ring 1: two COOH on C2 (identical)',def:false},{k:'r',label:'ring 2: two COOH on C6 (identical)',def:false}],op0:'sxz',axis:{d:[1,0,0],len:4.4,label:'chiral axis'},
+build:o=>buildSpirane({l:o.l,r:o.r}),legend:o=>'Spiro[3.3]heptane-2,6-dicarboxylic acid. The two cyclobutane rings are perpendicular and share the spiro carbon. Tick a box to give that ring two COOH groups (identical): the molecule gets a mirror plane and is achiral.'});
+const th_hemi=makeTheatre('th_hemi',{opts:[{k:'l',label:'exocyclic C: two COOH (identical)',def:false},{k:'r',label:'ring C4: two CH₃ (identical)',def:false}],op0:'sxy',axis:{d:[1,0,0],len:4.4,label:'chiral axis'},
+build:o=>buildHemi({l:o.l,r:o.r}),legend:o=>'4-Methylcyclohexylideneacetic acid (the ring is drawn flat). The exocyclic C=C carries COOH and H in the ring plane; C4 carries CH₃ and H above and below the ring. Tick a box to make the groups at that end identical: a mirror plane appears.'});
+const TGS=[['COOH','COOH'],['NO2','NO₂'],['none','nothing (H)']];
+const th_biph=makeTheatre('th_biph',{opts:[{k:'idA',label:'ring A: two NO₂ at the ortho positions (identical)',def:false},{k:'idB',label:'ring B: two NO₂ at the ortho positions (identical)',def:false}],op0:'syz',axis:{d:[1,0,0],len:5.0,label:'chiral axis (C1–C1′ bond)'},
+build:o=>buildBiph({tpA:o.idA?'NO2':'COOH',tmA:'NO2',tpB:o.idB?'NO2':'COOH',tmB:'NO2'}),legend:o=>'6,6′-Dinitrodiphenic acid: ring A (left) lies in the xy plane, ring B (right) in the xz plane. Each ring has COOH on one ortho carbon and NO₂ on the other. Tick a box to put NO₂ on both ortho carbons of that ring: it becomes symmetrical and the molecule achiral.'});
+const th_terph=makeTheatre('th_terph',{opts:[{k:'iso',type:'select',label:'Isomer',options:[['uu','(up, up): enantiomer 1'],['dd','(down, down): enantiomer 2'],['ud','(up, down): meso']],def:'uu'}],op0:'c2y',axis:{d:[1,0,0],len:6.4,label:'chiral axis',bonds:[[[-2.89,0,0],[-1.4,0,0]],[[1.4,0,0],[2.89,0,0]]]},
+build:o=>buildTerph({yl:o.iso[0]==='u'?1:-1,yr:o.iso[1]==='u'?1:-1}),legend:o=>'p-Terphenyl model: central ring flat, iodine (purple) at positions 2 and 5; the two end rings stand upright, each with one bromine (brown) at an ortho position, up or down. Compare "(up, up)" with "(down, down)" and "(up, down)".'});
+
+
+const th_helix=makeTheatre('th_helix',{opts:[{k:'sel',type:'select',label:'Molecule',options:[['h6','[6]helicene (six fused rings)'],['h5','[5]helicene'],['h4','[4]helicene'],['oter','o-terphenyl, twisted (helical) conformation']],def:'h6'}],op0:'c2x',
+axisFor:o=>o.sel==='oter'?{d:[0,1,0],len:3.6,label:'C₂ axis of the twist'}:{d:[0,0,1],len:3.8,label:'helix axis'},
+build:o=>o.sel==='oter'?buildOter({}):buildHelicene({n:+o.sel[1]}),
+legend:o=>({h6:'[6]Helicene, C₂₆H₁₆: six ortho-fused benzene rings coil into a right-handed helix (P). The mirror image is the left-handed helix (M). Barrier to racemisation about 150 kJ/mol: configurationally stable.',h5:'[5]Helicene: the inner hydrogens clash and the molecule coils (P shown). Barrier to racemisation only about 100 kJ/mol: it racemises slowly at room temperature.',h4:'[4]Helicene (benzo[c]phenanthrene): only a slight twist; the barrier is about 17 kJ/mol, so the two helices interconvert at once and cannot be resolved.',oter:'o-Terphenyl: the two outer rings are twisted in the same sense relative to the central ring, a propeller or helix (C₂ symmetry, one handedness shown). The twist reverses very quickly, so ordinary o-terphenyl is racemic and not resolvable.'})[o.sel]});
+
+/* ---------- biphenyl racemisation in 3-D ---------- */
+function racemWidget(){
+const c=$('cv_biph');fit(c);const W=c._W,H=c._H;const st={mode:'large',yaw:0.85,tilt:0.28};
+const molL=buildBiph({tpA:'COOH',tmA:'NO2',tpB:'COOH',tmB:'NO2'}),molS=buildBiph({tpA:'none',tmA:'none',tpB:'none',tmB:'none'});
+let dr=null;c.addEventListener('pointerdown',e=>{dr=[e.clientX,e.clientY];c.setPointerCapture(e.pointerId);});
+c.addEventListener('pointermove',e=>{if(!dr)return;st.yaw+=(e.clientX-dr[0])*0.01;st.tilt=clamp(st.tilt+(e.clientY-dr[1])*0.008,-1.2,1.3);dr=[e.clientX,e.clientY];});
+c.addEventListener('pointerup',()=>{dr=null;});
+function draw(t){
+const x=ctx2(c);const large=st.mode==='large',mol=large?molL:molS;
+const psi=large?90+7*Math.sin(t*3.1):180-90*Math.cos(t*0.9);
+const th=rad(psi-90);const cs=Math.cos(th),sn=Math.sin(th);
+const P=mol.atoms.map(a=>{let p=a.p.slice();if(a.grp==='B'){const y=p[1],z=p[2];p=[p[0],y*cs-z*sn,y*sn+z*cs];}return p;});
+const pd=((psi%360)+360)%360;const near=Math.min(pd,Math.abs(pd-180),360-pd);
+const flat=near<14;
+const sc=40,cx=200,cy=190;
+if(flat&&!large){const E=4.6,F=3.2;const q=[[-E,-F],[E,-F],[E,F],[-E,F]].map(([a,b])=>pr([a,b,0],st.yaw,st.tilt,cx,cy,sc));pathPoly(x,q);x.closePath();x.fillStyle='rgba(224,138,0,.15)';x.fill();x.strokeStyle='rgba(224,138,0,.9)';x.lineWidth=2;x.setLineDash([7,5]);x.stroke();x.setLineDash([]);txt(x,'σ: mirror plane (the flat molecule is achiral)',cx,cy+F*sc*0.9+50,'#b86e00',12);}
+renderMol(x,mol,P,cx,cy,sc,st.yaw,st.tilt,{style:'solid',showH:true,tags:true});
+let state;
+if(large)state='enantiomer 1 (locked, chiral)';else if(flat)state='planar transition state: achiral, has σ';else state=pd<180?'twisted: enantiomer 1':'twisted: enantiomer 2 (mirror image)';
+txt(x,state,cx,24,flat&&!large?'#c0392b':'#5b3fd1',14);
+txt(x,'ring A fixed (left) · ring B turns about the C1–C1′ bond (right) · drag to rotate the view',cx,H-12,'#8a92a3',11,'center','500');
+const x0=420,x1=735,y0=268,yT=70,Eb=large?105:12,Emax=120;
+ln(x,[x0,y0],[x1,y0],'#2a2f3b',1.5);ln(x,[x0,y0],[x0,yT-10],'#2a2f3b',1.5);
+for(let d=0;d<=360;d+=90){const px=x0+(x1-x0)*d/360;ln(x,[px,y0],[px,y0+5],'#2a2f3b',1);txt(x,d+'°',px,y0+19,'#5b6472',11,'center','500');}
+txt(x,'twist angle ψ between the rings',(x0+x1)/2,y0+38,'#2a2f3b',12);
+txt(x,'E (kJ/mol)',x0-8,yT-22,'#2a2f3b',12,'left');
+for(const e of [0,40,80,120]){const py=y0-(y0-yT)*e/Emax;ln(x,[x0-4,py],[x0,py],'#2a2f3b',1);txt(x,e,x0-8,py+4,'#5b6472',11,'right','500');}
+const yIso=y0-(y0-yT)*93/Emax;ln(x,[x0,yIso],[x1,yIso],'#e08a00',1.3,[6,4]);txt(x,'≈ 93: needed to isolate isomers',x1,yIso-5,'#e08a00',11,'right','600');
+x.beginPath();for(let d=0;d<=360;d+=3){const e=Eb*Math.pow(Math.cos(rad(d)),2);const px=x0+(x1-x0)*d/360,py=y0-(y0-yT)*e/Emax;d?x.lineTo(px,py):x.moveTo(px,py);}x.strokeStyle='#5b3fd1';x.lineWidth=2.5;x.stroke();
+const e=Eb*Math.pow(Math.cos(rad(psi)),2);const px=x0+(x1-x0)*pd/360,py=y0-(y0-yT)*e/Emax;
+x.beginPath();x.arc(px,py,7,0,7);x.fillStyle='#d6336c';x.fill();
+txt(x,large?'barrier ≈ 105 kJ/mol → resolvable':'barrier only ~10 kJ/mol → racemises instantly',(x0+x1)/2,yT-34,large?'#2b9348':'#c0392b',13);}
+return {st,draw,cv:c};}
+
+/* ---------- amine inversion in 3-D ---------- */
+function amineWidget(){
+const c=$('cv_amine');fit(c);const W=c._W,H=c._H;const st={speed:1,ph:0,mode:'diff',yaw:0.7,tilt:0.3};let lastT=null;
+const TH0=0.35,AZ=[90,210,330].map(rad);
+function amBuild(mode){const m=newMol();const N=addAtom(m,'N',[0,0,0],0,true);
+const types=mode==='diff'?['H','Me','Et']:mode==='two'?['H','Me','Me']:['Me','Me','Me'];
+types.forEach((t,i)=>{const e=[Math.cos(AZ[i]),0,Math.sin(AZ[i])];const r=V3.norm([e[0]*Math.cos(TH0),-Math.sin(TH0),e[2]*Math.cos(TH0)]);
+const first=t==='H'?addAtom(m,'H',V3.mul(r,1.01),0,true):addAtom(m,'C',V3.mul(r,1.47),3);addBond(m,N,first,1);m.atoms[first].grp=i;
+if(t==='Et'){const side=V3.norm(V3.cross([0,1,0],r));const c2p=V3.add(m.atoms[first].p,V3.mul(V3.add(V3.mul(r,0.334),V3.mul(side,0.943)),1.53));const c2=addAtom(m,'C',c2p,3);addBond(m,first,c2,1);m.atoms[c2].grp=i;}});
+addH(m);return m;}
+const mols={diff:amBuild('diff'),two:amBuild('two'),same:amBuild('same')};
+let dr=null;c.addEventListener('pointerdown',e=>{dr=[e.clientX,e.clientY];c.setPointerCapture(e.pointerId);});
+c.addEventListener('pointermove',e=>{if(!dr)return;st.yaw+=(e.clientX-dr[0])*0.01;st.tilt=clamp(st.tilt+(e.clientY-dr[1])*0.008,-1.2,1.3);dr=[e.clientX,e.clientY];});
+c.addEventListener('pointerup',()=>{dr=null;});
+function pos(mol,u){const dl=TH0*(1-Math.cos(u));return mol.atoms.map(a=>{if(a.e==='N')return a.p;const gi=a.grp;const e=[Math.cos(AZ[gi]),0,Math.sin(AZ[gi])];const ax=V3.norm(V3.cross([0,1,0],e));return rodrigues(a.p,ax,-dl);});}
+function plane(x,pts,label){const q=pts.map(p=>pr(p,st.yaw,st.tilt,cx0,cy0,sc0));pathPoly(x,q);x.closePath();x.fillStyle='rgba(224,138,0,.13)';x.fill();x.strokeStyle='rgba(224,138,0,.85)';x.lineWidth=1.6;x.setLineDash([7,5]);x.stroke();x.setLineDash([]);txt(x,label,q[2][0]-6,q[2][1]-6,'#b86e00',12,'right');}
+const cx0=215,cy0=215,sc0=64;
+function draw(t){
+if(lastT===null)lastT=t;st.ph+=(t-lastT)*st.speed*1.3;lastT=t;
+const x=ctx2(c);const mol=mols[st.mode];const u=st.ph;const s=Math.cos(u);const flat=Math.abs(s)<0.2;
+const P=pos(mol,u);
+// planes and axes
+const hp=2.7;
+plane(x,[[-hp,0,-hp],[hp,0,-hp],[hp,0,hp],[-hp,0,hp]],flat?'σh: flat form is achiral':'σh');
+if(st.mode==='two'){plane(x,[[0,-2.2,-2.4],[0,-2.2,2.4],[0,2.2,2.4],[0,2.2,-2.4]],'σv');}
+if(st.mode==='same'){AZ.forEach((a,i)=>{const e=[Math.cos(a),0,Math.sin(a)];plane(x,[V3.add(V3.mul(e,-2.4),[0,-2.2,0]),V3.add(V3.mul(e,2.4),[0,-2.2,0]),V3.add(V3.mul(e,2.4),[0,2.2,0]),V3.add(V3.mul(e,-2.4),[0,2.2,0])],'σv');});
+const a=pr([0,-2.4,0],st.yaw,st.tilt,cx0,cy0,sc0),b=pr([0,2.4,0],st.yaw,st.tilt,cx0,cy0,sc0);ln(x,a,b,'rgba(122,61,184,.85)',2.5,[9,5]);txt(x,'C₃',b[0]+6,b[1],'#7a3db8',13,'left');}
+// mirror ghost through sigma_h
+const G=P.map(p=>[p[0],-p[1],p[2]]);
+renderMol(x,mol,G,cx0,cy0,sc0,st.yaw,st.tilt,{style:'ghost',alpha:1,showH:false});
+// lone pair lobes
+const up=0.25+0.75*Math.max(0,s),dn=0.25+0.75*Math.max(0,-s);
+function lobe(dir,k){const a=pr([0,dir*(0.45+0.9*k),0],st.yaw,st.tilt,cx0,cy0,sc0);x.beginPath();x.ellipse(a[0],a[1],12+9*k,10+28*k,0,0,7);x.fillStyle='rgba(240,170,20,.42)';x.fill();x.strokeStyle='#e0a000';x.lineWidth=1.5;x.stroke();}
+lobe(1,up);lobe(-1,dn);
+const V=renderMol(x,mol,P,cx0,cy0,sc0,st.yaw,st.tilt,{style:'solid',showH:true,tags:false});
+const nl=pr([0,1.9,0],st.yaw,st.tilt,cx0,cy0,sc0);txt(x,'lone pair',nl[0]+44,nl[1]-4,'#b07800',12,'left');
+let state,col='#5b3fd1';
+if(s>0.85)state='pyramid A (lone pair up)';else if(s<-0.85)state='pyramid B = mirror image of A (lone pair down)';else if(flat){state='planar sp² transition state';col='#c0392b';}else state='flipping …';
+txt(x,state,cx0,26,col,15);
+const sym={diff:'point group C₁: no symmetry element → the pyramid is chiral in shape',two:'point group Cₛ: one mirror plane σv → achiral',same:'point group C₃ᵥ: C₃ axis + 3 mirror planes → achiral'}[st.mode];
+txt(x,sym,cx0,H-14,'#2a2f3b',12,'center','600');
+const x0=470,x1=735,y0=290,yT=110,Eb=26;
+ln(x,[x0,y0],[x1,y0],'#2a2f3b',1.5);ln(x,[x0,y0],[x0,yT-12],'#2a2f3b',1.5);
+txt(x,'N below plane',x0+4,y0+19,'#5b6472',11,'left','500');txt(x,'N above plane',x1,y0+19,'#5b6472',11,'right','500');txt(x,'position of N relative to the R-group plane',(x0+x1)/2,y0+38,'#2a2f3b',12);
+txt(x,'E (kJ/mol)',x0-8,yT-26,'#2a2f3b',12,'left');
+x.beginPath();for(let k=-1;k<=1.001;k+=0.02){const e=Eb*(1-k*k),px=x0+(x1-x0)*(k+1)/2,py=y0-(y0-yT)*e/Eb;k<-0.99?x.moveTo(px,py):x.lineTo(px,py);}
+x.strokeStyle='#5b3fd1';x.lineWidth=2.5;x.stroke();
+const e=Eb*(1-s*s),px=x0+(x1-x0)*(-s+1)/2,py=y0-(y0-yT)*e/Eb;
+x.beginPath();x.arc(px,py,7,0,7);x.fillStyle='#d6336c';x.fill();
+txt(x,'ΔG‡ ≈ 25 kJ/mol',(x0+x1)/2,yT-6,'#5b3fd1',13);
+txt(x,'Pyramid A  ⇄  Pyramid B',(x0+x1)/2,y0-6,'#5b6472',12,'center','500');}
+return {st,draw,cv:c};}
+
+/* ---------- wire everything ---------- */
+const sPPL=beamScene('cv_ppl',{H:340,sample:false,analyser:false});
+const sMal=beamScene('cv_malus',{H:340,sample:false,analyser:true,malus:true,r:30});
+const sRot=beamScene('cv_rot',{H:280,sample:true,analyser:false,alpha:35});
+const sPol=beamScene('cv_pol',{H:360,sample:true,analyser:true,alpha:30,r:0,why:'pol_why',onr:r=>{$('pol_r').value=r;$('pol_rv').textContent=(r>0?'+':'')+r.toFixed(1)+'°';}});
+const sHel=helixScene('cv_helix');
+const sCirc=circScene('cv_circ');
+const sBiph=racemWidget();
+const sAm=amineWidget();
+const fmt=v=>(v>0?'+':'')+v+'°';
+$('ppl_B').onchange=e=>{sPPL.st.B=e.target.checked;};
+$('mal_b').oninput=e=>{sMal.st.r=+e.target.value;$('mal_bv').textContent=e.target.value+'°';};
+$('rot_a').oninput=e=>{sRot.st.alpha=+e.target.value;$('rot_av').textContent=fmt(+e.target.value);};
+$('circ_a').oninput=e=>{sCirc.st.alpha=+e.target.value;sHel.st.alpha=+e.target.value;$('circ_av').textContent=fmt(+e.target.value);};
+$('pol_a').oninput=e=>{sPol.st.alpha=+e.target.value;$('pol_av').textContent=fmt(+e.target.value);};
+$('pol_r').oninput=e=>{sPol.st.r=+e.target.value;sPol.st.seek=false;$('pol_rv').textContent=(sPol.st.r>0?'+':'')+sPol.st.r.toFixed(1)+'°';};
+$('pol_seek').onclick=()=>{sPol.st.seek=true;};
+$('biph_mode').onchange=e=>{sBiph.st.mode=e.target.value;};
+$('am_sp').oninput=e=>{sAm.st.speed=+e.target.value;};
+$('am_mode').onchange=e=>{sAm.st.mode=e.target.value;};
+function calc(){const v=(+$('c_spec').value)*(+$('c_l').value)*(+$('c_c').value);$('c_out').textContent=(v>0?'+':'')+v.toFixed(1)+'°';return v;}
+['c_spec','c_l','c_c'].forEach(i=>$(i).oninput=calc);
+$('c_go').onclick=()=>{const v=Math.max(-70,Math.min(70,Math.round(calc())));$('pol_a').value=v;sPol.st.alpha=v;$('pol_av').textContent=fmt(v);sPol.st.r=0;$('pol_r').value=0;$('pol_rv').textContent='0.0°';$('cv_pol').scrollIntoView({behavior:'smooth',block:'center'});};
+/* =====================================================================
+   STUDIO MODULES (tabs, checker, projections engine, compare, quiz)
+   ===================================================================== */
+function rotY(deg){const a=rad(deg),c=Math.cos(a),s=Math.sin(a);return [[c,0,s],[0,1,0],[-s,0,c]];}
+function perp(d){let v=V3.cross(d,[0,1,0]);if(Math.hypot(v[0],v[1],v[2])<0.3)v=V3.cross(d,[1,0,0]);return V3.norm(v);}
+function addGrp(F,type,att,P,d){
+const n=perp(d),m=V3.cross(n,d),at=len=>V3.add(P,V3.mul(d,len));let first;
+const hOn=(pos,first)=>{const hp=V3.add(pos,V3.mul(V3.norm(V3.add(V3.mul(d,0.33),V3.mul(n,0.94))),0.96));const h=F.a('H',hp,0,false);F.b(first,h,1);};
+if(type==='H'){first=F.a('H',at(1.09),0,false);F.b(att,first,1);}
+else if(type==='F'||type==='Cl'||type==='Br'){first=F.a(type,at({F:1.35,Cl:1.77,Br:1.94}[type]),0);F.b(att,first,1);}
+else if(type==='OH'){const op=at(1.43);first=F.a('O',op,0);F.b(att,first,1);hOn(op,first);}
+else if(type==='NH2'){const np=at(1.47);first=F.a('N',np,0);F.b(att,first,1);
+[1,-1].forEach(sg=>{const dir=V3.norm(V3.add(V3.mul(d,0.33),V3.mul(V3.add(V3.mul(n,0.7),V3.mul(m,0.7*sg)),0.94)));const h=F.a('H',V3.add(np,V3.mul(dir,1.01)),0,false);F.b(first,h,1);});}
+else if(type==='CH3'){first=F.a('C',at(1.52),3);F.b(att,first,1);}
+else if(type==='Et'){const p1=at(1.53);first=F.a('C',p1,3);F.b(att,first,1);const p2=V3.add(p1,V3.mul(V3.add(V3.mul(d,0.334),V3.mul(n,0.943)),1.53));const c2=F.a('C',p2,3);F.b(first,c2,1);}
+else if(type==='CHO'){const cp=at(1.50);first=F.a('C',cp,2);F.b(att,first,1);const o=F.a('O',V3.add(cp,V3.mul(V3.add(V3.mul(d,.5),V3.mul(n,.866)),1.21)),0);F.b(first,o,2);}
+else if(type==='CH2OH'){const cp=at(1.52);first=F.a('C',cp,3);F.b(att,first,1);const op=V3.add(cp,V3.mul(V3.add(V3.mul(d,0.334),V3.mul(n,0.943)),1.43));const o=F.a('O',op,0);F.b(first,o,1);const hp=V3.add(op,V3.mul(V3.norm(V3.add(V3.mul(d,0.5),V3.mul(m,0.8))),0.96));const h=F.a('H',hp,0,false);F.b(o,h,1);}
+else if(type==='COOH'){first=group(F,'COOH',att,P,d,n);}
+return first;}
+
+const PJ={
+dbb:{name:'2,3-dibromobutane',n:2,sym:true,topT:'CH3',botT:'CH3',topL:'CH₃',botL:'CH₃',XT:['Br','Br'],XL:['Br','Br'],rank:[['X','D','U','H'],['X','U','D','H']],cip:'At each centre: Br = 1; the other stereocentre carbon (Br, C, H) = 2; CH₃ (H, H, H) = 3; H = 4.'},
+tart:{name:'tartaric acid',n:2,sym:true,topT:'COOH',botT:'COOH',topL:'CO₂H',botL:'CO₂H',XT:['OH','OH'],XL:['OH','OH'],rank:[['X','U','D','H'],['X','D','U','H']],cip:'At each centre: OH = 1; CO₂H (O, O, O) = 2; the other stereocentre carbon (O, C, H) = 3; H = 4.'},
+bdiol:{name:'butane-2,3-diol',n:2,sym:true,topT:'CH3',botT:'CH3',topL:'CH₃',botL:'CH₃',XT:['OH','OH'],XL:['OH','OH'],rank:[['X','D','U','H'],['X','U','D','H']],cip:'At each centre: OH = 1; the neighbouring CH(OH) carbon (O, C, H) = 2; CH₃ = 3; H = 4.'},
+bc:{name:'2-bromo-3-chlorobutane',n:2,sym:false,topT:'CH3',botT:'CH3',topL:'CH₃',botL:'CH₃',XT:['Br','Cl'],XL:['Br','Cl'],rank:[['X','D','U','H'],['X','U','D','H']],cip:'C2: Br = 1; C3 (Cl, C, H) = 2; CH₃ = 3; H = 4. C3: Cl = 1; C2 (Br, C, H) = 2; CH₃ = 3; H = 4.'},
+bbut:{name:'2-bromobutane',n:1,UT:'CH3',UL:'CH₃',DT:'Et',DL:'CH₂CH₃',XT:'Br',XL:'Br',rank:['X','D','U','H'],cip:'Br = 1; CH₂CH₃ (C, H, H) = 2; CH₃ (H, H, H) = 3; H = 4.'},
+lact:{name:'lactic acid',n:1,UT:'COOH',UL:'CO₂H',DT:'CH3',DL:'CH₃',XT:'OH',XL:'OH',rank:['X','U','D','H'],cip:'OH = 1; CO₂H (O, O, O) = 2; CH₃ = 3; H = 4.'},
+ala:{name:'alanine',n:1,UT:'COOH',UL:'CO₂H',DT:'CH3',DL:'CH₃',XT:'NH2',XL:'NH₂',rank:['X','U','D','H'],cip:'NH₂ = 1; CO₂H = 2; CH₃ = 3; H = 4. L-alanine is (S): NH₂ on the left of the Fischer cross.'},
+gly:{name:'glyceraldehyde',n:1,UT:'CHO',UL:'CHO',DT:'CH2OH',DL:'CH₂OH',XT:'OH',XL:'OH',rank:['X','U','D','H'],cip:'OH = 1; CHO (O, O, H) = 2; CH₂OH (O, H, H) = 3; H = 4. D-glyceraldehyde is (R): OH on the right.'},
+cbcf:{name:'bromochlorofluoromethane',n:1,UT:'F',UL:'F',DT:'Cl',DL:'Cl',XT:'Br',XL:'Br',rank:['X','D','U','H'],cip:'Br > Cl > F > H (by atomic number).'}};
+const pjCfgs=k=>PJ[k].n===2?['RR','SS','RS','SR']:['R','S'];
+function pjName(def,cfg){if(def.n===1)return '('+cfg+')';return '(2'+cfg[0]+',3'+cfg[1]+')'+(def.sym&&cfg[0]!==cfg[1]?' · meso':'');}
+function pjArr(def,k,desc,vec){const rank=def.n===1?def.rank:def.rank[k];
+for(const Xs of ['L','R']){const Hs=Xs==='L'?'R':'L';const slot={X:Xs,H:Hs,U:'U',D:'D'};
+const v=rank.slice(0,3).map(nm=>vec[slot[nm]]);const s=V3.dot(V3.cross(v[0],v[1]),v[2]);if((s<0?'R':'S')===desc)return {X:Xs,H:Hs};}
+return {X:'L',H:'R'};}
+function pjBuild(key,cfg,tau){const def=PJ[key],m=newMol(),F0=Fr(m,MI);
+if(def.n===1){const c=F0.a('C',[0,0,0],3);const vec={U:[0,.816,-.577],D:[0,-.816,-.577],L:[-.816,0,.577],R:[.816,0,.577]};const a=pjArr(def,0,cfg[0],vec);
+addGrp(F0,def.UT,c,[0,0,0],vec.U);addGrp(F0,def.DT,c,[0,0,0],vec.D);addGrp(F0,def.XT,c,[0,0,0],vec[a.X]);addGrp(F0,'H',c,[0,0,0],vec[a.H]);m.tags.push({i:c,t:'C* '+cfg[0]});addH(m);return m;}
+const top=[0,.77,0],bot=[0,-.77,0];
+const vT={U:[0,.334,-.943],D:[0,-1,0],L:[-.817,.334,.472],R:[.817,.334,.472]};
+const vB={U:[0,1,0],D:[0,-.334,-.943],L:[-.817,-.334,.472],R:[.817,-.334,.472]};
+const aT=pjArr(def,0,cfg[0],vT),aB=pjArr(def,1,cfg[1],vB);
+const c2=F0.a('C',top,3),Ft=Fr(m,rotY(tau)),c3=Ft.a('C',bot,3);F0.b(c2,c3,1);
+addGrp(F0,def.topT,c2,top,vT.U);addGrp(F0,def.XT[0],c2,top,vT[aT.X]);addGrp(F0,'H',c2,top,vT[aT.H]);
+addGrp(Ft,def.botT,c3,bot,vB.D);addGrp(Ft,def.XT[1],c3,bot,vB[aB.X]);addGrp(Ft,'H',c3,bot,vB[aB.H]);
+m.tags.push({i:c2,t:'C2 '+cfg[0]},{i:c3,t:'C3 '+cfg[1]});addH(m);return m;}
+
+function pjState(key,cfg,tau){
+const def=PJ[key],n=def.n,st={def,key,cfg,tau,n};
+const rk=k=>{const r=n===1?def.rank:def.rank[k];const o={};r.forEach((nm,i)=>o[nm]=i+1);return o;};
+const eclV=n===1?[{U:[0,.816,-.577],D:[0,-.816,-.577],L:[-.816,0,.577],R:[.816,0,.577]}]:[{U:[0,.334,-.943],D:[0,-1,0],L:[-.817,.334,.472],R:[.817,.334,.472]},{U:[0,1,0],D:[0,-.334,-.943],L:[-.817,-.334,.472],R:[.817,-.334,.472]}];
+st.eclV=eclV;st.arr=[];st.grp=[];
+for(let k=0;k<n;k++){st.arr[k]=pjArr(def,k,cfg[k],eclV[k]);const r=rk(k);
+const lab=n===1?{U:def.UL,D:def.DL,X:def.XL,H:'H'}:(k===0?{U:def.topL,D:'C3',X:def.XL[0],H:'H'}:{U:'C2',D:def.botL,X:def.XL[1],H:'H'});
+st.grp[k]={};['U','D','X','H'].forEach(nm=>st.grp[k][nm]={lab:lab[nm],rank:r[nm],nm});}
+st.nameAt=(k,slot)=>slot==='U'?'U':slot==='D'?'D':(st.arr[k].X===slot?'X':'H');
+if(n===2){
+const Rm=rotY(tau);
+const front=['U','L','R'].map(s=>{const v=eclV[0][s],g=st.grp[0][st.nameAt(0,s)];return {slot:s,nm:g.nm,lab:g.lab,rank:g.rank,x:v[0],y:-v[2],z:v[1]};});
+const rear=['D','L','R'].map(s=>{const v=applyM(Rm,eclV[1][s]),g=st.grp[1][st.nameAt(1,s)];return {slot:s,nm:g.nm,lab:g.lab,rank:g.rank,x:v[0],y:-v[2],z:v[1]};});
+st.newman={front,rear,fAxis:{lab:st.grp[0].D.lab,rank:st.grp[0].D.rank,x:0,y:0,z:-1.54},rAxis:{lab:st.grp[1].U.lab,rank:st.grp[1].U.rank,x:0,y:0,z:1.54}};
+const R180=rotY(180),map=v=>[-v[1],v[2],-v[0]];
+const c2=map([0,.77,0]),c3=map([0,-.77,0]),e1=map(V3.add([0,.77,0],V3.mul(eclV[0].U,1.5))),e4=map(V3.add([0,-.77,0],V3.mul(applyM(R180,eclV[1].D),1.5)));
+st.wedge={centres:[{pos:c2,nb:[{nm:'U',pos:e1},{nm:'D',pos:c3}],z:{L:map(eclV[0].L)[2],R:map(eclV[0].R)[2]}},{pos:c3,nb:[{nm:'U',pos:c2},{nm:'D',pos:e4}],z:{L:map(applyM(R180,eclV[1].L))[2],R:map(applyM(R180,eclV[1].R))[2]}}]};
+}else{
+const map=v=>[v[2],v[1],-v[0]],e=eclV[0];
+st.wedge={centres:[{pos:[0,0],nb:[{nm:'U',pos:map(e.U)},{nm:'D',pos:map(e.D)}],z:{L:map(e.L)[2],R:map(e.R)[2]}}]};}
+st.wl=st.wedge.centres.map((c,k)=>{
+const us=c.nb.map(q=>{const dx=q.pos[0]-c.pos[0],dy=q.pos[1]-c.pos[1],l=Math.hypot(dx,dy)||1;return {nm:q.nm,pos:q.pos,u:[dx/l,dy/l]};});
+let b=[-(us[0].u[0]+us[1].u[0]),-(us[0].u[1]+us[1].u[1])];const bl=Math.hypot(b[0],b[1])||1;b=[b[0]/bl,b[1]/bl];
+const rot=(v,deg)=>{const a=rad(deg),cc=Math.cos(a),ss=Math.sin(a);return [v[0]*cc-v[1]*ss,v[0]*ss+v[1]*cc];};
+const subs=['L','R'].map(s=>({slot:s,nm:st.nameAt(k,s),wedge:c.z[s]>0})).map(q=>({...q,dir:rot(b,q.wedge?26:-26)}));
+return {pos:c.pos,nbs:us,subs};});
+return st;}
+
+function readCentre(gs){
+const len=q=>Math.hypot(q.x,q.y);let G=gs.find(q=>len(q)<0.2),mode='axis';
+if(!G){const h=gs.find(q=>q.rank===4);if(Math.abs(h.z)>0.25){G=h;mode='low';}else{G=gs.reduce((a,b)=>b.z<a.z?b:a);mode='away';}}
+const rest=gs.filter(q=>q!==G).sort((a,b)=>a.rank-b.rank);
+const cr=(a,b)=>a.x*b.y-a.y*b.x;const area=cr(rest[0],rest[1])+cr(rest[1],rest[2])+cr(rest[2],rest[0]);const cw=area<0;
+const toward=G.z>0,par=(4-G.rank)%2,isR=(cw!==((((toward?1:0)+par)%2)===1));
+const seq=rest.map(q=>q.lab+' ('+q.rank+')').join(' → ');let t;
+if(mode==='low')t=`${G.lab} (4) points ${toward?'toward you':'away from you'}. Tracing ${seq} runs ${cw?'clockwise':'counter‑clockwise'}${toward?'; reverse it, because the lowest priority faces you':''} ⇒ <b>${isR?'R':'S'}</b>.`;
+else t=`${G.lab} (${G.rank}) points ${toward?'toward you':'away from you'}${mode==='axis'?', straight along your line of sight':''}. Trace the other three in priority order, ${seq}: ${cw?'clockwise':'counter‑clockwise'}. ${toward?'The group faces you, so reverse. ':''}${par?'Priority '+G.rank+' is not the lowest, so reverse once more. ':''}⇒ <b>${isR?'R':'S'}</b>.`;
+return {desc:isR?'R':'S',text:t};}
+function groupsFor(st,kind,k){
+if(kind==='fischer'){return ['U','D','L','R'].map(s=>{const v=st.eclV[k][s],g=st.grp[k][st.nameAt(k,s)];return {lab:g.lab,rank:g.rank,x:v[0],y:v[1],z:v[2]};});}
+if(kind==='wedge'){const w=st.wl[k];const gs=[];w.nbs.forEach(q=>{const g=st.grp[k][q.nm];gs.push({lab:g.lab,rank:g.rank,x:q.u[0],y:q.u[1],z:0});});w.subs.forEach(q=>{const g=st.grp[k][q.nm];gs.push({lab:g.lab,rank:g.rank,x:q.dir[0],y:q.dir[1],z:q.wedge?0.8:-0.8});});return gs;}
+const nw=st.newman;const src=k===0?[...nw.front,nw.fAxis]:[...nw.rear,nw.rAxis];return src.map(q=>({lab:q.lab,rank:q.rank,x:q.x,y:q.y,z:q.z}));}
+const PJINTRO={fischer:'Every horizontal bond points toward you and every vertical bond points away.',wedge:'Solid wedges point toward you, hashed wedges away from you, plain lines lie in the paper.',sawhorse:'The sawhorse is the Newman view seen obliquely: each group keeps its angular position around its own carbon. C2 is the near carbon (lower left), C3 the far one (upper right).',newman:'Look straight down the C2→C3 bond. The centre dot is the front carbon C2; the circle is the rear carbon C3. Front bonds meet at the centre, rear bonds start at the circle.'};
+function pjRead(st,kind){const k2=kind==='sawhorse'?'newman':kind;const out=[];
+for(let k=0;k<st.n;k++){const r=readCentre(groupsFor(st,k2,k));out.push({k,desc:r.desc,text:r.text});}
+return out;}
+function pjFinal(st,rd){const d=rd.map(r=>r.desc).join('');return st.n===1?'('+d+')':'(2'+d[0]+',3'+d[1]+')'+(st.def.sym&&d[0]!==d[1]?' · meso':'');}
+
+/* drawing */
+function chip(g,x,y,n){S('circle',{cx:x,cy:y,r:9,fill:'#fff',stroke:'#5b3fd1','stroke-width':1.6},g);T(g,x,y+4,String(n),'#5b3fd1',11);}
+function pjLabel(g,x,y,lab,rank,anchor,pri,col){T(g,x,y,lab,col||COL.ink,20,anchor);if(pri&&rank){const w=lab.length*10.5+6;const cx=anchor==='end'?x-w-12:anchor==='start'?x+w+12:x+w/2+12;chip(g,cx,y-7,rank);}}
+function drawFischer(g,st,pri){const cx=280,two=st.n===2,ys=two?[150,275]:[212],top=two?52:70,bot=two?395:360;
+line(g,[cx,top+12],[cx,bot-28],COL.green,4);
+ys.forEach((y,k)=>{line(g,[cx-92,y],[cx+92,y],COL.pink,4);S('circle',{cx:cx,cy:y,r:8,fill:COL.blue,stroke:'#fff','stroke-width':2},g);T(g,cx+16,y-12,two?'C'+(k+2):'C*',COL.blue,14,'start');
+const a=st.arr[k],gp=st.grp[k];const left=a.X==='L'?gp.X:gp.H,right=a.X==='L'?gp.H:gp.X;
+pjLabel(g,cx-114,y+7,left.lab,left.rank,'end',pri);pjLabel(g,cx+114,y+7,right.lab,right.rank,'start',pri);
+if(two&&pri){const nb=k===0?gp.D:gp.U;chip(g,cx+18,y+(k===0?34:-34),nb.rank);}});
+pjLabel(g,cx,top,st.grp[0].U.lab,st.grp[0].U.rank,'middle',pri);pjLabel(g,cx,bot,st.grp[st.n-1].D.lab,st.grp[st.n-1].D.rank,'middle',pri);
+T(g,cx,two?424:392,'horizontal = toward you · vertical = away',COL.grey,13);}
+function drawNewman(g,st,pri){const cx=280,cy=205,R=72,L=148,nw=st.newman;
+S('circle',{cx,cy,r:R,fill:'#fff',stroke:COL.green,'stroke-width':5},g);
+const draw=(q,start,col)=>{const a=Math.atan2(q.y,q.x),c=Math.cos(a),s=Math.sin(a);line(g,[cx+start*c,cy-start*s],[cx+L*c,cy-L*s],col,4);
+const px=cx+(L+16)*c,py=cy-(L+16)*s,an=c>0.35?'start':c<-0.35?'end':'middle';pjLabel(g,px+(an==='start'?4:an==='end'?-4:0),py+(s>0.5?-4:s<-0.5?16:7),q.lab,q.rank,an,pri,COL.ink);};
+nw.rear.forEach(q=>draw(q,R,COL.green));nw.front.forEach(q=>draw(q,0,COL.pink));
+S('circle',{cx,cy,r:9,fill:COL.blue,stroke:'#fff','stroke-width':2},g);
+T(g,14,26,'green circle = rear carbon C3',COL.green,13,'start');T(g,14,46,'pink lines + centre dot = front carbon C2',COL.pink,13,'start');
+if(pri){T(g,cx,cy+8,'',COL.ink,1);}
+T(g,cx,410,'viewing along C2 → C3',COL.grey,13);}
+function drawSawhorse(g,st,pri){const P2=[205,300],P3=[355,175],L=82,nw=st.newman;
+line(g,P2,P3,COL.blue,7);
+const draw=(P,q,col)=>{const a=Math.atan2(q.y,q.x),c=Math.cos(a),s=Math.sin(a);line(g,P,[P[0]+L*c,P[1]-L*s],col,4);
+const px=P[0]+(L+14)*c,py=P[1]-(L+14)*s,an=c>0.35?'start':c<-0.35?'end':'middle';pjLabel(g,px+(an==='start'?4:an==='end'?-4:0),py+(s>0.5?-4:s<-0.5?16:7),q.lab,q.rank,an,pri,COL.ink);};
+nw.rear.forEach(q=>draw(P3,q,COL.green));nw.front.forEach(q=>draw(P2,q,COL.pink));
+S('circle',{cx:P2[0],cy:P2[1],r:9,fill:COL.blue,stroke:'#fff','stroke-width':2},g);S('circle',{cx:P3[0],cy:P3[1],r:9,fill:COL.blue,stroke:'#fff','stroke-width':2},g);
+T(g,P2[0]-14,P2[1]+36,'C2 (near)',COL.pink,13,'end');T(g,P3[0]+16,P3[1]-20,'C3 (far)',COL.green,13,'start');
+T(g,280,410,'front groups pink · rear groups green',COL.grey,13);}
+function drawWedge(g,st,pri){const S0=st.n===2?104:150,toS=p=>[280+S0*p[0],212-S0*p[1]];
+const ws=st.wl;
+if(st.n===2){const c=st.wedge.centres;const ends=[c[0].nb[0].pos,c[1].nb[1].pos];
+line(g,toS(ends[0]),toS(c[0].pos),COL.blue,4);line(g,toS(c[0].pos),toS(c[1].pos),COL.blue,4);line(g,toS(c[1].pos),toS(ends[1]),COL.blue,4);
+const e0=toS(ends[0]),e1=toS(ends[1]);pjLabel(g,e0[0]-8,e0[1]+26,st.grp[0].U.lab,st.grp[0].U.rank,'middle',pri);pjLabel(g,e1[0]+8,e1[1]-14,st.grp[1].D.lab,st.grp[1].D.rank,'middle',pri);
+ws.forEach((w,k)=>{const p=toS(w.pos);S('circle',{cx:p[0],cy:p[1],r:6,fill:COL.blue},g);T(g,p[0]+(k===0?-14:14),p[1]+(k===0?20:-12),'C'+(k+2),COL.blue,13,k===0?'end':'start');
+w.subs.forEach(sb=>{const d=sb.dir,e=[p[0]+d[0]*72,p[1]-d[1]*72];if(sb.wedge)wedge(g,p,e,COL.pink);else hash(g,p,e,COL.green);const gp=st.grp[k][sb.nm];const lx=p[0]+d[0]*98,ly=p[1]-d[1]*98+7;pjLabel(g,lx,ly,gp.lab,gp.rank,d[0]>0.15?'start':d[0]<-0.15?'end':'middle',pri);});
+if(pri){const nbc=k===0?st.grp[0].D:st.grp[1].U;const o=k===0?[p[0]+30,p[1]+10]:[p[0]-30,p[1]+10];chip(g,o[0],o[1],nbc.rank);}});}
+else{const w=ws[0],p=toS(w.pos);
+w.nbs.forEach(q=>{const e=toS(q.pos);line(g,p,e,COL.blue,4);const gp=st.grp[0][q.nm];pjLabel(g,e[0]-10,e[1]+(q.nm==='U'?-10:26),gp.lab,gp.rank,'middle',pri);});
+S('circle',{cx:p[0],cy:p[1],r:7,fill:COL.blue},g);T(g,p[0]-8,p[1]-14,'C*',COL.blue,14,'end');
+w.subs.forEach(sb=>{const d=sb.dir,e=[p[0]+d[0]*100,p[1]-d[1]*100];if(sb.wedge)wedge(g,p,e,COL.pink);else hash(g,p,e,COL.green);const gp=st.grp[0][sb.nm];pjLabel(g,p[0]+d[0]*128,p[1]-d[1]*128+7,gp.lab,gp.rank,'start',pri);});}
+T(g,280,410,'solid wedge toward you · hashed wedge away · plain line in the paper',COL.grey,13);}
+function drawView(g,kind,st,pri){while(g.firstChild)g.removeChild(g.firstChild);
+({fischer:drawFischer,wedge:drawWedge,sawhorse:drawSawhorse,newman:drawNewman})[kind](g,st,pri);}
+function pjRelation(def,a,b){const norm=c=>def.sym&&c==='SR'?'RS':c;const mir=c=>c.split('').map(x=>x==='R'?'S':'R').join('');const A=norm(a),B=norm(b);const meso=c=>def.sym&&norm(c)==='RS';
+if(A===B)return {rel:'Identical',why:a!==b?'The meso forms (2R,3S) and (2S,3R) are the same molecule: it has a mirror plane (and a centre of symmetry), and numbering from the other end turns one name into the other.':'Same configuration at every stereocentre.'};
+if(!meso(A)&&norm(mir(A))===B)return {rel:'Enantiomers',why:'Every stereocentre is inverted: the two are non-superimposable mirror images.'};
+return {rel:'Diastereomers',why:'Same connectivity, but neither identical nor mirror images (at least one centre is the same and one different).'};}
+
+/* ---------- Projection tab controller ---------- */
+const pj={key:'dbb',cfg:'RR',tau:180,view:'fischer',pri:true,tour:false,spin:false,last:0,stamp:''};
+(function(){
+const mol=$('pj_mol'),cfgS=$('pj_cfg'),priC=$('pj_pri'),tau=$('pj_tau'),tauV=$('pj_tauv');
+Object.keys(PJ).forEach(k=>mol.add(new Option(PJ[k].name,k)));
+function fillCfg(){const def=PJ[pj.key];cfgS.innerHTML=pjCfgs(pj.key).map(c=>`<option value="${c}">${pjName(def,c)}</option>`).join('');if(!pjCfgs(pj.key).includes(pj.cfg))pj.cfg=pjCfgs(pj.key)[0];cfgS.value=pj.cfg;
+document.querySelectorAll('#pj_views button').forEach(b=>{const need2=b.dataset.v==='newman'||b.dataset.v==='sawhorse';b.disabled=need2&&def.n===1;});
+if(def.n===1&&(pj.view==='newman'||pj.view==='sawhorse'))pj.view='fischer';
+$('pj_tauwrap').style.display=def.n===2?'':'none';}
+window.pjRefresh=function(){const st=pjState(pj.key,pj.cfg,pj.tau);
+document.querySelectorAll('#pj_views button').forEach(b=>b.classList.toggle('on',b.dataset.v===pj.view));
+const g=$('pj_main');drawView(g,pj.view,st,pj.pri);g.style.opacity=0;requestAnimationFrame(()=>{g.style.transition='opacity .35s';g.style.opacity=1;});
+const tiles=$('pj_all');tiles.innerHTML='';const kinds=st.n===2?['fischer','wedge','sawhorse','newman']:['fischer','wedge'];const names={fischer:'Fischer',wedge:'Wedge–dash',sawhorse:'Sawhorse',newman:'Newman'};
+kinds.forEach(kd=>{const d=document.createElement('div');d.className='tile';d.innerHTML='<b>'+names[kd]+'</b>';const sv=document.createElementNS(NS,'svg');sv.setAttribute('viewBox','0 0 560 430');d.appendChild(sv);tiles.appendChild(d);drawView(sv,kd,st,pj.pri);});
+const rd=pjRead(st,pj.view);const fin=pjFinal(st,rd);const ok=rd.every((r,i)=>r.desc===pj.cfg[i]);
+$('pj_read').innerHTML=`<p><b>1 · Priorities (CIP).</b> ${st.def.cip}</p><p><b>2 · How to read this drawing.</b> ${PJINTRO[pj.view]}</p>`+rd.map(r=>`<p><b>${st.n===2?'C'+(r.k+2):'The stereocentre'}:</b> ${r.text}</p>`).join('')+`<p><b>3 · Result:</b> <span class="resbadge ${ok?'ok':'bad'}">${fin}</span> ${ok?'✓ matches the configuration chosen above.':'⚠ does not match: report this.'}</p>`;
+$('pj_title').textContent=PJ[pj.key].name+' · '+pjName(PJ[pj.key],pj.cfg);};
+mol.onchange=()=>{pj.key=mol.value;fillCfg();pjRefresh();};
+cfgS.onchange=()=>{pj.cfg=cfgS.value;pjRefresh();};
+priC.onchange=()=>{pj.pri=priC.checked;pjRefresh();};
+document.querySelectorAll('#pj_views button').forEach(b=>b.onclick=()=>{pj.view=b.dataset.v;pj.tour=false;$('pj_tour').textContent='▶ Play tour';pjRefresh();});
+tau.oninput=()=>{pj.tau=+tau.value;pj.spin=false;$('pj_spin').textContent='▶ Spin the bond';tauV.textContent=pj.tau+'°';pjRefresh();};
+$('pj_spin').onclick=()=>{pj.spin=!pj.spin;pj.tour=false;$('pj_tour').textContent='▶ Play tour';$('pj_spin').textContent=pj.spin?'❚❚ Stop spinning':'▶ Spin the bond';};
+$('pj_tour').onclick=()=>{pj.tour=!pj.tour;pj.spin=false;$('pj_spin').textContent='▶ Spin the bond';$('pj_tour').textContent=pj.tour?'❚❚ Stop tour':'▶ Play tour';pj.last=clock;};
+window.pjSetTau=v=>{pj.tau=Math.round(((v%360)+360)%360);tau.value=pj.tau;tauV.textContent=pj.tau+'°';};
+fillCfg();pjRefresh();
+})();
+function pjWidget(){const c=$('pj_3d');fit(c);const W=c._W,H=c._H;const s={yaw:.7,tilt:.28,mol:null,key:''};
+let dr=null;c.addEventListener('pointerdown',e=>{dr=[e.clientX,e.clientY];c.setPointerCapture(e.pointerId);});
+c.addEventListener('pointermove',e=>{if(!dr)return;s.yaw+=(e.clientX-dr[0])*0.01;s.tilt=clamp(s.tilt+(e.clientY-dr[1])*0.008,-1.2,1.3);dr=[e.clientX,e.clientY];});
+c.addEventListener('pointerup',()=>{dr=null;});
+let lastT=null;
+function draw(t){if(lastT===null)lastT=t;const dt=Math.min(0.1,t-lastT);lastT=t;
+if(pj.spin){pjSetTau(pj.tau+dt*60);pjRefresh();}
+if(pj.tour){const tgt=pj.view==='fischer'?0:180;const d=((tgt-pj.tau+540)%360)-180;if(Math.abs(d)>1){pjSetTau(pj.tau+Math.sign(d)*Math.min(Math.abs(d),dt*110));if(pj.view==='newman'||pj.view==='sawhorse')pjRefresh();}
+if(t-pj.last>3.4){const order=PJ[pj.key].n===2?['fischer','wedge','sawhorse','newman']:['fischer','wedge'];pj.view=order[(order.indexOf(pj.view)+1)%order.length];pj.last=t;pjRefresh();}}
+const key=pj.key+pj.cfg+Math.round(pj.tau);if(key!==s.key){s.key=key;s.mol=pjBuild(pj.key,pj.cfg,pj.tau);}
+s.yaw+=dt*0.35;
+const x=ctx2(c);const mol=s.mol;const sig=mol.atoms.map((a,i)=>i).filter(i=>mol.atoms[i].e!=='H');const ctr=centroid(mol.atoms.map(a=>a.p),sig);
+const P=mol.atoms.map(a=>V3.sub(a.p,ctr));
+renderMol(x,mol,P,W/2,H/2+4,PJ[pj.key].n===2?66:78,s.yaw,s.tilt,{style:'solid',showH:true,tags:true});
+txt(x,PJ[pj.key].n===2?'torsion about C2–C3 = '+pj.tau+'°  ('+(pj.tau===0?'eclipsed = Fischer':pj.tau===180?'anti = zigzag':pj.tau%120===60||pj.tau===60||pj.tau===300?'staggered':'')+')':'ball-and-stick model of the stereocentre',W/2,24,'#2a2f3b',13);
+txt(x,'drag to turn · R/S never changes when the bond turns',W/2,H-12,'#8a92a3',11,'center','500');}
+return {cv:c,draw};}
+
+/* ---------- Compare tab ---------- */
+(function(){
+const mk=$('cm_mol'),a=$('cm_a'),b=$('cm_b'),fm=$('cm_fmt');
+Object.keys(PJ).filter(k=>PJ[k].n===2).forEach(k=>mk.add(new Option(PJ[k].name,k)));
+function opts(){const def=PJ[mk.value];[a,b].forEach(s=>{const v=s.value;s.innerHTML=['RR','SS','RS','SR'].map(c=>`<option value="${c}">${pjName(def,c)}</option>`).join('');if(v)s.value=v;});}
+function run(){const def=PJ[mk.value];const sa=pjState(mk.value,a.value,180),sb=pjState(mk.value,b.value,180);drawView($('cm_sa'),'fischer',sa,true);drawView($('cm_sb'),fm.value,sb,true);
+const r=pjRelation(def,a.value,b.value);$('cm_rel').textContent=r.rel;$('cm_rel').className='result '+(r.rel==='Identical'?'idn':r.rel==='Enantiomers'?'enan':'dias');$('cm_why').textContent=r.why;
+$('cm_note').textContent=def.sym?'Both ends of this molecule are identical, so (2R,3S) and (2S,3R) are one meso compound: there are only 3 stereoisomers.':'The two ends differ (Br at one centre, Cl at the other), so (2R,3S) and (2S,3R) are different compounds: there are 4 stereoisomers, two pairs of enantiomers.';}
+a.value='RR';mk.onchange=()=>{opts();run();};opts();a.value='RR';b.value='SS';[a,b,fm].forEach(s=>s.onchange=run);run();
+function norm(s){const m=[...s.matchAll(/(\d+)\s*([RSrs])/g)].map(q=>[+q[1],q[2].toUpperCase()]).sort((x,y)=>x[0]-y[0]);return m.length?'('+m.map(q=>q[0]+q[1]).join(',')+')':'';}
+const ni=$('nm_in');function nrun(){const o=norm(ni.value);$('nm_out').textContent=o?'Preferred order of locants: '+o:'Type descriptors such as (3R,2R)';}
+ni.oninput=nrun;nrun();
+})();
+
+/* ---------- Chirality checker ---------- */
+const ckYN=[['different','two different groups (a ≠ b)'],['same','two identical groups (a = a)']];
+const CK={
+centre:{label:'One stereocentre (carbon with four groups)',fields:[{k:'g',label:'The four groups on the carbon are',o:[['abcd','all four different'],['aabc','two identical (a, a, b, c)'],['aabb','two pairs identical'],['aaab','three identical']]}],
+ev:s=>({sym:s.g==='abcd'?null:'Two identical groups lie in a mirror plane (σ)',el:'a stereocentre (four different groups)',st:'yes',why:'A C–X stereocentre does not flip unless bonds break (as in enolisation).'})},
+two:{label:'Two stereocentres',fields:[{k:'ends',label:'The two ends of the chain are',o:[['unlike','different (A–X–Y–B)'],['like','identical (A–X–X–A)']]},{k:'cf',label:'Configuration',o:[['like','R,R or S,S'],['unlike','R,S']]}],
+ev:s=>({sym:(s.ends==='like'&&s.cf==='unlike')?'The meso form has a mirror plane (σ) and a centre of symmetry (i)':null,el:'two stereocentres',st:'yes',why:s.ends==='unlike'?'Unlike ends: 4 stereoisomers, all chiral.':'Identical ends: 3 stereoisomers (R,R / S,S pair and one meso form).'})},
+ring:{label:'Disubstituted ring (cyclohexane, cyclopentane …)',fields:[{k:'pos',label:'Substituents on carbons',o:[['12','1,2'],['13','1,3'],['14','1,4']]},{k:'grp',label:'The two groups are',o:[['same','identical'],['diff','different']]},{k:'iso',label:'Isomer',o:[['cis','cis'],['trans','trans']]}],
+ev:s=>{let sym=null;if(s.pos==='14')sym='A mirror plane passes through C1 and C4 (σ), in both cis and trans';else if(s.grp==='same'&&s.iso==='cis')sym='cis with identical groups is meso: it has a mirror plane (σ)';return {sym,el:'two stereocentres in the ring',st:'yes',why:'The average flat ring is used; ring flipping does not give separable isomers.'};}},
+allene:{label:'Allene / cumulene (C=C=C …)',fields:[{k:'c',label:'Number of cumulated C=C bonds',o:[['2','2 (allene)'],['3','3 (butatriene type)'],['4','4']]},{k:'e1',label:'End 1 carries',o:ckYN},{k:'e2',label:'End 2 carries',o:ckYN}],
+ev:s=>{const odd=(+s.c)%2===1;let sym=null;if(odd)sym='An odd number of C=C bonds puts all the groups in one plane: the molecule is planar (σ). It shows cis/trans isomerism, not optical';else if(s.e1==='same'||s.e2==='same')sym='An end with two identical groups gives a mirror plane (σ)';return {sym,el:'a chiral axis (the cumulated chain)',st:'yes',why:'The axis is rigid.'};}},
+spiro:{label:'Spirane (two rings sharing one atom)',fields:[{k:'r1',label:'Ring 1: groups on the axis carbon',o:ckYN},{k:'r2',label:'Ring 2: groups on the axis carbon',o:ckYN}],
+ev:s=>({sym:(s.r1==='same'||s.r2==='same')?'A ring with two identical groups on its axis carbon gives a mirror plane (σ)':null,el:'a chiral axis through the spiro atom',st:'yes',why:'The rings are perpendicular and rigid.'})},
+hemi:{label:'Hemispirane (alkylidene-cycloalkane)',fields:[{k:'r1',label:'Exocyclic carbon carries',o:ckYN},{k:'r2',label:'Ring carbon opposite the C=C carries',o:ckYN}],
+ev:s=>({sym:(s.r1==='same'||s.r2==='same')?'Identical groups at one end give a mirror plane (σ)':null,el:'a chiral axis along the C=C and through the ring',st:'yes',why:'The axis is rigid.'})},
+biaryl:{label:'Biphenyl (atropisomerism)',fields:[{k:'o',label:'Ortho groups',o:[['4','four large (NO₂, COOH, I, Br, CH₃)'],['3','three large'],['2','two large'],['small','only small (F, H, OH)']]},{k:'ra',label:'Ring A ortho groups',o:ckYN},{k:'rb',label:'Ring B ortho groups',o:ckYN},{k:'br',label:'Rings',o:[['free','joined only by the single bond'],['bridged','held flat by a bridge']]}],
+ev:s=>{let sym=null;if(s.ra==='same'||s.rb==='same')sym='A symmetrical ring makes the plane of the other ring a mirror plane (σ)';else if(s.br==='bridged')sym='A ring system held planar has a mirror plane (σ)';
+const st=s.o==='4'?'yes':s.o==='small'?'no':'maybe';const why={'4':'Four large ortho groups block rotation (barrier above about 90–100 kJ/mol).','3':'Three large ortho groups usually, but not always, block rotation.','2':'Two large ortho groups block rotation only if they are very big (binaphthyl compounds do).',small:'Small ortho groups let the rings rotate through the flat form: the enantiomers interconvert and cannot be separated.'}[s.o];return {sym,el:'a chiral axis (the biaryl bond)',st,why};}},
+terph:{label:'p-Terphenyl (two biaryl axes)',fields:[{k:'ends',label:'The two end rings are',o:[['same','identical'],['diff','different']]},{k:'iso',label:'Isomer',o:[['syn','(up, up): groups on the same side'],['anti','(up, down)']]},{k:'bulky',label:'Ortho groups',o:[['yes','large (I, Br, NO₂ …)'],['no','small']]}],
+ev:s=>({sym:(s.ends==='same'&&s.iso==='anti')?'A centre of symmetry (i): the meso form':null,el:'two chiral axes (the two Ar–Ar bonds)',st:s.bulky==='yes'?'yes':'no',why:s.bulky==='yes'?'Large groups block rotation about both axes.':'Small groups let both axes rotate: racemises.'})},
+helix:{label:'Helical molecule',fields:[{k:'h',label:'Molecule',o:[['h4','[4]helicene'],['h5','[5]helicene'],['h6','[6]helicene or larger'],['oter','o-terphenyl (plain)'],['oterL','o-terphenyl locked by bulky groups or a long ortho-phenylene chain'],['cplx','tris-chelate octahedral complex [M(AA)₃]']]}],
+ev:s=>{const m={h4:['no','Barrier about 17 kJ/mol: the P and M forms interconvert at once.'],h5:['maybe','Barrier about 100 kJ/mol: stable for a while but racemises slowly at room temperature.'],h6:['yes','Barrier about 150 kJ/mol: configurationally stable.'],oter:['no','The twist reverses very easily (low barrier).'],oterL:['yes','The helix cannot unwind.'],cplx:['yes','Inert metal complexes such as [Co(en)₃]³⁺ are resolvable (Δ/Λ).']}[s.h];return {sym:null,el:'helicity (P or M helix)',st:m[0],why:m[1]};}},
+hetero:{label:'Nitrogen, phosphorus, sulfur',fields:[{k:'h',label:'Compound',o:[['amine','amine NR¹R²R³ (three different groups)'],['amine2','amine with two identical groups'],['quat','quaternary ammonium NR¹R²R³R⁴ (all different)'],['troger',"Tröger's base (N locked at bridgeheads)"],['azir','N-substituted aziridine'],['noxide','amine oxide R¹R²R³N→O'],['phos','phosphine PR¹R²R³ (all different)'],['sulfox','sulfoxide R–S(=O)–R′ (R ≠ R′)'],['sulfide','sulfide R–S–R′ or sulfone']]}],
+ev:s=>({amine:{sym:null,el:'a pyramidal nitrogen',st:'no',why:'Nitrogen inversion (barrier about 25–35 kJ/mol, about 10¹⁰ flips per second) racemises the amine.'},amine2:{sym:'Two identical groups give a mirror plane (σ)',el:'',st:'no',why:''},quat:{sym:null,el:'a stereogenic N⁺ (no lone pair)',st:'yes',why:'Nothing to invert: configurationally stable.'},troger:{sym:null,el:'two bridgehead stereogenic nitrogens',st:'yes',why:'The rigid frame stops inversion (resolved by Prelog and Wieland).'},azir:{sym:null,el:'a pyramidal nitrogen in a small ring',st:'maybe',why:'The strained planar form raises the barrier, so invertomers can be separated at low temperature.'},noxide:{sym:null,el:'a stereogenic N–O nitrogen (four groups)',st:'yes',why:'No lone pair to invert.'},phos:{sym:null,el:'a pyramidal phosphorus',st:'yes',why:'The inversion barrier is about 120–140 kJ/mol: resolvable.'},sulfox:{sym:null,el:'a pyramidal sulfur',st:'yes',why:'The inversion barrier is very high: resolvable.'},sulfide:{sym:'A mirror plane contains the C–S–C (or C–SO₂–C) atoms (σ)',el:'',st:'no',why:''}})[s.h]},
+planar:{label:'Planar chirality',fields:[{k:'p',label:'Molecule',o:[['cyc','[2.2]paracyclophane with a suitable substitution pattern'],['tco','trans-cyclooctene'],['big','trans-cycloalkene with a large ring']]}],
+ev:s=>{const m={cyc:['yes','The bridges cannot swing past the ring.'],tco:['yes','The small ring cannot flip: resolvable.'],big:['no','The chain swings through the ring: the forms interconvert.']}[s.p];return {sym:null,el:'a chiral plane',st:m[0],why:m[1]};}},
+conf:{label:'Conformations',fields:[{k:'c',label:'Form',o:[['gauche','gauche conformer of butane (chiral on paper)'],['chair','chair cyclohexane derivative with flipping'],['frozen','conformation frozen by a high barrier (hindered biaryl)']]}],
+ev:s=>({gauche:{sym:null,el:'a chiral conformation',st:'no',why:'Rotation about C–C takes picoseconds: the conformers cannot be isolated.'},chair:{sym:'The time-averaged flat ring (mirror plane σ) is what is observed',el:'',st:'no',why:''},frozen:{sym:null,el:'a frozen chiral conformation',st:'yes',why:'A high barrier keeps the shape.'}})[s.c]},
+iso:{label:'Isotopic chirality (CHDTX, CH₂D–R)',fields:[{k:'i',label:'Groups on the carbon',o:[['chdt','H, D, T and X (all different)'],['d2','H, D and two identical groups']]}],
+ev:s=>({sym:s.i==='d2'?'Two identical groups give a mirror plane (σ)':null,el:'isotopically different groups',st:'weak',why:'The molecule is chiral, but the rotation is far too small to measure (cryptochirality).'})}
+};
+(function(){
+const sel=$('ck_type');Object.keys(CK).forEach(k=>sel.add(new Option(CK[k].label,k)));
+function fields(){const c=CK[sel.value];$('ck_fields').innerHTML=c.fields.map(f=>`<label>${f.label} <select data-f="${f.k}">${f.o.map(o=>`<option value="${o[0]}">${o[1]}</option>`).join('')}</select></label>`).join('');$('ck_fields').querySelectorAll('select').forEach(s=>s.onchange=run);run();}
+function state(){const s={};$('ck_fields').querySelectorAll('select').forEach(x=>s[x.dataset.f]=x.value);return s;}
+function run(){const c=CK[sel.value],s=state(),r=c.ev(s),sample=$('ck_sample').value;const steps=[];
+const ico=t=>({ok:'✓',no:'✗',warn:'⚠',skip:'–'}[t]);
+if(r.sym){steps.push(['no','<b>1 · Symmetry.</b> '+r.sym+'. An improper element (σ, i or Sₙ) means the molecule is achiral.']);steps.push(['skip','<b>2 · Chiral element.</b> Not needed: the molecule is achiral.']);steps.push(['skip','<b>3 · Stability.</b> Not needed.']);steps.push(['skip','<b>4 · Sample.</b> Not needed.']);}
+else{steps.push(['ok','<b>1 · Symmetry.</b> No σ, i or Sₙ (rotation axes such as C₂ would not matter). The molecule is chiral.']);
+steps.push(['ok','<b>2 · Chiral element.</b> '+r.el+'.']);
+steps.push([r.st==='yes'?'ok':r.st==='maybe'?'warn':r.st==='weak'?'warn':'no','<b>3 · Stability.</b> '+r.why]);
+steps.push([r.st==='no'?'skip':sample==='pure'?'ok':sample==='racemic'?'no':'warn','<b>4 · Sample.</b> '+(r.st==='no'?'Not needed: the forms interconvert, so the sample is racemic.':sample==='pure'?'A single enantiomer: it <b>will rotate</b> plane-polarised light.':sample==='racemic'?'A 1 : 1 racemic mixture: external compensation, <b>zero rotation</b>, although every molecule is chiral (and the mixture can be resolved).':'Not specified: rotation requires a single enantiomer or an enantiomerically enriched sample.')]);}
+let cls,word,txt2;
+if(r.sym){cls='cannot';word='CANNOT BE';txt2='optically active: the molecule is achiral.';}
+else if(r.st==='no'){cls='cannot';word='CANNOT BE';txt2='isolated as optically active: it is chiral on paper, but the two mirror-image forms interconvert too quickly (racemic).';}
+else if(r.st==='maybe'||r.st==='weak'){cls='can';word='CAN BE';txt2=r.st==='weak'?'optically active in principle, but the rotation is too small to detect.':'optically active: it is chiral, but stability depends on conditions (size of groups, temperature).';}
+else{cls='must';word='MUST BE';txt2='chiral and configurationally stable: optically active as a pure enantiomer.';}
+$('ck_verdict').className='verdict '+cls;$('ck_verdict').innerHTML=`<span class="vb">${word}</span> ${txt2}`;
+$('ck_steps').innerHTML=steps.map(q=>`<li class="${q[0]}"><span class="ic">${ico(q[0])}</span><span>${q[1]}</span></li>`).join('');}
+sel.onchange=fields;$('ck_sample').onchange=run;fields();})();
+
+/* ---------- Quiz ---------- */
+const QZ_BANK=[
+['CH₃–CH=C=CH–CH₃, one pure enantiomer','must','Both ends of the allene carry two different groups (CH₃ and H): a chiral axis, rigid.'],
+['(CH₃)₂C=C=CH–CH₃','cannot','One end has two identical CH₃ groups, so a mirror plane exists.'],
+['Spiro[3.3]heptane-2,6-dicarboxylic acid, one pure enantiomer','must','Each ring has COOH and H on its axis carbon: chiral axis, rigid rings.'],
+['Spiro[3.3]heptane-2-carboxylic acid','cannot','The other ring has H, H on its axis carbon: mirror plane.'],
+['4-Methylcyclohexylideneacetic acid, one pure enantiomer','must','COOH and H on the exocyclic carbon; CH₃ and H on C4.'],
+['Cyclohexylideneacetic acid','cannot','C4 carries two H: mirror plane.'],
+['6,6′-Dinitrodiphenic acid, pure (+) form','must','Four bulky ortho groups lock the twist; each ring is unsymmetrical.'],
+['2,2′,6,6′-Tetranitrobiphenyl','cannot','Each ring is symmetrical (2,6 identical): mirror plane.'],
+['2,2′-Difluoro-6,6′-dicarboxybiphenyl','cannot','F is too small: the rings rotate and the form racemises.'],
+['A biphenyl with three large ortho groups and unsymmetrical rings','can','Chiral, but whether three groups are enough depends on their size.'],
+['p-Terphenyl model (I at C2, C5; Br on end rings), (up, down) isomer','cannot','Centre of symmetry: meso.'],
+['The same terphenyl, (up, up) isomer','can','It is chiral (only a C₂ axis); activity depends on the sample being non-racemic.'],
+['[6]Helicene, pure P form','must','A rigid helix (barrier about 150 kJ/mol), no σ or i.'],
+['[5]Helicene','can','Chiral, but its barrier (about 100 kJ/mol) lets it racemise slowly at room temperature.'],
+['[4]Helicene','cannot','Barrier only about 17 kJ/mol: the helices interconvert at once.'],
+['CH₃–NH–C₂H₅ (secondary amine)','cannot','The nitrogen inverts about 10¹⁰ times per second: racemic.'],
+['Tröger’s base, resolved sample','must','The bridgehead nitrogens cannot invert.'],
+['A resolved quaternary ammonium salt N⁺(CH₃)(C₂H₅)(C₃H₇)(CH₂Ph)','must','No lone pair, so no inversion.'],
+['A resolved phosphine PMe(Ph)(Pr)','must','Phosphorus inverts only at high temperature (about 120–140 kJ/mol).'],
+['Dimethyl sulfide','cannot','Achiral: mirror plane through C–S–C.'],
+['Meso-tartaric acid','cannot','Mirror plane and centre of symmetry: internal compensation.'],
+['(±)-Tartaric acid (racemic)','cannot','Every molecule is chiral, but the 1 : 1 mixture shows zero rotation (external compensation).'],
+['trans-Cyclohexane-1,2-diol','can','Chiral (a pair of enantiomers); activity depends on whether the sample is resolved.'],
+['cis-Cyclohexane-1,2-diol','cannot','Meso (time-averaged mirror plane); the ring flips.'],
+['A cumulene abC=C=C=Cab (three C=C bonds)','cannot','An odd number of C=C bonds gives a planar molecule: cis/trans, not optical.']];
+const qz={n:0,ok:0,streak:0,cur:null,best:0};
+try{const sv=JSON.parse(localStorage.getItem('studio-quiz')||'null');if(sv){qz.best=sv.best||0;}}catch(e){}
+(function(){
+const box=$('qz_box');
+function opt(label,val,right,why){return {label,val,right,why};}
+function render(q){box.innerHTML='';$('qz_fb').innerHTML='';$('qz_next').style.display='none';q.build(box);}
+function done(correct,why){qz.n++;if(correct){qz.ok++;qz.streak++;qz.best=Math.max(qz.best,qz.streak);}else qz.streak=0;
+$('qz_score').textContent=`${qz.ok} / ${qz.n} correct · streak ${qz.streak} · best ${qz.best}`;try{localStorage.setItem('studio-quiz',JSON.stringify({best:qz.best}));}catch(e){}
+$('qz_fb').innerHTML=`<div class="box ${correct?'ok':'bad'}"><b>${correct?'Correct.':'Not quite.'}</b> ${why}</div>`;$('qz_next').style.display='';box.querySelectorAll('button.o').forEach(b=>b.disabled=true);}
+function classify(){const it=QZ_BANK[Math.floor(Math.random()*QZ_BANK.length)];
+return {build(b){b.innerHTML=`<h3>Must be, can be or cannot be optically active?</h3><p class="qzq">${it[0]}</p><div class="ctl"><button class="o" data-v="must">MUST BE</button><button class="o" data-v="can">CAN BE</button><button class="o" data-v="cannot">CANNOT BE</button></div>`;
+b.querySelectorAll('button.o').forEach(x=>x.onclick=()=>{const ok=x.dataset.v===it[1];const word={must:'MUST BE',can:'CAN BE',cannot:'CANNOT BE'}[it[1]];done(ok,`Answer: <b>${word}</b>. ${it[2]}`);});}};}
+function rsq(){const keys=Object.keys(PJ);const key=keys[Math.floor(Math.random()*keys.length)],def=PJ[key],cf=pjCfgs(key),cfg=cf[Math.floor(Math.random()*cf.length)];
+const views=def.n===2?['fischer','wedge','sawhorse','newman']:['fischer','wedge'];const view=views[Math.floor(Math.random()*views.length)];
+const st=pjState(key,cfg,180);const names={fischer:'Fischer projection',wedge:'wedge–dash drawing',sawhorse:'sawhorse projection',newman:'Newman projection'};
+const correct=pjFinal(st,pjRead(st,view));
+let options;if(def.n===1)options=['(R)','(S)'];else options=def.sym?['(2R,3R)','(2S,3S)','(2R,3S) · meso']:['(2R,3R)','(2S,3S)','(2R,3S)','(2S,3R)'];
+const corr=def.n===1?correct:(def.sym&&cfg[0]!==cfg[1]?'(2R,3S) · meso':'('+'2'+cfg[0]+',3'+cfg[1]+')');
+return {build(b){b.innerHTML=`<h3>Assign the configuration</h3><p class="qzq">${def.name}, drawn as a ${names[view]}. CIP priorities are shown in the purple circles.</p><svg id="qz_svg" viewBox="0 0 560 430"></svg><div class="ctl">${options.map(o=>`<button class="o" data-v="${o}">${o}</button>`).join('')}</div>`;
+drawView($('qz_svg'),view,st,true);
+b.querySelectorAll('button.o').forEach(x=>x.onclick=()=>{const ok=x.dataset.v===corr;const rd=pjRead(st,view);done(ok,`Answer: <b>${corr}</b>.<br>`+rd.map(r=>`<b>${def.n===2?'C'+(r.k+2):'Centre'}:</b> ${r.text}`).join('<br>'));});}};}
+function relq(){const keys=Object.keys(PJ).filter(k=>PJ[k].n===2),key=keys[Math.floor(Math.random()*keys.length)],def=PJ[key];const cs=['RR','SS','RS','SR'];const a=cs[Math.floor(Math.random()*4)],b2=cs[Math.floor(Math.random()*4)];
+const views=['fischer','wedge','sawhorse','newman'];const va=views[Math.floor(Math.random()*4)],vb=views[Math.floor(Math.random()*4)];
+const sa=pjState(key,a,180),sb=pjState(key,b2,180);const r=pjRelation(def,a,b2);
+return {build(bx){bx.innerHTML=`<h3>What is the relationship between A and B?</h3><p class="qzq">Both are ${def.name}.</p><div class="flex"><div><b>A</b><svg id="qz_a" viewBox="0 0 560 430"></svg></div><div><b>B</b><svg id="qz_b" viewBox="0 0 560 430"></svg></div></div><div class="ctl"><button class="o" data-v="Identical">Identical</button><button class="o" data-v="Enantiomers">Enantiomers</button><button class="o" data-v="Diastereomers">Diastereomers</button></div>`;
+drawView($('qz_a'),va,sa,true);drawView($('qz_b'),vb,sb,true);
+bx.querySelectorAll('button.o').forEach(x=>x.onclick=()=>{const ok=x.dataset.v===r.rel;done(ok,`Answer: <b>${r.rel}</b>. A is ${pjName(def,a)}, B is ${pjName(def,b2)}. ${r.why}`);});}};}
+function next(){const x=Math.random();const q=x<0.4?classify():x<0.75?rsq():relq();render(q);}
+$('qz_next').onclick=next;$('qz_reset').onclick=()=>{qz.n=0;qz.ok=0;qz.streak=0;$('qz_score').textContent='0 / 0 correct';next();};
+next();
+})();
+
+/* ---------- tabs and main loop ---------- */
+(function(){
+const tabs=[...document.querySelectorAll('#tabs button[data-tab]')];
+function show(id){tabs.forEach(b=>{const on=b.dataset.tab===id;b.classList.toggle('on',on);b.setAttribute('aria-selected',on);});document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===id));try{localStorage.setItem('studio-tab',id);}catch(e){}window.scrollTo({top:0});}
+tabs.forEach(b=>b.onclick=()=>show(b.dataset.tab));
+let start='t1';try{start=localStorage.getItem('studio-tab')||'t1';}catch(e){}
+const h=location.hash.slice(1);if(h&&document.getElementById(h)&&document.getElementById(h).classList.contains('panel'))start=h;
+if(!document.getElementById(start))start='t1';show(start);})();
+if(paused)$('pause').textContent='▶ Play animations';
+const sPJ=pjWidget();
+const scenes=[sPPL,sMal,sRot,sPol,sHel,sCirc,sBiph,sAm,th_allene,th_spiro,th_hemi,th_biph,th_terph,th_helix,sPJ];
+function visible(s){const el=s.cv;if(!el)return true;if(el.offsetParent===null)return false;const r=el.getBoundingClientRect();return r.bottom>-80&&r.top<innerHeight+80;}
+function tick(ts){if(lastTs===null)lastTs=ts;if(!paused)clock+=(ts-lastTs)/1000;lastTs=ts;scenes.forEach(s=>{if(visible(s))s.draw(clock);});requestAnimationFrame(tick);}
+requestAnimationFrame(tick);
+
+</script>
+</body>
+</html>

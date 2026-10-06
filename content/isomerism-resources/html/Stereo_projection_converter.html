@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fischer, wedge-dash, sawhorse and Newman converter</title>
+<style>
+:root{--surface-0:#faf9f5;--surface-1:#f1efe8;--surface-2:#ffffff;--text-primary:#1f1e1d;--text-secondary:#5f5e5a;--border:rgba(0,0,0,.15);--border-strong:rgba(0,0,0,.3);--border-accent:#185FA5;--bg-accent:#E6F1FB;--text-accent:#0C447C;--text-success:#27500A;--bg-success:#EAF3DE}
+@media (prefers-color-scheme:dark){:root{--surface-0:#1f1e1d;--surface-1:#2c2c2a;--surface-2:#262624;--text-primary:#f1efe8;--text-secondary:#b4b2a9;--border:rgba(255,255,255,.18);--border-strong:rgba(255,255,255,.35);--border-accent:#85B7EB;--bg-accent:#0C447C;--text-accent:#B5D4F4;--text-success:#97C459;--bg-success:#27500A}}
+*{box-sizing:border-box}
+body{margin:0;padding:20px;background:var(--surface-0);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:980px;margin:auto;line-height:1.5}
+h1{font-size:20px;font-weight:500;margin:0 0 4px}
+h2{font-size:15px;font-weight:500;margin:0 0 6px}
+p.sub{margin:0 0 14px;color:var(--text-secondary);font-size:14px}
+button,select{background:transparent;color:var(--text-primary);border:.5px solid var(--border-strong);border-radius:8px;padding:7px 12px;font-size:14px;cursor:pointer;font-family:inherit}
+select{background:var(--surface-2);max-width:100%}
+button:hover{background:var(--surface-1)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.chip{display:inline-block;font-size:12px;padding:2px 9px;border-radius:8px;background:var(--bg-accent);color:var(--text-accent);margin-right:6px}
+.chip.ok{background:var(--bg-success);color:var(--text-success)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:10px 0}
+@media (max-width:700px){.grid{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--surface-1);border-radius:12px;padding:12px;position:relative;min-width:0}
+.card .cap{font-size:12px;color:var(--text-secondary);margin:0 0 4px}
+.card svg{width:100%;height:auto;display:block;color:var(--text-primary);overflow:visible}
+.card.hid svg{filter:blur(10px);opacity:.35}
+.reveal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:none;background:var(--surface-2)}
+.card.hid .reveal{display:block}
+.box{background:var(--surface-1);border-radius:8px;padding:12px 14px;font-size:14px;margin:10px 0}
+.box ol,.box ul{margin:4px 0 0;padding-left:20px}
+.box li{margin:3px 0}
+table{border-collapse:collapse;width:100%;font-size:12px}
+th,td{border-bottom:.5px solid var(--border);padding:4px 6px;text-align:left;vertical-align:top}
+a{color:var(--text-accent)}
+svg text{fill:currentColor;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.lab{font-size:15px}.cip{font-size:11px;fill:var(--text-accent)!important}
+details summary{cursor:pointer;font-size:14px;font-weight:500}
+</style>
+</head>
+<body>
+<h1>Fischer, wedge-dash, sawhorse and Newman converter</h1>
+<p class="sub">26 compounds with 2 to 4 adjacent stereocentres. Pick one, read all four projections, then use practice mode to convert them yourself.</p>
+
+<div class="row">
+<select id="sel" aria-label="Compound"></select>
+<button id="prev">&larr;</button><button id="next">&rarr;</button>
+<label style="font-size:14px"><input type="checkbox" id="prac"> Practice mode (hide the other three)</label>
+</div>
+<div id="info" class="box" style="margin-top:0"></div>
+
+<div class="grid">
+<div class="card" id="c1"><h2>1. Fischer projection</h2><p class="cap">Horizontal bonds toward you, vertical bonds away.</p><div id="s1"></div></div>
+<div class="card" id="c2"><h2>2. Wedge-dash (zigzag)</h2><p class="cap">Chain in the plane, anti conformation.</p><div id="s2"></div><button class="reveal" data-c="c2">Reveal</button></div>
+<div class="card" id="c3"><h2>3. Sawhorse</h2><p class="cap">Oblique view along the chosen C&ndash;C bond.</p><div id="s3"></div><button class="reveal" data-c="c3">Reveal</button></div>
+<div class="card" id="c4"><h2>4. Newman</h2><p class="cap">Looking down the chosen C&ndash;C bond, front carbon in the centre.</p><div id="s4"></div><button class="reveal" data-c="c4">Reveal</button></div>
+</div>
+
+<div class="row">
+<label style="font-size:14px">Bond for sawhorse and Newman <select id="bsel"></select></label>
+<label style="font-size:14px">Front carbon <select id="fsel"><option value="0">first carbon in front, second behind</option><option value="1">second carbon in front, first behind (vice versa)</option></select></label>
+<label style="font-size:14px">Rotate rear carbon <input type="range" id="phi" min="0" max="360" step="10" value="180" style="vertical-align:middle;width:170px"> <span id="phiv" style="display:inline-block;min-width:150px"></span></label>
+<button id="anim">Animate Fischer &rarr; anti</button>
+</div>
+
+<div class="box" id="steps"></div>
+
+<div class="box">
+<h2>Rules that make the conversions work</h2>
+<ul>
+<li>In a Fischer projection the horizontal groups point toward you and the vertical chain points away, so each stereocentre is a small bent chain, not a flat cross.</li>
+<li>Rotating a Fischer projection by 180° in the plane keeps the molecule the same. Rotating by 90° gives its mirror image.</li>
+<li>Swapping any two groups on a centre inverts it (R becomes S). Swapping twice restores it.</li>
+<li>The Fischer arrangement is an eclipsed conformation. Rotating the rear carbon by 180° about the bond turns it into the staggered anti conformation, which is the zigzag chain. Rotation about a bond never changes R or S.</li>
+<li>In a Newman projection, read the front carbon as: bottom = chain above, upper-left = Fischer right group, upper-right = Fischer left group.</li>
+</ul>
+</div>
+
+<details class="box"><summary>How the 26 examples were checked</summary>
+<p style="margin:8px 0">Structures were taken from PubChem (PUG REST) by name. The CIP descriptors RDKit computes from each structure were matched to the descriptors in PubChem's IUPAC name, and the structure's InChIKey was matched to the key NCI CACTUS returns when it parses that same IUPAC name. Every Fischer, zigzag and Newman assignment shown here was derived from the 3D geometry and then re-checked by rebuilding each centre in 3D from the drawing and recomputing R or S with RDKit (Newman at six rear-carbon rotations). The sawhorse uses the same angular assignment as the Newman view. Drawing conventions follow standard textbook practice (see IUPAC, Pure Appl. Chem. 1996, 68, 2193); that paper was not re-read for this page.</p>
+<div style="overflow-x:auto"><table id="vt"></table></div>
+</details>
+
+<script>
+var D=[{"id":0,"name":"L-(+)-Tartaric acid","cid":444305,"iupac":"(2R,3R)-2,3-dihydroxybutanedioic acid","smiles":"[C@@H]([C@H](C(=O)O)O)(C(=O)O)O","formula":"C4H6O6","group":"Diacids, diols and halides","top":"COOH","bottom":"COOH","dl":"","rel":"opposite sides","centers":[{"pos":2,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":3,"cip":"R","L":"OH","R":"H","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"FEWJPZIEWOKRBE-JCYAYHJZSA-N","cactus":"FEWJPZIEWOKRBE-JCYAYHJZSA-N","desc":"RR"},{"id":1,"name":"D-(-)-Tartaric acid","cid":439655,"iupac":"(2S,3S)-2,3-dihydroxybutanedioic acid","smiles":"[C@H]([C@@H](C(=O)O)O)(C(=O)O)O","formula":"C4H6O6","group":"Diacids, diols and halides","top":"COOH","bottom":"COOH","dl":"","rel":"opposite sides","centers":[{"pos":2,"cip":"S","L":"OH","R":"H","zz":"L"},{"pos":3,"cip":"S","L":"H","R":"OH","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"FEWJPZIEWOKRBE-LWMBPPNESA-N","cactus":"FEWJPZIEWOKRBE-LWMBPPNESA-N","desc":"SS"},{"id":2,"name":"meso-Tartaric acid","cid":447315,"iupac":"(2R,3S)-2,3-dihydroxybutanedioic acid","smiles":"[C@@H]([C@@H](C(=O)O)O)(C(=O)O)O","formula":"C4H6O6","group":"Diacids, diols and halides","top":"COOH","bottom":"COOH","dl":"","rel":"same side","centers":[{"pos":2,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":3,"cip":"S","L":"H","R":"OH","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"FEWJPZIEWOKRBE-XIXRPRMCSA-N","cactus":"FEWJPZIEWOKRBE-XIXRPRMCSA-N","desc":"RS"},{"id":3,"name":"(2R,3R)-Butane-2,3-diol","cid":225936,"iupac":"(2R,3R)-butane-2,3-diol","smiles":"C[C@H]([C@@H](C)O)O","formula":"C4H10O2","group":"Diacids, diols and halides","top":"CH3","bottom":"CH3","dl":"","rel":"opposite sides","centers":[{"pos":2,"cip":"R","L":"OH","R":"H","zz":"L"},{"pos":3,"cip":"R","L":"H","R":"OH","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"OWBTYPJTUOEWEK-QWWZWVQMSA-N","cactus":"OWBTYPJTUOEWEK-QWWZWVQMSA-N","desc":"RR"},{"id":4,"name":"(2S,3S)-Butane-2,3-diol","cid":439888,"iupac":"(2S,3S)-butane-2,3-diol","smiles":"C[C@@H]([C@H](C)O)O","formula":"C4H10O2","group":"Diacids, diols and halides","top":"CH3","bottom":"CH3","dl":"","rel":"opposite sides","centers":[{"pos":2,"cip":"S","L":"H","R":"OH","zz":"L"},{"pos":3,"cip":"S","L":"OH","R":"H","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"OWBTYPJTUOEWEK-IMJSIDKUSA-N","cactus":"OWBTYPJTUOEWEK-IMJSIDKUSA-N","desc":"SS"},{"id":5,"name":"meso-Butane-2,3-diol","cid":220010,"iupac":"(2R,3S)-butane-2,3-diol","smiles":"C[C@H]([C@H](C)O)O","formula":"C4H10O2","group":"Diacids, diols and halides","top":"CH3","bottom":"CH3","dl":"","rel":"same side","centers":[{"pos":2,"cip":"R","L":"OH","R":"H","zz":"L"},{"pos":3,"cip":"S","L":"OH","R":"H","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"OWBTYPJTUOEWEK-ZXZARUISSA-N","cactus":"OWBTYPJTUOEWEK-ZXZARUISSA-N","desc":"RS"},{"id":6,"name":"meso-2,3-Dibromobutane","cid":98508,"iupac":"(2R,3S)-2,3-dibromobutane","smiles":"C[C@H]([C@H](C)Br)Br","formula":"C4H8Br2","group":"Diacids, diols and halides","top":"CH3","bottom":"CH3","dl":"","rel":"same side","centers":[{"pos":2,"cip":"R","L":"Br","R":"H","zz":"L"},{"pos":3,"cip":"S","L":"Br","R":"H","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"BXXWFOGWXLJPPA-ZXZARUISSA-N","cactus":"BXXWFOGWXLJPPA-ZXZARUISSA-N","desc":"RS"},{"id":7,"name":"D-Erythrose","cid":94176,"iupac":"(2R,3R)-2,3,4-trihydroxybutanal","smiles":"C([C@H]([C@H](C=O)O)O)O","formula":"C4H8O4","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"D","rel":"same side","centers":[{"pos":2,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":3,"cip":"R","L":"H","R":"OH","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"YTBSYETUWUMLBZ-IUYQGCFVSA-N","cactus":"YTBSYETUWUMLBZ-IUYQGCFVSA-N","desc":"RR"},{"id":8,"name":"L-Erythrose","cid":5460674,"iupac":"(2S,3S)-2,3,4-trihydroxybutanal","smiles":"C([C@@H]([C@@H](C=O)O)O)O","formula":"C4H8O4","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"L","rel":"same side","centers":[{"pos":2,"cip":"S","L":"OH","R":"H","zz":"L"},{"pos":3,"cip":"S","L":"OH","R":"H","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"YTBSYETUWUMLBZ-DMTCNVIQSA-N","cactus":"YTBSYETUWUMLBZ-DMTCNVIQSA-N","desc":"SS"},{"id":9,"name":"D-Threose","cid":439665,"iupac":"(2S,3R)-2,3,4-trihydroxybutanal","smiles":"C([C@H]([C@@H](C=O)O)O)O","formula":"C4H8O4","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"D","rel":"opposite sides","centers":[{"pos":2,"cip":"S","L":"OH","R":"H","zz":"L"},{"pos":3,"cip":"R","L":"H","R":"OH","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"YTBSYETUWUMLBZ-QWWZWVQMSA-N","cactus":"YTBSYETUWUMLBZ-QWWZWVQMSA-N","desc":"SR"},{"id":10,"name":"L-Threose","cid":5460672,"iupac":"(2R,3S)-2,3,4-trihydroxybutanal","smiles":"C([C@@H]([C@H](C=O)O)O)O","formula":"C4H8O4","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"L","rel":"opposite sides","centers":[{"pos":2,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":3,"cip":"S","L":"OH","R":"H","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"YTBSYETUWUMLBZ-IMJSIDKUSA-N","cactus":"YTBSYETUWUMLBZ-IMJSIDKUSA-N","desc":"RS"},{"id":11,"name":"L-Threonine","cid":6288,"iupac":"(2S,3R)-2-amino-3-hydroxybutanoic acid","smiles":"C[C@H]([C@@H](C(=O)O)N)O","formula":"C4H9NO3","group":"Amino acids","top":"COOH","bottom":"CH3","dl":"L","rel":"opposite sides","centers":[{"pos":2,"cip":"S","L":"NH2","R":"H","zz":"L"},{"pos":3,"cip":"R","L":"H","R":"OH","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"AYFVYJQAPQTCCC-GBXIJSLDSA-N","cactus":"AYFVYJQAPQTCCC-GBXIJSLDSA-N","desc":"SR"},{"id":12,"name":"L-allo-Threonine","cid":99289,"iupac":"(2S,3S)-2-amino-3-hydroxybutanoic acid","smiles":"C[C@@H]([C@@H](C(=O)O)N)O","formula":"C4H9NO3","group":"Amino acids","top":"COOH","bottom":"CH3","dl":"L","rel":"same side","centers":[{"pos":2,"cip":"S","L":"NH2","R":"H","zz":"L"},{"pos":3,"cip":"S","L":"OH","R":"H","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"AYFVYJQAPQTCCC-HRFVKAFMSA-N","cactus":"AYFVYJQAPQTCCC-HRFVKAFMSA-N","desc":"SS"},{"id":13,"name":"D-Threonine","cid":69435,"iupac":"(2R,3S)-2-amino-3-hydroxybutanoic acid","smiles":"C[C@@H]([C@H](C(=O)O)N)O","formula":"C4H9NO3","group":"Amino acids","top":"COOH","bottom":"CH3","dl":"D","rel":"opposite sides","centers":[{"pos":2,"cip":"R","L":"H","R":"NH2","zz":"L"},{"pos":3,"cip":"S","L":"OH","R":"H","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"AYFVYJQAPQTCCC-STHAYSLISA-N","cactus":"AYFVYJQAPQTCCC-STHAYSLISA-N","desc":"RS"},{"id":14,"name":"(-)-Ephedrine","cid":9294,"iupac":"(1R,2S)-2-(methylamino)-1-phenylpropan-1-ol","smiles":"C[C@@H]([C@@H](C1=CC=CC=C1)O)NC","formula":"C10H15NO","group":"Drugs","top":"Ph","bottom":"CH3","dl":"","rel":"same side","centers":[{"pos":2,"cip":"R","L":"OH","R":"H","zz":"L"},{"pos":3,"cip":"S","L":"NHCH3","R":"H","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"KWGRBVOPPLSCSI-WPRPVWTQSA-N","cactus":"KWGRBVOPPLSCSI-WPRPVWTQSA-N","desc":"RS"},{"id":15,"name":"(+)-Pseudoephedrine","cid":7028,"iupac":"(1S,2S)-2-(methylamino)-1-phenylpropan-1-ol","smiles":"C[C@@H]([C@H](C1=CC=CC=C1)O)NC","formula":"C10H15NO","group":"Drugs","top":"Ph","bottom":"CH3","dl":"","rel":"opposite sides","centers":[{"pos":2,"cip":"S","L":"H","R":"OH","zz":"L"},{"pos":3,"cip":"S","L":"NHCH3","R":"H","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"KWGRBVOPPLSCSI-WCBMZHEXSA-N","cactus":"KWGRBVOPPLSCSI-WCBMZHEXSA-N","desc":"SS"},{"id":16,"name":"D-Ribose","cid":5311110,"iupac":"(2R,3R,4R)-2,3,4,5-tetrahydroxypentanal","smiles":"C([C@H]([C@H]([C@H](C=O)O)O)O)O","formula":"C5H10O5","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"D","rel":"","centers":[{"pos":2,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":3,"cip":"R","L":"H","R":"OH","zz":"R"},{"pos":4,"cip":"R","L":"H","R":"OH","zz":"L"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"PYMYPHUHKUWMLA-LMVFSUKVSA-N","cactus":"PYMYPHUHKUWMLA-LMVFSUKVSA-N","desc":"RRR"},{"id":17,"name":"D-Xylose","cid":644160,"iupac":"(2R,3S,4R)-2,3,4,5-tetrahydroxypentanal","smiles":"C([C@H]([C@@H]([C@H](C=O)O)O)O)O","formula":"C5H10O5","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"D","rel":"","centers":[{"pos":2,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":3,"cip":"S","L":"OH","R":"H","zz":"R"},{"pos":4,"cip":"R","L":"H","R":"OH","zz":"L"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"PYMYPHUHKUWMLA-VPENINKCSA-N","cactus":"PYMYPHUHKUWMLA-VPENINKCSA-N","desc":"RSR"},{"id":18,"name":"D-Arabinose","cid":66308,"iupac":"(2S,3R,4R)-2,3,4,5-tetrahydroxypentanal","smiles":"C([C@H]([C@H]([C@@H](C=O)O)O)O)O","formula":"C5H10O5","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"D","rel":"","centers":[{"pos":2,"cip":"S","L":"OH","R":"H","zz":"L"},{"pos":3,"cip":"R","L":"H","R":"OH","zz":"R"},{"pos":4,"cip":"R","L":"H","R":"OH","zz":"L"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"PYMYPHUHKUWMLA-WDCZJNDASA-N","cactus":"PYMYPHUHKUWMLA-WDCZJNDASA-N","desc":"SRR"},{"id":19,"name":"D-Glucose","cid":107526,"iupac":"(2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal","smiles":"C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)O","formula":"C6H12O6","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"D","rel":"","centers":[{"pos":2,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":3,"cip":"S","L":"OH","R":"H","zz":"R"},{"pos":4,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":5,"cip":"R","L":"H","R":"OH","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"GZCGUPFRVQAUEE-SLPGGIOYSA-N","cactus":"GZCGUPFRVQAUEE-SLPGGIOYSA-N","desc":"RSRR"},{"id":20,"name":"D-Mannose","cid":161658,"iupac":"(2S,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal","smiles":"C([C@H]([C@H]([C@@H]([C@@H](C=O)O)O)O)O)O","formula":"C6H12O6","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"D","rel":"","centers":[{"pos":2,"cip":"S","L":"OH","R":"H","zz":"L"},{"pos":3,"cip":"S","L":"OH","R":"H","zz":"R"},{"pos":4,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":5,"cip":"R","L":"H","R":"OH","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"GZCGUPFRVQAUEE-KVTDHHQDSA-N","cactus":"GZCGUPFRVQAUEE-KVTDHHQDSA-N","desc":"SSRR"},{"id":21,"name":"D-Galactose","cid":3037556,"iupac":"(2R,3S,4S,5R)-2,3,4,5,6-pentahydroxyhexanal","smiles":"C([C@H]([C@@H]([C@@H]([C@H](C=O)O)O)O)O)O","formula":"C6H12O6","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"D","rel":"","centers":[{"pos":2,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":3,"cip":"S","L":"OH","R":"H","zz":"R"},{"pos":4,"cip":"S","L":"OH","R":"H","zz":"L"},{"pos":5,"cip":"R","L":"H","R":"OH","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"GZCGUPFRVQAUEE-KCDKBNATSA-N","cactus":"GZCGUPFRVQAUEE-KCDKBNATSA-N","desc":"RSSR"},{"id":22,"name":"L-Isoleucine","cid":6306,"iupac":"(2S,3S)-2-amino-3-methylpentanoic acid","smiles":"CC[C@H](C)[C@@H](C(=O)O)N","formula":"C6H13NO2","group":"Amino acids","top":"COOH","bottom":"CH2CH3","dl":"L","rel":"same side","centers":[{"pos":2,"cip":"S","L":"NH2","R":"H","zz":"L"},{"pos":3,"cip":"S","L":"CH3","R":"H","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"AGPKZVBTJJNPAG-WHFBIAKZSA-N","cactus":"AGPKZVBTJJNPAG-WHFBIAKZSA-N","desc":"SS"},{"id":23,"name":"L-allo-Isoleucine","cid":99288,"iupac":"(2S,3R)-2-amino-3-methylpentanoic acid","smiles":"CC[C@@H](C)[C@@H](C(=O)O)N","formula":"C6H13NO2","group":"Amino acids","top":"COOH","bottom":"CH2CH3","dl":"L","rel":"opposite sides","centers":[{"pos":2,"cip":"S","L":"NH2","R":"H","zz":"L"},{"pos":3,"cip":"R","L":"H","R":"CH3","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"AGPKZVBTJJNPAG-UHNVWZDZSA-N","cactus":"AGPKZVBTJJNPAG-UHNVWZDZSA-N","desc":"SR"},{"id":24,"name":"D-Allose","cid":102288,"iupac":"(2R,3R,4R,5R)-2,3,4,5,6-pentahydroxyhexanal","smiles":"C([C@H]([C@H]([C@H]([C@H](C=O)O)O)O)O)O","formula":"C6H12O6","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"D","rel":"","centers":[{"pos":2,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":3,"cip":"R","L":"H","R":"OH","zz":"R"},{"pos":4,"cip":"R","L":"H","R":"OH","zz":"L"},{"pos":5,"cip":"R","L":"H","R":"OH","zz":"R"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"GZCGUPFRVQAUEE-BGPJRJDNSA-N","cactus":"GZCGUPFRVQAUEE-BGPJRJDNSA-N","desc":"RRRR"},{"id":25,"name":"D-Lyxose","cid":65550,"iupac":"(2S,3S,4R)-2,3,4,5-tetrahydroxypentanal","smiles":"C([C@H]([C@@H]([C@@H](C=O)O)O)O)O","formula":"C5H10O5","group":"Aldoses (acyclic)","top":"CHO","bottom":"CH2OH","dl":"D","rel":"","centers":[{"pos":2,"cip":"S","L":"OH","R":"H","zz":"L"},{"pos":3,"cip":"S","L":"OH","R":"H","zz":"R"},{"pos":4,"cip":"R","L":"H","R":"OH","zz":"L"}],"newmanFlip":false,"checks":{"name":true,"inchikey":true,"fischer":true,"zigzag":true,"newman":true},"inchikey":"PYMYPHUHKUWMLA-UOWFLXDJSA-N","cactus":"PYMYPHUHKUWMLA-UOWFLXDJSA-N","desc":"SSR"}];
+function $(i){return document.getElementById(i);}
+var SUB={'0':'₀','1':'₁','2':'₂','3':'₃','4':'₄','5':'₅','6':'₆','7':'₇','8':'₈','9':'₉'};
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function F(t){t=String(t);if(/^C\d+$/.test(t))return t;return esc(t).replace(/([A-Za-z)])(\d+)/g,function(a,p,d){return p+d.split('').map(function(x){return SUB[x];}).join('');});}
+var cur=0,phi=180,bond=0,flip=0,rev={},timer=null;
+var sel=$('sel'),groups={};
+D.forEach(function(m,i){(groups[m.group]=groups[m.group]||[]).push(i);});
+Object.keys(groups).forEach(function(g){var og=document.createElement('optgroup');og.label=g;groups[g].forEach(function(i){var o=document.createElement('option');o.value=i;o.textContent=D[i].name+'  ('+D[i].desc.split('').join(',')+')';og.appendChild(o);});sel.appendChild(og);});
+function prevLab(m,i){return i==0?m.top:'C'+(i+1);}
+function nextLab(m,i){return i==m.centers.length-1?m.bottom:'C'+(i+3);}
+function wedge(x,y,tx,ty){var dx=tx-x,dy=ty-y,L=Math.hypot(dx,dy),nx=-dy/L*5,ny=dx/L*5;return '<polygon points="'+x+','+y+' '+(tx+nx)+','+(ty+ny)+' '+(tx-nx)+','+(ty-ny)+'" fill="currentColor"/>';}
+function dash(x,y,tx,ty){var s='',dx=tx-x,dy=ty-y,L=Math.hypot(dx,dy);for(var k=1;k<=6;k++){var f=k/6.4,px=x+dx*f,py=y+dy*f,w=5*f;s+='<line x1="'+(px-dy/L*w)+'" y1="'+(py+dx/L*w)+'" x2="'+(px+dy/L*w)+'" y2="'+(py-dx/L*w)+'" stroke="currentColor" stroke-width="1.6"/>';}return s;}
+function ln(x1,y1,x2,y2,w){return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="currentColor" stroke-width="'+(w||2)+'" stroke-linecap="round"/>';}
+function tx(x,y,t,a,c){return '<text x="'+x+'" y="'+y+'" text-anchor="'+(a||'middle')+'" class="'+(c||'lab')+'">'+(c=='cip'?esc(t):F(t))+'</text>';}
+function fischer(m){var n=m.centers.length,cx=130,gap=64,yc=function(i){return 84+gap*i;},yb=yc(n-1)+60,H=yb+26;
+var s='<svg viewBox="0 0 260 '+H+'" role="img" aria-label="Fischer projection">';
+s+=ln(cx,40,cx,yb-20)+tx(cx,28,m.top)+tx(cx,yb+2,m.bottom);
+m.centers.forEach(function(c,i){var y=yc(i);s+=ln(cx-44,y,cx+44,y)+tx(cx-52,y+5,c.L,'end')+tx(cx+52,y+5,c.R,'start')+tx(cx+7,y+19,'C'+c.pos+' ('+c.cip+')','start','cip');});
+return s+'</svg>';}
+function zigzag(m){var n=m.centers.length,dx=62,x0=58,xs=function(j){return x0+dx*j;},yy=function(j){return j%2?96:128;};
+var W=x0*2+dx*(n+1),H=230,s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Wedge-dash zigzag">';
+for(var j=0;j<=n;j++){var a=j==0?9:0,b=j==n?9:0,x1=xs(j),y1=yy(j),x2=xs(j+1),y2=yy(j+1),L=Math.hypot(x2-x1,y2-y1);
+s+=ln(x1+(x2-x1)/L*a,y1+(y2-y1)/L*a+(j==0?(y2-y1)/L*3:0),x2-(x2-x1)/L*b,y2-(y2-y1)/L*b);}
+s+=tx(xs(0),yy(0)+26,m.top)+tx(xs(n+1),(n+1)%2?yy(n+1)-14:yy(n+1)+26,m.bottom);
+m.centers.forEach(function(c,i){var j=i+1,x=xs(j),y=yy(j),peak=j%2==1,sg=peak?-1:1,wl=c.zz=='L'?c.L:c.R,dl=c.zz=='L'?c.R:c.L,ty=y+sg*44;
+s+=wedge(x,y,x-16,ty)+dash(x,y,x+16,ty)+tx(x-16,ty+(peak?-8:19),wl)+tx(x+16,ty+(peak?-8:19),dl);
+s+=tx(x,y+(peak?24:-14),'C'+c.pos+' ('+c.cip+')','middle','cip');});
+return s+'</svg>';}
+function ang(m,b,ph){var f=m.centers[b],k=m.centers[b+1],fl=m.newmanFlip,aR=fl?30:150,aL=fl?150:30;
+var A={f:[[prevLab(m,b),270],[f.R,aR],[f.L,aL]],b:[[nextLab(m,b+1),270+ph],[k.R,aR+ph],[k.L,aL+ph]]};
+if(!flip)return A;
+var A0={f:[[prevLab(m,b),270],[f.R,aR],[f.L,aL]],b:[[nextLab(m,b+1),270],[k.R,aR],[k.L,aL]]};
+function mir(a){return (180-a+720)%360;}
+return {f:A0.b.map(function(g){return [g[0],mir(g[1])];}),b:A0.f.map(function(g){return [g[0],mir(g[1])+ph];})};}
+function fr(m,b){var f=m.centers[b],k=m.centers[b+1];return flip?{F:k,R:f}:{F:f,R:k};}
+function rad(a){return a*Math.PI/180;}
+function anchorOf(c){return c>.3?'start':c<-.3?'end':'middle';}
+function newman(m,b,ph){var A=ang(m,b,ph),cx=150,cy=140,R=40,s='<svg viewBox="0 0 300 290" role="img" aria-label="Newman projection">';
+s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+R+'" fill="none" stroke="currentColor" stroke-width="2"/>';
+function pos(r,a){return [cx+r*Math.cos(rad(a)),cy-r*Math.sin(rad(a))];}
+function lbl(g,r,a,bold){var p=pos(r,a),c=Math.cos(rad(a)),sn=Math.sin(rad(a));return '<text x="'+p[0]+'" y="'+(p[1]+(sn<-.3?14:sn>.3?-3:5))+'" text-anchor="'+anchorOf(c)+'" class="lab" font-weight="'+(bold?500:400)+'">'+F(g)+'</text>';}
+A.b.forEach(function(g){var a=g[1],d=360;A.f.forEach(function(q){d=Math.min(d,Math.abs(((a-q[1])%360+540)%360-180));});if(d<6)g[2]=a+12;else g[2]=a;
+var p1=pos(R,g[2]),p2=pos(82,g[2]);s+=ln(p1[0],p1[1],p2[0],p2[1],2);s+=lbl(g[0],96,g[2],false);});
+A.f.forEach(function(g){var p=pos(82,g[1]);s+=ln(cx,cy,p[0],p[1],3)+lbl(g[0],96,g[1],true);});
+var q=fr(m,b),f=q.F,k=q.R;
+s+=tx(cx,272,'front C'+f.pos+' ('+f.cip+')  |  rear C'+k.pos+' ('+k.cip+')','middle','cip');
+return s+'</svg>';}
+function sawhorse(m,b,ph){var A=ang(m,b,ph);A.f.forEach(function(g){g[1]+=180;});A.b.forEach(function(g){g[1]+=180;});var Fx=84,Fy=206,Bx=206,By=118,Lg=42,s='<svg viewBox="0 0 300 330" role="img" aria-label="Sawhorse projection">';
+s+=ln(Fx,Fy,Bx,By,2.4);
+function lab(x,y,a,g,bold){var c=Math.cos(rad(a)),sn=Math.sin(rad(a));return '<text x="'+(x+(Lg+10)*c)+'" y="'+(y-(Lg+10)*sn+(sn<-.3?13:sn>.3?-2:5))+'" text-anchor="'+anchorOf(c)+'" class="lab" font-weight="'+(bold?500:400)+'">'+F(g)+'</text>';}
+A.b.forEach(function(g){s+=ln(Bx,By,Bx+Lg*Math.cos(rad(g[1])),By-Lg*Math.sin(rad(g[1])),1.8)+lab(Bx,By,g[1],g[0],false);});
+A.f.forEach(function(g){s+=ln(Fx,Fy,Fx+Lg*Math.cos(rad(g[1])),Fy-Lg*Math.sin(rad(g[1])),3)+lab(Fx,Fy,g[1],g[0],true);});
+var q=fr(m,b),f=q.F,k=q.R;
+s+=tx(Fx+8,Fy+4,'C'+f.pos,'start','cip')+tx(Bx+8,By+14,'C'+k.pos,'start','cip');
+s+=tx(150,318,'front C'+f.pos+' ('+f.cip+')  |  rear C'+k.pos+' ('+k.cip+')','middle','cip');
+return s+'</svg>';}
+function phiName(p){p=((p%360)+360)%360;if(p==0)return '0° eclipsed (same as the Fischer drawing)';if(p==180)return '180° staggered, anti (same as the zigzag)';if(p%120==0)return p+'° eclipsed';if(p%60==0)return p+'° staggered, gauche';return p+'°';}
+function sideName(s){return s=='L'?'left':'right';}
+function steps(m,b){var h='<h2>Converting '+esc(m.name)+'</h2><ol>';
+h+='<li><b>Read the Fischer projection</b> (top to bottom): '+F(m.top)+'; '+m.centers.map(function(c){return 'C'+c.pos+' ('+c.cip+') left '+F(c.L)+', right '+F(c.R);}).join('; ')+'; '+F(m.bottom)+'.</li>';
+h+='<li><b>Fischer &rarr; wedge-dash.</b> Lay the chain out as a zigzag with C1 at the lower left. At every centre the two horizontal groups become one wedge and one dash. '+m.centers.map(function(c,i){var peak=(i+1)%2==1,w=c.zz=='L'?c.L:c.R,d=c.zz=='L'?c.R:c.L;return 'C'+c.pos+' ('+(peak?'upper point':'lower point')+'): '+F(w)+' wedge, '+F(d)+' dash (Fischer '+sideName(c.zz)+' becomes wedge)';}).join('; ')+'. The pattern flips at every other carbon because the zigzag turns the chain the other way.</li>';
+var f=m.centers[b],k=m.centers[b+1];
+h+='<li><b>Fischer &rarr; Newman and sawhorse</b> along C'+f.pos+'&ndash;C'+k.pos+'. The Fischer drawing is the eclipsed conformation viewed down this bond from above. Front C'+f.pos+': bottom = '+F(prevLab(m,b))+', upper-left = '+F(f.R)+' (Fischer right), upper-right = '+F(f.L)+' (Fischer left). Rear C'+k.pos+' at 0°: bottom = '+F(nextLab(m,b+1))+', upper-left = '+F(k.R)+', upper-right = '+F(k.L)+'. Turn the rear carbon by 180° to reach the staggered anti conformation shown by default. Currently: '+phiName(phi)+'.</li>';
+var q=fr(m,bond),lE=(flip?'right':'left');
+h+='<li><b>Wedge-dash &rarr; sawhorse / Newman directly (no Fischer needed).</b> Stand at the '+lE+' end of the zigzag and look along C'+f.pos+'&ndash;C'+k.pos+'; the nearer carbon (C'+q.F.pos+') is the front carbon and C'+q.R.pos+' is behind it. Rule 1: up stays up &ndash; a group drawn up goes to the top of the Newman circle, a group drawn down goes to the bottom. Rule 2: a wedge group goes to the '+(flip?'left':'right')+' and a dash group goes to the '+(flip?'right':'left')+' (from the other end it is the opposite). The sawhorse uses the same angles. Use the &ldquo;Front carbon&rdquo; menu to see the view from the opposite end.</li>';
+h+='<li><b>Going backwards.</b> From a Newman projection, rotate the rear carbon to the eclipsed position (0°). The group at the bottom of the front carbon is the chain above, the upper-left group goes on the Fischer right, and the upper-right group goes on the Fischer left.</li>';
+if(m.dl)h+='<li><b>Configuration label.</b> '+(m.top=='CHO'?'The OH on the lowest stereocentre (C'+m.centers[m.centers.length-1].pos+') is on the '+(m.dl=='D'?'right, so D.':'left, so L.'):'The NH₂ on the α-carbon (C2) is on the '+(m.dl=='D'?'right, so D.':'left, so L.'))+'</li>';
+if(m.rel)h+='<li><b>Relative arrangement.</b> The first non-hydrogen group on each of the two centres lies on '+m.rel+' of the Fischer projection ('+(m.rel=='same side'?'erythro-type':'threo-type')+').</li>';
+return h+'</ol>';}
+function info(m){var cip='('+m.centers.map(function(c){return c.pos+c.cip;}).join(',')+')';
+return '<div style="font-size:16px;font-weight:500">'+esc(m.name)+'</div><div style="margin:4px 0"><span class="chip">'+F(m.formula)+'</span><span class="chip">'+cip+' by chain position</span>'+(m.dl?'<span class="chip">'+m.dl+' series</span>':'')+'<span class="chip ok">structure verified</span></div><div style="font-size:12px;color:var(--text-secondary)">PubChem <a href="https://pubchem.ncbi.nlm.nih.gov/compound/'+m.cid+'" target="_blank" rel="noopener">CID '+m.cid+'</a> &middot; '+esc(m.iupac)+'</div>';}
+function render(){var m=D[cur];$('info').innerHTML=info(m);
+$('s1').innerHTML=fischer(m);$('s2').innerHTML=zigzag(m);$('s3').innerHTML=sawhorse(m,bond,phi);$('s4').innerHTML=newman(m,bond,phi);
+$('steps').innerHTML=steps(m,bond);$('phiv').textContent=phiName(phi);
+['c2','c3','c4'].forEach(function(c){$(c).classList.toggle('hid',$('prac').checked&&!rev[c]);});}
+function pick(i){cur=(i+D.length)%D.length;sel.value=cur;rev={};bond=0;flip=0;$('fsel').value=0;var b=$('bsel');b.innerHTML='';for(var k=0;k<D[cur].centers.length-1;k++){var o=document.createElement('option');o.value=k;o.textContent='C'+D[cur].centers[k].pos+'–C'+D[cur].centers[k+1].pos;b.appendChild(o);}render();}
+sel.onchange=function(){pick(+sel.value);};
+$('prev').onclick=function(){pick(cur-1);};$('next').onclick=function(){pick(cur+1);};
+$('bsel').onchange=function(){bond=+this.value;render();};
+$('fsel').onchange=function(){flip=+this.value;render();};
+$('phi').oninput=function(){phi=+this.value;render();};
+$('prac').onchange=function(){rev={};render();};
+document.querySelectorAll('.reveal').forEach(function(b){b.onclick=function(){rev[b.getAttribute('data-c')]=true;render();};});
+$('anim').onclick=function(){if(timer)clearInterval(timer);var t0=performance.now();timer=setInterval(function(){var u=Math.min(1,(performance.now()-t0)/2600),e=u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;phi=Math.round(e*180/10)*10;$('phi').value=phi;render();if(u>=1){clearInterval(timer);timer=null;}},40);};
+var T='<tr><th>Compound</th><th>PubChem</th><th>IUPAC name (PubChem)</th><th>Name vs CIP</th><th>NCI InChIKey</th><th>Fischer</th><th>Zigzag</th><th>Newman</th></tr>';
+D.forEach(function(m){var ck=function(v){return v===true?'✓':v===null?'n/a':'✗';};T+='<tr><td>'+esc(m.name)+'</td><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/'+m.cid+'" target="_blank" rel="noopener">'+m.cid+'</a></td><td>'+esc(m.iupac)+'</td><td>'+ck(m.checks.name)+'</td><td>'+ck(m.checks.inchikey)+'</td><td>'+ck(m.checks.fischer)+'</td><td>'+ck(m.checks.zigzag)+'</td><td>'+ck(m.checks.newman)+'</td></tr>';});
+$('vt').innerHTML=T;
+pick(0);
+</script>
+</body>
+</html>

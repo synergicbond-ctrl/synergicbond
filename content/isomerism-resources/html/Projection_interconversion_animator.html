@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Turn it, twist it, see it! – Fischer, zig-zag, sawhorse and Newman</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--ink:#1b2740;--mut:#667191;--line:#dfe4f0;--pink:#e0457b;--green:#2f9e44;--blue:#1d4e9e;--accent:#3b5bdb;--sun:#ffd43b;--shadow:0 6px 22px rgba(27,39,64,.09)}
+:root[data-theme=dark]{--bg:#0f1420;--card:#171e2e;--ink:#e9edf7;--mut:#9aa6c4;--line:#283250;--accent:#8aa2ff;--shadow:0 6px 22px rgba(0,0,0,.45)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1420;--card:#171e2e;--ink:#e9edf7;--mut:#9aa6c4;--line:#283250;--accent:#8aa2ff;--shadow:0 6px 22px rgba(0,0,0,.45)}}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--ink);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.top{position:sticky;top:0;z-index:30;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 3px 14px rgba(27,39,64,.07);padding:10px 16px}
+h1{margin:0 0 8px;font-size:22px;font-weight:800;letter-spacing:.2px}h1 small{font-weight:600;color:var(--mut);font-size:14px;margin-left:8px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bar .grp{display:flex;gap:6px;align-items:center;padding:4px 8px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+button,select{font:inherit;font-size:15px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:7px 12px;cursor:pointer;transition:transform .1s,background .15s}
+button:hover{background:var(--bg)}button:active{transform:scale(.95)}
+button.big{font-size:17px;font-weight:800;padding:8px 18px}button.play{background:var(--accent);color:#fff;border-color:var(--accent)}
+button.on{background:var(--sun);color:#3b2f00;border-color:#e0b100}
+label.t{font-size:14px;display:flex;align-items:center;gap:5px;color:var(--mut)}label.t b{color:var(--ink)}
+input[type=range]{accent-color:var(--accent);width:120px}
+.hero{max-width:1280px;margin:14px auto 0;padding:0 16px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 16px;box-shadow:var(--shadow);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.story .nm{font-size:20px;font-weight:800}.story .sm{color:var(--mut);font-size:15px}.badges{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+.pill{font-size:13px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--mut)}.pill.ok{background:#e6f6ea;color:#1f7a37;border-color:#b6e2c1}
+.panels{max-width:1280px;margin:12px auto 0;padding:0 16px;display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:12px}
+.pan{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:10px 10px 6px;position:relative;min-height:340px;display:flex;flex-direction:column}
+.pan h3{margin:0 0 2px;font-size:16px;font-weight:800;text-align:center}.pan h3 span{display:block;font-weight:600;font-size:12.5px;color:var(--mut)}
+.pan .sv{flex:1;display:flex;align-items:center;justify-content:center}.pan svg{width:100%;height:auto;max-height:min(520px,62vh)}#baRow .pan{min-height:240px}#baRow .pan svg{max-height:270px}
+.pan.mid{border:2px solid var(--accent)}.pan.mid h3{color:var(--accent)}
+.pan .veil{position:absolute;inset:44px 10px 10px;border-radius:12px;background:repeating-linear-gradient(45deg,var(--bg),var(--bg) 12px,var(--card) 12px,var(--card) 24px);display:none;align-items:center;justify-content:center;text-align:center;font-weight:800;color:var(--mut);font-size:18px;padding:16px}
+.pan.hid .veil{display:flex}
+.cap{max-width:1280px;margin:12px auto 0;padding:0 16px}
+.capbox{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--accent);border-radius:16px;padding:14px 18px;box-shadow:var(--shadow);min-height:110px}
+.capbox .st{font-size:13px;font-weight:800;color:var(--accent);letter-spacing:.5px;text-transform:uppercase}.capbox .tx{font-size:21px;font-weight:700;line-height:1.35;margin:3px 0}.capbox .tip{font-size:16px;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.chips button{padding:4px 11px;font-size:14px;border-radius:99px}.chips button.cur{background:var(--accent);color:#fff;border-color:var(--accent)}.chips button.done{border-color:var(--green)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;font-size:14px;color:var(--mut)}.legend i{display:inline-block;width:22px;height:6px;border-radius:4px;margin-right:6px;vertical-align:middle}
+.rules{max-width:1280px;margin:14px auto 40px;padding:0 16px}.rules .box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 18px;box-shadow:var(--shadow)}
+.rules h2{margin:0 0 6px;font-size:19px}.rules ol{margin:4px 0 0;padding-left:24px}.rules li{margin:6px 0}
+.tabs{display:flex;gap:8px;max-width:1280px;margin:12px auto 0;padding:0 16px}.tabs button{border-radius:14px 14px 0 0;font-weight:800}.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+#lab{display:none}.lnav{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 8px}.lnav button{border-radius:99px;padding:6px 13px;font-size:14px;font-weight:700}.lnav button.on{background:var(--accent);color:#fff;border-color:var(--accent)}.labbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;position:sticky;top:0;z-index:5;background:var(--bg);padding:6px 0}.labbar select{font-size:14px;padding:5px 8px}.gal{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:6px}.gal .th{border:2px solid var(--line);border-radius:12px;padding:2px;background:var(--card);width:92px}.gal .th.cur{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,91,219,.2)}.gal .th.tw{opacity:.55}.qa button{font-size:16px;font-weight:800;padding:8px 14px}.qa .ok{background:#e6f6ea;border-color:#2f9e44;color:#1f7a37}.qa .no{background:#ffe3ea;border-color:#e0457b;color:#a61e4d}body.lab .bar .grp:not(:last-child){display:none}
+@media(max-width:960px){.panels{grid-template-columns:1fr}.pan{min-height:300px}}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media(max-height:900px){.top{position:static}}.rsgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:1280px;margin:12px auto 0;padding:0 16px}@media(max-width:900px){.rsgrid{grid-template-columns:1fr}}.rsgrid .pan{min-height:300px}</style></head><body>
+<div class="top"><h1>🔄 Turn it, twist it, see it!<small>Fischer ⇄ zig-zag (wedge-dash) ⇄ sawhorse ⇄ Newman</small></h1>
+<div class="bar">
+ <div class="grp"><button id="bStart" title="Back to the beginning">⏮</button><button id="bBack" title="One step back">◀ Step</button><button id="bPlay" class="big play" title="Play / pause (space)">▶ Play</button><button id="bFwd" title="One step forward">Step ▶</button><button id="bEnd" title="Jump to the end">⏭</button><button id="bRe" title="Replay this step">🔁 Again</button></div>
+ <div class="grp"><label class="t">🐢<input type="range" id="spd" min="0.3" max="2.5" step="0.05" value="1"><span>🐇</span></label></div>
+ <div class="grp"><label class="t">From <select id="from"><option value="0">Fischer</option><option value="1">Zig-zag (wedge-dash)</option><option value="2">Sawhorse</option><option value="3">Newman</option></select></label><button id="swap" title="swap">⇄</button><label class="t">To <select id="to"><option value="0">Fischer</option><option value="1">Zig-zag (wedge-dash)</option><option value="2">Sawhorse</option><option value="3" selected>Newman</option></select></label></div>
+ <div class="grp"><label class="t">Example <select id="ex"></select></label><button id="exP">◀</button><button id="exN">▶</button></div>
+ <div class="grp"><label class="t">Look along <select id="bond"></select></label><label class="t">Front carbon <select id="front"><option value="0">upper (left) carbon in front</option><option value="1">lower (right) carbon in front — vice versa</option></select></label></div>
+ <div class="grp"><label class="t"><input type="checkbox" id="rs" checked> show R/S</label><label class="t"><input type="checkbox" id="tryf"> try first (hide goal)</label><label class="t"><input type="checkbox" id="pz"> pause after each step</label><button id="theme">◐</button></div>
+</div></div>
+<div class="tabs"><button id="tabA" class="on">🎬 Interconversion movie</button><button id="tabB">🧪 Rules lab (turn · swap)</button><button id="tabC">🏷 R/S naming in all 4 pictures</button></div>
+<div id="movie">
+<div class="hero"><div class="story"><div><div class="nm" id="exName">…</div><div class="sm" id="exStory"></div></div><div class="badges" id="exBadges"></div></div></div>
+<div class="panels">
+ <div class="pan" id="pL"><h3 id="hL">Start<span>where we begin</span></h3><div class="sv" id="svL"></div></div>
+ <div class="pan mid"><h3>Watch it move!<span>the molecule in 3-D (it is the same molecule all the time)</span></h3><div class="sv" id="svM"></div><div id="twistRow" style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:4px 0 6px"></div></div>
+ <div class="pan" id="pR"><h3 id="hR">Goal<span>where we want to get</span></h3><div class="sv" id="svR"></div><div class="veil">🎯 Try first!<br>Draw the goal on paper, then untick “try first”.</div></div>
+</div>
+<div class="cap"><div class="capbox"><div class="st" id="capSt">Step</div><div class="tx" id="capTx"></div><div class="tip" id="capTip"></div>
+ <div class="chips" id="chips"></div>
+ <div class="legend"><span><i style="background:var(--pink)"></i>pink = pointing TOWARD you</span><span><i style="background:var(--green)"></i>green = pointing AWAY from you</span><span><i style="background:var(--blue)"></i>blue = lying flat on the paper</span><span>🟠 <b>R</b> / 🔵 <b>S</b> badges = the carbon’s “handedness” (it never changes when we only turn or twist)</span></div><div id="chk" style="margin-top:10px;font-size:16px;font-weight:700"></div></div></div>
+<div class="panels" id="baRow" style="grid-template-columns:1fr 1fr;margin-top:12px"><div class="pan" style="min-height:300px"><h3>⏪ Before this step<span id="baL1"></span></h3><div class="sv" id="svBef"></div></div><div class="pan" style="min-height:300px"><h3>⏩ After this step<span id="baL2"></span></h3><div class="sv" id="svAft"></div></div></div>
+</div>
+<div id="lab" class="hero">
+ <div class="story"><div><div class="nm">🧪 Fischer rules studio</div><div class="sm">Every rule from the notes, animated. Pick a rule, press play, and watch: is it still the same molecule, or its mirror twin?</div></div></div>
+ <div class="lnav" id="lnav"></div>
+ <div class="labbar"><div class="grp"><button id="lBack">◀ Back</button><button id="lPlay" class="big play">▶ Play</button><button id="lNext">Next ▶</button><button id="lRe">↺ Reset</button></div><div class="grp"><label class="t">🐢<input type="range" id="lSpd" min="0.4" max="2.5" step="0.05" value="1"><span>🐇</span></label></div><div class="grp" id="lOpts"></div></div>
+ <div class="panels" style="grid-template-columns:1.25fr 1fr;padding:0;margin-top:10px"><div class="pan mid"><h3 id="lT">Fischer picture<span>pink arms toward you · green spine away</span></h3><div class="sv" id="lFlat"></div></div><div class="pan"><h3 id="lR3t">3-D view<span>sideways arms toward you · up/down arms away</span></h3><div class="sv" id="l3d"></div><div id="l3note" style="text-align:center;font-weight:700;padding:4px 8px 8px"></div></div></div>
+ <div class="capbox" style="margin-top:12px"><div class="st" id="lSt"></div><div class="tx" id="lTx"></div><div class="tip" id="lTip"></div><div id="lVerdict" style="margin-top:8px;font-size:18px;font-weight:800"></div><div class="chips" id="lChips"></div></div>
+</div>
+<div id="rsn" class="hero" style="display:none">
+ <div class="story"><div><div class="nm">🏷 R / S naming in all four pictures</div><div class="sm" id="rsName"></div></div><div class="badges"><label class="t">Compound <select id="rsEx"></select></label></div></div>
+ <div class="lnav" id="rsCs"></div>
+ <div class="labbar"><div class="grp"><button id="rsBack">◀ Back</button><button id="rsPlay" class="big play">▶ Play</button><button id="rsNext">Next ▶</button><button id="rsRe">↺ Reset</button></div><div class="grp"><label class="t">🐢<input type="range" id="rsSpd" min="0.4" max="2.5" step="0.05" value="1"><span>🐇</span></label></div></div>
+ <div class="capbox" style="margin-top:8px"><div class="st" id="rsSt"></div><div class="tx" id="rsTx"></div><div class="tip" id="rsTip"></div><div class="chips" id="rsChips"></div></div>
+ <div class="rsgrid"><div class="pan"><h3>1 · Fischer<span id="rsNF"></span></h3><div class="sv" id="rsF"></div></div><div class="pan"><h3>2 · Zig-zag (wedge-dash)<span id="rsNZ"></span></h3><div class="sv" id="rsZ"></div></div><div class="pan"><h3>3 · Sawhorse<span id="rsNS"></span></h3><div class="sv" id="rsS"></div></div><div class="pan"><h3>4 · Newman<span id="rsNN"></span></h3><div class="sv" id="rsN"></div></div></div>
+</div>
+<div class="rules"><div class="box"><h2>📚 The five secrets (in simple words)</h2><ol>
+<li><b>Fischer picture = a curled caterpillar.</b> The up-and-down line is the spine and it curls <b style="color:var(--green)">away</b> from you. The side arms reach <b style="color:var(--pink)">toward</b> you, like a hug.</li>
+<li><b>Half-turn on the page (180°) is safe.</b> The molecule is the same. <b>Quarter-turn (90°) is NOT safe</b> – you get its mirror twin.</li>
+<li><b>Swapping two arms makes the twin.</b> Swap again and you are back home.</li>
+<li><b>Twisting around a bond is just wiggling.</b> The R/S badges do not change, so it is still the same molecule. That is how a Fischer picture (all eclipsed) becomes a zig-zag (all staggered).</li>
+<li><b>Looking from a different place is just looking.</b> Sawhorse = look at the bond from a slant. Newman = put your eye exactly in line with the bond: the back carbon hides behind the front one.</li></ol></div></div>
+<div style="text-align:center;color:var(--mut);font-size:13px;margin:0 0 30px" id="verif"></div>
+<script>
+const EX=[{"id": 0, "name": "Glyceraldehyde (D-)", "story": "the smallest sugar", "top": "CHO", "bottom": "CH2OH", "rows": [["H", "OH"]], "exp": "R", "n": 1}, {"id": 1, "name": "Alanine (L-)", "story": "a building block of your muscles", "top": "COOH", "bottom": "CH3", "rows": [["NH2", "H"]], "exp": "S", "n": 1}, {"id": 2, "name": "Lactic acid (D-)", "story": "the sour taste of yoghurt", "top": "COOH", "bottom": "CH3", "rows": [["H", "OH"]], "exp": "R", "n": 1}, {"id": 3, "name": "2-Chlorobutane", "story": "a simple chlorine compound", "top": "CH3", "bottom": "CH2CH3", "rows": [["H", "Cl"]], "exp": "S", "n": 1}, {"id": 4, "name": "Erythrose (D-)", "story": "a 4-carbon sugar", "top": "CHO", "bottom": "CH2OH", "rows": [["H", "OH"], ["H", "OH"]], "exp": "RR", "n": 2}, {"id": 5, "name": "Threose (D-)", "story": "erythrose's look-alike cousin", "top": "CHO", "bottom": "CH2OH", "rows": [["OH", "H"], ["H", "OH"]], "exp": "SR", "n": 2}, {"id": 6, "name": "Tartaric acid (L-(+)-)", "story": "found in grapes", "top": "COOH", "bottom": "COOH", "rows": [["H", "OH"], ["OH", "H"]], "exp": "RR", "n": 2}, {"id": 7, "name": "meso-Tartaric acid", "story": "tartaric acid with a hidden mirror", "top": "COOH", "bottom": "COOH", "rows": [["H", "OH"], ["H", "OH"]], "exp": "RS", "n": 2}, {"id": 8, "name": "meso-2,3-Dibromobutane", "story": "two bromines that cancel each other", "top": "CH3", "bottom": "CH3", "rows": [["H", "Br"], ["H", "Br"]], "exp": "SR", "n": 2}, {"id": 9, "name": "2-Bromo-3-chlorobutane", "story": "two different halogens", "top": "CH3", "bottom": "CH3", "rows": [["H", "Br"], ["Cl", "H"]], "exp": "SS", "n": 2}, {"id": 10, "name": "Ribose (D-)", "story": "the sugar inside your DNA cousin, RNA", "top": "CHO", "bottom": "CH2OH", "rows": [["H", "OH"], ["H", "OH"], ["H", "OH"]], "exp": "RRR", "n": 3}, {"id": 11, "name": "Arabinose (D-)", "story": "a plant sugar", "top": "CHO", "bottom": "CH2OH", "rows": [["OH", "H"], ["H", "OH"], ["H", "OH"]], "exp": "SRR", "n": 3}, {"id": 12, "name": "Xylose (D-)", "story": "wood sugar", "top": "CHO", "bottom": "CH2OH", "rows": [["H", "OH"], ["OH", "H"], ["H", "OH"]], "exp": "RSR", "n": 3}, {"id": 13, "name": "Lyxose (D-)", "story": "a rare sugar", "top": "CHO", "bottom": "CH2OH", "rows": [["OH", "H"], ["OH", "H"], ["H", "OH"]], "exp": "SSR", "n": 3}, {"id": 14, "name": "2,3,4-Trichlorohexane", "story": "three chlorines in a row", "top": "CH3", "bottom": "CH2CH3", "rows": [["H", "Cl"], ["H", "Cl"], ["Cl", "H"]], "exp": "SSS", "n": 3}, {"id": 15, "name": "Glucose (D-)", "story": "the sugar in your blood", "top": "CHO", "bottom": "CH2OH", "rows": [["H", "OH"], ["OH", "H"], ["H", "OH"], ["H", "OH"]], "exp": "RSRR", "n": 4}, {"id": 16, "name": "Mannose (D-)", "story": "glucose's cousin", "top": "CHO", "bottom": "CH2OH", "rows": [["OH", "H"], ["OH", "H"], ["H", "OH"], ["H", "OH"]], "exp": "SSRR", "n": 4}, {"id": 17, "name": "Galactose (D-)", "story": "the sugar in milk", "top": "CHO", "bottom": "CH2OH", "rows": [["H", "OH"], ["OH", "H"], ["OH", "H"], ["H", "OH"]], "exp": "RSSR", "n": 4}, {"id": 18, "name": "Glucitol (D-, sorbitol)", "story": "a sweetener", "top": "CH2OH", "bottom": "CH2OH", "rows": [["H", "OH"], ["OH", "H"], ["H", "OH"], ["H", "OH"]], "exp": "SRRR", "n": 4}, {"id": 19, "name": "2,3,4,5-Tetrachlorohexane", "story": "four chlorines in a row", "top": "CH3", "bottom": "CH3", "rows": [["H", "Cl"], ["H", "Cl"], ["Cl", "H"], ["H", "Cl"]], "exp": "SSSR", "n": 4}, {"id": 20, "name": "D-glycero-D-gluco-Heptose", "story": "a 7-carbon sugar", "top": "CHO", "bottom": "CH2OH", "rows": [["H", "OH"], ["OH", "H"], ["H", "OH"], ["H", "OH"], ["H", "OH"]], "exp": "RSRRR", "n": 5}, {"id": 21, "name": "D-glycero-D-galacto-Heptose", "story": "another 7-carbon sugar", "top": "CHO", "bottom": "CH2OH", "rows": [["H", "OH"], ["OH", "H"], ["OH", "H"], ["H", "OH"], ["H", "OH"]], "exp": "RSSRR", "n": 5}, {"id": 22, "name": "D-glycero-D-manno-Heptose", "story": "and one more 7-carbon sugar", "top": "CHO", "bottom": "CH2OH", "rows": [["OH", "H"], ["OH", "H"], ["H", "OH"], ["H", "OH"], ["H", "OH"]], "exp": "SSRRR", "n": 5}, {"id": 23, "name": "2,3,4,5,6-Pentabromoheptane", "story": "five bromines in a row", "top": "CH3", "bottom": "CH2CH3", "rows": [["H", "Br"], ["Br", "H"], ["H", "Br"], ["H", "Br"], ["Br", "H"]], "exp": "SRSRS", "n": 5}];
+const D2R=Math.PI/180;
+const add=(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]],sub=(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]],mul=(a,s)=>[a[0]*s,a[1]*s,a[2]*s],neg=a=>[-a[0],-a[1],-a[2]];
+const dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],len=a=>Math.hypot(a[0],a[1],a[2]);
+const unit=a=>{const l=len(a)||1;return mul(a,1/l)};
+function rotAbout(p,o,ax,ang){const v=sub(p,o),c=Math.cos(ang),s=Math.sin(ang);return add(o,add(add(mul(v,c),mul(cross(ax,v),s)),mul(ax,dot(ax,v)*(1-c))))}
+const I3=[[1,0,0],[0,1,0],[0,0,1]];
+const mm=(A,B)=>A.map(r=>[0,1,2].map(j=>r[0]*B[0][j]+r[1]*B[1][j]+r[2]*B[2][j]));
+const mv=(M,v)=>[dot(M[0],v),dot(M[1],v),dot(M[2],v)];
+const Rx=a=>{const c=Math.cos(a),s=Math.sin(a);return[[1,0,0],[0,c,-s],[0,s,c]]},Ry=a=>{const c=Math.cos(a),s=Math.sin(a);return[[c,0,s],[0,1,0],[-s,0,c]]},Rz=a=>{const c=Math.cos(a),s=Math.sin(a);return[[c,-s,0],[s,c,0],[0,0,1]]};
+function axisAngle(ax,ang){const[x,y,z]=ax,c=Math.cos(ang),s=Math.sin(ang),t=1-c;return[[t*x*x+c,t*x*y-s*z,t*x*z+s*y],[t*x*y+s*z,t*y*y+c,t*y*z-s*x],[t*x*z-s*y,t*y*z+s*x,t*z*z+c]]}
+function rotFromTo(a,b){a=unit(a);b=unit(b);const c=dot(a,b);if(c>0.9999999)return I3;if(c<-0.9999999){const p=Math.abs(a[0])<.9?[1,0,0]:[0,1,0];return axisAngle(unit(cross(a,p)),Math.PI)}const v=cross(a,b);return axisAngle(unit(v),Math.atan2(len(v),c))}
+function m2q(M){const t=M[0][0]+M[1][1]+M[2][2];let w,x,y,z;if(t>0){const s=Math.sqrt(t+1)*2;w=s/4;x=(M[2][1]-M[1][2])/s;y=(M[0][2]-M[2][0])/s;z=(M[1][0]-M[0][1])/s}else if(M[0][0]>M[1][1]&&M[0][0]>M[2][2]){const s=Math.sqrt(1+M[0][0]-M[1][1]-M[2][2])*2;w=(M[2][1]-M[1][2])/s;x=s/4;y=(M[0][1]+M[1][0])/s;z=(M[0][2]+M[2][0])/s}else if(M[1][1]>M[2][2]){const s=Math.sqrt(1+M[1][1]-M[0][0]-M[2][2])*2;w=(M[0][2]-M[2][0])/s;x=(M[0][1]+M[1][0])/s;y=s/4;z=(M[1][2]+M[2][1])/s}else{const s=Math.sqrt(1+M[2][2]-M[0][0]-M[1][1])*2;w=(M[1][0]-M[0][1])/s;x=(M[0][2]+M[2][0])/s;y=(M[1][2]+M[2][1])/s;z=s/4}const n=Math.hypot(w,x,y,z);return[w/n,x/n,y/n,z/n]}
+function q2m(q){const[w,x,y,z]=q;return[[1-2*(y*y+z*z),2*(x*y-z*w),2*(x*z+y*w)],[2*(x*y+z*w),1-2*(x*x+z*z),2*(y*z-x*w)],[2*(x*z-y*w),2*(y*z+x*w),1-2*(x*x+y*y)]]}
+function slerpM(A,B,t){let a=m2q(A),b=m2q(B);let d=a[0]*b[0]+a[1]*b[1]+a[2]*b[2]+a[3]*b[3];if(d<0){b=b.map(v=>-v);d=-d}if(d>0.9995){const q=a.map((v,i)=>v+(b[i]-v)*t);const n=Math.hypot(...q);return q2m(q.map(v=>v/n))}const th=Math.acos(d),s=Math.sin(th);const wa=Math.sin((1-t)*th)/s,wb=Math.sin(t*th)/s;return q2m(a.map((v,i)=>v*wa+b[i]*wb))}
+/* ---------- groups, CIP ---------- */
+const Z={H:1,F:9,Cl:17,Br:35,I:53,O:8,N:7,C:6};
+function node(z,k,extra){return Object.assign({z,k:k||[]},extra||{})}
+function G(t){switch(t){
+ case"H":return node(1);case"OH":return node(8,[node(1)]);case"NH2":return node(7,[node(1),node(1)]);
+ case"F":return node(9);case"Cl":return node(17);case"Br":return node(35);case"I":return node(53);
+ case"CH3":return node(6,[node(1),node(1),node(1)]);case"CH2OH":return node(6,[node(1),node(1),G("OH")]);case"CH2Cl":return node(6,[node(1),node(1),node(17)]);
+ case"CH2CH3":return node(6,[node(1),node(1),G("CH3")]);
+ case"CHO":return node(6,[node(8,[node(6,[],{dup:1})]),node(8,[],{dup:1}),node(1)]);
+ case"COOH":return node(6,[node(8,[node(6,[],{dup:1})]),node(8,[],{dup:1}),G("OH")]);
+ }throw new Error("group "+t)}
+function trees(ex){const n=ex.n,T={n,sp:[null],L:[null],R:[null]};for(let i=1;i<=n;i++){T.sp.push({z:6,sp:i});T.L.push(G(ex.rows[i-1][0]));T.R.push(G(ex.rows[i-1][1]))}T.top=G(ex.top);T.bot=G(ex.bottom);return T}
+function kidsOf(x,T){const nd=x.node;let ks;if(nd.sp){const i=nd.sp;ks=[i===1?T.top:T.sp[i-1],i===T.n?T.bot:T.sp[i+1],T.L[i],T.R[i]].filter(k=>k!==x.parent)}else ks=nd.k;const out=ks.map(k=>({node:k,parent:nd}));
+ const w=o=>o.node.sp?9:o.node.k.reduce((s,k)=>s+k.z,0);out.sort((a,b)=>b.node.z-a.node.z||w(b)-w(a));return out}
+function cmpBr(a,b,T){if(a.node.z!==b.node.z)return a.node.z-b.node.z;let fa=[a],fb=[b];for(let d=0;d<9;d++){const ca=fa.map(x=>kidsOf(x,T)),cb=fb.map(x=>kidsOf(x,T));const m=Math.max(ca.length,cb.length);for(let i=0;i<m;i++){const A=ca[i]||[],B=cb[i]||[];const mj=Math.max(A.length,B.length);for(let j=0;j<mj;j++){const za=A[j]?A[j].node.z:0,zb=B[j]?B[j].node.z:0;if(za!==zb)return za-zb}}fa=[].concat(...ca);fb=[].concat(...cb);if(!fa.length&&!fb.length)return 0}return 0}
+function priorities(ex){const T=trees(ex),out=[null];for(let i=1;i<=ex.n;i++){const par=T.sp[i];const nb=[{r:"U",x:{node:i===1?T.top:T.sp[i-1],parent:par}},{r:"D",x:{node:i===ex.n?T.bot:T.sp[i+1],parent:par}},{r:"L",x:{node:T.L[i],parent:par}},{r:"R",x:{node:T.R[i],parent:par}}];
+ nb.sort((p,q)=>cmpBr(q.x,p.x,T));for(let k=0;k<3;k++)if(cmpBr(nb[k].x,nb[k+1].x,T)===0)throw new Error("tie at centre "+i+" in "+ex.name);out.push(nb.map(o=>o.r))}return out}
+function labelFromVecs(order,vec){const v1=vec[order[0]],v2=vec[order[1]],v3=vec[order[2]];return dot(cross(v1,v2),v3)<0?"R":"S"}
+/* ---------- model ---------- */
+const ARM=0.92,SIN=0.816,COS=0.577;
+function buildModel(ex,st){const n=ex.n,d=Math.max(8,st.delta)*D2R,Rc=1/(2*Math.sin(d/2));const S=[];
+ for(let i=0;i<=n+1;i++){const th=(i-(n+1)/2)*d;S.push([0,-Rc*Math.sin(th),Rc*(Math.cos(th)-1)])}
+ for(let i=1;i<=n-1;i++){const ax=unit(sub(S[i+1],S[i])),ang=(st.tau[i-1]||0)*D2R;for(let j=i+2;j<=n+1;j++)S[j]=rotAbout(S[j],S[i],ax,ang)}
+ const Gp=[null];for(let i=1;i<=n;i++){const b1=unit(sub(S[i-1],S[i])),b2=unit(sub(S[i+1],S[i])),m=unit(neg(add(b1,b2))),nn=unit(cross(b1,b2));
+  const L=add(S[i],mul(add(mul(m,COS),mul(nn,SIN)),ARM)),R=add(S[i],mul(sub(mul(m,COS),mul(nn,SIN)),ARM));Gp.push({L,R,m,nn})}
+ let c=[0,0,0];S.forEach(p=>c=add(c,p));c=mul(c,1/S.length);const sh=p=>sub(p,c);
+ return{S:S.map(sh),G:Gp.map(g=>g&&{L:sh(g.L),R:sh(g.R),m:g.m,nn:g.nn})}}
+function liveLabels(ex,mo){const out=[];for(let i=1;i<=ex.n;i++){const C=mo.S[i];const vec={U:sub(mo.S[i-1],C),D:sub(mo.S[i+1],C),L:sub(mo.G[i].L,C),R:sub(mo.G[i].R,C)};out.push(labelFromVecs(ex.pri[i],vec))}return out.join("")}
+const EXPAND={CH3:["H","H","H"],CH2OH:["H","H","OH"],CH2Cl:["H","H","Cl"],CH2CH3:["H","H","CH3"]};
+const sub_=t=>String(t).replace(/\d/g,d=>"₀₁₂₃₄₅₆₇₈₉"[d]);
+function spLabel(ex,i){return i===0?ex.top:i===ex.n+1?ex.bottom:"C"+i+"…"}
+function bondOK(ex,b){const n=ex.n;if(b===0)return!!EXPAND[ex.top];if(b===n)return!!EXPAND[ex.bottom];return true}
+function bondName(ex,b){const n=ex.n;const a=b===0?ex.top:"C"+b,c=b===n?ex.bottom:"C"+(b+1);return a+" – "+c}
+/* Newman / sawhorse data from the 3-D model (snapped to ideal 120° spacing).
+   opt.rev = look from the other end (lower carbon in front); opt.page = keep page-up as Newman-up (direct wedge-dash rule) */
+function newmanData(ex,mo,b,opt){opt=opt||{};const rev=!!opt.rev,page=!!opt.page,n=ex.n,S=mo.S,Fi=rev?b+1:b,Ri=rev?b:b+1,cf=rev?Fi+1:Fi-1,cr=rev?Ri-1:Ri+1,F=S[Fi],Rr=S[Ri],a=unit(sub(Rr,F));
+ const frontC=Fi>=1&&Fi<=n,rearC=Ri>=1&&Ri<=n,fch=rev?"D":"U",rch=rev?"U":"D";
+ let upRef;if(page)upRef=opt.pageUp||[0,1,0];else upRef=frontC?neg(sub(S[cf],F)):sub(S[cr],Rr);
+ let u=unit(sub(upRef,mul(a,dot(upRef,a))));const right=cross(a,u);
+ const ang=v=>(Math.atan2(dot(v,right),dot(v,u))/D2R+360)%360;const nrm=x=>((x%360)+360)%360;const front=[],rear=[];
+ if(frontC){const g=mo.G[Fi];const aU=ang(sub(S[cf],F)),aL=ang(sub(g.L,F));let base=180;if(page)base=Math.cos(aU*D2R)<0?180:0;const d=nrm(aL-aU);
+  front.push({a:base,label:spLabel(ex,cf),k:fch});front.push({a:nrm(base+(d<180?120:-120)),label:ex.rows[Fi-1][0],k:"L"},{a:nrm(base+(d<180?-120:120)),label:ex.rows[Fi-1][1],k:"R"})}
+ if(rearC){const g=mo.G[Ri];const aD=ang(sub(S[cr],Rr)),aL=ang(sub(g.L,Rr));const ap=nrm(Math.round(aD/60)*60);const d=nrm(aL-aD);
+  rear.push({a:ap,label:spLabel(ex,cr),k:rch});rear.push({a:nrm(ap+(d<180?120:-120)),label:ex.rows[Ri-1][0],k:"L"},{a:nrm(ap+(d<180?-120:120)),label:ex.rows[Ri-1][1],k:"R"})}
+ if(!frontC){const aD=rear.find(r=>r.k===rch).a;const ex3=EXPAND[Fi===0?ex.top:ex.bottom].slice();ex3.sort((p,q)=>(p==="H")-(q==="H"));const angs=[nrm(aD+180),nrm(aD+60),nrm(aD+300)];ex3.forEach((l,i)=>front.push({a:angs[i],label:l,k:"x"}))}
+ if(!rearC){const aU=front.find(r=>r.k===fch).a;const ex3=EXPAND[Ri===0?ex.top:ex.bottom].slice();ex3.sort((p,q)=>(p==="H")-(q==="H"));const angs=[nrm(aU+180),nrm(aU+60),nrm(aU+300)];ex3.forEach((l,i)=>rear.push({a:angs[i],label:l,k:"x"}))}
+ const ecl=rear.some(r=>front.some(f=>Math.abs(((r.a-f.a+540)%360)-180)<8));
+ return{front,rear,ecl,Fi,Ri,right,u,a,rev,fo:rev?"U":"D",ro:rev?"D":"U",page}}
+function labelsFromNewman(ex,nd,pri){const res={};const mk=(a,z)=>[Math.sin(a*D2R),Math.cos(a*D2R),z];
+ if(nd.Fi>=1&&nd.Fi<=ex.n){const vec={};nd.front.forEach(g=>vec[g.k]=mk(g.a,0.34));vec[nd.fo]=[0,0,-1];res[nd.Fi]=labelFromVecs(pri[nd.Fi],vec)}
+ if(nd.Ri>=1&&nd.Ri<=ex.n){const vec={};nd.rear.forEach(g=>vec[g.k]=mk(g.a,-0.34));vec[nd.ro]=[0,0,1];res[nd.Ri]=labelFromVecs(pri[nd.Ri],vec)}return res}
+
+const PINK="#e0457b",GREEN="#2f9e44",BLUE="#1d4e9e",ORANGE="#f08c00",TEAL="#1098ad";
+function mixc(a,b,t){const h=x=>[1,3,5].map(i=>parseInt(x.slice(i,i+2),16));const A=h(a),B=h(b);return"#"+A.map((v,i)=>Math.round(v+(B[i]-v)*t).toString(16).padStart(2,"0")).join("")}
+function zcol(z){const t=Math.max(-1,Math.min(1,z/0.9));return t>=0?mixc(BLUE,PINK,t):mixc(BLUE,GREEN,-t)}
+const FILL={H:"#f1f3f5",OH:"#ffc9c9",NH2:"#bac8ff",F:"#d0ebff",Cl:"#b2f2bb",Br:"#e6c9a8",I:"#d0bfff",CH3:"#ffec99",CH2OH:"#ffe0b2",CH2Cl:"#ffe0b2",CH2CH3:"#ffec99",CHO:"#fcc2d7",COOH:"#fcc2d7"};
+function lblT(x,y,t,fs,anc,col){return`<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" font-size="${fs}" font-weight="700" text-anchor="${anc||"middle"}" dominant-baseline="central" fill="${col||"currentColor"}" stroke="var(--card)" stroke-width="5" paint-order="stroke" style="color:var(--ink)">${sub_(t)}</text>`}
+function bubble(x,y,t,s,glow){const w=(14+10.5*String(t).length)*s,h=27*s;return(glow?`<rect x="${(x-w/2-5).toFixed(1)}" y="${(y-h/2-5).toFixed(1)}" width="${(w+10).toFixed(1)}" height="${(h+10).toFixed(1)}" rx="${(h/2+5).toFixed(1)}" fill="#ffd43b" opacity=".75"/>`:"")+`<rect x="${(x-w/2).toFixed(1)}" y="${(y-h/2).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="${(h/2).toFixed(1)}" fill="${FILL[t]||"#e9ecef"}" stroke="#495057" stroke-width="1.6"/><text x="${x.toFixed(1)}" y="${(y+.5).toFixed(1)}" font-size="${(15*s).toFixed(1)}" font-weight="800" text-anchor="middle" dominant-baseline="central" fill="#1b2740">${sub_(t)}</text>`}
+function badge(x,y,l){return`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="11" fill="${l==="R"?ORANGE:TEAL}" stroke="#fff" stroke-width="2"/><text x="${x.toFixed(1)}" y="${(y+.5).toFixed(1)}" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" dominant-baseline="central">${l}</text>`}
+const VW=520,VH=520;
+function scaleOf(ex){return Math.min(105,420/(ex.n+1.8))}
+function proj(M,p,sc){const q=mv(M,p);return{x:VW/2+q[0]*sc,y:VH/2-q[1]*sc,z:q[2]}}
+function fit3D(ex,st,box){box=box||[VW,VH,VW/2,VH/2];const mo=buildModel(ex,st),sc=scaleOf(ex);let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;const add=p=>{const q=proj(st.M,p,sc);x0=Math.min(x0,q.x);x1=Math.max(x1,q.x);y0=Math.min(y0,q.y);y1=Math.max(y1,q.y)};mo.S.forEach(add);mo.G.forEach(g=>{if(g){add(g.L);add(g.R)}});
+ const bw=x1-x0+110,bh=y1-y0+90,f=Math.max(.4,Math.min(box[4]||1.08,Math.min((box[0]-20)/bw,(box[1]-20)/bh)));return`translate(${box[2]} ${box[3]}) scale(${f.toFixed(3)}) translate(${(-(x0+x1)/2).toFixed(1)} ${(-(y0+y1)/2).toFixed(1)})`}
+function layer3D(ex,st,o){const mo=buildModel(ex,st),sc=scaleOf(ex),n=ex.n,P=p=>proj(st.M,p,sc),S=mo.S.map(P),Gs=mo.G.map(g=>g&&{L:P(g.L),R:P(g.R)});
+ const hi=st.hi||[],bonds=[],bubs=[],bs=Math.min(1,sc/92);
+ for(let i=0;i<=n;i++)bonds.push({a:S[i],b:S[i+1],hb:st.bondHi===i});
+ for(let i=1;i<=n;i++){bonds.push({a:S[i],b:Gs[i].L});bonds.push({a:S[i],b:Gs[i].R});
+  bubs.push({p:S[i],t:null,key:"S"+i});bubs.push({p:Gs[i].L,t:ex.rows[i-1][0],key:"L"+i});bubs.push({p:Gs[i].R,t:ex.rows[i-1][1],key:"R"+i})}
+ bubs.push({p:S[0],t:ex.top,key:"S0"});bubs.push({p:S[n+1],t:ex.bottom,key:"S"+(n+1)});
+ bonds.sort((p,q)=>(p.a.z+p.b.z)-(q.a.z+q.b.z));bubs.sort((p,q)=>p.p.z-q.p.z);
+ let s="";
+ for(const b of bonds){if(b.hb)s+=`<line x1="${b.a.x}" y1="${b.a.y}" x2="${b.b.x}" y2="${b.b.y}" stroke="#ffd43b" stroke-width="16" stroke-linecap="round" opacity=".8"/>`;const z=(b.a.z+b.b.z)/2;
+  s+=`<line x1="${b.a.x.toFixed(1)}" y1="${b.a.y.toFixed(1)}" x2="${b.b.x.toFixed(1)}" y2="${b.b.y.toFixed(1)}" stroke="${zcol(z)}" stroke-width="${(5.5*(1+.07*z)).toFixed(1)}" stroke-linecap="round"/>`}
+ for(const b of bubs){const sc2=(1+.09*b.p.z)*Math.max(.62,bs),glow=hi.includes(b.key)||(st.bondHi!=null&&(b.key==="S"+st.bondHi||b.key==="S"+(st.bondHi+1)));
+  if(b.t==null){s+=(glow?`<circle cx="${b.p.x}" cy="${b.p.y}" r="17" fill="#ffd43b" opacity=".8"/>`:"")+`<circle cx="${b.p.x.toFixed(1)}" cy="${b.p.y.toFixed(1)}" r="${(9*Math.max(.7,sc2)).toFixed(1)}" fill="#495057" stroke="#fff" stroke-width="1.5"/><circle cx="${(b.p.x-2.5).toFixed(1)}" cy="${(b.p.y-3).toFixed(1)}" r="2.6" fill="#adb5bd"/>`}
+  else s+=bubble(b.p.x,b.p.y,b.t,sc2,glow)}
+ if(o.rs){const L=liveLabels(ex,mo);for(let i=1;i<=n;i++)s+=badge(S[i].x-20,S[i].y-20,L[i-1])}
+ const arrs=Array.isArray(st.arrow)?st.arrow:(st.arrow?[st.arrow]:[]);for(const j of arrs){const A=mo.S[j],B=mo.S[j+1],ax=unit(sub(B,A)),mid=mul(add(A,B),.5);let u1=unit(cross(ax,Math.abs(ax[1])<.9?[0,1,0]:[1,0,0])),u2=cross(ax,u1);const ph=(o.t||0)*3;const pts=[];
+  for(let k=0;k<=24;k++){const f=ph+k/24*4.4;pts.push(P(add(mid,mul(add(mul(u1,Math.cos(f)),mul(u2,Math.sin(f))),.5))))}
+  s+=`<polyline points="${pts.map(p=>p.x.toFixed(1)+","+p.y.toFixed(1)).join(" ")}" fill="none" stroke="${ORANGE}" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 0"/>`;
+  const e=pts[pts.length-1],p0=pts[pts.length-3],ang=Math.atan2(e.y-p0.y,e.x-p0.x);s+=`<polygon points="${e.x},${e.y} ${(e.x-14*Math.cos(ang-.45)).toFixed(1)},${(e.y-14*Math.sin(ang-.45)).toFixed(1)} ${(e.x-14*Math.cos(ang+.45)).toFixed(1)},${(e.y-14*Math.sin(ang+.45)).toFixed(1)}" fill="${ORANGE}"/>`}
+ return s}
+/* textbook zig-zag (wedge/dash) from the 3-D model through camera M */
+function tbZig(ex,st,o){const mo=buildModel(ex,st),sc=scaleOf(ex),n=ex.n,P=p=>proj(st.M,p,sc),S=mo.S.map(P);let s="";
+ for(let i=0;i<=n;i++)s+=`<line x1="${S[i].x.toFixed(1)}" y1="${S[i].y.toFixed(1)}" x2="${S[i+1].x.toFixed(1)}" y2="${S[i+1].y.toFixed(1)}" stroke="${BLUE}" stroke-width="4.5" stroke-linecap="round"/>`;
+ for(let i=1;i<=n;i++){const g=mo.G[i],C=S[i],mq=mv(st.M,g.m),md=unit([mq[0],-mq[1],0]);const L=P(g.L),R=P(g.R);
+  const cz=S[i].z;const items=[{z:L.z-cz,t:ex.rows[i-1][0],role:"L"},{z:R.z-cz,t:ex.rows[i-1][1],role:"R"}].sort((a,b)=>b.z-a.z);if(o&&o.coll){o.coll[i]={c:[C.x,C.y],U:[S[i-1].x,S[i-1].y,0],D:[S[i+1].x,S[i+1].y,0]}}
+  items.forEach((it,k)=>{const rot=(k===0?1:-1)*0.52,c=Math.cos(rot),sn=Math.sin(rot),d=[md[0]*c-md[1]*sn,md[0]*sn+md[1]*c],len=64,tip=[C.x+d[0]*len,C.y+d[1]*len],pn=[-d[1],d[0]];
+   if(k===0){s+=`<polygon points="${C.x.toFixed(1)},${C.y.toFixed(1)} ${(tip[0]+pn[0]*8.5).toFixed(1)},${(tip[1]+pn[1]*8.5).toFixed(1)} ${(tip[0]-pn[0]*8.5).toFixed(1)},${(tip[1]-pn[1]*8.5).toFixed(1)}" fill="${PINK}"/>`}
+   else{for(let q=1;q<=6;q++){const f=q/6,cx=C.x+d[0]*len*f,cy=C.y+d[1]*len*f,w=1+6.5*f;s+=`<line x1="${(cx+pn[0]*w).toFixed(1)}" y1="${(cy+pn[1]*w).toFixed(1)}" x2="${(cx-pn[0]*w).toFixed(1)}" y2="${(cy-pn[1]*w).toFixed(1)}" stroke="${GREEN}" stroke-width="2.6" stroke-linecap="round"/>`}}
+   if(o&&o.coll){o.coll[i][it.role]=[tip[0]*.6+C.x*.4,tip[1]*.6+C.y*.4,it.z];o.coll[i][it.role+"L"]=[tip[0]+d[0]*22,tip[1]+d[1]*18]}if(!(o&&o.nolabels))s+=lblT(tip[0]+d[0]*22,tip[1]+d[1]*18,it.t,22)});
+  if(o&&o.rs){const lab=liveLabels(ex,mo)[i-1];s+=badge(C.x-md[0]*22,C.y-md[1]*22,lab)}}
+ const e0=unit([S[0].x-S[1].x,S[0].y-S[1].y,0]),e1=unit([S[n+1].x-S[n].x,S[n+1].y-S[n].y,0]);
+ if(o&&o.coll){o.coll.S=S.map(q=>[q.x,q.y]);o.coll.E0=[S[0].x+e0[0]*28,S[0].y+e0[1]*22];o.coll.E1=[S[n+1].x+e1[0]*28,S[n+1].y+e1[1]*22]}if(!(o&&o.nolabels))s+=lblT(S[0].x+e0[0]*28,S[0].y+e0[1]*22,ex.top,22)+lblT(S[n+1].x+e1[0]*28,S[n+1].y+e1[1]*22,ex.bottom,22);return s}
+function newmanInner(nd,cx,cy,o){o=o||{};const R=66,L=72,pt=(a,r)=>[cx+r*Math.sin(a*D2R),cy-r*Math.cos(a*D2R)];let s="";if(o.coll){const F={c:[cx,cy]},Rr={c:[cx,cy]};for(const g of nd.front){const p=pt(g.a,R+L*.55);F[g.k]=[p[0],p[1],.58]}F[nd.fo]=[cx,cy,-.9];for(const g of nd.rear){const p=pt(g.a+(nd.ecl?15:0),R+L*.7);Rr[g.k]=[p[0],p[1],-.58]}Rr[nd.ro]=[cx,cy,.9];o.coll[nd.Fi]=F;o.coll[nd.Ri]=Rr}
+ for(const g of nd.rear){const a=g.a+(nd.ecl?15:0),p1=pt(a,R),p2=pt(a,R+L),pl=pt(a,R+L+28);s+=`<line x1="${p1[0].toFixed(1)}" y1="${p1[1].toFixed(1)}" x2="${p2[0].toFixed(1)}" y2="${p2[1].toFixed(1)}" stroke="${GREEN}" stroke-width="7" stroke-linecap="round"/>`+(o.nolabels?"":lblT(pl[0],pl[1],g.label,23));if(o.collL)o.collL[nd.Ri+"|"+g.k]=pl}
+ s+=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="var(--card)" fill-opacity=".85" stroke="${BLUE}" stroke-width="5"/>`;
+ for(const g of nd.front){const p2=pt(g.a,R+L),pl=pt(g.a,R+L+28);s+=`<line x1="${cx}" y1="${cy}" x2="${p2[0].toFixed(1)}" y2="${p2[1].toFixed(1)}" stroke="${PINK}" stroke-width="7" stroke-linecap="round"/>`+(o.nolabels?"":lblT(pl[0],pl[1],g.label,23));if(o.collL)o.collL[nd.Fi+"|"+g.k]=pl}
+ if(o.rs&&o.labs){if(o.labs[nd.Fi])s+=badge(cx-16,cy-16,o.labs[nd.Fi]);if(o.labs[nd.Ri])s+=badge(cx+16,cy+16,o.labs[nd.Ri])}
+ return s}
+function sawGeom(nd,cx,cy){const pt=(c,a,r)=>[c[0]+r*Math.sin(a*D2R),c[1]-r*Math.cos(a*D2R)],lw=l=>String(l).length*12+10,lh=28;let best=null;
+ for(const L of [80,90]){for(let dx=60;dx<=190;dx+=10)for(let dy=10;dy<=150;dy+=10){const F=[0,0],Rr=[dx,-dy],segs=[[F,Rr,"c"]],items=[];const bA=(Math.atan2(dx,dy)/D2R+360)%360,dA=(p,q)=>{const d=Math.abs(p-q)%360;return d>180?360-d:d};
+  for(const g of nd.front){const e=pt(F,g.a,L);segs.push([F,e,"f"]);items.push({p:pt(F,g.a,L+30),l:g.label,seg:segs.length-1})}
+  for(const g of nd.rear){const e=pt(Rr,g.a,L);segs.push([Rr,e,"b"]);items.push({p:pt(Rr,g.a,L+30),l:g.label,seg:segs.length-1})}
+  const bx=items.map(it=>[it.p[0]-lw(it.l)/2,it.p[1]-lh/2,it.p[0]+lw(it.l)/2,it.p[1]+lh/2]);let bad=0;for(const g of nd.front)if(dA(g.a,bA)<30)bad+=3;for(const g of nd.rear)if(dA(g.a,(bA+180)%360)<30)bad+=3;
+  for(let i=0;i<bx.length;i++)for(let j=i+1;j<bx.length;j++){const A=bx[i],B=bx[j];if(!(A[2]+8<=B[0]||B[2]+8<=A[0]||A[3]+6<=B[1]||B[3]+6<=A[1]))bad++}
+  for(let k=0;k<segs.length;k++)for(let j=0;j<bx.length;j++){if(items[j].seg===k)continue;const[p,q]=segs[k],B=bx[j];for(let t=0;t<=20;t++){const x=p[0]+(q[0]-p[0])*t/20,y=p[1]+(q[1]-p[1])*t/20;if(x>B[0]-6&&x<B[2]+6&&y>B[1]-6&&y<B[3]+6){bad++;break}}}
+  const X=(p,q,r)=>(q[0]-p[0])*(r[1]-p[1])-(q[1]-p[1])*(r[0]-p[0]);
+  for(let i=0;i<segs.length;i++)for(let j=i+1;j<segs.length;j++){const[a1,b1]=segs[i],[a2,b2]=segs[j];if(a1===a2||a1===b2||b1===a2||b1===b2)continue;if(X(a1,b1,a2)*X(a1,b1,b2)<0&&X(a2,b2,a1)*X(a2,b2,b1)<0)bad++}
+  const xs=bx.flatMap(b=>[b[0],b[2]]).concat([F[0],Rr[0]]),ys=bx.flatMap(b=>[b[1],b[3]]).concat([F[1],Rr[1]]);const W=Math.max(...xs)-Math.min(...xs),Hh=Math.max(...ys)-Math.min(...ys);if(W>440||Hh>440)bad+=5;
+  const sc=bad*1000+dx+dy;if(!best||sc<best.sc)best={sc,F,Rr,L,ox:cx-(Math.max(...xs)+Math.min(...xs))/2,oy:cy-(Math.max(...ys)+Math.min(...ys))/2}}}
+ return best}
+function sawInner(nd,cx,cy,o){o=o||{};const g=sawGeom(nd,cx,cy),L=g.L,F=[g.F[0]+g.ox,g.F[1]+g.oy],Rr=[g.Rr[0]+g.ox,g.Rr[1]+g.oy],pt=(c,a,r)=>[c[0]+r*Math.sin(a*D2R),c[1]-r*Math.cos(a*D2R)];let s="";if(o.coll){const Fc={c:F},Rc={c:Rr};for(const q of nd.front){const p=pt(F,q.a,L*.62);Fc[q.k]=[p[0],p[1],.58]}Fc[nd.fo]=[Rr[0]*.7+F[0]*.3,Rr[1]*.7+F[1]*.3,-.9];for(const q of nd.rear){const p=pt(Rr,q.a,L*.62);Rc[q.k]=[p[0],p[1],-.58]}Rc[nd.ro]=[F[0]*.7+Rr[0]*.3,F[1]*.7+Rr[1]*.3,.9];o.coll[nd.Fi]=Fc;o.coll[nd.Ri]=Rc}
+ s+=`<line x1="${F[0]}" y1="${F[1]}" x2="${Rr[0]}" y2="${Rr[1]}" stroke="${BLUE}" stroke-width="7" stroke-linecap="round"/>`;
+ for(const q of nd.rear){const p2=pt(Rr,q.a,L),pl=pt(Rr,q.a,L+30);s+=`<line x1="${Rr[0]}" y1="${Rr[1]}" x2="${p2[0].toFixed(1)}" y2="${p2[1].toFixed(1)}" stroke="${GREEN}" stroke-width="7" stroke-linecap="round"/>`+lblT(pl[0],pl[1],q.label,23)}
+ for(const q of nd.front){const p2=pt(F,q.a,L),pl=pt(F,q.a,L+30);s+=`<line x1="${F[0]}" y1="${F[1]}" x2="${p2[0].toFixed(1)}" y2="${p2[1].toFixed(1)}" stroke="${PINK}" stroke-width="7" stroke-linecap="round"/>`+lblT(pl[0],pl[1],q.label,23)}
+ if(o.rs&&o.labs){if(o.labs[nd.Fi])s+=badge(F[0]-18,F[1]-18,o.labs[nd.Fi]);if(o.labs[nd.Ri])s+=badge(Rr[0]+18,Rr[1]+18,o.labs[nd.Ri])}
+ s+=`<text x="18" y="${VH-18}" font-size="16" fill="${PINK}" font-weight="800">● pink = front carbon</text><text x="${VW-18}" y="26" text-anchor="end" font-size="16" fill="${GREEN}" font-weight="800">● green = back carbon</text>`;return s}
+function wrapSvg(inner,w,h){return`<svg viewBox="0 0 ${w||VW} ${h||VH}" xmlns="http://www.w3.org/2000/svg" role="img">${inner}</svg>`}
+/* flat Fischer picture. spec={top,bottom,rows}. o: rot (deg), swap (0..1 first centre), rs, labs */
+function fischerFlat(spec,o){o=o||{};const n=spec.rows.length,sp=64,cx=VW/2,cy=VH/2,y=i=>cy+(i-(n+1)/2)*sp,arm=60;let s=`<g transform="rotate(${o.rot||0} ${cx} ${cy})">`;
+ s+=`<line x1="${cx}" y1="${y(0)+16}" x2="${cx}" y2="${y(n+1)-16}" stroke="${GREEN}" stroke-width="5.5" stroke-linecap="round"/>`;
+ for(let i=1;i<=n;i++){s+=`<line x1="${cx-arm}" y1="${y(i)}" x2="${cx+arm}" y2="${y(i)}" stroke="${PINK}" stroke-width="5.5" stroke-linecap="round"/>`;
+  const t=(o.swapAll!=null?o.swapAll:(i===(o.swapK||1)?o.swap||0:0)),lx=cx-arm-22+t*(2*arm+44),rx=cx+arm+22-t*(2*arm+44);s+=lblT(lx,y(i),spec.rows[i-1][0],19)+lblT(rx,y(i),spec.rows[i-1][1],19);
+  if(o.rs&&o.labs&&o.labs[i-1])s+=badge(cx+(i%2?-20:20),y(i)-20,o.labs[i-1])}
+ s+=lblT(cx,y(0),spec.top,19)+lblT(cx,y(n+1),spec.bottom,19)+"</g>";return s}
+
+function St(o){return Object.assign({delta:20,tau:[],M:I3,tb:0,saw:0,newm:0,hi:[],arrow:0,bondHi:null,b:1,rev:false},o)}
+function lerpSt(A,B,t){const tl=Math.max(A.tau.length,B.tau.length),tau=[];for(let i=0;i<tl;i++)tau.push((A.tau[i]||0)+((B.tau[i]||0)-(A.tau[i]||0))*t);
+ return{delta:A.delta+(B.delta-A.delta)*t,tau,M:slerpM(A.M,B.M,t),tb:fadeV(A.tb,B.tb,t),saw:fadeV(A.saw,B.saw,t),newm:fadeV(A.newm,B.newm,t),hi:B.hi,arrow:B.arrow,bondHi:t<.02?A.bondHi:B.bondHi,b:B.b,rev:B.rev}}
+const cl=x=>Math.max(0,Math.min(1,x));function fadeV(a,b,t){return b>a?a+(b-a)*cl((t-.6)/.4):a+(b-a)*cl(t/.4)}
+const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+function camNewman(ex,st,b,rev){const mo=buildModel(ex,st),S=mo.S,Fi=rev?b+1:b,Ri=rev?b:b+1,F=S[Fi],Rr=S[Ri],a=unit(sub(Rr,F));const cf=rev?Fi+1:Fi-1,cr=rev?Ri-1:Ri+1;const upRef=(Fi>=1&&Fi<=ex.n)?neg(sub(S[cf],F)):sub(S[cr],Rr);const u=unit(sub(upRef,mul(a,dot(upRef,a))));return[cross(a,u),u,neg(a)]}
+function buildTimeline(ex,b,extra,rev){rev=!!rev;const n=ex.n,K=[];const push=(st,o)=>K.push(Object.assign({st},o));const z0=Array(Math.max(0,n-1)).fill(0);
+ const cam34=mm(Rx(20*D2R),Ry(-25*D2R));const tau=Array(Math.max(0,n-1)).fill(180);
+ push(St({delta:20,tau:z0,M:I3,b}),{chip:"Start",form:0,fwd:["Meet the molecule!","The long line is its SPINE (the carbons). The arms stick out sideways. In a Fischer picture the arms reach TOWARD you (pink) and the spine curls AWAY (green)."],back:["Back to the flat Fischer picture.","Spine away from you, arms toward you."]});
+ const hi=[];for(let i=2;i<=n;i++)hi.push("L"+i,"R"+i);for(let i=3;i<=n+1;i++)hi.push("S"+i);const arrows=[];for(let j=1;j<=n-1;j++)arrows.push(j);
+ push(St({delta:60,tau,M:cam34,hi,arrow:arrows,b}),{chip:"1 · Curl, twist, open",fwd:["Step 1: see the curl, twist every bond half a turn, open the spine.",n>1?"Look from the side: the spine curls away like a rainbow. Then spin each part half a turn (180°) around its bond, like a door-knob (orange arrows), and open the spine like a folding ruler. Watch the R/S badges: they never change!":"Look from the side: the spine curls away and the arms point toward us. With only one carbon there is nothing to twist, so we just open the spine into a zig-zag."],back:["Undo step 1: fold it back into the curl.","Untwist, close the spine and look from the front again."]});
+ const stZ=St({delta:60,tau,M:cam34,b}),mo=buildModel(ex,stZ),S=mo.S;
+ const nu=unit(cross(sub(S[1],S[0]),sub(S[2],S[1]))),nc=mv(cam34,nu),sg=nc[2]>=0?1:-1,Mpl=mm(rotFromTo(mul(nc,sg),[0,0,1]),cam34);
+ const e=mv(Mpl,unit(sub(S[n+1],S[0]))),al=Math.atan2(e[1],e[0]),Mfin=mm(Rz(-al),Mpl);
+ push(St({delta:60,tau,M:Mfin,tb:1,b}),{chip:"2 · Lay flat & draw",form:1,fwd:["Step 2: lay it flat, turn the page, draw wedges and dashes.","Tilt the zig-zag onto the page and turn the page so the spine lies sideways (top group on the left). Pink arms (toward you) become solid wedges, green arms (away) become dashes, blue is the spine lying flat. That is the zig-zag (wedge-dash) picture!"],back:["Undo step 2: lift it off the page again.","Wedges and dashes become real arms."]});
+ const tb2=tau.slice();if(b>=1&&b<=n-1&&extra)tb2[b-1]=180+extra;
+ const bn=bondName(ex,b),fr=rev?(b===n?ex.bottom:"C"+(b+1)):(b===0?ex.top:"C"+b),rr=rev?(b===0?ex.top:"C"+b):(b===n?ex.bottom:"C"+(b+1)),Mnew=camNewman(ex,St({delta:60,tau:tb2,M:I3,b}),b,rev),Msaw=mm(Rx(25*D2R),mm(Ry(-35*D2R),Mnew));
+ push(St({delta:60,tau:tb2,M:Msaw,saw:1,bondHi:b,b,rev}),{chip:"3 · Sawhorse",form:2,fwd:[`Step 3: look at the bond ${bn} from a slant – the sawhorse.`,`Hold the two carbons of the glowing bond and look at them from a slant: front carbon ${fr} bottom-left (pink lines), back carbon ${rr} up-right (green lines).`+(extra?` We also spun the back carbon by ${extra}° – still the same molecule!`:"")],back:["Undo step 3: let go of the bond.","Back to the flat zig-zag."]});
+ push(St({delta:60,tau:tb2,M:Mnew,newm:1,bondHi:b,b,rev}),{chip:"4 · Newman",form:3,fwd:["Step 4: put your eye exactly in line with the bond – the Newman picture.","The back carbon hides right behind the front carbon, so we see a circle. Lines meeting in the MIDDLE belong to the front carbon (pink), lines that start at the CIRCLE belong to the back carbon (green)."],back:["Undo step 4: step to the side again.","Back to the slanted look."]});
+ return K}
+
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+EX.forEach(e=>{e.pri=priorities(e)});
+const FORMS=["Fischer","Zig-zag (wedge-dash)","Sawhorse","Newman"];
+let REV=false,ex=EX[15],bondSel=1,extra=0,K=[],pos=0,i0=0,i1=0,rsOn=true,clock=0,lastT=0,mode="idle",dirNow=1,lastMove=0,movieOn=true;
+function allowedBonds(e){const a=[];for(let b=0;b<=e.n;b++)if(bondOK(e,b))a.push(b);return a}
+function fillSelects(){$("#ex").innerHTML=EX.map((e,i)=>`<option value="${i}">${e.n} carbon${e.n>1?"s":""} · ${e.name}</option>`).join("");$("#ex").value=EX.indexOf(ex)}
+function fillBond(){const al=allowedBonds(ex);if(!al.includes(bondSel))bondSel=(al.includes(1)&&ex.n>=2)?1:al[0];$("#bond").innerHTML=al.map(b=>`<option value="${b}" ${b===bondSel?"selected":""}>${bondName(ex,b)}</option>`).join("")}
+const formKey=f=>K.findIndex(k=>k.form===f);
+const bounds=()=>[Math.min(i0,i1),Math.max(i0,i1)],goalDir=()=>i1>=i0?1:-1;
+function rebuild(reset){K=buildTimeline(ex,bondSel,extra,REV);i0=formKey(+$("#from").value);i1=formKey(+$("#to").value);const[lo,hi]=bounds();if(reset)pos=i0;pos=Math.max(lo,Math.min(hi,pos));mode="idle";if(reset)lastMove=0;setPlayBtn();staticPanels();chips();$("#twistRow").style.display=(Math.max(+$("#from").value,+$("#to").value)>=2&&bondSel>=1&&bondSel<=ex.n-1)?"flex":"none";frame()}
+function panelHTML(form){const k=K[formKey(form)],st=k.st,mo=buildModel(ex,st),labs=ex.exp.split("");
+ if(form===0)return wrapSvg(fischerFlat({top:ex.top,bottom:ex.bottom,rows:ex.rows},{rs:rsOn,labs}));
+ if(form===1)return wrapSvg(tbZig(ex,st,{rs:rsOn}));
+ const nd=newmanData(ex,mo,bondSel,{rev:REV}),lb=labelsFromNewman(ex,nd,ex.pri);
+ return wrapSvg(form===2?sawInner(nd,260,260,{rs:rsOn,labs:lb}):newmanInner(nd,260,260,{rs:rsOn,labs:lb}))}
+function staticPanels(){const f=+$("#from").value,t=+$("#to").value;$("#hL").innerHTML=`Start: ${FORMS[f]}<span>where we begin</span>`;$("#hR").innerHTML=`Goal: ${FORMS[t]}<span>where we want to get</span>`;$("#svL").innerHTML=panelHTML(f);$("#svR").innerHTML=panelHTML(t)}
+function stateAt(p){const i=Math.floor(p+1e-9),t=p-i;if(t<1e-6||i>=K.length-1)return K[Math.min(i,K.length-1)].st;return lerpSt(K[i].st,K[i+1].st,ease(t))}
+function composeSt(st,t){const fade=Math.max(st.tb,st.saw,st.newm);const fx=fit3D(ex,st);let inner=`<g opacity="${(1-fade).toFixed(3)}"><g transform="${fx}">${layer3D(ex,st,{rs:rsOn,t:t||0})}</g></g>`;
+ if(st.tb>.001)inner+=`<g opacity="${st.tb.toFixed(3)}"><g transform="${fx}">${tbZig(ex,st,{rs:rsOn})}</g></g>`;
+ if(st.saw>.001||st.newm>.001){const mo=buildModel(ex,st),nd=newmanData(ex,mo,st.b,{rev:st.rev}),lb=labelsFromNewman(ex,nd,ex.pri);
+  if(st.saw>.001)inner+=`<g opacity="${st.saw.toFixed(3)}">${sawInner(nd,260,260,{rs:rsOn,labs:lb})}</g>`;if(st.newm>.001)inner+=`<g opacity="${st.newm.toFixed(3)}">${newmanInner(nd,260,260,{rs:rsOn,labs:lb})}</g>`}
+return wrapSvg(inner)}
+let baKey="";
+function frame(){const st=stateAt(pos);$("#svM").innerHTML=composeSt(st,clock);caption();
+ const r=Math.round(pos),moving=Math.abs(pos-r)>1e-6;let a,b;if(moving){const f=Math.floor(pos);a=dirNow>0?f:f+1;b=dirNow>0?f+1:f}else if(lastMove>0){a=r-1;b=r}else if(lastMove<0){a=r+1;b=r}else{a=r;b=r}
+ a=Math.max(0,Math.min(K.length-1,a));b=Math.max(0,Math.min(K.length-1,b));const key=ex.id+"|"+bondSel+"|"+extra+"|"+a+"|"+b+"|"+rsOn;if(key!==baKey){baKey=key;$("#svBef").innerHTML=composeSt(K[a].st,0);$("#svAft").innerHTML=composeSt(K[b].st,0);$("#baL1").textContent=K[a].chip;$("#baL2").textContent=K[b].chip}
+ const labs=liveLabels(ex,buildModel(ex,st));$("#chk").innerHTML=labs===ex.exp?`<span style="color:var(--green)">✔ Handedness check: ${labs.split("").join(" ")} – exactly the same as at the start, so it is still the SAME molecule.</span>`:`<span style="color:var(--pink)">✘ Handedness changed: ${labs}</span>`}
+function caption(){const[lo,hi]=bounds(),gd=goalDir(),total=hi-lo;
+ if(i0===i1){$("#capSt").textContent="Pick two different pictures";$("#capTx").textContent="Choose a Start and a Goal above (for example Fischer → Newman) and press ▶ Play.";$("#capTip").textContent="";return}
+ const r=Math.round(pos),moving=Math.abs(pos-r)>1e-6;let txt,n;
+ if(moving){const low=Math.floor(pos);txt=dirNow>0?K[low+1].fwd:K[low+1].back;n=Math.ceil(gd*(pos-i0)-1e-9);if(dirNow*gd<0)n=Math.max(1,n+1)}
+ else{n=Math.round(gd*(r-i0));if(lastMove===0||r===i0)txt=K[r].fwd;else txt=lastMove>0?K[r].fwd:K[r+1].back}
+ $("#capSt").textContent=`Step ${Math.max(0,Math.min(total,n))} of ${total}`+(moving&&dirNow*gd<0?" · going back":moving?" · moving…":"");$("#capTx").textContent=txt[0];$("#capTip").textContent=txt[1];
+ $$("#chips button").forEach(b=>{const j=+b.dataset.k;b.classList.toggle("cur",j===r&&!moving);b.classList.toggle("done",gd*(r-j)>0&&j>=lo&&j<=hi)});
+ $("#pR").classList.toggle("hid",$("#tryf").checked&&!(Math.abs(pos-i1)<1e-6&&!moving))}
+function chips(){const[lo,hi]=bounds(),arr=[];for(let j=lo;j<=hi;j++)arr.push(j);if(goalDir()<0)arr.reverse();$("#chips").innerHTML=arr.map((j,q)=>`<button data-k="${j}">${q}. ${K[j].chip}</button>`).join("");$$("#chips button").forEach(b=>b.onclick=()=>{mode="idle";pos=+b.dataset.k;lastMove=pos===i0?0:goalDir();setPlayBtn();frame()})}
+function setPlayBtn(){$("#bPlay").textContent=mode==="play"?"⏸ Pause":"▶ Play"}
+function tick(ts){requestAnimationFrame(tick);const dt=Math.min(.05,(ts-lastT)/1000||0);lastT=ts;clock+=dt;if(!movieOn)return;
+ if(mode!=="idle"){const[lo,hi]=bounds(),spd=+$("#spd").value,old=pos,np=old+dirNow*dt*spd/2.6;const b=dirNow>0?Math.floor(old+1e-9)+1:Math.ceil(old-1e-9)-1;
+  if((dirNow>0&&np>=b)||(dirNow<0&&np<=b)){pos=b;lastMove=dirNow;const limit=(dirNow>0&&b>=hi)||(dirNow<0&&b<=lo);if(mode==="step"||$("#pz").checked||limit){mode="idle";setPlayBtn();staticPanels()}}else pos=np}
+ frame()}
+function snap(dir){/* make pos an integer boundary before starting a move in direction dir */const r=Math.round(pos);if(Math.abs(pos-r)>1e-6)pos=dir>0?Math.floor(pos):Math.ceil(pos)}
+function stepOnce(dir){const[lo,hi]=bounds();if(i0===i1)return;snap(dir);if((dir>0&&pos>=hi)||(dir<0&&pos<=lo))return;dirNow=dir;mode="step";setPlayBtn()}
+function bind(){
+ $("#bPlay").onclick=()=>{if(i0===i1)return;if(mode==="play"){mode="idle";setPlayBtn();return}const gd=goalDir(),[lo,hi]=bounds();const atGoal=Math.abs(pos-i1)<1e-6;if(atGoal){pos=i0;lastMove=0}else snap(gd);dirNow=gd;mode="play";setPlayBtn()};
+ $("#bFwd").onclick=()=>stepOnce(goalDir());$("#bBack").onclick=()=>stepOnce(-goalDir());
+ $("#bStart").onclick=()=>{mode="idle";pos=i0;lastMove=0;setPlayBtn();staticPanels();frame()};
+ $("#bEnd").onclick=()=>{mode="idle";pos=i1;lastMove=goalDir();setPlayBtn();staticPanels();frame()};
+ $("#bRe").onclick=()=>{if(i0===i1)return;const r=Math.round(pos),moving=Math.abs(pos-r)>1e-6;const[lo,hi]=bounds();if(moving){pos=dirNow>0?Math.floor(pos):Math.ceil(pos)}else{if(lastMove===0)return;pos=Math.max(lo,Math.min(hi,r-lastMove));dirNow=lastMove}mode="step";setPlayBtn()};
+ $("#ex").onchange=e=>{ex=EX[+e.target.value];bondSel=1;extra=0;fillBond();rebuild(true);exCard()};
+ $("#exP").onclick=()=>{$("#ex").value=(EX.indexOf(ex)+EX.length-1)%EX.length;$("#ex").onchange({target:$("#ex")})};$("#exN").onclick=()=>{$("#ex").value=(EX.indexOf(ex)+1)%EX.length;$("#ex").onchange({target:$("#ex")})};
+ $("#bond").onchange=e=>{bondSel=+e.target.value;extra=0;rebuild(true)};$("#front").onchange=e=>{REV=e.target.value==='1';extra=0;rebuild(true)};
+ $("#from").onchange=$("#to").onchange=()=>{rebuild(true);dirNow=goalDir()};
+ $("#swap").onclick=()=>{const a=$("#from").value;$("#from").value=$("#to").value;$("#to").value=a;$("#from").onchange()};
+ $("#rs").onchange=e=>{rsOn=e.target.checked;staticPanels();frame()};$("#tryf").onchange=()=>{caption()};
+ $("#theme").onclick=()=>{const r=document.documentElement;r.dataset.theme=(r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches))?"light":"dark"};
+ $("#tabA").onclick=()=>tab("movie");$("#tabB").onclick=()=>tab("lab");$("#tabC").onclick=()=>tab("rsn");
+ document.addEventListener("keydown",e=>{if(/INPUT|SELECT/.test(e.target.tagName))return;if(e.code==="Space"){e.preventDefault();$("#bPlay").click()}else if(e.key==="ArrowRight")$("#bFwd").click();else if(e.key==="ArrowLeft")$("#bBack").click()})}
+function exCard(){$("#exName").textContent=ex.name;$("#exStory").textContent=ex.story+" · "+ex.n+" chiral carbon"+(ex.n>1?"s":"");$("#exBadges").innerHTML=`<span class="pill">${ex.exp.split("").map((l,i)=>"C"+(i+1)+" = "+l).join(" · ")}</span><span class="pill ok">R/S double-checked ✓</span>`}
+function tab(a){const m=a===true||a==="movie"?"movie":(a===false||a==="lab"?"lab":a);movieOn=m==="movie";window.TABMODE=m;document.body.classList.toggle('lab',m!=="movie");$("#movie").style.display=m==="movie"?"":"none";$("#lab").style.display=m==="lab"?"block":"none";$("#rsn").style.display=m==="rsn"?"block":"none";$("#tabA").classList.toggle("on",m==="movie");$("#tabB").classList.toggle("on",m==="lab");$("#tabC").classList.toggle("on",m==="rsn");if(m==="lab")labInit();if(m==="rsn")rsInit()}
+
+function labelsOfSpec(sp){const e={n:sp.rows.length,top:sp.top,bottom:sp.bottom,rows:sp.rows,name:"lab"};const pri=priorities(e),out=[];const vec={U:[0,.816,-.577],D:[0,-.816,-.577],L:[-.816,0,.577],R:[.816,0,.577]};for(let i=1;i<=e.n;i++)out.push(labelFromVecs(pri[i],vec));return out}
+const spec180=s=>({top:s.bottom,bottom:s.top,rows:s.rows.slice().reverse().map(r=>[r[1],r[0]])});
+const spec90=s=>({top:s.rows[0][0],bottom:s.rows[0][1],rows:[[s.bottom,s.top]]});
+const specSwap=s=>({top:s.top,bottom:s.bottom,rows:s.rows.map((r,i)=>i===0?[r[1],r[0]]:r)});
+function mulberry(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function selfTest(){let checks=0;const bad=[];
+ for(const e of EX){const nz=Math.max(0,e.n-1);let st=St({delta:20,tau:Array(nz).fill(0),M:I3});let L=liveLabels(e,buildModel(e,st));checks++;if(L!==e.exp)bad.push([e.name,"initial",L,e.exp]);
+  const r=mulberry(e.id+1);for(let q=0;q<8;q++){const tau=Array(nz).fill(0).map(()=>Math.floor(r()*6)*60);st=St({delta:20+Math.floor(r()*40),tau,M:I3});L=liveLabels(e,buildModel(e,st));checks++;if(L!==e.exp)bad.push([e.name,"twist",tau,L]) }
+  for(const rv of [false,true])for(const b of allowedBonds(e))for(const x of [0,60,120,180,240,300]){const tau=Array(nz).fill(180);if(b>=1&&b<=e.n-1)tau[b-1]=180+x;else if(x>0)continue;st=St({delta:60,tau,M:I3,b});const mo=buildModel(e,st),nd=newmanData(e,mo,b,{rev:rv}),lb=labelsFromNewman(e,nd,e.pri);
+   for(const i in lb){checks++;if(lb[i]!==e.exp[i-1])bad.push([e.name,"newman b"+b+" +"+x,i,lb[i],e.exp[i-1]])}
+   const lv=liveLabels(e,mo);checks++;if(lv!==e.exp)bad.push([e.name,"live b"+b+" +"+x,lv]);
+   if(x===0){const KK=buildTimeline(e,b,0,rv),zs=KK.find(k=>k.form===1).st;const nd2=newmanData(e,buildModel(e,zs),b,{rev:rv,page:true,pageUp:zs.M[1]});const lb2=labelsFromNewman(e,nd2,e.pri);for(const i in lb2){checks++;if(lb2[i]!==e.exp[i-1])bad.push([e.name,"page b"+b+(rv?" rev":""),i,lb2[i],e.exp[i-1]])}
+    /* direct rule: wedge (z>0 in the zig-zag) goes to the right when seen from the left end; dash to the left. front=left carbon unless rev */
+    const moZ=buildModel(e,zs);for(const [ci,grp] of [[nd2.Fi,nd2.front],[nd2.Ri,nd2.rear]]){if(ci<1||ci>e.n)continue;for(const g of grp){if(g.k!=="L"&&g.k!=="R")continue;const P=p=>mv(zs.M,p),c=P(moZ.S[ci]),t=P(moZ.G[ci][g.k]);const z=t[2]-c[2];const right=Math.sin(g.a*D2R)>0;const expectRight=rv?(z<0):(z>0);checks++;if(right!==expectRight)bad.push([e.name,"direct-rule",b,rv,ci,g.k])}}}}}
+ return{checks,bad}}
+
+/* ================= Fischer rules studio ================= */
+const LC={cx:260,cy:250,r:92},PORD=["U","R","D","L"],POSV={U:[0,-1],R:[1,0],D:[0,1],L:[-1,0]};
+const VEC={U:[0,.816,-.577],D:[0,-.816,-.577],L:[-.816,0,.577],R:[.816,0,.577]};
+const posXY=p=>[LC.cx+POSV[p][0]*LC.r,LC.cy+POSV[p][1]*LC.r];
+const angOf=p=>PORD.indexOf(p)*90; /* clockwise degrees from top */
+const polar=(deg)=>[LC.cx+LC.r*Math.sin(deg*D2R),LC.cy-LC.r*Math.cos(deg*D2R)];
+const specLab=s=>labelsOfSpec({top:s.U,bottom:s.D,rows:[[s.L,s.R]]})[0];
+const mixHex=mixc;
+const SINGLES=EX.filter(e=>e.n===1).map(e=>({name:e.name,s:{U:e.top,D:e.bottom,L:e.rows[0][0],R:e.rows[0][1]}}));
+SINGLES.push({name:"Lactic acid (notes, rule vi)",s:{U:"COOH",D:"CH3",L:"H",R:"OH"}});
+SINGLES.push({name:"Glyceraldehyde (notes, rule vii)",s:{U:"CHO",D:"CH2OH",L:"H",R:"OH"}});
+/* ---- operations on a single-centre spec: new spec + motion map {fromPos:toPos} ---- */
+function opRot(deg){const k=((deg/90)%4+4)%4,to={};PORD.forEach((p,i)=>to[p]=PORD[(i+k)%4]);return{kind:"rot",deg,to}}
+function opSwap(a,b){const to={U:"U",D:"D",L:"L",R:"R"};to[a]=b;to[b]=a;return{kind:"swap",a,b,to}}
+function opFlip(){const o=opSwap("L","R");o.kind="flip";return o}
+function opCycle(fix,dir){const i=PORD.indexOf(fix),others=[1,2,3].map(k=>PORD[(i+k)%4]),to={};to[fix]=fix;others.forEach((p,k)=>to[p]=others[(k+(dir>0?1:2))%3]);return{kind:"cycle",fix,dir,to}}
+function applyOp(s,op){const n={};for(const p of PORD)n[op.to[p]]=s[p];return n}
+/* rigid rotation matrix taking the 3-D vectors of `a` onto the vectors of the same groups in `b` (null if the move is a reflection) */
+function rigid(a,b){const names=["U","D","L","R"],pa={},pb={};names.forEach(p=>{pa[a[p]+"@"+p]=VEC[p]});const A=[],B=[];for(const p of names){const q=names.find(x=>b[x]===a[p]);A.push(VEC[p]);B.push(VEC[q])}
+ const basis=(v1,v2)=>{const e1=unit(v1),e3=unit(cross(v1,v2)),e2=cross(e3,e1);return[e1,e2,e3]};const Ba=basis(A[0],A[1]),Bb=basis(B[0],B[1]);
+ const M=[[0,0,0],[0,0,0],[0,0,0]];for(let i=0;i<3;i++)for(let j=0;j<3;j++){let sum=0;for(let k=0;k<3;k++)sum+=Bb[k][i]*Ba[k][j];M[i][j]=sum}
+ const det=M[0][0]*(M[1][1]*M[2][2]-M[1][2]*M[2][1])-M[0][1]*(M[1][0]*M[2][2]-M[1][2]*M[2][0])+M[0][2]*(M[1][0]*M[2][1]-M[1][1]*M[2][0]);
+ let ok=det>0;if(ok)for(let q=0;q<4;q++){const v=mv(M,A[q]);if(len(sub(v,B[q]))>1e-3)ok=false}return ok?M:null}
+/* ---- drawing ---- */
+function bez(p0,c,p1,t){const u=1-t;return[u*u*p0[0]+2*u*t*c[0]+t*t*p1[0],u*u*p0[1]+2*u*t*c[1]+t*t*p1[1]]}
+function groupXY(p0,op,t){const to=op.to[p0];if(to===p0)return posXY(p0);
+ if(op.kind==="rot"){const a0=angOf(p0),a=a0+op.deg*t;return polar(a)}
+ const P0=posXY(p0),P1=posXY(to),mid=[(P0[0]+P1[0])/2,(P0[1]+P1[1])/2];let c;
+ if(op.kind==="swap"||op.kind==="flip"){const d=[P1[0]-P0[0],P1[1]-P0[1]],n=unit([-d[1],d[0],0]),sg=(PORD.indexOf(p0)<PORD.indexOf(to))?1:-1;c=[mid[0]+n[0]*70*sg,mid[1]+n[1]*70*sg]}
+ else{const F=posXY(op.fix),v=[LC.cx-F[0],LC.cy-F[1]],L=Math.hypot(v[0],v[1]);const away=[v[0]/L*50,v[1]/L*50];const crossC=Math.hypot(mid[0]-LC.cx,mid[1]-LC.cy)<10;c=crossC?[mid[0]+away[0]*1.6,mid[1]+away[1]*1.6]:[mid[0]+(mid[0]-LC.cx)*.7,mid[1]+(mid[1]-LC.cy)*.7]}
+ return bez(P0,c,P1,t)}
+function flatPic(st){/* st:{s,op,t,rec(0..1),tw(0|1 label?),hl,verdictCol,click} */
+ const s=st.s,op=st.op,t=st.t||0,rec=st.rec||0;let g="";const ang=op&&op.kind==="rot"?op.deg*t:0;
+ const flipX=op&&op.kind==="flip"?Math.cos(Math.PI*t):1;
+ const L=LC.r*.66;
+ /* lines */
+ const lineA=(col,a)=>`<line x1="${LC.cx}" y1="${LC.cy-L}" x2="${LC.cx}" y2="${LC.cy+L}" stroke="${col}" stroke-width="7" stroke-linecap="round" transform="rotate(${a} ${LC.cx} ${LC.cy})"/>`;
+ const lineB=(col,a)=>`<line x1="${LC.cx-L}" y1="${LC.cy}" x2="${LC.cx+L}" y2="${LC.cy}" stroke="${col}" stroke-width="7" stroke-linecap="round" transform="rotate(${a} ${LC.cx} ${LC.cy})"/>`;
+ const swapCol=op&&op.kind==="rot"&&(Math.round(op.deg/90)%2!==0);let cA=GREEN,cB=PINK;if(swapCol){cA=mixHex(GREEN,PINK,rec);cB=mixHex(PINK,GREEN,rec)}
+ if(op&&op.kind==="flip"){cB=mixHex(PINK,GREEN,t>.5?Math.min(1,(t-.5)*2*(1)):0);}
+ if(op&&op.kind==="flip"&&rec>0)cB=mixHex(PINK,GREEN,1);
+ g+=lineA(cA,ang)+lineB(cB,ang);g+=`<circle cx="${LC.cx}" cy="${LC.cy}" r="9" fill="#495057"/>`;
+ for(const p of PORD){const tok=s[p];let xy=op?groupXY(p,op,t):posXY(p);if(op&&op.kind==="flip")xy=[LC.cx+(xy[0]-LC.cx)*(op.to[p]===p?1:1),xy[1]];
+  const hl=st.hl&&st.hl.includes(p);g+=`<g data-p="${p}" style="cursor:${st.click?"pointer":"default"}">`+(hl?`<circle cx="${xy[0].toFixed(1)}" cy="${xy[1].toFixed(1)}" r="34" fill="#ffd43b" opacity=".6"/>`:"")+lblT(xy[0],xy[1],tok,28)+`</g>`}
+ if(op&&op.kind==="flip"){g=`<g transform="translate(${LC.cx} 0) scale(${flipX.toFixed(3)} 1) translate(${-LC.cx} 0)">${g}</g>`}
+ const lab=st.label;if(lab)g+=`<g><circle cx="${LC.cx+24}" cy="${LC.cy-24}" r="17" fill="${lab==="R"?ORANGE:TEAL}" stroke="#fff" stroke-width="3"/><text x="${LC.cx+24}" y="${LC.cy-23}" font-size="20" font-weight="800" fill="#fff" text-anchor="middle" dominant-baseline="central">${lab}</text></g>`;
+ if(st.note)g+=`<text x="${LC.cx}" y="40" font-size="22" font-weight="800" text-anchor="middle" fill="${st.noteCol||"currentColor"}" style="color:var(--ink)">${st.note}</text>`;
+ return g}
+function tetraPic(groups,M,o){/* groups {U,D,L,R}; M: rotation applied to model; o.yaw */const cam=mm(Rx(-.32),Ry((o.yaw||0)*D2R));const sc=96,cx=260,cy=250,items=[],pts={};
+ for(const p of PORD){const v=mv(M,VEC[p]),q=mv(cam,v);pts[p]={x:cx+q[0]*sc,y:cy-q[1]*sc,z:q[2],t:groups[p]}}
+ const C={x:cx,y:cy,z:0};let s="";const arr=PORD.map(p=>pts[p]).sort((a,b)=>a.z-b.z);
+ for(const q of arr){s+=`<line x1="${cx}" y1="${cy}" x2="${q.x.toFixed(1)}" y2="${q.y.toFixed(1)}" stroke="${zcol(q.z*1.3)}" stroke-width="${(7*(1+.1*q.z)).toFixed(1)}" stroke-linecap="round"/>`}
+ s+=`<circle cx="${cx}" cy="${cy}" r="11" fill="#495057" stroke="#fff" stroke-width="2"/>`;for(const q of arr)s+=bubble(q.x,q.y,q.t,1.15+.12*q.z);return s}
+/* ---- lesson machinery ---- */
+let LAB={n:0,ph:0,t:0,playing:false,stopEnd:false,spd:1,opt:{mol:0,dir:1,fix:"U",pair:"LR",multi:10,mirror:false,yaw:0,spin:true},data:{}};
+let labYaw=0,labLast=0;
+const LESS=[];
+function phasesFor(){return LESS[LAB.n].phases(LAB)}
+function lessonInit(n){LAB.n=n;LAB.ph=0;LAB.t=0;LAB.playing=false;LAB.stopEnd=false;LAB.data={};$$("#lnav button").forEach((b,i)=>b.classList.toggle("on",i===n));LESS[n].init&&LESS[n].init(LAB);buildOpts();labRender();setLabPlay()}
+function setLabPlay(){$("#lPlay").textContent=LAB.playing?"⏸ Pause":"▶ Play"}
+function buildOpts(){const L=LESS[LAB.n];$("#lOpts").innerHTML=L.opts?L.opts(LAB):"";$$("#lOpts select,#lOpts input").forEach(el=>el.onchange=()=>{const k=el.dataset.k;LAB.opt[k]=el.type==="checkbox"?el.checked:(isNaN(+el.value)?el.value:+el.value);L.onopt&&L.onopt(LAB);LAB.ph=0;LAB.t=0;LAB.playing=false;LAB.stopEnd=false;LESS[LAB.n].init&&LESS[LAB.n].init(LAB);setLabPlay();labRender()})}
+function labRender(){const L=LESS[LAB.n],ph=phasesFor(),P=ph[LAB.ph],p=Math.min(1,LAB.t/P.dur);const r=P.draw(LAB,p);
+ $("#lFlat").innerHTML=`<svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">${r.flat}</svg>`;
+ if(r.tet){$("#l3d").parentElement.style.display="";$("#l3d").innerHTML=`<svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">${r.tet}</svg>`}else $("#l3d").innerHTML=`<svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg"><text x="260" y="260" text-anchor="middle" font-size="18" fill="currentColor" style="color:var(--mut)">(no 3-D picture in this lesson)</text></svg>`;
+ $("#l3note").textContent=r.tnote||"";$("#lR3t").innerHTML=(r.rtitle||"3-D view")+`<span>${r.rsub||"sideways arms toward you · up/down arms away"}</span>`;$("#lT").innerHTML=(r.title||L.title)+`<span>${L.sub}</span>`;
+ $("#lSt").textContent=`${L.title} · step ${LAB.ph+1} of ${ph.length}`;$("#lTx").textContent=P.text;$("#lTip").textContent=P.tip||"";$("#lVerdict").innerHTML=r.verdict||"";
+ $("#lChips").innerHTML=ph.map((q,i)=>`<button data-i="${i}" class="${i===LAB.ph?"cur":(i<LAB.ph?"done":"")}">${i+1}. ${q.chip}</button>`).join("");$$("#lChips button").forEach(b=>b.onclick=()=>{LAB.ph=+b.dataset.i;LAB.t=0;LAB.playing=true;LAB.stopEnd=true;setLabPlay()})}
+function labTick(ts){const dt=Math.min(.05,(ts-labLast)/1000||0);labLast=ts;if(movieOn)return;
+ if(LAB.opt.spin)labYaw+=dt*28;
+ if(LAB.playing){const ph=phasesFor(),P=ph[LAB.ph];LAB.t+=dt*LAB.spd;if(LAB.t>=P.dur){LAB.t=P.dur;if(LAB.stopEnd||LAB.ph>=ph.length-1){LAB.playing=false;setLabPlay()}else{LAB.ph++;LAB.t=0}}}
+ labRender()}
+function rulesBind(){$("#lnav").innerHTML=LESS.map((L,i)=>`<button data-i="${i}">${L.no} ${L.nav}</button>`).join("");$$("#lnav button").forEach(b=>b.onclick=()=>lessonInit(+b.dataset.i));
+ $("#lSpd").oninput=e=>LAB.spd=+e.target.value;$("#lPlay").onclick=()=>{const ph=phasesFor();if(LAB.playing){LAB.playing=false}else{if(LAB.ph>=ph.length-1&&LAB.t>=ph[LAB.ph].dur){LAB.ph=0;LAB.t=0}LAB.playing=true;LAB.stopEnd=false}setLabPlay()};
+ $("#lNext").onclick=()=>{const ph=phasesFor();if(LAB.ph<ph.length-1){LAB.ph++;LAB.t=0;LAB.playing=true;LAB.stopEnd=true;setLabPlay()}};
+ $("#lBack").onclick=()=>{if(LAB.ph>0){LAB.ph--;LAB.t=phasesFor()[LAB.ph].dur;LAB.playing=false;setLabPlay()}else{LAB.t=0}};
+ $("#lRe").onclick=()=>lessonInit(LAB.n);
+ $("#lFlat").onclick=e=>{const g=e.target.closest("[data-p]");if(g&&LESS[LAB.n].click)LESS[LAB.n].click(LAB,g.dataset.p)};
+ $("#movieJump")&&0;LESS.forEach(L=>L.setup&&L.setup());lessonInit(0);setInterval(()=>{if(!movieOn)labTick(performance.now())},33)}
+function labInit(){lessonInit(LAB.n)}
+const selOpt=(k,label,vals,cur)=>`<label class="t">${label} <select data-k="${k}">${vals.map(v=>`<option value="${v[0]}" ${String(v[0])===String(cur)?"selected":""}>${v[1]}</option>`).join("")}</select></label>`;
+const molOpt=()=>selOpt("mol","Molecule",SINGLES.map((m,i)=>[i,m.name]),LAB.opt.mol);
+const verdictHTML=(a,b)=>a===b?`<span style="color:var(--green)">✔ ${a} → ${b} : SAME molecule</span>`:`<span style="color:var(--pink)">✘ ${a} → ${b} : the MIRROR TWIN (a different molecule)</span>`;
+/* ---------- generic one-operation lesson ---------- */
+function opLesson(o){return{no:o.no,nav:o.nav,title:o.title,sub:o.sub,opts:o.opts||(()=>molOpt()),setup:o.setup,init(L){L.data.s=SINGLES[L.opt.mol].s;L.data.op=o.mkop(L);L.data.after=applyOp(L.data.s,L.data.op);L.data.rig=rigid(L.data.s,L.data.after);L.data.l0=specLab(L.data.s);L.data.l1=specLab(L.data.after)},
+ phases(L){const D=L.data,same=D.l0===D.l1;return[
+  {chip:"Look",dur:2.2,text:o.t0(L),tip:o.tip0,draw:(L,p)=>({flat:flatPic({s:D.s,label:D.l0,note:"Before"}),tet:tetraPic(D.s,I3,{yaw:labYaw}),tnote:`This molecule is ${D.l0}`})},
+  {chip:o.chipMove,dur:3.6,text:o.t1(L),tip:o.tip1,draw:(L,p)=>{const t=ease(p);const cur=t<.999?D.s:D.s;let M=I3;if(D.rig){const q=slerpM(I3,D.rig,t);M=q}
+    return{flat:flatPic({s:D.s,op:D.op,t,rec:0,label:D.l0,note:o.motionNote}),tet:D.rig?tetraPic(D.s,M,{yaw:labYaw}):`<g opacity="${(1-t).toFixed(2)}">${tetraPic(D.s,I3,{yaw:labYaw})}</g><g opacity="${t.toFixed(2)}">${tetraPic(D.after,I3,{yaw:labYaw})}</g>`,tnote:D.rig?"The 3-D molecule just turns rigidly ✓":"No turning of the 3-D molecule can do this ✗"}}},
+  {chip:"Read again",dur:2.6,text:o.t2(L,same),tip:same?o.tip2same:o.tip2diff,draw:(L,p)=>{const t=1,rc=ease(Math.min(1,p*1.6));return{flat:flatPic({s:D.s,op:D.op,t:1,rec:rc,label:D.l1,note:same?"After: same molecule ✔":"After: mirror twin ✘",noteCol:same?GREEN:PINK}),tet:tetraPic(D.after,I3,{yaw:labYaw}),tnote:`Now read as a Fischer picture: ${D.l1}`,verdict:verdictHTML(D.l0,D.l1)}}},
+  {chip:"Why?",dur:2,text:o.why(L,same),tip:"",draw:(L,p)=>({flat:flatPic({s:D.after,label:D.l1,note:"After"}),tet:tetraPic(D.after,I3,{yaw:labYaw}),verdict:verdictHTML(D.l0,D.l1)})}]}}}
+LESS.push(opLesson({no:"3",nav:"Swap two arms",title:"Swap two arms",sub:"rules iv & v · odd swaps invert, even swaps keep",opts:L=>molOpt()+selOpt("pair","Swap",[["LR","left ⇄ right"],["UD","top ⇄ bottom"],["UL","top ⇄ left"],["UR","top ⇄ right"],["DL","bottom ⇄ left"],["DR","bottom ⇄ right"]],L.opt.pair),
+ mkop:L=>opSwap(L.opt.pair[0],L.opt.pair[1]),chipMove:"Swap!",motionNote:"Swapping…",
+ t0:L=>"Here is a molecule. Its handedness badge says what it is now.",tip0:"Remember the badge letter.",
+ t1:L=>"Swap two arms: they trade places.",tip1:"Count this as ONE swap.",
+ t2:(L,s)=>s?"The badge is the same.":"The badge changed!",tip2same:"",tip2diff:"One swap = odd = the mirror twin.",
+ why:(L,s)=>"Odd number of swaps (1, 3, 5…) inverts the configuration (R↔S). Even number of swaps (2, 4…) keeps it. Press Reset, pick another pair, and swap again to see the second swap bring it back."}));
+LESS.push(opLesson({no:"4",nav:"Turn 180°",title:"Half-turn on the page (180°)",sub:"rule vi · allowed",mkop:L=>opRot(180),chipMove:"Turn 180°",motionNote:"Turning half a turn…",
+ t0:L=>"Take a Fischer picture. We are going to turn the whole PAGE half a turn, like turning a plate.",tip0:"The picture stays flat on the table.",
+ t1:L=>"Turn it 180° without lifting it off the page.",tip1:"Top goes to bottom, left goes to right.",
+ t2:(L,s)=>"Read it again as a Fischer picture.",tip2same:"Two swaps (top⇄bottom and left⇄right) = even = no change.",tip2diff:"",
+ why:(L,s)=>"A 180° turn in the plane of the paper is allowed. It equals two swaps (top↔bottom and left↔right), so the molecule is the same. In 3-D the molecule is just rotated like a rigid toy."}));
+LESS.push(opLesson({no:"5",nav:"Turn 90°",title:"Quarter-turn (90°)",sub:"rule vii · NOT allowed",opts:L=>molOpt()+selOpt("dir","Direction",[[1,"clockwise ↻"],[-1,"anticlockwise ↺"]],L.opt.dir),mkop:L=>opRot(90*L.opt.dir),chipMove:"Turn 90°",motionNote:"Turning a quarter turn…",
+ t0:L=>"Start with a Fischer picture. Now we will turn the page only a QUARTER turn.",tip0:"Choose clockwise or anticlockwise above.",
+ t1:L=>"Turn the page 90°. Arms that were sideways become up-and-down.",tip1:"Look at the colours: the pink arms are now vertical!",
+ t2:(L,s)=>"Read it again. In a Fischer picture the vertical arms must go AWAY and the sideways arms TOWARD you.",tip2same:"",tip2diff:"The old toward-you arms are now sitting where away-arms must be – so it is the mirror twin.",
+ why:(L,s)=>"A 90° turn inverts the configuration (R↔S), clockwise or anticlockwise. If you must use it, you have to correct the answer by swapping R and S – better to avoid it."}));
+LESS.push(opLesson({no:"6",nav:"Flip over ✘",title:"Lifting the picture and turning it over",sub:"rule viii · NOT permitted",mkop:L=>opFlip(),chipMove:"Flip!",motionNote:"Turning it over…",
+ t0:L=>"A Fischer picture is a picture of a 3-D molecule held in a special way. Can we lift it off the paper and turn it over?",tip0:"Imagine flipping a pancake.",
+ t1:L=>"Turn it over like a page of a book (left and right swap).",tip1:"The side arms now point AWAY from you instead of toward you!",
+ t2:(L,s)=>"If we just draw what we see, left and right are swapped, but the arms no longer point the Fischer way.",tip2same:"",tip2diff:"So the new picture is the mirror twin of the first one.",
+ why:(L,s)=>"Never lift a Fischer projection out of the plane of the paper and turn it over: it changes the configuration (like one swap). Only turns that stay ON the page, by 180°, are safe."}));
+LESS.push(opLesson({no:"7",nav:"Fix 1, rotate 3",title:"Keep one arm fixed, rotate the other three",sub:"rule ix · allowed (this is how you get 12 pictures)",opts:L=>molOpt()+selOpt("fix","Fixed arm",[["U","top"],["R","right"],["D","bottom"],["L","left"]],L.opt.fix)+selOpt("dir","Rotate",[[1,"clockwise ↻"],[-1,"anticlockwise ↺"]],L.opt.dir),mkop:L=>opCycle(L.opt.fix,L.opt.dir),chipMove:"Rotate 3",motionNote:"Rotating three arms…",
+ t0:L=>"Pick ONE arm and hold it still (the pale yellow one is the fixed one).",tip0:"We choose the fixed arm in the box above.",
+ t1:L=>"Now rotate the other three arms around it, one place each.",tip1:"Like turning a tripod around one leg.",
+ t2:(L,s)=>"Read the new picture. It looks different but is it?",tip2same:"A 3-arm rotation = two swaps = even = the same molecule.",tip2diff:"",
+ why:(L,s)=>"Rotating three groups clockwise or anticlockwise while one stays fixed is allowed: it is two swaps, so the configuration does not change. In 3-D the molecule is turned about the fixed arm like a propeller."}));
+
+/* ---------- more lessons ---------- */
+const place=(g,cx,cy,s)=>`<g transform="translate(${(cx-260*s).toFixed(1)} ${(cy-260*s).toFixed(1)}) scale(${s})">${g}</g>`;
+const MULTI=EX.filter(e=>e.n>=2);
+const multiSpec=e=>({top:e.top,bottom:e.bottom,rows:e.rows.map(r=>r.slice())});
+const relName=(a,b)=>a.join("")===b.join("")?"identical":a.every((x,i)=>x!==b[i])?"enantiomers":"diastereomers";
+function miniF(s,lab,cls){const g=`<line x1="30" y1="12" x2="30" y2="78" stroke="${GREEN}" stroke-width="3"/><line x1="8" y1="45" x2="52" y2="45" stroke="${PINK}" stroke-width="3"/>`+[["U",30,10],["D",30,86],["L",8,45],["R",52,45]].map(([p,x,y])=>`<text x="${x}" y="${y}" font-size="11" font-weight="700" text-anchor="${p==="L"?"end":p==="R"?"start":"middle"}" dominant-baseline="central" fill="currentColor" style="color:var(--ink)" transform="translate(${p==="L"?-2:p==="R"?2:0} 0)">${sub_(s[p])}</text>`).join("")+`<circle cx="48" cy="22" r="8" fill="${lab==="R"?ORANGE:TEAL}"/><text x="48" y="22.5" font-size="10" font-weight="800" fill="#fff" text-anchor="middle" dominant-baseline="central">${lab}</text>`;return`<div class="th ${cls||""}"><svg viewBox="-10 0 80 96" width="100%">${g}</svg></div>`}
+/* 1 – read a Fischer picture */
+LESS.unshift({no:"1",nav:"Read a Fischer picture",title:"How to read a Fischer picture",sub:"rules i–iii",opts:L=>selOpt("multi","Molecule",MULTI.map(e=>[e.id,e.name]),L.opt.multi)+`<button id="goMovie" class="on">🎬 Zig-zag → Fischer in the movie</button>`,
+ init(L){L.data.e=EX[L.opt.multi]},onopt(){},
+ phases(L){const e=L.data.e,sp=multiSpec(e),labs=e.exp.split(""),n=e.n,y0=260-(n+1)/2*64;const base=(extra,o)=>fischerFlat(sp,Object.assign({rs:true,labs},o||{}))+(extra||"");
+  const one=(s)=>tetraPic({U:e.top,D:(n===1?e.bottom:"C…"),L:e.rows[0][0],R:e.rows[0][1]},I3,{yaw:labYaw});
+  return[{chip:"The chain is the vertical line",dur:3,text:"The carbon chain is drawn as a VERTICAL line.",tip:"Think of it as the spine of a caterpillar.",draw:(L,p)=>({flat:base(`<rect x="248" y="${y0}" width="24" height="${(n+1)*64}" rx="12" fill="#ffd43b" opacity="${(.25+.3*Math.sin(p*12)**2).toFixed(2)}"/>`),tet:mol3D(sp,labYaw)})},
+  {chip:"Most oxidised group on top",dur:3,text:`The most oxidised end of the chain goes on TOP (here: ${e.top}).`,tip:"Number the carbons from the top: C1 is at the top.",draw:(L,p)=>({flat:base(`<ellipse cx="260" cy="${y0}" rx="${48}" ry="26" fill="none" stroke="#ffd43b" stroke-width="6" opacity="${(Math.min(1,p*3)).toFixed(2)}"/>`),tet:mol3D(sp,labYaw)})},
+  {chip:"Count the horizontal lines",dur:1.6*n+1.2,text:`Count the horizontal lines: they equal the number of chiral carbons.`,tip:"Each horizontal line is one stereocentre.",draw:(L,p)=>{const k=Math.min(n,Math.floor(p*(n+1.0)*1.0));let ex2="";for(let i=1;i<=k;i++)ex2+=`<circle cx="${260+86}" cy="${260+(i-(n+1)/2)*64}" r="17" fill="${PINK}"/><text x="${260+86}" y="${260+(i-(n+1)/2)*64+1}" font-size="19" font-weight="800" fill="#fff" text-anchor="middle" dominant-baseline="central">${i}</text>`;return{flat:base(ex2,{}),tet:mol3D(sp,labYaw),verdict:`<span style="color:var(--accent)">${k} of ${n} counted → ${n} chiral carbon${n>1?"s":""}</span>`}}},
+  {chip:"Arms toward you, spine away",dur:3,text:"Sideways arms point TOWARD you (pink). The spine curls AWAY from you (green).",tip:"The 3-D picture on the right shows one carbon of this molecule from different sides.",draw:(L,p)=>({flat:base(),tet:mol3D(sp,labYaw),tnote:"Pink = toward you, green = away"})}]}});
+/* 2 – count the stereocentres */
+LESS.splice(1,0,{no:"2",nav:"Count centres",title:"Find every stereocentre",sub:"a stereocentre has 4 different groups",opts:()=>"",init(L){},
+ phases(L){const exs=[EX[4],EX[10],EX[15]];return exs.map((e,q)=>({chip:`${e.n} centres`,dur:2.2*e.n+1.5,text:`${e.name}: look at each carbon in the chain. Each has H, a second group, and two different branches of the chain.`,tip:"Four different groups on a carbon = a stereocentre.",
+  draw:(L,p)=>{const sp=multiSpec(e),n=e.n,k=Math.min(n,Math.floor(p*(n+.9)));let ex2="";for(let i=1;i<=k;i++)ex2+=`<circle cx="260" cy="${260+(i-(n+1)/2)*64}" r="30" fill="none" stroke="${ORANGE}" stroke-width="6"/>`;return{flat:fischerFlat(sp,{rs:false})+ex2,tet:mol3D(sp,labYaw),verdict:`<span style="color:var(--accent)">Stereocentres found: ${k} of ${n}</span>`}}}))}});
+/* 8 – 12 look-alikes */
+function permsOf(s){const toks=PORD.map(p=>s[p]),out=[];const rec=(arr,rest)=>{if(!rest.length){const q={};PORD.forEach((p,i)=>q[p]=arr[i]);out.push(q);return}rest.forEach((x,i)=>rec(arr.concat([x]),rest.filter((_,j)=>j!==i)))};rec([],toks);return out}
+LESS.push({no:"8",nav:"12 look-alikes",title:"Twelve pictures, one molecule",sub:"rule ix · 4 arms can be placed in 24 ways",opts:()=>molOpt(),
+ init(L){const s=SINGLES[L.opt.mol].s,base=specLab(s);const all=permsOf(s).map(q=>({s:q,l:specLab(q)}));L.data={s,base,same:all.filter(a=>a.l===base),twin:all.filter(a=>a.l!==base)};if(L.data.same.length!==12||L.data.twin.length!==12)console.warn("perm check",L.data.same.length)},
+ phases(L){const D=L.data;const gal=(k1,k2)=>`<div class="gal">${D.same.map((a,i)=>miniF(a.s,a.l,i<k1?"cur":"")).join("")}${k2>=0?D.twin.map((a,i)=>miniF(a.s,a.l,i<k2?"cur tw":"tw")).join(""):""}</div>`;
+  const draw=(k1,k2,cur)=>({flat:flatPic({s:cur.s,label:cur.l,note:""}),tet:tetraPic(cur.s,I3,{yaw:labYaw}),verdict:gal(k1,k2)});
+  return[{chip:"24 ways",dur:2.5,text:"Four different arms can be placed on the cross in 4 × 3 × 2 × 1 = 24 ways.",tip:"",draw:()=>draw(0,0,{s:D.s,l:D.base})},
+   {chip:"12 are the same molecule",dur:6,text:"Exactly 12 of them have the badge "+D.base+": they are all the SAME molecule, just turned.",tip:"They come from 180° turns and from rotating three arms around a fixed one.",draw:(L,p)=>{const k=Math.max(1,Math.min(12,Math.ceil(p*12)));return draw(k,0,D.same[k-1])}},
+   {chip:"12 are mirror twins",dur:6,text:"The other 12 have the opposite badge: they are the MIRROR TWIN.",tip:"They need an odd number of swaps.",draw:(L,p)=>{const k=Math.max(1,Math.min(12,Math.ceil(p*12)));return draw(12,k,D.twin[k-1])}}]}});
+/* ---------- helpers: names, 3-D of any spec ---------- */
+const rsName=(labs)=>"("+labs.map((l,i)=>(i+2)+l).join(",")+")";
+const specEx=sp=>{const e={n:sp.rows.length,top:sp.top,bottom:sp.bottom,rows:sp.rows,name:"x"};e.pri=priorities(e);return e};
+function mol3D(sp,yaw,o){o=o||{};const e=specEx(sp),st=St({delta:o.delta||44,tau:Array(Math.max(0,e.n-1)).fill(0),M:mm(Rx(-.3),Ry((yaw||0)*D2R))});return`<g transform="${fit3D(e,st,o.box)}">${layer3D(e,st,{rs:true,t:0})}</g>`}
+const twoMol=(A,B,yaw,tA,tB)=>mol3D(A,yaw,{box:[250,450,130,285,1.5]})+mol3D(B,yaw,{box:[250,450,390,285,1.5]})+`<text x="130" y="40" font-size="22" font-weight="800" text-anchor="middle" fill="currentColor" style="color:var(--ink)">${tA}</text><text x="390" y="40" font-size="22" font-weight="800" text-anchor="middle" fill="currentColor" style="color:var(--ink)">${tB}</text>`;
+const ALLX=EX.map(e=>({id:e.id,name:e.name,n:e.n,spec:multiSpec(e)}));
+const invert=l=>l.map(x=>x==="R"?"S":"R");
+/* 9 – all rules on any compound */
+const OPTS9=[["r180","turn the page 180° (allowed)"],["r90","turn the page 90° (not allowed)"],["flip","lift it and turn it over (not allowed)"]];
+LESS.push({no:"9",nav:"Any compound",title:"Apply the rules to any compound",sub:"every carbon is judged on its own",
+ opts:L=>selOpt("multi","Compound",ALLX.map(e=>[e.id,e.n+"C · "+e.name]),L.opt.multi)+selOpt("op9","Do this",OPTS9.concat(Array.from({length:EX[L.opt.multi].n},(_,i)=>["sw"+(i+1),`swap the arms at carbon ${i+1}`])),L.opt.op9||"r180"),
+ init(L){const e=EX[L.opt.multi];let op=L.opt.op9||"r180";if(op.startsWith("sw")&&+op.slice(2)>e.n){op="r180";L.opt.op9=op}const s=multiSpec(e),l0=labelsOfSpec(s);let after,l1,draw="rot",ang=180;
+  if(op==="r180"){after=spec180(s);l1=labelsOfSpec(after)}
+  else if(op==="r90"){ang=90;if(e.n===1){after=spec90(s);l1=labelsOfSpec(after)}else{after=s;l1=invert(l0)}}
+  else if(op==="flip"){draw="swapAll";after={top:s.top,bottom:s.bottom,rows:s.rows.map(r=>[r[1],r[0]])};l1=labelsOfSpec(after)}
+  else{const k=+op.slice(2);draw="swapK";L.data.k=k;after={top:s.top,bottom:s.bottom,rows:s.rows.map((r,i)=>i===k-1?[r[1],r[0]]:r.slice())};l1=labelsOfSpec(after)}
+  L.data={e,s,after,l0,l1,op,draw,ang,k:L.data&&L.data.k}},
+ phases(L){const D=L.data,rel=relName(D.l0,D.l1),col=rel==="identical"?"var(--green)":"var(--pink)";const v=`<span style="color:${col}">${rsName(D.l0)} → ${rsName(D.l1)} : ${rel==="identical"?"SAME molecule":rel==="enantiomers"?"MIRROR TWIN (enantiomer)":"DIASTEREOMER (every other carbon unchanged)"}</span>`;
+  const mv9=D.op==="r90"&&D.e.n>1;
+  return[{chip:"Look",dur:2.2,text:`Every stereocentre has its own badge: ${D.l0.map((l,i)=>"C"+(i+2)+" = "+l).join(", ")}.`,tip:"Locants count from the top carbon (C1).",draw:()=>({flat:fischerFlat(D.s,{rs:true,labs:D.l0}),tet:mol3D(D.s,labYaw),tnote:"Name: "+rsName(D.l0),verdict:"Name: "+rsName(D.l0)})},
+   {chip:"Do it",dur:3.4,text:D.op==="r180"?"Turn the whole page half a turn.":D.op==="r90"?"Turn the whole page a quarter turn.":D.op==="flip"?"Lift the picture and turn it over (left and right swap at every carbon).":`Swap the two arms at carbon ${D.k}.`,tip:"",draw:(L,p)=>{const t=ease(p),o={rs:true,labs:D.l0};if(D.draw==="rot")o.rot=D.ang*t;else if(D.draw==="swapAll")o.swapAll=t;else o.swap=t,o.swapK=D.k;return{flat:fischerFlat(D.s,o),tet:twoMol(D.s,D.after,labYaw,"before","after (as read)"),tnote:"3-D: before and after"}}},
+   {chip:"Read again",dur:2.8,text:D.op==="r90"&&D.e.n>1?"A 90° turn puts the chain sideways. If you now read it like a Fischer picture (sideways = toward you), every carbon flips.":"Read the new picture from the top.",tip:rel==="identical"?"Even number of swaps: nothing changed.":rel==="enantiomers"?"Every carbon inverted: the mirror twin.":"Only the swapped carbon changed.",
+    draw:()=>({flat:mv9?fischerFlat(D.s,{rs:true,labs:D.l1,rot:90}):fischerFlat(D.after,{rs:true,labs:D.l1}),tet:twoMol(D.s,D.after,labYaw,"before","after"),tnote:rel==="identical"?"Same 3-D molecule ✔":"Not the same 3-D molecule ✘",verdict:v})}]}});
+/* 10 – practice on all compounds */
+function newQuiz(L){const qs=[],kinds=["r180","r90","flip","sw1","swAll","cycle"];
+ for(let i=0;i<6;i++){const k=kinds[Math.floor(Math.random()*kinds.length)],e=ALLX[Math.floor(Math.random()*ALLX.length)],s=e.spec;let B,why,la=labelsOfSpec(s),lb;
+  if(k==="r180"){B=spec180(s);why="B is A turned 180° on the page";lb=labelsOfSpec(B)}
+  else if(k==="r90"){if(e.n===1){B=spec90(s);lb=labelsOfSpec(B)}else{B=s;lb=invert(la)}why="B is A turned a quarter turn (read as a Fischer picture)"}
+  else if(k==="flip"){B={top:s.top,bottom:s.bottom,rows:s.rows.map(r=>[r[1],r[0]])};lb=labelsOfSpec(B);why="B is A lifted and turned over"}
+  else if(k==="sw1"){B={top:s.top,bottom:s.bottom,rows:s.rows.map((r,j)=>j===0?[r[1],r[0]]:r.slice())};lb=labelsOfSpec(B);why="B has the arms of carbon 1 swapped"}
+  else if(k==="swAll"){B={top:s.top,bottom:s.bottom,rows:s.rows.map(r=>[r[1],r[0]])};lb=labelsOfSpec(B);why="B has the arms of EVERY carbon swapped"}
+  else if(e.n===1){const op=opCycle(PORD[Math.floor(Math.random()*4)],Math.random()<.5?1:-1),s1={U:s.top,D:s.bottom,L:s.rows[0][0],R:s.rows[0][1]},a=applyOp(s1,op);B={top:a.U,bottom:a.D,rows:[[a.L,a.R]]};lb=labelsOfSpec(B);why="B is A with three arms rotated around one fixed arm"}
+  else{B=spec180(s);lb=labelsOfSpec(B);why="B is A turned 180° on the page"}
+  qs.push({A:s,B,la,lb,ans:relName(la,lb),why,name:e.name})}return qs}
+LESS.push({no:"10",nav:"Practice",title:"Practice: what is the relationship?",sub:"identical · enantiomers · diastereomers",opts:()=>`<button id="newQ">🎲 New questions</button>`,
+ init(L){L.data={qs:newQuiz(L),i:0,ans:null}},
+ phases(L){return[{chip:"Question",dur:1e9,text:"Look at A and B (same compound, drawn two ways). Are they the same molecule, mirror twins (enantiomers) or something else (diastereomers)?",tip:"Tip: try a half-turn, swap arms, or compare the R/S badges.",
+  draw:(L)=>{const D=L.data,q=D.qs[D.i],names=[["identical","Identical"],["enantiomers","Enantiomers"],["diastereomers","Diastereomers"]];
+   const flat=place(fischerFlat(q.A,{rs:D.ans?true:false,labs:q.la}),130,260,.52)+place(fischerFlat(q.B,{rs:D.ans?true:false,labs:q.lb}),390,260,.52)+`<text x="130" y="44" font-size="26" font-weight="800" text-anchor="middle" fill="currentColor" style="color:var(--ink)">A</text><text x="390" y="44" font-size="26" font-weight="800" text-anchor="middle" fill="currentColor" style="color:var(--ink)">B</text><text x="260" y="500" font-size="18" text-anchor="middle" fill="currentColor" style="color:var(--mut)">${q.name} · question ${D.i+1} of ${D.qs.length}</text>`;
+   let html=`<div class="qa" style="display:flex;gap:8px;flex-wrap:wrap">${names.map(([k,t])=>`<button data-a="${k}" class="${D.ans?(k===q.ans?"ok":(k===D.ans?"no":"")):""}">${t}</button>`).join("")}</div>`;
+   if(D.ans)html+=`<div style="margin-top:8px">${D.ans===q.ans?"✔ Correct!":"✘ Not quite."} A = ${rsName(q.la)}, B = ${rsName(q.lb)} → <b>${q.ans}</b>. ${q.why}. <button data-n="1">Next question ▶</button></div>`;
+   return{flat,tet:twoMol(q.A,q.B,labYaw,"A","B"),tnote:D.ans?(q.ans==="identical"?"Same 3-D molecule":"Different 3-D molecules"):"Turn them in your head!",verdict:html}}}]}});
+document.addEventListener("click",e=>{const t=e.target;if(t.id==="goMovie"){tab("movie");$("#from").value=1;$("#to").value=0;$("#ex").value=EX.indexOf(LAB.data.e);$("#ex").onchange({target:$("#ex")});$("#from").onchange();return}
+ if(t.id==="newQ"){LAB.data={qs:newQuiz(LAB),i:0,ans:null};return}
+ const a=t.closest&&t.closest("[data-a]");if(a&&LESS[LAB.n].no==="10"&&!LAB.data.ans){LAB.data.ans=a.dataset.a;return}
+ if(t.dataset&&t.dataset.n&&LESS[LAB.n].no==="10"){LAB.data.i=(LAB.data.i+1)%LAB.data.qs.length;LAB.data.ans=null}});
+
+/* ================= R/S naming in all four pictures ================= */
+const RS={ex:EX[15],c:1,ph:0,t:0,playing:false,stopEnd:false,spd:1};
+const RSDUR=[2.2,3,2.8,3.8],ZN={Cl:17,Br:35,F:9,I:53,O:8,N:7,C:6,H:1};
+const FIRSTA={H:"H",OH:"O",NH2:"N",F:"F",Cl:"Cl",Br:"Br",I:"I",CH3:"C",CH2OH:"C",CHO:"C",COOH:"C",CH2CH3:"C",CH2Cl:"C"};
+const SETSTR={H:"",OH:"H",NH2:"H,H",CH3:"H,H,H",CH2OH:"O,H,H",CH2Cl:"Cl,H,H",CH2CH3:"C,H,H",CHO:"O,O,H",COOH:"O,O,O",F:"",Cl:"",Br:"",I:""};
+function grpName(ex,i,r){if(r==="L")return ex.rows[i-1][0];if(r==="R")return ex.rows[i-1][1];if(r==="U")return i===1?ex.top:"C"+(i-1)+" (chain)";return i===ex.n?ex.bottom:"C"+(i+1)+" (chain)"}
+function grpSet(ex,i,r){const j=r==="U"?i-1:r==="D"?i+1:0;if(r==="L"||r==="R"||(r==="U"&&i===1)||(r==="D"&&i===ex.n)){const t=grpName(ex,i,r);return(FIRSTA[t]||"")+(SETSTR[t]?" with ("+SETSTR[t]+")":"")}
+ const L=ex.rows[j-1][0],R=ex.rows[j-1][1],a=[FIRSTA[L],FIRSTA[R],"C"].sort((p,q)=>ZN[q]-ZN[p]);return"C with ("+a.join(",")+")"}
+const rsBond=(ex,c)=>c<ex.n?c:(ex.n>=2?c-1:(EXPAND[ex.bottom]?1:0));
+function rsLabelFromColl(ex,i,P){const pri=ex.pri[i],cx=P.c[0],cy=P.c[1],v=r=>{const q=P[r];return[q[0]-cx,-(q[1]-cy),q[2]*60]};const a=v(pri[0]),b=v(pri[1]),c=v(pri[2]),d=v(pri[3]);return dot(cross(sub(a,d),sub(b,d)),sub(c,d))<0?"R":"S"}
+function rsColls(ex,c){const b=rsBond(ex,c),KK=buildTimeline(ex,b,0),f=k=>KK.find(x=>x.form===k).st,n=ex.n,out={};
+ const cF={};for(let i=1;i<=n;i++){const y=260+(i-(n+1)/2)*64;cF[i]={c:[260,y],U:[260,y-40,-.58],D:[260,y+40,-.58],L:[216,y,.58],R:[304,y,.58]}}
+ out.F={svg:fischerFlat(multiSpec(ex),{rs:false}),coll:cF};
+ const cZ={};out.Z={svg:tbZig(ex,f(1),{rs:false,coll:cZ}),coll:cZ};
+ const stS=f(2),mo=buildModel(ex,stS),nd=newmanData(ex,mo,b),cS={},cN={};
+ out.S={svg:sawInner(nd,260,260,{coll:cS}),coll:cS};out.N={svg:newmanInner(nd,260,260,{coll:cN}),coll:cN};return out}
+function arcPts(p1,p2,p3,ctr,t){const pts=[];const seg=(a,b,u0,u1)=>{const m=[(a[0]+b[0])/2,(a[1]+b[1])/2],dv=[m[0]-ctr[0],m[1]-ctr[1]],l=Math.hypot(dv[0],dv[1])||1,k=.5*Math.hypot(b[0]-a[0],b[1]-a[1]);const c=[m[0]+dv[0]/l*k*.7,m[1]+dv[1]/l*k*.7];return[a,c,b]};
+ const s1=seg(p1,p2),s2=seg(p2,p3),N=18,total=2*N,upto=Math.round(t*total);for(let k=0;k<=upto;k++){const u=k/N;pts.push(u<=1?bez(s1[0],s1[1],s1[2],u):bez(s2[0],s2[1],s2[2],u-1))}return pts}
+const PCOL=["#e03131","#f08c00","#74b816","#868e96"];
+function annot(ex,i,P,phase,p,vname){if(!P)return{svg:"",note:"This carbon is not in this view (choose another bond)."};
+ const pri=ex.pri[i],cc=P.c;let s="";const pos=r=>P[r];
+ s+=`<circle cx="${cc[0]}" cy="${cc[1]}" r="21" fill="none" stroke="#ffd43b" stroke-width="6" opacity=".95"/>`;
+ if(phase===0)for(const r of pri)s+=`<circle cx="${pos(r)[0].toFixed(1)}" cy="${pos(r)[1].toFixed(1)}" r="25" fill="#ffd43b" opacity="${(.35+.3*Math.sin(p*14)**2).toFixed(2)}"/>`;
+ const numShow=phase>=1?Math.min(4,Math.floor(p*(phase===1?5:99))+(phase>1?4:0)):0;
+ if(phase>=1)pri.forEach((r,k)=>{if(k<numShow||phase>1)s+=`<circle cx="${pos(r)[0].toFixed(1)}" cy="${pos(r)[1].toFixed(1)}" r="14" fill="${PCOL[k]}" stroke="#fff" stroke-width="2.5"/><text x="${pos(r)[0].toFixed(1)}" y="${(pos(r)[1]+1).toFixed(1)}" font-size="17" font-weight="800" fill="#fff" text-anchor="middle" dominant-baseline="central">${k+1}</text>`});
+ const z4=pos(pri[3])[2],zt=z4>.2?"toward":z4<-.2?"away":"flat",zc=zt==="toward"?PINK:zt==="away"?GREEN:BLUE;
+ if(phase>=2)s+=`<circle cx="${pos(pri[3])[0].toFixed(1)}" cy="${pos(pri[3])[1].toFixed(1)}" r="26" fill="none" stroke="${zc}" stroke-width="6" stroke-dasharray="${phase===2?"9 5":"0"}"/>`;
+ const p1=pos(pri[0]),p2=pos(pri[1]),p3=pos(pri[2]),cr=(p2[0]-p1[0])*(p3[1]-p1[1])-(p2[1]-p1[1])*(p3[0]-p1[0]),app=cr>0?"clockwise":"anticlockwise";
+ const lab=rsLabelFromColl(ex,i,P);
+ if(phase>=3){const pts=arcPts(p1,p2,p3,cc,Math.min(1,p*1.15));if(pts.length>1){s+=`<polyline points="${pts.map(q=>q[0].toFixed(1)+","+q[1].toFixed(1)).join(" ")}" fill="none" stroke="#7048e8" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 0"/>`;const e=pts[pts.length-1],q=pts[Math.max(0,pts.length-3)],an=Math.atan2(e[1]-q[1],e[0]-q[0]);s+=`<polygon points="${e[0]},${e[1]} ${(e[0]-15*Math.cos(an-.45)).toFixed(1)},${(e[1]-15*Math.sin(an-.45)).toFixed(1)} ${(e[0]-15*Math.cos(an+.45)).toFixed(1)},${(e[1]-15*Math.sin(an+.45)).toFixed(1)}" fill="#7048e8"/>`}
+  if(p>.85)s+=`<circle cx="${cc[0]+30}" cy="${cc[1]-30}" r="19" fill="${lab==="R"?ORANGE:TEAL}" stroke="#fff" stroke-width="3"/><text x="${cc[0]+30}" y="${cc[1]-29}" font-size="22" font-weight="800" fill="#fff" text-anchor="middle" dominant-baseline="central">${lab}</text>`}
+ const names=pri.map((r,k)=>`${k+1} = ${grpName(ex,i,r)} (${grpSet(ex,i,r)})`).join("  ·  ");
+ let note="";
+ if(phase===0)note="Find the four groups on C"+(i+1)+".";else if(phase===1)note=names;
+ else if(phase===2)note=zt==="toward"?`Group 4 (${grpName(ex,i,pri[3])}) points TOWARD you → the direction you see will be the wrong way round.`:zt==="away"?`Group 4 (${grpName(ex,i,pri[3])}) points AWAY from you → read the direction as it is.`:`Group 4 (${grpName(ex,i,pri[3])}) lies flat on the page → imagine looking from the side opposite to it.`;
+ else note=`1→2→3 looks ${app}. ${zt==="toward"?"4 is toward you, so reverse it → ":zt==="away"?"4 is away, so keep it → ":"4 is flat: view from opposite it → "}<b>${lab}</b>`;
+ return{svg:s,note,lab}}
+function rsInit(){const sel=$("#rsEx");if(!sel.options.length){sel.innerHTML=EX.map(e=>`<option value="${e.id}">${e.n}C · ${e.name}</option>`).join("");sel.onchange=()=>{RS.ex=EX[+sel.value];RS.c=1;rsReset()}}sel.value=RS.ex.id;rsReset()}
+function rsReset(){RS.ph=0;RS.t=0;RS.playing=false;RS.stopEnd=false;if(RS.c>RS.ex.n)RS.c=1;$("#rsName").textContent=`${RS.ex.name}: ${rsName(RS.ex.exp.split(""))} · carbons are numbered from the top (C1 = top group).`;
+ $("#rsCs").innerHTML=RS.ex.exp.split("").map((l,i)=>`<button data-c="${i+1}" class="${i+1===RS.c?"on":""}">C${i+2} = ${l}</button>`).join("");$$("#rsCs button").forEach(b=>b.onclick=()=>{RS.c=+b.dataset.c;RS.ph=0;RS.t=0;RS.playing=true;RS.stopEnd=false;rsReset2()});rsRender()}
+function rsReset2(){$$("#rsCs button").forEach(b=>b.classList.toggle("on",+b.dataset.c===RS.c));rsRender()}
+const RSPH=["Find the 4 groups","Rank them 1–4","Where is group 4?","Walk 1 → 2 → 3"];
+const RSTX=["First find the four groups on the carbon.","Rank the four groups with the CIP rules: higher atomic number first; if it is a tie, look at the next atoms.","Group 4 (lowest) should point AWAY from you. Where is it in each picture?","Walk from 1 to 2 to 3. Clockwise = R, anticlockwise = S (reverse it if 4 points toward you)."];
+function rsRender(){const ex=RS.ex,c=RS.c,ph=RS.ph,p=Math.min(1,RS.t/RSDUR[ph]),C=rsColls(ex,c);let ok=true;
+ const tg={F:"#rsF",Z:"#rsZ",S:"#rsS",N:"#rsN"},nt={F:"#rsNF",Z:"#rsNZ",S:"#rsNS",N:"#rsNN"};
+ for(const k of ["F","Z","S","N"]){const A=annot(ex,c,C[k].coll[c],ph,p);$(tg[k]).innerHTML=wrapSvg(C[k].svg+A.svg);$(nt[k]).innerHTML=A.note||"";if(A.lab&&A.lab!==ex.exp[c-1])ok=false}
+ $("#rsSt").textContent=`Carbon C${c+1} · step ${ph+1} of 4`+(ph===3&&p>.85?(ok?" · all four pictures agree ✔":" · mismatch ✘"):"");$("#rsTx").textContent=RSTX[ph];$("#rsTip").textContent="";
+ $("#rsChips").innerHTML=RSPH.map((q,i)=>`<button data-i="${i}" class="${i===ph?"cur":(i<ph?"done":"")}">${i+1}. ${q}</button>`).join("");$$("#rsChips button").forEach(b=>b.onclick=()=>{RS.ph=+b.dataset.i;RS.t=0;RS.playing=true;RS.stopEnd=true;$("#rsPlay").textContent="⏸ Pause"});
+ $("#rsPlay").textContent=RS.playing?"⏸ Pause":"▶ Play"}
+function rsTick(dt){if(window.TABMODE!=="rsn")return;if(RS.playing){RS.t+=dt*RS.spd;if(RS.t>=RSDUR[RS.ph]){RS.t=RSDUR[RS.ph];if(RS.stopEnd||RS.ph>=3){RS.playing=false}else{RS.ph++;RS.t=0}}}rsRender()}
+function rsBind(){$("#rsPlay").onclick=()=>{if(RS.playing)RS.playing=false;else{if(RS.ph>=3&&RS.t>=RSDUR[3]){RS.ph=0;RS.t=0}RS.playing=true;RS.stopEnd=false}};$("#rsNext").onclick=()=>{if(RS.ph<3){RS.ph++;RS.t=0;RS.playing=true;RS.stopEnd=true}};$("#rsBack").onclick=()=>{if(RS.ph>0){RS.ph--;RS.t=RSDUR[RS.ph];RS.playing=false}else RS.t=0};$("#rsRe").onclick=()=>{RS.ph=0;RS.t=0;RS.playing=false};$("#rsSpd").oninput=e=>RS.spd=+e.target.value;setInterval(()=>rsTick(.04),40)}
+function rsSelfTest(){const bad=[];let n=0;for(const e of EX)for(let c=1;c<=e.n;c++){const C=rsColls(e,c);for(const k of ["F","Z","S","N"]){const P=C[k].coll[c];if(!P){bad.push([e.name,c,k,"missing"]);continue}n++;const l=rsLabelFromColl(e,c,P);if(l!==e.exp[c-1])bad.push([e.name,c,k,l,e.exp[c-1]])}}return{n,bad}}
+
+/* 11 – wedge-dash -> sawhorse / Newman, directly (two rules) */
+const lerp2=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];
+LESS.push({no:"11",nav:"Wedge-dash → Newman directly",title:"Wedge-dash → sawhorse / Newman, directly",sub:"no Fischer picture needed · two rules",
+ opts:L=>{const id=L.opt.cmp11??15,e=EX[id];return selOpt("cmp11","Compound",EX.map(x=>[x.id,x.n+"C · "+x.name]),id)+selOpt("b11","Bond",allowedBonds(e).map(b=>[b,bondName(e,b)]),L.opt.b11??1)+selOpt("look11","Look from",[["left","the LEFT end"],["right","the RIGHT end"]],L.opt.look11||"left")},
+ onopt(){},
+ init(L){const e=EX[L.opt.cmp11??15],al=allowedBonds(e),b=al.includes(+L.opt.b11)?+L.opt.b11:al[0],rev=(L.opt.look11==="right");if(+L.opt.b11!==b)L.opt.b11=b;
+  const KK=buildTimeline(e,b,0,rev),zs=KK.find(k=>k.form===1).st,mo=buildModel(e,zs),nd=newmanData(e,mo,b,{rev,page:true,pageUp:zs.M[1]}),cZ={},zigFull=tbZig(e,zs,{rs:false,coll:cZ}),zigBare=tbZig(e,zs,{rs:false,coll:{},nolabels:true}),collL={},newBare=newmanInner(nd,260,260,{nolabels:true,collL}),saw=sawInner(nd,260,260,{});
+  const items=[],n=e.n,cf=rev?nd.Fi+1:nd.Fi-1,cr=rev?nd.Ri-1:nd.Ri+1;
+  const addGrp=(c,grp,chainIdx)=>{for(const g of grp){let s,kind,z=0;if(g.k==="L"||g.k==="R"){s=cZ[c][g.k+"L"];z=cZ[c][g.k][2];kind=z>0?"wedge":"dash"}else if(g.k==="x"){s=cZ.S[c];kind="x"}else{s=chainIdx===0?cZ.E0:chainIdx===n+1?cZ.E1:cZ.S[chainIdx];kind="chain"}
+    items.push({c,g,s,e:collL[c+"|"+g.k],kind,label:g.label})}};
+  if(nd.Fi>=0&&nd.Fi<=n+1)addGrp(nd.Fi,nd.front,cf);if(nd.Ri>=0&&nd.Ri<=n+1)addGrp(nd.Ri,nd.rear,cr);
+  L.data={e,b,rev,zs,nd,cZ,zigFull,zigBare,newBare,saw,items,fn:nd.Fi===0?ex_top(e):(nd.Fi===n+1?ex_bot(e):"C"+nd.Fi),rn:nd.Ri===0?ex_top(e):(nd.Ri===n+1?ex_bot(e):"C"+nd.Ri)}},
+ phases(L){const D=L.data,rev=D.rev,side=rev?"RIGHT":"LEFT",opp=rev?"LEFT":"RIGHT",S=D.cZ.S,sawFade=p=>`<g opacity="${p}">${D.saw}</g>`;
+  const eye=`<text x="${rev?478:42}" y="${(S[D.nd.Fi][1]+S[D.nd.Ri][1])/2+12}" font-size="46" text-anchor="middle">👁</text><text x="${rev?440:80}" y="${(S[D.nd.Fi][1]+S[D.nd.Ri][1])/2+10}" font-size="30" text-anchor="middle" fill="${ORANGE}">${rev?"◀":"▶"}</text>`;
+  const bondHL=`<line x1="${S[D.b][0]}" y1="${S[D.b][1]}" x2="${S[D.b+1][0]}" y2="${S[D.b+1][1]}" stroke="#ffd43b" stroke-width="16" stroke-linecap="round" opacity=".75"/>`;
+  const common=(ph)=>({rtitle:"Sawhorse",rsub:"the same angles as the Newman picture"});
+  return[
+  {chip:"Pick bond & eye",dur:3,text:`Pick the bond ${bondName(D.e,D.b)}. Stand at the ${side} end of the zig-zag and look along the bond. The carbon nearest to your eye is the FRONT carbon (${D.fn}); the other is the BACK carbon (${D.rn}).`,tip:"Tip: standing at the other end swaps front and back, and swaps right and left.",
+   draw:(L,p)=>Object.assign(common(),{flat:bondHL+D.zigFull+eye,tet:sawFade(.15),tnote:"(the answer appears at the end)"})},
+  {chip:"Rule 1: up stays up",dur:3.4,text:"Rule 1 – up stays up. A group that points UP on the page goes to the TOP of the circle; a group that points DOWN goes to the BOTTOM. The two chain neighbours end up on opposite sides (anti).",tip:"This works because you did not move the molecule – you only walked to the end of it.",
+   draw:(L,p)=>{let hl="";for(const it of D.items)if(it.kind==="chain"){const q=it.s;hl+=`<circle cx="${q[0]}" cy="${q[1]}" r="${22+4*Math.sin(p*14)}" fill="none" stroke="${BLUE}" stroke-width="5"/><text x="${q[0]}" y="${q[1]+(it.g.a>90&&it.g.a<270?-34:40)}" font-size="17" font-weight="800" text-anchor="middle" fill="${BLUE}">${it.g.a>90&&it.g.a<270?"goes to the BOTTOM":"goes to the TOP"}</text>`}return Object.assign(common(),{flat:bondHL+D.zigFull+hl,tet:sawFade(.15),tnote:""})}},
+  {chip:"Rule 2: wedge/dash",dur:3.6,text:`Rule 2 – looking from the ${side} end: WEDGE groups (pink, toward you) go to the ${opp}; DASH groups (green, away) go to the ${side}.`,tip:rev?"From the right end everything is mirrored: wedge goes LEFT.":"From the left end: wedge goes RIGHT, dash goes LEFT.",
+   draw:(L,p)=>{let hl="";for(const it of D.items){if(it.kind==="wedge"||it.kind==="dash"){const q=it.s,col=it.kind==="wedge"?PINK:GREEN,toRight=(it.kind==="wedge")!==rev;hl+=`<circle cx="${q[0]}" cy="${q[1]}" r="26" fill="${col}" opacity=".18"/><text x="${q[0]+(toRight?34:-34)}" y="${q[1]+(q[1]<260?-26:34)}" font-size="26" font-weight="800" text-anchor="middle" fill="${col}">${toRight?"➜ right":"left ⬅"}</text>`}}return Object.assign(common(),{flat:bondHL+D.zigFull+hl,tet:sawFade(.15),tnote:""})}},
+  {chip:"Draw it",dur:4.2,text:"Draw it: the labels slide into place. Front carbon = lines meeting in the middle (pink), back carbon = lines starting on the circle (green). The sawhorse uses the very same angles.",tip:"If you look from the other end, wedge and dash swap sides and front and back swap roles.",
+   draw:(L,p)=>{const t=ease(p);let lab="";for(const it of D.items){if(!it.e)continue;const pos=it.kind==="x"?it.e:lerp2(it.s,it.e,t),col=it.kind==="wedge"?PINK:it.kind==="dash"?GREEN:it.kind==="chain"?BLUE:"currentColor";if(it.kind==="x"){lab+=`<g opacity="${t.toFixed(2)}">${lblT(pos[0],pos[1],it.label,23)}</g>`}else lab+=lblT(pos[0],pos[1],it.label,t<.97?24:23,t<.97?col:null)}
+    return Object.assign(common(),{flat:`<g opacity="${(1-t).toFixed(3)}">${D.zigBare}</g><g opacity="${t.toFixed(3)}">${D.newBare}</g>${lab}`,tet:`<g opacity="${(.15+.85*t).toFixed(2)}">${D.saw}</g>`,tnote:"Sawhorse: front carbon bottom-left, back carbon up-right",verdict:`<span style="color:var(--accent)">Wedge → ${opp.toLowerCase()} · dash → ${side.toLowerCase()} (looking from the ${side.toLowerCase()} end) · up stays up</span>`})}}]}});
+const ex_top=e=>e.top,ex_bot=e=>e.bottom;
+
+function init(){ex=EX[4];fillSelects();$("#ex").value=4;fillBond();bind();rulesBind();rsBind();$("#from").value=0;$("#to").value=3;rebuild(true);exCard();
+ $("#twistRow").innerHTML=`<span style="font-size:14px;color:var(--mut);align-self:center">Spin the back carbon:</span>`+[0,60,120,180,240,300].map(v=>`<button data-x="${v}">${v}°</button>`).join("");
+ $$("#twistRow button").forEach(b=>b.onclick=()=>{extra=+b.dataset.x;$("#from").value=1;$("#to").value=3;rebuild(true);pos=formKey(3);lastMove=1;frame()});
+ const r=selfTest();window.__test=r;const rr=rsSelfTest();window.__rs=rr;$("#verif").textContent=(r.bad.length||rr.bad.length)?`⚠ self-check found ${r.bad.length+rr.bad.length} mismatches (see console)`:`✔ Self-check passed: ${r.checks} 3-D readings + ${rr.n} readings from the four drawn pictures agree with the RDKit R/S labels.`;if(r.bad.length)console.warn(r.bad);
+ requestAnimationFrame(tick)}
+document.addEventListener("DOMContentLoaded",init);
+
+</script></body></html>

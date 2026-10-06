@@ -32,6 +32,11 @@ if (process.env.NODE_ENV === "production") {
 const nextConfig: NextConfig = {
   // Don't advertise the framework/version.
   poweredByHeader: false,
+  // Isomerism PDFs/HTML are read from disk by a gated route handler; make sure
+  // they are bundled into that serverless function.
+  outputFileTracingIncludes: {
+    "/learn/isomerism/files/[...path]": ["./content/isomerism-resources/**/*"],
+  },
   // This repository is a standalone Next.js app. Without an explicit root,
   // Turbopack walks up to an unrelated parent lockfile, increasing file-system
   // watching and invalidating more of its cache than necessary.

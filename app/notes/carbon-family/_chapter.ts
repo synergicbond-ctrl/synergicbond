@@ -34,5 +34,6 @@ export function carbonFamilyTabs(currentPart?: number): ChapterTab[] {
       href: carbonFamilyHref(group.first),
       active: currentPart !== undefined && currentPart >= group.first && currentPart <= group.last,
     })),
+    { label: "Assignments", href: "/notes/carbon-family/assignments", active: false },
   ];
 }

@@ -14,8 +14,38 @@ export type IsomerismResourceGroup = { label: string; blurb: string; items: Isom
 
 export const ISOMERISM_RESOURCE_GROUPS: IsomerismResourceGroup[] = [
   {
-    label: "Assignment, answer key and solutions",
-    blurb: "118 optical-isomerism questions for JEE Main / Advanced.",
+    label: "1 · Structural isomerism",
+    blurb: "Assignment with answer key at the end, plus the master notes.",
+    items: [
+      { title: "Structural Isomerism — Assignment", note: "Assignment-1 by Mrityunjay Shukla Sir (5 pages).", file: "pdf/Structural_Isomerism_Assignment.pdf", kind: "pdf" },
+      { title: "Structural Isomerism — Master notes", note: "Complete JEE Main / Advanced theory with examples.", file: "pdf/STRUCTURAL_ISOMERISM_MASTER_FINAL.pdf", kind: "pdf" },
+    ],
+  },
+  {
+    label: "2 · Geometrical isomerism",
+    blurb: "Exercises and the 40-question assignment.",
+    items: [
+      { title: "Geometrical Isomerism — Exercises", note: "Identify molecules that show geometrical isomerism.", file: "pdf/Geometrical_Isomerism_Exercises.pdf", kind: "pdf" },
+      { title: "Geometrical Isomerism — 40-question assignment", note: "Image-based question pages.", file: "pdf/Geometrical_Isomerism_40_Questions.pdf", kind: "pdf" },
+    ],
+  },
+  {
+    label: "3 · Conformational isomerism",
+    blurb: "40-question assignment on Newman, sawhorse and cyclic conformations.",
+    items: [
+      { title: "Conformational Isomerism — 40-question assignment", note: "Image-based question pages.", file: "pdf/Conformational_Isomerism_40_Questions.pdf", kind: "pdf" },
+    ],
+  },
+  {
+    label: "Structural + geometrical + conformational — combined",
+    blurb: "One 128-question assignment (56 structural, 40 geometrical, 32 conformational); the answer key is at the end.",
+    items: [
+      { title: "Isomerism Assignment — 128 questions with answer key", note: "Tautomerism and optical isomerism are covered separately.", file: "pdf/Isomerism_Assignment_128_Questions.pdf", kind: "pdf" },
+    ],
+  },
+  {
+    label: "4 · Optical isomerism — questions, answer key, solutions",
+    blurb: "118 questions for JEE Main / Advanced, in the order: questions → answer key → detailed solutions.",
     items: [
       { title: "Optical Isomerism — Question set with answer key", note: "118 questions; the answer key is at the end.", file: "pdf/OPTICAL_ISOMERISM_QUESTIONS.pdf", kind: "pdf" },
       { title: "Optical Isomerism — Detailed solutions", note: "Step-by-step solution for every question.", file: "pdf/OPTICAL_ISOMERISM_SOLUTIONS.pdf", kind: "pdf" },
@@ -23,7 +53,7 @@ export const ISOMERISM_RESOURCE_GROUPS: IsomerismResourceGroup[] = [
     ],
   },
   {
-    label: "Notes and worked examples",
+    label: "Optical isomerism — notes and worked examples",
     blurb: "Quick notes plus drawn examples in wedge-dash, Fischer, Newman and sawhorse.",
     items: [
       { title: "Enantiomers, diastereomers, meso and racemic mixtures", note: "Point-wise notes (2 pages).", file: "pdf/Enantiomers_Diastereomers.pdf", kind: "pdf" },

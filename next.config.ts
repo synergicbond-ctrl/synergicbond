@@ -36,6 +36,7 @@ const nextConfig: NextConfig = {
   // they are bundled into that serverless function.
   outputFileTracingIncludes: {
     "/learn/isomerism/files/[...path]": ["./content/isomerism-resources/**/*"],
+    "/notes/assignments/[chapter]/[...path]": ["./content/assignments/**/*"],
   },
   // This repository is a standalone Next.js app. Without an explicit root,
   // Turbopack walks up to an unrelated parent lockfile, increasing file-system

@@ -31,5 +31,6 @@ export function oxygenFamilyTabs(currentPart?: number): ChapterTab[] {
       href: oxygenFamilyHref(group.first),
       active: currentPart !== undefined && currentPart >= group.first && currentPart <= group.last,
     })),
+    { label: "Assignments", href: "/notes/oxygen-family/assignments", active: false },
   ];
 }

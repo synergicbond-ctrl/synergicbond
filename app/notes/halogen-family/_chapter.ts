@@ -31,5 +31,6 @@ export function halogenFamilyTabs(currentPart?: number): ChapterTab[] {
       href: halogenFamilyHref(group.first),
       active: currentPart !== undefined && currentPart >= group.first && currentPart <= group.last,
     })),
+    { label: "Assignments", href: "/notes/halogen-family/assignments", active: false },
   ];
 }

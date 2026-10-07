@@ -4,7 +4,7 @@
 
 export type AssignmentFile = { title: string; note: string; file: string };
 
-export type AssignmentChapter = "boron-family" | "carbon-family" | "nitrogen-family" | "oxygen-family";
+export type AssignmentChapter = "boron-family" | "carbon-family" | "nitrogen-family" | "oxygen-family" | "halogen-family";
 export type AssignmentGroup = { title: string; blurb: string; items: AssignmentFile[] };
 
 export const FAMILY_ASSIGNMENTS: Record<AssignmentChapter, AssignmentGroup> = {
@@ -33,9 +33,16 @@ export const FAMILY_ASSIGNMENTS: Record<AssignmentChapter, AssignmentGroup> = {
   },
   "oxygen-family": {
     title: "The Oxygen Family",
-    blurb: "Groups 16 and 17 master statement assignment.",
+    blurb: "Group 16 master statement assignment.",
     items: [
-      { title: "Groups 16 & 17 assignment with answer key", note: "P-block master statement assignment; answer key at the end.", file: "Group_16_17_Assignment_with_Key.pdf" },
+      { title: "Group 16 assignment with answer key", note: "Q1–Q27 statement questions, reaction bank and answer key.", file: "Oxygen_Family_Group16_Assignment_with_Key.pdf" },
+    ],
+  },
+  "halogen-family": {
+    title: "The Halogen Family",
+    blurb: "Group 17 master statement assignment.",
+    items: [
+      { title: "Group 17 assignment with answer key", note: "Q28–Q53 statement questions, reaction bank and answer key.", file: "Halogen_Family_Group17_Assignment_with_Key.pdf" },
     ],
   },
 };

@@ -23,7 +23,7 @@ export const HYDROLYSIS_PARTS: HydrolysisPartDef[] = [
 function sections() {
   const lines = HYDROLYSIS_MASTER_MARKDOWN.split("\n");
   const result: { num: number; text: string }[] = [];
-  let preamble: string[] = [];
+  const preamble: string[] = [];
   let current: { num: number; lines: string[] } | undefined;
   for (const line of lines) {
     const match = /^# (\d+)\s/.exec(line);

@@ -31,5 +31,6 @@ export function nitrogenFamilyTabs(currentPart?: number): ChapterTab[] {
       href: nitrogenFamilyHref(group.first),
       active: currentPart !== undefined && currentPart >= group.first && currentPart <= group.last,
     })),
+    { label: "Assignments", href: "/notes/nitrogen-family/assignments", active: false },
   ];
 }

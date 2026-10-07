@@ -30,5 +30,6 @@ export function boronFamilyTabs(currentPart?: number, onQuestionBank = false): C
       active: !onQuestionBank && currentPart !== undefined && currentPart >= group.first && currentPart <= group.last,
     })),
     { label: "Question bank", href: BORON_FAMILY_QUESTION_BANK_HREF, active: onQuestionBank },
+    { label: "Assignments", href: "/notes/boron-family/assignments", active: false },
   ];
 }

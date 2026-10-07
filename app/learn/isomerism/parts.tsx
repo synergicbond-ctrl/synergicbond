@@ -120,6 +120,7 @@ export function isomerismTabs(currentPart?: number): ChapterTab[] {
       href: `/learn/isomerism#group-${index + 1}`,
       active: currentPart !== undefined && currentPart >= group.from && currentPart <= group.to,
     })),
+    { label: "Resources", href: "/learn/isomerism/resources", active: false },
   ];
 }
 

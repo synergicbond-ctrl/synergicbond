@@ -56,6 +56,18 @@ export async function requirePaidContent(path: string): Promise<void> {
 }
 
 /**
+ * Non-redirecting twin of requirePaidContent for route handlers (file
+ * downloads), which are not wrapped by layouts. Same rule: privileged or Pro.
+ */
+export async function getPaidContentStatus(): Promise<"ok" | "signed-out" | "needs-pro"> {
+  const supabase = await createClient();
+  const user = await getAccessUser(supabase);
+  if (!user) return "signed-out";
+  if (isPrivileged(user)) return "ok";
+  return (await isProActive(supabase, user.id)) ? "ok" : "needs-pro";
+}
+
+/**
  * Purchased-program entitlement gate (e.g. "cbse:class-11", "neet"). Signed-out
  * users go to sign-in; users lacking the specific entitlement (and not Pro /
  * privileged) go to pricing scoped to that program. hasProgramAccess enforces

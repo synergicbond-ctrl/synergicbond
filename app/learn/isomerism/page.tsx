@@ -27,6 +27,21 @@ export default function IsomerismPage() {
       tabs={isomerismTabs()}
     >
       <div className="mx-auto max-w-3xl">
+        <a
+          href="/stereochemistry-studio.html"
+          className="mb-8 block rounded-xl border border-[var(--accent)] bg-[var(--surface)] p-6 transition hover:bg-[var(--accent)]/10"
+        >
+          <span className="text-xs font-black uppercase tracking-widest text-[var(--accent)]">
+            Interactive companion
+          </span>
+          <span className="mt-2 block text-2xl font-black text-[var(--foreground)]">
+            3D Stereochemistry Studio →
+          </span>
+          <span className="mt-2 block text-sm leading-relaxed text-[var(--text-body)]">
+            Open the complete interactive HTML studio with molecular models,
+            mirror-image exercises, projection conversions, and animated questions.
+          </span>
+        </a>
         <ChapterLessonGroups groups={groups} />
       </div>
     </AppShell>

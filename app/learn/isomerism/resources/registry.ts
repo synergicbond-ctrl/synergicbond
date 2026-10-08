@@ -8,6 +8,7 @@ export type IsomerismResource = {
   note: string;
   file: string; // path under content/isomerism-resources
   kind: "pdf" | "html";
+  href?: string; // in-site page for resources that should stay in this window
 };
 
 export type IsomerismResourceGroup = { label: string; blurb: string; items: IsomerismResource[] };
@@ -63,12 +64,12 @@ export const ISOMERISM_RESOURCE_GROUPS: IsomerismResourceGroup[] = [
   },
   {
     label: "Interactive HTML tools",
-    blurb: "Open in a new tab; they run in your browser.",
+    blurb: "Interactive tools run in your browser; the studio stays within the Isomerism section.",
     items: [
       { title: "Turn it, twist it, see it!", note: "Fischer ⇄ zig-zag ⇄ sawhorse ⇄ Newman with 1–5 chiral carbons, rules lab and R/S naming.", file: "html/Projection_interconversion_animator.html", kind: "html" },
       { title: "Projection converter", note: "Fischer, wedge-dash, sawhorse and Newman side by side for named compounds.", file: "html/Stereo_projection_converter.html", kind: "html" },
       { title: "Fischer projection steps", note: "Eleven short lessons on reading, swapping and turning Fischer pictures.", file: "html/fischer-projection-steps.html", kind: "html" },
-      { title: "Stereochemistry studio", note: "Interactive stereochemistry explorer.", file: "html/stereochemistry-studio-v2.html", kind: "html" },
+      { title: "3D Stereochemistry Studio", note: "The complete interactive studio with a return link to Isomerism.", file: "html/stereochemistry-studio-v2.html", kind: "html", href: "/learn/isomerism/studio" },
       { title: "SN reaction animation", note: "Offline animation of substitution stereochemistry.", file: "html/Sn_animation_offline.html", kind: "html" },
     ],
   },

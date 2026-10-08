@@ -27,9 +27,9 @@ export default function IsomerismResourcesPage() {
               {group.items.map((item) => (
                 <li key={item.file}>
                   <a
-                    href={`${ISOMERISM_FILES_BASE}/${item.file}`}
-                    target="_blank"
-                    rel="noopener"
+                    href={item.href ?? `${ISOMERISM_FILES_BASE}/${item.file}`}
+                    target={item.href ? undefined : "_blank"}
+                    rel={item.href ? undefined : "noopener"}
                     className="block rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 transition hover:border-[var(--accent)]"
                   >
                     <span className="text-xs uppercase tracking-wide text-[var(--accent)]">{item.kind === "pdf" ? "PDF" : "Interactive"}</span>

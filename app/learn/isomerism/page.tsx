@@ -1,6 +1,7 @@
 import { AppShell } from "@/components/AppShell";
 import { ChapterLessonGroups, type LessonGroup } from "@/components/notes/canonical";
 import { ISOMERISM_GROUPS, isomerismParts, isomerismTabs } from "./parts";
+import Link from "next/link";
 
 export const metadata = { title: "Isomerism | Synergic Bond", description: "Premium JEE Main and JEE Advanced Isomerism course." };
 
@@ -27,8 +28,8 @@ export default function IsomerismPage() {
       tabs={isomerismTabs()}
     >
       <div className="mx-auto max-w-3xl">
-        <a
-          href="/stereochemistry-studio.html"
+        <Link
+          href="/learn/isomerism/studio"
           className="mb-8 block rounded-xl border border-[var(--accent)] bg-[var(--surface)] p-6 transition hover:bg-[var(--accent)]/10"
         >
           <span className="text-xs font-black uppercase tracking-widest text-[var(--accent)]">
@@ -41,7 +42,7 @@ export default function IsomerismPage() {
             Open the complete interactive HTML studio with molecular models,
             mirror-image exercises, projection conversions, and animated questions.
           </span>
-        </a>
+        </Link>
         <ChapterLessonGroups groups={groups} />
       </div>
     </AppShell>

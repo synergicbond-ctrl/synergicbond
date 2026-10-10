@@ -64,6 +64,16 @@ function signinRedirect(request: NextRequest): NextResponse {
 }
 
 export async function proxy(request: NextRequest) {
+  // The standalone studio is the one public teaching resource available while
+  // the rest of the pre-launch site remains password protected.
+  const studioPath = request.nextUrl.pathname;
+  if (studioPath === "/learn/isomerism/studio") {
+    return NextResponse.redirect(new URL("/stereochemistry-studio.html", request.url));
+  }
+  if (studioPath === "/stereochemistry-studio.html") {
+    return NextResponse.next({ request });
+  }
+
   const lockResponse = checkSiteLock(request);
   if (lockResponse) return lockResponse;
 

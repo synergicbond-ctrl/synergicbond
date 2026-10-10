@@ -202,7 +202,7 @@ dl.gl{margin:8px 0}.gt{display:grid;grid-template-columns:minmax(150px,240px) mi
 <body>
 <header><div class="in"><a href="/learn/isomerism" onclick="if(history.length>1){history.back();return false}" style="display:inline-block;color:#fff;border:1px solid #fff;border-radius:8px;padding:5px 12px;margin-bottom:12px;text-decoration:none">← Back</a><h1>Stereochemistry Studio <span style="font-size:15px;opacity:.8;font-weight:600">all-in-one offline edition</span></h1><p>Optical isomerism from first principles: 3-D chirality, symmetry, stereoisomer counts, projections, IUPAC naming, polarimetry and animated solutions. Fourteen tabs in teaching order; each tab’s parts are listed on the left.</p><div class="legend"><span class="chip" style="color:var(--pink);border:2px solid var(--pink)">pink = toward you</span><span class="chip" style="color:var(--green);border:2px solid var(--green)">green = away from you</span><span class="chip" style="color:var(--blue);border:2px solid var(--blue)">blue = in the plane of the paper</span><button id="pause" class="pzh">⏸ Pause animations</button></div></div></header>
 <nav class="tabs" id="tabs" role="tablist"><button data-tab="t1" role="tab"><b>1</b> Definitions</button><button data-tab="t2" role="tab"><b>2</b> Check chirality</button><button data-tab="t3" role="tab"><b>3</b> Light &amp; rotation</button><button data-tab="t4" role="tab"><b>4</b> Symmetry</button><button data-tab="t5" role="tab"><b>5</b> One, two or more centres</button><button data-tab="t6" role="tab"><b>6</b> Axial chirality</button><button data-tab="t7" role="tab"><b>7</b> Helicity</button><button data-tab="t8" role="tab"><b>8</b> N, P, As, Sb, S, Se</button><button data-tab="t9" role="tab"><b>9</b> Projection formulae</button><button data-tab="t10" role="tab"><b>10</b> R/S naming</button><button data-tab="t11" role="tab"><b>11</b> Identify isomers</button><button data-tab="t12" role="tab"><b>12</b> Other chirality &amp; traps</button><button data-tab="t13" role="tab"><b>13</b> Advanced practice</button><button data-tab="t14" role="tab"><b>14</b> 118 solutions</button></nav>
-<div class="studio-update-banner"><b>Worked examples from your topics</b><button type="button" data-open-axis-naming>▶ Watch the allene, spirane and biphenyl animation</button><button type="button" data-open-counts>View 20 structure counting examples</button><button type="button" data-open-chairs>View 10 cyclohexane chairs</button><span>Each example has its own drawing and worked steps.</span></div>
+<div class="studio-update-banner"><b>Worked examples from your topics</b><button type="button" data-open-axis-naming>▶ Watch the allene, spirane and biphenyl animation</button><button type="button" data-open-counts>View 20 structure counting examples</button><button type="button" data-open-chairs>View 10 cyclohexane chairs</button><button type="button" data-open-transform>Try mirror and real 3-D flip</button><span>Each example has its own drawing and worked steps.</span></div>
 <main>
 <aside class="subnav" id="subnav" aria-label="Parts of this tab"></aside>
 <div class="pwrap">
@@ -482,6 +482,7 @@ dl.gl{margin:8px 0}.gt{display:grid;grid-template-columns:minmax(150px,240px) mi
 <div class="box ok" id="cn_out"></div></section>
 <section id="centre_atlas" data-sub="15 worked counting examples"><h2>15 worked examples: one to five chiral carbons</h2><p>Counts are for constitutional structures, with conformers treated as one stereoisomer. Every chiral form has one enantiomer. A meso form is achiral and has no distinct enantiomer. Select a card to rotate a representative 3-D conformer; its bond drawing does not select a particular R/S isomer.</p><canvas id="centre_view" class="drag" width="760" height="340" role="img" aria-label="Rotating three-dimensional acyclic organic molecule"></canvas><div class="ctl"><button id="centre_spin" type="button">■ Stop rotation</button></div><p id="centre_view_label" class="box"></p><div id="centre_cards" class="example-grid"></div></section>
 <section id="worked_stereo_cases" data-sub="Mirror and 3-D worked cases" class="stereo-lesson"><h2>Mirror images and 3-D turns: your worked cases</h2><p>Choose a drawing from the five images. The two flat drawings have separate panels; the model below rotates in three dimensions. Pink bonds point toward you and green bonds point away.</p><div class="ctl"><label for="case_lab_select">Drawing</label><select id="case_lab_select"></select><button type="button" id="case_lab_mirror">Show mirror</button><button type="button" id="case_lab_turn">▶ Rotate 3-D model 180°</button><button type="button" id="case_lab_stop">■ Stop</button><button type="button" id="case_lab_answer">Show relationship</button></div><div class="case-lab-pair"><figure><figcaption>Original drawing</figcaption><svg id="case_lab_left" viewBox="0 0 340 300" role="img" aria-label="Original stereochemical structure"></svg></figure><figure><figcaption id="case_lab_right_title">Comparison drawing</figcaption><svg id="case_lab_right" viewBox="0 0 340 300" role="img" aria-label="Comparison stereochemical structure"></svg></figure></div><canvas id="case_lab_3d" width="840" height="380" role="img" aria-label="Rotating three-dimensional teaching model"></canvas><p id="case_lab_status" class="lesson-result" aria-live="polite"></p><div id="case_lab_index" class="example-grid"></div><p class="cap">The model shows the face of each substituent and the ring or chain outline. These are teaching geometries; assign R/S from the complete molecular structure. A proper rotation preserves configuration even though front/back wedges change when viewed from the opposite side.</p><div hidden aria-hidden="true"><select id="cyclic_case"></select><button id="cyclic_reflect"></button><button id="cyclic_rotate"></button><button id="cyclic_overlay"></button><button id="cyclic_play"></button><button id="cyclic_reset"></button><svg id="cyclic_mirror_svg"></svg><p id="cyclic_result"></p><select id="worked_case"></select><button id="worked_mirror"></button><button id="worked_turn"></button><button id="worked_answer"></button><svg id="worked_stereo_svg"></svg><p id="worked_stereo_result"></p><div id="worked_stereo_cards"></div></div></section>
+<section id="cyclic_transform_lab" data-sub="Mirror, page turn and true 3-D flip"><h2>One ring, three different operations</h2><p>Follow the same numbered carbons through a mirror reflection, a 180° turn in the page, and a 180° flip about the horizontal axis. The original and transformed structures share persistent atom IDs. The mirror is an improper operation; either rotation is proper and preserves the stereoisomer.</p><div class="ctl"><label for="transform_case">Ring</label><select id="transform_case"><option value="0">cis-1-bromo-2-chlorocyclohexane</option><option value="1">trans-1-bromo-2-chlorocyclohexane</option><option value="2">cis-1,2-dibromocyclohexane</option><option value="3">trans-1,2-dibromocyclohexane</option></select><button type="button" id="transform_mirror">Show mirror</button><button type="button" id="transform_reflect">▶ Animate reflection</button><button type="button" id="transform_page">▶ Rotate 180° in page</button><button type="button" id="transform_flip">▶ Flip 180° in 3-D</button><button type="button" id="transform_faces">Compare faces</button><button type="button" id="transform_plane">Hide mirror plane</button><button type="button" id="transform_pause">Pause</button><button type="button" id="transform_reset">Reset</button></div><svg id="transform_svg" viewBox="0 0 840 380" role="img" aria-label="Original and transformed cyclohexane with persistent C1 and C2 atom labels"></svg><p id="transform_status" class="lesson-result" aria-live="polite"></p><p class="cap">Pink solid wedge = a bond toward the current viewer; green hashed wedge = away. A proper flip changes the viewed bond depth without changing cis/trans or the molecule’s absolute configuration. Reflection across the indicated yz plane reverses molecular handedness but keeps depth unchanged in this coordinate frame.</p></section>
 <section id="cycle_atlas" data-sub="12 cyclic examples"><h2>12 cyclic examples</h2><p>These ring counts include cis/trans stereochemistry where present. Select a card to rotate a representative 3-D ring conformer. The bond drawing shows connectivity without choosing a specific cis/trans isomer.</p><canvas id="cycle_view" class="drag" width="760" height="340" role="img" aria-label="Rotating three-dimensional cyclic organic molecule"></canvas><div class="ctl"><button id="cycle_spin" type="button">■ Stop rotation</button></div><p id="cycle_view_label" class="box"></p><div id="cycle_cards" class="example-grid"></div></section>
 </div>
 <div class="panel" id="t6">
@@ -2225,7 +2226,7 @@ el('other_projection_cards').innerHTML=other.map(([n,why])=>card(n,`<p>${why}</p
 (()=>{
 'use strict';
 const E=id=>document.getElementById(id);
-const lessonVisible=node=>{const section=node.closest('section');return !!section&&!section.classList.contains('hid');};
+const lessonVisible=node=>{const section=node.closest('section'),panel=node.closest('.panel');return !!section&&!section.classList.contains('hid')&&!node.closest('[hidden]')&&(!panel||panel.classList.contains('on'));};
 const ink='#29324d',purple='#6040c9',pink='#d6326c',green='#1b8b65',muted='#69728b';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const text=(x,y,s,size=16,fill=ink,anchor='middle',weight=600)=>`<text x="${x}" y="${y}" fill="${fill}" text-anchor="${anchor}" font-size="${size}" font-weight="${weight}" font-family="system-ui,Arial">${esc(s)}</text>`;
@@ -2368,6 +2369,100 @@ function frame(now){if(lessonVisible(cyc)){if(cycPlaying&&now-cycLast>1500){if(c
  if(lessonVisible(planar)&&(planarPlaying||planarTransition)){drawPlanar();}if(lessonVisible(planar)&&planarPlaying&&!planarTransition&&now-planarLast>1800){planarTransition={from:planarStage,to:(planarStage+1)%3,start:now};planarLast=now;drawPlanar();}
  if(lessonVisible(helix)&&helixPlaying)drawHelix(now);requestAnimationFrame(frame);}
 cyclicScene();drawPlanar();drawHelix(performance.now());requestAnimationFrame(frame);
+})();
+</script>
+<script>/* Coordinate based stereochemical operations used by the cyclic lesson. */
+((scope)=>{
+  'use strict';
+  const mul=(m,p)=>m.map(row=>row[0]*p[0]+row[1]*p[1]+row[2]*p[2]);
+  const rotZ=a=>[[Math.cos(a),-Math.sin(a),0],[Math.sin(a),Math.cos(a),0],[0,0,1]];
+  const rotX=a=>[[1,0,0],[0,Math.cos(a),-Math.sin(a)],[0,Math.sin(a),Math.cos(a)]];
+  const mirrorYZ=[[-1,0,0],[0,1,0],[0,0,1]];
+  const det=m=>m[0][0]*(m[1][1]*m[2][2]-m[1][2]*m[2][1])-m[0][1]*(m[1][0]*m[2][2]-m[1][2]*m[2][0])+m[0][2]*(m[1][0]*m[2][1]-m[1][1]*m[2][0]);
+  const sub=(a,b)=>a.map((v,i)=>v-b[i]);
+  const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+  const dot=(a,b)=>a.reduce((v,x,i)=>v+x*b[i],0);
+  const handed=(a,b,c,d)=>dot(cross(sub(a,d),sub(b,d)),sub(c,d));
+  function ring(groups=['Br','Cl'],faces=[1,1]){
+    const atoms=Array.from({length:6},(_,i)=>{const a=-Math.PI/2+i*Math.PI/3;return {id:'C'+(i+1),element:'C',p:[Math.cos(a),Math.sin(a),0]};});
+    const bonds=Array.from({length:6},(_,i)=>['C'+(i+1),'C'+((i+1)%6+1)]);
+    groups.forEach((g,i)=>{const a=-Math.PI/2+i*Math.PI/3,p=atoms[i].p;
+      atoms.push({id:'X'+(i+1),element:g,p:[p[0]+.55*Math.cos(a),p[1]+.55*Math.sin(a),.72*faces[i]]});
+      atoms.push({id:'H'+(i+1),element:'H',p:[p[0]-.25*Math.cos(a),p[1]-.25*Math.sin(a),-.72*faces[i]]});
+      bonds.push(['C'+(i+1),'X'+(i+1)],['C'+(i+1),'H'+(i+1)]);
+    });
+    return {atoms,bonds,groups:[...groups],faces:[...faces]};
+  }
+  const transform=(model,m)=>({...model,atoms:model.atoms.map(a=>({...a,p:mul(m,a.p)}))});
+  const atom=(model,id)=>model.atoms.find(a=>a.id===id);
+  function relativeFaces(model){const p=atom(model,'C1').p,q=atom(model,'C2').p,r=atom(model,'C6').p;const n=cross(sub(q,p),sub(r,p));return [1,2].map(i=>Math.sign(dot(sub(atom(model,'X'+i).p,atom(model,'C'+i).p),n)));}
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmt=n=>Number(n.toFixed(2));
+  function drawing(model,cx,cy,scale=100){const byId=Object.fromEntries(model.atoms.map(a=>[a.id,a]));const xy=a=>[cx+a.p[0]*scale,cy+a.p[1]*scale];let s='';
+    for(const [id1,id2] of model.bonds){if(id2.startsWith('H'))continue;const a=byId[id1],b=byId[id2],u=xy(a),v=xy(b),dz=b.p[2]-a.p[2],isSub=id2.startsWith('X');
+      if(isSub&&Math.abs(dz)>.10){const dx=v[0]-u[0],dy=v[1]-u[1],len=Math.hypot(dx,dy)||1,px=-dy/len,py=dx/len;
+        if(dz>0)s+=`<polygon points="${fmt(u[0])},${fmt(u[1])} ${fmt(v[0]+px*9)},${fmt(v[1]+py*9)} ${fmt(v[0]-px*9)},${fmt(v[1]-py*9)}" fill="#d6326c"/>`;
+        else for(let j=1;j<=6;j++){const t=j/7,w=2+7*t,x=u[0]+dx*t,y=u[1]+dy*t;s+=`<line x1="${fmt(x-px*w)}" y1="${fmt(y-py*w)}" x2="${fmt(x+px*w)}" y2="${fmt(y+py*w)}" stroke="#1b8b65" stroke-width="2"/>`;}
+      }else s+=`<line x1="${fmt(u[0])}" y1="${fmt(u[1])}" x2="${fmt(v[0])}" y2="${fmt(v[1])}" stroke="#29324d" stroke-width="3"/>`;
+    }
+    for(let i=1;i<=2;i++){const c=byId['C'+i],x=byId['X'+i],cp=xy(c),xp=xy(x);const inward=[cx-cp[0],cy-cp[1]],len=Math.hypot(...inward)||1,offset=i===1?-3:3;
+      s+=`<circle cx="${fmt(cp[0])}" cy="${fmt(cp[1])}" r="4" fill="#6040c9"/>`;
+      s+=`<text x="${fmt(cp[0]+inward[0]/len*27)}" y="${fmt(cp[1]+inward[1]/len*27+offset)}" text-anchor="middle" font-size="13" font-weight="700" fill="#6040c9">C${i}</text>`;
+      s+=`<text x="${fmt(xp[0])}" y="${fmt(xp[1]-12)}" text-anchor="middle" font-size="17" font-weight="700" fill="${x.p[2]>c.p[2]?'#d6326c':'#1b8b65'}">${esc(x.element)}</text>`;
+    }
+    return s;
+  }
+  function render(model,operation='none',phase=0,plane=true){let m;
+    if(operation==='page')m=rotZ(Math.PI*phase);
+    else if(operation==='flip')m=rotX(Math.PI*phase);
+    else if(operation==='mirror')m=[[(1-2*phase),0,0],[0,1,0],[0,0,1]];
+    else m=rotZ(0);
+    const result=transform(model,m),left=drawing(model,210,190),right=drawing(result,630,190);
+    return {svg:`<rect x="0" y="0" width="840" height="380" fill="#fff"/><text x="210" y="30" text-anchor="middle" fill="#6040c9" font-weight="700">ORIGINAL</text><text x="630" y="30" text-anchor="middle" fill="#6040c9" font-weight="700">${esc({none:'COMPARISON',page:'180° IN PAGE',flip:'180° 3-D FLIP',mirror:'MIRROR IMAGE'}[operation])} · ${Math.round(phase*180)}°</text>${plane?'<line x1="420" y1="52" x2="420" y2="330" stroke="#9da9c1" stroke-width="2" stroke-dasharray="7 6"/><text x="420" y="45" text-anchor="middle" font-size="12" fill="#69728b">mirror plane</text>':''}${left}${right}`,result};
+  }
+  const api={mul,rotZ,rotX,mirrorYZ,det,handed,ring,transform,atom,relativeFaces,drawing,render};
+  if(typeof module!=='undefined'&&module.exports)module.exports=api;
+  scope.StereoTransform=api;
+})(typeof window!=='undefined'?window:globalThis);
+</script>
+<script>/* Visible controls for a coordinate-based cyclic transformation lesson. */
+(()=>{
+  'use strict';
+  const S=window.StereoTransform,$=id=>document.getElementById(id),root=$('cyclic_transform_lab');
+  if(!S||!root)return;
+  const examples=[
+    {name:'cis-1-bromo-2-chlorocyclohexane',groups:['Br','Cl'],faces:[1,1]},
+    {name:'trans-1-bromo-2-chlorocyclohexane',groups:['Br','Cl'],faces:[1,-1]},
+    {name:'cis-1,2-dibromocyclohexane',groups:['Br','Br'],faces:[1,1]},
+    {name:'trans-1,2-dibromocyclohexane',groups:['Br','Br'],faces:[1,-1]}
+  ];
+  let model=S.ring(examples[0].groups,examples[0].faces),operation='none',phase=0,plane=true,playing=false,paused=false,frame=0,started=0,elapsed=0,epoch=0;
+  const explanations={
+    none:'Original numbered ring. C1 and C2 are separate atoms. Select an operation to compare the same connectivity.',
+    mirror:'Reflection in the yz plane sends x to −x and leaves depth z unchanged. The final structure is the mirror image; a chiral example has opposite handedness.',
+    page:'A 180° in-page rotation sends (x,y,z) to (−x,−y,z). Bond depth, cis/trans, and configuration remain unchanged.',
+    flip:'A 180° three-dimensional flip about the horizontal x-axis sends (x,y,z) to (x,−y,−z). The ring is edge-on at 90°. Viewed wedges and dashes reverse at 180°, while cis/trans and configuration remain unchanged.'
+  };
+  function paint(){const result=S.render(model,operation,phase,plane);$('transform_svg').innerHTML=result.svg;
+    const relation=examples[+$('transform_case').value].faces[0]===examples[+$('transform_case').value].faces[1]?'cis':'trans';
+    $('transform_status').textContent=`${examples[+$('transform_case').value].name} · ${operation==='none'?'0°':Math.round(phase*180)+'°'} · ${explanations[operation]} The two substituents remain ${relation} under proper rotation.`;
+    $('transform_pause').textContent=paused?'▶ Resume':'Pause';
+    return result;
+  }
+  function cancel(){playing=false;paused=false;epoch++;if(frame)cancelAnimationFrame(frame);frame=0;elapsed=0;}
+  function start(op){cancel();operation=op;phase=0;playing=true;const current=epoch;started=performance.now();paint();frame=requestAnimationFrame(t=>tick(t,current));}
+  function tick(now,current){if(!playing||current!==epoch)return;const panel=root.closest('.panel');if(panel&&!panel.classList.contains('on')){cancel();paint();return;}
+    if(paused)return;phase=Math.min(1,(now-started)/2200);paint();if(phase<1)frame=requestAnimationFrame(t=>tick(t,current));else{playing=false;frame=0;}}
+  $('transform_case').onchange=()=>{cancel();const d=examples[+$('transform_case').value];model=S.ring(d.groups,d.faces);operation='none';phase=0;paint();};
+  $('transform_mirror').onclick=()=>{cancel();operation=operation==='mirror'&&phase===1?'none':'mirror';phase=operation==='mirror'?1:0;paint();};
+  $('transform_reflect').onclick=()=>start('mirror');
+  $('transform_page').onclick=()=>start('page');
+  $('transform_flip').onclick=()=>start('flip');
+  $('transform_faces').onclick=()=>{cancel();operation='flip';phase=1;paint();};
+  $('transform_plane').onclick=()=>{plane=!plane;$('transform_plane').textContent=plane?'Hide mirror plane':'Show mirror plane';paint();};
+  $('transform_pause').onclick=()=>{if(!playing)return;if(!paused){paused=true;elapsed=performance.now()-started;if(frame)cancelAnimationFrame(frame);frame=0;}else{paused=false;started=performance.now()-elapsed;const current=epoch;frame=requestAnimationFrame(t=>tick(t,current));}paint();};
+  $('transform_reset').onclick=()=>{cancel();operation='none';phase=0;plane=true;$('transform_plane').textContent='Hide mirror plane';paint();};
+  paint();
 })();
 </script>
 <script>/* Independent worked-example viewer. It does not use the studio's animation loop. */
@@ -2751,11 +2846,12 @@ selectCase(0);
 <script>/* Interactive CIP naming for allenes, biphenyls, and spiro compounds. */
 (()=>{'use strict';
  const root=document.getElementById('axis_naming_lesson');if(!root)return;
- function openLesson(){const tab=document.querySelector('#tabs button[data-tab="t6"]');if(tab)tab.click();setTimeout(()=>{document.querySelector('#subnav button[data-s="axis_naming"]')?.click();root.scrollIntoView({behavior:'instant',block:'start'});root.querySelector('[data-action="reset"]')?.click();root.querySelector('[data-action="play"]')?.click();},160);}
+ function openLesson(){const tab=document.querySelector('#tabs button[data-tab="t6"]');if(tab)tab.click();setTimeout(()=>{document.querySelector('#subnav button[data-s="axis_naming"]')?.click();setTimeout(()=>{root.scrollIntoView({behavior:'instant',block:'start'});root.querySelector('[data-action="reset"]')?.click();root.querySelector('[data-action="play"]')?.click();},240);},160);}
  document.querySelectorAll('[data-open-axis-naming]').forEach(b=>b.addEventListener('click',openLesson));
- function openAdvanced(section){document.querySelector('#tabs button[data-tab="t13"]')?.click();setTimeout(()=>{document.querySelector('#subnav button[data-s="'+section+'"]')?.click();document.getElementById(section)?.scrollIntoView({behavior:'instant',block:'start'});},160);}
+ function openAdvanced(section){document.querySelector('#tabs button[data-tab="t13"]')?.click();setTimeout(()=>{document.querySelector('#subnav button[data-s="'+section+'"]')?.click();setTimeout(()=>{const target=document.getElementById(section)?.querySelector('svg')||document.getElementById(section);target?.scrollIntoView({behavior:'instant',block:'center'});},240);},160);}
  document.querySelectorAll('[data-open-counts]').forEach(b=>b.addEventListener('click',()=>openAdvanced('advanced_counting')));
  document.querySelectorAll('[data-open-chairs]').forEach(b=>b.addEventListener('click',()=>openAdvanced('advanced_chair_gallery')));
+ document.querySelectorAll('[data-open-transform]').forEach(b=>b.addEventListener('click',()=>{document.querySelector('#tabs button[data-tab="t5"]')?.click();setTimeout(()=>{document.querySelector('#subnav button[data-s="cyclic_transform_lab"]')?.click();setTimeout(()=>document.getElementById('transform_svg')?.scrollIntoView({behavior:'instant',block:'center'}),240);},160);}));
  const cases=[
   {family:'Allene',name:'1,3-dichloropropa-1,2-diene',kind:'axis',near:['Cl','H'],far:['Cl','H'],base:'Rₐ',pin:'(1M)-1,3-dichloropropa-1,2-diene',rule:'Cl outranks H at both terminal carbons. With the near pair numbered 1 and 2 and the far pair 3 and 4, the drawn 1 → 2 → 3 turn is clockwise.'},
   {family:'Allene',name:'Mirror of 1,3-dichloropropa-1,2-diene',kind:'axis',near:['Cl','H'],far:['Cl','H'],base:'Sₐ',pin:'(1P)-1,3-dichloropropa-1,2-diene',rule:'The two end rankings stay Cl > H. Reflection reverses the 1 → 2 → 3 sense and switches Rₐ to Sₐ.'},

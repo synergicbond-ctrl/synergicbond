@@ -168,6 +168,7 @@ export const AUTHORED_NOTES: Record<string, string> = {
   "general-inorganic-chemistry": "/notes/hydrolysis",
   "environmental-chemistry": "/learn/jee-advanced/environmental-chemistry",
   "polymers": "/learn/jee-advanced/polymers",
+  "purification-characterisation": "/notes/purification-characterisation",
 };
 
 // ── Expected-time heuristic (labelled as derived wherever shown) ──────────────

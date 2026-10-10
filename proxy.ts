@@ -68,7 +68,7 @@ export async function proxy(request: NextRequest) {
   // the rest of the pre-launch site remains password protected.
   const studioPath = request.nextUrl.pathname;
   if (studioPath === "/learn/isomerism/studio") {
-    return NextResponse.redirect(new URL("/stereochemistry-studio.html", request.url));
+    return NextResponse.redirect(new URL("/stereochemistry-studio.html#axis_naming", request.url));
   }
   if (studioPath === "/stereochemistry-studio.html") {
     return NextResponse.next({ request });

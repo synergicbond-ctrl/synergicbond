@@ -36,7 +36,7 @@ nav a{color:var(--acc);text-decoration:none;font-size:13.5px;font-weight:600;pad
 nav a:hover{background:#eee9ff}
 nav button{margin-left:auto;border:1px solid var(--acc);color:var(--acc);background:#fff;border-radius:8px;padding:4px 10px;font-weight:600;cursor:pointer;font-size:13px}
 main{padding:20px 14px 60px}
-section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:20px 0;box-shadow:0 1px 3px rgba(20,20,60,.05)}
+section{scroll-margin-top:calc(var(--navh,100px) + 16px);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:20px 0;box-shadow:0 1px 3px rgba(20,20,60,.05)}
 h2{margin:0 0 4px;font-size:23px;color:#2a1b6e}
 h2 span{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;font-size:15px;padding:1px 9px;margin-right:8px;vertical-align:3px}
 h3{margin:22px 0 6px;font-size:17px;color:#3b2b99}
@@ -130,7 +130,7 @@ dl.gl{margin:8px 0}.gt{display:grid;grid-template-columns:minmax(150px,240px) mi
 .subnav .qs button.done{border-color:#43a047;color:#2e7d32}
 .subnav .qs button.on{background:#3f5bd9;border-color:#3f5bd9;color:#fff}
 @media(max-width:1100px){.tabs{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:900px){.tabs{position:static}.subnav{top:0}}
+@media(max-width:900px){.tabs{position:static}.subnav{top:0}section{scroll-margin-top:16px}}
 @media(max-width:900px){main{grid-template-columns:minmax(0,1fr)}.subnav{position:static;max-height:none;display:flex;gap:6px;overflow-x:auto;padding:8px;white-space:nowrap}.subnav h4,.subnav a.ext{display:none}.subnav button{width:auto;margin:0}.subnav .all{margin:0}.gt{grid-template-columns:1fr}}
 @media(max-width:560px){.tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .projection-lesson{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0}
@@ -202,7 +202,7 @@ dl.gl{margin:8px 0}.gt{display:grid;grid-template-columns:minmax(150px,240px) mi
 <body>
 <header><div class="in"><a href="/learn/isomerism" onclick="if(history.length>1){history.back();return false}" style="display:inline-block;color:#fff;border:1px solid #fff;border-radius:8px;padding:5px 12px;margin-bottom:12px;text-decoration:none">← Back</a><h1>Stereochemistry Studio <span style="font-size:15px;opacity:.8;font-weight:600">all-in-one offline edition</span></h1><p>Optical isomerism from first principles: 3-D chirality, symmetry, stereoisomer counts, projections, IUPAC naming, polarimetry and animated solutions. Fourteen tabs in teaching order; each tab’s parts are listed on the left.</p><div class="legend"><span class="chip" style="color:var(--pink);border:2px solid var(--pink)">pink = toward you</span><span class="chip" style="color:var(--green);border:2px solid var(--green)">green = away from you</span><span class="chip" style="color:var(--blue);border:2px solid var(--blue)">blue = in the plane of the paper</span><button id="pause" class="pzh">⏸ Pause animations</button></div></div></header>
 <nav class="tabs" id="tabs" role="tablist"><button data-tab="t1" role="tab"><b>1</b> Definitions</button><button data-tab="t2" role="tab"><b>2</b> Check chirality</button><button data-tab="t3" role="tab"><b>3</b> Light &amp; rotation</button><button data-tab="t4" role="tab"><b>4</b> Symmetry</button><button data-tab="t5" role="tab"><b>5</b> One, two or more centres</button><button data-tab="t6" role="tab"><b>6</b> Axial chirality</button><button data-tab="t7" role="tab"><b>7</b> Helicity</button><button data-tab="t8" role="tab"><b>8</b> N, P, As, Sb, S, Se</button><button data-tab="t9" role="tab"><b>9</b> Projection formulae</button><button data-tab="t10" role="tab"><b>10</b> R/S naming</button><button data-tab="t11" role="tab"><b>11</b> Identify isomers</button><button data-tab="t12" role="tab"><b>12</b> Other chirality &amp; traps</button><button data-tab="t13" role="tab"><b>13</b> Advanced practice</button><button data-tab="t14" role="tab"><b>14</b> 118 solutions</button></nav>
-<div class="studio-update-banner"><b>Worked examples from your topics</b><button type="button" data-open-axis-naming>▶ Watch the new allene, spirane and biphenyl naming animation</button><span>20 stereoisomer counts and 10 chair drawings are in Advanced practice (tab 13).</span></div>
+<div class="studio-update-banner"><b>Worked examples from your topics</b><button type="button" data-open-axis-naming>▶ Watch the allene, spirane and biphenyl animation</button><button type="button" data-open-counts>View 20 structure counting examples</button><button type="button" data-open-chairs>View 10 cyclohexane chairs</button><span>Each example has its own drawing and worked steps.</span></div>
 <main>
 <aside class="subnav" id="subnav" aria-label="Parts of this tab"></aside>
 <div class="pwrap">
@@ -1885,8 +1885,8 @@ next();
 /* ---------- tabs and main loop ---------- */
 (function(){
 const tabs=[...document.querySelectorAll('#tabs button[data-tab]')];
-function show(id){tabs.forEach(b=>{const on=b.dataset.tab===id;b.classList.toggle('on',on);b.setAttribute('aria-selected',on);});document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===id));try{localStorage.setItem('studio-tab',id);}catch(e){}window.scrollTo({top:0});}
-tabs.forEach(b=>b.onclick=()=>show(b.dataset.tab));
+function show(id,scroll=false){tabs.forEach(b=>{const on=b.dataset.tab===id;b.classList.toggle('on',on);b.setAttribute('aria-selected',on);});document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===id));try{localStorage.setItem('studio-tab',id);}catch(e){}if(scroll)setTimeout(()=>document.getElementById(id)?.querySelector('section:not(.hid)')?.scrollIntoView({behavior:'smooth',block:'start'}),80);}
+tabs.forEach(b=>b.onclick=()=>show(b.dataset.tab,true));
 let start='t1';try{start=localStorage.getItem('studio-tab')||'t1';}catch(e){}
 const h=location.hash.slice(1);if(h&&document.getElementById(h)&&document.getElementById(h).classList.contains('panel'))start=h;
 if(!document.getElementById(start))start='t1';show(start);})();
@@ -1987,12 +1987,11 @@ function apply(panel,id,all){
   const ab=nav.querySelector('.all');if(ab)ab.classList.toggle('on',all);
   panel.querySelectorAll('iframe[data-src]').forEach(f=>{if(!f.dataset.loaded&&!f.closest('section').classList.contains('hid'))showBundledFrame(f);});
   try{localStorage.setItem(KEY+panel.id,all?'*':id);}catch(e){}
-  window.scrollTo({top:0});
 }
 function build(panel){
   const secs=[...panel.querySelectorAll(':scope > section')],tab=document.querySelector('#tabs button.on');
   nav.innerHTML='<h4>'+(tab?tab.textContent.replace(/^\d+\s*/,''):'Parts')+'</h4>';
-  secs.forEach((s,i)=>{const b=document.createElement('button');b.dataset.s=s.id;b.innerHTML='<i>'+(i+1)+'</i><span></span>';b.querySelector('span').textContent=lab(s);b.onclick=()=>{allMode=false;apply(panel,s.id,false);};nav.appendChild(b);});
+  secs.forEach((s,i)=>{const b=document.createElement('button');b.dataset.s=s.id;b.innerHTML='<i>'+(i+1)+'</i><span></span>';b.querySelector('span').textContent=lab(s);b.onclick=()=>{allMode=false;apply(panel,s.id,false);requestAnimationFrame(()=>s.scrollIntoView({behavior:'smooth',block:'start'}));};nav.appendChild(b);});
   if(secs.length>1){const b=document.createElement('button');b.className='all';b.textContent='Show all parts on one page';b.onclick=()=>{allMode=true;apply(panel,null,true);};nav.appendChild(b);}
   let saved=null;try{saved=localStorage.getItem(KEY+panel.id);}catch(e){}
   if(saved==='*'&&secs.length>1){allMode=true;apply(panel,null,true);}
@@ -2752,7 +2751,11 @@ selectCase(0);
 <script>/* Interactive CIP naming for allenes, biphenyls, and spiro compounds. */
 (()=>{'use strict';
  const root=document.getElementById('axis_naming_lesson');if(!root)return;
- document.querySelectorAll('[data-open-axis-naming]').forEach(b=>b.addEventListener('click',()=>{document.querySelector('#tabs button[data-tab="t6"]').click();requestAnimationFrame(()=>document.getElementById('axis_naming').scrollIntoView({behavior:'smooth',block:'start'}));}));
+ function openLesson(){const tab=document.querySelector('#tabs button[data-tab="t6"]');if(tab)tab.click();setTimeout(()=>{document.querySelector('#subnav button[data-s="axis_naming"]')?.click();root.scrollIntoView({behavior:'instant',block:'start'});root.querySelector('[data-action="reset"]')?.click();root.querySelector('[data-action="play"]')?.click();},160);}
+ document.querySelectorAll('[data-open-axis-naming]').forEach(b=>b.addEventListener('click',openLesson));
+ function openAdvanced(section){document.querySelector('#tabs button[data-tab="t13"]')?.click();setTimeout(()=>{document.querySelector('#subnav button[data-s="'+section+'"]')?.click();document.getElementById(section)?.scrollIntoView({behavior:'instant',block:'start'});},160);}
+ document.querySelectorAll('[data-open-counts]').forEach(b=>b.addEventListener('click',()=>openAdvanced('advanced_counting')));
+ document.querySelectorAll('[data-open-chairs]').forEach(b=>b.addEventListener('click',()=>openAdvanced('advanced_chair_gallery')));
  const cases=[
   {family:'Allene',name:'1,3-dichloropropa-1,2-diene',kind:'axis',near:['Cl','H'],far:['Cl','H'],base:'Rₐ',pin:'(1M)-1,3-dichloropropa-1,2-diene',rule:'Cl outranks H at both terminal carbons. With the near pair numbered 1 and 2 and the far pair 3 and 4, the drawn 1 → 2 → 3 turn is clockwise.'},
   {family:'Allene',name:'Mirror of 1,3-dichloropropa-1,2-diene',kind:'axis',near:['Cl','H'],far:['Cl','H'],base:'Sₐ',pin:'(1P)-1,3-dichloropropa-1,2-diene',rule:'The two end rankings stay Cl > H. Reflection reverses the 1 → 2 → 3 sense and switches Rₐ to Sₐ.'},
@@ -2820,7 +2823,7 @@ selectCase(0);
  function tick(t){if(!playing)return;if(last)phase=Math.min(1,phase+(t-last)/3600);last=t;step=Math.min(3,Math.floor(phase*4));render();if(phase>=1){stop();return;}frame=requestAnimationFrame(tick);}
  root.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||!root.contains(b))return;switch(b.dataset.action){case'play':stop();if(phase>=1){step=0;phase=0;}playing=true;b.textContent='▶ Playing';render();frame=requestAnimationFrame(tick);break;case'stop':stop();break;case'previous':stop();step=Math.max(0,step-1);phase=step/3;render();break;case'next':stop();step=Math.min(3,step+1);phase=step/3;render();break;case'reflect':stop();mirror=!mirror;render();break;case'reset':stop();step=0;phase=0;mirror=false;render();break;}});
  get('case').addEventListener('change',()=>{stop();idx=Number(get('case').value);step=0;phase=0;mirror=false;render();});render();
- if((typeof window!=='undefined'&&window.STUDIO_FORCE_AXIS_NAMING===true)||(typeof location!=='undefined'&&location.hash==='#axis_naming')){const tab=document.querySelector('#tabs button[data-tab="t6"]');if(tab)tab.click();requestAnimationFrame(()=>{document.getElementById('axis_naming').scrollIntoView({behavior:'instant',block:'start'});root.querySelector('[data-action="play"]').click();});}
+ if((typeof window!=='undefined'&&window.STUDIO_FORCE_AXIS_NAMING===true)||(typeof location!=='undefined'&&location.hash==='#axis_naming'))openLesson();
 })();
 </script>
 </body>

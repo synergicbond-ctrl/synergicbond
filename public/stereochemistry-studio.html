@@ -195,6 +195,7 @@ dl.gl{margin:8px 0}.gt{display:grid;grid-template-columns:minmax(150px,240px) mi
 @media(max-width:680px){.advanced-two{grid-template-columns:1fr}}
 
 .ref-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}.ref-controls label{display:flex;align-items:center;gap:7px}.ref-controls select{max-width:min(100%,500px)}.ref-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}.ref-columns>div{min-width:0;border:1px solid var(--line);border-radius:14px;background:white;padding:12px}.ref-diagram{height:285px;display:grid;place-items:center;overflow:hidden}.ref-diagram svg{display:block;width:100%;max-width:520px;height:280px;max-height:280px;margin:auto;border:0}.ref-index{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;margin-top:15px}.ref-index button{text-align:left;font-size:13px}.ref-index button.on{background:var(--acc);color:white}.ref-progress{display:flex;align-items:center;gap:12px;margin:14px 0}.ref-progress input{flex:1;min-width:100px}.ref-explanation{border-left:4px solid var(--acc);padding:8px 16px;background:#f6f3ff;margin:14px 0}#advanced_chair_svg,#advanced_chair_bonds,.advanced-view>svg{display:block;width:100%;max-width:540px;height:auto;max-height:320px;margin:12px auto}.advanced-card svg{display:block;width:100%;max-width:540px;height:auto;max-height:320px;margin:12px auto}@media(max-width:850px){.ref-columns{grid-template-columns:1fr}.ref-controls label{width:100%}.ref-controls select{flex:1;min-width:0}}
+.axis-naming-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:14px 0}.axis-naming-grid>div{min-width:0;border:1px solid var(--line);border-radius:14px;background:white;padding:12px;text-align:center}.axis-naming-grid svg{display:block;width:100%;max-width:520px;height:270px;max-height:270px;margin:auto}.axis-naming-grid h3{margin:4px 0 10px}@media(max-width:850px){.axis-naming-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -482,6 +483,7 @@ dl.gl{margin:8px 0}.gt{display:grid;grid-template-columns:minmax(150px,240px) mi
 <section id="cycle_atlas" data-sub="12 cyclic examples"><h2>12 cyclic examples</h2><p>These ring counts include cis/trans stereochemistry where present. Select a card to rotate a representative 3-D ring conformer. The bond drawing shows connectivity without choosing a specific cis/trans isomer.</p><canvas id="cycle_view" class="drag" width="760" height="340" role="img" aria-label="Rotating three-dimensional cyclic organic molecule"></canvas><div class="ctl"><button id="cycle_spin" type="button">■ Stop rotation</button></div><p id="cycle_view_label" class="box"></p><div id="cycle_cards" class="example-grid"></div></section>
 </div>
 <div class="panel" id="t6">
+<section id="axis_naming" data-sub="Assign R/S to allenes, spiranes and biphenyls"><h2>Assigning configuration: allenes, spiranes and biphenyls</h2><p>Work through the structure, CIP ranking, end-on projection and descriptor. Use <b>Rₐ/Sₐ</b> for an axial stereogenic unit in the teaching projection. A stereogenic <b>spiro atom</b> instead receives <b>R/S</b> after its four ring paths are ranked. For spiro compounds with more than one stereogenic unit, assign every locant separately.</p><ol><li><b>Allene:</b> each terminal carbon must have two different groups. Rank each terminal pair independently, look along C=C=C, and put the nearer pair on the heavy horizontal line.</li><li><b>Biphenyl:</b> rank the two ortho ring paths on each ring. Look along C1–C1′; for an isolable atropisomer, restricted rotation must preserve the twisted configuration.</li><li><b>Spirane:</b> identify the spiro atom and any other stereogenic atoms. Compare complete ring paths by CIP, including the first point of difference. If priority 4 is behind the spiro atom, clockwise 1→2→3 gives R and anticlockwise gives S.</li><li><b>Check the mirror:</b> reflection reverses an ordinary R/S or Rₐ/Sₐ assignment; a proper rotation does not.</li></ol><div id="axis_naming_lesson"></div><p class="cap">In preferred IUPAC names, allenes commonly use M/P in place of Rₐ/Sₐ. IUPAC lists (1M)-1,3-dichloropropa-1,2-diene as (1Rₐ) in the alternative notation. For a spiro example, it gives (2R,4S,6R)-2,6-dichlorospiro[3.3]heptane as the preferred name and (2P) as an alternative axial description. <a href="https://iupac.qmul.ac.uk/BlueBook/P9.html">IUPAC Blue Book, P-93.4.2.2 and P-93.5.3.5</a>.</p></section>
 <section id="supplied_axial" data-sub="Allene and biphenyl Rₐ/Sₐ: worked examples"><h2>Allene and biphenyl Rₐ/Sₐ: worked examples</h2><p>View along the chiral axis, compare both ends, and check the descriptor from the other viewing direction.</p><div data-reference-module="axial"></div></section>
 <section id="crit_axial" data-sub="Rules at a glance" class="crit"><h2>Axial chirality: the rules in one place</h2>
 <p>Every case below has a <b>chiral axis</b>. The animated 3-D models follow in the next parts of this tab.</p><h3>4. Allenes and cumulenes (chiral axis)</h3>
@@ -493,8 +495,8 @@ dl.gl{margin:8px 0}.gt{display:grid;grid-template-columns:minmax(150px,240px) mi
 
 <h3>5. Spiranes (chiral axis)</h3>
 <ul>
-<li><span class="m">MUST BE</span>: each ring is unsymmetrical about the axis through the spiro atom (for example COOH and H on the axis carbon of <b>both</b> rings), as one enantiomer.</li>
-<li><span class="x">CANNOT BE</span>: either ring is symmetrical (two identical groups on its axis carbon), because a mirror plane appears.</li>
+<li>For axial spirane examples, distinguish the two directions through each ring and check the complete molecular symmetry. Other spiro compounds have an R/S stereogenic spiro atom even when an axial description is not the preferred name.</li>
+<li>If two paths remain equivalent after full CIP comparison, that pair cannot by itself define an R/S assignment at the spiro atom. Check the whole structure before claiming a mirror plane.</li>
 <li><span class="c">CAN BE</span> chiral in addition if the rings themselves carry stereocentres. Check those separately.</li>
 </ul>
 
@@ -507,7 +509,7 @@ dl.gl{margin:8px 0}.gt{display:grid;grid-template-columns:minmax(150px,240px) mi
 <h3>7. Biphenyls (atropisomerism)</h3>
 <p>All four conditions must hold.</p>
 <ol>
-<li><b>Bulky ortho groups</b>, usually three or four (NO₂, COOH, I, Br, CH₃, OCH₃). F, H and OH are too small.</li>
+<li><b>Restricted rotation</b> about the biaryl bond. Ortho substituents often raise the barrier; assess the complete molecule rather than judging from one substituent alone.</li>
 <li><b>Each ring unsymmetrical:</b> its two ortho groups must differ. A symmetrical ring (2,6 identical) creates a mirror plane.</li>
 <li><b>High barrier:</b> about 90–100 kJ/mol or more, so the isomers last hours at room temperature.</li>
 <li><b>Not bridged flat:</b> a ring locked planar is achiral.</li>
@@ -545,11 +547,11 @@ dl.gl{margin:8px 0}.gt{display:grid;grid-template-columns:minmax(150px,240px) mi
 <h3>Condition for optical activity</h3>
 <ol>
 <li>The chiral axis runs through the spiro atom and the atom of each ring that lies opposite it (C2, C4, C6 in spiro[3.3]heptane).</li>
-<li>On <b>each ring</b>, the two groups on the axis atom must be <b>different</b> (here COOH and H on C2, and COOH and H on C6).</li>
+<li>For the illustrated axial model, distinguish the two directions through each ring (here COOH and H at C2 and C6). For a spiro-centre R/S assignment, compare all four ring paths by CIP.</li>
 <li>Because the rings are perpendicular, no mirror plane survives. The molecule is chiral.</li>
-<li>If either ring carries two identical groups (COOH, COOH), a mirror plane exists and the compound is achiral.</li>
+<li>If a pair of paths is identical, reassess the complete structure: the pictured simple axial model can lose its chirality, while other substituted spiro compounds may still have stereogenic centres.</li>
 </ol>
-<p><b>Classic example:</b> spiro[3.3]heptane-2,6-dicarboxylic acid. C2 is <i>not</i> a stereocentre (its two ring arms are the same), yet the molecule is resolvable.</p>
+<p><b>Example:</b> a 2,6-disubstituted spiro[3.3]heptane can show a stereogenic spiro arrangement. Assign R/S at any stereogenic ring atom and at the spiro atom by comparing complete ring paths; do not infer descriptors from a flat ring sketch alone.</p>
 <svg id="d_spiro" viewBox="0 0 780 230"></svg>
 <p class="cap">Ring 1 (C1–C4) lies in the paper. Ring 2 (C4–C7) is perpendicular to the paper, so C5 comes toward you and C7 goes away. On C2 the groups are in the perpendicular plane (wedge and hash); on C6 they are in the paper plane. The right-hand molecule is the mirror image.</p>
 <h3>Animated 3-D model</h3>
@@ -575,7 +577,7 @@ dl.gl{margin:8px 0}.gt{display:grid;grid-template-columns:minmax(150px,240px) mi
 <p>Biphenyl has no stereocentre, but when rotation about the C1–C1′ single bond is <b>blocked</b>, the molecule is frozen in a twisted shape that can be chiral. Stereoisomers produced by hindered rotation are called <b>atropisomers</b> (<i>a</i> = not, <i>tropos</i> = turning).</p>
 <h3>Conditions</h3>
 <ol>
-<li><b>Bulky ortho groups</b>: usually three, and best four, large groups in the 2, 2′, 6, 6′ positions (such as –NO₂, –COOH, –OCH₃, –I, –Br, –CH₃). They collide if the rings try to become coplanar. Small groups (F, H, OH) are not enough.</li>
+<li><b>Restricted biaryl rotation</b>: ortho substitution can raise the rotation barrier. Judge the full set of substituents and conditions; a single group does not determine isolability.</li>
 <li>The rings are therefore twisted, close to perpendicular, and cannot rotate past each other at room temperature.</li>
 <li><b>Each ring must be unsymmetrical</b>: its two ortho groups must differ (2 ≠ 6 and 2′ ≠ 6′).</li>
 <li>Why? If one ring has identical ortho groups (e.g. 2,6-dinitro), the plane of the <i>other</i> ring is a mirror plane, so the molecule is achiral (tick "ring A ortho groups identical" below and watch it).</li>
@@ -2741,6 +2743,59 @@ selectCase(0);
   });
   get('case').addEventListener('change',()=>{idx=Number(get('case').value);load();});get('progress').addEventListener('input',()=>{stop();p=Number(get('progress').value);draw();});load();
  });
+})();
+</script>
+<script>/* Interactive CIP naming for allenes, biphenyls, and spiro compounds. */
+(()=>{'use strict';
+ const root=document.getElementById('axis_naming_lesson');if(!root)return;
+ const cases=[
+  {family:'Allene',name:'1,3-dichloropropa-1,2-diene',kind:'axis',near:['Cl','H'],far:['Cl','H'],base:'Rₐ',pin:'(1M)-1,3-dichloropropa-1,2-diene',rule:'Cl outranks H at both terminal carbons. With the near pair numbered 1 and 2 and the far pair 3 and 4, the drawn 1 → 2 → 3 turn is clockwise.'},
+  {family:'Allene',name:'Mirror of 1,3-dichloropropa-1,2-diene',kind:'axis',near:['Cl','H'],far:['Cl','H'],base:'Sₐ',pin:'(1P)-1,3-dichloropropa-1,2-diene',rule:'The two end rankings stay Cl > H. Reflection reverses the 1 → 2 → 3 sense and switches Rₐ to Sₐ.'},
+  {family:'Allene',name:'Hexa-2,3-dienoic acid projection',kind:'axis',near:['Et','H'],far:['COOH','H'],base:'Rₐ',pin:'Illustrative projection; assign the name only after checking the exact 3-D drawing.',rule:'At the ethyl end, Et > H; at the acid end, COOH > H. Number near 1/2 and far 3/4, then trace the displayed projection.'},
+  {family:'Biphenyl',name:'6,6′-dinitrodiphenic acid projection',kind:'axis',near:['NO₂','COOH'],far:['NO₂','COOH'],base:'Sₐ',pin:'Sₐ for the displayed projection; the mirror projection is Rₐ.',rule:'On each ring, the ortho path toward NO₂ outranks the path toward COOH because N outranks C at the first point of difference. Rotation about C1–C1′ must also be restricted for isolable atropisomers.'},
+  {family:'Biphenyl',name:'Mirror of the dinitrodiphenic acid projection',kind:'axis',near:['NO₂','COOH'],far:['NO₂','COOH'],base:'Rₐ',pin:'Rₐ for the displayed projection.',rule:'The ring-path rankings do not change in a mirror. The projection reverses handedness, so Sₐ becomes Rₐ.'},
+  {family:'Biphenyl',name:'Br/Me ortho-path comparison',kind:'axis',near:['path to Br','path to Me'],far:['path to Br','path to Me'],base:'Rₐ',pin:'Illustrative atropisomer projection; no isolation claim.',rule:'Follow both ortho ring paths to the first point of difference: Br outranks C of Me. Use the near/far positions only after setting the viewing direction.'},
+  {family:'Spirane',name:'1,6-dioxaspiro[4.4]nonane',kind:'spiro',near:['O-side path','C-side path'],far:['O-side path','C-side path'],base:'R',pin:'(5R)-1,6-dioxaspiro[4.4]nonane (preferred IUPAC name)',rule:'The spiro atom is C5. Compare its four ring paths by CIP; when the first atoms tie, continue through both paths and use the full spiro digraph. With priority 4 behind the spiro atom, 1 → 2 → 3 is clockwise.'},
+  {family:'Spirane',name:'Mirror of 1,6-dioxaspiro[4.4]nonane',kind:'spiro',near:['O-side path','C-side path'],far:['O-side path','C-side path'],base:'S',pin:'(5S)-1,6-dioxaspiro[4.4]nonane',rule:'The four ring-path priorities remain the same; their three-dimensional handedness reverses. Priority 4 stays behind the viewer in the end-on construction.'},
+  {family:'Spirane',name:'2,6-dichlorospiro[3.3]heptane',kind:'spiro',near:['C2 ring path','other ring path'],far:['C6 ring path','other ring path'],base:'S',pin:'(2R,4S,6R)-2,6-dichlorospiro[3.3]heptane (PIN); (2P) is an alternative axial description.',rule:'C2 and C6 each need their own R/S assignment. At the spiro atom C4, rank the four ring paths and assign S. The alternative P label describes the axial handedness and does not replace the three centre labels in the preferred name.'},
+  {family:'Trap',name:'Allene with two identical groups at one end',kind:'none',near:['Cl','H'],far:['H','H'],base:'—',pin:'No Rₐ/Sₐ descriptor',rule:'The far terminal carbon has H and H, so it has no higher/lower pair. This allene has no stereogenic axis; a 1 → 2 → 3 label would be invalid.'}
+ ];
+ const E=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ root.innerHTML=`<div class="ctl"><label>Worked structure <select data-role="case">${cases.map((c,i)=>`<option value="${i}">${i+1}. ${E(c.family)} · ${E(c.name)}</option>`).join('')}</select></label><button type="button" data-action="play">▶ Animate naming</button><button type="button" data-action="stop">■ Stop</button><button type="button" data-action="previous">← Step</button><button type="button" data-action="next">Step →</button><button type="button" data-action="reflect">Show mirror</button><button type="button" data-action="reset">Reset</button></div><div class="axis-naming-grid"><div><h3>Stereogenic skeleton</h3><svg data-role="structure" viewBox="0 0 680 330" role="img" aria-label="Vector drawing of the stereogenic unit"></svg></div><div><h3>View along the axis or at the spiro atom</h3><svg data-role="projection" viewBox="0 0 680 330" role="img" aria-label="CIP priority projection"></svg></div></div><p data-role="step" class="advanced-answer" aria-live="polite"></p><div data-role="answer" class="box"></div><p class="cap">The projection fixes the viewpoint and the arrangement used for each worked assignment. For a spiro centre, rank all four ring paths using CIP; an alternative M/P axial label is a different naming description.</p>`;
+ const get=r=>root.querySelector(`[data-role="${r}"]`);let idx=0,step=0,mirror=false,playing=false,frame=0,last=0;
+ const text=(x,y,s,size=18,col='#253550')=>`<text x="${x}" y="${y}" text-anchor="middle" font-size="${size}" font-weight="700" fill="${col}">${E(s)}</text>`;
+ const line=(x1,y1,x2,y2,color='#253550',w=4,dash='')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="${w}" stroke-linecap="round" ${dash?`stroke-dasharray="${dash}"`:''}/>`;
+ function side(c){let s='<rect width="680" height="330" fill="white"/>';
+  if(c.family==='Allene'||c.family==='Trap'){
+   s+=line(245,161,340,161)+line(245,169,340,169)+line(340,161,435,161)+line(340,169,435,169)+text(245,172,'C',18)+text(340,172,'C',18)+text(435,172,'C',18);
+   s+=line(245,160,195,93,'#bd3b82')+line(245,170,195,238,'#bd3b82')+line(435,160,485,93,'#168477')+line(435,170,485,238,'#168477');
+   s+=text(180,83,c.near[0],18)+text(180,258,c.near[1],18)+text(505,83,c.far[0],18)+text(505,258,c.far[1],18)+text(340,301,'two perpendicular terminal planes',16,'#6244c3');
+  }else if(c.family==='Biphenyl'){
+   const hex=(x,y)=>{let p=[];for(let i=0;i<6;i++){let a=i*Math.PI/3;p.push([x+68*Math.cos(a),y+68*Math.sin(a)]);}let h='';for(let i=0;i<6;i++)h+=line(...p[i],...p[(i+1)%6],i%2?'#253550':'#6244c3');return h;};
+   s+=hex(245,165)+hex(435,165)+line(313,165,367,165);s+=text(156,66,c.near[0],16)+text(156,275,c.near[1],16)+text(525,66,c.far[0],16)+text(525,275,c.far[1],16)+text(340,303,'twisted C1–C1′ axis',16,'#6244c3');
+  }else{
+   s+=`<polygon points="340,165 265,92 190,165 265,238" fill="none" stroke="#bd3b82" stroke-width="5"/><polygon points="340,165 415,92 490,165 415,238" fill="none" stroke="#168477" stroke-width="5"/>`;
+   s+=`<circle cx="340" cy="165" r="14" fill="#253550"/>`+text(340,171,'C',13,'white');
+   s+=text(220,74,c.near[0],15)+text(220,278,c.near[1],15)+text(480,74,c.far[0],15)+text(480,278,c.far[1],15)+text(340,307,'perpendicular ring-path planes',16,'#6244c3');
+  }
+  return s;
+ }
+ function projection(c){let s='<rect width="680" height="330" fill="white"/>';const valid=c.kind!=='none';const down=c.base==='Rₐ'||c.base==='R';const dir=mirror?-1:1;const high=down?253:83,low=down?83:253;
+  s+=`<circle cx="340" cy="165" r="86" fill="none" stroke="#bcc8dc" stroke-width="3"/>`;
+  const near1=340-95*dir,near2=340+95*dir;
+  s+=line(near1,165,near2,165,'#bd3b82',8)+line(340,high,340,low,'#168477',4);
+  if(c.kind==='spiro')s+=`<circle cx="340" cy="165" r="14" fill="white" stroke="#253550" stroke-width="3"/>`;
+  if(step>=1){s+=text(near1,147,valid?'1':'?',23,'#a12d70')+text(near2,147,valid?'2':'?',23,'#a12d70')+text(340,high-10,valid?'3':'?',23,'#087b70')+text(340,low+28,valid?'4':'?',23,'#087b70');}
+  s+=text(near1,195,c.near[0],15)+text(near2,195,c.near[1],15)+text(340,high+(high<165?-31:25),c.far[0],15)+text(340,low+(low<165?-31:25),c.far[1],15);
+  if(step>=2&&valid){s+=`<path d="M ${near1} 128 Q 340 ${down!==mirror?200:130} ${near2} 128 Q 465 185 355 ${high}" fill="none" stroke="#df9817" stroke-width="5" stroke-dasharray="8 6"/>`+text(530,277,'1 → 2 → 3',19,'#a56300');}
+  if(step>=3)s+=text(340,317,valid?(mirror?({Rₐ:'Sₐ',Sₐ:'Rₐ',R:'S',S:'R'}[c.base]):c.base):'no descriptor',22,'#5637bc');
+  return s;
+ }
+ function render(){const c=cases[idx];get('case').value=String(idx);get('structure').innerHTML=side(c);get('projection').innerHTML=projection(c);const labels=['1/4 · Identify the stereogenic unit and viewing axis.','2/4 · Rank each pair separately; for spiro centres, compare all four ring paths.','3/4 · Put the near pair on the heavy line. Trace 1 → 2 → 3 in the projection.','4/4 · Assign the descriptor, then check its mirror.'];get('step').textContent=labels[step];get('answer').innerHTML=`<b>${E(c.name)}</b><p>${E(c.rule)}</p>${step===3?`<p><b>Descriptor: ${E(c.kind==='none'?'none':mirror?({Rₐ:'Sₐ',Sₐ:'Rₐ',R:'S',S:'R'}[c.base]):c.base)}.</b> ${E(c.pin)}</p>`:'<p>Advance to step 4 to reveal the assignment.</p>'}`;root.querySelector('[data-action="reflect"]').textContent=mirror?'Show original':'Show mirror';}
+ function stop(){playing=false;if(frame)cancelAnimationFrame(frame);frame=0;last=0;}
+ function tick(t){if(!playing)return;if(last&&t-last>800){step=Math.min(3,step+1);last=t;render();if(step===3){stop();return;}}else if(!last)last=t;frame=requestAnimationFrame(tick);}
+ root.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||!root.contains(b))return;switch(b.dataset.action){case'play':stop();if(step===3)step=0;playing=true;render();frame=requestAnimationFrame(tick);break;case'stop':stop();break;case'previous':stop();step=Math.max(0,step-1);render();break;case'next':stop();step=Math.min(3,step+1);render();break;case'reflect':stop();mirror=!mirror;render();break;case'reset':stop();step=0;mirror=false;render();break;}});
+ get('case').addEventListener('change',()=>{stop();idx=Number(get('case').value);step=0;mirror=false;render();});render();
 })();
 </script>
 </body>

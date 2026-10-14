@@ -389,15 +389,29 @@ const makeComponents = (figureFor?: (key: string) => ReactNode): Components => (
       {children}
     </h5>
   ),
-  p: ({ children }) => {
+  p: ({ children, node }) => {
     const raw = pureText(children);
     if (raw !== null) {
       const fig = FIGURE_RE.exec(raw.trim());
       if (fig) {
-        const node = figureFor?.(fig[1]);
-        return node ? <div className="my-6">{node}</div> : null;
+        const figNode = figureFor?.(fig[1]);
+        return figNode ? <div className="my-6">{figNode}</div> : null;
       }
       if (isEquation(raw)) return <Equation raw={raw} />;
+    }
+    // A markdown image on its own line becomes a paragraph wrapping the image;
+    // the `img` renderer below emits a <figure>, which is invalid inside <p>.
+    // Unwrap when every meaningful child of the paragraph is an image.
+    const kids = (node as { children?: { type?: string; tagName?: string; value?: string }[] } | undefined)?.children;
+    if (
+      kids?.length &&
+      kids.every(
+        (c) =>
+          (c.type === "element" && c.tagName === "img") ||
+          (c.type === "text" && !(c.value ?? "").trim()),
+      )
+    ) {
+      return <>{children}</>;
     }
     return (
       <p className="max-w-[74ch] text-[16px] leading-[1.85]" style={{ color: C.body }}>

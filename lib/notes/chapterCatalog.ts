@@ -452,6 +452,15 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     description: "Carbohydrates (monosaccharides, anomers, glycosidic bonds), amino acids, peptides, proteins, enzymes, nucleic acids and vitamins — with 25 JEE-pattern questions.",
   },
   {
+    id: "purification-characterisation",
+    syllabusId: "purification-characterisation",
+    title: "Purification and Characterisation of Organic Compounds",
+    href: "/notes/purification-characterisation",
+    lessonLabel: "15 lessons",
+    premium: true,
+    description: "The practical organic chemistry block: carbon's tetravalence, hybridisation, sigma and pi bonds and molecular shapes; allotropes of carbon; the five classical purification methods (sublimation, crystallisation, distillation, differential extraction, chromatography); qualitative analysis by Lassaigne's test for N, S, halogens and P; quantitative analysis by the Liebig, Dumas, Kjeldahl and Carius methods; and empirical and molecular formula calculation — with worked examples, JEE traps and a practice set.",
+  },
+  {
     id: "chemistry-in-everyday-life",
     syllabusId: "chemistry-in-everyday-life",
     title: "Chemistry in Everyday Life",

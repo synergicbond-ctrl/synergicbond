@@ -34,6 +34,20 @@ export default function Page() {
           ))}
         </div>
 
+        <Link
+          href="/learn/solid-state/lab"
+          className="group flex items-start gap-4 rounded-lg border border-[var(--accent)]/40 bg-[var(--surface)] p-4 transition hover:border-[var(--accent)]"
+        >
+          <span className="flex shrink-0 items-center justify-center rounded-lg bg-[var(--surface-2)] px-3 py-2 font-mono text-sm font-bold text-[var(--accent)]">3D</span>
+          <div className="min-w-0 flex-1">
+            <h3 className="font-bold text-[var(--foreground)]">Interactive Lab</h3>
+            <p className="mt-1 text-sm leading-relaxed text-[var(--text-muted)]">
+              Seven guided simulations: unit-cell counting, density, close-packed stacking, radius ratio, defects, bands and magnetism.
+            </p>
+          </div>
+          <span className="flex shrink-0 text-[var(--text-muted)]">→</span>
+        </Link>
+
         <div className="grid gap-3">
           {SOLID_STATE_PARTS.map((part) => (
             <Link

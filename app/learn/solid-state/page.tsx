@@ -1,67 +1,104 @@
+import "katex/dist/katex.min.css";
+import "./lab/lab.css";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { ChapterLessonGroups, type LessonGroup } from "@/components/notes/canonical";
 import { AppShell } from "@/components/AppShell";
-import { SOLID_STATE_PARTS } from "./parts";
+import { LabToc, type TocItem } from "./lab/_toc";
+import { FoundationsChapter } from "./lab/s_foundations";
+import { CubicChapter } from "./lab/s_cubic";
+import { PackingChapter } from "./lab/s_packing";
+import { IonicChapter } from "./lab/s_ionic";
+import { DefectsChapter } from "./lab/s_defects";
+import { ElectronicChapter } from "./lab/s_electronic";
+import { MagneticChapter } from "./lab/s_magnetic";
+import { RevisionChapter } from "./lab/s_revision";
+import { PracticeChapter } from "./lab/s_practice";
+import { MasterNotes } from "./lab/_fulltext";
 
-export const metadata = {
-  title: "Solid State — JEE Advanced | Synergic Bond",
-  description: "A 23-part premium JEE Advanced Solid State course following a structured, coordinate-resolved sequence.",
+export const metadata: Metadata = {
+  title: "Solid State | JEE Advanced | Synergic Bond",
+  description:
+    "The complete JEE Advanced Solid State chapter as an interactive textbook: build crystals in 3D, slice unit cells, derive packing efficiency and radius ratios, watch defects, bands, p-n junctions, superconductors and magnetic domains in action.",
 };
 
-const GROUPS = [
-  { label: "Foundations and crystal classification", from: 1, to: 4 },
-  { label: "Lattice, unit cells and crystal systems", from: 5, to: 10 },
-  { label: "Symmetry, Z, radius relations and density", from: 11, to: 16 },
-  { label: "Packing and void geometry", from: 17, to: 18 },
-  { label: "Radius ratio and important structures", from: 19, to: 20 },
-  { label: "Defects and electrical properties", from: 21, to: 22 },
-  { label: "Magnetic properties", from: 23, to: 23 },
-] as const;
+const TOC: TocItem[] = [
+  { id: "foundations", n: "1", label: "What a crystal is" },
+  { id: "cubic", n: "2", label: "Cubic cells" },
+  { id: "packing", n: "3", label: "Close packing & voids" },
+  { id: "ionic", n: "4", label: "Ionic crystals" },
+  { id: "defects", n: "5", label: "Defects" },
+  { id: "electronic", n: "6", label: "Electrical" },
+  { id: "magnetic", n: "7", label: "Magnetic" },
+  { id: "revision", n: "★", label: "Revision" },
+  { id: "practice", n: "?", label: "Practice & key" },
+];
 
-export default function SolidStatePage() {
-  const groups: LessonGroup[] = GROUPS.map((group) => ({
-    label: group.label,
-    lessons: SOLID_STATE_PARTS
-      .filter((part) => part.part >= group.from && part.part <= group.to)
-      .map((part) => ({
-        href: `/learn/solid-state/${part.part}`,
-        number: `Part ${String(part.part).padStart(2, "0")}`,
-        title: part.title,
-        meta: "JEE Advanced",
-      })),
-  }));
-
+export default async function Page() {
   return (
     <AppShell
-      discipline="JEE Advanced Physical Chemistry"
+      discipline="JEE Advanced · Physical Chemistry"
       chapterTitle="Solid State"
       chapterSlug="solid-state"
-      description="A structured sequence from crystalline and amorphous solids through crystal lattices, unit-cell geometry, Bravais systems, packing, voids, radius ratio, important structures, defects, electrical properties and magnetism."
+      description="Seven parts, from the arrangement of particles to the behaviour of whole crystals. Each concept is built in front of you, derived step by step and tested with exam traps and worked problems. Every part ends with the complete written notes."
       free={true}
-      tabs={[
-        { label: "All 23 parts", href: "/learn/solid-state", active: true },
-        ...GROUPS.map((group, index) => ({
-          label: group.label,
-          href: `/learn/solid-state#solid-group-${index + 1}`,
-        })),
-      ]}
     >
-      <div className="mx-auto max-w-3xl">
-      <section className="mb-8 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
-        <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--text-muted)]">Complete single-page edition</p>
-        <h2 className="mt-2 text-2xl font-black tracking-tight text-white md:text-3xl">89-Page Geometry Master + Advanced Extension</h2>
-        <p className="mt-3 max-w-4xl text-sm leading-7 text-[var(--text-muted)]">
-          Read the complete source-mapped course as one continuous chapter with a page-by-page audit, modified worked examples,
-          original geometry diagrams, diffraction, polyhedral chemistry, defect thermodynamics and deeper electronic and magnetic theory.
-        </p>
-        <Link
-          href="/learn/solid-state/master"
-          className="mt-5 inline-flex rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-3 text-sm font-black text-[var(--foreground)] transition hover:border-[var(--accent)]/40"
-        >
-          Open the Solid State Master →
-        </Link>
-      </section>
-      <ChapterLessonGroups groups={groups} anchorPrefix="solid-group" />
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8 grid gap-3 sm:grid-cols-3">
+          {[
+            ["Build", "Watch every structure assemble in 3D. Slice a cell to see the fraction of each atom that belongs to it."],
+            ["Derive", "Every key result is derived line by line: packing efficiency, c/a, void sizes, radius ratios, spin-only moment."],
+            ["Read in full", "Complete written notes, review points and practice questions follow every part."],
+          ].map(([t, d]) => (
+            <div key={t} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
+              <div className="text-sm font-black uppercase tracking-[0.14em] text-[var(--accent)]">{t}</div>
+              <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{d}</p>
+            </div>
+          ))}
+        </div>
+        <LabToc items={TOC} />
+        <div className="space-y-24 pt-10">
+          <div className="space-y-10">
+            <FoundationsChapter />
+            <MasterNotes parts={[1, 2]} />
+          </div>
+          <div className="space-y-10">
+            <CubicChapter />
+            <MasterNotes parts={[3]} />
+          </div>
+          <div className="space-y-10">
+            <PackingChapter />
+            <MasterNotes parts={[4, 5]} />
+          </div>
+          <div className="space-y-10">
+            <IonicChapter />
+            <MasterNotes parts={[6, 7]} />
+          </div>
+          <div className="space-y-10">
+            <DefectsChapter />
+            <MasterNotes parts={[8]} />
+          </div>
+          <div className="space-y-10">
+            <ElectronicChapter />
+            <MasterNotes parts={[9]} />
+          </div>
+          <div className="space-y-10">
+            <MagneticChapter />
+            <MasterNotes parts={[10]} />
+          </div>
+          <RevisionChapter />
+          <PracticeChapter />
+        </div>
+        <div className="mt-16 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--border)] pt-6 text-sm text-[var(--text-muted)]">
+          <span>Prefer separate pages? The written notes and the 23-part course are available on their own.</span>
+          <span className="flex flex-wrap gap-2">
+            <Link href="/learn/solid-state/master" className="rounded-full border border-[var(--border)] px-4 py-1.5 font-semibold text-[var(--foreground)] hover:border-[var(--accent)]">
+              Open the written notes →
+            </Link>
+            <Link href="/learn/solid-state/course" className="rounded-full border border-[var(--border)] px-4 py-1.5 font-semibold text-[var(--foreground)] hover:border-[var(--accent)]">
+              23-part course →
+            </Link>
+          </span>
+        </div>
       </div>
     </AppShell>
   );

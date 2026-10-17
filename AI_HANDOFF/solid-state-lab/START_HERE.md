@@ -1,6 +1,6 @@
 # Solid State — Interactive Textbook · START HERE
 
-Route: `/learn/solid-state/lab` (premium-gated by `app/learn/solid-state/layout.tsx`; never weaken it).
+Route: `/learn/solid-state` (the interactive textbook replaced the old 23-part index; that index now lives at `/learn/solid-state/course`, and `/learn/solid-state/lab` redirects to the root) (premium-gated by `app/learn/solid-state/layout.tsx`; never weaken it).
 Linked from the Solid State hub (`/learn/solid-state/master`) and the notes explorer
 (`lib/notes/chapterCatalog.ts`: course `solid-state-interactive` + group card `solid-state`).
 
@@ -79,3 +79,21 @@ higher-CN radius-ratio table, T/P effect on CN, 4.7 ideal rock-salt packing
 Fe0.93O worked problems; `FermiLab` (Fermi-Dirac), `CriticalField` (Hc(T),
 Type I/II, Cooper pairs, Pb worked problem); `SusceptLab` (Curie law,
 molar/volume susceptibility, Gouy balance, SQUID, TIP).
+
+## Practice set (`_practice.ts`, `s_practice.tsx`)
+
+87 original-wording questions (49 single-correct, 8 multiple-correct, 28 numerical,
+2 matrix-match) with a worked, animated solution for each and a full answer key.
+Options are shuffled by a fixed per-question seed; `ans` letters are computed from
+`ok` indices, so never type letters by hand. Several numerical values differ from
+their sources; every answer and every math snippet was checked by script. All
+figures are redrawn as text (no copied images). Add questions to the draft arrays.
+
+## Practice set (`_practice.ts`, `s_practice.tsx`)
+
+87 original-wording questions (49 single-correct, 8 multiple-correct, 28 numerical,
+2 matrix-match) with a worked, animated solution for each and a full answer key.
+Options are shuffled by a fixed per-question seed; `ans` letters are computed from
+`ok` indices, so never type letters by hand. Several numerical values differ from
+their sources; every answer and every math snippet was checked by script. All
+figures are redrawn as text (no copied images). Add questions to the draft arrays.

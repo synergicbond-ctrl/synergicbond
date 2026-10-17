@@ -97,3 +97,6 @@ Options are shuffled by a fixed per-question seed; `ans` letters are computed fr
 `ok` indices, so never type letters by hand. Several numerical values differ from
 their sources; every answer and every math snippet was checked by script. All
 figures are redrawn as text (no copied images). Add questions to the draft arrays.
+
+## Part 8 "Going deeper" (`lab/s_west.tsx`)
+Original-wording extras inspired by a university solid-state course (Kröger–Vink notation, aliovalent doping/YSZ, perovskite tolerance factor + lab, spinel normal/inverse, fullerene Euler derivation + lab, crystallographic restriction). Derivations 8.1–8.5. Book text is not copied.

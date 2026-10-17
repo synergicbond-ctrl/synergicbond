@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Stage, type CameraPose, type StageAtom, type StageBond, type V3 } from "./_stage";
 import { C, CORNERS, FACES, cubeEdges, latticePoints, neighbourShells } from "./_geom";
 import { plainDist } from "./_dist";
@@ -280,6 +280,115 @@ function CellMap({ kind, shells, shown }: { kind: Kind; shells: { n: number; d: 
   );
 }
 
+
+/* ------------------------- animated cube: how one shell distance is calculated */
+
+const coefTex = (x: number) => {
+  const n = Math.round(x * 2);
+  const whole = Math.floor(n / 2);
+  const half = n % 2 === 1;
+  if (!half) return whole === 1 ? "a" : `${whole}a`;
+  return whole === 0 ? "\\tfrac12 a" : `${whole}\\tfrac12 a`;
+};
+
+function ShellCube({ kind, shells, shown, cap }: { kind: Kind; shells: { n: number; d: number }[]; shown: number; cap: number }) {
+  const si = Math.min(shown, shells.length) - 1;
+  const sh = shells[si];
+  const rep = useMemo(() => {
+    const pts = latticePoints(kind, cap + 0.01).filter((q) => Math.abs(q.d - sh.d) < 1e-3).map((q) => [q.p[0] / 2, q.p[1] / 2, q.p[2] / 2] as V3);
+    return repOf(pts);
+  }, [kind, cap, sh.d]);
+  const key = `${kind}-${si}`;
+  const [st, setSt] = useState({ key, step: 4, playing: false });
+  const step = st.key === key ? st.step : 4;
+  const playing = st.key === key && st.playing;
+  const stepRef = useRef(step);
+  useEffect(() => {
+    stepRef.current = step;
+  });
+  useEffect(() => {
+    if (!playing) return;
+    const id = window.setInterval(() => {
+      if (stepRef.current >= 4) {
+        setSt((o) => ({ ...o, playing: false }));
+        return;
+      }
+      setSt((o) => ({ ...o, step: stepRef.current + 1 }));
+    }, 2200);
+    return () => window.clearInterval(id);
+  }, [playing, key]);
+
+  const [x, y, z] = rep.v;
+  const O: V3 = [-1, -1, -1];
+  const at = (u: number, v: number, w: number): V3 => [O[0] + 2 * u, O[1] + 2 * v, O[2] + 2 * w];
+  const P0 = at(0, 0, 0), P1 = at(x, 0, 0), P2 = at(x, y, 0), P3 = at(x, y, z);
+  const ext = Math.max(1, x, y, z);
+  const colour = SHELL_COLORS[si % SHELL_COLORS.length];
+  const octant = useMemo(() => latticePoints(kind, cap + 0.01).filter((q) => q.p[0] >= -1e-6 && q.p[1] >= -1e-6 && q.p[2] >= -1e-6), [kind, cap]);
+  const atoms: StageAtom[] = octant.map(({ p, d }, i) => {
+    const pos = at(p[0] / 2, p[1] / 2, p[2] / 2);
+    if (d < 1e-6) return { id: `a${i}`, p: pos, r: 0.2, color: C.white, glow: true };
+    const inShell = Math.abs(d - sh.d) < 1e-3;
+    return { id: `a${i}`, p: pos, r: 0.17, color: inShell ? colour : "#6b7c80", opacity: inShell ? 1 : 0.22, glow: false };
+  });
+  const target: StageAtom = { id: "target", p: P3, r: 0.27, color: colour, glow: true, scale: step >= 0 ? 1 : 0, opacity: 1 };
+  const bonds: StageBond[] = [
+    { id: "lx", a: P0, b: P1, r: 0.05, color: "#ff6b6b", scale: step >= 1 && x > 0 ? 1 : 0, opacity: 1 },
+    { id: "ly", a: P1, b: P2, r: 0.05, color: "#6bdc8b", scale: step >= 2 && y > 0 ? 1 : 0, opacity: 1 },
+    { id: "lz", a: P2, b: P3, r: 0.05, color: "#6bb5ff", scale: step >= 3 && z > 0 ? 1 : 0, opacity: 1 },
+    { id: "ld", a: P0, b: P3, r: 0.075, color: "#fff1b8", scale: step >= 4 ? 1 : 0, opacity: 1 },
+  ];
+  const lines = useMemo(() => cubeEdges("sc"), []);
+  const d2 = Math.round(sh.d * sh.d * 4);
+  const gcd2 = (m: number, n: number): number => (n === 0 ? m : gcd2(n, m % n));
+  const reduce = (n: number, m: number) => { const g = gcd2(n, m); return [n / g, m / g]; };
+  const [ns, ds] = reduce(d2, 4);
+  const sumTex = ds === 1 ? (ns === 1 ? "a^2" : `${ns}a^2`) : `\\tfrac{${ns}}{${ds}}a^2`;
+  const term = (c: number) => (c === 0 ? "0^2" : c === 1 ? "a^2" : `\\left(${coefTex(c)}\\right)^2`);
+  const lines3 = [
+    { show: step >= 0, tex: `\\text{target atom at } (${rep.v.map((c) => (c === 0 ? "0" : coefTex(c))).join(",\\,")})`, tag: "Where" },
+    { show: step >= 1, tex: `\\Delta x = ${x === 0 ? "0" : coefTex(x)}`, tag: "Step 1" },
+    { show: step >= 2, tex: `\\Delta y = ${y === 0 ? "0" : coefTex(y)}`, tag: "Step 2" },
+    { show: step >= 3, tex: `\\Delta z = ${z === 0 ? "0" : coefTex(z)}`, tag: "Step 3" },
+    { show: step >= 4, tex: `d^2 = \\Delta x^2 + \\Delta y^2 + \\Delta z^2 = ${term(x)} + ${term(y)} + ${term(z)} = ${sumTex}`, tag: "Pythagoras" },
+    { show: step >= 4, tex: `d = ${plainDist(d2, 2).replace(/√(\d+)/g, "\\sqrt{$1}").replace(/ a\/(\d+)/, "\\,a/$1").replace(/ a$/, "\\,a")} \\approx ${sh.d.toFixed(3)}\\,a`, tag: "Answer" },
+  ];
+  const says = [
+    `The **white** atom is our reference atom at a corner of the cell. The **coloured** atom is one of the ${sh.n} atoms in shell ${si + 1}. ${describePos(kind, rep)}.`,
+    `Walk along the cell edge in the **x** direction (red): ${x === 0 ? "no distance" : coefTex(x).replace(/\\tfrac12/g, "½").replace(/\s/g, "")}.`,
+    `Now walk in the **y** direction (green): ${y === 0 ? "no distance" : coefTex(y).replace(/\\tfrac12/g, "½").replace(/\s/g, "")}.`,
+    `Finally walk in the **z** direction (blue): ${z === 0 ? "no distance" : coefTex(z).replace(/\\tfrac12/g, "½").replace(/\s/g, "")}.`,
+    `The straight gold line is the real distance. Square each step, add them, and take the square root: that is Pythagoras in 3D.`,
+  ];
+  return (
+    <div className="grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+      <div className="space-y-3">
+        <Stage atoms={[...atoms, target]} bonds={bonds} lines={lines} camera={{ key: `sc-${key}`, az: 0.75, el: 0.42, dist: 7 + 2.2 * ext }} autoRotate={step === 4} floorY={-1.6 - 0.3 * ext} height={420} label={`Distance from the corner atom to shell ${si + 1}, built step by step in a cube`} hint="drag to look around" />
+        <Narration k={`${key}-${step}`}>
+          <Rich text={says[step]} />
+        </Narration>
+      </div>
+      <div className="space-y-4">
+        <div className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--text-muted)]">How the distance for shell {si + 1} is worked out</div>
+        <div className="space-y-2">
+          {lines3.map((l) => (
+            <div key={l.tag} className={`flex items-baseline gap-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 ${l.show ? "" : "opacity-0"}`}>
+              <span className="w-20 shrink-0 text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--accent)]">{l.tag}</span>
+              <span className="min-w-0 overflow-x-auto"><Tex ex={l.tex} /></span>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <Btn primary onClick={() => setSt({ key, step: 0, playing: true })}>▶ Animate</Btn>
+          <Btn onClick={() => setSt({ key, step: Math.max(0, step - 1), playing: false })}>◀</Btn>
+          <Btn onClick={() => setSt({ key, step: Math.min(4, step + 1), playing: false })}>▶</Btn>
+          <span className="text-sm text-[var(--text-muted)]">Change the shell with the slider above.</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ShellExplorer() {
   const [kind, setKind] = useState<Kind>("fcc");
   const [shown, setShown] = useState(2);
@@ -314,6 +423,7 @@ function ShellExplorer() {
         </p>
       </div>
     </div>
+    <ShellCube kind={kind} shells={shells} shown={shown} cap={cap} />
     <div className="overflow-x-auto rounded-xl border border-[var(--border)]">
           <table className="w-full min-w-[640px] text-sm">
             <thead className="bg-[var(--surface)] text-left text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]">

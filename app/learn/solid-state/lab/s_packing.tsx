@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Stage, type CameraPose, type StageAtom, type StageBond, type StagePoly, type V3 } from "./_stage";
 import { C, CORNERS, EDGE_CENTRES, FACES, SQ3, TETRA_ALL, TETRA_ALT, bondsBetween, cubeEdges, hcpCell, hexPrismEdges } from "./_geom";
 import { HcpDrawingFig, HcpFig, HcpLayerFig, VoidFig } from "./_figs";
@@ -411,6 +411,146 @@ function HcpFloors() {
   );
 }
 
+
+/* ---------------------------------------- animated 3D tour of the HCP holes */
+
+const TOUR_STEPS = [
+  "Start with **layer A**: 7 balls packed like a flower. One ball in the middle, six around it.",
+  "Add **layer B**: 3 balls. Each one sits in a dip between three balls of layer A, like oranges stacked in a shop.",
+  "Put **layer A** on top again. A, B, A: this is the hexagonal box (unit cell). It holds 6 balls.",
+  "Now look for gaps. These pink dots are **small holes**, first floor, just above the bottom layer. The glowing balls are the **4 balls** that touch one hole: a tiny pyramid. This floor has **3 small holes**.",
+  "Second floor of small holes. One sits above the middle ball, and 6 sit at the corners. Corner holes are shared by 3 boxes, so they count ⅓ each: 1 + 6 × ⅓ = **3 small holes**.",
+  "Third floor: the same pattern, a mirror image of the second. **3 more small holes**.",
+  "Top floor: **3 small holes**, a mirror image of the first floor. Running total: 3 + 3 + 3 + 3 = **12 small holes**, which is 2 for each of the 6 balls.",
+  "All **12 small holes** at once (drawn a little larger so you can see them). Each fits a ball up to 0.225 times as big as the big balls.",
+  "Now the **big holes** (white). Each one is surrounded by **6 balls**: 3 below and 3 above, turned against each other, like two pyramids glued base to base. This floor has **3 big holes**.",
+  "Another **3 big holes** just under the top layer. Total: **6 big holes**, which is 1 for each ball. A ball up to 0.414 times as big fits in one.",
+  "Both together: in a box of 6 balls there are **12 small holes** and **6 big holes**. Rule for any close-packed crystal: for N balls, **2N small holes** and **N big holes**.",
+];
+
+function HcpTour() {
+  const R = 0.62;
+  const cell = useMemo(() => hcpCell(R), []);
+  const { a, c } = cell;
+  const q = a / SQ3;
+  const [step, setStep] = useState(0);
+  const [playing, setPlaying] = useState(false);
+  const stepRef = useRef(0);
+  useEffect(() => {
+    stepRef.current = step;
+  });
+  useEffect(() => {
+    if (!playing) return;
+    const id = window.setInterval(() => {
+      if (stepRef.current >= TOUR_STEPS.length - 1) {
+        setPlaying(false);
+        return;
+      }
+      setStep(stepRef.current + 1);
+    }, 4600);
+    return () => window.clearInterval(id);
+  }, [playing]);
+
+  const pol = (rad: number, deg: number): [number, number] => [rad * Math.cos((deg * Math.PI) / 180), rad * Math.sin((deg * Math.PI) / 180)];
+  const bPos: [number, number][] = [30, 150, 270].map((d) => pol(q, d));
+  const oPos: [number, number][] = [90, 210, 330].map((d) => pol(q, d));
+  const cornersXZ: [number, number][] = [0, 60, 120, 180, 240, 300].map((d) => pol(a, d));
+
+  const floors = {
+    f1: bPos.map(([x, z]) => [x, -(3 * c) / 8, z] as V3),
+    f3: [[0, -c / 8, 0] as V3, ...cornersXZ.map(([x, z]) => [x, -c / 8, z] as V3)],
+    f5: [[0, c / 8, 0] as V3, ...cornersXZ.map(([x, z]) => [x, c / 8, z] as V3)],
+    f7: bPos.map(([x, z]) => [x, (3 * c) / 8, z] as V3),
+    o2: oPos.map(([x, z]) => [x, -c / 4, z] as V3),
+    o6: oPos.map(([x, z]) => [x, c / 4, z] as V3),
+  };
+  const smallShown: V3[] = step >= 7 && step <= 7 ? [...floors.f1, ...floors.f3, ...floors.f5, ...floors.f7] : step >= 10 ? [...floors.f1, ...floors.f3, ...floors.f5, ...floors.f7] : [
+    ...(step >= 3 && step <= 6 ? floors.f1 : []),
+    ...(step >= 4 && step <= 6 ? floors.f3 : []),
+    ...(step >= 5 && step <= 6 ? floors.f5 : []),
+    ...(step >= 6 && step <= 6 ? floors.f7 : []),
+  ];
+  const bigShown: V3[] = step >= 10 ? [...floors.o2, ...floors.o6] : [...(step >= 8 ? floors.o2 : []), ...(step >= 9 ? floors.o6 : [])];
+
+  // the one hole whose neighbours we highlight on each step
+  const focus: V3 | null = step === 3 ? floors.f1[0] : step === 4 ? floors.f3[0] : step === 5 ? floors.f5[0] : step === 6 ? floors.f7[0] : step === 8 ? floors.o2[0] : step === 9 ? floors.o6[0] : null;
+
+  const balls: { id: string; p: V3; layer: "A" | "B" | "T" }[] = [
+    ...cell.corner.map((p, i) => ({ id: `c${i}`, p, layer: (i < 6 ? "A" : "T") as "A" | "T" })),
+    { id: "fa", p: cell.face[0], layer: "A" as const },
+    { id: "ft", p: cell.face[1], layer: "T" as const },
+    ...cell.inner.map((p, i) => ({ id: `b${i}`, p, layer: "B" as const })),
+  ];
+  // balls outside the box that also touch a big hole near the edge
+  const extra: { id: string; p: V3 }[] = [90, 210, 330].map((d, i) => { const [x, z] = pol(2 * q, d); return { id: `x${i}`, p: [x, 0, z] as V3 }; });
+  const pool = [...balls.map((b) => ({ id: b.id, p: b.p })), ...extra];
+  const want = focus ? (step >= 8 ? 6 : 4) : 0;
+  const near = focus ? [...pool].sort((m, n) => dist(m.p, focus) - dist(n.p, focus)).slice(0, want) : [];
+  const nearIds = new Set(near.map((n) => n.id));
+
+  const atoms: StageAtom[] = [
+    ...balls.map((b) => {
+      const shownLayer = b.layer === "A" ? true : b.layer === "B" ? step >= 1 : step >= 2;
+      const holeMode = step >= 3;
+      const lit = nearIds.has(b.id);
+      const op = !holeMode ? 0.95 : lit ? 0.5 : 0.1;
+      const col = b.layer === "B" ? C.gold : C.blue;
+      return { id: b.id, p: b.p, r: R, color: lit ? (b.layer === "B" ? "#ffd37a" : "#8fc7ff") : col, scale: shownLayer ? 1 : 0, opacity: op, glow: lit, from: [b.p[0], b.p[1] + (b.layer === "T" ? 3 : b.layer === "B" ? 2.4 : 0), b.p[2]] as V3 };
+    }),
+    ...extra.map((x) => ({ id: x.id, p: x.p, r: R, color: "#ffd37a", scale: nearIds.has(x.id) ? 1 : 0, opacity: 0.55, glow: true })),
+    ...smallShown.map((p) => ({ id: `s${p.map((v) => v.toFixed(2)).join("_")}`, p, r: 0.2247 * R * 1.8, color: C.rose, glow: true, scale: 1, from: [p[0], p[1] - 0.6, p[2]] as V3, opacity: 1 }) as StageAtom),
+    ...bigShown.map((p) => ({ id: `o${p.map((v) => v.toFixed(2)).join("_")}`, p, r: 0.414 * R * 1.3, color: "#ffffff", glow: true, scale: 1, from: [p[0], p[1] - 0.6, p[2]] as V3, opacity: 1 }) as StageAtom),
+  ];
+  const lines = useMemo(() => hexPrismEdges("tp", a, c), [a, c]);
+  const polys: StagePoly[] = [];
+  if (focus && near.length) {
+    const vs = near.map((n) => n.p);
+    const faces: number[][] = [];
+    const edge = 2 * R * 1.02;
+    for (let i = 0; i < vs.length; i++) for (let j = i + 1; j < vs.length; j++) for (let k = j + 1; k < vs.length; k++) {
+      if (dist(vs[i], vs[j]) < edge && dist(vs[j], vs[k]) < edge && dist(vs[i], vs[k]) < edge) faces.push([i, j, k]);
+    }
+    polys.push({ id: "hl", verts: vs, faces, color: step >= 8 ? "#ffffff" : C.rose, opacity: 0.32 });
+  }
+  const cams: CameraPose[] = [
+    { key: "t0", az: 0.6, el: 0.55, dist: 10.5 },
+    { key: "t1", az: 0.9, el: 0.5, dist: 10.5 },
+    { key: "t2", az: 0.5, el: 0.35, dist: 11 },
+    { key: "t3", az: 0.2, el: 0.3, dist: 11.5, target: [0, -c / 3, 0] },
+    { key: "t4", az: 1.0, el: 0.3, dist: 11.5, target: [0, -c / 8, 0] },
+    { key: "t5", az: 1.8, el: 0.3, dist: 11.5, target: [0, c / 8, 0] },
+    { key: "t6", az: 2.6, el: 0.3, dist: 11.5, target: [0, c / 3, 0] },
+    { key: "t7", az: 0.5, el: 0.4, dist: 11 },
+    { key: "t8", az: 0.3, el: 0.3, dist: 12, target: [0, -c / 4, 0] },
+    { key: "t9", az: 1.6, el: 0.3, dist: 12, target: [0, c / 4, 0] },
+    { key: "t10", az: 0.55, el: 0.4, dist: 11.5 },
+  ];
+  const smallCount = step < 3 ? 0 : step === 3 ? 3 : step === 4 ? 6 : step === 5 ? 9 : 12;
+  const bigCount = step < 8 ? 0 : step === 8 ? 3 : 6;
+  return (
+    <div className="space-y-4">
+      <Stage atoms={atoms} lines={lines} polys={polys} camera={cams[step]} autoRotate={step === 0 || step === 2 || step === 7 || step === 10} floorY={-2.5} height={520} label="Animated 3D tour of the small and big holes in an HCP cell" hint="drag to look around" />
+      <Narration k={step}>
+        <Rich text={TOUR_STEPS[step]} />
+      </Narration>
+      <div className="flex flex-wrap items-center gap-3">
+        <Btn primary onClick={() => { setStep(0); setPlaying(true); }}>
+          ▶ Play the tour
+        </Btn>
+        <Btn onClick={() => { setPlaying(false); setStep((v) => Math.max(0, v - 1)); }}>◀ Back</Btn>
+        <Btn onClick={() => { setPlaying(false); setStep((v) => Math.min(TOUR_STEPS.length - 1, v + 1)); }}>Next ▶</Btn>
+        <span className="text-sm text-[var(--text-muted)]">Step {step + 1} of {TOUR_STEPS.length}</span>
+        <div className="ml-auto flex gap-3 text-sm">
+          <span className="rounded-lg border border-[var(--border)] px-3 py-1.5">Small holes <b className="ml-1 font-mono text-rose-300">{smallCount}</b> <span className="text-[var(--text-muted)]">/ 12</span></span>
+          <span className="rounded-lg border border-[var(--border)] px-3 py-1.5">Big holes <b className="ml-1 font-mono">{bigCount}</b> <span className="text-[var(--text-muted)]">/ 6</span></span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const dist = (m: V3, n: V3) => Math.hypot(m[0] - n[0], m[1] - n[1], m[2] - n[2]);
+
 /* --------------------------------------------------- voids in the HCP cell */
 
 function HcpVoids() {
@@ -631,6 +771,8 @@ export function PackingChapter() {
         </KeyIdea>
       </div>
       <P t="**Rule to remember:** for every **1** ball there are **2 small holes** and **1 big hole**. The hexagonal box (unit cell) has 6 balls, so it has **12 small holes** and **6 big holes**. Walk up the box floor by floor and count them yourself." />
+      <HcpTour />
+      <P t="Prefer to count on paper? Slide through the floors from above." />
       <HcpFloors />
       <P t="Now the same box in 3D, and a side view that shows the exact height of each kind of hole." />
       <HcpVoids />

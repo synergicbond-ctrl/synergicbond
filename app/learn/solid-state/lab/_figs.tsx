@@ -489,3 +489,47 @@ export function CurieFig() {
     </Fig>
   );
 }
+
+/** Side elevation of the HCP cell: layers A-B-A with every void level marked. */
+export function HcpLayerFig() {
+  const Y = (f: number) => 238 - f * 210;
+  const rows: { f: number; kind: "A" | "B" | "T" | "O"; tag: string }[] = [
+    { f: 0, kind: "A", tag: "A" },
+    { f: 1 / 8, kind: "T", tag: "T.V.  h/8" },
+    { f: 2 / 8, kind: "O", tag: "O.V.  2h/8" },
+    { f: 3 / 8, kind: "T", tag: "T.V.  3h/8" },
+    { f: 4 / 8, kind: "B", tag: "B" },
+    { f: 5 / 8, kind: "T", tag: "T.V.  5h/8" },
+    { f: 6 / 8, kind: "O", tag: "O.V.  6h/8" },
+    { f: 7 / 8, kind: "T", tag: "T.V.  7h/8" },
+    { f: 1, kind: "A", tag: "A" },
+  ];
+  const xs = (n: number, x0: number, x1: number) => Array.from({ length: n }, (_, i) => x0 + ((x1 - x0) * i) / (n - 1));
+  return (
+    <Fig label="Heights of the tetrahedral and octahedral voids in an HCP cell" caption="Side view of the hexagonal cell of height h (also written c). Atoms sit in layers A, B, A. Tetrahedral voids (rose) lie at h/8, 3h/8, 5h/8 and 7h/8; octahedral voids (white) lie midway between an A layer and the B layer, at 2h/8 and 6h/8." w={360} h={270}>
+      {rows.map((r) => (
+        <g key={r.f}>
+          <Seg a={[70, Y(r.f)]} b={[270, Y(r.f)]} c="#9bb8b3" w={1} dash="3 4" o={0.6} />
+          <T x={62} y={Y(r.f) + 4} size={11} anchor="end" color={r.kind === "T" ? "#f5a3b3" : r.kind === "O" ? "#e8f4f2" : "#b8cbc7"} italic={false}>
+            {r.tag}
+          </T>
+          {r.kind === "A" && xs(5, 90, 250).map((x) => <Ball key={x} x={x} y={Y(r.f)} r={9} c={BLUE} />)}
+          {r.kind === "B" && xs(3, 120, 220).map((x) => <Ball key={x} x={x} y={Y(r.f)} r={9} c={GOLD} />)}
+          {r.kind === "T" && xs(3, 110, 230).map((x) => <circle key={x} cx={x} cy={Y(r.f)} r={5} fill={ROSE} stroke="#fff" strokeWidth={1} />)}
+          {r.kind === "O" && xs(3, 110, 230).map((x) => <circle key={x} cx={x} cy={Y(r.f)} r={5.5} fill="#f4f1e8" stroke={INK} strokeWidth={1} />)}
+        </g>
+      ))}
+      <Seg a={[288, Y(0)]} b={[288, Y(0.5)]} c="#7fd3ff" w={1.6} />
+      <Seg a={[283, Y(0)]} b={[293, Y(0)]} c="#7fd3ff" w={1.6} />
+      <Seg a={[283, Y(0.5)]} b={[293, Y(0.5)]} c="#7fd3ff" w={1.6} />
+      <T x={312} y={(Y(0) + Y(0.5)) / 2 + 5} size={14} color="#7fd3ff">
+        h/2
+      </T>
+      <Seg a={[288, Y(0.5)]} b={[288, Y(1)]} c="#f5a3b3" w={1.6} />
+      <Seg a={[283, Y(1)]} b={[293, Y(1)]} c="#f5a3b3" w={1.6} />
+      <T x={312} y={(Y(0.5) + Y(1)) / 2 + 5} size={14} color="#f5a3b3">
+        h/2
+      </T>
+    </Fig>
+  );
+}

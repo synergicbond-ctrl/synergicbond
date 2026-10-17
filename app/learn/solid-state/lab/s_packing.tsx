@@ -3,7 +3,7 @@
 import { useMemo, useState, type ReactNode } from "react";
 import { Stage, type CameraPose, type StageAtom, type StageBond, type StagePoly, type V3 } from "./_stage";
 import { C, CORNERS, EDGE_CENTRES, FACES, SQ3, TETRA_ALL, TETRA_ALT, bondsBetween, cubeEdges, hcpCell, hexPrismEdges } from "./_geom";
-import { HcpFig, VoidFig } from "./_figs";
+import { HcpFig, HcpLayerFig, VoidFig } from "./_figs";
 import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Tabs, Tex, Traps, Worked, useTour, useTween } from "./_ui";
 
 /* ------------------------------------------------------ 2D packing morph */
@@ -296,6 +296,62 @@ function HcpCell() {
   );
 }
 
+
+/* --------------------------------------------------- voids in the HCP cell */
+
+function HcpVoids() {
+  const r = 0.62;
+  const cell = useMemo(() => hcpCell(r), []);
+  const [show, setShow] = useState<"tet" | "oct">("tet");
+  const [one, setOne] = useState(false);
+  const { a, c } = cell;
+  const q = a / SQ3;
+  const pol = (rad: number, deg: number): [number, number] => [rad * Math.cos((deg * Math.PI) / 180), rad * Math.sin((deg * Math.PI) / 180)];
+  const host: StageAtom[] = [
+    ...cell.corner.map((p, i) => ({ id: `vc${i}`, p, r: r * 0.9, color: C.blue, opacity: 0.24 })),
+    ...cell.face.map((p, i) => ({ id: `vf${i}`, p, r: r * 0.9, color: C.blue, opacity: 0.24 })),
+    ...cell.inner.map((p, i) => ({ id: `vi${i}`, p, r: r * 0.9, color: C.gold, opacity: 0.3 })),
+  ];
+  const tv: V3[] = [];
+  for (const s of [-1, 1]) {
+    tv.push([0, s * (c / 2 - (3 * c) / 8) * 1, 0]); // above and below the hexagon-centre atoms
+    for (const p of cell.inner) tv.push([p[0], s * ((3 * c) / 8), p[2]]); // above and below each B atom
+    for (let k = 0; k < 6; k++) { const [x, z] = pol(a, k * 60); tv.push([x, s * (c / 8), z]); } // corners (shared by three cells)
+  }
+  const ov: V3[] = [];
+  for (const s of [-1, 1]) for (const d of [90, 210, 330]) { const [x, z] = pol(q, d); ov.push([x, s * (c / 4), z]); }
+  const voidAtoms: StageAtom[] =
+    show === "tet"
+      ? tv.map((p, i) => ({ id: `tv${i}`, p, r: 0.2247 * r, color: C.rose, glow: true }))
+      : ov.map((p, i) => ({ id: `ov${i}`, p, r: 0.414 * r, color: "#ffffff", glow: true }));
+  const lines = useMemo(() => hexPrismEdges("vp", a, c), [a, c]);
+  const apex: V3 = [0, -c / 2, 0];
+  const tri: V3[] = cell.inner;
+  const polys: StagePoly[] = one && show === "tet" ? [{ id: "one", verts: [apex, ...tri], faces: [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]], color: C.rose, opacity: 0.4 }] : [];
+  return (
+    <div className="space-y-5">
+      <div className="grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+        <div className="space-y-3">
+          <Stage atoms={[...host, ...voidAtoms]} lines={lines} polys={polys} camera={{ key: "hv", az: 0.5, el: 0.4, dist: 10.5 }} autoRotate floorY={-2.4} height={500} label="Tetrahedral and octahedral voids in an HCP cell" />
+          <Narration k={`${show}-${one}`}>
+            {show === "tet" ? (
+              <Rich text="**Tetrahedral voids.** One lies directly above and one directly below **every** atom: 6 atoms × 2 = **12** per cell. Counting by position: 2 over the hexagon-centre atoms, 6 over the three middle-layer atoms, and 12 at the corners that are each shared by three cells, 12 × ⅓ = 4. Total 2 + 6 + 4 = 12. They sit at heights h/8, 3h/8, 5h/8, 7h/8." />
+            ) : (
+              <Rich text="**Octahedral voids.** They sit midway between an A layer and the B layer, three at height h/4 and three at 3h/4, all wholly inside the cell: **6 per cell**, one per atom, exactly as in FCC." />
+            )}
+          </Narration>
+        </div>
+        <div className="space-y-4">
+          <Tabs label="Void type" value={show} onChange={setShow} items={[["tet", "Tetrahedral"], ["oct", "Octahedral"]] as const} />
+          {show === "tet" && <Btn onClick={() => setOne((o) => !o)}>{one ? "Hide one tetrahedron" : "Show one tetrahedron"}</Btn>}
+          <Facts items={[["Atoms per cell", "6"], ["Tetrahedral voids", "12 (2 per atom)"], ["Octahedral voids", "6 (1 per atom)"], ["Void radii", "0.225 R and 0.414 R"]]} cols={2} />
+          <HcpLayerFig />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ------------------------------------------------------ voids in FCC */
 
 function VoidsExplorer() {
@@ -442,6 +498,10 @@ export function PackingChapter() {
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Tetrahedral and octahedral voids</h3>
       <P t="No matter how spheres are stacked, gaps remain. Two kinds matter. A **tetrahedral void** is surrounded by four spheres; an **octahedral void** by six. Small ions in ionic crystals occupy these voids." />
       <VoidsExplorer />
+
+      <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Voids in the HCP cell</h3>
+      <P t="The same two kinds of void exist in hexagonal close packing, and in the same numbers: **2 tetrahedral and 1 octahedral void per atom**. Their positions follow the A-B-A layering. Switch between the two kinds, and compare the heights with the side view." />
+      <HcpVoids />
 
       <div className="grid gap-4 md:grid-cols-2">
         <Traps

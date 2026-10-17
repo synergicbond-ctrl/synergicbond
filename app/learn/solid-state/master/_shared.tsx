@@ -352,7 +352,7 @@ function SolidStateFigure({ id, caption }: { id: string; caption: string }) {
 
   if (id === "magnetic-order") {
     const arrow=(x:number,y:number,up:boolean,fill:string)=><g><line x1={x} y1={up?y+25:y-25} x2={x} y2={up?y-25:y+25} stroke={fill} strokeWidth="5"/><path d={up?`M${x-8},${y-18} L${x},${y-32} L${x+8},${y-18}`:`M${x-8},${y+18} L${x},${y+32} L${x+8},${y+18}`} fill="none" stroke={fill} strokeWidth="5"/></g>;
-    const group=(base:number,label:string,mode:number)=><g><text x={base+105} y="38" textAnchor="middle" fill="#f8fafc" fontSize="18" fontWeight="700">{label}</text>{Array.from({length:8},(_,i)=>{const col=i%4,row=Math.floor(i/4); const up=mode===0?true:mode===1?(i%2===0):i<4; const fill=mode===2&&i>=4?"#c4b5fd":"#67e8f9"; return arrow(base+45+col*42,120+row*105,up,fill);})}</g>;
+    const group=(base:number,label:string,mode:number)=><g><text x={base+105} y="38" textAnchor="middle" fill="#f8fafc" fontSize="18" fontWeight="700">{label}</text>{Array.from({length:8},(_,i)=>{const col=i%4,row=Math.floor(i/4); const up=mode===0?true:mode===1?(i%2===0):i<4; const fill=mode===2&&i>=4?"#c4b5fd":"#67e8f9"; return <g key={i}>{arrow(base+45+col*42,120+row*105,up,fill)}</g>;})}</g>;
     return <FigureFrame caption={caption}><svg {...commonSvg} aria-label="Ferromagnetic antiferromagnetic and ferrimagnetic order">{group(60,"ferromagnetic",0)}{group(350,"antiferromagnetic",1)}{group(650,"ferrimagnetic",2)}</svg></FigureFrame>;
   }
 
@@ -393,6 +393,18 @@ function getExampleNumber(part: SolidStatePart, sectionIndex: number, blockIndex
     .filter((block) => block.kind === "example").length;
 }
 
+export function PartArticle({ part }: { part: SolidStatePart }) {
+  return (
+    <article className="mx-auto max-w-3xl">
+        {part.sections.map((section,sectionIndex)=><section key={section.title} id={slugify(section.title)} className={`${sectionIndex?"mt-14 border-t border-[var(--border)] pt-12":""} scroll-mt-32`}><h2 className="text-2xl font-black tracking-tight text-[var(--foreground)] md:text-3xl">{section.title}</h2><div className="mt-6 space-y-5">{section.blocks.map((block,blockIndex)=><BlockView key={`${section.title}-${blockIndex}`} block={block} exampleNumber={block.kind==="example"?getExampleNumber(part,sectionIndex,blockIndex):0}/>)}</div></section>)}
+
+        <section className="mt-14 border-t border-[var(--border)] pt-12"><h2 className="text-2xl font-black text-[var(--foreground)] md:text-3xl">Part review</h2><div className="mt-6 grid gap-3">{part.review.map((item,index)=><div key={item} className="flex gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3.5"><span className="font-black text-[var(--accent)]">{index+1}</span><p className="leading-7 text-[var(--text-body)]"><RichText text={item}/></p></div>)}</div></section>
+
+        <section className="mt-12 border-t border-[var(--border)] pt-12"><h2 className="text-2xl font-black text-[var(--foreground)] md:text-3xl">Practice questions</h2><ol className="mt-6 space-y-4 pl-7 text-[15.5px] leading-8 text-[var(--text-body)] marker:font-black marker:text-[var(--accent)] md:text-base">{part.practice.map(q=><li key={q} className="list-decimal pl-2"><RichText text={q}/></li>)}</ol></section>
+    </article>
+  );
+}
+
 export function SolidStatePartPage({ part }: { part: SolidStatePart }) {
   const previous = SOLID_STATE_PARTS[part.number - 2];
   const next = SOLID_STATE_PARTS[part.number];
@@ -410,13 +422,7 @@ export function SolidStatePartPage({ part }: { part: SolidStatePart }) {
       prevRef={previous ? { href: `/learn/solid-state/master/part${String(previous.number).padStart(2, "0")}`, label: previous.shortTitle } : undefined}
       nextRef={next ? { href: `/learn/solid-state/master/part${String(next.number).padStart(2, "0")}`, label: next.shortTitle } : undefined}
     >
-      <article className="mx-auto max-w-3xl">
-        {part.sections.map((section,sectionIndex)=><section key={section.title} id={slugify(section.title)} className={`${sectionIndex?"mt-14 border-t border-[var(--border)] pt-12":""} scroll-mt-32`}><h2 className="text-2xl font-black tracking-tight text-[var(--foreground)] md:text-3xl">{section.title}</h2><div className="mt-6 space-y-5">{section.blocks.map((block,blockIndex)=><BlockView key={`${section.title}-${blockIndex}`} block={block} exampleNumber={block.kind==="example"?getExampleNumber(part,sectionIndex,blockIndex):0}/>)}</div></section>)}
-
-        <section className="mt-14 border-t border-[var(--border)] pt-12"><h2 className="text-2xl font-black text-[var(--foreground)] md:text-3xl">Part review</h2><div className="mt-6 grid gap-3">{part.review.map((item,index)=><div key={item} className="flex gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3.5"><span className="font-black text-[var(--accent)]">{index+1}</span><p className="leading-7 text-[var(--text-body)]"><RichText text={item}/></p></div>)}</div></section>
-
-        <section className="mt-12 border-t border-[var(--border)] pt-12"><h2 className="text-2xl font-black text-[var(--foreground)] md:text-3xl">Practice questions</h2><ol className="mt-6 space-y-4 pl-7 text-[15.5px] leading-8 text-[var(--text-body)] marker:font-black marker:text-[var(--accent)] md:text-base">{part.practice.map(q=><li key={q} className="list-decimal pl-2"><RichText text={q}/></li>)}</ol></section>
-      </article>
+      <PartArticle part={part} />
     </AppShell>
   );
 }

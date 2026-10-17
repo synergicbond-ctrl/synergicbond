@@ -17,9 +17,18 @@ Linked from the Solid State hub (`/learn/solid-state/master`) and the notes expl
 | `s_electronic.tsx` | Part 6: tight-binding bands, gap vs T, doping, p–n junction, superconductors (Meissner field lines) |
 | `s_magnetic.tsx` | Part 7: Hund's rule / spin-only moment, ordering, hysteresis (per-domain switching fields) |
 | `s_revision.tsx` | Formula sheet and confusions (server component) |
+| `_fulltext.tsx` | Server components: `MasterNotes` embeds Master Notes parts 1-10 after the matching lab part (1,2 / 3 / 4,5 / 6,7 / 8 / 9 / 10); `SourceCourse` appends all 23 parts of the original course |
+| `_notes.tsx` | `Fold`: native `<details>` wrapper (text stays searchable; a #hash inside opens it) |
 | `_stage.tsx` | three.js engine. Declarative: pass atoms / bonds / lines / polys / clip / camera; the engine springs every change. Mounts only near the viewport (GL-context budget) |
 | `_geom.ts` | Pure geometry (lattices, shells, voids, hex cells, ionic structures); verified numerically |
 | `_ui.tsx` | KaTeX (`Tex`, `Rich`), `Derivation`, `Worked`, `Traps`, controls, hooks |
+
+## Embedded existing content (nothing is duplicated or rewritten)
+
+- `master/_shared.tsx` exports `PartArticle` (content of one Master Notes part, no page chrome); `SolidStatePartPage` uses it too.
+- `parts/_shared.tsx` exports `PartContentBody` (content of one course part, no chrome); parts 3-23 now `export const data`. Parts 1-2 are standalone components rendered as-is.
+- All 85 Master Notes sections and 23 course parts were verified present in the rendered page by id.
+- If you add a Master Notes part, add it to a `MasterNotes parts={[...]}` call in `page.tsx`.
 
 ## Rules
 

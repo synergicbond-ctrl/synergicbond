@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Density of Unit Cell",
 } as const;
 
-const data = {
+export const data = {
   "part": 15,
   "slug": "density-of-unit-cell",
   "title": "Density of Unit Cell",

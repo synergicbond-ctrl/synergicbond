@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Crystal Lattice, Lattice Point and Unit Cell",
 } as const;
 
-const data = {
+export const data = {
   "part": 5,
   "slug": "crystal-lattice-lattice-point-and-unit-cell",
   "title": "Crystal Lattice, Lattice Point and Unit Cell",

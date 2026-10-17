@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Primitive and Centred Unit Cells",
 } as const;
 
-const data = {
+export const data = {
   "part": 7,
   "slug": "primitive-and-centred-unit-cells",
   "title": "Primitive and Centred Unit Cells",

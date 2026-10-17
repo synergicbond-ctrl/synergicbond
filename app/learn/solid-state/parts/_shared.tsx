@@ -168,40 +168,9 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
   );
 }
 
-export function SolidStatePartPage({ data }: { data: SolidStatePartData }) {
-  const group = groupForPart(data.part);
-
+export function PartContentBody({ data }: { data: SolidStatePartData }) {
   return (
     <>
-      <CanonicalNotesStyles />
-      {/* compact lesson bar */}
-      <div className="sbnLessonBar">
-        <div className="sbnLessonBarInner">
-          <Link href="/learn/solid-state" className="sbnLessonBarBack">← Solid State</Link>
-          <span className="sbnLessonBarPos">
-            Part {String(data.part).padStart(2, "0")} / {SOLID_STATE_PARTS.length}
-          </span>
-        </div>
-      </div>
-
-      {/* sidebar reading layout */}
-      <div className="sbnSidebarBody">
-        <article className="sbnCanvas" style={{ maxWidth: "720px" }}>
-          <ChapterIdentityHeader
-            subject="Physical Chemistry · JEE Advanced"
-            chapterName="Solid State"
-            descriptor="Crystal structure, lattice geometry, packing, defects and properties — the complete 23-part JEE Advanced sequence."
-            topicCount={SOLID_STATE_PARTS.length}
-            accentColor="var(--chem-bond)"
-          />
-
-          <TopicHeader
-            as="h1"
-            eyebrow={group.label}
-            title={data.title}
-            accentColor={group.accent}
-          />
-
           {data.intro ? (
             <p style={{ fontSize: "1rem", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "1.5rem" }}>
               {data.intro}
@@ -263,6 +232,45 @@ export function SolidStatePartPage({ data }: { data: SolidStatePartData }) {
               </Section>
             ) : null}
           </div>
+    </>
+  );
+}
+
+export function SolidStatePartPage({ data }: { data: SolidStatePartData }) {
+  const group = groupForPart(data.part);
+
+  return (
+    <>
+      <CanonicalNotesStyles />
+      {/* compact lesson bar */}
+      <div className="sbnLessonBar">
+        <div className="sbnLessonBarInner">
+          <Link href="/learn/solid-state" className="sbnLessonBarBack">← Solid State</Link>
+          <span className="sbnLessonBarPos">
+            Part {String(data.part).padStart(2, "0")} / {SOLID_STATE_PARTS.length}
+          </span>
+        </div>
+      </div>
+
+      {/* sidebar reading layout */}
+      <div className="sbnSidebarBody">
+        <article className="sbnCanvas" style={{ maxWidth: "720px" }}>
+          <ChapterIdentityHeader
+            subject="Physical Chemistry · JEE Advanced"
+            chapterName="Solid State"
+            descriptor="Crystal structure, lattice geometry, packing, defects and properties — the complete 23-part JEE Advanced sequence."
+            topicCount={SOLID_STATE_PARTS.length}
+            accentColor="var(--chem-bond)"
+          />
+
+          <TopicHeader
+            as="h1"
+            eyebrow={group.label}
+            title={data.title}
+            accentColor={group.accent}
+          />
+
+          <PartContentBody data={data} />
 
           <ChapterLessonPager
             prev={lessonRef(data.part - 1)}

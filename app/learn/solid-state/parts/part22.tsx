@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Electrical Properties of Solids",
 } as const;
 
-const data = {
+export const data = {
   "part": 22,
   "slug": "electrical-properties-of-solids",
   "title": "Electrical Properties of Solids",

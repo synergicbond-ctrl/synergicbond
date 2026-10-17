@@ -299,6 +299,38 @@ export function IonicChapter() {
       <P t="The same neighbour-shell idea works for ionic crystals, with the added question of which kind of ion sits in each shell. The distances are written in terms of the cell edge a, and each row says where the ions sit in the cell: corner, next corner, face centre, edge centre, body centre or tetrahedral hole." />
       <IonShells />
 
+      <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Structure types and the compounds that adopt them</h3>
+      <P t="Each structure type is named after one compound (shown in bold). Many other compounds crystallise in the same arrangement." />
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[560px] max-w-3xl text-sm">
+          <thead className="text-left text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+            <tr>
+              <th className="py-2 pr-4">Structure</th>
+              <th className="py-2">Examples</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Rock salt (NaCl)", "NaCl, KBr, RbI, AgCl, AgBr, MgO, CaO, TiO, FeO, NiO, SnAs, UC, ScN"],
+              ["Caesium chloride", "CsCl, TlI, CsAu, CsCN, CuZn, NbO"],
+              ["Zinc blende (sphalerite)", "ZnS, CuCl, CdS, HgS, GaP, InAs"],
+              ["Wurtzite", "ZnS, ZnO, BeO, MnS, AgI, AlN, SiC, NH₄F"],
+              ["Fluorite", "CaF₂, UO₂, HgF₂, LaH₂, PbO₂"],
+              ["Antifluorite", "K₂O, K₂S, Li₂O, Na₂O, Na₂Se, Na₂S"],
+              ["Nickel arsenide", "NiAs, NiS, FeS, PtSn, CoS"],
+              ["Rutile", "TiO₂, MnO₂, SnO₂, WO₂, MgF₂, NiF₂"],
+              ["Perovskite", "CaTiO₃ (distorted), SrTiO₃, PbZrO₃, LaFeO₃, LiSrH₃, KMnF₃"],
+              ["Spinel", "MgAl₂O₄, ZnFe₂O₄, ZnCr₂S₄"],
+            ].map(([a, b]) => (
+              <tr key={a} className="border-t border-[var(--border)]">
+                <td className="py-1.5 pr-4 font-semibold text-[var(--foreground)]">{a}</td>
+                <td className="py-1.5 text-[var(--text-muted)]">{b}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
       <div className="space-y-8">
         <Derivation
           no="4.6"

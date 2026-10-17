@@ -610,6 +610,11 @@ export function CubicChapter() {
           steps={["A face diagonal passes through two corners and the centre of that face.", "A loses $2\\times\\tfrac18 = \\tfrac14$, so A $= 1 - \\tfrac14 = \\tfrac34$.", "B loses one face centre, $\\tfrac12$, so B $= 3 - \\tfrac12 = \\tfrac52$.", "C is untouched: 1. Ratio $\\tfrac34 : \\tfrac52 : 1 = 3 : 10 : 4$."]}
           answer="A₃B₁₀C₄"
         />
+        <Worked
+          q="In the same AB₃C cell, all the atoms lying on one entire face are removed. What is the formula now?"
+          steps={["One face holds 4 corner atoms (each $\\tfrac18$ of A) and 1 face centre (B, $\\tfrac12$).", "A loses $4\\times\\tfrac18 = \\tfrac12$, so A $= 1 - \\tfrac12 = \\tfrac12$.", "B loses $\\tfrac12$, so B $= 3 - \\tfrac12 = \\tfrac52$. C stays 1.", "Ratio $\\tfrac12 : \\tfrac52 : 1 = 1 : 5 : 2$."]}
+          answer="AB₅C₂"
+        />
       </div>
     </Chapter>
   );

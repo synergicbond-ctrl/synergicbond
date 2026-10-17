@@ -418,6 +418,78 @@ function cellVectors([a, b, c, al, be, ga]: number[]): [V3, V3, V3] {
   return [va, vb, vc];
 }
 
+
+/* ------------------------------------------ choosing a repeat unit (2D NaCl) */
+
+type RU = "b" | "c" | "d" | "e" | "f1" | "f2";
+const RU_INFO: Record<RU, { tab: string; ok: boolean; say: string }> = {
+  b: { tab: "(b) Cl at corners", ok: true, say: "A square of side 2 with Cl⁻ at every corner and at the centre. Every square in the tiling is identical, and adjacent squares share edges and corners. This is a valid repeat unit and shows the full symmetry." },
+  c: { tab: "(c) Na at corners", ok: true, say: "The same square moved by one ion: Na⁺ now sits at the corners. It is the same size as (b) and differs only in where the origin is placed, which is a matter of choice. Both are used for the NaCl unit cell." },
+  d: { tab: "(d) origin off-ion", ok: true, say: "Shifted again so that no ion lies on a corner. Still the same size and still identical from square to square, so it is valid, but it is harder to draw and to see the symmetry. Choose an origin with ions at special positions (corners, edge centres)." },
+  e: { tab: "(e) half-size, tilted", ok: true, say: "A square turned through 45° whose side is √2, half the area of (c). In two dimensions it is the smaller, preferred cell. In three dimensions the cubic cell (b) or (c) is used instead, because only that shows the cubic symmetry." },
+  f1: { tab: "(f) isolated squares", ok: false, say: "Squares of one quarter the area, each identical, but they are isolated from each other. A repeat unit must fill the whole plane with no gaps between neighbouring cells, so this is not allowed." },
+  f2: { tab: "(f) unlike squares", ok: false, say: "These squares do tile the plane, but they are not identical: square 1 has Na⁺ in its top-right corner and square 2 has Cl⁻ there. Translation of one cell must reproduce all the others exactly." },
+};
+
+function RepeatUnit() {
+  const [k, setK] = useState<RU>("b");
+  const info = RU_INFO[k];
+  const U = 44, N = 7, ox = 46, oy = 24;
+  const X = (i: number) => ox + i * U, Y = (j: number) => oy + j * U;
+  const lines: [number, number, number, number][] = [];
+  if (k === "b" || k === "c" || k === "d") {
+    const s0 = k === "b" ? [0, 0] : k === "c" ? [1, 0] : [0.5, 0.5];
+    for (let t = -4; t <= 8; t += 2) {
+      lines.push([s0[0] + t, -1, s0[0] + t, N + 1], [-1, s0[1] + t, N + 1, s0[1] + t]);
+    }
+  } else if (k === "e") {
+    for (let t = -10; t <= 14; t += 1) {
+      lines.push([t, 0, t + N, N], [t, 0, t - N, N]);
+    }
+  } else if (k === "f1") {
+    for (let i = 0; i < N; i += 2) for (let j = 0; j < N; j += 2) {
+      lines.push([i, j, i + 1, j], [i + 1, j, i + 1, j + 1], [i + 1, j + 1, i, j + 1], [i, j + 1, i, j]);
+    }
+  } else {
+    for (let t = 0; t <= N; t += 1) lines.push([t, 0, t, N], [0, t, N, t]);
+  }
+  return (
+    <div className="grid gap-5 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+      <svg viewBox="0 0 400 340" role="img" aria-label="A two-dimensional NaCl layer with the chosen repeat unit outlined" className="w-full rounded-2xl border border-white/10" style={{ background: "radial-gradient(120% 90% at 50% 18%, #17433f 0%, #0c1f1e 52%, #060f0f 100%)" }}>
+        <clipPath id="ru-clip"><rect x={X(0) - 4} y={Y(0) - 4} width={U * (N - 1) + 8} height={U * (N - 1) + 8} /></clipPath>
+        <g clipPath="url(#ru-clip)">
+          {lines.map(([x1, y1, x2, y2], i) => (
+            <line key={i} x1={X(x1)} y1={Y(y1)} x2={X(x2)} y2={Y(y2)} stroke={info.ok ? "#f2b13f" : "#e8607a"} strokeWidth={2} strokeOpacity={0.9} />
+          ))}
+        </g>
+        {Array.from({ length: N }).flatMap((_, i) =>
+          Array.from({ length: N }).map((__, j) => {
+            const na = (i + j) % 2 === 1;
+            return <circle key={`${i}-${j}`} cx={X(i)} cy={Y(j)} r={11} fill={na ? "#e24ab0" : "#0c1f1e"} stroke={na ? "#ffd1ee" : "#8fd0ff"} strokeWidth={2} />;
+          }),
+        )}
+        {k === "f2" && (
+          <g fontSize={13} fontWeight={800} fill="#fff">
+            <text x={X(1) + 18} y={Y(2) + 34}>1</text>
+            <text x={X(2) + 18} y={Y(2) + 34}>2</text>
+          </g>
+        )}
+        <circle cx={30} cy={322} r={7} fill="#e24ab0" stroke="#ffd1ee" strokeWidth={2} />
+        <text x={43} y={326} fontSize={12} fill="#f4f1e8">Na⁺</text>
+        <circle cx={100} cy={322} r={7} fill="#0c1f1e" stroke="#8fd0ff" strokeWidth={2} />
+        <text x={113} y={326} fontSize={12} fill="#f4f1e8">Cl⁻</text>
+      </svg>
+      <div className="space-y-4">
+        <Tabs label="Candidate repeat unit" value={k} onChange={setK} items={(Object.keys(RU_INFO) as RU[]).map((x) => [x, RU_INFO[x].tab] as const)} />
+        <Narration k={k}>
+          <div className={`mb-1 text-sm font-bold ${info.ok ? "text-emerald-300" : "text-rose-300"}`}>{info.ok ? "Valid repeat unit" : "Not a repeat unit"}</div>
+          <Rich text={info.say} />
+        </Narration>
+      </div>
+    </div>
+  );
+}
+
 function Bravais3D() {
   const [sys, setSys] = useState<SysKey>("cubic");
   const [lat, setLat] = useState("P");
@@ -667,9 +739,53 @@ export function FoundationsChapter() {
         {"A lattice point is a mathematical point. A real crystal can have many atoms per lattice point (a basis of 2 in diamond, a whole molecule in a protein crystal), and two different structures can share one lattice."}
       </KeyIdea>
 
+      <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Choosing a repeat unit: two-dimensional NaCl</h3>
+      <P t="The unit cell is the **smallest repeating unit that shows the full symmetry** of the crystal. Take a layer of NaCl and try different squares. A valid cell must be identical from one to the next and must fill the plane with no gaps; where you put the origin is largely a matter of taste." />
+      <RepeatUnit />
+      <KeyIdea title="The NaCl cell in three dimensions">
+        {"In three dimensions the NaCl unit cell is based on (b) or (c) rather than (e), because only those show the cubic symmetry. One valid choice has Na⁺ at the corners and face centres with Cl⁻ at the edge centres and the body centre; an equally valid cell swaps the two ions. The cell is cubic: a = b = c and α = β = γ = 90°."}
+      </KeyIdea>
+
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Seven crystal systems and fourteen Bravais lattices</h3>
       <P t="In three dimensions a unit cell is described by three edges **a, b, c** and three angles **α** (between b and c), **β** (between a and c) and **γ** (between a and b). Only seven shapes of cell fill space with different symmetry, the **crystal systems**. Placing extra lattice points at the centre of the cell (**I**), at the centres of all faces (**F**), or at the centres of one pair of faces (**C**) gives further distinct lattices. Auguste Bravais showed that exactly **14** exist." />
       <Bravais3D />
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[820px] text-sm">
+          <thead className="text-left text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+            <tr>
+              <th className="py-2 pr-3">System</th>
+              <th className="py-2 pr-3">Lattices</th>
+              <th className="py-2 pr-3">Edges</th>
+              <th className="py-2 pr-3">Angles</th>
+              <th className="py-2 pr-3">Essential symmetry</th>
+              <th className="py-2">Examples</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Cubic", "P, I, F", "a = b = c", "α = β = γ = 90°", "Four C₃ axes in a tetrahedral arrangement", "NaCl, zinc blende, Cu"],
+              ["Tetragonal", "P, I", "a = b ≠ c", "α = β = γ = 90°", "One C₄ axis", "White tin, SnO₂, TiO₂, CaSO₄"],
+              ["Orthorhombic", "P, I, F, C (end)", "a ≠ b ≠ c", "α = β = γ = 90°", "Three perpendicular C₂ axes", "Rhombic sulphur, KNO₃, BaSO₄"],
+              ["Monoclinic", "P, C (end)", "a ≠ b ≠ c", "α = γ = 90°, β ≠ 90°", "One C₂ axis", "Monoclinic sulphur, Na₂SO₄·10H₂O"],
+              ["Hexagonal", "P", "a = b ≠ c", "α = β = 90°, γ = 120°", "One C₆ axis", "Graphite, ZnO, CdS"],
+              ["Rhombohedral (trigonal)", "P", "a = b = c", "α = β = γ ≠ 90°", "One C₃ axis", "Calcite (CaCO₃), HgS (cinnabar)"],
+              ["Triclinic", "P", "a ≠ b ≠ c", "α ≠ β ≠ γ ≠ 90°", "None", "K₂Cr₂O₇, CuSO₄·5H₂O, H₃BO₃"],
+            ].map((r) => (
+              <tr key={r[0]} className="border-t border-[var(--border)]">
+                <td className="py-1.5 pr-3 font-semibold text-[var(--foreground)]">{r[0]}</td>
+                <td className="py-1.5 pr-3 font-mono text-[var(--accent)]">{r[1]}</td>
+                <td className="py-1.5 pr-3 font-mono">{r[2]}</td>
+                <td className="py-1.5 pr-3 font-mono">{r[3]}</td>
+                <td className="py-1.5 pr-3 text-[var(--text-muted)]">{r[4]}</td>
+                <td className="py-1.5 text-[var(--text-muted)]">{r[5]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <KeyIdea title="Counting and remembering the systems">
+        {"**All seven** systems have a primitive lattice. **Body-centred (I): 3** (cubic, tetragonal, orthorhombic). **Face-centred (F): 2** (cubic, orthorhombic). **End-centred (C): 2** (orthorhombic, monoclinic). Orthorhombic is the only system with all four types, and triclinic is the least symmetrical. Order to remember: **C – T – O – M – H – R – Tri** (cubic, tetragonal, orthorhombic, monoclinic, hexagonal, rhombohedral, triclinic). There are 32 crystal classes in all, of which these 7 are the independent systems."}
+      </KeyIdea>
       <Traps
         items={[
           "There are **14** Bravais lattices in **7** systems. Counts: cubic 3, tetragonal 2, orthorhombic 4, hexagonal 1, rhombohedral 1, monoclinic 2, triclinic 1.",

@@ -559,6 +559,7 @@ export function PackingChapter() {
             "The octahedral void is the larger one (0.414 R against 0.225 R).",
             "HCP and CCP both have **12** neighbours and **74%** packing; they differ only in stacking and in the unit cell (hexagonal against cubic).",
             "HCP: 6 atoms, **6 octahedral and 12 tetrahedral** voids per hexagonal cell.",
+            "Packing fraction by **volume** of layers stacked directly on top of each other (AAA): square layers give $\\pi/6 = 0.52$ (simple cubic); hexagonal layers give $\\pi/(3\\sqrt3) = 0.60$. Only the offset stacking ABAB or ABCABC reaches 0.74.",
           ]}
         />
         <Worked

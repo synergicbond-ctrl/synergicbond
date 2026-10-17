@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coordination Shells SC BCC FCC</title>
+<style>
+:root{--bg:#070b0d;--panel:#0d1316;--line:#25302f;--ink:#e8ecea;--mute:#8d9a97;--gold:#f0b44c;--ok:#5fc7b4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:16px}
+h1{font-size:1.35rem;margin:4px 0 2px}
+p.sub{margin:0 0 12px;color:var(--mute);font-size:.95rem}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tab{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 16px;font:inherit;font-weight:600;cursor:pointer;min-height:44px}
+.tab[aria-pressed=true]{background:var(--gold);color:#201500;border-color:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.card b{display:block;font-size:1.35rem;color:var(--gold)}
+.card span{color:var(--mute);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.main{display:grid;grid-template-columns:1.05fr 1fr;gap:14px;align-items:start}
+.stage{background:radial-gradient(120% 100% at 50% 30%,#10302f 0%,#07120f 70%);border:1px solid var(--line);border-radius:18px;position:relative;overflow:hidden}
+canvas{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+.hint{position:absolute;right:14px;bottom:10px;color:#7f9591;font-size:.8rem;pointer-events:none}
+.badge{position:absolute;left:14px;top:12px;background:#0b1514cc;border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:.95rem}
+.badge b{color:var(--gold);font-size:1.15rem}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row label{color:var(--mute);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em}
+input[type=range]{flex:1;min-width:160px;accent-color:var(--gold);height:32px}
+button.act{background:var(--gold);color:#201500;border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer;min-height:44px}
+button.sec{background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font:inherit;cursor:pointer;min-height:44px}
+button:focus-visible,.tab:focus-visible,input:focus-visible{outline:2px solid var(--ok);outline-offset:2px}
+.steps{display:grid;gap:6px;margin-top:10px}
+.step{display:grid;grid-template-columns:110px 1fr;gap:8px;background:#0a1013;border:1px solid var(--line);border-radius:10px;padding:8px 12px;align-items:center}
+.step i{font-style:normal;color:var(--mute);font-size:.78rem;text-transform:uppercase;letter-spacing:.07em}
+.step span{font-family:"Cambria Math","STIX Two Math",Georgia,serif;font-size:1.05rem}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.95rem}
+th{color:var(--mute);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+tr.dim td{color:#6c7774}
+tr.cur td{background:#1c1a12;color:#fff}
+tr{cursor:pointer}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--mute);font-size:.85rem}
+.note{color:var(--mute);font-size:.88rem;margin-top:8px}
+@media(max-width:900px){.main{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Coordination number and neighbour shells: SC, BCC, FCC</h1>
+  <p class="sub">The reference atom (white) sits at a corner. Shells are counted outward by distance, shell 1 up to shell 8. The coordination number is the size of shell 1.</p>
+  <div class="tabs" role="group" aria-label="Lattice type">
+    <button class="tab" data-l="SC" aria-pressed="false">Simple cubic (SC)</button>
+    <button class="tab" data-l="BCC" aria-pressed="false">Body-centred (BCC)</button>
+    <button class="tab" data-l="FCC" aria-pressed="true">Face-centred (FCC)</button>
+  </div>
+  <div class="cards" id="cards"></div>
+  <div class="main">
+    <div>
+      <div class="stage">
+        <canvas id="cv" width="760" height="620" aria-label="3D lattice with highlighted neighbour atoms"></canvas>
+        <div class="badge" id="badge"></div>
+        <div class="hint">drag to look around</div>
+      </div>
+      <div class="note">Shell 1 is the coordination number: SC 6, BCC 8, FCC 12. Later shells are further neighbours at larger distances. Atoms drawn smaller than touching size so the shells stay visible.</div>
+    </div>
+    <div>
+      <div class="panel">
+        <div class="row"><label for="sh">Shell</label><input id="sh" type="range" min="1" max="8" value="1"><b id="shv" style="min-width:1.5em;text-align:right">1</b></div>
+        <div class="row" style="margin-top:10px">
+          <button class="act" id="anim">▶ Animate this shell</button>
+          <button class="sec" id="all">Play shells 1 to 8</button>
+          <button class="sec" id="prev" aria-label="Previous shell">◀</button>
+          <button class="sec" id="next" aria-label="Next shell">▶</button>
+        </div>
+        <label class="row" style="margin-top:10px;color:var(--mute);font-size:.9rem"><input type="checkbox" id="fut"> show atoms of later shells (grey)</label>
+        <div class="steps" id="steps"></div>
+      </div>
+      <table id="tbl"></table>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+"use strict";
+var COLORS=["#f0b44c","#5fc7b4","#c0575f","#4f78b8","#7a69b8","#4f9b66","#a9693f","#a05c93"];
+var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var INFO={
+ SC:{name:"Simple cubic",Z:1,pe:"52.4 %",rel:"a = 2r",cn:6},
+ BCC:{name:"Body-centred cubic",Z:2,pe:"68 %",rel:"√3 a = 4r",cn:8},
+ FCC:{name:"Face-centred cubic",Z:4,pe:"74 %",rel:"√2 a = 4r",cn:12}
+};
+// lattice points in units of a/2 (integers u,v,w)
+function isPoint(L,u,v,w){
+  var e=function(x){return ((x%2)+2)%2===0;};
+  if(L==="SC") return e(u)&&e(v)&&e(w);
+  if(L==="BCC") return (e(u)&&e(v)&&e(w))||(!e(u)&&!e(v)&&!e(w));
+  return e(u+v+w);
+}
+function shells(L){
+  var R=7,map={};
+  for(var u=-R;u<=R;u++)for(var v=-R;v<=R;v++)for(var w=-R;w<=R;w++){
+    if(u===0&&v===0&&w===0) continue;
+    if(!isPoint(L,u,v,w)) continue;
+    var n=u*u+v*v+w*w;(map[n]=map[n]||[]).push([u,v,w]);
+  }
+  var keys=Object.keys(map).map(Number).sort(function(a,b){return a-b;}).slice(0,8);
+  return keys.map(function(n,i){return {n:n,atoms:map[n],i:i};});
+}
+function frac(x){ // x in units of a/2 -> string in a
+  var s=x<0?"−":"",ax=Math.abs(x);
+  if(ax===0) return "0";
+  var whole=Math.floor(ax/2),half=ax%2;
+  if(half===0) return s+whole;
+  return s+(whole>0?whole:"")+"½";
+}
+function distTxt(n){
+  if(n%4===0){var m=n/4,r=Math.round(Math.sqrt(m));if(r*r===m) return r===1?"a":r+"a";return "√"+m+" a";}
+  return "√"+n+" a/2";
+}
+function where(L,atom){
+  var u=atom[0],v=atom[1],w=atom[2];
+  var odd=function(x){return Math.abs(x)%2===1;};
+  var cnt=odd(u)+odd(v)+odd(w);
+  var kind=cnt===0?"Corner":(cnt===3?"Body centre":"Face centre");
+  var far=Math.max(Math.abs(u),Math.abs(v),Math.abs(w))>2;
+  return kind+(far?" in a neighbouring cell":" of the cell")+" ("+frac(Math.abs(u))+", "+frac(Math.abs(v))+", "+frac(Math.abs(w))+")";
+}
+var state={L:"FCC",sh:1,count:null,timer:null,auto:false,yaw:0.7,pitch:0.45,drag:null,spin:!reduce,seq:false};
+var cv=document.getElementById("cv"),ctx=cv.getContext("2d");
+var S={};["SC","BCC","FCC"].forEach(function(L){S[L]=shells(L);});
+function cur(){return S[state.L][state.sh-1];}
+// ---------- UI
+function buildCards(){
+  var I=INFO[state.L],sh1=S[state.L][0].atoms.length;
+  document.getElementById("cards").innerHTML=
+   '<div class="card"><span>Lattice</span><b>'+I.name+'</b></div>'+
+   '<div class="card"><span>Coordination number</span><b>'+sh1+'</b></div>'+
+   '<div class="card"><span>Atoms per cell Z</span><b>'+I.Z+'</b></div>'+
+   '<div class="card"><span>Packing · radius</span><b>'+I.pe+' · '+I.rel+'</b></div>';
+}
+function buildTable(){
+  var t='<tr><th>Shell</th><th>Atoms</th><th>Distance</th><th>Where it sits (reference atom at a corner)</th></tr>';
+  S[state.L].forEach(function(s,i){
+    var cls=(i+1===state.sh)?"cur":(i+1>state.sh?"dim":"");
+    t+='<tr data-i="'+(i+1)+'" class="'+cls+'"><td><span class="dot" style="background:'+COLORS[i]+'"></span>'+(i+1)+'</td><td><b>'+s.atoms.length+'</b></td>'+
+       '<td>'+distTxt(s.n)+' <span class="mono">≈ '+(Math.sqrt(s.n)/2).toFixed(3)+' a</span></td><td>'+where(state.L,repr(s))+'</td></tr>';
+  });
+  var tb=document.getElementById("tbl");tb.innerHTML=t;
+  Array.prototype.forEach.call(tb.querySelectorAll("tr[data-i]"),function(r){r.addEventListener("click",function(){setShell(+r.getAttribute("data-i"));});});
+}
+function repr(s){ // representative: non-negative coordinates, lexicographically largest first
+  var best=s.atoms[0];
+  s.atoms.forEach(function(a){
+    var k=function(x){return [Math.abs(x[0]),Math.abs(x[1]),Math.abs(x[2])].sort(function(p,q){return q-p;});};
+    var ka=k(a),kb=k(best);
+    if(a[0]>=0&&a[1]>=0&&a[2]>=0){
+      if(best[0]<0||best[1]<0||best[2]<0) best=a;
+      else if(ka[0]<kb[0]||(ka[0]===kb[0]&&ka[1]<kb[1])) best=a;
+    }
+  });
+  return best;
+}
+function buildSteps(atom){
+  var s=cur(),a=atom||repr(s),u=a[0],v=a[1],w=a[2];
+  var f=function(x){return frac(x)+(x===0?"":" a");};
+  var row=function(k,x){return '<div class="step"><i>'+k+'</i><span>'+x+'</span></div>';};
+  var q=function(x){return x===0?"0":(Math.abs(x)===2?"a²":"("+frac(Math.abs(x))+"a)²");};
+  var sq=function(x){var m=Math.abs(x);return m===0?"0":(m%2===0?(m/2===1?"a":(m/2)+"a"):"("+frac(m)+" a)").replace(/^\(/,"(")+"²";};
+  document.getElementById("steps").innerHTML=
+    row("Target atom","at ("+frac(u)+", "+frac(v)+", "+frac(w)+") a")+
+    row("Step 1","Δx = "+f(u))+row("Step 2","Δy = "+f(v))+row("Step 3","Δz = "+f(w))+
+    row("Pythagoras","d² = Δx² + Δy² + Δz² = "+s.n+"/4 a² = "+(s.n/4)+" a²")+
+    row("Answer","d = "+distTxt(s.n)+" ≈ "+(Math.sqrt(s.n)/2).toFixed(3)+" a");
+}
+function badge(k){
+  var s=cur();
+  var N=s.atoms.length;
+  document.getElementById("badge").innerHTML='Shell '+state.sh+' · <b>'+(k==null?N:k)+'</b> of '+N+' atoms'+(state.sh===1&&(k==null||k===N)?' · coordination number = <b>'+N+'</b>':'');
+}
+function setShell(n,keepAnim){
+  if(!keepAnim) stop();
+  state.sh=Math.max(1,Math.min(8,n));
+  document.getElementById("sh").value=state.sh;document.getElementById("shv").textContent=state.sh;
+  state.count=null;buildTable();buildSteps();badge(null);
+}
+function setLattice(L){
+  stop();state.L=L;
+  Array.prototype.forEach.call(document.querySelectorAll(".tab"),function(b){b.setAttribute("aria-pressed",b.getAttribute("data-l")===L?"true":"false");});
+  buildCards();setShell(state.sh);
+}
+// ---------- animation
+function stop(){if(state.timer){clearInterval(state.timer);clearTimeout(state.timer);state.timer=null;}state.seq=false;state.count=null;
+  document.getElementById("anim").textContent="▶ Animate this shell";}
+function animateShell(done){
+  if(state.timer){stop();badge(null);return;}
+  var s=cur(),N=s.atoms.length,k=0;
+  state.count=0;badge(0);
+  document.getElementById("anim").textContent="■ Stop";
+  var gap=reduce?60:Math.max(140,Math.min(420,3600/N));
+  state.timer=setInterval(function(){
+    k++;state.count=k;badge(k);buildSteps(s.atoms[k-1]);
+    if(k>=N){clearInterval(state.timer);state.timer=null;document.getElementById("anim").textContent="▶ Animate this shell";
+      state.count=null;badge(null);if(done)setTimeout(done,reduce?200:1100);}
+  },gap);
+}
+function playAll(){
+  stop();state.seq=true;
+  var step=function(){
+    if(!state.seq) return;
+    animateShell(function(){
+      if(!state.seq) return;
+      if(state.sh<8){setShell(state.sh+1,true);state.seq=true;step();}
+      else{state.seq=false;}
+    });
+  };
+  setShell(1,true);state.seq=true;step();
+}
+// ---------- 3D
+function rot(p){
+  var cy=Math.cos(state.yaw),sy=Math.sin(state.yaw),cp=Math.cos(state.pitch),sp=Math.sin(state.pitch);
+  var x=p[0],y=p[1],z=p[2]; // origin = reference atom
+  var x1=x*cy+z*sy,z1=-x*sy+z*cy;
+  var y1=y*cp-z1*sp,z2=y*sp+z1*cp;
+  return [x1,y1,z2];
+}
+var zoom={v:0};
+function proj(r,W,H){var d=7,k=zoom.v*d/(d-r[2]);return [W/2+r[0]*k+zoom.ox*k/zoom.v,H/2-r[1]*k-zoom.oy*k/zoom.v,k];}
+function draw(){
+  var W=cv.width,H=cv.height;ctx.clearRect(0,0,W,H);
+  var s=cur(),si=state.sh-1,items=[];
+  var Rv=Math.max(Math.sqrt(s.n)/2,1.55)*1.02;
+  if(document.getElementById("fut").checked) Rv=Math.max(Rv,Math.sqrt(S[state.L][7].n)/2);
+  var target=0.40*Math.min(W,H)/Rv;
+  zoom.v=zoom.v?zoom.v+(target-zoom.v)*0.12:target;
+  // keep the unit cell and the reference atom centred in the view
+  zoom.ox=-0.18*zoom.v*Math.min(1,0.8/Rv);zoom.oy=-0.1*zoom.v*Math.min(1,0.8/Rv);
+  var P=function(u,v,w){return [u/2,v/2,w/2];};
+  // reference atom
+  items.push({p:P(0,0,0),kind:"ref"});
+  S[state.L].forEach(function(sh,i){
+    if(i>si && !document.getElementById("fut").checked) return;
+    sh.atoms.forEach(function(a,j){
+      var vis=(i<si)?"past":(i===si?"cur":"fut");
+      var lit=true;
+      if(i===si&&state.count!==null) lit=j<state.count;
+      items.push({p:P(a[0],a[1],a[2]),kind:vis,i:i,lit:lit,last:(i===si&&state.count!==null&&j===state.count-1)});
+    });
+  });
+  // unit cell edges
+  var C=[[0,0,0],[1,0,0],[1,1,0],[0,1,0],[0,0,1],[1,0,1],[1,1,1],[0,1,1]];
+  var E=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+  var pc=C.map(function(c){return proj(rot(c),W,H);});
+  ctx.lineWidth=1.6;ctx.strokeStyle="rgba(235,240,238,.78)";
+  E.forEach(function(e){ctx.beginPath();ctx.moveTo(pc[e[0]][0],pc[e[0]][1]);ctx.lineTo(pc[e[1]][0],pc[e[1]][1]);ctx.stroke();});
+  // bonds from reference to lit atoms of the current shell
+  var ref=proj(rot([0,0,0]),W,H);
+  items.forEach(function(it){
+    if(it.kind==="cur"&&it.lit&&(state.count!==null||true)){
+      var q=proj(rot(it.p),W,H);
+      ctx.strokeStyle=COLORS[it.i];ctx.globalAlpha=it.last?1:0.55;ctx.lineWidth=it.last?4:2;
+      ctx.beginPath();ctx.moveTo(ref[0],ref[1]);ctx.lineTo(q[0],q[1]);ctx.stroke();ctx.globalAlpha=1;
+    }
+  });
+  items.forEach(function(it){var r=rot(it.p);it.r=r;it.q=proj(r,W,H);});
+  items.sort(function(a,b){return a.r[2]-b.r[2];});
+  items.forEach(function(it){
+    var rad,col,al=1;
+    if(it.kind==="ref"){rad=0.075;col="#ffffff";}
+    else if(it.kind==="cur"){rad=it.last?0.10:0.082;col=COLORS[it.i];al=it.lit?1:0.18;}
+    else if(it.kind==="past"){rad=0.052;col=COLORS[it.i];al=0.38;}
+    else {rad=0.04;col="#8a9794";al=0.22;}
+    var R=rad*it.q[2];
+    var g=ctx.createRadialGradient(it.q[0]-R*0.35,it.q[1]-R*0.4,R*0.1,it.q[0],it.q[1],R);
+    g.addColorStop(0,"#ffffff");g.addColorStop(0.35,col);g.addColorStop(1,shade(col));
+    ctx.globalAlpha=al;ctx.fillStyle=g;ctx.beginPath();ctx.arc(it.q[0],it.q[1],R,0,6.283);ctx.fill();ctx.globalAlpha=1;
+  });
+}
+function shade(c){var n=parseInt(c.slice(1),16),r=(n>>16)*0.35,g=((n>>8)&255)*0.35,b=(n&255)*0.35;return "rgb("+(r|0)+","+(g|0)+","+(b|0)+")";}
+function frame(){
+  if(state.spin&&!state.drag) state.yaw+=0.004;
+  draw();requestAnimationFrame(frame);
+}
+// ---------- events
+cv.addEventListener("pointerdown",function(e){state.drag={x:e.clientX,y:e.clientY};cv.setPointerCapture(e.pointerId);cv.style.cursor="grabbing";});
+cv.addEventListener("pointermove",function(e){if(!state.drag)return;state.yaw+=(e.clientX-state.drag.x)*0.008;state.pitch=Math.max(-1.4,Math.min(1.4,state.pitch+(e.clientY-state.drag.y)*0.008));state.drag={x:e.clientX,y:e.clientY};});
+cv.addEventListener("pointerup",function(){state.drag=null;cv.style.cursor="grab";});
+document.getElementById("sh").addEventListener("input",function(e){setShell(+e.target.value);});
+document.getElementById("anim").addEventListener("click",function(){state.seq=false;animateShell();});
+document.getElementById("all").addEventListener("click",playAll);
+document.getElementById("prev").addEventListener("click",function(){setShell(state.sh-1);});
+document.getElementById("next").addEventListener("click",function(){setShell(state.sh+1);});
+Array.prototype.forEach.call(document.querySelectorAll(".tab"),function(b){b.addEventListener("click",function(){setLattice(b.getAttribute("data-l"));});});
+// expose for tests
+window.__shells=S;
+buildCards();setShell(1);requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

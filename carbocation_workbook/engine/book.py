@@ -53,6 +53,22 @@ svg text { font-family: C059, 'Century Schoolbook', serif; }
 """
 
 
+def font_face_css():
+    """Embed C059 (URW Century Schoolbook clone) so the offline HTML looks the same on any machine."""
+    import base64
+    base = "/usr/share/fonts/opentype/urw-base35/"
+    spec = [("C059-Roman.otf", "normal", "normal"), ("C059-Bold.otf", "bold", "normal"),
+            ("C059-Italic.otf", "normal", "italic"), ("C059-BdIta.otf", "bold", "italic")]
+    out = []
+    for fn, w, st in spec:
+        try:
+            b64 = base64.b64encode(open(base + fn, "rb").read()).decode()
+        except OSError:
+            continue
+        out.append("@font-face{font-family:C059;font-weight:%s;font-style:%s;src:url(data:font/otf;base64,%s) format('opentype');}" % (w, st, b64))
+    return "".join(out)
+
+
 def esc(s):
     return _h.escape(s)
 
@@ -120,7 +136,7 @@ class Book:
 
     # ---- HTML
     def html(self, with_toc=True, pages=None):
-        out = ["<!doctype html><html><head><meta charset='utf-8'><title>%s</title><style>%s</style></head><body>" % (esc(self.title), CSS)]
+        out = ["<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>%s</title><style>%s%s</style></head><body>" % (esc(self.title), font_face_css(), CSS)]
         out.append('<div class="title"><h1>%s</h1><p>%s</p></div>' % (self.title, self.subtitle))
         if with_toc:
             out.append('<h1 class="part" style="margin-top:4pt">Contents</h1><div class="toc">')

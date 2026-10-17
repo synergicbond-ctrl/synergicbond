@@ -146,7 +146,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     lessonLabel: "7 parts · 3D models and derivations",
     premium: true,
     description:
-      "The whole chapter built in front of you: 3D unit cells you can slice, close packing and voids, radius-ratio and ionic structures, defects, band theory, p-n junctions, superconductors and magnetic domains, each with step-by-step derivations and worked problems. The complete written notes and the original 23-part course are included.",
+      "The whole chapter built in front of you: 3D unit cells you can slice, close packing and voids, radius-ratio and ionic structures, defects, band theory, p-n junctions, superconductors and magnetic domains, each with step-by-step derivations and worked problems. The complete written notes are included.",
   },
   {
     id: "solid-state",

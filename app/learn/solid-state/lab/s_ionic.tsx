@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Stage, type StageAtom, type StageBond, type StageLine, type StagePoly, type V3 } from "./_stage";
 import { C, cubeEdges, hexPrismEdges, ionicStructures, polyhedra, wurtziteCell, type IonicKey } from "./_geom";
 import { RadiusFig } from "./_figs";
+import { IonShells } from "./_ionshells";
 import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Traps, Worked, useTour, type DerivStep } from "./_ui";
 
 /* ---------------------------------------------------- radius ratio */
@@ -293,6 +294,10 @@ export function IonicChapter() {
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Important ionic structures</h3>
       <P t="Each structure below is built in stages: first the large-ion framework, then the small ions in their holes, then the coordination. Use **Slice to the cell** to see exactly which fraction of every ion belongs to one cell." />
       <IonicExplorer />
+
+      <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Neighbours around an ion, in terms of a</h3>
+      <P t="The same neighbour-shell idea works for ionic crystals, with the added question of which kind of ion sits in each shell. The distances are written in terms of the cell edge a, and each row says where the ions sit in the cell: corner, next corner, face centre, edge centre, body centre or tetrahedral hole." />
+      <IonShells />
 
       <div className="space-y-8">
         <Derivation

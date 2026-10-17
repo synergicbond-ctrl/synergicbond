@@ -3,8 +3,8 @@
 import { useMemo, useState, type ReactNode } from "react";
 import { Stage, type CameraPose, type StageAtom, type StageBond, type StagePoly, type V3 } from "./_stage";
 import { C, CORNERS, EDGE_CENTRES, FACES, SQ3, TETRA_ALL, TETRA_ALT, bondsBetween, cubeEdges, hcpCell, hexPrismEdges } from "./_geom";
-import { HcpFig, HcpLayerFig, VoidFig } from "./_figs";
-import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Tabs, Tex, Traps, Worked, useTour, useTween } from "./_ui";
+import { HcpDrawingFig, HcpFig, HcpLayerFig, VoidFig } from "./_figs";
+import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Tex, Traps, Worked, useTour, useTween } from "./_ui";
 
 /* ------------------------------------------------------ 2D packing morph */
 
@@ -342,6 +342,75 @@ function SquareStack() {
   );
 }
 
+
+/* ---------------------------------------- floor-by-floor guide to the HCP holes */
+
+type Floor = { name: string; small: number; big: number; kind: "A" | "B" | "small-low" | "big" | "small-mid"; say: string };
+const FLOORS: Floor[] = [
+  { name: "Floor 1 (height 0)", small: 0, big: 0, kind: "A", say: "The bottom layer of balls, called **layer A**: one ball in the middle and six around it. No holes are counted here; the holes live between the layers." },
+  { name: "Floor 2 (height h/8)", small: 3, big: 0, kind: "small-low", say: "Just above layer A we find **3 small holes**. Each one is tucked under a ball of the middle layer, with 3 balls of layer A below it and 1 ball above: 4 balls in all." },
+  { name: "Floor 3 (height 2h/8)", small: 0, big: 3, kind: "big", say: "A little higher are **3 big holes**. Each has 3 balls of layer A under it and 3 balls of the middle layer over it: 6 balls in all." },
+  { name: "Floor 4 (height 3h/8)", small: 3, big: 0, kind: "small-mid", say: "Another floor of small holes. One sits right above the middle ball of layer A. The 6 around the edge are each shared by 3 neighbouring boxes, so they count 6 × ⅓ = 2. Total: 1 + 2 = **3 small holes**." },
+  { name: "Floor 5 (height 4h/8)", small: 0, big: 0, kind: "B", say: "The middle layer, **layer B**: 3 balls sitting in the dips of layer A. These are balls, not holes." },
+  { name: "Floor 6 (height 5h/8)", small: 3, big: 0, kind: "small-mid", say: "The mirror image of floor 4, just under the top layer: 1 + 6 × ⅓ = **3 small holes**." },
+  { name: "Floor 7 (height 6h/8)", small: 0, big: 3, kind: "big", say: "**3 big holes** again, between the middle layer and the top layer." },
+  { name: "Floor 8 (height 7h/8)", small: 3, big: 0, kind: "small-low", say: "The last floor of small holes: **3 small holes** hugging the top layer, mirror image of floor 2." },
+  { name: "Floor 9 (height h)", small: 0, big: 0, kind: "A", say: "The top layer is another **layer A**, an exact copy of the bottom one. The next box starts here." },
+];
+
+function HcpFloors() {
+  const [fl, setFl] = useState(1);
+  const F = FLOORS[fl];
+  const tot = FLOORS.slice(0, fl + 1).reduce((t, x) => ({ small: t.small + x.small, big: t.big + x.big }), { small: 0, big: 0 });
+  const a = 78, cx = 130, cy = 120;
+  const pol = (r: number, d: number): [number, number] => [cx + r * Math.cos((d * Math.PI) / 180), cy - r * Math.sin((d * Math.PI) / 180)];
+  const corners = [0, 60, 120, 180, 240, 300].map((d) => pol(a, d));
+  const bPos = [30, 150, 270].map((d) => pol(a / Math.sqrt(3), d));
+  const oPos = [90, 210, 330].map((d) => pol(a / Math.sqrt(3), d));
+  const smallLow = bPos; // under or over a B ball
+  return (
+    <div className="grid gap-5 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)]">
+      <svg viewBox="0 0 260 240" role="img" aria-label={`Top view of ${F.name}`} className="mx-auto w-full max-w-[300px] rounded-2xl border border-white/10" style={{ background: "radial-gradient(120% 90% at 50% 18%, #17433f 0%, #0c1f1e 52%, #060f0f 100%)" }}>
+        <polygon points={corners.map((p) => p.join(",")).join(" ")} fill="none" stroke="#cfe5e1" strokeOpacity={0.6} strokeWidth={1.6} />
+        {(F.kind === "A") && [...corners, [cx, cy] as [number, number]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={20} fill="#e8a9e6" stroke="#0a0a0a" strokeWidth={1.2} fillOpacity={0.9} />)}
+        {(F.kind === "B") && bPos.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={22} fill="#f2b13f" stroke="#0a0a0a" strokeWidth={1.2} />)}
+        {(F.kind === "small-low") && <>
+          {bPos.map(([x, y], i) => <circle key={`g${i}`} cx={x} cy={y} r={22} fill="#f2b13f" fillOpacity={0.18} stroke="#f2b13f" strokeOpacity={0.4} strokeDasharray="3 3" />)}
+          {smallLow.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={8} fill="#e8607a" stroke="#fff" strokeWidth={1.5} />)}
+        </>}
+        {(F.kind === "small-mid") && <>
+          {[...corners, [cx, cy] as [number, number]].map(([x, y], i) => <circle key={`g${i}`} cx={x} cy={y} r={20} fill="#e8a9e6" fillOpacity={0.16} stroke="#e8a9e6" strokeOpacity={0.4} strokeDasharray="3 3" />)}
+          {[...corners, [cx, cy] as [number, number]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={8} fill="#e8607a" stroke="#fff" strokeWidth={1.5} />)}
+          {corners.map(([x, y], i) => <text key={`t${i}`} x={x + 11} y={y - 11} fontSize={11} fontWeight={800} fill="#ffd1da">⅓</text>)}
+        </>}
+        {(F.kind === "big") && <>
+          {[...bPos].map(([x, y], i) => <circle key={`g${i}`} cx={x} cy={y} r={22} fill="#f2b13f" fillOpacity={0.14} stroke="#f2b13f" strokeOpacity={0.35} strokeDasharray="3 3" />)}
+          {oPos.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={13} fill="#f4f1e8" stroke="#06100f" strokeWidth={1.5} />)}
+        </>}
+        <text x={130} y={232} textAnchor="middle" fontSize={12} fill="#b8cbc7">view from above</text>
+      </svg>
+      <div className="space-y-4">
+        <Slider label="Walk up the box, floor by floor" value={fl + 1} onChange={(v) => setFl(v - 1)} min={1} max={9} show={F.name} />
+        <Narration k={fl}>
+          <Rich text={F.say} />
+        </Narration>
+        <div className="grid grid-cols-2 gap-3">
+          <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 text-center">
+            <div className="text-xs uppercase tracking-[0.12em] text-[var(--text-muted)]">Small holes so far</div>
+            <div className="mt-1 font-mono text-3xl font-black text-rose-300">{tot.small}</div>
+            <div className="text-xs text-[var(--text-muted)]">final answer: 12</div>
+          </div>
+          <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 text-center">
+            <div className="text-xs uppercase tracking-[0.12em] text-[var(--text-muted)]">Big holes so far</div>
+            <div className="mt-1 font-mono text-3xl font-black text-[var(--foreground)]">{tot.big}</div>
+            <div className="text-xs text-[var(--text-muted)]">final answer: 6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* --------------------------------------------------- voids in the HCP cell */
 
 function HcpVoids() {
@@ -392,6 +461,9 @@ function HcpVoids() {
           <Facts items={[["Atoms per cell", "6"], ["Tetrahedral voids", "12 (2 per atom)"], ["Octahedral voids", "6 (1 per atom)"], ["Void radii", "0.225 R and 0.414 R"]]} cols={2} />
           <HcpLayerFig />
         </div>
+      </div>
+      <div className="mx-auto max-w-xl">
+        <HcpDrawingFig />
       </div>
     </div>
   );
@@ -549,7 +621,18 @@ export function PackingChapter() {
       <VoidsExplorer />
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Voids in the HCP cell</h3>
-      <P t="The same two kinds of void exist in hexagonal close packing, and in the same numbers: **2 tetrahedral and 1 octahedral void per atom**. Their positions follow the A-B-A layering. Switch between the two kinds, and compare the heights with the side view." />
+      <P t="Think of oranges stacked in a shop. Between the oranges there are gaps. A **hole** is one of those gaps. There are only two shapes of gap." />
+      <div className="grid gap-4 md:grid-cols-2">
+        <KeyIdea title="Small hole = tetrahedral void (T.V.)">
+          {"A small gap with **4 balls** around it: 3 touching on one side and 1 on the other, like the corners of a tiny pyramid. A ball that fits in it can be at most **0.225** times the size of the big balls."}
+        </KeyIdea>
+        <KeyIdea title="Big hole = octahedral void (O.V.)">
+          {"A bigger gap with **6 balls** around it: 3 below and 3 above, twisted against each other, like two pyramids stuck base to base. A ball that fits in it can be up to **0.414** times the size of the big balls."}
+        </KeyIdea>
+      </div>
+      <P t="**Rule to remember:** for every **1** ball there are **2 small holes** and **1 big hole**. The hexagonal box (unit cell) has 6 balls, so it has **12 small holes** and **6 big holes**. Walk up the box floor by floor and count them yourself." />
+      <HcpFloors />
+      <P t="Now the same box in 3D, and a side view that shows the exact height of each kind of hole." />
       <HcpVoids />
 
       <div className="grid gap-4 md:grid-cols-2">

@@ -495,18 +495,19 @@ export function HcpLayerFig() {
   const Y = (f: number) => 238 - f * 210;
   const rows: { f: number; kind: "A" | "B" | "T" | "O"; tag: string }[] = [
     { f: 0, kind: "A", tag: "A" },
-    { f: 1 / 8, kind: "T", tag: "T.V.  h/8" },
-    { f: 2 / 8, kind: "O", tag: "O.V.  2h/8" },
-    { f: 3 / 8, kind: "T", tag: "T.V.  3h/8" },
+    { f: 1 / 8, kind: "T", tag: "small hole  h/8" },
+    { f: 2 / 8, kind: "O", tag: "big hole  2h/8" },
+    { f: 3 / 8, kind: "T", tag: "small hole  3h/8" },
     { f: 4 / 8, kind: "B", tag: "B" },
-    { f: 5 / 8, kind: "T", tag: "T.V.  5h/8" },
-    { f: 6 / 8, kind: "O", tag: "O.V.  6h/8" },
-    { f: 7 / 8, kind: "T", tag: "T.V.  7h/8" },
+    { f: 5 / 8, kind: "T", tag: "small hole  5h/8" },
+    { f: 6 / 8, kind: "O", tag: "big hole  6h/8" },
+    { f: 7 / 8, kind: "T", tag: "small hole  7h/8" },
     { f: 1, kind: "A", tag: "A" },
   ];
   const xs = (n: number, x0: number, x1: number) => Array.from({ length: n }, (_, i) => x0 + ((x1 - x0) * i) / (n - 1));
   return (
-    <Fig label="Heights of the tetrahedral and octahedral voids in an HCP cell" caption="Side view of the hexagonal cell of height h (also written c). Atoms sit in layers A, B, A. Tetrahedral voids (rose) lie at h/8, 3h/8, 5h/8 and 7h/8; octahedral voids (white) lie midway between an A layer and the B layer, at 2h/8 and 6h/8." w={360} h={270}>
+    <Fig label="Heights of the tetrahedral and octahedral voids in an HCP cell" caption="Side view of the hexagonal cell of height h (also written c). Atoms sit in layers A, B, A. Small holes (tetrahedral, T.V., rose) lie at h/8, 3h/8, 5h/8 and 7h/8; big holes (octahedral, O.V., white) lie midway between an A layer and the B layer, at 2h/8 and 6h/8." w={410} h={270}>
+      <g transform="translate(46 0)">
       {rows.map((r) => (
         <g key={r.f}>
           <Seg a={[70, Y(r.f)]} b={[270, Y(r.f)]} c="#9bb8b3" w={1} dash="3 4" o={0.6} />
@@ -530,6 +531,91 @@ export function HcpLayerFig() {
       <T x={312} y={(Y(0.5) + Y(1)) / 2 + 5} size={14} color="#f5a3b3">
         h/2
       </T>
+      </g>
     </Fig>
+  );
+}
+
+/** The classic textbook drawing: every level of the HCP cell, with the voids found on it. */
+export function HcpDrawingFig() {
+  const a = 1;
+  const W = 600, H = 800;
+  const sx = 105, base = 690, step = 66; // vertical pixels per h/8
+  const P = (x: number, z: number, f: number): [number, number] => [322 + sx * (x + 0.3 * z), base - step * 8 * f - 40 * z];
+  const pol = (r: number, deg: number): [number, number] => [r * Math.cos((deg * Math.PI) / 180), r * Math.sin((deg * Math.PI) / 180)];
+  const corners = [0, 60, 120, 180, 240, 300].map((d) => pol(a, d));
+  const bPos = [30, 150, 270].map((d) => pol(a / Math.sqrt(3), d));
+  const oPos = [90, 210, 330].map((d) => pol(a / Math.sqrt(3), d));
+  const PINK = "#eab0e8", LIME = "#c6f24a", GREEN = "#6ee7a8", ORANGE = "#f0963a", WHITE = "#f1f1f6";
+  const poly = (pts: [number, number][], f: number, col: string, w = 1.8, close = true) => {
+    const q = pts.map(([x, z]) => P(x, z, f));
+    return <polyline points={[...q, ...(close ? [q[0]] : [])].map((p) => p.join(",")).join(" ")} fill="none" stroke={col} strokeWidth={w} strokeLinejoin="round" />;
+  };
+  const dots = (pts: [number, number][], f: number, col: string, r = 7.5) =>
+    pts.map(([x, z], i) => {
+      const [X, Y] = P(x, z, f);
+      return <circle key={`${f}-${i}`} cx={X} cy={Y} r={r} fill={col} stroke="#0a0a0a" strokeWidth={1} />;
+    });
+  const levels: { f: number; tag: string; tone: string }[] = [
+    { f: -1 / 8, tag: "small hole", tone: "#7fd3ff" },
+    { f: 1 / 8, tag: "small hole  h/8", tone: "#7fd3ff" },
+    { f: 2 / 8, tag: "big hole  2h/8", tone: "#7fd3ff" },
+    { f: 3 / 8, tag: "small hole  3h/8", tone: "#7fd3ff" },
+    { f: 4 / 8, tag: "B layer  4h/8", tone: "#7fe0b0" },
+    { f: 5 / 8, tag: "small hole  5h/8", tone: "#7fd3ff" },
+    { f: 6 / 8, tag: "big hole  6h/8", tone: "#7fd3ff" },
+    { f: 7 / 8, tag: "small hole  7h/8", tone: "#7fd3ff" },
+    { f: 9 / 8, tag: "small hole", tone: "#7fd3ff" },
+  ];
+  const arc = (f1: number, f2: number) => {
+    const y1 = base - step * 8 * f1, y2 = base - step * 8 * f2;
+    return <path d={`M 70 ${y1} C 12 ${y1 - 14}, 12 ${y2 + 14}, 70 ${y2}`} fill="none" stroke={LIME} strokeWidth={3.2} strokeDasharray="7 6" strokeLinecap="round" />;
+  };
+  return (
+    <figure className="overflow-hidden rounded-xl border border-white/10 bg-black">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Location of voids in the HCP unit cell, level by level" className="block h-auto w-full">
+        <rect x={185} y={14} width={230} height={32} rx={3} fill="none" stroke="#5db8e6" strokeDasharray="3 3" />
+        <text x={300} y={36} textAnchor="middle" fontSize={17} fill="#f08ca0" fontWeight={700} fontFamily="ui-rounded, 'Comic Sans MS', cursive">Location of voids in HCP</text>
+        {levels.map((l) => (
+          <g key={l.f}>
+            <line x1={176} y1={base - step * 8 * l.f} x2={470} y2={base - step * 8 * l.f} stroke="#fff" strokeOpacity={0.45} strokeDasharray="2 4" />
+            <text x={170} y={base - step * 8 * l.f - 4} textAnchor="end" fontSize={12} fill={l.tone} fontWeight={700}>{l.tag}</text>
+          </g>
+        ))}
+        {/* prism edges */}
+        {corners.map(([x, z], i) => {
+          const [x1, y1] = P(x, z, 0), [x2, y2] = P(x, z, 1);
+          const back = z > 0.1;
+          return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#fff" strokeOpacity={back ? 0.28 : 0.75} strokeWidth={1.3} />;
+        })}
+        {/* levels */}
+        {poly(corners, 0, "#f6e04a")}
+        {corners.map(([x, z], i) => { const [X, Y] = P(0, 0, 0), [X2, Y2] = P(x, z, 0); return <line key={i} x1={X} y1={Y} x2={X2} y2={Y2} stroke={PINK} strokeWidth={1.4} />; })}
+        {dots([...corners, [0, 0]], 0, PINK)}
+        {poly(bPos, 1 / 8, "#4c9be8")}{dots(bPos, 1 / 8, LIME)}
+        {poly(oPos, 2 / 8, "#4c9be8")}{dots(oPos, 2 / 8, WHITE)}
+        {poly(corners, 3 / 8, "#4c9be8")}{corners.map(([x, z], i) => { const [X, Y] = P(0, 0, 3 / 8), [X2, Y2] = P(x, z, 3 / 8); return <line key={i} x1={X} y1={Y} x2={X2} y2={Y2} stroke={GREEN} strokeWidth={1.5} />; })}{dots([...corners, [0, 0]], 3 / 8, GREEN, 6.5)}
+        {poly(bPos, 4 / 8, GREEN)}{dots(bPos, 4 / 8, ORANGE, 8.5)}
+        {poly(corners, 5 / 8, "#4c9be8")}{corners.map(([x, z], i) => { const [X, Y] = P(0, 0, 5 / 8), [X2, Y2] = P(x, z, 5 / 8); return <line key={i} x1={X} y1={Y} x2={X2} y2={Y2} stroke={GREEN} strokeWidth={1.5} />; })}{dots([...corners, [0, 0]], 5 / 8, GREEN, 6.5)}
+        {poly(oPos, 6 / 8, "#4c9be8")}{dots(oPos, 6 / 8, LIME)}
+        {poly(bPos, 7 / 8, "#4c9be8")}{dots(bPos, 7 / 8, WHITE)}
+        {poly(corners, 1, "#f6e04a")}
+        {corners.map(([x, z], i) => { const [X, Y] = P(0, 0, 1), [X2, Y2] = P(x, z, 1); return <line key={i} x1={X} y1={Y} x2={X2} y2={Y2} stroke={PINK} strokeWidth={1.4} />; })}
+        {dots([...corners, [0, 0]], 1, PINK)}
+        {/* sphere sandwiches: a void above and below every atom */}
+        {arc(-1 / 8, 1 / 8)}{arc(3 / 8, 5 / 8)}{arc(7 / 8, 9 / 8)}
+        {/* h/2 brackets */}
+        <path d={`M 500 ${base} h 12 V ${base - step * 4} h -12`} fill="none" stroke="#f08ca0" strokeWidth={2} />
+        <path d={`M 500 ${base - step * 4} h 12 V ${base - step * 8} h -12`} fill="none" stroke="#7fd3ff" strokeWidth={2} />
+        <text x={528} y={base - step * 2 + 6} fontSize={17} fill="#f08ca0" fontStyle="italic" fontFamily={SERIF}>h/2</text>
+        <text x={528} y={base - step * 6 + 6} fontSize={17} fill="#7fd3ff" fontStyle="italic" fontFamily={SERIF}>h/2</text>
+        <text x={478} y={base - step * 8 + 4} fontSize={15} fill="#6ee7a8" fontWeight={700}>A</text>
+        <text x={478} y={base - step * 4 + 4} fontSize={15} fill="#6ee7a8" fontWeight={700}>B</text>
+        <text x={478} y={base + 4} fontSize={15} fill="#6ee7a8" fontWeight={700}>A</text>
+      </svg>
+      <figcaption className="border-t border-white/10 px-4 py-3 text-sm leading-6 text-[#c8f26a]">
+        Above and below each ball there is a small hole (T.V.), and hence the number of small holes per unit cell = 12. The 3 voids at each of h/8, 3h/8 (7 points counting the corners), 5h/8 and 7h/8 give 12 once the corner voids shared by three cells are counted as ⅓.
+      </figcaption>
+    </figure>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Tabs, Tex } from "./_ui";
+import { plainDist } from "./_dist";
+import { Tabs } from "./_ui";
 
 type V3 = [number, number, number];
 type Struct = "nacl" | "cscl" | "zns";
@@ -47,22 +48,6 @@ const fr = (x: number) => {
   const w = Math.floor(q / 4);
   return `${s}${w === 0 ? "" : w}${q % 4 === 1 ? "¼" : "¾"}`;
 };
-
-/** exact distance in units of a, from sixteen times the squared distance */
-function exact(d16: number): string {
-  const v = d16 / 16;
-  const r = Math.round(Math.sqrt(v));
-  if (Math.abs(r * r - v) < 1e-9) return r === 1 ? "a" : `${r}a`;
-  if (d16 % 4 === 0) {
-    const m = d16 / 4; // d = sqrt(m)/2 a
-    const rr = Math.round(Math.sqrt(m));
-    if (rr * rr === m) return rr % 2 === 0 ? `${rr / 2}a` : `\\dfrac{${rr}}{2}\\,a`;
-    return `\\dfrac{\\sqrt{${m}}}{2}\\,a`;
-  }
-  const rr = Math.round(Math.sqrt(d16));
-  if (rr * rr === d16) return `\\dfrac{${rr}}{4}\\,a`;
-  return `\\dfrac{\\sqrt{${d16}}}{4}\\,a`;
-}
 
 function place(p: V3, anion: boolean, kind: Struct): string {
   const a = p.map((x) => Math.abs(x));
@@ -142,7 +127,7 @@ export function IonShells() {
                   <td className="px-3 py-1.5 font-semibold" style={{ color: s.anion ? ANION : CATION }}>{s.anion ? nm.anion : nm.cation}</td>
                   <td className="px-3 py-1.5 font-mono font-bold text-[var(--foreground)]">{s.pts.length}</td>
                   <td className="px-3 py-1.5 text-[var(--foreground)]">
-                    <Tex ex={exact(s.d16)} /> <span className="ml-1 font-mono text-xs text-[var(--text-muted)]">= {(Math.sqrt(s.d16) / 4).toFixed(3)} a</span>
+                    <span className="font-mono text-base font-bold">{plainDist(s.d16, 4)}</span> <span className="ml-1 font-mono text-xs text-[var(--text-muted)]">≈ {(Math.sqrt(s.d16) / 4).toFixed(3)} a</span>
                   </td>
                   <td className="px-3 py-1.5 text-[var(--text-muted)]">
                     {place([...s.pts].sort((p, q) => q[0] + q[1] + q[2] - (p[0] + p[1] + p[2]))[0], s.anion, kind)}

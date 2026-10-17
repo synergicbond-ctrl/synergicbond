@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { Stage, type CameraPose, type StageAtom, type StageBond, type V3 } from "./_stage";
 import { C, CORNERS, FACES, cubeEdges, latticePoints, neighbourShells } from "./_geom";
+import { plainDist } from "./_dist";
 import { BraggFig, ContactFig, MillerFig } from "./_figs";
 import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Tex, Traps, Worked, useTour, type DerivStep } from "./_ui";
 
@@ -214,15 +215,6 @@ const frac = (x: number) => {
   return n % 2 === 0 ? String(n / 2) : n === 1 ? "½" : `${Math.floor(n / 2)}½`;
 };
 
-function exactDist(d2: number): string {
-  const v = d2 / 4;
-  const r = Math.round(Math.sqrt(v));
-  if (Math.abs(r * r - v) < 1e-9) return r === 1 ? "a" : `${r}a`;
-  if (d2 % 4 === 2) return d2 === 2 ? "\\dfrac{a}{\\sqrt2}" : `\\sqrt{\\dfrac{${d2 / 2}}{2}}\\,a`;
-  if (d2 % 4 === 0) return `\\sqrt{${d2 / 4}}\\,a`;
-  return `\\dfrac{\\sqrt{${d2}}}{2}\\,a`;
-}
-
 type Rep = { v: V3; kind: "corner" | "face" | "body" };
 
 function repOf(points: V3[]): Rep {
@@ -310,7 +302,7 @@ function ShellExplorer() {
       <div className="space-y-3">
         <Stage atoms={atoms} camera={{ key: `s-${kind}-${Math.min(shown, shells.length)}`, az: 0.7, el: 0.4, dist: Math.max(5.2, Math.min(11, 4.3 * (shells[Math.min(shown, shells.length) - 1].d * 1.1 + 0.35))) }} autoRotate floorY={-3.2} height={440} label={`Neighbour shells around one atom in a ${kind.toUpperCase()} lattice`} />
         <Narration k={`${kind}-${shown}`}>
-          <Rich text={`**Shell ${shown}:** ${sh.n} atoms at a distance of $${exactDist(Math.round(sh.d * sh.d * 4))} = ${sh.d.toFixed(3)}\\,a$. ${shown === 1 ? `This is the **coordination number**: the number of nearest neighbours. Together with the central atom's own contribution it fixes how tightly the lattice is packed.` : `Counting everything out to this shell gives ${cum} neighbours in total.`}`} />
+          <Rich text={`**Shell ${shown}:** ${sh.n} atoms at a distance of **${plainDist(Math.round(sh.d * sh.d * 4), 2)}** (about ${sh.d.toFixed(3)} a). ${shown === 1 ? `This is the **coordination number**: the number of nearest neighbours. Together with the central atom's own contribution it fixes how tightly the lattice is packed.` : `Counting everything out to this shell gives ${cum} neighbours in total.`}`} />
         </Narration>
       </div>
       <div className="space-y-4">
@@ -344,7 +336,7 @@ function ShellExplorer() {
                     </td>
                     <td className="px-3 py-1.5 font-mono font-bold text-[var(--foreground)]">{s.n}</td>
                     <td className="px-3 py-1.5 text-[var(--foreground)]">
-                      <Tex ex={exactDist(Math.round(s.d * s.d * 4))} /> <span className="ml-1 font-mono text-xs text-[var(--text-muted)]">= {s.d.toFixed(3)} a</span>
+                      <span className="font-mono text-base font-bold">{plainDist(Math.round(s.d * s.d * 4), 2)}</span> <span className="ml-1 font-mono text-xs text-[var(--text-muted)]">≈ {s.d.toFixed(3)} a</span>
                     </td>
                     <td className="px-3 py-1.5 text-[var(--text-muted)]">{describePos(kind, rep)}</td>
                   </tr>

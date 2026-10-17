@@ -61,23 +61,22 @@ def planar_cation():
 
 
 def hyperconj():
-    """σ(C-H) -> empty p, two views."""
+    """σ(C-H) -> empty p, side view."""
     P = []
-    # left: side view
-    cx, cy = 100, 88
-    P += [line(cx, cy, cx - 60, cy + 22), line(cx, cy, cx - 60, cy - 22) if False else "",
-          lobe(cx, cy, -90, 52, 17, "#dfe6f2"), lobe(cx, cy, 90, 52, 17, "#dfe6f2"), text("+", cx + 12, cy + 2, 14)]
-    # C+ with its two substituents (right side) and neighbouring C-H
-    P += [line(cx, cy, cx + 70, cy + 20), line(cx, cy, cx, cy + 0), ]
-    # neighbouring carbon to the left with one C-H aligned with p lobes
-    nx, ny = cx - 62, cy + 18
-    P += [line(cx, cy, nx, ny), text("C", nx - 8, ny + 14, 13),
-          line(nx, ny, nx - 6, ny - 52, 1.5), text("H", nx - 6, ny - 58, 12),
-          lobe(nx - 3, ny - 24, 90, 24, 9, "#fbe9d0", dash=True) if False else "",
-          line(nx, ny, nx - 40, ny + 22), line(nx, ny, nx - 14, ny + 44)]
-    P.append(text("C–H σ bond parallel to the empty p orbital: maximum overlap", 20, 150, 11.5, "start"))
-    P.append(curved_path(nx - 6, ny - 40, cx - 8, cy - 40, nx + 14, ny - 72))
-    return wrap(P, 340, 160)
+    cx, cy = 150, 100          # cationic carbon
+    nx, ny = 80, 100           # neighbouring carbon
+    P += [line(nx, ny, cx, cy),
+          lobe(cx, cy, -90, 52, 17, "#dfe6f2"), lobe(cx, cy, 90, 52, 17, "#dfe6f2"),
+          line(cx, cy, cx + 55, cy - 18), line(cx, cy, cx + 55, cy + 18),
+          text("C⁺", cx + 2, cy + 4, 12, "start") if False else "",
+          text("+", cx + 9, cy + 3, 14),
+          line(nx, ny, nx, ny - 48), text("H", nx, ny - 54, 13),
+          line(nx, ny, nx - 38, ny + 24), line(nx, ny, nx - 14, ny + 46),
+          text("σ(C–H)", nx - 14, ny - 28, 11.5, "end"),
+          text("empty p", cx + 22, cy - 56, 11.5, "start")]
+    P.append(curved_path(nx + 2, ny - 30, cx - 10, cy - 38, nx + 36, ny - 62))
+    P.append(text("C–H parallel to the p axis: maximum overlap", 20, 172, 11.5, "start"))
+    return wrap(P, 340, 182)
 
 
 def bisected():

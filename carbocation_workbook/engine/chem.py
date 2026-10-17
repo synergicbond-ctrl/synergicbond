@@ -266,3 +266,26 @@ def ring_wedges(smi, ring_maps, subs):
     """Wedge/hash assignment ('w'/'h') for ring substituents from a 3D embedding of a stereo-defined SMILES."""
     f = faces(smi, ring_maps, subs)
     return [(rm, sm, "w" if sg > 0 else "h") for (rm, sm), sg in zip(subs, f)]
+
+
+def pick_geom(smi, test, seed=11):
+    """Stereoisomer of a mapped SMILES for which test(positions_by_map) is True (3D embedded)."""
+    import numpy as np
+    from rdkit.Chem import AllChem
+    from rdkit.Chem.EnumerateStereoisomers import EnumerateStereoisomers
+    m0 = Chem.MolFromSmiles(smi, sanitize=False)
+    m0.UpdatePropertyCache(strict=False)
+    Chem.SanitizeMol(m0, Chem.SANITIZE_ALL ^ Chem.SANITIZE_PROPERTIES ^ Chem.SANITIZE_SETAROMATICITY)
+    hits = []
+    for iso in EnumerateStereoisomers(m0):
+        s = Chem.MolToSmiles(iso, canonical=False)
+        m = Chem.AddHs(parse(s))
+        if AllChem.EmbedMolecule(m, randomSeed=seed) != 0:
+            continue
+        conf = m.GetConformer()
+        pos = {a.GetAtomMapNum(): np.array(list(conf.GetAtomPosition(a.GetIdx()))) for a in m.GetAtoms() if a.GetAtomMapNum()}
+        if test(pos):
+            hits.append(s)
+    if not hits:
+        raise ValueError("pick_geom: no isomer satisfies the test")
+    return hits[0]

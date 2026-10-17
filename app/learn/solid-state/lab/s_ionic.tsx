@@ -233,6 +233,63 @@ export function IonicChapter() {
         {"Compute r₊/r₋ (small over large) and read off the coordination number. NaCl: 95/181 = 0.52, so CN 6. CsCl: 169/181 = 0.93, so CN 8. ZnS: 74/184 = 0.40, so CN 4. The rule predicts the right structure for most simple ionic solids; it is a guide, not a law."}
       </KeyIdea>
 
+
+      <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Beyond eight: larger coordination numbers</h3>
+      <P t="The same geometry, applied to higher coordination, gives the lower limits below. Ionic crystals rarely go past 8, but complex ions, intermetallics and the close-packed metals reach 12." />
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[520px] max-w-2xl text-sm">
+          <thead className="text-left text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+            <tr>
+              <th className="py-2 pr-4">Geometry around the cation</th>
+              <th className="py-2 pr-4">CN</th>
+              <th className="py-2">Lower limit of r₊/r₋</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Linear", "2", "—"],
+              ["Trigonal planar", "3", "0.155"],
+              ["Tetrahedral", "4", "0.225"],
+              ["Octahedral", "6", "0.414"],
+              ["Trigonal prism", "6", "0.528"],
+              ["Pentagonal bipyramid", "7", "0.592"],
+              ["Cube", "8", "0.732"],
+              ["Dodecahedron (square antiprism)", "8", "0.668"],
+              ["Icosahedron", "12", "0.902"],
+              ["Cuboctahedron", "12", "1.000"],
+            ].map(([a, b, c]) => (
+              <tr key={a} className="border-t border-[var(--border)]">
+                <td className="py-1.5 pr-4 text-[var(--foreground)]">{a}</td>
+                <td className="py-1.5 pr-4 font-mono">{b}</td>
+                <td className="py-1.5 font-mono text-[var(--accent)]">{c}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="grid gap-4 md:grid-cols-2">
+        <KeyIdea title="Temperature and pressure change the coordination number">
+          {"**Pressure** squeezes ions closer, so the structure with the **higher** coordination number is favoured: NaCl (6 : 6) turns into the CsCl type (8 : 8) at very high pressure, about 30 GPa. **Heating** expands the lattice and favours the **lower** coordination number: CsCl (8 : 8) changes to the NaCl type (6 : 6) at about 445 °C."}
+        </KeyIdea>
+        <KeyIdea title="If nothing is given, assume the ideal crystal">
+          {"An **ideal** crystal is one in which the cation just touches the anions and the anions just touch each other, so the radius ratio sits at the **limiting** value for its coordination number: 0.414 for NaCl and 0.732 for CsCl. When $r_+/r_-$ is smaller than the limit the anions touch each other and the cation rattles; the edge is then fixed by the anions alone."}
+        </KeyIdea>
+      </div>
+      <Derivation
+        no="4.7"
+        title="Packing efficiency of an ideal rock-salt crystal"
+        given="An ideal NaCl-type crystal: the anions form an FCC lattice and just touch along the face diagonal, while each cation just fits the octahedral void, so $r_+/r_- = 0.414$."
+        find="The fraction of the cell volume occupied by the ions."
+        steps={[
+          { say: "The anions touch along the face diagonal, which carries four anion radii:", tex: "\\sqrt2\\,a = 4r_- \;\\Rightarrow\; a = 2\\sqrt2\\,r_-" },
+          { say: "Ions per cell: 4 anions (FCC) and 4 cations (octahedral voids), so $Z = 4$ formula units. The ideal radius ratio gives $r_+ = 0.414\\,r_-$, and:", tex: "V_{\\text{ions}} = 4\\cdot\\tfrac43\\pi\\left(r_-^3 + r_+^3\\right) = \\tfrac{16}{3}\\pi\\,r_-^3\\,(1 + 0.414^3)" },
+          { say: "Volume of the cell:", tex: "V_{\\text{cell}} = a^3 = (2\\sqrt2\\,r_-)^3 = 22.63\\,r_-^3" },
+          { say: "Divide, using $1 + 0.414^3 = 1.071$:", tex: "\\eta = \\frac{16.755 \\times 1.071}{22.63} = 0.793" },
+        ]}
+        result="\eta \approx 0.79\;(79\%)"
+        note="This is the largest possible packing efficiency of a rock-salt crystal. Any real NaCl-type crystal with $r_+/r_- > 0.414$ has a larger cation, the anions are pushed apart, and the efficiency is lower."
+      />
+
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Important ionic structures</h3>
       <P t="Each structure below is built in stages: first the large-ion framework, then the small ions in their holes, then the coordination. Use **Slice to the cell** to see exactly which fraction of every ion belongs to one cell." />
       <IonicExplorer />

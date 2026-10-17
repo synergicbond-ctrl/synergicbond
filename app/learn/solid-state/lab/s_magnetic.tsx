@@ -376,6 +376,51 @@ function Hysteresis() {
 
 /* ------------------------------------------------------------- chapter */
 
+
+/* ------------------------------------------------- Curie law and susceptibility */
+
+function SusceptLab() {
+  const [n, setN] = useState(3);
+  const [temp, setTemp] = useState(298);
+  const [vm, setVm] = useState(61.7);
+  const S = n / 2;
+  const K = 6.3001e-6; // N_A g_e^2 mu_0 mu_B^2 / 3k, in m^3 K mol^-1
+  const chim = (T: number) => (K * S * (S + 1)) / T;
+  const chi = (T: number) => chim(T) / (vm * 1e-6);
+  const mu = 2.0023 * Math.sqrt(S * (S + 1));
+  const W = 560, H = 250, X = (T: number) => 64 + ((T - 50) / 450) * 460, top = chi(50);
+  const Y = (v: number) => 206 - (v / top) * 170;
+  const pts = Array.from({ length: 91 }, (_, i) => 50 + (i * 450) / 90).map((T) => `${X(T).toFixed(1)},${Y(chi(T)).toFixed(1)}`).join(" ");
+  const ex = Math.floor(Math.log10(chi(temp)));
+  return (
+    <div className="grid gap-5 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+      <div className="space-y-3">
+        <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Paramagnetic susceptibility falling as one over temperature" className="w-full rounded-2xl border border-white/10" style={PANEL}>
+          <line x1={64} y1={206} x2={X(500)} y2={206} stroke="#fff" strokeOpacity={0.5} />
+          <line x1={64} y1={24} x2={64} y2={206} stroke="#fff" strokeOpacity={0.5} />
+          <polyline points={pts} fill="none" stroke="#9a84e6" strokeWidth={2.6} />
+          <circle cx={X(temp)} cy={Y(chi(temp))} r={6.5} fill="#f2b13f" stroke="#fff" strokeWidth={1.5} />
+          {[100, 200, 300, 400, 500].map((T) => (
+            <text key={T} x={X(T)} y={224} textAnchor="middle" fontSize={11} fill="currentColor" fillOpacity={0.65}>{T}</text>
+          ))}
+          <text x={300} y={243} textAnchor="middle" fontSize={12} fill="currentColor" fillOpacity={0.65}>temperature (K)</text>
+          <text x={16} y={115} textAnchor="middle" fontSize={12} fill="currentColor" fillOpacity={0.65} transform="rotate(-90 16 115)">volume susceptibility χ</text>
+          <text x={X(330)} y={Y(chi(330)) - 14} fontSize={13} fontWeight={700} fill="#c9baff">χ = C / T</text>
+        </svg>
+        <Narration k={`${n}`}>
+          <Rich text={`With **${n}** unpaired electron${n > 1 ? "s" : ""}, $S = ${S}$ and the spin-only moment is $${mu.toFixed(2)}\\,\\mu_B$. Double the temperature and χ halves, because thermal motion scrambles the alignment of the spins.`} />
+        </Narration>
+      </div>
+      <div className="space-y-4">
+        <Slider label="Unpaired electrons per ion" value={n} onChange={setN} min={1} max={7} show={String(n)} />
+        <Slider label="Temperature" value={temp} onChange={setTemp} min={50} max={500} step={1} show={`${temp} K`} />
+        <Slider label="Molar volume Vm" value={vm} onChange={setVm} min={20} max={150} step={0.1} show={`${vm.toFixed(1)} cm³/mol`} />
+        <Facts items={[["Molar χm", `${(chim(temp) * 1e8).toFixed(2)} × 10⁻⁸ m³/mol`], ["Volume χ", `${(chi(temp) / 10 ** ex).toFixed(2)} × 10^${ex}`], ["Spin-only moment", `${mu.toFixed(2)} μB`], ["Curie constant C", `${(K * S * (S + 1) * 1e6).toFixed(1)} × 10⁻⁶`]]} cols={2} />
+      </div>
+    </div>
+  );
+}
+
 export function MagneticChapter() {
   return (
     <Chapter id="magnetic" n="PART 7" title="Magnetic properties" lead="Every electron is a tiny magnet. Whether a solid is attracted, repelled, or can itself become a magnet depends on whether those tiny magnets cancel, point randomly, or line up.">
@@ -409,6 +454,23 @@ export function MagneticChapter() {
         ]}
         result="\chi = \dfrac{C}{T}"
         note="Heating increases thermal agitation, which scrambles the alignment, so the paramagnetism weakens. Above $T_c$ a ferromagnet follows the Curie–Weiss form $\chi = C/(T - T_c)$."
+      />
+
+      <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Susceptibility, Curie&apos;s law and how it is measured</h3>
+      <P t="The **magnetisation** $M$ is the average moment per molecule times the number density. It is proportional to the applied field strength $H$: $M = \chi H$, where $\chi$ is the dimensionless **volume susceptibility**. The **molar susceptibility** is $\chi_m = \chi V_m$. A substance with $\chi > 0$ is **paramagnetic**: it is drawn into the field and the lines of force crowd into it. One with $\chi < 0$ is **diamagnetic**: it is pushed out and the lines thin out inside it." />
+      <SusceptLab />
+      <div className="grid gap-4 md:grid-cols-2">
+        <KeyIdea title="How susceptibility is measured">
+          {"In a **Gouy balance** the sample hangs in a narrow tube between the poles of a magnet. A paramagnetic sample is pulled in and appears **heavier** when the field is on; a diamagnetic one is pushed out and appears **lighter**. The balance is calibrated with a sample of known susceptibility. Modern instruments use a **SQUID** (superconducting quantum interference device), an extremely sensitive magnetometer built from a superconducting loop."}
+        </KeyIdea>
+        <KeyIdea title="Orbital paramagnetism (TIP)">
+          {"Every molecule has a diamagnetic part, from currents induced in its filled orbitals. Spin paramagnetism usually overwhelms it when there are unpaired electrons. A few molecules with **no** unpaired electrons are paramagnetic anyway, because the induced currents can use empty orbitals lying close above the HOMO. This effect is independent of temperature and is called **temperature-independent paramagnetism (TIP)**."}
+        </KeyIdea>
+      </div>
+      <Worked
+        q="A complex salt has three unpaired electrons per cation and a molar volume of 61.7 cm³/mol. Estimate its molar and volume susceptibility at 298 K. Use $N_A g_e^2 \mu_0 \mu_B^2 / 3k = 6.30\times10^{-6}$ m³ K mol⁻¹."
+        steps={["Three unpaired electrons: $S = \\tfrac32$, so $S(S+1) = \\tfrac32\\times\\tfrac52 = 3.75$.", "Curie law: $\\chi_m = \\dfrac{6.30\\times10^{-6}\\times3.75}{298} = 7.9\\times10^{-8}$ m³/mol.", "$\\chi = \\dfrac{\\chi_m}{V_m} = \\dfrac{7.9\\times10^{-8}}{6.17\\times10^{-5}} = 1.28\\times10^{-3}$."]}
+        answer="χm ≈ 7.9 × 10⁻⁸ m³/mol; χ ≈ 1.3 × 10⁻³ (positive: paramagnetic)"
       />
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Five kinds of magnetic behaviour</h3>

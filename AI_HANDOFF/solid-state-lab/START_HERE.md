@@ -66,3 +66,16 @@ Numbering: 2.1-2.3 cubic packing, 2.4 d-spacing (Miller), 2.5 Bragg (+ BraggLab)
 3.1-3.7 packing/voids/diamond, 4.1-4.5 radius ratio, 4.6 cell edge from radii,
 5.1 Boltzmann, 5.2 density with Schottky/Frenkel, 6.1 intrinsic conductivity,
 7.1 spin-only moment, 7.2 Curie's law.
+
+## Additions from the user's own notes (Solid_State_KOHINOOR PDF + Atkins pages)
+
+Added after comparing the lab with the user's notes: 1.1 volume of a general
+unit cell + table for all seven systems; 2.6 fraction of edge unoccupied and
+four worked problems (BCC gap to density, Fe third-neighbour radius, formula
+from positions); `SquareStack` (AAA to SC, ABAB open to BCC, square closed
+to FCC, 4+4+4 = 12); `HcpVoids` + `HcpLayerFig` (T.V./O.V. at h/8 ... 7h/8);
+higher-CN radius-ratio table, T/P effect on CN, 4.7 ideal rock-salt packing
+79 %; 5.3 Frenkel defects n = sqrt(N N_i) exp(-dH/2kT), SrCl2 doping and
+Fe0.93O worked problems; `FermiLab` (Fermi-Dirac), `CriticalField` (Hc(T),
+Type I/II, Cooper pairs, Pb worked problem); `SusceptLab` (Curie law,
+molar/volume susceptibility, Gouy balance, SQUID, TIP).

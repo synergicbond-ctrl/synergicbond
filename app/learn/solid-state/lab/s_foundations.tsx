@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { Stage, type StageAtom, type StageBond, type StageLine, type StagePoly, type V3 } from "./_stage";
 import { C } from "./_geom";
-import { Btn, Chapter, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Traps, Worked, useClock, useTween, useTweenArr } from "./_ui";
+import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Tex, Traps, Worked, useClock, useTween, useTweenArr } from "./_ui";
 
 const hash = (a: number, b: number) => {
   let h = (a * 374761393 + b * 668265263) | 0;
@@ -683,6 +683,55 @@ export function FoundationsChapter() {
         <Worked q="Which crystal system has a = b ≠ c and α = β = γ = 90°? How many Bravais lattices belong to it?" steps={["Two equal edges, one different, all right angles: tetragonal.", "A body-centred tetragonal lattice exists; a face-centred one reduces to it.", "Allowed lattices: primitive and body-centred."]} answer="Tetragonal; 2 lattices (P and I)" />
         <Worked q="A lattice has points at the 8 corners and at the centres of the two opposite faces. How many lattice points belong to one cell?" steps={["Corners: $8\\times\\tfrac18 = 1$.", "Face centres: $2\\times\\tfrac12 = 1$."]} answer="2 (an end-centred, C-type, lattice)" />
       </div>
+
+
+      <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Volume of the unit cell</h3>
+      <P t="Density, packing efficiency and every X-ray calculation need the volume of the cell. For a cube it is $a^3$; for the other six systems the edges and angles enter. All seven results come from one general expression, derived below." />
+      <Derivation
+        no="1.1"
+        title="Volume of a general unit cell"
+        given="A cell with edges $a$, $b$, $c$ and angles $\alpha$ (between $b$ and $c$), $\beta$ (between $a$ and $c$), $\gamma$ (between $a$ and $b$)."
+        find="The volume $V$ of the parallelepiped in terms of $a, b, c, \alpha, \beta, \gamma$."
+        steps={[
+          { say: "Place the edge vectors in a convenient frame: **a** along $x$, **b** in the $xy$ plane, and **c** pointing up:", tex: "\\mathbf a = (a,0,0),\\quad \\mathbf b = (b\\cos\\gamma,\; b\\sin\\gamma,\; 0),\\quad \\mathbf c = (c_x, c_y, c_z)" },
+          { say: "The dot products with **a** and **b** fix the first two components of **c**:", tex: "c_x = c\\cos\\beta,\\qquad c_y = \\frac{c\\,(\\cos\\alpha - \\cos\\beta\\cos\\gamma)}{\\sin\\gamma}" },
+          { say: "The length of **c** is $c$, so the height follows from $c_z^2 = c^2 - c_x^2 - c_y^2$. The volume is the area of the base times the height, $V = (ab\\sin\\gamma)\\,c_z$:", tex: "V = abc\\,\\sqrt{\\sin^2\\gamma\\,(1-\\cos^2\\beta) - (\\cos\\alpha - \\cos\\beta\\cos\\gamma)^2}" },
+          { say: "Expand the bracket and use $\\sin^2\\gamma = 1 - \\cos^2\\gamma$; the terms $\\cos^2\\beta\\cos^2\\gamma$ cancel:", tex: "V = abc\\,\\sqrt{1 - \\cos^2\\alpha - \\cos^2\\beta - \\cos^2\\gamma + 2\\cos\\alpha\\cos\\beta\\cos\\gamma}" },
+        ]}
+        result="V = abc\sqrt{1 - \cos^2\alpha - \cos^2\beta - \cos^2\gamma + 2\cos\alpha\cos\beta\cos\gamma}"
+        note="Putting in the angles of each crystal system collapses the square root, as the table shows."
+      />
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[560px] max-w-3xl text-sm">
+          <thead className="text-left text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+            <tr>
+              <th className="py-2 pr-4">System</th>
+              <th className="py-2 pr-4">Conditions</th>
+              <th className="py-2">Volume of the cell</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Cubic", "a = b = c, all 90°", "a^3"],
+              ["Tetragonal", "a = b ≠ c, all 90°", "a^2 c"],
+              ["Orthorhombic", "a ≠ b ≠ c, all 90°", "abc"],
+              ["Hexagonal (primitive)", "a = b ≠ c, γ = 120°", "\\tfrac{\\sqrt3}{2}\\,a^2 c"],
+              ["Rhombohedral (trigonal)", "a = b = c, α = β = γ", "a^3\\sqrt{1 - 3\\cos^2\\alpha + 2\\cos^3\\alpha}"],
+              ["Monoclinic", "a ≠ b ≠ c, α = γ = 90° ≠ β", "abc\\,\\sin\\beta"],
+              ["Triclinic", "a ≠ b ≠ c, no right angles", "abc\\sqrt{1 - \\cos^2\\alpha - \\cos^2\\beta - \\cos^2\\gamma + 2\\cos\\alpha\\cos\\beta\\cos\\gamma}"],
+            ].map(([a, b, v]) => (
+              <tr key={a} className="border-t border-[var(--border)]">
+                <td className="py-2 pr-4 font-semibold text-[var(--foreground)]">{a}</td>
+                <td className="py-2 pr-4 text-[var(--text-muted)]">{b}</td>
+                <td className="py-2"><Tex ex={v} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <KeyIdea title="The hexagonal cell you draw is three primitive cells">
+        {"The hexagonal prism used for HCP has volume $\\tfrac{3\\sqrt3}{2}a^2c$ and holds 6 atoms. The primitive hexagonal cell (a rhombic prism with γ = 120°) is one third of it, $\\tfrac{\\sqrt3}{2}a^2c$, and holds 2 atoms. Use the one that matches the number of atoms you are counting."}
+      </KeyIdea>
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Symmetry of the cube</h3>
       <P t="A **symmetry element** is a point, line or plane about which an operation leaves the crystal looking unchanged. Three kinds matter for a cubic cell: **axes of rotation** (turn through 360°/n), **planes of symmetry** (mirror), and a **centre of symmetry** (inversion through a point). Apply each operation below and watch the coloured corners exchange places." />

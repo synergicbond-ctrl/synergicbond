@@ -431,6 +431,32 @@ export function DefectsChapter() {
         result="\text{Schottky: density falls};\qquad \text{Frenkel: density unchanged}"
         note="Metal-excess defects (F-centres) and metal-deficiency defects are also compositional: the density of Fe$_{0.95}$O is lower than that of ideal FeO because some sites are vacant."
       />
+      <Derivation
+        no="5.3"
+        title="Number of Frenkel defects"
+        given="A crystal with $N$ lattice sites for the displaced ion and $N_i$ interstitial sites available to it. Moving one ion from a lattice site to an interstitial site costs enthalpy $\\Delta H$."
+        find="The equilibrium number $n$ of Frenkel defects at temperature $T$."
+        steps={[
+          { say: "Choose which $n$ of the $N$ lattice sites are vacated, and which $n$ of the $N_i$ interstitial sites are filled:", tex: "W = \\binom{N}{n}\\binom{N_i}{n}" },
+          { say: "Boltzmann's entropy with Stirling's approximation $\\ln x! \\approx x\\ln x - x$ gives:", tex: "S = k\\ln W \\approx k\\,[\\,N\\ln N - (N-n)\\ln(N-n) - n\\ln n + N_i\\ln N_i - (N_i-n)\\ln(N_i-n) - n\\ln n\\,]" },
+          { say: "Minimise $G = n\\,\\Delta H - TS$ by setting $dG/dn = 0$:", tex: "\\Delta H = kT\\left[\\ln\\frac{N-n}{n} + \\ln\\frac{N_i-n}{n}\\right] = kT\\ln\\frac{(N-n)(N_i-n)}{n^2}" },
+          { say: "Defects are rare, so $n \\ll N, N_i$ and the bracket reduces to $NN_i/n^2$:", tex: "\\frac{n^2}{N N_i} = e^{-\\Delta H/kT}" },
+        ]}
+        result="n = \sqrt{N N_i}\;\exp\!\left(-\dfrac{\Delta H}{2kT}\right)"
+        note="Compare derivation 5.1: for Schottky defects the two sets of sites are equal, $N_i \to N$, and the same factor $e^{-\Delta H/2kT}$ appears. The factor of two in the exponent comes from creating the vacancy and its partner together."
+      />
+      <div className="grid gap-4 md:grid-cols-2">
+        <Worked
+          q="NaCl is doped with $10^{-3}$ mol % of SrCl₂. How many cationic vacancies are produced per mole of NaCl?"
+          steps={["Each Sr²⁺ replaces two Na⁺, but occupies only one site, so each Sr²⁺ leaves **one** cationic vacancy.", "$10^{-3}$ mol % means $10^{-3}$ mol of SrCl₂ in 100 mol of NaCl, i.e. $10^{-5}$ mol per mole of NaCl.", "Vacancies $= 10^{-5}\\times6.022\\times10^{23} = 6.022\\times10^{18}$ per mole."]}
+          answer="6.022 × 10¹⁸ cationic vacancies per mole of NaCl"
+        />
+        <Worked
+          q="Fe₀.₉₃O is non-stoichiometric. What fraction of the iron is present as Fe³⁺, assuming only Fe²⁺ and Fe³⁺ exist?"
+          steps={["Let $x$ be the Fe³⁺ per formula unit and $0.93 - x$ the Fe²⁺. Charge balance with one O²⁻: $2(0.93 - x) + 3x = 2$.", "$1.86 + x = 2$, so $x = 0.14$.", "Fraction of Fe³⁺ $= 0.14 / 0.93 = 15\\%$."]}
+          answer="About 15 % of the iron is Fe³⁺"
+        />
+      </div>
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Line defects: dislocations</h3>
       <P t="A **dislocation** is a line along which the crystal is out of step with itself. In the **edge** form an extra half-plane of atoms is inserted; in the **screw** form the planes spiral around the line like a ramp. The **Burgers vector b** measures the size and direction of the lattice slip. Move the defect with shear stress and watch the crystal deform." />

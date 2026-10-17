@@ -297,6 +297,51 @@ function HcpCell() {
 }
 
 
+
+/* ------------------------------------- 3D lattices built from square layers */
+
+type SqMode = "sc" | "bcc" | "fcc";
+const SQ: Record<SqMode, { tab: string; r: number; dy: number; off: number; say: string; cn: string; pf: string; title: string }> = {
+  sc: { tab: "AAA…", r: 0.5, dy: 1, off: 0, cn: "4 + 1 + 1 = 6", pf: "52.4 %", title: "Simple cubic", say: "Square layers placed **directly above one another** (AAA…). Each atom touches 4 neighbours in its own layer, 1 above and 1 below: coordination number **6**. The layers are not close packed, so the packing is the poorest of the three." },
+  bcc: { tab: "ABAB… (open)", r: 0.433, dy: 0.5, off: 0.5, cn: "0 + 4 + 4 = 8", pf: "68.0 %", title: "Body-centred cubic", say: "Square layers that are **not** touching in-plane, with each layer sitting in the hollows of the one below (ABAB…). An atom touches 4 in the layer above and 4 in the layer below: coordination number **8**. The sphere of the second layer lies in the voids of the first." },
+  fcc: { tab: "ABAB… (closed)", r: 0.5, dy: Math.SQRT1_2, off: 0.5, cn: "4 + 4 + 4 = 12", pf: "74.05 %", title: "Face-centred cubic (ccp)", say: "**Square close packing**: atoms touch along rows and columns, and each layer sits in the hollows of the one below. An atom has 4 neighbours in its layer, 4 above and 4 below: coordination number **12**. Three layers are enough to show all twelve. This is the same ccp lattice that hexagonal layers give, seen along a cube axis." },
+};
+
+function SquareStack() {
+  const [mode, setMode] = useState<SqMode>("sc");
+  const q = SQ[mode];
+  const g = 1.15;
+  const pos: { id: string; p: V3; mid: boolean; layer: number }[] = [];
+  for (let L = 0; L < 3; L++) for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) {
+    const o = (L % 2) * q.off;
+    pos.push({ id: `${L}_${i}_${j}`, p: [(i + o) * g, (L - 1) * q.dy * g, (j + o) * g], mid: L === 1 && i === 0 && j === 0, layer: L });
+  }
+  const centre = pos.find((a) => a.mid)!.p;
+  const R = q.r * g;
+  const atoms: StageAtom[] = pos.map((a) => {
+    const d = Math.hypot(a.p[0] - centre[0], a.p[1] - centre[1], a.p[2] - centre[2]);
+    const near = !a.mid && d <= 2 * R * 1.02;
+    return { id: a.id, p: a.p, r: R, color: a.mid ? C.white : near ? C.gold : a.layer === 1 ? C.teal : C.blue, opacity: a.mid || near ? 1 : 0.38, glow: a.mid };
+  });
+  return (
+    <div className="grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+      <div className="space-y-3">
+        <Stage atoms={atoms} camera={{ key: `sq-${mode}`, az: 0.7, el: 0.5, dist: 9.5 }} autoRotate floorY={-1.9} height={430} label={`Three square layers stacked to make a ${q.title} lattice`} />
+        <Narration k={mode}>
+          <Rich text={q.say} />
+        </Narration>
+      </div>
+      <div className="space-y-4">
+        <Tabs label="Stacking of square layers" value={mode} onChange={setMode} items={(Object.keys(SQ) as SqMode[]).map((k) => [k, SQ[k].tab] as const)} />
+        <Facts items={[["Lattice", q.title], ["Coordination", q.cn], ["Packing", q.pf], ["Layers needed", "3"]]} cols={2} />
+        <p className="text-sm leading-6 text-[var(--text-muted)]">
+          The white atom is the one being examined and its touching neighbours are gold. Using <strong className="text-[var(--foreground)]">hexagonal</strong> layers instead, an atom has 6 neighbours in its layer plus 3 above and 3 below: 3 + 6 + 3 = 12, and four layers are needed to show them. Placing the third layer over the tetrahedral voids of the first gives ABAB (hcp); over the octahedral voids gives ABCABC (ccp).
+        </p>
+      </div>
+    </div>
+  );
+}
+
 /* --------------------------------------------------- voids in the HCP cell */
 
 function HcpVoids() {
@@ -491,6 +536,10 @@ export function PackingChapter() {
         {"ABAB… gives **hexagonal close packing (HCP)**. ABCABC… gives **cubic close packing (CCP)**. In both, each sphere touches 12 others (6 in its own layer, 3 above, 3 below) and fills 74.05% of space. Examples of HCP: Mg, Zn, Cd, Ti. Examples of CCP: Cu, Ag, Au, Al, Ni."}
       </KeyIdea>
       <FccAlong111 />
+
+      <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Building the cubic lattices from square layers</h3>
+      <P t="Square layers can be stacked in three ways, and each way produces one of the cubic lattices you met in Part 2. Compare how many neighbours an atom gets in each case." />
+      <SquareStack />
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">The hexagonal close-packed cell</h3>
       <HcpCell />

@@ -514,6 +514,105 @@ function Meissner() {
 
 /* ------------------------------------------------------------- chapter */
 
+
+/* ---------------------------------------------------------- Fermi-Dirac */
+
+function FermiLab() {
+  const [temp, setTemp] = useState(600);
+  const [eg, setEg] = useState(1.1);
+  const kT = 8.617e-5 * temp;
+  const f = (e: number) => 1 / (Math.exp(e / Math.max(kT, 1e-6)) + 1);
+  const W = 560, H = 280, X = (e: number) => 60 + ((e + 2) / 4) * 450, Y = (v: number) => 24 + (1 - v) * 190;
+  const pts = Array.from({ length: 241 }, (_, i) => -2 + (i * 4) / 240).map((e) => `${X(e).toFixed(1)},${Y(f(e)).toFixed(1)}`).join(" ");
+  const half = eg / 2;
+  const fc = f(half);
+  const exp10 = fc > 0 ? Math.floor(Math.log10(fc)) : -99;
+  const mant = fc > 0 ? fc / 10 ** exp10 : 0;
+  return (
+    <div className="grid gap-5 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+      <div className="space-y-3">
+        <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Fermi–Dirac occupation probability against energy, with the valence and conduction bands shaded" className="w-full rounded-2xl border border-white/10" style={PANEL}>
+          <rect x={X(-2)} y={24} width={X(-half) - X(-2)} height={190} fill="#4c9be8" opacity={0.16} />
+          <rect x={X(half)} y={24} width={X(2) - X(half)} height={190} fill="#f2b13f" opacity={0.16} />
+          <text x={X(-1.2)} y={44} textAnchor="middle" fontSize={12} fill="#8fd0ff">valence band</text>
+          <text x={X(1.2)} y={44} textAnchor="middle" fontSize={12} fill="#ffd37a">conduction band</text>
+          <line x1={X(0)} y1={24} x2={X(0)} y2={214} stroke="#fff" strokeOpacity={0.4} strokeDasharray="4 4" />
+          <line x1={60} y1={Y(0.5)} x2={X(2)} y2={Y(0.5)} stroke="#fff" strokeOpacity={0.2} strokeDasharray="2 5" />
+          <line x1={60} y1={214} x2={X(2)} y2={214} stroke="#fff" strokeOpacity={0.5} />
+          <line x1={60} y1={24} x2={60} y2={214} stroke="#fff" strokeOpacity={0.5} />
+          <polyline points={pts} fill="none" stroke="#52c98a" strokeWidth={2.6} />
+          <circle cx={X(half)} cy={Y(fc)} r={5.5} fill="#e8607a" stroke="#fff" />
+          <text x={52} y={Y(1) + 4} textAnchor="end" fontSize={11} fill="currentColor" fillOpacity={0.7}>1</text>
+          <text x={52} y={Y(0.5) + 4} textAnchor="end" fontSize={11} fill="currentColor" fillOpacity={0.7}>½</text>
+          <text x={52} y={Y(0) + 4} textAnchor="end" fontSize={11} fill="currentColor" fillOpacity={0.7}>0</text>
+          <text x={X(0)} y={232} textAnchor="middle" fontSize={12} fill="#fff" fillOpacity={0.85}>E<tspan baselineShift="sub" fontSize={9}>F</tspan></text>
+          <text x={X(half)} y={232} textAnchor="middle" fontSize={11} fill="#ffd37a">E<tspan baselineShift="sub" fontSize={9}>F</tspan> + E<tspan baselineShift="sub" fontSize={9}>g</tspan>/2</text>
+          <text x={300} y={262} textAnchor="middle" fontSize={12} fill="currentColor" fillOpacity={0.65}>energy E</text>
+          <text x={16} y={120} textAnchor="middle" fontSize={12} fill="currentColor" fillOpacity={0.65} transform="rotate(-90 16 120)">probability of occupation f(E)</text>
+        </svg>
+        <Narration k={`${eg}-${temp > 50}`}>
+          <Rich text={`At the bottom of the conduction band, $E - E_F = E_g/2 = ${half.toFixed(2)}$ eV, the occupation probability is $${mant.toFixed(1)}\\times10^{${exp10}}$. That tiny tail is the whole supply of conduction electrons. At $T = 0$ the curve is a step and the band stays empty.`} />
+        </Narration>
+      </div>
+      <div className="space-y-4">
+        <Slider label="Temperature" value={temp} onChange={setTemp} min={10} max={1500} step={10} show={`${temp} K`} />
+        <Slider label="Band gap, Eg" value={eg} onChange={setEg} min={0.3} max={3} step={0.05} show={`${eg.toFixed(2)} eV`} />
+        <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 text-center">
+          <Tex block ex="f(E) = \dfrac{1}{e^{(E-E_F)/kT} + 1}" />
+          <div className="mt-1 text-xs text-[var(--text-muted)]">Fermi–Dirac distribution. At E = E_F the probability is exactly ½ at any T.</div>
+        </div>
+        <Facts items={[["kT", `${(kT * 1000).toFixed(1)} meV`], ["f at band edge", fc.toExponential(1)]]} cols={2} />
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------- critical field of a type I superconductor */
+
+function CriticalField() {
+  const [tc, setTc] = useState(7.19);
+  const [h0, setH0] = useState(63.9);
+  const [t, setT] = useState(6);
+  const [h, setH] = useState(30);
+  const hc = (T: number) => (T <= tc ? h0 * (1 - (T * T) / (tc * tc)) : 0);
+  const sc = t < tc && h < hc(t);
+  const W = 560, HH = 270, X = (T: number) => 60 + (T / 12) * 470, Y = (v: number) => 220 - (v / 130) * 190;
+  const curve = Array.from({ length: 101 }, (_, i) => (i * tc) / 100).map((T) => `${X(T).toFixed(1)},${Y(hc(T)).toFixed(1)}`).join(" ");
+  const area = `${X(0)},${Y(0)} ${curve} ${X(tc)},${Y(0)}`;
+  return (
+    <div className="grid gap-5 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+      <div className="space-y-3">
+        <svg viewBox={`0 0 ${W} ${HH}`} role="img" aria-label="Critical magnetic field of a superconductor against temperature" className="w-full rounded-2xl border border-white/10" style={PANEL}>
+          <polygon points={area} fill="#52c98a" opacity={0.2} />
+          <polyline points={curve} fill="none" stroke="#52c98a" strokeWidth={2.6} />
+          <line x1={60} y1={220} x2={X(12)} y2={220} stroke="#fff" strokeOpacity={0.5} />
+          <line x1={60} y1={30} x2={60} y2={220} stroke="#fff" strokeOpacity={0.5} />
+          <text x={X(tc / 2.6)} y={Y(h0 / 4)} fontSize={13} fontWeight={700} fill="#7fe0b0">superconducting</text>
+          <text x={X(8.6)} y={Y(h0 * 0.85)} fontSize={13} fontWeight={700} fill="#ffd37a" textAnchor="middle">normal metal</text>
+          <circle cx={X(t)} cy={Y(h)} r={7} fill={sc ? "#52c98a" : "#e8607a"} stroke="#fff" strokeWidth={1.6} />
+          <text x={X(tc)} y={238} textAnchor="middle" fontSize={11} fill="#ffd37a">T<tspan baselineShift="sub" fontSize={8}>c</tspan></text>
+          <text x={52} y={Y(h0) + 4} textAnchor="end" fontSize={11} fill="#ffd37a">H<tspan baselineShift="sub" fontSize={8}>c</tspan>(0)</text>
+          <text x={300} y={260} textAnchor="middle" fontSize={12} fill="currentColor" fillOpacity={0.65}>temperature (K)</text>
+          <text x={14} y={125} textAnchor="middle" fontSize={12} fill="currentColor" fillOpacity={0.65} transform="rotate(-90 14 125)">applied field (kA/m)</text>
+        </svg>
+        <Narration k={`${sc}`}>
+          <Rich text={sc ? `**Superconducting.** At ${t.toFixed(1)} K the critical field is ${hc(t).toFixed(1)} kA/m. The applied ${h} kA/m is below it, so the field is still expelled (Meissner effect).` : t >= tc ? `**Normal.** The temperature is at or above $T_c$, so no field, however small, allows superconductivity.` : `**Normal.** At ${t.toFixed(1)} K the critical field is only ${hc(t).toFixed(1)} kA/m. The applied ${h} kA/m exceeds it and destroys the superconducting state abruptly.`} />
+        </Narration>
+      </div>
+      <div className="space-y-4">
+        <Slider label="Temperature" value={t} onChange={setT} min={0.5} max={11} step={0.1} show={`${t.toFixed(1)} K`} />
+        <Slider label="Applied field" value={h} onChange={setH} min={0} max={120} step={1} show={`${h} kA/m`} />
+        <Slider label="Critical temperature, Tc" value={tc} onChange={setTc} min={3} max={10} step={0.01} show={`${tc.toFixed(2)} K`} />
+        <Slider label="Critical field at 0 K, Hc(0)" value={h0} onChange={setH0} min={20} max={110} step={0.1} show={`${h0.toFixed(1)} kA/m`} />
+        <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 text-center">
+          <Tex block ex="H_c(T) = H_c(0)\left(1 - \dfrac{T^2}{T_c^2}\right)" />
+          <div className="mt-1 text-xs text-[var(--text-muted)]">Empirical, valid for T ≤ Tc. Defaults are lead.</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function ElectronicChapter() {
   return (
     <Chapter id="electronic" n="PART 6" title="Electrical properties of solids" lead="Why does copper conduct, diamond insulate and silicon do both under the right conditions? The answer is bands: what happens to atomic energy levels when N atoms come together.">
@@ -533,6 +632,13 @@ export function ElectronicChapter() {
           </div>
         ))}
       </div>
+
+      <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Who is excited? The Fermi–Dirac distribution</h3>
+      <P t="Electrons obey the Pauli principle, so the chance that a state at energy $E$ is occupied is given by the **Fermi–Dirac distribution**. It is a Boltzmann factor corrected for the fact that no orbital holds more than two electrons. $E_F$, the **Fermi energy**, is the energy at which the occupation probability is exactly ½. At $T = 0$ it is a sharp step: everything below $E_F$ is full and everything above is empty. As the temperature rises the step blurs and an exponential tail reaches above $E_F$." />
+      <FermiLab />
+      <KeyIdea title="Fermi level and Fermi energy">
+        {"The **Fermi level** is the top filled level at $T = 0$. The **Fermi energy** is the energy where $f = \\tfrac12$ at any temperature. They coincide as $T \\to 0$. For energies well above $E_F$ the 1 in the denominator is negligible and $f \\approx e^{-(E-E_F)/kT}$, a pure Boltzmann tail. In an intrinsic semiconductor $E_F$ sits mid-gap, so the conduction band edge is $E_g/2$ above it: this is the origin of the factor $e^{-E_g/2kT}$ in the next section."}
+      </KeyIdea>
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Temperature and the gap</h3>
       <GapLab />
@@ -561,6 +667,23 @@ export function ElectronicChapter() {
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Superconductors</h3>
       <P t="Some materials lose all electrical resistance below a **critical temperature**, written $T_c$. Dutch physicist Kamerlingh Onnes found it in mercury at 4.2 K in 1911. A superconductor also expels magnetic fields from its interior, the **Meissner effect**." />
       <Meissner />
+
+      <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Critical field and the two types of superconductor</h3>
+      <P t="A strong enough magnetic field destroys superconductivity. For a **Type I** superconductor (the pure metals such as lead, mercury and tin) there is a single critical field $H_c$, and superconductivity is lost **abruptly** when it is exceeded. Below $H_c$ the material is a perfect diamagnet. The critical field falls with temperature and vanishes at $T_c$. Explore the boundary." />
+      <CriticalField />
+      <div className="grid gap-4 md:grid-cols-2">
+        <KeyIdea title="Type I and Type II">
+          {"**Type I:** one critical field, abrupt loss of superconductivity, complete Meissner effect below it. Pure metals. **Type II:** two critical fields. Between them the field partly penetrates in threads (vortices) and diamagnetism is lost **gradually**. Alloys, intermetallics such as Nb₃Sn and all the high-temperature ceramics such as YBa₂Cu₃O₇. Type II materials tolerate far stronger fields, which is why they wind the magnets of MRI scanners."}
+        </KeyIdea>
+        <KeyIdea title="Cooper pairs">
+          {"One electron slightly distorts the lattice, pulling the positive nuclei toward it. That patch of extra positive charge attracts a second electron. The two electrons form a **Cooper pair**, bound by a virtual attraction through the lattice. Thermal motion disrupts the distortion, so pairing survives only at very low temperature. A pair is much less likely to be scattered than a single electron, so it carries current without resistance."}
+        </KeyIdea>
+      </div>
+      <Worked
+        q="Lead has $T_c = 7.19$ K and $H_c(0) = 63.9$ kA/m. What field would just destroy its superconductivity at 6.0 K? What happens at 5.0 K?"
+        steps={["$H_c(T) = H_c(0)\\left(1 - \\dfrac{T^2}{T_c^2}\\right)$.", "At 6.0 K: $\\dfrac{T^2}{T_c^2} = \\dfrac{36}{51.7} = 0.696$, so $H_c = 63.9\\times0.304 = 19$ kA/m.", "At 5.0 K: $\\dfrac{25}{51.7} = 0.484$, so $H_c = 63.9\\times0.516 = 33$ kA/m.", "Cooling raises the field the metal can withstand."]}
+        answer="19 kA/m at 6.0 K; 33 kA/m at 5.0 K. Lower temperature, higher critical field."
+      />
 
       <div className="grid gap-4 md:grid-cols-2">
         <Traps

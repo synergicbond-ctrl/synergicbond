@@ -291,32 +291,38 @@ const coefTex = (x: number) => {
   return whole === 0 ? "\\tfrac12 a" : `${whole}\\tfrac12 a`;
 };
 
-function ShellCube({ kind, shells, shown, cap }: { kind: Kind; shells: { n: number; d: number }[]; shown: number; cap: number }) {
+function ShellCube({ kind, shells, shown, cap, tour, run, onNext }: { kind: Kind; shells: { n: number; d: number }[]; shown: number; cap: number; tour: boolean; run: number; onNext: () => void }) {
   const si = Math.min(shown, shells.length) - 1;
   const sh = shells[si];
   const rep = useMemo(() => {
     const pts = latticePoints(kind, cap + 0.01).filter((q) => Math.abs(q.d - sh.d) < 1e-3).map((q) => [q.p[0] / 2, q.p[1] / 2, q.p[2] / 2] as V3);
     return repOf(pts);
   }, [kind, cap, sh.d]);
-  const key = `${kind}-${si}`;
-  const [st, setSt] = useState({ key, step: 4, playing: false });
-  const step = st.key === key ? st.step : 4;
-  const playing = st.key === key && st.playing;
+  const key = `${kind}-${si}-${run}`;
+  const [st, setSt] = useState({ key, step: tour ? 0 : 4, playing: tour });
+  if (st.key !== key) setSt({ key, step: tour ? 0 : 4, playing: tour });
+  const step = st.key === key ? st.step : tour ? 0 : 4;
+  const playing = st.key === key ? st.playing : tour;
   const stepRef = useRef(step);
+  const nextRef = useRef(onNext);
+  const tourRef = useRef(tour);
   useEffect(() => {
     stepRef.current = step;
+    nextRef.current = onNext;
+    tourRef.current = tour;
   });
   useEffect(() => {
     if (!playing) return;
     const id = window.setInterval(() => {
       if (stepRef.current >= 4) {
         setSt((o) => ({ ...o, playing: false }));
+        if (tourRef.current) nextRef.current();
         return;
       }
       setSt((o) => ({ ...o, step: stepRef.current + 1 }));
-    }, 2200);
+    }, tour ? 1500 : 2200);
     return () => window.clearInterval(id);
-  }, [playing, key]);
+  }, [playing, key, tour]);
 
   const [x, y, z] = rep.v;
   const O: V3 = [-1, -1, -1];
@@ -379,10 +385,10 @@ function ShellCube({ kind, shells, shown, cap }: { kind: Kind; shells: { n: numb
           ))}
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <Btn primary onClick={() => setSt({ key, step: 0, playing: true })}>▶ Animate</Btn>
+          <Btn primary onClick={() => setSt({ key, step: 0, playing: true })}>▶ Animate this shell</Btn>
           <Btn onClick={() => setSt({ key, step: Math.max(0, step - 1), playing: false })}>◀</Btn>
           <Btn onClick={() => setSt({ key, step: Math.min(4, step + 1), playing: false })}>▶</Btn>
-          <span className="text-sm text-[var(--text-muted)]">Change the shell with the slider above.</span>
+          <span className="text-sm text-[var(--text-muted)]">Or pick a shell with the slider above.</span>
         </div>
       </div>
     </div>
@@ -392,6 +398,8 @@ function ShellCube({ kind, shells, shown, cap }: { kind: Kind; shells: { n: numb
 function ShellExplorer() {
   const [kind, setKind] = useState<Kind>("fcc");
   const [shown, setShown] = useState(2);
+  const [tour, setTour] = useState<"off" | "one" | "all">("off");
+  const [run, setRun] = useState(0);
   const cap = kind === "sc" ? 2.3 : 2.05;
   const shells = useMemo(() => neighbourShells(kind, 10).filter((s) => s.d <= cap), [kind, cap]);
   const pts = useMemo(() => latticePoints(kind, cap), [kind, cap]);
@@ -404,9 +412,38 @@ function ShellExplorer() {
     return { id: `p${i}`, p: [p[0] * 0.55, p[1] * 0.55, p[2] * 0.55], r: 0.26, color: s >= 0 ? SHELL_COLORS[s % SHELL_COLORS.length] : "#555", scale: visible ? 1 : 0, from: [p[0] * 0.2, p[1] * 0.2, p[2] * 0.2] };
   });
   const sh = shells[Math.min(shown, shells.length) - 1];
+  const ORDER: Kind[] = ["sc", "bcc", "fcc"];
+  const startTour = (mode: "one" | "all") => {
+    if (mode === "all") setKind("sc");
+    setShown(1);
+    setRun((r) => r + 1);
+    setTour(mode);
+  };
+  const stopTour = () => setTour("off");
+  const nextShell = () => {
+    if (shown < shells.length) {
+      setShown(shown + 1);
+      return;
+    }
+    const at = ORDER.indexOf(kind);
+    if (tour === "all" && at < ORDER.length - 1) {
+      setKind(ORDER[at + 1]);
+      setShown(1);
+      return;
+    }
+    setTour("off");
+  };
 
   return (
    <div className="space-y-5">
+    <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3">
+      <Btn primary onClick={() => startTour("all")}>▶ Animate all: SC, BCC and FCC</Btn>
+      <Btn onClick={() => startTour("one")}>▶ All shells of {kind.toUpperCase()}</Btn>
+      {tour !== "off" && <Btn onClick={stopTour}>■ Stop</Btn>}
+      <span className="text-sm text-[var(--text-muted)]">
+        {tour === "off" ? "Plays the walk-and-Pythagoras animation for every shell, one after another." : `Playing ${kind.toUpperCase()}, shell ${Math.min(shown, shells.length)} of ${shells.length}${tour === "all" ? " (then the next lattice)" : ""}`}
+      </span>
+    </div>
     <div className="grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
       <div className="space-y-3">
         <Stage atoms={atoms} camera={{ key: `s-${kind}-${Math.min(shown, shells.length)}`, az: 0.7, el: 0.4, dist: Math.max(5.2, Math.min(11, 4.3 * (shells[Math.min(shown, shells.length) - 1].d * 1.1 + 0.35))) }} autoRotate floorY={-3.2} height={440} label={`Neighbour shells around one atom in a ${kind.toUpperCase()} lattice`} />
@@ -415,15 +452,15 @@ function ShellExplorer() {
         </Narration>
       </div>
       <div className="space-y-4">
-        <Tabs label="Lattice" value={kind} onChange={(k) => { setKind(k); setShown(2); }} items={[["sc", "Simple"], ["bcc", "Body-centred"], ["fcc", "Face-centred"]] as const} />
-        <Slider label="Shells shown" value={Math.min(shown, shells.length)} onChange={setShown} min={1} max={shells.length} />
+        <Tabs label="Lattice" value={kind} onChange={(k) => { setTour("off"); setKind(k); setShown(2); }} items={[["sc", "Simple"], ["bcc", "Body-centred"], ["fcc", "Face-centred"]] as const} />
+        <Slider label="Shells shown" value={Math.min(shown, shells.length)} onChange={(v) => { setTour("off"); setShown(v); }} min={1} max={shells.length} />
         <CellMap kind={kind} shells={shells} shown={shown} />
         <p className="text-xs leading-5 text-[var(--text-muted)]">
           Computed by listing every lattice point around one atom and grouping them by distance. Nearest shells: SC 6, BCC 8, FCC 12. In BCC the 6 next-nearest atoms are only 15% farther than the 8 nearest, which is why it is sometimes called 8 + 6 coordinated.
         </p>
       </div>
     </div>
-    <ShellCube kind={kind} shells={shells} shown={shown} cap={cap} />
+    <ShellCube kind={kind} shells={shells} shown={shown} cap={cap} tour={tour !== "off"} run={run} onNext={nextShell} />
     <div className="overflow-x-auto rounded-xl border border-[var(--border)]">
           <table className="w-full min-w-[640px] text-sm">
             <thead className="bg-[var(--surface)] text-left text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]">

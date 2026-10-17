@@ -24,6 +24,9 @@ Everything here is designed to work WITHOUT access to old chat transcripts.
   189-topic course: status (COMPLETE + DEPLOYED), architecture, protected
   chemistry corrections, validation baseline, recovery paths.
 
+- `AI_HANDOFF/solid-state-lab/START_HERE.md` — Solid State Interactive Textbook
+  (`/learn/solid-state/lab`): three.js engine, file map, rules, validation.
+
 ## Other standing context
 
 - `AI_CONTEXT.md`, `AI_CONTINUATION_GUIDE.md` — earlier project context docs.

@@ -138,8 +138,20 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
   },
   // ── Solid State ────────────────────────────────────────────────────────────
   {
+    id: "solid-state-interactive",
+    syllabusId: "solid-state",
+    sectionLabel: "Interactive",
+    title: "Solid State: Interactive Textbook",
+    href: "/learn/solid-state/lab",
+    lessonLabel: "7 parts · 3D models and derivations",
+    premium: true,
+    description:
+      "The whole chapter built in front of you: 3D unit cells you can slice, close packing and voids, radius-ratio and ionic structures, defects, band theory, p-n junctions, superconductors and magnetic domains, each with step-by-step derivations and worked problems.",
+  },
+  {
     id: "solid-state",
     syllabusId: "solid-state",
+    sectionLabel: "Written notes",
     title: "Solid State",
     href: "/learn/solid-state/master",
     lessonLabel: "10 parts",
@@ -495,6 +507,11 @@ export interface CourseGroupCard {
 }
 
 export const COURSE_GROUP_CARDS: Record<string, CourseGroupCard> = {
+  "solid-state": {
+    href: "/learn/solid-state/master",
+    description:
+      "One chapter in two forms: the Interactive Textbook (3D unit cells you can slice, close packing and voids, ionic structures, defects, bands, p-n junctions, superconductors and magnetic domains, with step-by-step derivations) and the written Master Notes in ten parts.",
+  },
   "mole-concept": {
     href: "/notes/mole-concept",
     description:

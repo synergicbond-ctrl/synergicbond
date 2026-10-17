@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { C } from "./_geom";
+import { CurieFig } from "./_figs";
 import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Tex, Traps, Worked, useClock, useTour } from "./_ui";
 
 const PANEL = { background: "radial-gradient(120% 90% at 50% 18%, #17433f 0%, #0c1f1e 52%, #060f0f 100%)" };
@@ -383,13 +384,31 @@ export function MagneticChapter() {
       <P t="For transition-metal ions the orbital contribution is largely quenched, so the moment is close to the **spin-only** value. Fill the five 3d orbitals following Hund's rule and count the unpaired electrons." />
       <Moment />
       <Derivation
+        no="7.1"
         title="Spin-only magnetic moment"
+        given="An ion with $n$ unpaired electrons, each of spin $\tfrac12$, and negligible orbital contribution."
+        find="The magnetic moment $\mu$ in Bohr magnetons."
         steps={[
           { say: "Each unpaired electron has spin $\\tfrac12$. For $n$ unpaired electrons with parallel spins the total spin quantum number is $S = n/2$." },
           { say: "The magnitude of the moment is $\\mu = g\\sqrt{S(S+1)}\\,\\mu_B$ with $g \\approx 2$ for a free spin:", tex: "\\mu = 2\\sqrt{\\frac n2\\left(\\frac n2 + 1\\right)}\\;\\mu_B" },
           { say: "Bring the factor 2 under the root as $\\sqrt4$ and multiply out:", tex: "\\mu = \\sqrt{4\\cdot\\frac{n}{2}\\cdot\\frac{n+2}{2}}\\;\\mu_B = \\sqrt{n(n+2)}\\;\\mu_B" },
         ]}
-        result="\\mu = \\sqrt{n(n+2)}\\ \\text{BM}"
+        result="\mu = \sqrt{n(n+2)}\ \text{BM}"
+      />
+      <Derivation
+        no="7.2"
+        title="Curie's law for a paramagnet"
+        given="$N$ independent atoms per unit volume, each with moment $\mu$ that can point along or against the applied field $B$. The temperature is $T$."
+        find="The magnetisation $M$ and the susceptibility $\chi$ as functions of $T$."
+        figure={<CurieFig />}
+        steps={[
+          { say: "A moment parallel to the field has energy $-\\mu B$; an antiparallel moment has energy $+\\mu B$. The Boltzmann populations of the two orientations are:", tex: "\\frac{N_{\\uparrow}}{N_{\\downarrow}} = e^{2\\mu B/kT}, \\qquad N_{\\uparrow} + N_{\\downarrow} = N" },
+          { say: "The net magnetisation is the excess of parallel over antiparallel moments:", tex: "M = \\mu\\,(N_{\\uparrow} - N_{\\downarrow}) = N\\mu\\,\\frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} = N\\mu\\tanh x, \\quad x = \\frac{\\mu B}{kT}" },
+          { say: "At ordinary fields and temperatures $\\mu B \\ll kT$, so $\\tanh x \\approx x$:", tex: "M \\approx \\frac{N\\mu^2}{kT}\\,B" },
+          { say: "Susceptibility is the magnetisation per unit field, so it is inversely proportional to the absolute temperature:", tex: "\\chi \\propto \\frac{M}{B} = \\frac{C}{T}, \\qquad C = \\frac{N\\mu^2}{k}" },
+        ]}
+        result="\chi = \dfrac{C}{T}"
+        note="Heating increases thermal agitation, which scrambles the alignment, so the paramagnetism weakens. Above $T_c$ a ferromagnet follows the Curie–Weiss form $\chi = C/(T - T_c)$."
       />
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Five kinds of magnetic behaviour</h3>

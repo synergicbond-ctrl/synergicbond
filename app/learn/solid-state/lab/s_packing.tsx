@@ -3,6 +3,7 @@
 import { useMemo, useState, type ReactNode } from "react";
 import { Stage, type CameraPose, type StageAtom, type StageBond, type StagePoly, type V3 } from "./_stage";
 import { C, CORNERS, EDGE_CENTRES, FACES, SQ3, TETRA_ALL, TETRA_ALT, bondsBetween, cubeEdges, hcpCell, hexPrismEdges } from "./_geom";
+import { HcpFig, VoidFig } from "./_figs";
 import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Tabs, Tex, Traps, Worked, useTour, useTween } from "./_ui";
 
 /* ------------------------------------------------------ 2D packing morph */
@@ -64,6 +65,9 @@ function Packing2D() {
         <Facts items={[["Coordination", String(cn)], ["Efficiency", `${(eta * 100).toFixed(1)} %`], ["Rows shift by", `${(t * 100).toFixed(0)} %`], ["Row gap", `${((h2 / (2 * r)) * 100).toFixed(1)} % of 2r`]]} />
         <Derivation
           key={hex ? "h" : "s"}
+          no={hex ? "3.2" : "3.1"}
+          given={hex ? "Circles of radius $r$, each touching six neighbours." : "Circles of radius $r$ touching along rows and columns."}
+          find="The fraction of the plane covered, $\eta$."
           title={hex ? "Hexagonal close packing in a plane" : "Square packing in a plane"}
           steps={
             hex
@@ -258,19 +262,26 @@ function HcpCell() {
           </p>
         </div>
       </div>
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="space-y-8">
         <Derivation
+          no="3.3"
           title="The ideal axial ratio c/a"
+          given="An ideal HCP cell in which every atom (radius $r$) touches its 12 neighbours, so the hexagon edge is $a = 2r$."
+          find="The cell height $c$, expressed as the ratio $c/a$."
+          figure={<HcpFig />}
           steps={[
             { say: "Take the edge of the hexagon as $a = 2r$ (touching atoms). The base of the pink tetrahedron is an equilateral triangle of side $a$; its centroid is $a/\\sqrt3$ from each vertex." },
             { say: "The apex atom lies directly above the centroid at height $h$, and it touches each base atom, so its distance to a base vertex is also $a$:", tex: "h^2 + \\left(\\frac{a}{\\sqrt3}\\right)^2 = a^2" },
             { say: "Solve for the tetrahedron height:", tex: "h^2 = a^2 - \\frac{a^2}{3} = \\frac{2a^2}{3} \\;\\Rightarrow\\; h = a\\sqrt{\\tfrac23}" },
             { say: "The cell contains two such layer gaps (bottom to middle, middle to top):", tex: "c = 2h = 2a\\sqrt{\\tfrac23}" },
           ]}
-          result="\\dfrac{c}{a} = \\sqrt{\\dfrac83} = 1.633"
+          result="\dfrac{c}{a} = \sqrt{\dfrac83} = 1.633"
         />
         <Derivation
+          no="3.4"
           title="Packing efficiency of HCP"
+          given="The ideal HCP cell with $a = 2r$ and $c = 4r\sqrt{2/3}$ from derivation 3.3."
+          find="The fraction of the hexagonal prism filled by atoms."
           steps={[
             { say: "Atoms per cell: $Z = 12\\times\\tfrac16 + 2\\times\\tfrac12 + 3 = 6$." },
             { say: "Volume of the hexagonal prism = area of hexagon × height. A regular hexagon of side $a$ has area $\\tfrac{3\\sqrt3}{2}a^2$:", tex: "V_{\\text{cell}} = \\frac{3\\sqrt3}{2}a^2\\,c" },
@@ -278,7 +289,7 @@ function HcpCell() {
             { say: "Volume of the six atoms:", tex: "V_{\\text{atoms}} = 6\\cdot\\tfrac43\\pi r^3 = 8\\pi r^3" },
             { say: "Divide:", tex: "\\eta = \\frac{8\\pi r^3}{24\\sqrt2\\,r^3} = \\frac{\\pi}{3\\sqrt2}" },
           ]}
-          result="\\eta = 0.7405\\;(74.05\\%)"
+          result="\eta = 0.7405\;(74.05\%)"
         />
       </div>
     </div>
@@ -323,25 +334,32 @@ function VoidsExplorer() {
           </p>
         </div>
       </div>
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="space-y-8">
         <Derivation
+          no="3.5"
           title="How many voids? Counting in the FCC cell"
+          given="An FCC cell with $Z = 4$ host atoms."
+          find="The number of tetrahedral and octahedral voids per cell."
           steps={[
             { say: "Atoms per cell: $Z = 4$ (from Part 2)." },
             { say: "Tetrahedral voids: the cell is made of 8 small cubes (octants), each with one void at its centre. All 8 lie wholly inside the cell:", tex: "N_{\\text{tet}} = 8 = 2Z" },
             { say: "Octahedral voids: one at the body centre and one at the middle of each of the 12 edges (each edge shared by 4 cells):", tex: "N_{\\text{oct}} = 1 + 12\\times\\tfrac14 = 4 = Z" },
           ]}
-          result="N \\text{ atoms}\\;\\Rightarrow\\; N \\text{ octahedral},\\; 2N \\text{ tetrahedral voids}"
+          result="N \text{ atoms}\;\Rightarrow\; N \text{ octahedral},\; 2N \text{ tetrahedral voids}"
         />
         <Derivation
+          no="3.6"
           title="How big are the voids?"
+          given="Host atoms of radius $R$ in FCC, touching along the face diagonal."
+          find="The radius of the largest sphere that fits in each kind of void."
+          figure={<VoidFig kind="oct" />}
           steps={[
             { say: "Host atoms touch along the face diagonal, so $a = 2\\sqrt2\\,R$." },
             { say: "**Octahedral:** along the cell edge the line runs corner, void, corner. The void just touches both corner atoms, so", tex: "a = 2R + 2r_o \\;\\Rightarrow\\; r_o = \\frac{2\\sqrt2 R - 2R}{2} = (\\sqrt2 - 1)R" },
             { say: "**Tetrahedral:** the void at $(\\tfrac14,\\tfrac14,\\tfrac14)$ is a quarter of the way along the body diagonal from a corner atom, so the centre-to-centre distance is $\\tfrac{\\sqrt3}{4}a$:", tex: "R + r_t = \\frac{\\sqrt3}{4}a = \\frac{\\sqrt3}{4}(2\\sqrt2 R) = \\sqrt{\\tfrac32}\\,R" },
             { say: "So", tex: "r_t = \\left(\\sqrt{\\tfrac32} - 1\\right)R" },
           ]}
-          result="r_o = 0.414\\,R,\\qquad r_t = 0.225\\,R"
+          result="r_o = 0.414\,R,\qquad r_t = 0.225\,R"
         />
       </div>
     </div>
@@ -386,13 +404,16 @@ function DiamondCell() {
         </div>
       </div>
       <Derivation
+        no="3.7"
         title="Packing efficiency of diamond"
+        given="The diamond cubic cell: an FCC lattice plus four atoms at the tetrahedral sites, each bonded to its four nearest neighbours."
+        find="The packing efficiency of the diamond structure."
         steps={[
           { say: "Each interior atom touches the four atoms around it. The distance from a tetrahedral hole at $(\\tfrac14,\\tfrac14,\\tfrac14)$ to the corner is a quarter of the body diagonal:", tex: "2r = \\frac{\\sqrt3}{4}\\,a \\;\\Rightarrow\\; r = \\frac{\\sqrt3\\,a}{8}" },
           { say: "Atoms per cell: $Z = 8\\times\\tfrac18 + 6\\times\\tfrac12 + 4 = 8$." },
           { say: "Fraction of volume:", tex: "\\eta = \\frac{8\\cdot\\tfrac43\\pi r^3}{a^3} = \\frac{32\\pi}{3}\\cdot\\frac{3\\sqrt3}{512} = \\frac{\\pi\\sqrt3}{16}" },
         ]}
-        result="\\eta = 0.340\\;(34.0\\%)"
+        result="\eta = 0.340\;(34.0\%)"
       />
     </div>
   );

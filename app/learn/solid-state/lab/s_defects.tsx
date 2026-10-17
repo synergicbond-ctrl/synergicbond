@@ -407,13 +407,29 @@ export function DefectsChapter() {
       <P t="Defects cost energy to make but increase disorder (entropy), so a crystal at equilibrium always contains some. The number of Schottky pairs follows a Boltzmann factor, rising steeply with temperature:" />
       <BoltzmannLab />
       <Derivation
+        no="5.1"
         title="Why the factor is exp(−ΔH / 2kT)"
+        given="A crystal of $N$ cation sites and $N$ anion sites. Forming one Schottky pair (a cation vacancy and an anion vacancy) costs enthalpy $\Delta H$."
+        find="The equilibrium number $n$ of Schottky pairs at temperature $T$."
         steps={[
           { say: "Creating $n$ Schottky pairs in a crystal of $N$ ion pairs costs energy $n\\,\\Delta H$ but raises the number of arrangements $W$ in which the vacancies could sit." },
           { say: "Choose which $n$ of $N$ cation sites and which $n$ of $N$ anion sites are empty:", tex: "W = \\binom{N}{n}^2 \\quad\\Rightarrow\\quad S = k\\ln W \\approx 2k\\,[\\,N\\ln N - n\\ln n - (N-n)\\ln(N-n)\\,]" },
           { say: "Minimise the free energy $G = n\\,\\Delta H - TS$ with respect to $n$ (set $dG/dn = 0$) and use $n \\ll N$:", tex: "\\Delta H = 2kT\\ln\\frac{N-n}{n} \\;\\approx\\; 2kT\\ln\\frac{N}{n}" },
         ]}
-        result="n \\approx N\\exp\\!\\left(-\\dfrac{\\Delta H}{2kT}\\right)"
+        result="n \approx N\exp\!\left(-\dfrac{\Delta H}{2kT}\right)"
+      />
+      <Derivation
+        no="5.2"
+        title="Density of a crystal with Schottky or Frenkel defects"
+        given="A crystal of $N$ formula units in which $n$ Schottky pairs have formed (each pair removes one cation and one anion from the crystal), with the same cell volume."
+        find="How the density changes compared with the perfect crystal."
+        steps={[
+          { say: "Density is mass divided by volume. A Schottky pair takes two ions **out of the crystal**, so the mass falls while the volume stays the same:", tex: "\\rho = \\frac{m}{V} \\;\\longrightarrow\\; \\rho' = \\frac{m - n\\,m_{\\text{pair}}}{V}" },
+          { say: "The mass of $N$ formula units is $N\\,m_{\\text{pair}}$, so:", tex: "\\rho' = \\rho\\,\\frac{N-n}{N} < \\rho" },
+          { say: "In a **Frenkel** defect the ion only moves from a lattice site to an interstitial site. No ion leaves the crystal and the volume is unchanged, so $\\rho' = \\rho$." },
+        ]}
+        result="\text{Schottky: density falls};\qquad \text{Frenkel: density unchanged}"
+        note="Metal-excess defects (F-centres) and metal-deficiency defects are also compositional: the density of Fe$_{0.95}$O is lower than that of ideal FeO because some sites are vacant."
       />
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Line defects: dislocations</h3>

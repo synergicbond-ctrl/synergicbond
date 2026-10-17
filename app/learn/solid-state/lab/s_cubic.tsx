@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { Stage, type CameraPose, type StageAtom, type StageBond, type V3 } from "./_stage";
 import { C, CORNERS, FACES, cubeEdges, latticePoints, neighbourShells } from "./_geom";
+import { BraggFig, ContactFig, MillerFig } from "./_figs";
 import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Tex, Traps, Worked, useTour, type DerivStep } from "./_ui";
 
 type Kind = "sc" | "bcc" | "fcc";
@@ -187,7 +188,16 @@ function CellExplorer() {
           ["Empty space", `${(100 - def.eta * 100).toFixed(1)} %`],
         ]}
       />
-      <Derivation key={kind} title={def.deriv.title} steps={def.deriv.steps} result={def.deriv.result} />
+      <Derivation
+        key={kind}
+        no={`2.${kind === "sc" ? 1 : kind === "bcc" ? 2 : 3}`}
+        title={def.deriv.title}
+        given={`A ${def.name.toLowerCase()} lattice of identical spheres of radius $r$ and cell edge $a$. Contact is along the ${def.contact}.`}
+        find="The packing efficiency $\eta = Z\,V_{\text{atom}} / V_{\text{cell}}$."
+        figure={<ContactFig kind={kind} />}
+        steps={def.deriv.steps}
+        result={def.deriv.result}
+      />
     </div>
   );
 }
@@ -307,6 +317,53 @@ function DensityLab() {
 
 /* ---------------------------------------------------------------- chapter */
 
+
+/* ------------------------------------------------------------ Bragg lab */
+
+function BraggLab() {
+  const [th, setTh] = useState(21.7);
+  const [d, setD] = useState(208);
+  const lam = 154;
+  const delta = 2 * d * Math.sin((th * Math.PI) / 180);
+  const n = delta / lam;
+  const nearest = Math.round(n);
+  const inten = (t: number) => Math.cos((Math.PI * 2 * d * Math.sin((t * Math.PI) / 180)) / lam) ** 2;
+  const W = 520, H = 150, X = (t: number) => 30 + ((t - 5) / 80) * (W - 45), Y = (v: number) => 12 + (1 - v) * (H - 40);
+  const pts = Array.from({ length: 301 }, (_, i) => 5 + (i * 80) / 300).map((t) => `${X(t).toFixed(1)},${Y(inten(t)).toFixed(1)}`).join(" ");
+  const peaks: number[] = [];
+  for (let k = 1; (k * lam) / (2 * d) <= 1; k++) peaks.push((Math.asin((k * lam) / (2 * d)) * 180) / Math.PI);
+  const hit = Math.abs(n - nearest) < 0.06 && nearest >= 1;
+  return (
+    <div className="grid gap-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+      <div>
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Reflected intensity against glancing angle">
+          <line x1={30} y1={Y(0)} x2={W - 10} y2={Y(0)} stroke="currentColor" strokeOpacity={0.3} />
+          <polyline points={pts} fill="none" stroke="#4c9be8" strokeWidth={2} />
+          {peaks.filter((t) => t >= 5 && t <= 85).map((t, i) => (
+            <g key={i}>
+              <line x1={X(t)} y1={Y(1)} x2={X(t)} y2={Y(0)} stroke="#f2b13f" strokeDasharray="3 3" />
+              <text x={X(t)} y={H - 18} textAnchor="middle" fontSize={10} fill="#f2b13f">n={i + 1}</text>
+            </g>
+          ))}
+          <circle cx={X(th)} cy={Y(inten(th))} r={6} fill={hit ? "#52c98a" : "#e8607a"} />
+          {[10, 30, 50, 70].map((t) => (
+            <text key={t} x={X(t)} y={H - 4} textAnchor="middle" fontSize={10} fill="currentColor" fillOpacity={0.6}>{t}°</text>
+          ))}
+          <text x={34} y={12} fontSize={10} fill="currentColor" fillOpacity={0.6}>intensity</text>
+        </svg>
+        <Narration k={hit ? "hit" : "miss"}>
+          <Rich text={hit ? `**Constructive.** The path difference is $2d\\sin\\theta = ${delta.toFixed(0)}$ pm $= ${nearest}\\lambda$, a whole number of wavelengths, so the reflections from successive planes add up.` : `**Not a reflection.** The path difference is $${n.toFixed(2)}\\lambda$, not a whole number, so the waves from successive planes partly cancel.`} />
+        </Narration>
+      </div>
+      <div className="space-y-4">
+        <Slider label="Glancing angle θ" value={th} onChange={setTh} min={5} max={85} step={0.1} show={`${th.toFixed(1)}°`} />
+        <Slider label="Plane spacing d" value={d} onChange={setD} min={120} max={400} show={`${d} pm`} />
+        <Facts items={[["X-ray wavelength", "154 pm (Cu Kα)"], ["Path difference", `${delta.toFixed(0)} pm`], ["Path ÷ wavelength", n.toFixed(2)], ["Orders possible", String(peaks.length)]]} cols={2} />
+      </div>
+    </div>
+  );
+}
+
 export function CubicChapter() {
   return (
     <Chapter
@@ -367,6 +424,58 @@ export function CubicChapter() {
           q="An element crystallises in a BCC lattice with a = 288 pm. Calculate the atomic radius. If its density is 7.2 g/cm³, find its molar mass."
           steps={["BCC: $\\sqrt3\\,a = 4r$, so $r = \\dfrac{1.732\\times288}{4} = 124.7$ pm.", "Z = 2. From $\\rho = \\dfrac{ZM}{a^3N_A}$: $M = \\dfrac{\\rho a^3 N_A}{Z}$.", "$a^3 = (288\\times10^{-10})^3 = 2.389\\times10^{-23}$ cm³.", "$M = \\dfrac{7.2\\times2.389\\times10^{-23}\\times6.022\\times10^{23}}{2} = 51.8$ g/mol."]}
           answer="r = 124.7 pm, M ≈ 51.8 g/mol (close to vanadium)"
+        />
+      </div>
+
+      <div className="space-y-2 pt-6">
+        <h3 className="text-2xl font-bold text-[var(--foreground)]">Planes, Miller indices and X-ray diffraction</h3>
+        <P t="A crystal can be sliced into sets of parallel, equally spaced **lattice planes**. A plane is named by its **Miller indices** $(hkl)$: take the intercepts on the three axes in units of the cell edge, invert them, and clear fractions. A plane parallel to an axis meets it at infinity, so its index is $0$. Negative intercepts are written with a bar over the index." />
+      </div>
+      <Derivation
+        no="2.4"
+        title="Spacing of the (hkl) planes in a cubic lattice"
+        given="A cubic lattice of edge $a$. The plane nearest the origin in the family $(hkl)$ has intercepts $a/h$, $a/k$, $a/l$ on the three axes."
+        find="The perpendicular distance $d_{hkl}$ between neighbouring planes of the family."
+        figure={<MillerFig />}
+        steps={[
+          { say: "The plane $hx + ky + lz = a$ passes through the three intercepts. Its unit normal points along $(h,k,l)$:", tex: "\\hat n = \\frac{(h,\\,k,\\,l)}{\\sqrt{h^2+k^2+l^2}}" },
+          { say: "Planes of the family are equally spaced, and the plane nearest the origin lies at distance $d$ from it. That distance is the projection of any point on the plane, for example the intercept $(a/h,\\,0,\\,0)$, on the unit normal:", tex: "d_{hkl} = \\frac{a}{h}\\,\\hat n_x = \\frac{a}{h}\\cdot\\frac{h}{\\sqrt{h^2+k^2+l^2}}" },
+          { say: "The index $h$ cancels, and the same result follows from the other two intercepts." },
+        ]}
+        result="d_{hkl} = \dfrac{a}{\sqrt{h^2+k^2+l^2}}"
+        note="For example $d_{100} = a$, $d_{110} = a/\sqrt2$ and $d_{111} = a/\sqrt3$. The densest planes are the most widely spaced."
+      />
+      <Derivation
+        no="2.5"
+        title="Bragg's law"
+        given="A beam of X-rays of wavelength $\lambda$ falls at glancing angle $\theta$ on a family of parallel planes a distance $d$ apart. Each plane reflects specularly."
+        find="The condition under which the reflections from all the planes reinforce one another."
+        figure={<BraggFig />}
+        steps={[
+          { say: "Take two rays. Ray 1 reflects at the point $P$ on the upper plane; ray 2 reflects at the point $Q$ on the next plane, directly below $P$, so $PQ = d$." },
+          { say: "Drop perpendiculars from $P$ onto the incoming and outgoing paths of ray 2, meeting them at $A$ and $C$. Up to $A$ and from $C$ onward the two rays have travelled equal distances, so the **extra path** of ray 2 is $AQ + QC$." },
+          { say: "In the right triangle $PAQ$ the angle at $Q$ between $QP$ and the ray is $90^\\circ - \\theta$, because the ray makes $\\theta$ with the plane and $PQ$ is normal to it. Hence:", tex: "AQ = PQ\\cos(90^\\circ - \\theta) = d\\sin\\theta, \\qquad QC = d\\sin\\theta" },
+          { say: "Add the two segments to get the path difference:", tex: "\\delta = AQ + QC = 2d\\sin\\theta" },
+          { say: "The rays leave in step, and the reflections reinforce, only if the path difference is a whole number of wavelengths:", tex: "\\delta = n\\lambda, \\quad n = 1, 2, 3, \\ldots" },
+        ]}
+        result="n\lambda = 2d\sin\theta"
+        note="Since $\sin\theta \le 1$, reflections are possible only when $\lambda \le 2d$. The wavelength must be comparable to the atomic spacing, which is why X-rays are used."
+      />
+      <P t="Try it. At the starting values the path difference is exactly one wavelength. Slide the angle and the spacing and watch the reflected intensity rise and fall." />
+      <BraggLab />
+      <KeyIdea title="Which planes actually reflect?">
+        {"The lattice type removes some reflections: waves from the extra centring atoms arrive exactly out of step. In a **simple** cubic lattice every $(hkl)$ appears. In **BCC** only reflections with $h+k+l$ **even** appear. In **FCC** only those with $h,k,l$ **all odd or all even** appear. Counting the allowed lines in a powder pattern therefore tells you the lattice type."}
+      </KeyIdea>
+      <div className="grid gap-4 md:grid-cols-2">
+        <Worked
+          q="Copper is FCC with a = 361 pm. X-rays of wavelength 154 pm are reflected from the (111) planes in first order. Find the glancing angle."
+          steps={["$d_{111} = \\dfrac{a}{\\sqrt{1^2+1^2+1^2}} = \\dfrac{361}{1.732} = 208.4$ pm.", "Bragg: $\\sin\\theta = \\dfrac{n\\lambda}{2d} = \\dfrac{154}{2\\times208.4} = 0.3695$.", "$\\theta = \\sin^{-1}(0.3695) = 21.7^\\circ$."]}
+          answer="θ ≈ 21.7°"
+        />
+        <Worked
+          q="The first-order reflection from planes 200 pm apart occurs at 30°. What is the X-ray wavelength, and what is the highest order that can be seen?"
+          steps={["$\\lambda = 2d\\sin\\theta = 2\\times200\\times0.5 = 200$ pm.", "The highest order needs $\\sin\\theta \\le 1$: $n \\le \\dfrac{2d}{\\lambda} = \\dfrac{400}{200} = 2$."]}
+          answer="λ = 200 pm, up to second order (n = 2)"
         />
       </div>
     </Chapter>

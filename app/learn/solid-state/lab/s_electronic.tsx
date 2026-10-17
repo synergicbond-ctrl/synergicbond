@@ -537,14 +537,17 @@ export function ElectronicChapter() {
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Temperature and the gap</h3>
       <GapLab />
       <Derivation
+        no="6.1"
         title="Why conductivity of a semiconductor grows as exp(−Eg / 2kT)"
+        given="An intrinsic semiconductor with band gap $E_g$ at temperature $T$."
+        find="How the carrier density, and hence the conductivity, depends on $T$."
         steps={[
           { say: "In a pure semiconductor the Fermi level sits in the middle of the gap, so the conduction band edge is $E_g/2$ above it." },
           { say: "The probability that a state at energy $E$ above the Fermi level is occupied falls as a Boltzmann factor $e^{-E/kT}$. For states at the bottom of the conduction band:", tex: "n \\propto \\exp\\!\\left(-\\frac{E_g/2}{kT}\\right)" },
           { say: "Each electron promoted leaves a hole, so electrons and holes are equal in number:", tex: "n = p = n_i \\propto \\exp\\!\\left(-\\frac{E_g}{2kT}\\right)" },
           { say: "Conductivity is proportional to the number of carriers, so it grows by the same exponential factor as the temperature rises:", tex: "\\sigma \\propto n_i" },
         ]}
-        result="\\sigma \\propto e^{-E_g/2kT}"
+        result="\sigma \propto e^{-E_g/2kT}"
       />
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Doping: extrinsic semiconductors</h3>

@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { Stage, type StageAtom, type StageBond, type StageLine, type StagePoly, type V3 } from "./_stage";
 import { C, cubeEdges, hexPrismEdges, ionicStructures, polyhedra, wurtziteCell, type IonicKey } from "./_geom";
+import { RadiusFig } from "./_figs";
 import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Traps, Worked, useTour, type DerivStep } from "./_ui";
 
 /* ---------------------------------------------------- radius ratio */
@@ -106,7 +107,16 @@ function RadiusRatio() {
           <Facts items={[["Textbook range", P.range], ["Lower limit", (2 / P.k - 1).toFixed(3)], ["Anion–anion gap", `${(gap * R).toFixed(3)} r₋`], ["Example", P.example]]} />
         </div>
       </div>
-      <Derivation key={P.key} title={DERIV[P.key].title} steps={DERIV[P.key].steps} result={DERIV[P.key].result} />
+      <Derivation
+        key={P.key}
+        no={`4.${["lin", "tri", "tet", "oct", "cub"].indexOf(P.key) + 1}`}
+        title={DERIV[P.key].title}
+        given={`A cation of radius $r_+$ surrounded by ${P.cn} anions of radius $r_-$. The anions touch the cation, and in the limiting case they also touch one another.`}
+        find="The limiting radius ratio $r_+/r_-$ at which this arrangement is just stable."
+        figure={P.key === "lin" ? undefined : <RadiusFig kind={P.key as "tri" | "tet" | "oct" | "cub"} />}
+        steps={DERIV[P.key].steps}
+        result={DERIV[P.key].result}
+      />
     </div>
   );
 }
@@ -226,6 +236,23 @@ export function IonicChapter() {
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Important ionic structures</h3>
       <P t="Each structure below is built in stages: first the large-ion framework, then the small ions in their holes, then the coordination. Use **Slice to the cell** to see exactly which fraction of every ion belongs to one cell." />
       <IonicExplorer />
+
+      <div className="space-y-8">
+        <Derivation
+          no="4.6"
+          title="Cell edge from the ionic radii"
+          given="Ions are hard spheres. In each structure the cation and anion touch along a definite line of the cell, and the ionic radii are $r_+$ and $r_-$."
+          find="The edge $a$ of the NaCl, CsCl and zinc blende cells in terms of $r_+ + r_-$."
+          steps={[
+            { say: "**NaCl (rock salt).** Along an edge the sequence is anion, cation, anion, so the cation touches the anion on each side. The edge holds one full anion diameter $2r_-$ plus one cation diameter $2r_+$:", tex: "a = 2(r_+ + r_-)" },
+            { say: "**CsCl.** The cation at the body centre touches the eight anions at the corners, so the body diagonal carries one cation diameter and two anion radii: $2(r_+ + r_-)$. With body diagonal $\\sqrt3\\,a$:", tex: "\\sqrt3\\,a = 2(r_+ + r_-)" },
+            { say: "**Zinc blende.** The cation at $(\\tfrac14,\\tfrac14,\\tfrac14)$ touches the corner anion. That distance is a quarter of the body diagonal:", tex: "r_+ + r_- = \\frac{\\sqrt3}{4}\\,a" },
+            { say: "Check with NaCl, $r_+ = 102$ pm and $r_- = 181$ pm:", tex: "a = 2(102 + 181) = 566\\ \\text{pm}" },
+          ]}
+          result="a_{\text{NaCl}} = 2(r_+ + r_-),\quad a_{\text{CsCl}} = \dfrac{2(r_+ + r_-)}{\sqrt3},\quad a_{\text{ZnS}} = \dfrac{4(r_+ + r_-)}{\sqrt3}"
+          note="The measured NaCl edge is 564 pm, so the hard-sphere model is very good here."
+        />
+      </div>
 
       <div className="grid gap-4 md:grid-cols-2">
         <KeyIdea title="Corundum (Al₂O₃)">

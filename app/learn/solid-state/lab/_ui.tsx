@@ -46,53 +46,133 @@ export function Rich({ text }: { text: string }) {
 
 export type DerivStep = { say: string; tex?: string };
 
-/** A textbook-style derivation that the reader walks through one line at a time. */
-export function Derivation({ title, steps, result }: { title: string; steps: DerivStep[]; result?: string }) {
-  const [shown, setShown] = useState(1);
-  const done = shown >= steps.length;
+/**
+ * A derivation set out the way a textbook does: numbered, with what is given and what is to be found,
+ * every line justified, numbered equations, a figure beside it and a boxed result.
+ * Shown in full by default; the reader can switch to a step-by-step walk-through.
+ */
+export function Derivation({
+  no,
+  title,
+  given,
+  find,
+  figure,
+  steps,
+  result,
+  note,
+}: {
+  no: string;
+  title: string;
+  given?: string;
+  find?: string;
+  figure?: ReactNode;
+  steps: DerivStep[];
+  result?: string;
+  note?: string;
+}) {
+  const [walk, setWalk] = useState(false);
+  const [shown, setShown] = useState(steps.length);
+  const visible = walk ? shown : steps.length;
+  const done = visible >= steps.length;
+  let eq = 0;
   return (
-    <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
-      <div className="flex items-center justify-between gap-3">
-        <div className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent)]">Derivation</div>
-        <div className="text-xs text-[var(--text-muted)]">
-          step {Math.min(shown, steps.length)} of {steps.length}
-        </div>
-      </div>
-      <h4 className="mt-1 text-lg font-bold text-[var(--foreground)]">{title}</h4>
-      <ol className="mt-3 space-y-3">
-        {steps.slice(0, shown).map((s, i) => (
-          <li key={i} className="ss-rise flex gap-3">
-            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[var(--accent)]/50 text-xs font-bold text-[var(--accent)]">{i + 1}</span>
-            <div className="min-w-0 flex-1 text-[15px] leading-7 text-[var(--text-muted)]">
-              <Rich text={s.say} />
-              {s.tex && <Tex ex={s.tex} block />}
+    <section aria-label={`Derivation ${no}: ${title}`} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+      <header className="flex flex-wrap items-baseline gap-x-3 border-b border-[var(--border)] px-5 py-3.5">
+        <span className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--accent)]">Derivation {no}</span>
+        <h4 className="text-lg font-bold text-[var(--foreground)]">{title}</h4>
+      </header>
+      <div className={`grid gap-6 p-5 sm:p-6 ${figure ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)]" : ""}`}>
+        <div className="min-w-0">
+          {(given || find) && (
+            <dl className="mb-5 grid grid-cols-[5.5rem_1fr] gap-x-3 gap-y-1.5 rounded-lg border border-[var(--border)] bg-black/20 px-4 py-3 text-[15px] leading-7">
+              {given && (
+                <>
+                  <dt className="font-bold text-[var(--foreground)]">Given</dt>
+                  <dd className="text-[var(--text-muted)]">
+                    <Rich text={given} />
+                  </dd>
+                </>
+              )}
+              {find && (
+                <>
+                  <dt className="font-bold text-[var(--foreground)]">To find</dt>
+                  <dd className="text-[var(--text-muted)]">
+                    <Rich text={find} />
+                  </dd>
+                </>
+              )}
+            </dl>
+          )}
+          <ol className="space-y-5">
+            {steps.slice(0, visible).map((s, i) => {
+              const n = s.tex ? ++eq : 0;
+              return (
+                <li key={i} className={`flex gap-3 ${walk ? "ss-rise" : ""}`}>
+                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[var(--accent)]/50 text-xs font-bold text-[var(--accent)]">{i + 1}</span>
+                  <div className="min-w-0 flex-1 text-[15.5px] leading-7 text-[var(--text-muted)]">
+                    <Rich text={s.say} />
+                    {s.tex && (
+                      <div className="relative mt-1 overflow-x-auto rounded-md bg-black/20 px-3 py-1 pr-12">
+                        <Tex ex={s.tex} block />
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-[var(--text-muted)]">({n})</span>
+                      </div>
+                    )}
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+          {done && result && (
+            <div className="ss-rise mt-6 rounded-xl border border-emerald-300/45 bg-emerald-300/[0.07] px-4 py-3">
+              <div className="text-[11px] font-black uppercase tracking-[0.16em] text-emerald-300">Hence</div>
+              <div className="relative">
+                <Tex ex={result} block />
+                <span className="absolute bottom-0 right-1 text-lg text-emerald-300" aria-hidden>
+                  ∎
+                </span>
+              </div>
             </div>
-          </li>
-        ))}
-      </ol>
-      {done && result && (
-        <div className="ss-rise mt-4 rounded-lg border border-emerald-300/40 bg-emerald-300/[0.07] px-4 py-3 text-center">
-          <Tex ex={result} block />
+          )}
+          {done && note && (
+            <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
+              <Rich text={note} />
+            </p>
+          )}
+          <div className="mt-5 flex flex-wrap gap-2">
+            {!walk && (
+              <button
+                type="button"
+                onClick={() => {
+                  setWalk(true);
+                  setShown(1);
+                }}
+                className="rounded-md border border-[var(--border)] px-3.5 py-1.5 text-sm font-semibold text-[var(--foreground)] hover:border-[var(--accent)]"
+              >
+                Walk through step by step
+              </button>
+            )}
+            {walk && !done && (
+              <button type="button" onClick={() => setShown((n) => n + 1)} className="rounded-md bg-[var(--accent)] px-4 py-1.5 text-sm font-bold text-black hover:brightness-110">
+                Next step
+              </button>
+            )}
+            {walk && (
+              <button
+                type="button"
+                onClick={() => {
+                  setWalk(false);
+                  setShown(steps.length);
+                }}
+                className="rounded-md border border-[var(--border)] px-3.5 py-1.5 text-sm font-semibold text-[var(--foreground)] hover:border-[var(--accent)]"
+              >
+                Show full derivation
+              </button>
+            )}
+          </div>
         </div>
-      )}
-      <div className="mt-4 flex gap-2">
-        {!done && (
-          <button type="button" onClick={() => setShown((n) => n + 1)} className="rounded-md bg-[var(--accent)] px-4 py-1.5 text-sm font-bold text-black hover:brightness-110">
-            Next step
-          </button>
-        )}
-        {!done && (
-          <button type="button" onClick={() => setShown(steps.length)} className="rounded-md border border-[var(--border)] px-4 py-1.5 text-sm font-semibold text-[var(--foreground)] hover:border-[var(--accent)]">
-            Show all
-          </button>
-        )}
-        {shown > 1 && (
-          <button type="button" onClick={() => setShown(1)} className="rounded-md border border-[var(--border)] px-4 py-1.5 text-sm font-semibold text-[var(--text-muted)] hover:border-[var(--accent)]">
-            Restart
-          </button>
-        )}
+        {figure && <div className="min-w-0 lg:sticky lg:top-40 lg:self-start">{figure}</div>}
       </div>
-    </div>
+    </section>
   );
 }
 

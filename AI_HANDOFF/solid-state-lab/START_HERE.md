@@ -50,3 +50,19 @@ npm run build
 Local visual testing: the route is auth-gated, so test through a temporary ungated page that
 imports `./lab/page`, and use software GL (`--use-angle=swiftshader`) with long waits
 (~9 s per 3D scene).
+
+## Textbook derivations (`_ui.tsx` `Derivation`, `_figs.tsx`)
+
+Every derivation is numbered and laid out as a textbook proof: Given / To find
+box, numbered steps with numbered equations, a boxed "Hence" result, an
+optional note, and (where useful) a geometric figure from `_figs.tsx`
+(`ContactFig`, `RadiusFig`, `VoidFig`, `HcpFig`, `BraggFig`, `MillerFig`,
+`CurieFig`: server-safe SVG built from real coordinates). Props:
+`no, title, given, find, figure, steps[{say, tex?}], result, note`.
+In JSX attribute strings write a single backslash (`result="\eta = ..."`);
+inside JS strings/arrays use `\\`.
+
+Numbering: 2.1-2.3 cubic packing, 2.4 d-spacing (Miller), 2.5 Bragg (+ BraggLab),
+3.1-3.7 packing/voids/diamond, 4.1-4.5 radius ratio, 4.6 cell edge from radii,
+5.1 Boltzmann, 5.2 density with Schottky/Frenkel, 6.1 intrinsic conductivity,
+7.1 spin-only moment, 7.2 Curie's law.

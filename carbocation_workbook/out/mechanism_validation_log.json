@@ -1384,6 +1384,46 @@
   "final": "Oc1ccc2c(c1)CCCC2"
  },
  {
+  "id": "7.20",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 3,
+  "final": "O=C1CCCCCC1"
+ },
+ {
+  "id": "7.21",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 3,
+  "final": "O=C(Cc1ccccc1)c1ccccc1"
+ },
+ {
+  "id": "7.22",
+  "ok": true,
+  "msg": "ok",
+  "steps": 4,
+  "arrows": 4,
+  "final": "CC(=O)C(C)(c1ccccc1)c1ccccc1"
+ },
+ {
+  "id": "7.23",
+  "ok": true,
+  "msg": "ok",
+  "steps": 4,
+  "arrows": 4,
+  "final": "CC1CCCCC1=O"
+ },
+ {
+  "id": "7.24",
+  "ok": true,
+  "msg": "ok",
+  "steps": 4,
+  "arrows": 4,
+  "final": "CC(C)C=O"
+ },
+ {
   "id": "R4sol",
   "ok": true,
   "msg": "ok",

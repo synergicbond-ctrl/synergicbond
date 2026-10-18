@@ -8,6 +8,8 @@ import content.lg as lg
 import content.gen_F as gF
 import content.gen_H as gH
 import content.gen_R as gR
+import content.gen_Q as gQ
+import content.gen_R2 as gR2
 import content.carbanion as cbn, content.radical as rad, content.carbene as cbe, content.nitrene as nit, content.benzyne as bzy, content.overview as ovw, content.orders as orders
 from engine import chem as _chem
 import content.user_ex2 as ux
@@ -23,7 +25,7 @@ import content.stab_theory as st
 
 B = Book("Reaction Intermediates — JEE Advanced Organic Chemistry",
          "Carbocations (in depth), carbanions, free radicals, carbenes, nitrenes, benzyne and radical ions: theory, generation, stability, arrow-validated mechanisms, and worked solutions to the exercises you supplied. "
-         "Status: Parts 0–4, 5A–5H, 7.0–7.1 and 8–14 are written; the 50 original stability questions (Part 5), the migratory-aptitude chapter (Part 6) and the rest of the rearrangement series (Part 7) are not yet written.")
+         "Status: Parts 0–4, 5A–5I, 6, 7.0–7.2 and 8–15 are written (carbocation, carbanion, free radical, carbene, nitrene, benzyne, radical ions, important orders). Open items are listed in SOURCE_COVERAGE.md and the audit report.")
 intro.build(B)
 B.part("Part 2", "Generation of Carbocations")
 B.p("Each of the following mechanisms was checked by computer: the curved arrows were applied to the drawn reactant graph and the result compared with the drawn product (valence, charge, atom conservation). "
@@ -40,7 +42,9 @@ ux6.build(B)
 ux7.build(B)
 ux8.build(B)
 ux9.build(B)
+gQ.build(B)
 gR.build(B)
+gR2.build(B)
 cqs = cq.build(B)
 _chem.ALLOW_RADICAL[0] = True
 new_qs = []

@@ -217,6 +217,174 @@ function FccAlong111() {
   );
 }
 
+/* ------------------------- FCC from 3 square layers or from 4 hexagonal layers */
+
+type LMode = "square" | "hex";
+
+/** Rotate so that the body diagonal (1,1,1) points up. */
+function upRot(v: V3): V3 {
+  const n: V3 = [1 / SQ3, 1 / SQ3, 1 / SQ3];
+  const ax: V3 = [n[2], 0, -n[0]]; // n x (0,1,0)
+  const s = Math.hypot(ax[0], ax[1], ax[2]);
+  const k: V3 = [ax[0] / s, ax[1] / s, ax[2] / s];
+  const cosT = n[1], sinT = s;
+  const kv: V3 = [k[1] * v[2] - k[2] * v[1], k[2] * v[0] - k[0] * v[2], k[0] * v[1] - k[1] * v[0]];
+  const kd = k[0] * v[0] + k[1] * v[1] + k[2] * v[2];
+  return [v[0] * cosT + kv[0] * sinT + k[0] * kd * (1 - cosT), v[1] * cosT + kv[1] * sinT + k[1] * kd * (1 - cosT), v[2] * cosT + kv[2] * sinT + k[2] * kd * (1 - cosT)];
+}
+
+const LAYER_COLS: Record<LMode, string[]> = { square: [C.blue, C.gold, C.blue], hex: [C.blue, C.gold, C.green, C.blue] };
+
+function FccFromLayers() {
+  const [mode, setMode] = useState<LMode>("square");
+  const [step, setStep] = useState(10);
+  const [playing, setPlaying] = useState(false);
+  const stepRef = useRef(step);
+  useEffect(() => {
+    stepRef.current = step;
+  });
+  const nLayers = mode === "square" ? 3 : 4;
+  const last = 5; // intro, the layers, the cell box, then the neighbour count
+  useEffect(() => {
+    if (!playing) return;
+    const id = window.setInterval(() => {
+      if (stepRef.current >= last) {
+        setPlaying(false);
+        return;
+      }
+      setStep(stepRef.current + 1);
+    }, 3800);
+    return () => window.clearInterval(id);
+  }, [playing, last]);
+  const st = Math.min(step, last);
+
+  const cellPts = useMemo<V3[]>(() => [...CORNERS, ...FACES], []);
+  const key = (p: V3) => (mode === "square" ? p[1] : p[0] + p[1] + p[2]);
+  const layerVals = mode === "square" ? [-1, 0, 1] : [-3, -1, 1, 3];
+  const LAYER_COL = LAYER_COLS[mode];
+  const layerOf = (p: V3) => layerVals.indexOf(key(p));
+  const place = (p: V3): V3 => (mode === "square" ? p : upRot(p));
+  // the atom whose 12 neighbours we count
+  const focus = useMemo<V3>(() => (mode === "square" ? [1, 0, 0] : [0, 0, -1]), [mode]);
+  const lattice = useMemo(() => {
+    const out: V3[] = [];
+    for (let x = -3; x <= 3; x++) for (let y = -3; y <= 3; y++) for (let z = -3; z <= 3; z++) if (Math.abs((x + y + z) % 2) === 1) out.push([x, y, z]);
+    return out;
+  }, []);
+  const neigh = useMemo(() => lattice.filter((q) => Math.abs(Math.hypot(q[0] - focus[0], q[1] - focus[1], q[2] - focus[2]) - Math.SQRT2) < 1e-6), [lattice, focus]);
+  const inCell = (p: V3) => p.every((c) => Math.abs(c) <= 1.0001);
+  const rad = 0.5; // drawn smaller than the touching size (0.71) so the layers stay readable
+
+  const atoms: StageAtom[] = [
+    ...cellPts.map((p, i) => {
+      const li = layerOf(p);
+      const shown = li >= 0 && li < st;
+      const isNeigh = st >= last && neigh.some((q) => q[0] === p[0] && q[1] === p[1] && q[2] === p[2]);
+      const isFocus = p[0] === focus[0] && p[1] === focus[1] && p[2] === focus[2];
+      const dim = st >= last && !isNeigh && !isFocus;
+      const q = place(p);
+      return { id: `c${i}`, p: q, r: rad, color: isFocus && st >= last ? "#ffffff" : LAYER_COL[li], scale: shown ? 1 : 0, opacity: dim ? 0.22 : 1, glow: st >= last && (isNeigh || isFocus), from: [q[0], q[1] + 3.5, q[2]] as V3 };
+    }),
+    ...neigh.filter((q) => !inCell(q)).map((q, i) => {
+      const li = layerVals.indexOf(key(q));
+      const c = place(q);
+      return { id: `n${i}`, p: c, r: rad, color: LAYER_COL[li >= 0 ? li : 0], scale: st >= last ? 1 : 0, opacity: 0.6, glow: true, from: [c[0], c[1] + 1.5, c[2]] as V3 };
+    }),
+  ];
+  const fp = place(focus);
+  const bonds: StageBond[] = st >= last ? neigh.map((q, i) => ({ id: `b${i}`, a: fp, b: place(q), r: 0.05, color: "#ffffff" })) : [];
+  const boxOn = st >= 4;
+  const edges = useMemo(() => {
+    const raw = cubeEdges("fl", 1, [0, 0, 0], true, 0.55);
+    return raw.map((l) => ({ ...l, a: mode === "square" ? l.a : upRot(l.a), b: mode === "square" ? l.b : upRot(l.b), opacity: boxOn ? 0.7 : 0 }));
+  }, [mode, boxOn]);
+
+  // neighbour counts by layer
+  const counts = useMemo(() => {
+    const out = { above: 0, same: 0, below: 0 };
+    for (const q of neigh) {
+      const d = key(q) - key(focus);
+      if (d === 0) out.same++;
+      else if (d > 0) out.above++;
+      else out.below++;
+    }
+    return out;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [neigh, mode]);
+
+  const says: Record<LMode, string[]> = {
+    square: [
+      "Press **Play**. Cut an fcc cell by planes parallel to a cube face. Each plane holds atoms in a **square pattern** (a square lattice turned 45°) in which every atom **touches its 4 neighbours**. This is **square close packing**.",
+      "**Layer 1 (A):** 4 corner atoms and 1 face-centre atom. Atoms touch along the face diagonal.",
+      "**Layer 2 (B):** 4 atoms (the side-face centres) sink into the **hollows** between the squares of layer 1, half a cube edge higher.",
+      "**Layer 3 (A):** exactly above layer 1. So an fcc cell is built from just **3 square layers, stacked A B A**.",
+      "**The cell.** The cube box is complete: 5 + 4 + 5 = 14 atoms in the picture, 4 whole atoms in the cell (8 × ⅛ + 6 × ½).",
+      `**Coordination number.** The white atom touches **${counts.same} in its own layer, ${counts.above} in the layer above and ${counts.below} in the layer below**: ${counts.same} + ${counts.above} + ${counts.below} = **12**. Faint atoms lie in neighbouring cells.`,
+    ],
+    hex: [
+      "Press **Play**. Now cut the same fcc cell by planes **perpendicular to the body diagonal**: the cube stands on a corner. Each plane is a **hexagonal close-packed** layer in which every atom touches **6** neighbours.",
+      "**Layer 1 (A):** a single corner atom of the cell (its layer continues into the neighbouring cells).",
+      "**Layer 2 (B):** 6 atoms in a hexagon. Each rests in a hollow of layer 1: the layer is shifted, not directly above A.",
+      "**Layer 3 (C):** again 6 atoms, but over the hollows that layer B left uncovered: neither above A nor above B.",
+      "**Layer 4 (A):** the top corner atom is directly above layer 1. The sequence is **A B C A**: **4 layers** are needed to contain one fcc cell, which is why cubic close packing repeats as ABC ABC…",
+      `**Coordination number.** The white atom touches **${counts.below} in the layer below, ${counts.same} in its own layer and ${counts.above} above**: ${counts.below} + ${counts.same} + ${counts.above} = **12**. Faint atoms lie in neighbouring cells.`,
+    ],
+  };
+  const cam: CameraPose = mode === "square" ? { key: `fs${st >= last ? 1 : 0}`, az: 0.75, el: 0.42, dist: 11 } : { key: `fh${st >= last ? 1 : 0}`, az: 0.6, el: 0.25, dist: 11.5 };
+  return (
+    <div className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5">
+      <div>
+        <div className="text-sm font-bold tracking-[0.14em] text-[var(--accent)]">BUILD ONE FCC CELL FROM LAYERS</div>
+        <p className="mt-1 max-w-3xl text-[15px] leading-7 text-[var(--text-muted)]">
+          From your notes: an fcc cell can be built from <b>3 layers of square close packing (A B A, CN 4 + 4 + 4)</b> or from <b>4 layers of hexagonal close packing (A B C A, CN 3 + 6 + 3)</b>. Pick a view and press Play.
+        </p>
+      </div>
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
+        <div className="space-y-3">
+          <Stage atoms={atoms} bonds={bonds} lines={edges} camera={cam} autoRotate={st === 0} floorY={-2.4} height={500} label={`Animation: fcc cell built from ${nLayers} layers`} hint="drag to look around" />
+          <Narration k={`${mode}-${st}`}>
+            <Rich text={says[mode][Math.min(st, last)]} />
+          </Narration>
+        </div>
+        <div className="space-y-4">
+          <Tabs label="Layers" value={mode} onChange={(m) => { setMode(m); setPlaying(false); setStep(10); }} items={[["square", "3 square layers (A B A)"], ["hex", "4 hexagonal layers (A B C A)"]] as const} />
+          <div className="flex flex-wrap items-center gap-2">
+            <Btn primary onClick={() => { setStep(0); setPlaying(true); }}>▶ Play</Btn>
+            <Btn onClick={() => { setPlaying(false); setStep(Math.max(0, st - 1)); }}>◀ Back</Btn>
+            <Btn onClick={() => { setPlaying(false); setStep(Math.min(last, st + 1)); }}>Next ▶</Btn>
+            <span className="text-sm text-[var(--text-muted)]">Step {st + 1} of {last + 1}</span>
+          </div>
+          <Facts cols={2} items={mode === "square" ? [["Layer type", "square, 4 touching"], ["Layers per cell", "3 (A B A)"], ["Layer spacing", "a / 2"], ["Coordination", "4 + 4 + 4 = 12"]] : [["Layer type", "hexagonal, 6 touching"], ["Layers per cell", "4 (A B C A)"], ["Layer spacing", "a / √3"], ["Coordination", "3 + 6 + 3 = 12"]]} />
+        </div>
+      </div>
+      <div className="overflow-x-auto rounded-xl border border-[var(--border)]">
+        <table className="w-full min-w-[620px] text-sm">
+          <thead className="bg-[var(--background)] text-left text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+            <tr><th className="px-3 py-2">Layers stacked</th><th className="px-3 py-2">Layer type</th><th className="px-3 py-2">Result</th><th className="px-3 py-2">CN</th><th className="px-3 py-2">Efficiency</th></tr>
+          </thead>
+          <tbody>
+            {[
+              ["A A A …", "square, closed", "Simple cubic", "6", "52.4 %"],
+              ["A B A B … (open squares)", "square, not touching in the layer", "Body-centred cubic", "8", "68.0 %"],
+              ["A B A …", "square, closed packed (touching)", "Face-centred cubic", "12 (4+4+4)", "74.05 %"],
+              ["A B A B …", "hexagonal, closed", "Hexagonal close packed", "12 (3+6+3)", "74.05 %"],
+              ["A B C A B C …", "hexagonal, closed", "Face-centred cubic (ccp)", "12 (3+6+3)", "74.05 %"],
+            ].map((r) => (
+              <tr key={r[0]} className="border-t border-[var(--border)]">
+                <td className="px-3 py-1.5 font-mono font-bold text-[var(--foreground)]">{r[0]}</td>
+                <td className="px-3 py-1.5 text-[var(--text-muted)]">{r[1]}</td>
+                <td className="px-3 py-1.5 text-[var(--foreground)]">{r[2]}</td>
+                <td className="px-3 py-1.5 font-mono">{r[3]}</td>
+                <td className="px-3 py-1.5 font-mono text-[var(--text-muted)]">{r[4]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 /* ------------------------------------------------------ HCP unit cell */
 
 function HcpCell() {
@@ -749,6 +917,8 @@ export function PackingChapter() {
         {"ABAB… gives **hexagonal close packing (HCP)**. ABCABC… gives **cubic close packing (CCP)**. In both, each sphere touches 12 others (6 in its own layer, 3 above, 3 below) and fills 74.05% of space. Examples of HCP: Mg, Zn, Cd, Ti. Examples of CCP: Cu, Ag, Au, Al, Ni."}
       </KeyIdea>
       <FccAlong111 />
+      <P t="Your notes build the fcc cell in two ways. Cut it parallel to a cube face and you need **3 layers** (square close packing); cut it perpendicular to the body diagonal and you need **4 layers** (hexagonal close packing). The animation shows both and counts the 12 neighbours." />
+      <FccFromLayers />
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Building the cubic lattices from square layers</h3>
       <P t="Square layers can be stacked in three ways, and each way produces one of the cubic lattices you met in Part 2. Compare how many neighbours an atom gets in each case." />

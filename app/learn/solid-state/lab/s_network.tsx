@@ -3,10 +3,84 @@
 import { useMemo, useState } from "react";
 import { Stage, type CameraPose, type StageAtom, type StageBond, type StageLine, type StagePoly, type V3 } from "./_stage";
 import { C, CORNERS, FACES, SQ3, TETRA_ALL, bondsBetween, cubeEdges } from "./_geom";
-import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Traps, Worked } from "./_ui";
+import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Traps, Worked, useTour } from "./_ui";
 
 const PANEL = "radial-gradient(120% 90% at 50% 18%, #17433f 0%, #0c1f1e 52%, #060f0f 100%)";
 void PANEL;
+
+/* ------------------------------------------- diamond = two fcc lattices */
+
+const DT_STEPS = [
+  "**Lattice 1.** Start with an **fcc lattice**: atoms at the 8 corners and 6 face centres of the cube (grey). That is **4 atoms** per cell (8 × ⅛ + 6 × ½). Nothing sits inside yet.",
+  "**Lattice 2.** Take an **exact copy** of this fcc cell (gold). It is identical: same size, same orientation. For now it floats off to one side.",
+  "**Slide it along the body diagonal.** Move the copy by **¼ of the long diagonal**, that is (a/4, a/4, a/4), towards the first lattice. The gold arrow is this shift; the copy now interpenetrates the first lattice.",
+  "**Two fcc lattices, interpenetrating.** Four atoms of the gold lattice now lie **inside** the grey cube, exactly in four of the eight tetrahedral holes (the other gold atoms belong to neighbouring cells, shown faint).",
+  "**Bonds.** Every gold atom sits at the centre of a tetrahedron of **4 grey atoms** (one corner and three face centres), 154 pm apart in diamond. The distance is a quarter of the body diagonal: **√3a/4**. Every grey atom has 4 gold neighbours too, so the coordination number is 4 for all atoms.",
+  "**The result.** 4 grey + 4 gold = **8 atoms per cell**. If both lattices are carbon this is **diamond** (also Si, Ge, grey tin); if one lattice is Zn and the other S it is **zinc blende**. The lattice (Bravais) is still **fcc**, but each lattice point carries **two atoms**: one at (0, 0, 0) and one at (¼, ¼, ¼).",
+];
+
+function DiamondTwoFcc() {
+  const tour = useTour(5, 4200);
+  const step = tour.step;
+  const [kind, setKind] = useState<"diamond" | "zns">("diamond");
+  const fcc: V3[] = [...CORNERS, ...FACES];
+  const off = 0.5; // quarter of the body diagonal in cell units (cell edge = 2)
+  const far = 1.9; // where lattice 2 waits before it slides in
+  const sh = (p: V3, t: number): V3 => [p[0] - t, p[1] - t, p[2] - t];
+  const t = step <= 1 ? -far + off : off; // negative shift = move to the +x+y+z side
+  const inCell = (p: V3) => p.every((c) => Math.abs(c) < 1.001);
+  const bAll = fcc.map((p) => sh(p, t));
+  const bFinal = fcc.map((p) => sh(p, off));
+  const bInside = bFinal.filter(inCell);
+  const lastGrey = step === 5 && kind === "diamond" ? C.gold : "#8da4ad";
+  const greyCol = step === 5 && kind === "zns" ? C.blue : lastGrey;
+  const goldCol = C.gold;
+  const atoms: StageAtom[] = [
+    ...fcc.map((p, i) => ({ id: `A${i}`, p, r: 0.3, color: greyCol, opacity: step === 4 ? 0.55 : 1 })),
+    ...bAll.map((p, i) => {
+      const inside = inCell(bFinal[i]);
+      return { id: `B${i}`, p, r: 0.3, color: goldCol, scale: step >= 1 ? 1 : 0, opacity: step <= 2 ? 1 : inside ? 1 : step >= 4 ? 0 : 0.28, glow: step === 4 && inside };
+    }),
+  ];
+  const bonds: StageBond[] = [
+    ...(step === 2 ? [{ id: "shift", a: [1, 1, 1] as V3, b: [off, off, off] as V3, r: 0.07, color: "#fff1b8" }] : []),
+    ...(step >= 4 ? bondsBetween("bd", bInside, fcc, SQ3 / 2, 0.02, 0.06, C.white) : []),
+  ];
+  const polys: StagePoly[] = [];
+  if (step === 4) polys.push({ id: "tet", verts: [[0.5, 0.5, 0.5], [1, 1, 1], [1, 0, 0], [0, 1, 0], [0, 0, 1]] as V3[], faces: [[1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]], color: C.gold, opacity: 0.22 });
+  const edges = useMemo(() => cubeEdges("dt", 1, [0, 0, 0], true, 0.5), []);
+  const cams: CameraPose[] = [
+    { key: "dt0", az: 0.7, el: 0.4, dist: 9.2 },
+    { key: "dt1", az: 0.7, el: 0.35, dist: 12.5, target: [0.9, 0.9, 0.9] },
+    { key: "dt2", az: 0.9, el: 0.3, dist: 11.5, target: [0.5, 0.5, 0.5] },
+    { key: "dt3", az: 0.6, el: 0.4, dist: 11 },
+    { key: "dt4", az: 1.05, el: 0.28, dist: 8.2, target: [0.5, 0.5, 0.5] },
+    { key: "dt5", az: 0.7, el: 0.45, dist: 9.6 },
+  ];
+  return (
+    <div className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5">
+      <div>
+        <div className="text-sm font-bold tracking-[0.14em] text-[var(--accent)]">TWO FCC LATTICES MAKE DIAMOND</div>
+        <p className="mt-1 max-w-3xl text-[15px] leading-7 text-[var(--text-muted)]">
+          From your notes: the diamond structure is <b>two interpenetrating fcc lattices displaced by ¼ of the long (body) diagonal</b>, the second starting at (¼, ¼, ¼). Watch it happen.
+        </p>
+      </div>
+      <Stage atoms={atoms} bonds={bonds} lines={edges} polys={polys} camera={cams[step]} autoRotate={step === 0 || step === 5} floorY={-2.2} height={500} label="Animation: two fcc lattices combine to give the diamond structure" hint="drag to look around" />
+      <Narration k={`${step}-${kind}`}>
+        <Rich text={DT_STEPS[step]} />
+      </Narration>
+      <div className="flex flex-wrap items-center gap-3">
+        <Btn primary onClick={tour.play}>▶ Play the animation</Btn>
+        <Btn onClick={() => tour.set(Math.max(0, step - 1))}>◀ Back</Btn>
+        <Btn onClick={() => tour.set(Math.min(5, step + 1))}>Next ▶</Btn>
+        <span className="text-sm text-[var(--text-muted)]">Step {step + 1} of 6</span>
+        <div className="ml-auto">
+          <Tabs label="Final colours" value={kind} onChange={setKind} items={[["diamond", "Same atom: diamond"], ["zns", "Two atoms: zinc blende"]] as const} />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 /* ------------------------------------------------------------ graphite lab */
 
@@ -356,8 +430,24 @@ export function NetworkChapter() {
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Diamond, silicon and silicon carbide</h3>
       <P t="All three are built on the **diamond / zinc blende frame**: an fcc lattice with atoms in **half (4 of 8) of the tetrahedral holes**. In diamond and silicon both sites carry the same atom (so **Z = 8**); in silicon carbide the fcc sites carry Si and the tetrahedral holes carry C (zinc blende, **Z = 4 formula units = 8 atoms**). Every atom has **four** neighbours at the corners of a tetrahedron (sp³), so the bond length is a quarter of the body diagonal: **d = √3 a / 4**. The 3D diamond cell is in Part 3; the following derivations give the numbers." />
+      <DiamondTwoFcc />
       <Derivation
         no="9.1"
+        title="Diamond is an fcc lattice with a two-atom basis"
+        given="An fcc lattice of edge a. A second, identical fcc lattice is shifted by (a/4, a/4, a/4), one quarter of the body diagonal."
+        find="Where the second lattice's atoms fall in the cell, the number of atoms per cell, and the nearest-neighbour distance."
+        steps={[
+          { say: "Take the atom at the origin (0, 0, 0) of lattice 1 and its partner at $(\\tfrac14,\\tfrac14,\\tfrac14)$ from lattice 2. These two atoms form the **basis** repeated at every fcc lattice point:", tex: "\\text{basis} = \\{(0,0,0),\\ (\\tfrac14,\\tfrac14,\\tfrac14)\\}\\ \\text{in units of }a" },
+          { say: "Add the three fcc translations $(0,\\tfrac12,\\tfrac12),\\ (\\tfrac12,0,\\tfrac12),\\ (\\tfrac12,\\tfrac12,0)$ to the partner atom. The four partner positions **inside the cell** are:", tex: "(\\tfrac14,\\tfrac14,\\tfrac14),\\ (\\tfrac14,\\tfrac34,\\tfrac34),\\ (\\tfrac34,\\tfrac14,\\tfrac34),\\ (\\tfrac34,\\tfrac34,\\tfrac14)" },
+          { say: "These are four of the eight tetrahedral holes of lattice 1 (the other four stay empty). Atoms per cell: lattice 1 gives $8\\times\\tfrac18+6\\times\\tfrac12=4$ and lattice 2 gives 4:", tex: "Z = 4 + 4 = 8" },
+          { say: "The nearest neighbour of the origin atom is the partner at $(\\tfrac14,\\tfrac14,\\tfrac14)$, a quarter of the body diagonal away:", tex: "d = a\\sqrt{3\\left(\\tfrac14\\right)^2} = \\frac{\\sqrt3}{4}\\,a" },
+          { say: "Each atom has 4 such neighbours at the corners of a regular tetrahedron: coordination number 4, sp³ bonding. In the tetrahedron the central atom sits at **¼ of the height** measured from its base of three atoms (the fact in your notes)." },
+        ]}
+        result="\text{Bravais lattice: fcc};\quad \text{basis: } (0,0,0)\text{ and }(\tfrac14,\tfrac14,\tfrac14);\quad Z = 8;\quad d = \dfrac{\sqrt{3}}{4}\,a"
+        note="So two fcc lattices do not simply 'add up to another fcc crystal': the lattice is still fcc but every point carries two atoms. With two different atoms (Zn at one, S at the other) the same arrangement is zinc blende."
+      />
+      <Derivation
+        no="9.2"
         title="Bond length and density of diamond-type crystals"
         given="A cell of edge a with an fcc lattice and atoms in four tetrahedral holes. Molar mass M, Avogadro constant N_A."
         find="The nearest-neighbour distance d and the density rho, for diamond, silicon, germanium and silicon carbide."
@@ -387,7 +477,7 @@ export function NetworkChapter() {
       <P t="Graphite is the other common form (allotrope) of carbon. Unlike diamond it is **soft, black, slippery and conducts electricity**. The 3D model below shows all three reasons: flat hexagonal layers, delocalised π electrons, and weak forces between layers." />
       <GraphiteLab />
       <Derivation
-        no="9.2"
+        no="9.3"
         title="Unit cell and density of graphite"
         given="Graphite has hexagonal layers with C–C = 142 pm, layers 335 pm apart and stacked ABAB, so the repeat unit contains two layers."
         find="The hexagonal cell dimensions, the number of atoms per cell and the density."
@@ -408,7 +498,7 @@ export function NetworkChapter() {
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Boron and boron carbide: the icosahedron</h3>
       <P t="Elemental boron and boron carbide are built from the **B₁₂ icosahedron**: 12 boron atoms at the corners of a solid with **20 equilateral triangular faces**. Each atom touches **5** others inside the icosahedron (the bonds are three-centre two-electron bonds because boron is electron deficient). In α-rhombohedral boron an icosahedron sits at each corner of a rhombohedral cell, so the cell holds **12 atoms**. In **boron carbide** the icosahedra are B₁₁C (one carbon replaces one boron) and are linked by C–B–C chains." />
       <Derivation
-        no="9.3"
+        no="9.4"
         title="The icosahedron: faces, edges and the formula of boron carbide"
         given="A closed polyhedron with 12 vertices (B atoms), every vertex bonded to 5 others, all faces triangles."
         find="The number of edges and faces, and the formula of boron carbide built from B11C icosahedra and C–B–C chains."
@@ -454,7 +544,7 @@ export function NetworkChapter() {
       <P t="**CaF₂** is the standard example of a **8 : 4** ionic solid. The notes explain why it is built this way: the radii are Ca²⁺ ≈ 100 pm and F⁻ ≈ 133 pm, so the radius ratio is ≈ 0.75, which belongs to **cubic (8-fold) coordination**. But there are twice as many F⁻ as Ca²⁺, so only **half of the cubic holes** can be filled. The two equivalent descriptions are: **Ca²⁺ fcc with F⁻ in all tetrahedral holes**, or **F⁻ simple cubic with Ca²⁺ in alternate cubes**. The model lets you see both." />
       <FluoriteLab />
       <Derivation
-        no="9.4"
+        no="9.5"
         title="Fluorite CaF₂: contents, distances and density"
         given="Ca²⁺ at the corners and face centres of a cube of edge a, F⁻ at the 8 tetrahedral holes (±a/4, ±a/4, ±a/4)."
         find="Z, coordination numbers, the Ca–F, F–F and Ca–Ca distances and the density."
@@ -470,7 +560,7 @@ export function NetworkChapter() {
         note="Antifluorite (Na₂O, Li₂O) swaps the roles: the large anion is on the fcc lattice and the small cation fills the tetrahedral holes, so CN = 4 : 8."
       />
       <Derivation
-        no="9.5"
+        no="9.6"
         title="Packing fraction of fluorite from the radii"
         given="Ca²⁺ radius r₊ = 100 pm, F⁻ radius r₋ = 133 pm, ions touching along Ca–F."
         find="The fraction of the cell volume occupied by the ions."

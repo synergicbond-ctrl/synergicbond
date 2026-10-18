@@ -984,6 +984,118 @@
   "final": "c1ccc(C(c2ccccc2)c2ccccc2)cc1.c1ccc([CH+]c2ccccc2)cc1"
  },
  {
+  "id": "2.H1",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 2,
+  "final": "C[C+](C)C.F[B-](F)(F)F"
+ },
+ {
+  "id": "2.H1'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 2,
+  "final": "C[C+](C)C.F[B-](F)(F)F"
+ },
+ {
+  "id": "2.H2",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "C[CH+]c1ccccc1.[Cl][Sb-]([Cl])([Cl])([Cl])([Cl])[Cl]"
+ },
+ {
+  "id": "2.H2'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "C[CH+]c1ccccc1.[Cl][Sb-]([Cl])([Cl])([Cl])([Cl])[Cl]"
+ },
+ {
+  "id": "2.H3",
+  "ok": true,
+  "msg": "ok",
+  "steps": 3,
+  "arrows": 3,
+  "final": "CC(C)(C)I.CO"
+ },
+ {
+  "id": "2.H3'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 3,
+  "arrows": 3,
+  "final": "CC(C)(C)I.CO"
+ },
+ {
+  "id": "2.H4",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "[Cl][Sb-]([Cl])([Cl])([Cl])([Cl])[Cl].c1c[cH+]1"
+ },
+ {
+  "id": "2.H4'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "[Cl][Sb-]([Cl])([Cl])([Cl])([Cl])[Cl].c1c[cH+]1"
+ },
+ {
+  "id": "2.H5",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "[Cl][Sb-]([Cl])([Cl])([Cl])([Cl])[Cl].c1ccc[cH+]cc1"
+ },
+ {
+  "id": "2.H5'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "[Cl][Sb-]([Cl])([Cl])([Cl])([Cl])[Cl].c1ccc[cH+]cc1"
+ },
+ {
+  "id": "2.H6",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 4,
+  "final": "[Cl][Sb-]([Cl])([Cl])([Cl])([Cl])[Cl].[Cl][Sb-]([Cl])([Cl])([Cl])([Cl])[Cl].c1c[cH+][cH+]1"
+ },
+ {
+  "id": "2.H6'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 4,
+  "final": "[Cl][Sb-]([Cl])([Cl])([Cl])([Cl])[Cl].[Cl][Sb-]([Cl])([Cl])([Cl])([Cl])[Cl].c1c[cH+][cH+]1"
+ },
+ {
+  "id": "2.H7",
+  "ok": true,
+  "msg": "ok",
+  "steps": 3,
+  "arrows": 4,
+  "final": "[Cl][Al-]([Cl])([Cl])[Cl].c1cc[o+]cc1"
+ },
+ {
+  "id": "2.H7'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 3,
+  "arrows": 4,
+  "final": "[Cl][Al-]([Cl])([Cl])[Cl].c1cc[o+]cc1"
+ },
+ {
   "id": "LG3sol",
   "ok": true,
   "msg": "ok",

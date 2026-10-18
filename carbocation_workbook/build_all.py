@@ -6,19 +6,22 @@ import content.intro as intro
 import content.gen_A as gA, content.gen_B as gB, content.gen_C as gC, content.gen_D as gD, content.gen_E as gE
 import content.lg as lg
 import content.gen_F as gF
+import content.gen_H as gH
+import content.user_ex2 as ux
 import content.count_q as cq
 import content.stab_theory as st
 
 B = Book("Reaction Intermediates and Advanced Carbocation Chemistry",
-         "Structure-based notes and problem workbook — WORK-IN-PROGRESS BUILD: Parts 0–4 and the opening of Part 7 (Parts 5, 6, rest of 7 onward not yet written)")
+         "Structure-based notes and problem workbook — WORK-IN-PROGRESS BUILD: Parts 0–4, Part 5A (solutions to your supplied exercise) and the opening of Part 7 (Parts 5, 6, rest of 7 onward not yet written)")
 intro.build(B)
 B.part("Part 2", "Generation of Carbocations")
 B.p("Each of the following mechanisms was checked by computer: the curved arrows were applied to the drawn reactant graph and the result compared with the drawn product (valence, charge, atom conservation). "
-    "Examples are grouped by generation route: 2.A alcohols, 2.B alkyl halides and sulfonates, 2.C alkenes/dienes/alkynes, 2.D solvolysis, 2.E other routes, 2.F amines with nitrous acid, 2.G aromatic compounds (arenium ions).")
-for m in (gA, gB, gC, gD, gE, gF):
+    "Examples are grouped by generation route: 2.A alcohols, 2.B alkyl halides and sulfonates, 2.C alkenes/dienes/alkynes, 2.D solvolysis, 2.E other routes, 2.F amines with nitrous acid, 2.G aromatic compounds (arenium ions), 2.H Lewis-acid-assisted ionisation, ether cleavage and aromatic cations.")
+for m in (gA, gB, gC, gD, gE, gF, gH):
     m.build(B)
 qs = lg.build(B)
 st.build(B)
+ux.build(B)
 cqs = cq.build(B)
 B.part("Answers", "Part 3 — Leaving-Group Problems: Answers and Explanations")
 B.answers(qs, with_stem=False)

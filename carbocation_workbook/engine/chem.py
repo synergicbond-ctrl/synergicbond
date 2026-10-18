@@ -14,8 +14,8 @@ RDLogger.DisableLog("rdApp.*")
 
 # charge (as a function of total bond order b, hydrogens counted as atoms)
 _RULE = {
-    7: lambda b: b - 3, 15: lambda b: b - 3,           # N, P
-    8: lambda b: b - 2, 16: lambda b: b - 2,           # O, S
+    7: lambda b: b - 3, 15: lambda b: (b - 3) if b <= 4 else 0,   # N, P (P(V) neutral)
+    8: lambda b: b - 2, 16: lambda b: (b - 2) if b <= 3 else 0,   # O, S (hypervalent S(IV/VI) neutral)
     9: lambda b: b - 1, 17: lambda b: b - 1, 35: lambda b: b - 1, 53: lambda b: b - 1,
     5: lambda b: 3 - b, 13: lambda b: 3 - b, 26: lambda b: 3 - b, 31: lambda b: 3 - b,  # B, Al, Fe, Ga: 4-coord = -1
     30: lambda b: 2 - b, 80: lambda b: (2 - b) if b <= 2 else (b - 2), 12: lambda b: 2 - b,                      # Zn, Hg, Mg

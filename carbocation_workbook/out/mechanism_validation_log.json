@@ -840,6 +840,150 @@
   "final": "C1=C[CH+]CC=C1"
  },
  {
+  "id": "2.F1",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 3,
+  "final": "N#[O+]"
+ },
+ {
+  "id": "2.F1'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 3,
+  "final": "N#[O+]"
+ },
+ {
+  "id": "2.F2",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "CC(C)(C)[NH2+]N=O"
+ },
+ {
+  "id": "2.F3",
+  "ok": true,
+  "msg": "ok",
+  "steps": 5,
+  "arrows": 9,
+  "final": "C[C+](C)C"
+ },
+ {
+  "id": "2.F4",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 1,
+  "final": "[CH2+]c1ccccc1"
+ },
+ {
+  "id": "2.F5",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "C[NH+](C)N=O"
+ },
+ {
+  "id": "2.F6",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 3,
+  "final": "[OH+]=C1CCCCCC1"
+ },
+ {
+  "id": "2.F6'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 3,
+  "final": "[OH+]=C1CCCCCC1"
+ },
+ {
+  "id": "2.G1",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "O=[N+]([O-])C1C=CC=C[CH+]1"
+ },
+ {
+  "id": "2.G2",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "BrC1C=CC=C[CH+]1.[Br][Fe-]([Br])([Br])[Br]"
+ },
+ {
+  "id": "2.G2'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "BrC1C=CC=C[CH+]1.[Br][Fe-]([Br])([Br])[Br]"
+ },
+ {
+  "id": "2.G3",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 1,
+  "final": "CC(C)(C)C1C=CC=C[CH+]1"
+ },
+ {
+  "id": "2.G4",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "CC(=O)C1C=CC=C[CH+]1"
+ },
+ {
+  "id": "2.G5",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "O=S(=O)([O-])C1C=CC=C[CH+]1"
+ },
+ {
+  "id": "2.G6",
+  "ok": true,
+  "msg": "ok",
+  "steps": 3,
+  "arrows": 3,
+  "final": "C[O+]=C1C=CCC=C1"
+ },
+ {
+  "id": "2.G6'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 3,
+  "arrows": 3,
+  "final": "C[O+]=C1C=CCC=C1"
+ },
+ {
+  "id": "2.G7",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 1,
+  "final": "c1ccc(C(c2ccccc2)c2ccccc2)cc1.c1ccc([CH+]c2ccccc2)cc1"
+ },
+ {
+  "id": "2.G7'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 1,
+  "final": "c1ccc(C(c2ccccc2)c2ccccc2)cc1.c1ccc([CH+]c2ccccc2)cc1"
+ },
+ {
   "id": "LG3sol",
   "ok": true,
   "msg": "ok",
@@ -870,5 +1014,13 @@
   "steps": 3,
   "arrows": 3,
   "final": "C=C1C=CC(=[O+]C)C=C1"
+ },
+ {
+  "id": "R4sol",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 2,
+  "final": "C[C+](C)C(C)C"
  }
 ]

@@ -17,6 +17,10 @@ def build(B):
          ["Amine radical cation R<sub>3</sub>N<sup>•+</sup> (aminium)", "oxidation of amines (e.g. Wurster’s blue from N,N,N′,N′-tetramethyl-p-phenylenediamine)", "α-C–H deprotonation gives α-amino radical; the N-centred radical performs 1,5-HAT (Hofmann–Löffler)", "stable, coloured radical cations"]],
         widths=[20, 22, 30, 28])
     B.p("<b>Birch reduction in four steps</b> (benzene, Na, NH<sub>3</sub>(l), EtOH): (1) electron transfer gives the radical anion; (2) protonation by ethanol (a weak acid; NH<sub>3</sub> is too weak) gives a cyclohexadienyl radical; (3) a second electron gives the cyclohexadienyl anion (a pentadienyl carbanion, charge at C-1, C-3, C-5); (4) protonation at the central carbon (C-3, the position of greatest charge density) gives the non-conjugated 1,4-diene. Electron-donating groups (OMe, alkyl) sit on the sp<sup>2</sup> carbons of the product; electron-withdrawing groups (COOH) sit at the sp<sup>3</sup> end because they stabilise the carbanion at their own carbon.")
+    from . import radical_ion_adv as adv
+    adv.theory(B)
+    B.h2("13.5  Additional validated mechanisms")
+    adv.mechanisms(B)
     B.h2("13.1  Problems on radical ions")
     qs = []
     def q(n, text, fig, ans, why):
@@ -29,6 +33,10 @@ def build(B):
       None, "(a) and (d)", "Both have one unpaired electron. The tropylium cation and naphthalene have all electrons paired.")
     q(4, "Mass spectrometry: what is M<sup>•+</sup>, and why do its fragments follow carbocation-stability rules?",
       None, "the molecular radical cation; fragmentation gives the more stable carbocation + radical", "Electron impact removes one electron (usually from a lone pair or π bond) to give M<sup>•+</sup>. Its cleavage into a cation and a neutral radical follows the order of carbocation stability (tertiary &gt; secondary &gt; primary; benzyl/tropylium and oxonium ions are particularly abundant, e.g. m/z 91 for alkylbenzenes).")
+
+    adv.problems(B, q)
+    B.answers(qs, with_stem=True)
+    ri_qs = qs
 
     B.part("Part 14", "Reaction Intermediates Compared, and Integrated Problems")
     B.h2("14.1  The six intermediates at a glance")
@@ -83,4 +91,4 @@ def build(B):
     q(12, "1-Chloro-2,4-dinitrobenzene reacts with NH<sub>3</sub> at room temperature to give 2,4-dinitroaniline only, whereas chlorobenzene needs NaNH<sub>2</sub> in liquid NH<sub>3</sub> and may give regioisomeric products when substituted. Explain.",
       S([("", "O=[N+]([O-])c1ccc(Cl)c([N+](=O)[O-])c1")]), "S<sub>N</sub>Ar (addition–elimination) vs benzyne (elimination–addition)", "The two nitro groups make the ring electron-poor and stabilise the Meisenheimer anion, so the weak nucleophile NH<sub>3</sub> adds directly at the carbon bearing Cl: a single (ipso) product. Chlorobenzene has no such activation; only a base strong enough to remove an ortho H produces benzyne, and the nucleophile then adds at either carbon.")
     B.answers(qs, with_stem=True)
-    return qs
+    return ri_qs + qs

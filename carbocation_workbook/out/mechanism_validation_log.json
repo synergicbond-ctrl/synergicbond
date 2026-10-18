@@ -2078,5 +2078,21 @@
   "steps": 1,
   "arrows": 3,
   "final": "C=CCc1ccccc1"
+ },
+ {
+  "id": "13.1",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "CC(C)([O-])C(C)(C)[O-]"
+ },
+ {
+  "id": "13.2",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "CC#[O+].[CH2]C"
  }
 ]

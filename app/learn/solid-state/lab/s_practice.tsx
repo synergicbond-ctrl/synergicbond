@@ -2,9 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Btn, Chapter, Rich, Tabs } from "./_ui";
-import { ALL, MM, MULTI, NUM, SC, SECTION_INFO, type Question, type Sec } from "./_practice";
+import { ALL, SECTION_INFO, SETS, SET_INFO, SET_ORDER, type Question, type Sec, type SetId } from "./_practice";
 
-const BY: Record<Sec, Question[]> = { sc: SC, multi: MULTI, num: NUM, mm: MM };
+const SECS: Sec[] = ["sc", "multi", "num", "mm"];
+const bySec = (set: SetId, sec: Sec): Question[] => SETS[set].filter((q) => q.sec === sec);
 const PAGE = 10;
 
 /** "A→PS, B→PQ" into { A: "PS", B: "PQ" } */
@@ -17,8 +18,11 @@ function parseMap(s: string): Record<string, string> {
   return out;
 }
 
+/** Typed-number questions: the numerical type, plus single-correct entries written without options. */
+const typed = (q: Question) => q.sec === "num" || (q.sec !== "mm" && !q.opts);
+
 function isRight(q: Question, given: string): boolean {
-  if (q.sec === "num") {
+  if (typed(q)) {
     const a = parseFloat(given), b = parseFloat(q.ans);
     return !Number.isNaN(a) && Math.abs(a - b) <= Math.max(0.011, 0.005 * Math.abs(b));
   }
@@ -92,6 +96,7 @@ function Card({ q, given, checked, onGive, onCheck }: { q: Question; given: stri
     <div className={`rounded-2xl border p-5 ${checked ? (ok ? "border-emerald-400/50 bg-emerald-400/[0.04]" : "border-rose-400/50 bg-rose-400/[0.04]") : "border-[var(--border)] bg-[var(--surface)]"}`}>
       <div className="flex items-baseline gap-3">
         <span className="rounded-full bg-[var(--accent)]/15 px-3 py-1 font-mono text-sm font-black text-[var(--accent)]">Q{q.n}</span>
+        {q.tag && <span className="rounded-full border border-[var(--border)] px-2.5 py-0.5 text-[11px] font-semibold text-[var(--text-muted)]">{q.tag}</span>}
         {q.text && (
           <div className="whitespace-pre-line text-[15px] leading-7 text-[var(--foreground)]">
             <Rich text={q.text} />
@@ -137,7 +142,7 @@ function Card({ q, given, checked, onGive, onCheck }: { q: Question; given: stri
         </div>
       )}
 
-      {q.sec === "num" && (
+      {typed(q) && (
         <div className="mt-3 flex items-center gap-3">
           <label className="text-sm text-[var(--text-muted)]" htmlFor={`in-${q.id}`}>Your answer</label>
           <input id={`in-${q.id}`} inputMode="decimal" value={given} onChange={(e) => !checked && onGive(e.target.value)} className="w-32 rounded-lg border border-[var(--border)] bg-transparent px-3 py-1.5 font-mono text-[var(--foreground)] outline-none focus:border-[var(--accent)]" />
@@ -181,29 +186,24 @@ function Card({ q, given, checked, onGive, onCheck }: { q: Question; given: stri
   );
 }
 
-function AnswerKey() {
-  const secs: Sec[] = ["sc", "multi", "num", "mm"];
+function KeyBlock({ set }: { set: SetId }) {
   return (
-    <div className="space-y-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5" id="answer-key">
-      <div>
-        <h3 className="text-2xl font-bold text-[var(--foreground)]">Answer key</h3>
-        <p className="mt-1 text-sm text-[var(--text-muted)]">All {ALL.length} questions. Question numbers restart in each section.</p>
-      </div>
-      {secs.map((s) => (
-        <div key={s}>
-          <div className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent)]">{SECTION_INFO[s].title}</div>
-          {s === "mm" ? (
+    <div className="space-y-5">
+      {SECS.filter((sec) => bySec(set, sec).length > 0).map((sec) => (
+        <div key={sec}>
+          <div className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent)]">{SECTION_INFO[sec].title} ({bySec(set, sec).length})</div>
+          {sec === "mm" ? (
             <ul className="space-y-1 font-mono text-sm text-[var(--foreground)]">
-              {BY[s].map((q) => (
+              {bySec(set, sec).map((q) => (
                 <li key={q.id}>Q{q.n}: {q.ans}</li>
               ))}
             </ul>
           ) : (
             <div className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10">
-              {BY[s].map((q) => (
+              {bySec(set, sec).map((q) => (
                 <div key={q.id} className="rounded-lg border border-[var(--border)] px-2 py-1.5 text-center">
                   <div className="text-[10px] text-[var(--text-muted)]">Q{q.n}</div>
-                  <div className="font-mono text-sm font-black text-[var(--foreground)]">{q.ans.length > 4 && s !== "num" ? q.ans.split("").join(",") : q.ans.split("").length > 1 && s === "multi" ? q.ans.split("").join(",") : q.ans}</div>
+                  <div className="font-mono text-sm font-black text-[var(--foreground)]">{sec === "multi" ? q.ans.split("").join(",") : q.ans}</div>
                 </div>
               ))}
             </div>
@@ -214,27 +214,50 @@ function AnswerKey() {
   );
 }
 
+function AnswerKey() {
+  return (
+    <div className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5" id="answer-key">
+      <div>
+        <h3 className="text-2xl font-bold text-[var(--foreground)]">Answer key</h3>
+        <p className="mt-1 text-sm text-[var(--text-muted)]">All {ALL.length} questions, set by set. Question numbers restart in each type.</p>
+      </div>
+      {SET_ORDER.filter((k) => SETS[k].length > 0).map((k) => (
+        <details key={k} open={k === "core"} className="rounded-xl border border-[var(--border)] p-4">
+          <summary className="cursor-pointer text-base font-bold text-[var(--foreground)]">{SET_INFO[k].title} <span className="font-mono text-sm font-normal text-[var(--text-muted)]">({SETS[k].length})</span></summary>
+          <div className="mt-4"><KeyBlock set={k} /></div>
+        </details>
+      ))}
+    </div>
+  );
+}
+
 export function PracticeChapter() {
+  const sets = SET_ORDER.filter((k) => SETS[k].length > 0);
+  const [set, setSet] = useState<SetId>("core");
   const [sec, setSec] = useState<Sec>("sc");
   const [shown, setShown] = useState(PAGE);
   const [given, setGiven] = useState<Record<string, string>>({});
   const [checked, setChecked] = useState<Record<string, boolean>>({});
-  const list = BY[sec];
+  const secs = SECS.filter((k) => bySec(set, k).length > 0);
+  const curSec: Sec = secs.includes(sec) ? sec : secs[0];
+  const list = bySec(set, curSec);
   const score = useMemo(() => {
     let right = 0, done = 0;
     for (const q of ALL) if (checked[q.id]) { done++; if (isRight(q, given[q.id] ?? "")) right++; }
     return { right, done };
   }, [checked, given]);
   return (
-    <Chapter id="practice" n="PRACTICE" title="Practice questions and answer key" lead="Test yourself on the whole chapter: single-correct, multiple-correct, numerical and matrix-match questions. Check each answer, watch the animated step-by-step solution, and find the complete answer key at the bottom.">
+    <Chapter id="practice" n="PRACTICE" title="Practice questions and answer key" lead={`Test yourself on the whole chapter with ${ALL.length} questions in ${sets.length} sets. Check each answer, watch the animated step-by-step solution, and find the complete answer key at the bottom.`}>
+      <Tabs label="Question set" value={set} onChange={(v) => { setSet(v); setSec(SECS.find((k) => bySec(v, k).length > 0) ?? "sc"); setShown(PAGE); }} items={sets.map((k) => [k, `${SET_INFO[k].title} (${SETS[k].length})`] as const)} />
+      <p className="text-sm leading-6 text-[var(--text-muted)]">{SET_INFO[set].blurb}</p>
       <div className="flex flex-wrap items-center gap-3">
-        <Tabs label="Question type" value={sec} onChange={(v) => { setSec(v); setShown(PAGE); }} items={(Object.keys(BY) as Sec[]).map((k) => [k, `${SECTION_INFO[k].title} (${BY[k].length})`] as const)} />
+        <Tabs label="Question type" value={curSec} onChange={(v) => { setSec(v); setShown(PAGE); }} items={secs.map((k) => [k, `${SECTION_INFO[k].title} (${bySec(set, k).length})`] as const)} />
         <div className="ml-auto flex items-center gap-3 text-sm text-[var(--text-muted)]">
           <span>Score <b className="font-mono text-[var(--foreground)]">{score.right}</b> / {score.done} attempted</span>
           <Btn onClick={() => { setGiven({}); setChecked({}); }}>Reset</Btn>
         </div>
       </div>
-      <p className="text-sm text-[var(--text-muted)]">{SECTION_INFO[sec].blurb}</p>
+      <p className="text-sm text-[var(--text-muted)]">{set === "core" ? SECTION_INFO[curSec].blurb : SECTION_INFO[curSec].blurb.replace(/, except Questions 15 to 18, which ask you to type a number/, "")}</p>
       <div className="space-y-4">
         {list.slice(0, shown).map((q) => (
           <Card key={q.id} q={q} given={given[q.id] ?? ""} checked={!!checked[q.id]} onGive={(v) => setGiven((g) => ({ ...g, [q.id]: v }))} onCheck={() => setChecked((c) => ({ ...c, [q.id]: true }))} />

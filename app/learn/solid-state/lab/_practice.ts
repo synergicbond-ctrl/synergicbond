@@ -7,7 +7,15 @@
  * letters in `ans` are computed, never typed by hand.
  */
 
+import { PROB_DRAFT } from "./_problems";
+import { NET_DRAFT } from "./_netq";
+import { PYQ_MAIN_DRAFT } from "./_pyqmain";
+import { PYQ_ADV_DRAFT } from "./_pyqadv";
+import { INCHO_DRAFT } from "./_incho";
+
 export type Sec = "sc" | "multi" | "num" | "mm";
+/** Which collection a question belongs to. */
+export type SetId = "core" | "prob" | "net" | "pyq" | "incho";
 
 export type Question = {
   id: string;
@@ -22,6 +30,10 @@ export type Question = {
   note?: string;
   /** the worked solution, one step per entry (Rich text with $math$) */
   sol: string[];
+  /** collection; filled in by the set that owns the draft */
+  set?: SetId;
+  /** exam label such as "JEE Advanced 2017" or "JEE Main style" */
+  tag?: string;
 };
 
 export const SECTION_INFO: Record<Sec, { title: string; blurb: string }> = {
@@ -44,9 +56,9 @@ function seeded(id: string) {
   };
 }
 
-type Draft = Omit<Question, "ans" | "opts"> & { opts?: string[]; ok?: number[]; ans?: string; keep?: boolean };
+export type Draft = Omit<Question, "ans" | "opts"> & { opts?: string[]; ok?: number[]; ans?: string; keep?: boolean };
 
-function build(d: Draft): Question {
+export function build(d: Draft): Question {
   if (!d.opts || !d.ok) return { ...(d as Question), ans: d.ans ?? "" };
   const idx = d.opts.map((_, i) => i);
   if (!d.keep) {
@@ -174,8 +186,38 @@ const MM_DRAFT: Draft[] = [
   { id: "mm2", n: 2, sec: "mm", text: "Match each defect in Column I with the effects in Column II (a row can have several).", list: { heads: ["Column-I", "Column-II"], rows: [["(A) Schottky defect", "(P) Density necessarily decreases"], ["(B) Frenkel defect", "(Q) Electrical conductivity increases"], ["(C) Metal deficiency defect", "(R) F-centres appear"], ["(D) Metal excess defect", "(S) Stoichiometry changes"], ["", "(T) Density stays the same"]] }, ans: "A→PQ, B→QT, C→QS, D→QRS", sol: ["**Schottky:** ions leave the crystal, so the density falls (P); vacancies let ions move, so conductivity rises (Q).", "**Frenkel:** no ion leaves, so the density is unchanged (T); the defect lets ions hop, so conductivity rises (Q).", "**Metal deficiency:** cation vacancies and holes raise conductivity (Q) and change the formula (S).", "**Metal excess:** trapped electrons raise conductivity (Q), form F-centres (R) and change the formula (S)."] },
 ];
 
-export const SC = SC_DRAFT.map(build);
-export const MULTI = MULTI_DRAFT.map(build);
-export const NUM = NUM_DRAFT.map(build);
-export const MM = MM_DRAFT.map(build);
-export const ALL: Question[] = [...SC, ...MULTI, ...NUM, ...MM];
+const core = (d: Draft): Question => build({ ...d, set: "core" });
+export const SC = SC_DRAFT.map(core);
+export const MULTI = MULTI_DRAFT.map(core);
+export const NUM = NUM_DRAFT.map(core);
+export const MM = MM_DRAFT.map(core);
+
+/** Build a set: every draft gets its set id and numbers restart inside each question type. */
+function makeSet(set: SetId, drafts: Draft[]): Question[] {
+  const seen: Record<string, number> = {};
+  return drafts.map((d) => {
+    seen[d.sec] = (seen[d.sec] ?? 0) + 1;
+    // a year in a label means "the pattern of that year's paper", never a verbatim reproduction
+    const tag = d.tag && /\d{4}/.test(d.tag) ? `${d.tag} pattern` : d.tag;
+    return build({ ...d, set, n: seen[d.sec], tag });
+  });
+}
+
+export const SET_INFO: Record<SetId, { title: string; blurb: string }> = {
+  core: { title: "Core practice", blurb: "The main chapter set: single-correct, multiple-correct, integer and matrix-match questions." },
+  prob: { title: "Problem-book numericals", blurb: "Numerical problems on unit cells, density, packing, defects and voids, each with a typed answer." },
+  net: { title: "Part 9: diamond, CaF₂ and structures", blurb: "Questions on covalent crystals, boron carbide, fullerene, fluorite and the catalogue of structures." },
+  pyq: { title: "JEE Main & Advanced style", blurb: "Questions in the pattern of previous-year JEE Main and JEE Advanced papers on Solid State, rephrased with changed data. Year labels appear only where verified." },
+  incho: { title: "INChO style", blurb: "Olympiad-style Solid State problems in the pattern of the Indian National Chemistry Olympiad." },
+};
+
+const SETS_RAW: Record<SetId, Question[]> = {
+  core: [...SC, ...MULTI, ...NUM, ...MM],
+  prob: makeSet("prob", PROB_DRAFT),
+  net: makeSet("net", NET_DRAFT),
+  pyq: makeSet("pyq", [...PYQ_MAIN_DRAFT, ...PYQ_ADV_DRAFT].sort((x, y) => ["sc", "multi", "num", "mm"].indexOf(x.sec) - ["sc", "multi", "num", "mm"].indexOf(y.sec))),
+  incho: makeSet("incho", INCHO_DRAFT),
+};
+export const SETS = SETS_RAW;
+export const SET_ORDER: SetId[] = ["core", "prob", "net", "pyq", "incho"];
+export const ALL: Question[] = SET_ORDER.flatMap((k) => SETS[k]);

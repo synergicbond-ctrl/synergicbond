@@ -103,3 +103,8 @@ Original-wording extras inspired by a university solid-state course (Kröger–V
 
 ## HCP hole elevator (`lab/s_hcptower.tsx`)
 `HcpTower`: 3D ride through the 9 levels (0, h/8 … h) of the HCP cell, with glass floor, per-level holes, neighbour pyramid/octahedron, running tally (12 small / 6 big), tappable height ruler matching the textbook "Location of voids in HCP" drawing, pull-layers-apart slider and a true-size toggle. Mounted in `s_packing.tsx` before `HcpTour`.
+
+## Part 9, five question sets (this session)
+- `lab/s_network.tsx` (`NetworkChapter`, id `network`, TOC "9"): network-solid table, derivations 9.1–9.5 (diamond/Si/SiC bond & density, graphite cell, B12 icosahedron + B4C, CaF2 geometry/density/packing), `GraphiteLab` (one layer / ABAB / sliding) and `FluoriteLab` (fluorite + antifluorite; unit cell, CN 8, CN 4, cubes) in 3D, interactive table of all metals' structures (`METALS`), table of important crystalline compounds.
+- Practice is now five sets in `_practice.ts` (`SETS`, `SET_INFO`, `SET_ORDER`): `core` (87), `prob` (`_problems.ts`, 35 rewritten problem-book numericals, source problems 645–673), `net` (`_netq.ts`, Part 9), `pyq` (`_pyqmain.ts` + `_pyqadv.ts`, JEE Main/Advanced style, 152), `incho` (`_incho.ts`, 35). `makeSet` renumbers per question type and appends " pattern" to any year tag. All are original rewordings with changed data; year tags only where a search confirmed the pattern. Not a claim of completeness.
+- `typed(q)` in `s_practice.tsx` treats option-less single-correct items (SC 15–18) as typed-number answers.

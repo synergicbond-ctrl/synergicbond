@@ -12,6 +12,7 @@ import { DefectsChapter } from "./lab/s_defects";
 import { ElectronicChapter } from "./lab/s_electronic";
 import { MagneticChapter } from "./lab/s_magnetic";
 import { WestChapter } from "./lab/s_west";
+import { NetworkChapter } from "./lab/s_network";
 import { RevisionChapter } from "./lab/s_revision";
 import { PracticeChapter } from "./lab/s_practice";
 import { MasterNotes } from "./lab/_fulltext";
@@ -31,6 +32,7 @@ const TOC: TocItem[] = [
   { id: "electronic", n: "6", label: "Electrical" },
   { id: "magnetic", n: "7", label: "Magnetic" },
   { id: "depth", n: "8", label: "Going deeper" },
+  { id: "network", n: "9", label: "Diamond, CaF₂, tables" },
   { id: "revision", n: "★", label: "Revision" },
   { id: "practice", n: "?", label: "Practice & key" },
 ];
@@ -88,6 +90,7 @@ export default async function Page() {
             <MasterNotes parts={[10]} />
           </div>
           <WestChapter />
+          <NetworkChapter />
           <RevisionChapter />
           <PracticeChapter />
         </div>

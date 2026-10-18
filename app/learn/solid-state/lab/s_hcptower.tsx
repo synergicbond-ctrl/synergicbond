@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Stage, type CameraPose, type StageAtom, type StageLine, type StagePoly, type V3 } from "./_stage";
+import { Stage, type CameraPose, type StageAtom, type StageBond, type StageLine, type StagePoly, type V3 } from "./_stage";
 import { C, SQ3, hcpCell } from "./_geom";
 import { Btn, Narration, Rich, Slider } from "./_ui";
 
@@ -84,22 +84,24 @@ export function HcpTower() {
   const nearIds = new Set(near.map((n) => n.id));
   const layerOf = (b: { layer: "A" | "B" | "T" }) => (b.layer === "B" ? "B" : "A");
 
+  const isHole = L.kind === "small" || L.kind === "big";
+  const holeCol = L.kind === "big" ? "#ffffff" : C.rose;
   const atoms: StageAtom[] = [
     ...balls.map((b) => {
       const lit = around && nearIds.has(b.id);
-      const layerLit = (L.kind === "A" && layerOf(b) === "A" && ((lv === 0 && b.layer === "A") || (lv === 8 && b.layer === "T"))) || (L.kind === "B" && b.layer === "B");
+      const layerLit = (L.kind === "A" && ((lv === 0 && b.layer === "A") || (lv === 8 && b.layer === "T"))) || (L.kind === "B" && b.layer === "B");
       const col = b.layer === "B" ? C.gold : C.blue;
-      const op = L.kind === "A" || L.kind === "B" ? (layerLit ? 1 : 0.16) : lit ? 0.62 : 0.14;
-      return { id: b.id, p: [b.p[0], Y(b.p[1]), b.p[2]] as V3, r: rb, color: lit ? (b.layer === "B" ? "#ffd98a" : "#a5d2ff") : col, opacity: op, glow: lit || layerLit };
+      const op = isHole ? (lit ? 1 : 0) : layerLit ? 1 : 0.1;
+      return { id: b.id, p: [b.p[0], Y(b.p[1]), b.p[2]] as V3, r: rb, color: col, opacity: op, glow: layerLit };
     }),
-    ...extra.map((x) => ({ id: x.id, p: [x.p[0], Y(x.p[1]), x.p[2]] as V3, r: rb, color: "#ffd98a", scale: around && nearIds.has(x.id) ? 1 : 0, opacity: 0.62, glow: true })),
-    // holes already visited, kept as small dots so the running count is visible
-    ...LEVELS.filter((l) => l.n < lv && (l.kind === "small" || l.kind === "big")).flatMap((l) =>
-      holesAt(l.n).map((h, i) => ({ id: `d${l.n}-${i}`, p: [h.p[0], Y(h.p[1]), h.p[2]] as V3, r: l.kind === "big" ? 0.17 : 0.12, color: l.kind === "big" ? "#ffffff" : C.rose, opacity: 0.55, glow: false }) as StageAtom),
-    ),
-    // holes on the current level, large and glowing
-    ...here.map((h, i) => ({ id: `n${lv}-${i}`, p: [h.p[0], Y(h.p[1]), h.p[2]] as V3, r: (L.kind === "big" ? 0.414 * R * 1.3 : 0.2247 * R * 1.8) * (h.shared ? 0.8 : 1), color: L.kind === "big" ? "#ffffff" : C.rose, glow: true, opacity: h.shared ? 0.75 : 1, from: [h.p[0], Y(h.p[1]) - 0.7, h.p[2]] as V3 }) as StageAtom),
+    ...extra.map((x) => ({ id: x.id, p: [x.p[0], Y(x.p[1]), x.p[2]] as V3, r: rb, color: C.gold, scale: around && nearIds.has(x.id) ? 1 : 0, opacity: 1 })),
+    // the other holes of this level: small markers so all 3 can be counted
+    ...here.slice(1).map((h, i) => ({ id: `m${lv}-${i}`, p: [h.p[0], Y(h.p[1]), h.p[2]] as V3, r: 0.1, color: holeCol, glow: true, opacity: 0.9, from: [h.p[0], Y(h.p[1]) - 0.5, h.p[2]] as V3 }) as StageAtom),
+    // the hole under study, drawn at its true size relative to the balls
+    ...here.slice(0, 1).map((h, i) => ({ id: `n${lv}-${i}`, p: [h.p[0], Y(h.p[1]), h.p[2]] as V3, r: (L.kind === "big" ? 0.414 : 0.2247) * R, color: holeCol, glow: true, from: [h.p[0], Y(h.p[1]) - 0.7, h.p[2]] as V3 }) as StageAtom),
   ];
+  const holeBonds: StageBond[] = [];
+  if (isHole && around && focus) near.forEach((n, i) => holeBonds.push({ id: `hb${lv}-${i}`, a: [focus[0], Y(focus[1]), focus[2]], b: [n.p[0], Y(n.p[1]), n.p[2]], r: 0.018, color: holeCol, opacity: 0.8 }));
 
   const lines: StageLine[] = useMemo(() => {
     const out: StageLine[] = [];
@@ -107,17 +109,18 @@ export function HcpTower() {
     for (let k = 0; k < 6; k++) {
       const [x0, z0] = pol(a, k * 60);
       const [x1, z1] = pol(a, (k + 1) * 60);
-      out.push({ id: `bt${k}`, a: [x0, -H, z0], b: [x1, -H, z1], opacity: 0.9 });
-      out.push({ id: `tp${k}`, a: [x0, H, z0], b: [x1, H, z1], opacity: 0.9 });
-      out.push({ id: `vt${k}`, a: [x0, -H, z0], b: [x0, H, z0], opacity: 0.45, dashed: true });
+      out.push({ id: `bt${k}`, a: [x0, -H, z0], b: [x1, -H, z1], opacity: 0.4 });
+      out.push({ id: `tp${k}`, a: [x0, H, z0], b: [x1, H, z1], opacity: 0.4 });
+      out.push({ id: `vt${k}`, a: [x0, -H, z0], b: [x0, H, z0], opacity: 0.2, dashed: true });
     }
     return out;
   }, [a, c, stretch]);
 
   const polys: StagePoly[] = [];
+  const shapeLines: StageLine[] = [];
   const slabY = Y((lv / 8 - 0.5) * c);
   const ring = [0, 1, 2, 3, 4, 5].map((k) => { const [x, z] = pol(a * 1.18, k * 60); return [x, slabY, z] as V3; });
-  polys.push({ id: "slab", verts: [[0, slabY, 0] as V3, ...ring], faces: [[0, 1, 2], [0, 2, 3], [0, 3, 4], [0, 4, 5], [0, 5, 6], [0, 6, 1]], color: KIND_COL[L.kind], opacity: 0.2 });
+  polys.push({ id: "slab", verts: [[0, slabY, 0] as V3, ...ring], faces: [[0, 1, 2], [0, 2, 3], [0, 3, 4], [0, 4, 5], [0, 5, 6], [0, 6, 1]], color: KIND_COL[L.kind], opacity: isHole ? 0.08 : 0.2 });
   if (around && focus && near.length) {
     const vs = near.map((n) => [n.p[0], Y(n.p[1]), n.p[2]] as V3);
     const edge = 2 * R * 1.02 * stretch * 1.4;
@@ -125,10 +128,13 @@ export function HcpTower() {
     for (let i = 0; i < vs.length; i++) for (let j = i + 1; j < vs.length; j++) for (let k = j + 1; k < vs.length; k++) {
       if (dist(vs[i], vs[j]) < edge && dist(vs[j], vs[k]) < edge && dist(vs[i], vs[k]) < edge) faces.push([i, j, k]);
     }
-    if (faces.length) polys.push({ id: "shape", verts: vs, faces, color: L.kind === "big" ? "#ffffff" : C.rose, opacity: 0.3 });
+    for (let i = 0; i < vs.length; i++) for (let j = i + 1; j < vs.length; j++) if (dist(vs[i], vs[j]) < edge) shapeLines.push({ id: `se${lv}-${i}-${j}`, a: vs[i], b: vs[j], color: holeCol, opacity: 0.95 });
+    if (faces.length) polys.push({ id: "shape", verts: vs, faces, color: holeCol, opacity: 0.28 });
   }
 
-  const camera: CameraPose = { key: `lv${lv}-${pull > 0.5 ? 1 : 0}`, az: 0.55 + lv * 0.42, el: 0.3, dist: 8.6 + 5 * pull, target: [0, slabY * 0.85, 0] };
+  const camera: CameraPose = isHole && focus
+    ? { key: `lv${lv}-${pull > 0.5 ? 1 : 0}`, az: 0.55 + lv * 0.42, el: 0.28, dist: (L.kind === "big" ? 9.5 : 8.4) + 4 * pull, target: [focus[0], Y(focus[1]), focus[2]] }
+    : { key: `lv${lv}-${pull > 0.5 ? 1 : 0}`, az: 0.55 + lv * 0.42, el: L.kind === "A" || L.kind === "B" ? 0.75 : 0.3, dist: 8.6 + 5 * pull, target: [0, slabY * 0.85, 0] };
   const tot = LEVELS.filter((l) => l.n <= lv).reduce((t, l) => ({ small: t.small + (l.kind === "small" ? 3 : 0), big: t.big + (l.kind === "big" ? 3 : 0) }), { small: 0, big: 0 });
   const rows = [...LEVELS].reverse();
 
@@ -137,12 +143,12 @@ export function HcpTower() {
       <div>
         <div className="text-sm font-bold tracking-[0.14em] text-[var(--accent)]">3D HOLE ELEVATOR</div>
         <p className="mt-1 max-w-3xl text-[15px] leading-7 text-[var(--text-muted)]">
-          Ride up through the hexagonal box one level at a time. The balls are drawn a little smaller than real so you can see inside; use the true-size button to make them touch. A glass floor marks where you are. <b className="text-rose-300">Pink</b> = small hole, <b className="text-white">white</b> = big hole. The ruler on the right is the same picture as the textbook drawing of &ldquo;Location of voids in HCP&rdquo;.
+          Ride up through the hexagonal box one level at a time. The balls are drawn a little smaller than real so you can see inside; use the true-size button to make them touch. At each hole level only the balls that touch the hole are shown, joined into the little pyramid (small hole) or double pyramid (big hole). A glass floor marks where you are. <b className="text-rose-300">Pink</b> = small hole, <b className="text-white">white</b> = big hole. The ruler on the right is the same picture as the textbook drawing of &ldquo;Location of voids in HCP&rdquo;.
         </p>
       </div>
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_250px]">
         <div className="space-y-3">
-          <Stage atoms={atoms} lines={lines} polys={polys} camera={camera} autoRotate={!playing && lv === 0} floorY={-2.9 * stretch} height={540} label={`Hole elevator: level ${L.h} (${L.label}) of the HCP cell`} hint="drag to look around" />
+          <Stage atoms={atoms} bonds={holeBonds} lines={[...lines, ...shapeLines]} polys={polys} camera={camera} autoRotate={!playing && lv === 0} floorY={-2.9 * stretch} height={540} label={`Hole elevator: level ${L.h} (${L.label}) of the HCP cell`} hint="drag to look around" />
           <Narration k={lv}>
             <Rich text={L.say} />
           </Narration>

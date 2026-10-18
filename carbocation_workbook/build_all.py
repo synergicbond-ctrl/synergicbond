@@ -7,12 +7,15 @@ import content.gen_A as gA, content.gen_B as gB, content.gen_C as gC, content.ge
 import content.lg as lg
 import content.gen_F as gF
 import content.gen_H as gH
+import content.gen_R as gR
 import content.user_ex2 as ux
 import content.user_ex3 as ux3
 import content.user_ex4 as ux4
 import content.user_ex5 as ux5
 import content.user_ex6 as ux6
 import content.user_ex7 as ux7
+import content.user_ex8 as ux8
+import content.user_ex9 as ux9
 import content.count_q as cq
 import content.stab_theory as st
 
@@ -32,6 +35,9 @@ ux4.build(B)
 ux5.build(B)
 ux6.build(B)
 ux7.build(B)
+ux8.build(B)
+ux9.build(B)
+gR.build(B)
 cqs = cq.build(B)
 B.part("Answers", "Part 3 — Leaving-Group Problems: Answers and Explanations")
 B.answers(qs, with_stem=False)

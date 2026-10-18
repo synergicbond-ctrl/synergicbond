@@ -207,6 +207,110 @@ function DiamondTwoFcc() {
   );
 }
 
+/* ------------------- diamond: replicate a cube, mix, generate the cell */
+
+const DM_STEPS = [
+  "**One fcc cube.** Start with a single fcc unit cell (grey): 8 corner atoms and 6 face-centre atoms, **4 atoms per cell**. The inside of the cube is empty.",
+  "**Replicate.** Make an **identical copy** of the whole cube (gold box and gold atoms). It is the same size and orientation; we park it beside the original so you can see two separate cubes.",
+  "**Move the copy along the body diagonal.** Slide the gold cube towards the grey one, along the long diagonal, until it has moved by exactly **¼ of that diagonal**: (a/4, a/4, a/4). The two cubes now overlap.",
+  "**Mix.** The two cubes **interpenetrate**. The dashed white box is the region they share. Inside the grey cube lie **4 gold atoms**, each at a corner of the small cube (a/4, a/4, a/4), exactly in 4 of the 8 tetrahedral holes.",
+  "**Trim to the original cube.** Throw away everything outside the grey cube (faint gold atoms and the gold box). The grey cube alone now holds **4 grey + 4 gold = 8 atoms**.",
+  "**The original diamond cell is generated.** Draw the bonds: each atom has **4 neighbours** at the corners of a tetrahedron, √3a/4 away. Colour all atoms alike and this is **diamond** (C, Si, Ge, grey Sn); use two kinds and it is **zinc blende**.",
+  "**Stack it.** Repeat the generated cube in all directions (here 2 × 2 × 2 cells). Grey and gold atoms still form two fcc lattices; every atom keeps 4 bonds, which gives the endless tetrahedral network.",
+];
+
+function DiamondCubeMix() {
+  const tour = useTour(6, 4200);
+  const step = tour.step;
+  const fcc: V3[] = [...CORNERS, ...FACES];
+  const off = 0.5;
+  const far = 3.2;
+  const sh = (p: V3, t: number): V3 => [p[0] - t, p[1] - t, p[2] - t];
+  const t = step <= 1 ? -far + off : off;
+  const inCell = (p: V3) => p.every((c) => Math.abs(c) < 1.001);
+  const bAll = fcc.map((p) => sh(p, t));
+  const bFinal = fcc.map((p) => sh(p, off));
+  const bInside = bFinal.filter(inCell);
+  const tile = useMemo(() => {
+    const grey: V3[] = [];
+    const gold: V3[] = [];
+    for (let i = -1; i <= 4; i++) for (let j = -1; j <= 4; j++) for (let k = -1; k <= 4; k++) {
+      if ((i + j + k) % 2 === 0) continue;
+      if (i < -1 || i > 3 || j < -1 || j > 3 || k < -1 || k > 3) continue;
+      grey.push([i, j, k]);
+    }
+    for (let i = -1; i <= 4; i++) for (let j = -1; j <= 4; j++) for (let k = -1; k <= 4; k++) {
+      if ((i + j + k) % 2 === 0) continue;
+      const q: V3 = [i - off, j - off, k - off];
+      if (q.every((c) => c >= -1.001 && c <= 3.001)) gold.push(q);
+    }
+    const cells: V3[] = [];
+    for (const x of [0, 2]) for (const y of [0, 2]) for (const z of [0, 2]) cells.push([x, y, z]);
+    return { grey, gold, cells };
+  }, []);
+  const greyCube = useMemo(() => cubeEdges("dmg", 1, [0, 0, 0], false, 0.9), []);
+  const goldCube = useMemo(() => cubeEdges("dmo", 1, [0, 0, 0], false, 0.9), []);
+  const lines: StageLine[] = [];
+  if (step >= 6) {
+    tile.cells.forEach((c, i) => lines.push(...cubeEdges(`dt${i}-`, 1, c, true, 0.4)));
+  } else {
+    lines.push(...greyCube.map((l) => ({ ...l, color: "#9db4bc" })));
+    if (step >= 1 && step <= 3) lines.push(...goldCube.map((l) => ({ ...l, a: sh(l.a, t), b: sh(l.b, t), color: C.gold })));
+    if (step === 3) lines.push(...cubeEdges("dmx", 0.75, [-0.25, -0.25, -0.25], true, 0.95).map((l) => ({ ...l, color: "#ffffff" })));
+  }
+  let atoms: StageAtom[];
+  let bonds: StageBond[] = [];
+  if (step >= 6) {
+    atoms = [
+      ...tile.grey.map((p, i) => ({ id: `TG${i}`, p, r: 0.22, color: "#8da4ad" })),
+      ...tile.gold.map((p, i) => ({ id: `TO${i}`, p, r: 0.22, color: C.gold })),
+    ];
+    bonds = bondsBetween("tb", tile.gold, tile.grey, SQ3 / 2, 0.02, 0.04, C.white);
+  } else {
+    atoms = [
+      ...fcc.map((p, i) => ({ id: `A${i}`, p, r: 0.3, color: "#8da4ad" })),
+      ...bAll.map((p, i) => {
+        const inside = inCell(bFinal[i]);
+        const vis = step >= 1;
+        return { id: `B${i}`, p, r: 0.3, color: C.gold, from: fcc[i], scale: vis ? 1 : 0, opacity: step <= 2 ? 1 : inside ? 1 : step >= 4 ? 0 : 0.3, glow: step === 3 && inside };
+      }),
+    ];
+    if (step === 2) bonds.push({ id: "shift", a: [far - off, far - off, far - off], b: [-off, -off, -off], r: 0.05, color: "#fff1b8" });
+    if (step >= 5) bonds = bondsBetween("bd", bInside, fcc, SQ3 / 2, 0.02, 0.06, C.white);
+  }
+  const polys: StagePoly[] = [];
+  if (step === 5) polys.push({ id: "tet", verts: [[0.5, 0.5, 0.5], [1, 1, 1], [1, 0, 0], [0, 1, 0], [0, 0, 1]] as V3[], faces: [[1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]], color: C.gold, opacity: 0.22 });
+  const cams: CameraPose[] = [
+    { key: "dm0", az: 0.7, el: 0.4, dist: 9 },
+    { key: "dm1", az: 0.7, el: 0.35, dist: 15, target: [1.8, 1.8, 1.8] },
+    { key: "dm2", az: 0.8, el: 0.3, dist: 13, target: [1, 1, 1] },
+    { key: "dm3", az: 0.6, el: 0.4, dist: 10.5, target: [0, 0, 0] },
+    { key: "dm4", az: 0.7, el: 0.35, dist: 9 },
+    { key: "dm5", az: 1.05, el: 0.28, dist: 8.2, target: [0.4, 0.4, 0.4] },
+    { key: "dm6", az: 0.65, el: 0.4, dist: 17, target: [1, 1, 1] },
+  ];
+  return (
+    <div className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5">
+      <div>
+        <div className="text-sm font-bold tracking-[0.14em] text-[var(--accent)]">CUBE → COPY → MIX → DIAMOND CELL</div>
+        <p className="mt-1 max-w-3xl text-[15px] leading-7 text-[var(--text-muted)]">
+          The same idea as above, drawn with the <b>cubes themselves</b>: replicate an fcc cube, slide the copy by a quarter of the body diagonal, let the two cubes interpenetrate, trim to the original cube, and the diamond cell is generated.
+        </p>
+      </div>
+      <Stage atoms={atoms} bonds={bonds} lines={lines} polys={polys} camera={cams[step]} autoRotate={step === 0 || step === 4 || step === 6} floorY={-2.4} height={520} label="Animation: an fcc cube is replicated, shifted and mixed to generate the diamond cell" hint="drag to look around" />
+      <Narration k={step}>
+        <Rich text={DM_STEPS[step]} />
+      </Narration>
+      <div className="flex flex-wrap items-center gap-3">
+        <Btn primary onClick={tour.play}>▶ Play the animation</Btn>
+        <Btn onClick={() => tour.set(Math.max(0, step - 1))}>◀ Back</Btn>
+        <Btn onClick={() => tour.set(Math.min(6, step + 1))}>Next ▶</Btn>
+        <span className="text-sm text-[var(--text-muted)]">Step {step + 1} of 7</span>
+      </div>
+    </div>
+  );
+}
+
 /* ------------------------------------------------------------ graphite lab */
 
 type Atom2 = { p: [number, number]; sub: "A" | "B" };
@@ -556,6 +660,7 @@ export function NetworkChapter() {
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Diamond, silicon and silicon carbide</h3>
       <P t="All three are built on the **diamond / zinc blende frame**: an fcc lattice with atoms in **half (4 of 8) of the tetrahedral holes**. In diamond and silicon both sites carry the same atom (so **Z = 8**); in silicon carbide the fcc sites carry Si and the tetrahedral holes carry C (zinc blende, **Z = 4 formula units = 8 atoms**). Every atom has **four** neighbours at the corners of a tetrahedron (sp³), so the bond length is a quarter of the body diagonal: **d = √3 a / 4**. The 3D diamond cell is in Part 3; the following derivations give the numbers." />
       <DiamondTwoFcc />
+      <DiamondCubeMix />
       <Derivation
         no="9.1"
         title="Diamond is an fcc lattice with a two-atom basis"

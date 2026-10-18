@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Stage, type CameraPose, type StageAtom, type StageBond, type V3 } from "./_stage";
 import { C, CORNERS, FACES, cubeEdges, latticePoints, neighbourShells } from "./_geom";
 import { plainDist } from "./_dist";
+import { CoordinationLab } from "./s_cn";
 import { BraggFig, ContactFig, MillerFig } from "./_figs";
 import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Tex, Traps, Worked, useTour, type DerivStep } from "./_ui";
 
@@ -639,6 +640,7 @@ export function CubicChapter() {
         <h3 className="text-2xl font-bold text-[var(--foreground)]">Neighbour shells and coordination number</h3>
         <P t="The **coordination number** is the number of nearest neighbours. Beyond them sit more shells at larger distances. Step through the shells: the counts and distances below come straight from the lattice, not from a table." />
       </div>
+      <CoordinationLab />
       <ShellExplorer />
 
       <div className="space-y-2 pt-4">

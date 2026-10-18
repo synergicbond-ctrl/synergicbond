@@ -118,3 +118,8 @@ Original-wording extras inspired by a university solid-state course (Kröger–V
 - Part 8 (`s_west.tsx`): `PerovskiteLab` (6-step 3D build of ABO3 with BO6 octahedron and 12-coordination of A) and `SpinelLab` (SVG animation of cations dropping into 1/8 tetrahedral and 1/2 octahedral holes; normal vs inverse).
 - Part 9 (`s_network.tsx`): `IcosahedronLab` (B12 atoms/bonds, 20 faces slider with Euler check, B11C) and `C60Lab` (truncated icosahedron from computed vertices; pentagon/hexagon sliders, V−E+F). Geometry helpers `cyc`, `edgesOf`, `faceAround`.
 - Part 9 questions: 45 (`_netq.ts`); 354 questions in total.
+
+
+## Latest additions
+- `lab/s_cn.tsx` `CoordinationLab` (Part 2): neighbours of one atom appear one by one with a running count (SC 6, BCC 8, FCC/CCP 12, HCP 12) + comparison table.
+- `s_network.tsx` `DiamondCubeMix` (Part 9): replicate an fcc cube, slide by a/4 along the body diagonal, mix, trim to the original cube, generate the diamond cell, then stack 2×2×2.

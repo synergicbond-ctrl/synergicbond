@@ -62,3 +62,12 @@ Part 15 (orders), 5 agent-written problem banks (content/bank_{CA,FR,CE,NI,BZ}.p
 make_extras.py (answer-key PDF + docx), CARBOCATION_SOURCE_MAP.md, CARBOCATION_AUDIT_REPORT.md.
 Book: 227 pp, 175 validated mechanisms, 552 answered items. Still open: unreadable Exercise-2 items, lecture homework,
 user confirmations of flagged drawings, independent check of all assistant-written answers, full visual QA.
+
+
+## Where the files live (single copy)
+All deliverables: `Reaction_Intermediates_Deliverables/` (PDF, offline HTML, answer key, docx, source zip, audit report,
+source map, coverage notes). The only other copy kept is `content/reaction-intermediates/reaction-intermediates.{html,pdf}`
+because the website route serves it — do not delete that. `carbocation_workbook/out/` is a build output folder: after
+`build_all.py` / `make_extras.py`, copy the new files into the Deliverables folder (and the HTML/PDF into
+content/reaction-intermediates/), then delete the copies in out/ (they are git-ignored). The audit report, source map and
+coverage notes now live only in the Deliverables folder (edit them there).

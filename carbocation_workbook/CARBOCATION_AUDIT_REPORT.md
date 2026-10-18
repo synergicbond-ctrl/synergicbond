@@ -5,6 +5,15 @@
   with the drawn product; the build fails if any step is not electron-balanced. All pass.
 * Every SMILES used for structures in the added problem banks parses in RDKit.
 
+## Problem banks written by delegated agents
+110 further problems (22 each for carbanion CA-60..81, free radical FR-59..80, carbene CE-47..68, nitrene NI-39..60,
+benzyne BZ-37..58) were written by five sub-agents, original and exam-style, with SMILES checked to parse in RDKit.
+Their worked solutions were NOT independently verified. Points the agents themselves flagged as uncertain (all marked ⚑
+in the text): Zimmerman–Traxler labels (CA-66), Favorskii label scrambling (CA-73), Brook direction (CA-76),
+Ireland–Claisen diastereomers (CA-80), HBr anti-addition to 1-methylcyclohexene (FR-64), 5-methylhexenyl 6-endo ratio and
+neophyl rate constant (FR-70/71), assumed rate constants (FR-69/72/73/79), several carbene ratios (CE-49/53/57/64/65/68),
+Cadogan/Stieglitz/Bamberger assumptions (NI-45/50/51/54), aryne regiochemistry and strain figures (BZ-49/50/51/55/58).
+
 ## What was NOT verified
 * The truth of the chemistry in the written theory tables and of every answer key written by the assistant. These were
   not checked against any book or by a second person. Spot-check before exam use, especially: numerical pKa/BDE/ΔE values

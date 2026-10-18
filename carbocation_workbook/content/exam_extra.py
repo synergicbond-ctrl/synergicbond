@@ -146,3 +146,17 @@ def add(topic, q):
     _orig_add(topic, q)
     for n, a in _P2.get(topic, []):
         q(n, *a)
+
+
+_orig_add2 = add
+
+
+def add(topic, q):
+    import importlib
+    _orig_add2(topic, q)
+    try:
+        mod = importlib.import_module(f"content.bank_{topic}")
+    except ModuleNotFoundError:
+        return
+    for n, a in mod.PROBLEMS:
+        q(n, *a)

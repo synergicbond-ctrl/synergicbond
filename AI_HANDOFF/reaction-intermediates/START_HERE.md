@@ -54,3 +54,11 @@ Exercise-O2 solution. Also Maya Shankar Singh "Reactive Intermediates" book.
 - Atom maps required on carbenes/nitrenes/radicals used as arrow sinks (`[CH2:1]`, not `[CH2]`).
 - Keep problem answers honest: when unsure of a product, drop the problem rather than guess.
 - Usage was nearly exhausted when this was written; check credits before large jobs.
+
+
+## Update (end of final session)
+Done since the notes above: Part 5I (50 stability Qs), Part 6 (migratory aptitude), Part 7.2 (5 validated mechanisms),
+Part 15 (orders), 5 agent-written problem banks (content/bank_{CA,FR,CE,NI,BZ}.py, merged via exam_extra.add),
+make_extras.py (answer-key PDF + docx), CARBOCATION_SOURCE_MAP.md, CARBOCATION_AUDIT_REPORT.md.
+Book: 227 pp, 175 validated mechanisms, 552 answered items. Still open: unreadable Exercise-2 items, lecture homework,
+user confirmations of flagged drawings, independent check of all assistant-written answers, full visual QA.

@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Coordination Number and Neighbour Shells",
 } as const;
 
-const data = {
+export const data = {
   "part": 14,
   "slug": "coordination-number-and-neighbour-shells",
   "title": "Coordination Number and Neighbour Shells",

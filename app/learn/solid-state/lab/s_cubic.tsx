@@ -1,0 +1,762 @@
+"use client";
+
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Stage, type CameraPose, type StageAtom, type StageBond, type V3 } from "./_stage";
+import { C, CORNERS, FACES, cubeEdges, latticePoints, neighbourShells } from "./_geom";
+import { plainDist } from "./_dist";
+import { CoordinationLab } from "./s_cn";
+import { BraggFig, ContactFig, MillerFig } from "./_figs";
+import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Tex, Traps, Worked, useTour, type DerivStep } from "./_ui";
+
+type Kind = "sc" | "bcc" | "fcc";
+const NA = 6.022e23;
+
+const DEF: Record<
+  Kind,
+  {
+    name: string;
+    rc: number;
+    z: number;
+    cn: number;
+    eta: number;
+    aOverR: string;
+    contact: string;
+    contactTex: string;
+    stages: string[];
+    deriv: { title: string; steps: DerivStep[]; result: string };
+  }
+> = {
+  sc: {
+    name: "Simple cubic (primitive)",
+    rc: 1,
+    z: 1,
+    cn: 6,
+    eta: Math.PI / 6,
+    aOverR: "2r",
+    contact: "cell edge",
+    contactTex: "a = 2r",
+    stages: ["corners"],
+    deriv: {
+      title: "Packing efficiency of simple cubic",
+      steps: [
+        { say: "Neighbouring atoms touch along the **cell edge**, so one edge holds two radii.", tex: "a = 2r" },
+        { say: "Atoms sit only at the 8 corners; each is shared by 8 cells.", tex: "Z = 8\\times\\tfrac18 = 1" },
+        { say: "Volume of the one atom that belongs to the cell:", tex: "V_{\\text{atom}} = \\tfrac43\\pi r^3" },
+        { say: "Volume of the cell, using step 1:", tex: "V_{\\text{cell}} = a^3 = (2r)^3 = 8r^3" },
+        { say: "Packing efficiency is the fraction of the cell volume filled by atoms:", tex: "\\eta = \\frac{Z\\cdot\\tfrac43\\pi r^3}{a^3} = \\frac{\\tfrac43\\pi r^3}{8r^3}" },
+      ],
+      result: "\\eta = \\dfrac{\\pi}{6} = 0.524\\;(52.4\\%)",
+    },
+  },
+  bcc: {
+    name: "Body-centred cubic",
+    rc: Math.sqrt(3) / 2,
+    z: 2,
+    cn: 8,
+    eta: (Math.PI * Math.sqrt(3)) / 8,
+    aOverR: "4r/\\sqrt3",
+    contact: "body diagonal",
+    contactTex: "\\sqrt3\\,a = 4r",
+    stages: ["corners", "body centre"],
+    deriv: {
+      title: "Packing efficiency of body-centred cubic",
+      steps: [
+        { say: "Corner atoms do not touch one another. The centre atom touches the 8 corner atoms along the **body diagonal**, so that line carries four radii (corner, whole centre atom, corner).", tex: "d_{\\text{body}} = 4r" },
+        { say: "Face diagonal by Pythagoras, then the body diagonal from a second right triangle:", tex: "d_{\\text{face}} = \\sqrt{a^2 + a^2} = \\sqrt2\\,a, \\qquad d_{\\text{body}} = \\sqrt{d_{\\text{face}}^2 + a^2} = \\sqrt3\\,a" },
+        { say: "Equate the two expressions for the body diagonal:", tex: "\\sqrt3\\,a = 4r \\;\\Rightarrow\\; a = \\frac{4r}{\\sqrt3}" },
+        { say: "Atoms per cell: 8 corners and 1 body centre.", tex: "Z = 8\\times\\tfrac18 + 1 = 2" },
+        { say: "Substitute into the packing efficiency:", tex: "\\eta = \\frac{2\\cdot\\tfrac43\\pi r^3}{(4r/\\sqrt3)^3} = \\frac{\\tfrac83\\pi r^3}{64r^3/(3\\sqrt3)}" },
+      ],
+      result: "\\eta = \\dfrac{\\sqrt3\\,\\pi}{8} = 0.680\\;(68.0\\%)",
+    },
+  },
+  fcc: {
+    name: "Face-centred cubic",
+    rc: Math.SQRT1_2,
+    z: 4,
+    cn: 12,
+    eta: Math.PI / (3 * Math.SQRT2),
+    aOverR: "2\\sqrt2\\,r",
+    contact: "face diagonal",
+    contactTex: "\\sqrt2\\,a = 4r",
+    stages: ["corners", "face centres"],
+    deriv: {
+      title: "Packing efficiency of face-centred cubic",
+      steps: [
+        { say: "Corner atoms are too far apart to touch. Each face-centre atom touches the corner atoms along that face's **diagonal**, which carries four radii.", tex: "d_{\\text{face}} = 4r" },
+        { say: "Face diagonal of a square of side a:", tex: "d_{\\text{face}} = \\sqrt{a^2 + a^2} = \\sqrt2\\,a" },
+        { say: "Equate the two:", tex: "\\sqrt2\\,a = 4r \\;\\Rightarrow\\; a = 2\\sqrt2\\,r" },
+        { say: "Atoms per cell: 8 corners (⅛ each) and 6 face centres (½ each).", tex: "Z = 8\\times\\tfrac18 + 6\\times\\tfrac12 = 4" },
+        { say: "Substitute into the packing efficiency, using $(2\\sqrt2)^3 = 16\\sqrt2$:", tex: "\\eta = \\frac{4\\cdot\\tfrac43\\pi r^3}{(2\\sqrt2\\,r)^3} = \\frac{\\tfrac{16}{3}\\pi r^3}{16\\sqrt2\\,r^3}" },
+      ],
+      result: "\\eta = \\dfrac{\\pi}{3\\sqrt2} = 0.740\\;(74.0\\%)",
+    },
+  },
+};
+
+const VIEWS: Record<string, CameraPose> = {
+  iso: { key: "iso", az: 0.75, el: 0.5, dist: 9.6 },
+  front: { key: "front", az: 0, el: 0.02, dist: 9.6 },
+  top: { key: "top", az: 0, el: 1.5, dist: 9.6 },
+  diag: { key: "diag", az: Math.PI / 4, el: Math.asin(1 / Math.sqrt(3)), dist: 9.6 },
+};
+
+const out = (p: V3, k: number): V3 => [p[0] * k, p[1] * k, p[2] * k];
+
+function contactBonds(kind: Kind, show: boolean): StageBond[] {
+  const mk = (id: string, a: V3, b: V3): StageBond => ({ id, a, b, r: 0.06, color: "#fff1b8", scale: show ? 1 : 0, opacity: show ? 1 : 0 });
+  if (kind === "sc") return [mk("k0", [-1, -1, 1], [1, -1, 1])];
+  if (kind === "bcc") return [mk("k0", [-1, -1, -1], [0, 0, 0]), mk("k1", [0, 0, 0], [1, 1, 1])];
+  return [mk("k0", [-1, -1, 1], [0, 0, 1]), mk("k1", [0, 0, 1], [1, 1, 1])];
+}
+
+/* -------------------------------------------------------- cell explorer */
+
+function CellExplorer() {
+  const [kind, setKind] = useState<Kind>("fcc");
+  const [view, setView] = useState("iso");
+  const [slice, setSlice] = useState(false);
+  const [contact, setContact] = useState(false);
+  const [size, setSize] = useState(0.62);
+  const def = DEF[kind];
+  const tour = useTour(def.stages.length, 2600);
+  const step = Math.min(tour.step, def.stages.length);
+
+  const atoms = useMemo<StageAtom[]>(() => {
+    const r = def.rc * size;
+    const list: StageAtom[] = CORNERS.map((p, i) => ({ id: `c${i}`, p, r, color: C.teal, scale: step >= 1 ? 1 : 0, from: out(p, 2.3) }));
+    if (kind === "bcc") list.push({ id: "body", p: [0, 0, 0], r, color: C.rose, scale: step >= 2 ? 1 : 0, from: [0, 3.4, 0] });
+    if (kind === "fcc") FACES.forEach((p, i) => list.push({ id: `f${i}`, p, r, color: C.gold, scale: step >= 2 ? 1 : 0, from: out(p, 2.3) }));
+    return list;
+  }, [kind, size, step, def.rc]);
+
+  const total = step === 0 ? "0" : kind === "sc" ? "8 × ⅛ = 1" : kind === "bcc" ? (step === 1 ? "8 × ⅛ = 1" : "8 × ⅛ + 1 = 2") : step === 1 ? "8 × ⅛ = 1" : "8 × ⅛ + 6 × ½ = 4";
+
+  let say: string;
+  if (step === 0) say = "An empty cell: a cube of edge **a**. Lattice sites are the corners" + (kind === "bcc" ? " and the body centre" : kind === "fcc" ? " and the six face centres" : "") + ". Press **Build** to place the atoms.";
+  else if (step === 1) say = "**Corner atoms.** Eight cells meet at every corner, so each cell owns ⅛ of that atom: 8 × ⅛ = 1 atom.";
+  else if (kind === "bcc") say = "**Body-centre atom.** It lies wholly inside this cell and is shared with none: +1. Z = 2.";
+  else say = "**Face-centre atoms.** A face is shared by two cells, so each cell owns ½ of each of the six: 6 × ½ = 3, giving Z = 4.";
+  if (slice && step > 0) say += " With the cell sliced, only the pieces that belong to it remain: octants at corners" + (kind === "fcc" ? ", hemispheres on the faces" : "") + (kind === "bcc" ? ", the whole centre atom" : "") + ".";
+
+  const edgeLines = useMemo(() => cubeEdges("e"), []);
+
+  return (
+    <div className="space-y-5">
+      <div className="grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+        <div className="space-y-3">
+          <Stage atoms={atoms} bonds={contactBonds(kind, contact)} lines={edgeLines} clip={slice && step > 0 ? 1.0005 : null} camera={VIEWS[view]} autoRotate={view === "iso" && !contact} height={440} label={`${def.name} unit cell`} />
+          <Narration k={`${kind}-${step}-${slice}`}>
+            <Rich text={say} />
+          </Narration>
+        </div>
+        <div className="space-y-4">
+          <Tabs
+            label="Lattice type"
+            value={kind}
+            onChange={(k) => {
+              setKind(k);
+              tour.set(DEF[k].stages.length);
+            }}
+            items={[["sc", "Simple"], ["bcc", "Body-centred"], ["fcc", "Face-centred"]] as const}
+          />
+          <div className="flex flex-wrap gap-2">
+            <Btn primary onClick={tour.play}>
+              ▶ Build
+            </Btn>
+            <Btn onClick={() => setSlice((s) => !s)}>{slice ? "Show whole atoms" : "✂ Slice to the cell"}</Btn>
+            <Btn onClick={() => setContact((c) => !c)}>{contact ? "Hide contact line" : "Show contact line"}</Btn>
+          </div>
+          <Slider label="Atom size (100% = touching)" value={size} onChange={setSize} min={0.3} max={1} step={0.01} show={`${Math.round(size * 100)} %`} />
+          <div>
+            <div className="mb-1.5 text-xs uppercase tracking-[0.12em] text-[var(--text-muted)]">View</div>
+            <Tabs label="Camera view" value={view} onChange={setView} items={[["iso", "3D"], ["front", "Front"], ["top", "Top"], ["diag", "Along [111]"]] as const} />
+          </div>
+          <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
+            <div className="text-xs uppercase tracking-[0.12em] text-[var(--text-muted)]">Atoms owned by this cell</div>
+            <div className="mt-1 font-mono text-lg font-bold text-[var(--foreground)]">{total}</div>
+            <div className="mt-3 flex items-baseline justify-between border-t border-[var(--border)] pt-3">
+              <span className="text-sm text-[var(--text-muted)]">Effective atoms per cell, Z</span>
+              <span className="font-mono text-3xl font-black text-[var(--accent)]">{step === def.stages.length ? def.z : step === 0 ? 0 : 1}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Facts
+        items={[
+          ["Atoms touch along", def.contact],
+          ["Coordination number", String(def.cn)],
+          ["Packing efficiency", `${(def.eta * 100).toFixed(1)} %`],
+          ["Empty space", `${(100 - def.eta * 100).toFixed(1)} %`],
+        ]}
+      />
+      <Derivation
+        key={kind}
+        no={`2.${kind === "sc" ? 1 : kind === "bcc" ? 2 : 3}`}
+        title={def.deriv.title}
+        given={`A ${def.name.toLowerCase()} lattice of identical spheres of radius $r$ and cell edge $a$. Contact is along the ${def.contact}.`}
+        find="The packing efficiency $\eta = Z\,V_{\text{atom}} / V_{\text{cell}}$."
+        figure={<ContactFig kind={kind} />}
+        steps={def.deriv.steps}
+        result={def.deriv.result}
+      />
+    </div>
+  );
+}
+
+/* ------------------------------------------------------ neighbour shells */
+
+const SHELL_COLORS = ["#f2b13f", "#2fbfae", "#e8607a", "#4c9be8", "#9a84e6", "#52c98a", "#f08b4d", "#d86cc2"];
+
+
+/* exact shell distances and positions, in units of the cell edge a */
+
+const frac = (x: number) => {
+  const n = Math.round(x * 2);
+  return n % 2 === 0 ? String(n / 2) : n === 1 ? "½" : `${Math.floor(n / 2)}½`;
+};
+
+type Rep = { v: V3; kind: "corner" | "face" | "body" };
+
+function repOf(points: V3[]): Rep {
+  const pos = points.map((q) => [Math.abs(q[0]), Math.abs(q[1]), Math.abs(q[2])].sort((a, b) => b - a) as V3);
+  const v = pos[0];
+  const frac05 = (x: number) => Math.abs(x * 2 - Math.round(x * 2)) < 1e-9 && Math.round(x * 2) % 2 === 1;
+  const halves = v.filter(frac05).length;
+  return { v, kind: halves === 0 ? "corner" : halves === 3 ? "body" : "face" };
+}
+
+function describePos(kind: "sc" | "bcc" | "fcc", rep: Rep): string {
+  const { v } = rep;
+  const key = v.join(",");
+  const inCell = v[0] <= 1;
+  const co = `(${v.map(frac).join(", ")})`;
+  if (rep.kind === "corner") {
+    if (key === "1,0,0") return "Next corner along an edge";
+    if (key === "1,1,0") return "Corner across a face diagonal";
+    if (key === "1,1,1") return "Corner across the body diagonal";
+    if (key === "2,0,0") return "Second corner along the same edge line";
+    return `Corner of a farther cell ${co}`;
+  }
+  if (rep.kind === "body") return inCell ? `Body centre of the cell ${co}` : `Body centre of a neighbouring cell ${co}`;
+  return inCell ? `Face centre of the cell ${co}` : `Face centre in a neighbouring cell ${co}`;
+}
+
+function CellMap({ kind, shells, shown }: { kind: Kind; shells: { n: number; d: number }[]; shown: number }) {
+  const pts: V3[] = [];
+  for (const x of [0, 1]) for (const y of [0, 1]) for (const z of [0, 1]) pts.push([x, y, z]);
+  if (kind === "bcc") pts.push([0.5, 0.5, 0.5]);
+  if (kind === "fcc") for (const c of [[0.5, 0.5, 0], [0.5, 0.5, 1], [0.5, 0, 0.5], [0.5, 1, 0.5], [0, 0.5, 0.5], [1, 0.5, 0.5]]) pts.push(c as V3);
+  const proj = (q: V3): [number, number] => [70 + 150 * (q[0] + 0.5 * q[2]), 215 - 150 * (q[1] + 0.34 * q[2])];
+  const edges: [V3, V3, boolean][] = [];
+  for (const a of [0, 1]) for (const b of [0, 1]) {
+    edges.push([[0, a, b], [1, a, b], false]);
+    edges.push([[a, 0, b], [a, 1, b], false]);
+    edges.push([[a, b, 0], [a, b, 1], false]);
+  }
+  const shellOf = (q: V3) => shells.findIndex((s) => Math.abs(s.d - Math.hypot(q[0], q[1], q[2])) < 1e-3);
+  return (
+    <svg viewBox="0 0 330 250" role="img" aria-label="Positions of the neighbour shells inside one unit cell" className="w-full rounded-xl border border-white/10" style={{ background: "radial-gradient(120% 90% at 50% 15%, #17433f 0%, #0c1f1e 55%, #060f0f 100%)" }}>
+      {edges.map(([a, b], i) => {
+        const [x1, y1] = proj(a), [x2, y2] = proj(b);
+        const back = a[2] === 1 && b[2] === 1 ? false : a[2] === 1 || b[2] === 1;
+        return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#cfe5e1" strokeOpacity={back ? 0.28 : 0.6} strokeWidth={1.4} strokeDasharray={back ? "4 4" : undefined} />;
+      })}
+      {[...pts].sort((a, b) => b[2] - a[2]).map((q, i) => {
+        const [x, y] = proj(q);
+        const origin = q[0] + q[1] + q[2] === 0;
+        const si = origin ? -1 : shellOf(q);
+        const on = origin || (si >= 0 && si < shown);
+        const col = origin ? "#f4f1e8" : si >= 0 ? SHELL_COLORS[si % SHELL_COLORS.length] : "#667";
+        return (
+          <g key={i} opacity={on ? 1 : 0.28}>
+            <circle cx={x} cy={y} r={origin ? 10 : 8.5} fill={col} stroke="#06100f" strokeWidth={1.3} />
+            <text x={x} y={y + 3.6} textAnchor="middle" fontSize={10} fontWeight={800} fill="#06100f">{origin ? "0" : si >= 0 ? si + 1 : ""}</text>
+          </g>
+        );
+      })}
+      <text x={70} y={238} textAnchor="middle" fontSize={10.5} fill="#f4f1e8" fontFamily="ui-serif, Georgia, serif" fontStyle="italic">reference atom</text>
+      <text x={228} y={244} textAnchor="middle" fontSize={10.5} fill="#b8cbc7">numbers = shell of that point</text>
+    </svg>
+  );
+}
+
+
+/* ------------------------- animated cube: how one shell distance is calculated */
+
+const coefTex = (x: number) => {
+  const n = Math.round(x * 2);
+  const whole = Math.floor(n / 2);
+  const half = n % 2 === 1;
+  if (!half) return whole === 1 ? "a" : `${whole}a`;
+  return whole === 0 ? "\\tfrac12 a" : `${whole}\\tfrac12 a`;
+};
+
+function ShellCube({ kind, shells, shown, cap, tour, run, onNext }: { kind: Kind; shells: { n: number; d: number }[]; shown: number; cap: number; tour: boolean; run: number; onNext: () => void }) {
+  const si = Math.min(shown, shells.length) - 1;
+  const sh = shells[si];
+  const rep = useMemo(() => {
+    const pts = latticePoints(kind, cap + 0.01).filter((q) => Math.abs(q.d - sh.d) < 1e-3).map((q) => [q.p[0] / 2, q.p[1] / 2, q.p[2] / 2] as V3);
+    return repOf(pts);
+  }, [kind, cap, sh.d]);
+  const key = `${kind}-${si}-${run}`;
+  const [st, setSt] = useState({ key, step: tour ? 0 : 4, playing: tour });
+  if (st.key !== key) setSt({ key, step: tour ? 0 : 4, playing: tour });
+  const step = st.key === key ? st.step : tour ? 0 : 4;
+  const playing = st.key === key ? st.playing : tour;
+  const stepRef = useRef(step);
+  const nextRef = useRef(onNext);
+  const tourRef = useRef(tour);
+  useEffect(() => {
+    stepRef.current = step;
+    nextRef.current = onNext;
+    tourRef.current = tour;
+  });
+  useEffect(() => {
+    if (!playing) return;
+    const id = window.setInterval(() => {
+      if (stepRef.current >= 4) {
+        setSt((o) => ({ ...o, playing: false }));
+        if (tourRef.current) nextRef.current();
+        return;
+      }
+      setSt((o) => ({ ...o, step: stepRef.current + 1 }));
+    }, tour ? 1500 : 2200);
+    return () => window.clearInterval(id);
+  }, [playing, key, tour]);
+
+  const [x, y, z] = rep.v;
+  const O: V3 = [-1, -1, -1];
+  const at = (u: number, v: number, w: number): V3 => [O[0] + 2 * u, O[1] + 2 * v, O[2] + 2 * w];
+  const P0 = at(0, 0, 0), P1 = at(x, 0, 0), P2 = at(x, y, 0), P3 = at(x, y, z);
+  const ext = Math.max(1, x, y, z);
+  const colour = SHELL_COLORS[si % SHELL_COLORS.length];
+  const octant = useMemo(() => latticePoints(kind, cap + 0.01).filter((q) => q.p[0] >= -1e-6 && q.p[1] >= -1e-6 && q.p[2] >= -1e-6), [kind, cap]);
+  const atoms: StageAtom[] = octant.map(({ p, d }, i) => {
+    const pos = at(p[0] / 2, p[1] / 2, p[2] / 2);
+    if (d < 1e-6) return { id: `a${i}`, p: pos, r: 0.2, color: C.white, glow: true };
+    const inShell = Math.abs(d - sh.d) < 1e-3;
+    return { id: `a${i}`, p: pos, r: 0.17, color: inShell ? colour : "#6b7c80", opacity: inShell ? 1 : 0.22, glow: false };
+  });
+  const target: StageAtom = { id: "target", p: P3, r: 0.27, color: colour, glow: true, scale: step >= 0 ? 1 : 0, opacity: 1 };
+  const bonds: StageBond[] = [
+    { id: "lx", a: P0, b: P1, r: 0.05, color: "#ff6b6b", scale: step >= 1 && x > 0 ? 1 : 0, opacity: 1 },
+    { id: "ly", a: P1, b: P2, r: 0.05, color: "#6bdc8b", scale: step >= 2 && y > 0 ? 1 : 0, opacity: 1 },
+    { id: "lz", a: P2, b: P3, r: 0.05, color: "#6bb5ff", scale: step >= 3 && z > 0 ? 1 : 0, opacity: 1 },
+    { id: "ld", a: P0, b: P3, r: 0.075, color: "#fff1b8", scale: step >= 4 ? 1 : 0, opacity: 1 },
+  ];
+  const lines = useMemo(() => cubeEdges("sc"), []);
+  const d2 = Math.round(sh.d * sh.d * 4);
+  const gcd2 = (m: number, n: number): number => (n === 0 ? m : gcd2(n, m % n));
+  const reduce = (n: number, m: number) => { const g = gcd2(n, m); return [n / g, m / g]; };
+  const [ns, ds] = reduce(d2, 4);
+  const sumTex = ds === 1 ? (ns === 1 ? "a^2" : `${ns}a^2`) : `\\tfrac{${ns}}{${ds}}a^2`;
+  const term = (c: number) => (c === 0 ? "0^2" : c === 1 ? "a^2" : `\\left(${coefTex(c)}\\right)^2`);
+  const lines3 = [
+    { show: step >= 0, tex: `\\text{target atom at } (${rep.v.map((c) => (c === 0 ? "0" : coefTex(c))).join(",\\,")})`, tag: "Where" },
+    { show: step >= 1, tex: `\\Delta x = ${x === 0 ? "0" : coefTex(x)}`, tag: "Step 1" },
+    { show: step >= 2, tex: `\\Delta y = ${y === 0 ? "0" : coefTex(y)}`, tag: "Step 2" },
+    { show: step >= 3, tex: `\\Delta z = ${z === 0 ? "0" : coefTex(z)}`, tag: "Step 3" },
+    { show: step >= 4, tex: `d^2 = \\Delta x^2 + \\Delta y^2 + \\Delta z^2 = ${term(x)} + ${term(y)} + ${term(z)} = ${sumTex}`, tag: "Pythagoras" },
+    { show: step >= 4, tex: `d = ${plainDist(d2, 2).replace(/√(\d+)/g, "\\sqrt{$1}").replace(/ a\/(\d+)/, "\\,a/$1").replace(/ a$/, "\\,a")} \\approx ${sh.d.toFixed(3)}\\,a`, tag: "Answer" },
+  ];
+  const says = [
+    `The **white** atom is our reference atom at a corner of the cell. The **coloured** atom is one of the ${sh.n} atoms in shell ${si + 1}. ${describePos(kind, rep)}.`,
+    `Walk along the cell edge in the **x** direction (red): ${x === 0 ? "no distance" : coefTex(x).replace(/\\tfrac12/g, "½").replace(/\s/g, "")}.`,
+    `Now walk in the **y** direction (green): ${y === 0 ? "no distance" : coefTex(y).replace(/\\tfrac12/g, "½").replace(/\s/g, "")}.`,
+    `Finally walk in the **z** direction (blue): ${z === 0 ? "no distance" : coefTex(z).replace(/\\tfrac12/g, "½").replace(/\s/g, "")}.`,
+    `The straight gold line is the real distance. Square each step, add them, and take the square root: that is Pythagoras in 3D.`,
+  ];
+  return (
+    <div className="grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+      <div className="space-y-3">
+        <Stage atoms={[...atoms, target]} bonds={bonds} lines={lines} camera={{ key: `sc-${key}`, az: 0.75, el: 0.42, dist: 7 + 2.2 * ext }} autoRotate={step === 4} floorY={-1.6 - 0.3 * ext} height={420} label={`Distance from the corner atom to shell ${si + 1}, built step by step in a cube`} hint="drag to look around" />
+        <Narration k={`${key}-${step}`}>
+          <Rich text={says[step]} />
+        </Narration>
+      </div>
+      <div className="space-y-4">
+        <div className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--text-muted)]">How the distance for shell {si + 1} is worked out</div>
+        <div className="space-y-2">
+          {lines3.map((l) => (
+            <div key={l.tag} className={`flex items-baseline gap-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 ${l.show ? "" : "opacity-0"}`}>
+              <span className="w-20 shrink-0 text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--accent)]">{l.tag}</span>
+              <span className="min-w-0 overflow-x-auto"><Tex ex={l.tex} /></span>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <Btn primary onClick={() => setSt({ key, step: 0, playing: true })}>▶ Animate this shell</Btn>
+          <Btn onClick={() => setSt({ key, step: Math.max(0, step - 1), playing: false })}>◀</Btn>
+          <Btn onClick={() => setSt({ key, step: Math.min(4, step + 1), playing: false })}>▶</Btn>
+          <span className="text-sm text-[var(--text-muted)]">Or pick a shell with the slider above.</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ShellExplorer() {
+  const [kind, setKind] = useState<Kind>("fcc");
+  const [shown, setShown] = useState(2);
+  const [tour, setTour] = useState<"off" | "one" | "all">("off");
+  const [run, setRun] = useState(0);
+  const cap = kind === "sc" ? 2.3 : 2.05;
+  const shells = useMemo(() => neighbourShells(kind, 10).filter((s) => s.d <= cap), [kind, cap]);
+  const pts = useMemo(() => latticePoints(kind, cap), [kind, cap]);
+  const shellOf = (d: number) => shells.findIndex((s) => Math.abs(s.d - d) < 1e-3);
+  const cum = shells.slice(0, shown).reduce((s, x) => s + x.n, 0);
+  const atoms: StageAtom[] = pts.map(({ p, d }, i) => {
+    if (d < 1e-6) return { id: `p${i}`, p: [p[0] * 0.55, p[1] * 0.55, p[2] * 0.55], r: 0.34, color: C.white, glow: true };
+    const s = shellOf(d);
+    const visible = s >= 0 && s < shown;
+    return { id: `p${i}`, p: [p[0] * 0.55, p[1] * 0.55, p[2] * 0.55], r: 0.26, color: s >= 0 ? SHELL_COLORS[s % SHELL_COLORS.length] : "#555", scale: visible ? 1 : 0, from: [p[0] * 0.2, p[1] * 0.2, p[2] * 0.2] };
+  });
+  const sh = shells[Math.min(shown, shells.length) - 1];
+  const ORDER: Kind[] = ["sc", "bcc", "fcc"];
+  const startTour = (mode: "one" | "all") => {
+    if (mode === "all") setKind("sc");
+    setShown(1);
+    setRun((r) => r + 1);
+    setTour(mode);
+  };
+  const stopTour = () => setTour("off");
+  const nextShell = () => {
+    if (shown < shells.length) {
+      setShown(shown + 1);
+      return;
+    }
+    const at = ORDER.indexOf(kind);
+    if (tour === "all" && at < ORDER.length - 1) {
+      setKind(ORDER[at + 1]);
+      setShown(1);
+      return;
+    }
+    setTour("off");
+  };
+
+  return (
+   <div className="space-y-5">
+    <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3">
+      <Btn primary onClick={() => startTour("all")}>▶ Animate all: SC, BCC and FCC</Btn>
+      <Btn onClick={() => startTour("one")}>▶ All shells of {kind.toUpperCase()}</Btn>
+      {tour !== "off" && <Btn onClick={stopTour}>■ Stop</Btn>}
+      <span className="text-sm text-[var(--text-muted)]">
+        {tour === "off" ? "Plays the walk-and-Pythagoras animation for every shell, one after another." : `Playing ${kind.toUpperCase()}, shell ${Math.min(shown, shells.length)} of ${shells.length}${tour === "all" ? " (then the next lattice)" : ""}`}
+      </span>
+    </div>
+    <div className="grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+      <div className="space-y-3">
+        <Stage atoms={atoms} camera={{ key: `s-${kind}-${Math.min(shown, shells.length)}`, az: 0.7, el: 0.4, dist: Math.max(5.2, Math.min(11, 4.3 * (shells[Math.min(shown, shells.length) - 1].d * 1.1 + 0.35))) }} autoRotate floorY={-3.2} height={440} label={`Neighbour shells around one atom in a ${kind.toUpperCase()} lattice`} />
+        <Narration k={`${kind}-${shown}`}>
+          <Rich text={`**Shell ${shown}:** ${sh.n} atoms at a distance of **${plainDist(Math.round(sh.d * sh.d * 4), 2)}** (about ${sh.d.toFixed(3)} a). ${shown === 1 ? `This is the **coordination number**: the number of nearest neighbours. Together with the central atom's own contribution it fixes how tightly the lattice is packed.` : `Counting everything out to this shell gives ${cum} neighbours in total.`}`} />
+        </Narration>
+      </div>
+      <div className="space-y-4">
+        <Tabs label="Lattice" value={kind} onChange={(k) => { setTour("off"); setKind(k); setShown(2); }} items={[["sc", "Simple"], ["bcc", "Body-centred"], ["fcc", "Face-centred"]] as const} />
+        <Slider label="Shells shown" value={Math.min(shown, shells.length)} onChange={(v) => { setTour("off"); setShown(v); }} min={1} max={shells.length} />
+        <CellMap kind={kind} shells={shells} shown={shown} />
+        <p className="text-xs leading-5 text-[var(--text-muted)]">
+          Computed by listing every lattice point around one atom and grouping them by distance. Nearest shells: SC 6, BCC 8, FCC 12. In BCC the 6 next-nearest atoms are only 15% farther than the 8 nearest, which is why it is sometimes called 8 + 6 coordinated.
+        </p>
+      </div>
+    </div>
+    <ShellCube kind={kind} shells={shells} shown={shown} cap={cap} tour={tour !== "off"} run={run} onNext={nextShell} />
+    <div className="overflow-x-auto rounded-xl border border-[var(--border)]">
+          <table className="w-full min-w-[640px] text-sm">
+            <thead className="bg-[var(--surface)] text-left text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+              <tr>
+                <th className="px-3 py-2">Shell</th>
+                <th className="px-3 py-2">Atoms</th>
+                <th className="px-3 py-2">Distance</th>
+                <th className="px-3 py-2">Where it sits (reference atom at a corner)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {shells.map((s, i) => {
+                const pts = latticePoints(kind, cap + 0.01).filter((q) => Math.abs(q.d - s.d) < 1e-3).map((q) => [q.p[0] / 2, q.p[1] / 2, q.p[2] / 2] as V3);
+                const rep = repOf(pts);
+                return (
+                  <tr key={i} className={`border-t border-[var(--border)] ${i === shown - 1 ? "bg-[var(--accent)]/10" : ""} ${i >= shown ? "opacity-40" : ""}`}>
+                    <td className="px-3 py-1.5 font-mono">
+                      <span className="mr-2 inline-block h-2.5 w-2.5 rounded-full align-middle" style={{ background: SHELL_COLORS[i % SHELL_COLORS.length] }} />
+                      {i + 1}
+                    </td>
+                    <td className="px-3 py-1.5 font-mono font-bold text-[var(--foreground)]">{s.n}</td>
+                    <td className="px-3 py-1.5 text-[var(--foreground)]">
+                      <span className="font-mono text-base font-bold">{plainDist(Math.round(s.d * s.d * 4), 2)}</span> <span className="ml-1 font-mono text-xs text-[var(--text-muted)]">≈ {s.d.toFixed(3)} a</span>
+                    </td>
+                    <td className="px-3 py-1.5 text-[var(--text-muted)]">{describePos(kind, rep)}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+   </div>
+  );
+}
+
+/* ---------------------------------------------------------------- density */
+
+const PRESETS: { name: string; kind: Kind; m: number; a: number }[] = [
+  { name: "Cu (FCC)", kind: "fcc", m: 63.5, a: 361 },
+  { name: "Fe (BCC)", kind: "bcc", m: 55.85, a: 286.6 },
+  { name: "Na (BCC)", kind: "bcc", m: 23, a: 429 },
+  { name: "Po (SC)", kind: "sc", m: 209, a: 337 },
+];
+
+function DensityLab() {
+  const [kind, setKind] = useState<Kind>("fcc");
+  const [m, setM] = useState(63.5);
+  const [a, setA] = useState(361);
+  const z = DEF[kind].z;
+  const volume = (a * 1e-10) ** 3;
+  const rho = (z * m) / (NA * volume);
+  const r = (a * Math.sqrt(1)) / (kind === "sc" ? 2 : kind === "bcc" ? 4 / Math.sqrt(3) : 2 * Math.SQRT2);
+
+  return (
+    <div className="grid gap-5 lg:grid-cols-2">
+      <div className="space-y-4">
+        <div className="flex flex-wrap gap-2">
+          {PRESETS.map((p) => (
+            <Btn key={p.name} onClick={() => { setKind(p.kind); setM(p.m); setA(p.a); }}>
+              {p.name}
+            </Btn>
+          ))}
+        </div>
+        <Tabs label="Lattice" value={kind} onChange={setKind} items={[["sc", "Simple (Z = 1)"], ["bcc", "BCC (Z = 2)"], ["fcc", "FCC (Z = 4)"]] as const} />
+        <Slider label="Molar mass M (g mol⁻¹)" value={m} onChange={setM} min={1} max={250} step={0.5} />
+        <Slider label="Edge length a (pm)" value={a} onChange={setA} min={150} max={700} step={1} />
+      </div>
+      <div className="space-y-3">
+        <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
+          <div className="text-xs uppercase tracking-[0.12em] text-[var(--text-muted)]">Density</div>
+          <div className="font-mono text-4xl font-black text-[var(--accent)]">
+            {rho.toFixed(rho < 10 ? 3 : 2)} <span className="text-lg font-bold text-[var(--foreground)]">g cm⁻³</span>
+          </div>
+          <Tex block ex={`\\rho=\\frac{Z\\,M}{a^3N_A}=\\frac{${z}\\times${m}}{(${a}\\times10^{-10}\\,\\mathrm{cm})^3\\times6.022\\times10^{23}}`} />
+          <div className="mt-2 text-sm text-[var(--text-muted)]">
+            Atomic radius from the contact condition: <span className="font-mono font-bold text-[var(--foreground)]">{r.toFixed(1)} pm</span>
+          </div>
+        </div>
+        <p className="text-sm leading-6 text-[var(--text-muted)]">
+          Slide <em>a</em> and watch ρ fall with the cube of the edge. Doubling the edge divides the density by eight.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ---------------------------------------------------------------- chapter */
+
+
+/* ------------------------------------------------------------ Bragg lab */
+
+function BraggLab() {
+  const [th, setTh] = useState(21.7);
+  const [d, setD] = useState(208);
+  const lam = 154;
+  const delta = 2 * d * Math.sin((th * Math.PI) / 180);
+  const n = delta / lam;
+  const nearest = Math.round(n);
+  const inten = (t: number) => Math.cos((Math.PI * 2 * d * Math.sin((t * Math.PI) / 180)) / lam) ** 2;
+  const W = 520, H = 150, X = (t: number) => 30 + ((t - 5) / 80) * (W - 45), Y = (v: number) => 12 + (1 - v) * (H - 40);
+  const pts = Array.from({ length: 301 }, (_, i) => 5 + (i * 80) / 300).map((t) => `${X(t).toFixed(1)},${Y(inten(t)).toFixed(1)}`).join(" ");
+  const peaks: number[] = [];
+  for (let k = 1; (k * lam) / (2 * d) <= 1; k++) peaks.push((Math.asin((k * lam) / (2 * d)) * 180) / Math.PI);
+  const hit = Math.abs(n - nearest) < 0.06 && nearest >= 1;
+  return (
+    <div className="grid gap-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+      <div>
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Reflected intensity against glancing angle">
+          <line x1={30} y1={Y(0)} x2={W - 10} y2={Y(0)} stroke="currentColor" strokeOpacity={0.3} />
+          <polyline points={pts} fill="none" stroke="#4c9be8" strokeWidth={2} />
+          {peaks.filter((t) => t >= 5 && t <= 85).map((t, i) => (
+            <g key={i}>
+              <line x1={X(t)} y1={Y(1)} x2={X(t)} y2={Y(0)} stroke="#f2b13f" strokeDasharray="3 3" />
+              <text x={X(t)} y={H - 18} textAnchor="middle" fontSize={10} fill="#f2b13f">n={i + 1}</text>
+            </g>
+          ))}
+          <circle cx={X(th)} cy={Y(inten(th))} r={6} fill={hit ? "#52c98a" : "#e8607a"} />
+          {[10, 30, 50, 70].map((t) => (
+            <text key={t} x={X(t)} y={H - 4} textAnchor="middle" fontSize={10} fill="currentColor" fillOpacity={0.6}>{t}°</text>
+          ))}
+          <text x={34} y={12} fontSize={10} fill="currentColor" fillOpacity={0.6}>intensity</text>
+        </svg>
+        <Narration k={hit ? "hit" : "miss"}>
+          <Rich text={hit ? `**Constructive.** The path difference is $2d\\sin\\theta = ${delta.toFixed(0)}$ pm $= ${nearest}\\lambda$, a whole number of wavelengths, so the reflections from successive planes add up.` : `**Not a reflection.** The path difference is $${n.toFixed(2)}\\lambda$, not a whole number, so the waves from successive planes partly cancel.`} />
+        </Narration>
+      </div>
+      <div className="space-y-4">
+        <Slider label="Glancing angle θ" value={th} onChange={setTh} min={5} max={85} step={0.1} show={`${th.toFixed(1)}°`} />
+        <Slider label="Plane spacing d" value={d} onChange={setD} min={120} max={400} show={`${d} pm`} />
+        <Facts items={[["X-ray wavelength", "154 pm (Cu Kα)"], ["Path difference", `${delta.toFixed(0)} pm`], ["Path ÷ wavelength", n.toFixed(2)], ["Orders possible", String(peaks.length)]]} cols={2} />
+      </div>
+    </div>
+  );
+}
+
+export function CubicChapter() {
+  return (
+    <Chapter
+      id="cubic"
+      n="PART 2"
+      title="Cubic unit cells: counting, contact and packing"
+      lead="Three arrangements of identical spheres in a cube cover most metals. Build each one, slice it to see what belongs to the cell, then derive its packing efficiency from the geometry."
+    >
+      <P t="A **unit cell** is the smallest block that builds the whole crystal when repeated by translation in three directions. Atoms on the boundary of the cell are shared with neighbouring cells, so the cell owns only a fraction of each. The fraction depends on how many cells meet there:" />
+      <div className="grid max-w-3xl grid-cols-2 gap-2 sm:grid-cols-4">
+        {[
+          ["Corner", "\\tfrac18", "8 cells meet"],
+          ["Edge centre", "\\tfrac14", "4 cells meet"],
+          ["Face centre", "\\tfrac12", "2 cells meet"],
+          ["Body centre", "1", "inside the cell"],
+        ].map(([a, b, c]) => (
+          <div key={a} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-3 text-center">
+            <div className="text-2xl font-black text-[var(--accent)]"><Tex ex={b} /></div>
+            <div className="text-sm font-semibold text-[var(--foreground)]">{a}</div>
+            <div className="text-xs text-[var(--text-muted)]">{c}</div>
+          </div>
+        ))}
+      </div>
+      <P t="The number of atoms owned by a cell is **Z** (also called the effective number of atoms). Z = (corners × ⅛) + (edge centres × ¼) + (faces × ½) + (body atoms × 1)." />
+
+      <CellExplorer />
+
+      <KeyIdea title="Why the contact line differs">
+        {"In a **simple** cube the corner atoms are close enough to touch along the edge. In **BCC** the body-centre atom pushes the corner atoms apart, so contact moves to the body diagonal. In **FCC** the face-centre atoms do the same along the face diagonal. The contact line sets how the edge a depends on the radius r, and from that every other number follows."}
+      </KeyIdea>
+
+      <Traps
+        items={[
+          "FCC shows 14 atoms but **Z = 4**; BCC shows 9 but **Z = 2**. Z counts what the cell owns, not what you can see.",
+          "Packing efficiency order: SC (52.4%) < BCC (68.0%) < FCC (74.0%). HCP equals FCC.",
+          "In BCC the corner atoms do **not** touch each other; in FCC the corner atoms do not touch each other either. Contact is always between a corner and the centring atom.",
+        ]}
+      />
+
+      <div className="space-y-2 pt-4">
+        <h3 className="text-2xl font-bold text-[var(--foreground)]">Neighbour shells and coordination number</h3>
+        <P t="The **coordination number** is the number of nearest neighbours. Beyond them sit more shells at larger distances. Step through the shells: the counts and distances below come straight from the lattice, not from a table." />
+      </div>
+      <CoordinationLab />
+      <ShellExplorer />
+
+      <div className="space-y-2 pt-4">
+        <h3 className="text-2xl font-bold text-[var(--foreground)]">Density of a crystal</h3>
+        <P t="The mass in one cell is **Z·M / N_A** and its volume is **a³**. So the density of the crystal is fixed by the lattice and the edge length, and a measured density lets you find Z, M or N_A." />
+      </div>
+      <DensityLab />
+      <div className="grid gap-4 md:grid-cols-2">
+        <Worked
+          q="Copper is FCC with edge length 361 pm and molar mass 63.5 g/mol. Find its density and the radius of a Cu atom."
+          steps={["FCC has Z = 4.", "Edge in cm: $361\\times10^{-10}$ cm, so $a^3 = 4.705\\times10^{-23}$ cm³.", "$\\rho = \\dfrac{4\\times63.5}{4.705\\times10^{-23}\\times6.022\\times10^{23}} = 8.97$ g/cm³.", "Contact along the face diagonal: $r = \\dfrac{\\sqrt2\\,a}{4} = \\dfrac{1.414\\times361}{4} = 127.6$ pm."]}
+          answer="ρ = 8.97 g/cm³, r = 127.6 pm"
+        />
+        <Worked
+          q="An element crystallises in a BCC lattice with a = 288 pm. Calculate the atomic radius. If its density is 7.2 g/cm³, find its molar mass."
+          steps={["BCC: $\\sqrt3\\,a = 4r$, so $r = \\dfrac{1.732\\times288}{4} = 124.7$ pm.", "Z = 2. From $\\rho = \\dfrac{ZM}{a^3N_A}$: $M = \\dfrac{\\rho a^3 N_A}{Z}$.", "$a^3 = (288\\times10^{-10})^3 = 2.389\\times10^{-23}$ cm³.", "$M = \\dfrac{7.2\\times2.389\\times10^{-23}\\times6.022\\times10^{23}}{2} = 51.8$ g/mol."]}
+          answer="r = 124.7 pm, M ≈ 51.8 g/mol (close to vanadium)"
+        />
+      </div>
+
+      <div className="space-y-2 pt-6">
+        <h3 className="text-2xl font-bold text-[var(--foreground)]">Planes, Miller indices and X-ray diffraction</h3>
+        <P t="A crystal can be sliced into sets of parallel, equally spaced **lattice planes**. A plane is named by its **Miller indices** $(hkl)$: take the intercepts on the three axes in units of the cell edge, invert them, and clear fractions. A plane parallel to an axis meets it at infinity, so its index is $0$. Negative intercepts are written with a bar over the index." />
+      </div>
+      <Derivation
+        no="2.4"
+        title="Spacing of the (hkl) planes in a cubic lattice"
+        given="A cubic lattice of edge $a$. The plane nearest the origin in the family $(hkl)$ has intercepts $a/h$, $a/k$, $a/l$ on the three axes."
+        find="The perpendicular distance $d_{hkl}$ between neighbouring planes of the family."
+        figure={<MillerFig />}
+        steps={[
+          { say: "The plane $hx + ky + lz = a$ passes through the three intercepts. Its unit normal points along $(h,k,l)$:", tex: "\\hat n = \\frac{(h,\\,k,\\,l)}{\\sqrt{h^2+k^2+l^2}}" },
+          { say: "Planes of the family are equally spaced, and the plane nearest the origin lies at distance $d$ from it. That distance is the projection of any point on the plane, for example the intercept $(a/h,\\,0,\\,0)$, on the unit normal:", tex: "d_{hkl} = \\frac{a}{h}\\,\\hat n_x = \\frac{a}{h}\\cdot\\frac{h}{\\sqrt{h^2+k^2+l^2}}" },
+          { say: "The index $h$ cancels, and the same result follows from the other two intercepts." },
+        ]}
+        result="d_{hkl} = \dfrac{a}{\sqrt{h^2+k^2+l^2}}"
+        note="For example $d_{100} = a$, $d_{110} = a/\sqrt2$ and $d_{111} = a/\sqrt3$. The densest planes are the most widely spaced."
+      />
+      <Derivation
+        no="2.5"
+        title="Bragg's law"
+        given="A beam of X-rays of wavelength $\lambda$ falls at glancing angle $\theta$ on a family of parallel planes a distance $d$ apart. Each plane reflects specularly."
+        find="The condition under which the reflections from all the planes reinforce one another."
+        figure={<BraggFig />}
+        steps={[
+          { say: "Take two rays. Ray 1 reflects at the point $P$ on the upper plane; ray 2 reflects at the point $Q$ on the next plane, directly below $P$, so $PQ = d$." },
+          { say: "Drop perpendiculars from $P$ onto the incoming and outgoing paths of ray 2, meeting them at $A$ and $C$. Up to $A$ and from $C$ onward the two rays have travelled equal distances, so the **extra path** of ray 2 is $AQ + QC$." },
+          { say: "In the right triangle $PAQ$ the angle at $Q$ between $QP$ and the ray is $90^\\circ - \\theta$, because the ray makes $\\theta$ with the plane and $PQ$ is normal to it. Hence:", tex: "AQ = PQ\\cos(90^\\circ - \\theta) = d\\sin\\theta, \\qquad QC = d\\sin\\theta" },
+          { say: "Add the two segments to get the path difference:", tex: "\\delta = AQ + QC = 2d\\sin\\theta" },
+          { say: "The rays leave in step, and the reflections reinforce, only if the path difference is a whole number of wavelengths:", tex: "\\delta = n\\lambda, \\quad n = 1, 2, 3, \\ldots" },
+        ]}
+        result="n\lambda = 2d\sin\theta"
+        note="Since $\sin\theta \le 1$, reflections are possible only when $\lambda \le 2d$. The wavelength must be comparable to the atomic spacing, which is why X-rays are used."
+      />
+      <P t="Try it. At the starting values the path difference is exactly one wavelength. Slide the angle and the spacing and watch the reflected intensity rise and fall." />
+      <BraggLab />
+      <KeyIdea title="Which planes actually reflect?">
+        {"The lattice type removes some reflections: waves from the extra centring atoms arrive exactly out of step. In a **simple** cubic lattice every $(hkl)$ appears. In **BCC** only reflections with $h+k+l$ **even** appear. In **FCC** only those with $h,k,l$ **all odd or all even** appear. Counting the allowed lines in a powder pattern therefore tells you the lattice type."}
+      </KeyIdea>
+      <div className="grid gap-4 md:grid-cols-2">
+        <Worked
+          q="Copper is FCC with a = 361 pm. X-rays of wavelength 154 pm are reflected from the (111) planes in first order. Find the glancing angle."
+          steps={["$d_{111} = \\dfrac{a}{\\sqrt{1^2+1^2+1^2}} = \\dfrac{361}{1.732} = 208.4$ pm.", "Bragg: $\\sin\\theta = \\dfrac{n\\lambda}{2d} = \\dfrac{154}{2\\times208.4} = 0.3695$.", "$\\theta = \\sin^{-1}(0.3695) = 21.7^\\circ$."]}
+          answer="θ ≈ 21.7°"
+        />
+        <Worked
+          q="The first-order reflection from planes 200 pm apart occurs at 30°. What is the X-ray wavelength, and what is the highest order that can be seen?"
+          steps={["$\\lambda = 2d\\sin\\theta = 2\\times200\\times0.5 = 200$ pm.", "The highest order needs $\\sin\\theta \\le 1$: $n \\le \\dfrac{2d}{\\lambda} = \\dfrac{400}{200} = 2$."]}
+          answer="λ = 200 pm, up to second order (n = 2)"
+        />
+      </div>
+
+      <div className="space-y-2 pt-6">
+        <h3 className="text-2xl font-bold text-[var(--foreground)]">Empty space along an edge, and formulas from positions</h3>
+        <P t="Atoms that do not touch along the cell edge leave a gap there. The gap, as a fraction of the edge, is a favourite exam quantity. It also gives a quick route from a measured gap to the edge length, and so to the density." />
+      </div>
+      <Derivation
+        no="2.6"
+        title="Fraction of the cell edge left unoccupied"
+        given="Identical atoms of radius $r$ in a cubic cell of edge $a$, touching along the contact line found in derivations 2.1 to 2.3."
+        find="The fraction $(a - 2r)/a$ of an edge that no atom covers."
+        steps={[
+          { say: "**Simple cubic.** Contact is along the edge, $a = 2r$, so nothing is left over:", tex: "\\frac{a - 2r}{a} = 0" },
+          { say: "**BCC.** Contact is along the body diagonal, $r = \\dfrac{\\sqrt3}{4}a$. Two corner atoms on an edge take up $2r = \\dfrac{\\sqrt3}{2}a$:", tex: "\\frac{a - 2r}{a} = 1 - \\frac{\\sqrt3}{2} = 0.134" },
+          { say: "**FCC.** Contact is along the face diagonal, $r = \\dfrac{\\sqrt2}{4}a$, so $2r = \\dfrac{a}{\\sqrt2}$:", tex: "\\frac{a - 2r}{a} = 1 - \\frac{1}{\\sqrt2} = 0.293" },
+        ]}
+        result="\text{SC: } 0,\qquad \text{BCC: } 0.134\,a,\qquad \text{FCC: } 0.293\,a"
+        note="The gap between the inner surfaces of two corner atoms on an edge is therefore $0.134\,a$ in BCC and $0.293\,a$ in FCC."
+      />
+      <div className="grid gap-4 md:grid-cols-2">
+        <Worked
+          q="An atomic solid crystallises in a BCC lattice. The inner surfaces of atoms at adjacent corners are 60.3 pm apart. If its atomic mass is 48, calculate the density."
+          steps={["The gap is $0.134\\,a = 60.3$ pm, so $a = \\dfrac{60.3}{0.134} = 450$ pm.", "BCC has $Z = 2$ and the mass of one atom is $48\\times1.66\\times10^{-24}$ g.", "$a^3 = (450\\times10^{-10})^3 = 9.11\\times10^{-23}$ cm³.", "$\\rho = \\dfrac{2\\times48\\times1.66\\times10^{-24}}{9.11\\times10^{-23}} = 1.75$ g/cm³."]}
+          answer="a = 450 pm, ρ ≈ 1.75 g/cm³"
+        />
+        <Worked
+          q="Iron crystallises in an FCC lattice. If the distance of the third nearest neighbour is 400 pm, find the radius of an Fe atom."
+          steps={["In FCC the first three neighbour distances are $\\dfrac{a}{\\sqrt2}$, $a$ and $\\sqrt{\\tfrac32}\\,a$ (from the shell table above).", "$\\sqrt{3/2}\\,a = 400$ pm gives $a = \\dfrac{400}{1.2247} = 326.6$ pm.", "$r = \\dfrac{\\sqrt2\\,a}{4} = \\dfrac{1.414\\times326.6}{4} = 115.5$ pm."]}
+          answer="r ≈ 115 pm"
+        />
+        <Worked
+          q="Atoms A, B and C occupy all corners, all face centres and the body centre of a cube respectively. Find the formula of the compound."
+          steps={["A: $8\\times\\tfrac18 = 1$.", "B: $6\\times\\tfrac12 = 3$.", "C: 1 at the body centre."]}
+          answer="AB₃C"
+        />
+        <Worked
+          q="In the cell above, all the atoms lying on one face diagonal are removed. What is the new formula?"
+          steps={["A face diagonal passes through two corners and the centre of that face.", "A loses $2\\times\\tfrac18 = \\tfrac14$, so A $= 1 - \\tfrac14 = \\tfrac34$.", "B loses one face centre, $\\tfrac12$, so B $= 3 - \\tfrac12 = \\tfrac52$.", "C is untouched: 1. Ratio $\\tfrac34 : \\tfrac52 : 1 = 3 : 10 : 4$."]}
+          answer="A₃B₁₀C₄"
+        />
+        <Worked
+          q="In the same AB₃C cell, all the atoms lying on one entire face are removed. What is the formula now?"
+          steps={["One face holds 4 corner atoms (each $\\tfrac18$ of A) and 1 face centre (B, $\\tfrac12$).", "A loses $4\\times\\tfrac18 = \\tfrac12$, so A $= 1 - \\tfrac12 = \\tfrac12$.", "B loses $\\tfrac12$, so B $= 3 - \\tfrac12 = \\tfrac52$. C stays 1.", "Ratio $\\tfrac12 : \\tfrac52 : 1 = 1 : 5 : 2$."]}
+          answer="AB₅C₂"
+        />
+      </div>
+    </Chapter>
+  );
+}

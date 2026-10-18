@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Defects in Solids",
 } as const;
 
-const data = {
+export const data = {
   "part": 21,
   "slug": "defects-in-solids",
   "title": "Defects in Solids",

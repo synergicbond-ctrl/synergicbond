@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Dimensional Development of Crystal Lattices",
 } as const;
 
-const data = {
+export const data = {
   "part": 8,
   "slug": "dimensional-development-of-crystal-lattices",
   "title": "Dimensional Development of Crystal Lattices",

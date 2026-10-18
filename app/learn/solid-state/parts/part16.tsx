@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Crystal Stoichiometry and Atom-Removal Problems",
 } as const;
 
-const data = {
+export const data = {
   "part": 16,
   "slug": "crystal-stoichiometry-and-atom-removal-problems",
   "title": "Crystal Stoichiometry and Atom-Removal Problems",

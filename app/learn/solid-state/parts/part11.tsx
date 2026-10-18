@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Symmetry Elements of a Cube",
 } as const;
 
-const data = {
+export const data = {
   "part": 11,
   "slug": "symmetry-of-a-cube",
   "title": "Symmetry Elements of a Cube",

@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Radius Ratio and Limiting Geometry",
 } as const;
 
-const data = {
+export const data = {
   "part": 19,
   "slug": "radius-ratio-and-limiting-geometry",
   "title": "Radius Ratio and Limiting Geometry",

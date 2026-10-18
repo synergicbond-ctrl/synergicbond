@@ -275,7 +275,7 @@ export const SOLID_STATE_PARTS: SolidStatePart[] = [
           },
           {
             "kind": "paragraph",
-            "text": "A three-dimensional unit cell is described by edge lengths $a$, $b$, $c$ and interaxial angles $\\u0007lpha$, $\\beta$, $\\gamma$. By convention, $\\u0007lpha$ is the angle between $b$ and $c$, $\\beta$ between $a$ and $c$, and $\\gamma$ between $a$ and $b$."
+            "text": "A three-dimensional unit cell is described by edge lengths $a$, $b$, $c$ and interaxial angles $\\alpha$, $\\beta$, $\\gamma$. By convention, $\\alpha$ is the angle between $b$ and $c$, $\\beta$ between $a$ and $c$, and $\\gamma$ between $a$ and $b$."
           },
           {
             "kind": "formula",
@@ -283,7 +283,7 @@ export const SOLID_STATE_PARTS: SolidStatePart[] = [
           },
           {
             "kind": "paragraph",
-            "text": "For an orthogonal cell, $\\u0007lpha=\\beta=\\gamma=90^\\circ$ and the volume reduces to $abc$. For a cubic cell, $a=b=c$, so $V=a^3$."
+            "text": "For an orthogonal cell, $\\alpha=\\beta=\\gamma=90^\\circ$ and the volume reduces to $abc$. For a cubic cell, $a=b=c$, so $V=a^3$."
           },
           {
             "kind": "table",
@@ -310,7 +310,7 @@ export const SOLID_STATE_PARTS: SolidStatePart[] = [
               ],
               [
                 "Unit-cell parameters",
-                "$a,b,c,\\u0007lpha,\\beta,\\gamma$"
+                "$a,b,c,\\alpha,\\beta,\\gamma$"
               ]
             ]
           },
@@ -332,7 +332,7 @@ export const SOLID_STATE_PARTS: SolidStatePart[] = [
       "A randomly oriented polycrystal can be macroscopically isotropic.",
       "Crystal structure equals Bravais lattice plus basis.",
       "A primitive cell contains one lattice point, not necessarily one chemical particle.",
-      "The six lattice parameters are $a,b,c,\\u0007lpha,\\beta,\\gamma$."
+      "The six lattice parameters are $a,b,c,\\alpha,\\beta,\\gamma$."
     ],
     "practice": [
       "Explain why an amorphous solid gives diffuse X-ray scattering rather than sharp Bragg peaks.",
@@ -552,43 +552,43 @@ export const SOLID_STATE_PARTS: SolidStatePart[] = [
               [
                 "Cubic",
                 "$a=b=c$",
-                "$\\u0007lpha=\\beta=\\gamma=90^\\circ$",
+                "$\\alpha=\\beta=\\gamma=90^\\circ$",
                 "NaCl, Cu"
               ],
               [
                 "Tetragonal",
                 "$a=b\\neq c$",
-                "$\\u0007lpha=\\beta=\\gamma=90^\\circ$",
+                "$\\alpha=\\beta=\\gamma=90^\\circ$",
                 "White Sn, TiO$_2$"
               ],
               [
                 "Orthorhombic",
                 "$a\\neq b\\neq c$",
-                "$\\u0007lpha=\\beta=\\gamma=90^\\circ$",
+                "$\\alpha=\\beta=\\gamma=90^\\circ$",
                 "Rhombic S"
               ],
               [
                 "Hexagonal",
                 "$a=b\\neq c$",
-                "$\\u0007lpha=\\beta=90^\\circ$, $\\gamma=120^\\circ$",
+                "$\\alpha=\\beta=90^\\circ$, $\\gamma=120^\\circ$",
                 "Graphite, Zn"
               ],
               [
                 "Trigonal (rhombohedral)",
                 "$a=b=c$",
-                "$\\u0007lpha=\\beta=\\gamma\\neq90^\\circ$",
+                "$\\alpha=\\beta=\\gamma\\neq90^\\circ$",
                 "Calcite"
               ],
               [
                 "Monoclinic",
                 "$a\\neq b\\neq c$",
-                "$\\u0007lpha=\\gamma=90^\\circ$, $\\beta\\neq90^\\circ$",
+                "$\\alpha=\\gamma=90^\\circ$, $\\beta\\neq90^\\circ$",
                 "Monoclinic S"
               ],
               [
                 "Triclinic",
                 "$a\\neq b\\neq c$",
-                "$\\u0007lpha\\neq\\beta\\neq\\gamma$, none necessarily $90^\\circ$",
+                "$\\alpha\\neq\\beta\\neq\\gamma$, none necessarily $90^\\circ$",
                 "CuSO$_4\\cdot5$H$_2$O"
               ]
             ]
@@ -1145,7 +1145,7 @@ export const SOLID_STATE_PARTS: SolidStatePart[] = [
             "steps": [
               "Convert $a$: $286.7\\ \\mathrm{pm}=2.867\\times10^{-8}\\ \\mathrm{cm}$.",
               "Use $Z=\\rho N_Aa^3/M$.",
-              "Substitution gives $Z\\u0007pprox2.00$."
+              "Substitution gives $Z\\approx2.00$."
             ],
             "answer": "The conventional cell contains two atoms; the metal is consistent with BCC."
           },
@@ -1989,7 +1989,7 @@ export const SOLID_STATE_PARTS: SolidStatePart[] = [
               ],
               [
                 "Packing efficiency",
-                "$\\pi\\sqrt3/16\\u0007pprox34.0\\%$"
+                "$\\pi\\sqrt3/16\\approx34.0\\%$"
               ],
               [
                 "Hybridisation",
@@ -2811,7 +2811,7 @@ export const SOLID_STATE_PARTS: SolidStatePart[] = [
           {
             "kind": "formula",
             "latex": "t=\\frac{r_A+r_O}{\\sqrt2(r_B+r_O)}",
-            "note": "Goldschmidt tolerance factor; $t\\u0007pprox1$ favours an undistorted cubic perovskite."
+            "note": "Goldschmidt tolerance factor; $t\\approx1$ favours an undistorted cubic perovskite."
           },
           {
             "kind": "paragraph",
@@ -3687,11 +3687,11 @@ export const SOLID_STATE_PARTS: SolidStatePart[] = [
           {
             "kind": "example",
             "title": "Intrinsic carrier ratio",
-            "question": "Two intrinsic semiconductors at the same temperature have gaps 1.0 eV and 1.4 eV. Ignoring prefactors, find the ratio $n_{i,1}/n_{i,2}$ at 300 K, where $kT\\u0007pprox0.0259$ eV.",
+            "question": "Two intrinsic semiconductors at the same temperature have gaps 1.0 eV and 1.4 eV. Ignoring prefactors, find the ratio $n_{i,1}/n_{i,2}$ at 300 K, where $kT\\approx0.0259$ eV.",
             "steps": [
               "$n_i\\propto\\exp[-E_g/(2kT)]$.",
               "Ratio $=\\exp[(1.4-1.0)/(2\\times0.0259)]$.",
-              "Exponent $\\u0007pprox7.72$, so ratio $\\u0007pprox2.25\\times10^3$."
+              "Exponent $\\approx7.72$, so ratio $\\approx2.25\\times10^3$."
             ],
             "answer": "The smaller-gap semiconductor has roughly $2.3\\times10^3$ times the intrinsic carrier density."
           },
@@ -3822,7 +3822,7 @@ export const SOLID_STATE_PARTS: SolidStatePart[] = [
               "A high-spin $d^5$ ion has five unpaired electrons.",
               "$\\mu=\\sqrt{5(5+2)}\\mu_B=\\sqrt{35}\\mu_B$."
             ],
-            "answer": "$\\mu\\u0007pprox5.92\\,\\mu_B$."
+            "answer": "$\\mu\\approx5.92\\,\\mu_B$."
           }
         ]
       },

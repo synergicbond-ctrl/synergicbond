@@ -18,4 +18,4 @@ written into the book; "Rules only" = the theory/orders were extracted but the b
 
 * No textbook, Gold Book or journal was accessed (network blocked); numerical values labelled "recalled" are from memory.
 * Where the key of a source disagrees with measured data (t-Bu⁺ vs benzyl, cycloalkyl cations, nitro-aryl series), the book prints both and marks ⚑.
-* The 50 original stability questions (Part 5), the migratory-aptitude chapter (Part 6) and the remaining rearrangement series (Part 7) are **not yet written**.
+* Written since: Part 5I (50 original stability questions), Part 6 (migratory aptitude, 25 problems), Part 7.2 (5 more validated rearrangements), Parts 8–15 (other intermediates, radical ions, important orders). All answers in these parts were written by the assistant and are NOT independently checked.

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Stage, type CameraPose, type StageAtom, type StageBond, type StagePoly, type V3 } from "./_stage";
 import { C, CORNERS, EDGE_CENTRES, FACES, SQ3, TETRA_ALL, TETRA_ALT, bondsBetween, cubeEdges, hcpCell, hexPrismEdges } from "./_geom";
 import { HcpDrawingFig, HcpFig, HcpLayerFig, VoidFig } from "./_figs";
+import { HcpTower } from "./s_hcptower";
 import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Tex, Traps, Worked, useTour, useTween } from "./_ui";
 
 /* ------------------------------------------------------ 2D packing morph */
@@ -771,6 +772,8 @@ export function PackingChapter() {
         </KeyIdea>
       </div>
       <P t="**Rule to remember:** for every **1** ball there are **2 small holes** and **1 big hole**. The hexagonal box (unit cell) has 6 balls, so it has **12 small holes** and **6 big holes**. Walk up the box floor by floor and count them yourself." />
+      <HcpTower />
+      <P t="Prefer a guided slide show with numbered steps? Here it is." />
       <HcpTour />
       <P t="Prefer to count on paper? Slide through the floors from above." />
       <HcpFloors />

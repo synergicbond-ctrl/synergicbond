@@ -100,3 +100,6 @@ figures are redrawn as text (no copied images). Add questions to the draft array
 
 ## Part 8 "Going deeper" (`lab/s_west.tsx`)
 Original-wording extras inspired by a university solid-state course (Kröger–Vink notation, aliovalent doping/YSZ, perovskite tolerance factor + lab, spinel normal/inverse, fullerene Euler derivation + lab, crystallographic restriction). Derivations 8.1–8.5. Book text is not copied.
+
+## HCP hole elevator (`lab/s_hcptower.tsx`)
+`HcpTower`: 3D ride through the 9 levels (0, h/8 … h) of the HCP cell, with glass floor, per-level holes, neighbour pyramid/octahedron, running tally (12 small / 6 big), tappable height ruler matching the textbook "Location of voids in HCP" drawing, pull-layers-apart slider and a true-size toggle. Mounted in `s_packing.tsx` before `HcpTour`.

@@ -9,6 +9,7 @@ import content.gen_F as gF
 import content.gen_H as gH
 import content.user_ex2 as ux
 import content.user_ex3 as ux3
+import content.user_ex4 as ux4
 import content.count_q as cq
 import content.stab_theory as st
 
@@ -24,6 +25,7 @@ qs = lg.build(B)
 st.build(B)
 ux.build(B)
 ux3.build(B)
+ux4.build(B)
 cqs = cq.build(B)
 B.part("Answers", "Part 3 — Leaving-Group Problems: Answers and Explanations")
 B.answers(qs, with_stem=False)

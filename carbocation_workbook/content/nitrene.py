@@ -72,7 +72,11 @@ def build(B):
          ["Hydrogen abstraction", "triplet nitrene + solvent R–H → R–NH• + R•", "R–NH<sub>2</sub> after H abstraction"],
          ["Cadogan cyclisation", "2-nitrobiphenyl + P(OEt)<sub>3</sub>", "carbazole"]],
         widths=[28, 40, 32])
-    B.h2("11.5  Problems on nitrenes")
+    from . import nitrene_adv as adv
+    adv.theory(B)
+    B.h2("11.11  Additional validated mechanisms")
+    adv.mechanisms(B)
+    B.h2("11.12  Problems on nitrenes")
     qs = []
     def q(n, text, fig, ans, why):
         qs.append(Q(f"NI-{n}", text, fig, ans, why))
@@ -96,5 +100,6 @@ def build(B):
       None, "singlet: stereospecific; triplet: loss of stereochemistry", "Singlet nitrene adds in one concerted step (syn); triplet nitrene adds one bond at a time forming a 1,3-diradical that can rotate before ring closure, so cis- and trans-alkenes give the same cis/trans aziridine mixture.")
     q(10, "Why is the triplet the ground state for most nitrenes?",
       None, "two degenerate p orbitals each hold one electron (Hund’s rule)", "In R–N: the two non-bonding p orbitals on nitrogen are degenerate (cylindrical symmetry about the R–N axis), so the lowest-energy arrangement places one electron in each with parallel spins, exactly as in O<sub>2</sub> or the NH radical.")
+    adv.problems(B, q)
     B.answers(qs, with_stem=True)
     return qs

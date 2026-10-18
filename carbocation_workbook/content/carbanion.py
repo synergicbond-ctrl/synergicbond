@@ -143,7 +143,10 @@ def build(B):
          ["α-Elimination → carbene", "CHCl<sub>3</sub> + KOH; Reimer–Tiemann", "dichlorocarbene (Part 10)"],
          ["Dimerisation by electron transfer", "2 Ph<sub>3</sub>C<sup>−</sup>Na<sup>+</sup> (trityl sodium)", "stable coloured solutions"]],
         widths=[28, 44, 28])
-    B.h2("8.8  Problems on carbanions")
+    from . import carbanion_adv as adv
+    adv.theory(B)
+    adv.mechanisms(B)
+    B.h2("8.20  Problems on carbanions")
     qs = []
     def q(n, text, fig, ans, why):
         qs.append(Q(f"CA-{n}", text, fig, ans, why))
@@ -192,5 +195,6 @@ def build(B):
     q(15, "Match the carbanion with its source: (A) CH<sub>3</sub>−, (B) <sup>−</sup>CCl<sub>3</sub>, (C) enolate, (D) RC≡C<sup>−</sup>; (P) aldol reaction, (Q) Reimer–Tiemann, (R) soda-lime decarboxylation, (S) NaNH<sub>2</sub> + alkyne.",
       None, "A–R; B–Q; C–P; D–S",
       "Soda lime gives CH<sub>3</sub><sup>−</sup> from acetate; CHCl<sub>3</sub>/KOH gives CCl<sub>3</sub><sup>−</sup> and then dichlorocarbene; base + carbonyl gives the enolate for the aldol; NaNH<sub>2</sub> deprotonates a terminal alkyne.")
+    adv.problems(B, q)
     B.answers(qs, with_stem=True)
     return qs

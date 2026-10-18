@@ -81,7 +81,11 @@ def build(B):
          ["Trimerisation (Pd) / dimerisation", "3 C<sub>6</sub>H<sub>4</sub> → triphenylene; 2 C<sub>6</sub>H<sub>4</sub> → biphenylene", "in the absence of traps"],
          ["Reaction with a second molecule of aryl anion", "ArH + benzyne → biaryl", "diarylamine/ biaryl by-products"]],
         widths=[22, 42, 36])
-    B.h2("12.7  Problems on benzyne")
+    from . import benzyne_adv as adv
+    adv.theory(B)
+    B.h2("12.15  Additional validated mechanisms")
+    adv.mechanisms(B)
+    B.h2("12.16  Problems on benzyne")
     qs = []
     def q(n, text, fig, ans, why):
         qs.append(Q(f"BZ-{n}", text, fig, ans, why))
@@ -105,5 +109,6 @@ def build(B):
       S([("", "O=[N+]([O-])c1ccc(Cl)cc1[N+](=O)[O-]")]), "addition–elimination (S<sub>N</sub>Ar), not benzyne", "The nucleophile adds to the ipso carbon, giving a resonance-stabilised Meisenheimer anion with negative charge on the nitro groups, then chloride is lost. The benzyne path needs a very strong base and has no requirement of an EWG. (Chlorine as a leaving group: F ≫ Cl ≈ Br ≈ I in S<sub>N</sub>Ar, the reverse of the benzyne order.)")
     q(10, "Compare benzyne with the other reactive intermediates: how many π electrons in the ring, and is it charged?",
       None, "6π (aromatic) + 2 electrons in the extra in-plane bond; neutral", "Benzyne has all electrons paired, no charge and no unpaired electrons; the unusual reactivity arises from strain and from the low-lying in-plane LUMO.")
+    adv.problems(B, q)
     B.answers(qs, with_stem=True)
     return qs

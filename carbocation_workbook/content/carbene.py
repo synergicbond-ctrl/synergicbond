@@ -96,7 +96,11 @@ def build(B):
         None,
         "The nitrogen lone pair attacks the empty p orbital of the carbene to give a zwitterion (ammonium/carbanion). Two successive deprotonation–dechlorination steps (base removes N–H, Cl<sup>−</sup> leaves) then convert R–NH<sub>2</sub><sup>+</sup>–CCl<sub>2</sub><sup>−</sup> into R–N<sup>+</sup>≡C<sup>−</sup>, the isocyanide: the isocyanide carbon is itself a carbene-like divalent carbon (R–N<sup>+</sup>≡C<sup>−</sup> ↔ R–N=C:)."))
     B.grid(c, 2)
-    B.h2("10.6  Problems on carbenes")
+    from . import carbene_adv as adv
+    adv.theory(B)
+    B.h2("10.13  Additional validated mechanisms")
+    adv.mechanisms(B)
+    B.h2("10.14  Problems on carbenes")
     qs = []
     def q(n, text, fig, ans, why):
         qs.append(Q(f"CE-{n}", text, fig, ans, why))
@@ -124,5 +128,6 @@ def build(B):
       None, "π-donation and electronegativity", "In CH<sub>2</sub> the two non-bonding orbitals (σ and p) are close in energy (≈ 9 kcal mol<sup>−1</sup>), so Hund’s rule puts one electron in each. In :CF<sub>2</sub> the fluorine lone pairs donate into the empty p orbital and raise its energy, while the σ-withdrawing F lowers the energy of the σ orbital: the gap widens (≈ 56 kcal mol<sup>−1</sup>) and the singlet becomes the ground state.")
     q(12, "A stable, crystalline carbene is made from an imidazolium salt and a base. Which features make it stable?",
       S([("", "CC(C)c1cccc(C(C)C)c1N1C=CN(c2c(C(C)C)cccc2C(C)C)[C]1")]), "two π-donating N atoms and bulky N-substituents", "The two nitrogen lone pairs donate into the empty p orbital (singlet stabilised, amidine-like resonance) and the σ-withdrawing N atoms lower the σ lone pair energy; the large aryl groups prevent dimerisation to the tetraaminoethylene. Arduengo (1991).")
+    adv.problems(B, q)
     B.answers(qs, with_stem=True)
     return qs

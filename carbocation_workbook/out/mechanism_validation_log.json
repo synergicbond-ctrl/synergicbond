@@ -1520,6 +1520,86 @@
   "final": "CC(C)(C)O.O.[Mg+][Br]"
  },
  {
+  "id": "8.11",
+  "ok": true,
+  "msg": "ok",
+  "steps": 3,
+  "arrows": 6,
+  "final": "CCO.CCOC(=O)CC(C)=O.CC[O-]"
+ },
+ {
+  "id": "8.12",
+  "ok": true,
+  "msg": "ok",
+  "steps": 3,
+  "arrows": 6,
+  "final": "CCO.CCOC(=O)C1CCCC1=O.CC[O-]"
+ },
+ {
+  "id": "8.13",
+  "ok": true,
+  "msg": "ok",
+  "steps": 4,
+  "arrows": 8,
+  "final": "N#CC(C#N)=Cc1ccccc1.O.[OH-]"
+ },
+ {
+  "id": "8.14",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 3,
+  "final": "CCOC(=O)CC(C)(C)[O][Zn][Br]"
+ },
+ {
+  "id": "8.14'",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 3,
+  "final": "CCOC(=O)CC(C)(C)[O][Zn][Br]"
+ },
+ {
+  "id": "8.15",
+  "ok": true,
+  "msg": "ok",
+  "steps": 3,
+  "arrows": 6,
+  "final": "CCO.CCOC(=O)C1OC1(C)C.[Cl-]"
+ },
+ {
+  "id": "8.16",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 4,
+  "final": "CC(=O)O.I[C-](I)I"
+ },
+ {
+  "id": "8.17",
+  "ok": true,
+  "msg": "ok",
+  "steps": 3,
+  "arrows": 5,
+  "final": "C=Cc1ccccc1.O=P(c1ccccc1)(c1ccccc1)c1ccccc1"
+ },
+ {
+  "id": "8.18",
+  "ok": true,
+  "msg": "ok",
+  "steps": 4,
+  "arrows": 8,
+  "final": "CO.COC(=O)C1[CH-]CCC1.[Cl-]"
+ },
+ {
+  "id": "8.19",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 5,
+  "final": "CC([O-])=CCC1CCCCC1=O.O"
+ },
+ {
   "id": "9.1",
   "ok": true,
   "msg": "ok",
@@ -1632,6 +1712,62 @@
   "final": "C[C](C)Cc1ccccc1"
  },
  {
+  "id": "9.12",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "C[C](C)C#N.C[C](C)C#N.N#N"
+ },
+ {
+  "id": "9.13",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "[O]C(=O)c1ccccc1.[O]C(=O)c1ccccc1"
+ },
+ {
+  "id": "9.14",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "[CH2]C1CCCC1"
+ },
+ {
+  "id": "9.15",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "[CH2]CCCO"
+ },
+ {
+  "id": "9.16",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "CO[O]"
+ },
+ {
+  "id": "9.17",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "CC(C)c1ccccc1.CC[S]"
+ },
+ {
+  "id": "9.18",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "CC(C)=O.[CH3]"
+ },
+ {
   "id": "10.1",
   "ok": true,
   "msg": "ok",
@@ -1720,6 +1856,38 @@
   "final": "C[NH2+][C-](Cl)Cl"
  },
  {
+  "id": "10.9",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 5,
+  "final": "C1=CC=CCC=C1"
+ },
+ {
+  "id": "10.10",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 4,
+  "final": "CC1CC1C"
+ },
+ {
+  "id": "10.11",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 4,
+  "final": "COC(C)=O.N#N"
+ },
+ {
+  "id": "10.12",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "C=C=C"
+ },
+ {
   "id": "11.1",
   "ok": true,
   "msg": "ok",
@@ -1792,6 +1960,38 @@
   "final": "N#N.[N]c1ccccc1"
  },
  {
+  "id": "11.6",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 3,
+  "final": "CC(=O)[O-].CN=C=O"
+ },
+ {
+  "id": "11.7",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 4,
+  "final": "CNC(=O)OC"
+ },
+ {
+  "id": "11.8",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "CC=N"
+ },
+ {
+  "id": "11.9",
+  "ok": true,
+  "msg": "ok",
+  "steps": 2,
+  "arrows": 3,
+  "final": "CN=C(C)[OH2+].O"
+ },
+ {
   "id": "12.1",
   "ok": true,
   "msg": "ok",
@@ -1854,5 +2054,29 @@
   "steps": 1,
   "arrows": 3,
   "final": "C1=CC2OC1c1ccccc12"
+ },
+ {
+  "id": "12.6",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "COc1[c-]c(N)ccc1"
+ },
+ {
+  "id": "12.7",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 2,
+  "final": "c1ccc2c(c1)-c1ccccc1-2"
+ },
+ {
+  "id": "12.8",
+  "ok": true,
+  "msg": "ok",
+  "steps": 1,
+  "arrows": 3,
+  "final": "C=CCc1ccccc1"
  }
 ]

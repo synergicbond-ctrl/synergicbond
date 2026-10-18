@@ -162,7 +162,11 @@ def build(B):
           "<b>Hunsdiecker</b>: RCOOAg + Br<sub>2</sub> → R–Br + CO<sub>2</sub> + AgBr (acyloxy radical; one carbon less).",
           "<b>S<sub>RN</sub>1</b>: ArX + e<sup>−</sup> → ArX<sup>•−</sup> → Ar• + X<sup>−</sup>; Ar• + Nu<sup>−</sup> → ArNu<sup>•−</sup> → (electron transfer to ArX) ArNu: a radical chain that explains aryl substitution without an electron-withdrawing group.",
           "<b>Hofmann–Löffler–Freytag</b>: an N-centred radical abstracts the δ-H through a six-membered TS (1,5-HAT) and gives a pyrrolidine after cyclisation."])
-    B.h2("9.10  Problems on free radicals")
+    from . import radical_adv as adv
+    adv.theory(B)
+    B.h2("9.20  Additional validated mechanisms")
+    adv.mechanisms(B)
+    B.h2("9.21  Problems on free radicals")
     qs = []
     def q(n, text, fig, ans, why):
         qs.append(Q(f"FR-{n}", text, fig, ans, why))
@@ -200,5 +204,6 @@ def build(B):
       None, "primary kinetic isotope effect", "The C–D bond has a lower zero-point energy and is stronger (≈ 1.2 kcal mol<sup>−1</sup>), so the H-abstraction step, which is rate-determining, is slower (k<sub>H</sub>/k<sub>D</sub> ≈ 1.3–2 for Cl•; Nucleus Q47: II &lt; I &lt; III with neopentane the fastest).")
     q(16, "An optically active alkane R<sup>1</sup>R<sup>2</sup>R<sup>3</sup>C–H is brominated at the stereocentre by NBS. What is the stereochemical outcome?",
       None, "racemic bromide", "The radical formed at the stereocentre is planar (or rapidly inverting), so Br<sub>2</sub> attacks from either face with equal probability.")
+    adv.problems(B, q)
     B.answers(qs, with_stem=True)
     return qs

@@ -64,3 +64,4 @@ docs/ui-audit/
 /*_Gases_Notes.docx
 /*_Gases_Notes.pdf
 carbocation_workbook/out/*.docx
+!Reaction_Intermediates_Deliverables/*.docx

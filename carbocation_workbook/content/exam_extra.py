@@ -72,3 +72,77 @@ _P = {
       None, "S<sub>N</sub>Ar versus elimination–addition", "The nitro groups ortho and para to Cl stabilise the Meisenheimer anion, so addition of HO<sup>−</sup> occurs without strong base (ipso substitution, one product). 4-Chlorotoluene has no activation; only a very strong base can remove the ortho H, giving 4-methylbenzyne, which is attacked at either carbon to give m- and p-cresol-type products (here m- and p-toluidine).")),
 ],
 }
+
+
+_P2 = {
+"CA": [
+(52, ("Cyclohexanone is treated with methyl vinyl ketone and NaOEt/EtOH, then heated. Give the bicyclic product and name the three steps.",
+      S([("", "O=C1C=C2CCCCC2CC1")]), "Δ<sup>1(9)</sup>-octalone (4,4a,5,6,7,8-hexahydronaphthalen-2(3H)-one); Michael, intramolecular aldol, E1cB dehydration",
+      "The cyclohexanone enolate adds 1,4 to MVK to give the 1,5-diketone; the methyl ketone enolate attacks the ring C=O (6-exo) to give a β-hydroxy ketone, which loses water by E1cB to give the conjugated enone (Robinson annulation).")),
+(53, ("Diethyl malonate (2 equiv) with NaOEt and 1,2-dibromoethane gives a cyclic diester. Name it and the product after hydrolysis and heating.",
+      S([("", "CCOC(=O)C1(CC1)C(=O)OCC"), ("→", "OC(=O)C1CC1")]), "diethyl cyclopropane-1,1-dicarboxylate; cyclopropanecarboxylic acid", "One malonate carbanion displaces bromide (S<sub>N</sub>2); the remaining acidic C–H is deprotonated and the carbanion closes the three-membered ring (3-exo-tet). Hydrolysis and decarboxylation of the gem-diacid give the mono-acid.")),
+(54, ("Diethyl 3-methyladipate (diethyl 3-methylhexanedioate) undergoes Dieckmann cyclisation. Which regioisomeric β-keto ester is expected to predominate, and why?",
+      None, "2-ethoxycarbonyl-4-methylcyclopentanone (major) over the 3-methyl isomer", "Enolate formation at C-5 (remote from the methyl) is less hindered; it attacks the C-1 ester to give the 4-methyl isomer. Enolate formation at C-2 (next to the methyl-bearing C-3) gives the 3-methyl isomer. The product with the acidic ring C–H is deprotonated, which drives either closure.")),
+(55, ("Nitromethane reacts with benzaldehyde and base (Henry reaction). Give the adduct and the compound formed on dehydration, and explain why only catalytic base is needed.",
+      S([("", "O=[N+]([O-])CC(O)c1ccccc1"), ("→", "O=[N+]([O-])C=Cc1ccccc1")]), "2-nitro-1-phenylethanol; β-nitrostyrene", "The nitronate (pK<sub>a</sub> ≈ 10) adds to the aldehyde; the alkoxide is protonated by nitromethane, regenerating the nitronate. Dehydration (E1cB) gives the conjugated nitroalkene.")),
+(56, ("Which alcohol is formed from (a) ethyl acetate + 2 EtMgBr, (b) ethyl propanoate + 2 CH<sub>3</sub>MgBr? Are they the same?",
+      S([("a", "CCC(C)(O)CC"), ("b", "CCC(C)(C)O")]), "(a) 3-methylpentan-3-ol; (b) 2-methylbutan-2-ol; different", "Two equivalents of R<sup>−</sup> add to the ester carbonyl; the acyl group supplies one substituent and the OEt is lost after the first addition. (a) acyl = CH<sub>3</sub>, R = Et twice; (b) acyl = Et, R = CH<sub>3</sub> twice.")),
+(57, ("(JEE integer) How many of these give a yellow precipitate with I<sub>2</sub>/NaOH: ethanol, propan-2-ol, acetophenone, pentan-3-one, acetaldehyde, propanal, butan-2-one, methyl acetate?",
+      None, "5", "Ethanol and propan-2-ol (oxidised in situ to CH<sub>3</sub>CHO and acetone), acetophenone, acetaldehyde and butan-2-one contain CH<sub>3</sub>CO– or CH<sub>3</sub>CH(OH)–. Pentan-3-one, propanal and methyl acetate do not.")),
+(58, ("Benzyl allyl ether is treated with n-BuLi at −78 °C and warmed. Give the product and name the rearrangement.",
+      S([("", "C=CCOCc1ccccc1"), ("→", "C=CCC(O)c1ccccc1")]), "1-phenylbut-3-en-1-ol via [2,3]-Wittig rearrangement", "BuLi removes the benzylic proton; the carbanion attacks the terminal alkene carbon in a five-membered cyclic transition state while the C–O bond to the allyl group breaks, giving a homoallylic alkoxide.")),
+],
+"FR": [
+(52, ("Calculate ΔH for Br• + (CH<sub>3</sub>)<sub>3</sub>C–H and Cl• + (CH<sub>3</sub>)<sub>3</sub>C–H using D(C–H) = 96.5, D(H–Br) = 87.5, D(H–Cl) = 103 kcal mol<sup>−1</sup>, and say what this predicts about selectivity.",
+      None, "+9 (Br•); −6.5 (Cl•)", "ΔH = D(C–H) − D(H–X). Endothermic abstraction by Br• gives a late, radical-like transition state, so it discriminates strongly among 1°/2°/3° C–H; exothermic abstraction by Cl• has an early transition state and low selectivity.")),
+(53, ("In a radical polymerisation R<sub>p</sub> = 1 × 10<sup>−4</sup> M s<sup>−1</sup> and R<sub>i</sub> = 1 × 10<sup>−8</sup> M s<sup>−1</sup>. Find the kinetic chain length and the number-average degree of polymerisation if termination is (a) all by combination, (b) all by disproportionation.",
+      None, "ν = 10<sup>4</sup>; (a) 2 × 10<sup>4</sup>; (b) 10<sup>4</sup>", "ν = R<sub>p</sub>/R<sub>i</sub> = 10<sup>4</sup> monomer units per initiating radical. Combination joins two growing chains (DP = 2ν); disproportionation gives one dead chain per radical (DP = ν). Chain transfer is ignored.")),
+(54, ("1-Octene is heated with bromotrichloromethane and a peroxide. Give the product and the two propagation steps.",
+      S([("", "ClC(Cl)(Cl)CC(Br)CCCCCC")]), "3-bromo-1,1,1-trichlorononane", "Cl<sub>3</sub>C• adds to the terminal CH<sub>2</sub> to give the secondary radical, which abstracts Br from BrCCl<sub>3</sub> (weak C–Br bond), regenerating Cl<sub>3</sub>C• (Kharasch addition).")),
+(55, ("N-Chloro-N-methylbutylamine is irradiated in conc. H<sub>2</sub>SO<sub>4</sub> and then made basic. Give the product and the key radical step.",
+      S([("", "CN1CCCC1")]), "N-methylpyrrolidine (Hofmann–Löffler–Freytag)", "The N-centred aminium radical abstracts the δ-hydrogen through a six-membered transition state (1,5-HAT); the C-radical takes Cl from another N-chloroammonium (chain). On basification the free δ-chloroamine cyclises by intramolecular S<sub>N</sub>2.")),
+(56, ("How does BHT (2,6-di-tert-butyl-4-methylphenol) inhibit autoxidation, and why does the resulting radical not propagate the chain?",
+      None, "it donates its O–H hydrogen to ROO•; the aryloxyl radical is stabilised and hindered", "ROO• + ArOH → ROOH + ArO•. The O–H bond is weak (≈ 80 kcal mol<sup>−1</sup>), the unpaired electron is delocalised into the ring, and the ortho tert-butyl groups block attack, so ArO• neither abstracts H from RH nor adds to O<sub>2</sub>; it terminates a second ROO•.")),
+(57, ("(Integer) NBS/CCl<sub>4</sub>/peroxide is used with (E)-hex-2-ene. How many constitutional isomeric monobromoalkenes can form (ignore stereoisomers)?",
+      None, "4", "Allylic hydrogens are on C-1 and C-4. The C-4 radical (↔ C-2) gives 4-bromohex-2-ene and 2-bromohex-3-ene; the C-1 radical (↔ C-3) gives 1-bromohex-2-ene and 3-bromohex-1-ene. The C-4 pathway predominates (gives disubstituted alkenes).")),
+(58, ("Arrange R–X in decreasing rate of reduction by Bu<sub>3</sub>SnH/AIBN: R–Cl, R–Br, R–I. Explain with bond energies.",
+      None, "R–I &gt; R–Br &gt; R–Cl", "The rate-limiting halogen abstraction by Bu<sub>3</sub>Sn• is easier for weaker C–X bonds (CH<sub>3</sub>–I 57, –Br 70, –Cl 85 kcal mol<sup>−1</sup>) and also forms the strong Sn–X bond.")),
+],
+"CE": [
+(42, ("p-Cresol undergoes the Reimer–Tiemann reaction. Give the normal product and the ‘abnormal’ product.",
+      S([("normal", "Cc1ccc(O)c(C=O)c1"), ("abnormal", "CC1(C(Cl)Cl)C=CC(=O)C=C1")]), "2-hydroxy-5-methylbenzaldehyde; 4-(dichloromethyl)-4-methylcyclohexa-2,5-dienone", "Ortho attack of :CCl<sub>2</sub> on the phenoxide followed by hydrolysis gives the aldehyde. Para attack at the methyl-bearing carbon cannot rearomatise, so the dichloromethyl dienone is isolated.")),
+(43, ("Pyrrole is treated with CHCl<sub>3</sub>/NaOEt. Give the product and the key intermediate.",
+      S([("", "Clc1cccnc1")]), "3-chloropyridine; a 6,6-dichloro-2-azabicyclo[3.1.0]hexene (dichlorocyclopropane)", "(Ciamician–Dennstedt) :CCl<sub>2</sub> adds across the C2=C3 bond; the cyclopropane opens with loss of Cl<sup>−</sup> and ring expansion to the six-membered aromatic pyridine. Indole gives 3-chloroquinoline.")),
+(44, ("1,1-Dibromo-2,2-dimethylcyclopropane is treated with MeLi. Give the product.",
+      S([("", "CC(C)=C=C")]), "3-methylbuta-1,2-diene", "Li/Br exchange and loss of LiBr give the cyclopropylidene, which opens (Doering–LaFlamme) by cleaving the C2–C3 bond to the allene.")),
+(45, ("1-Diazohex-5-en-2-one (CH<sub>2</sub>=CHCH<sub>2</sub>CH<sub>2</sub>COCHN<sub>2</sub>) is treated with Cu(acac)<sub>2</sub>. Give the product.",
+      S([("", "O=C1CCC2CC12")]), "bicyclo[3.1.0]hexan-2-one", "The copper carbenoid adds intramolecularly to the C=C, forming a cyclopentanone ring fused to a cyclopropane.")),
+(46, ("Why are aryl–CF<sub>3</sub> diazirines preferred over aryl azides for photoaffinity labelling?",
+      None, "they give a carbene that inserts into C–H/X–H bonds indiscriminately", "Photolysis (≈ 350 nm) of the diazirine gives a carbene that inserts non-selectively into nearby bonds. Aryl azides give nitrenes that ring-expand to azepines and react mainly with nucleophiles, and the CF<sub>3</sub> group suppresses isomerisation of the diazirine to the diazo compound.")),
+],
+"NI": [
+(35, ("A carboxylic acid is treated with DPPA/Et<sub>3</sub>N and then t-BuOH under reflux. Give the product type and the intermediates.",
+      None, "R–NH–Boc via acyl azide and isocyanate", "RCOOH is converted to the acyl azide (via the mixed phosphoryl anhydride), which rearranges on heating to RN=C=O; t-BuOH adds to give the Boc carbamate (Shioiri–Yamada). Retention at R.")),
+(36, ("N-Phenylhydroxylamine is warmed in dilute H<sub>2</sub>SO<sub>4</sub>. Give the product and the intermediate.",
+      S([("", "Nc1ccc(O)cc1")]), "p-aminophenol via a nitrenium ion (Bamberger rearrangement)", "Protonation of OH and loss of water give the phenylnitrenium ion, delocalised onto the para carbon; water attacks there and tautomerisation gives p-aminophenol.")),
+(37, ("Terephthalamide is treated with excess NaOBr. Give the product.",
+      S([("", "Nc1ccc(N)cc1")]), "p-phenylenediamine", "Each CONH<sub>2</sub> undergoes Hofmann degradation, losing its carbonyl carbon as carbonate and leaving NH<sub>2</sub> on the ring carbon.")),
+(38, ("Styrene reacts with PhI=NTs and Cu(OTf)<sub>2</sub>. Give the product, and say where a nucleophile will open it.",
+      S([("", "Cc1ccc(cc1)S(=O)(=O)N1CC1c1ccccc1")]), "2-phenyl-1-tosylaziridine; opening at the benzylic carbon", "A copper-nitrenoid transfers NTs to the C=C (Evans aziridination). Nucleophiles open the activated aziridine at the benzylic carbon, which best stabilises the developing positive charge.")),
+],
+"BZ": [
+(35, ("(Z)-Hex-3-ene-1,5-diyne is heated in 1,4-cyclohexadiene. Name the intermediate and the final aromatic product.",
+      S([("", "C#CC=CC#C"), ("→", "c1ccccc1")]), "1,4-didehydrobenzene (p-benzyne) diradical; benzene", "Bergman cyclisation forms the σ,σ-diradical, which abstracts two H atoms from 1,4-cyclohexadiene (itself aromatising to benzene). The same chemistry in enediyne antibiotics cleaves DNA.")),
+(36, ("Three benzyne molecules combine in the presence of Pd(0). Give the product and its molecular formula.",
+      S([("", "c1ccc2c(c1)c1ccccc1c1ccccc21")]), "triphenylene, C<sub>18</sub>H<sub>12</sub>", "A palladium-templated [2+2+2] cyclotrimerisation of three C<sub>6</sub>H<sub>4</sub> units gives the fully fused triphenylene (3 × C<sub>6</sub>H<sub>4</sub> = C<sub>18</sub>H<sub>12</sub>).")),
+],
+}
+
+
+_orig_add = add
+
+
+def add(topic, q):
+    _orig_add(topic, q)
+    for n, a in _P2.get(topic, []):
+        q(n, *a)

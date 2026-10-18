@@ -144,6 +144,7 @@ class Book:
                 pg = (pages or {}).get(aid, "")
                 out.append(f'<div class="l{lvl}"><span>{t}</span><span class="dots"></span><span>{pg}</span></div>')
             out.append("</div>")
+            out.append('<span style="font-size:1px;color:#fff;line-height:1px">BODYSTARTMARK</span>')
         for b in self.blocks:
             out.append(self._render(b))
         out.append("</body></html>")

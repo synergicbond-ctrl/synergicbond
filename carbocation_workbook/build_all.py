@@ -8,6 +8,8 @@ import content.lg as lg
 import content.gen_F as gF
 import content.gen_H as gH
 import content.gen_R as gR
+import content.carbanion as cbn, content.radical as rad, content.carbene as cbe, content.nitrene as nit, content.benzyne as bzy, content.overview as ovw
+from engine import chem as _chem
 import content.user_ex2 as ux
 import content.user_ex3 as ux3
 import content.user_ex4 as ux4
@@ -19,8 +21,9 @@ import content.user_ex9 as ux9
 import content.count_q as cq
 import content.stab_theory as st
 
-B = Book("Reaction Intermediates and Advanced Carbocation Chemistry",
-         "Structure-based notes and problem workbook — WORK-IN-PROGRESS BUILD: Parts 0–4, Part 5A (solutions to your supplied exercise) and the opening of Part 7 (Parts 5, 6, rest of 7 onward not yet written)")
+B = Book("Reaction Intermediates — JEE Advanced Organic Chemistry",
+         "Carbocations (in depth), carbanions, free radicals, carbenes, nitrenes, benzyne and radical ions: theory, generation, stability, arrow-validated mechanisms, and worked solutions to the exercises you supplied. "
+         "Status: Parts 0–4, 5A–5H, 7.0–7.1 and 8–14 are written; the 50 original stability questions (Part 5), the migratory-aptitude chapter (Part 6) and the rest of the rearrangement series (Part 7) are not yet written.")
 intro.build(B)
 B.part("Part 2", "Generation of Carbocations")
 B.p("Each of the following mechanisms was checked by computer: the curved arrows were applied to the drawn reactant graph and the result compared with the drawn product (valence, charge, atom conservation). "
@@ -39,32 +42,32 @@ ux8.build(B)
 ux9.build(B)
 gR.build(B)
 cqs = cq.build(B)
+_chem.ALLOW_RADICAL[0] = True
+new_qs = []
+for _m in (cbn, rad, cbe, nit, bzy, ovw):
+    new_qs += _m.build(B) or []
+_chem.ALLOW_RADICAL[0] = False
 B.part("Answers", "Part 3 — Leaving-Group Problems: Answers and Explanations")
 B.answers(qs, with_stem=False)
 B.part("Answers", "Part 7.1 — Counting Problems: Answers and Explanations")
 B.answers(cqs, with_stem=False)
 out = pathlib.Path(__file__).resolve().parent / "out"
 out.mkdir(exist_ok=True)
-pdfp = str(out / "CARBOCATION_ADVANCED_MASTER_WIP.pdf")
+pdfp = str(out / "REACTION_INTERMEDIATES_JEE_ADVANCED.pdf")
 B.pdf(pdfp)
 # second pass: put real page numbers into the table of contents (TOC length is unchanged, so layout is stable)
 import pymupdf, re as _re
 doc = pymupdf.open(pdfp)
 texts = [_re.sub(r"\s+", " ", pg.get_text()) for pg in doc]
-toc_pages = 1
-while toc_pages < len(texts) and "Contents" in texts[toc_pages]:
-    toc_pages += 1
+start = next((i for i, t in enumerate(texts) if "BODYSTARTMARK" in t), 0)
+texts[start] = texts[start].split("BODYSTARTMARK", 1)[-1]
 pages = {}
 for lvl, t, aid in B.toc:
     plain = _re.sub(r"<[^>]+>", "", t)
     plain = _re.sub(r"\s+", " ", plain)
-    for i in range(toc_pages - 1 if toc_pages > 1 else 0, len(texts)):
-        key = plain[:40]
-        body = texts[i] if i >= toc_pages else texts[i].split("Contents", 1)[-1][-0:] if False else texts[i]
-        if i == 0:
-            # page 1 holds the TOC plus the start of Part 0: search only after the TOC block
-            body = texts[0].split("Answers Part 3", 1)[-1] if "Answers Part 3" in texts[0] else texts[0]
-        if key in body:
+    key = plain[:40]
+    for i in range(start, len(texts)):
+        if key in texts[i]:
             pages[aid] = i + 1
             break
 B.pdf(pdfp, pages=pages)

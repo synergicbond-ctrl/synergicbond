@@ -70,7 +70,7 @@ def build(B):
         ["35", "(D)", "All three statements are correct: σ delocalisation is hyperconjugation, π delocalisation is resonance, permanent σ polarisation is the inductive effect."],
         ["36", "(A, B, C)", "Number of hyperconjugative structures = α C–H bonds: propene 3, 2-methyl-2-butene 9, the t-amyl cation 8. 2-Butyne has 6, not 5."],
         ["37", "(B)", "The ortho-di-t-butyl groups twist the NO<sub>2</sub> out of the ring plane (steric inhibition of resonance), so C–N has less double-bond character and is longer in II."],
-        ["38", "(C) ‡", "The two nitro groups flanking Br are twisted out of the ring plane (no resonance, longer C–N); the unhindered nitro group conjugates and has the shorter C–N bond."],
+        ["38", "(B) ‡", "The two nitro groups flanking Br are twisted out of the ring plane (no resonance, longer C–N); the unhindered nitro group conjugates and has the shorter C–N bond."],
         ["39", "(C)  III &gt; II &gt; I &gt; IV", "Single sp<sup>3</sup>–N (cyclohexylamine) is longest; aniline N lone pair adds partial double bond; a p-CHO withdraws and adds more; the imine C=N is shortest."],
         ["40", "(D)", "The shortest C1–C2 bond joins the sp<sup>2</sup> carbon of a ring to an sp carbon (C≡CH): both shortening factors (s-character, no hyperconjugation)."],
         ["41", "(D)", "Longest C=C is in isobutene: two methyls give the most hyperconjugation, which lengthens the double bond."],

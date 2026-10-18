@@ -41,12 +41,14 @@ class A:
 
 class St:
     def __init__(self, arrows, cond="", kind="rxn", add=None, drop=None, expect=None,
-                 carbanions=(), hydrides=(), stereo=False, above=None, show=None):
+                 carbanions=(), hydrides=(), stereo=False, above=None, show=None, rad=False, charges=None):
         self.arrows = arrows if isinstance(arrows, (list, tuple)) else [arrows]
         self.cond, self.kind, self.add, self.drop = cond, kind, add, drop
         self.expect, self.carbanions, self.hydrides, self.stereo = expect, carbanions, hydrides, stereo
         self.above = above
         self.show = show
+        self.rad = rad
+        self.charges = charges
 
 
 def _drop(mol, maps):
@@ -74,7 +76,7 @@ def mech(mid, start, steps, expect_final=None, final_stereo=False, width=337, la
         react = chem.parse(smi)
         pairs = [a.pair() for a in st.arrows]
         try:
-            prod = chem.push_mol(react, pairs, st.carbanions, st.hydrides)
+            prod = chem.rpush_mol(react, pairs, st.charges) if st.rad else chem.push_mol(react, pairs, st.carbanions, st.hydrides, charges=st.charges)
         except Exception as e:  # noqa
             ok = False
             msgs.append(f"step {si+1}: {e}")

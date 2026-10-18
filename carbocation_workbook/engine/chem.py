@@ -76,9 +76,98 @@ def balanced(lhs, rhs):
     return tally(lhs) == tally(rhs)
 
 
-def push_mol(smi, arrows, carbanions=(), hydrides=(), radicals=()):
+def push_mol(smi, arrows, carbanions=(), hydrides=(), radicals=(), charges=None):
     """Like push() but returns the mapped product Mol (mapped H atoms kept explicit)."""
-    return _push(smi, arrows, carbanions, hydrides, radicals)
+    return _push(smi, arrows, carbanions, hydrides, radicals, charges)
+
+
+def rpush_mol(smi, arrows, charges=None):
+    """Apply single-electron (fish-hook) arrows to atom-mapped reactant SMILES; return the mapped product Mol.
+
+    Arrow = (src, snk).
+      src: ('rad', i)            – the unpaired electron on atom i moves
+           ('b', i, j)           – one electron of bond i-j moves (two such arrows = homolysis of one bond order)
+           ('b', i, j, keep)     – one electron of a bond *order* moves and the other stays on atom `keep` as a radical
+      snk: ('nb', i, j)          – the electron joins a new/increased bond i-j (two arrows must feed the same bond)
+           ('rad', i)            – the electron ends up as an unpaired electron on atom i
+    Charges are never changed (radical steps conserve formal charge)."""
+    m = Chem.AddHs(parse(smi))
+    rw = Chem.RWMol(m)
+    idx = {a.GetAtomMapNum(): a.GetIdx() for a in rw.GetAtoms() if a.GetAtomMapNum()}
+    rad = {a.GetIdx(): a.GetNumRadicalElectrons() for a in rw.GetAtoms()}
+    pend_form, pend_break, ordr = {}, {}, {}
+
+    def key(i, j):
+        return (min(i, j), max(i, j))
+
+    def order(i, j):
+        k = key(i, j)
+        if k not in ordr:
+            b = rw.GetBondBetweenAtoms(i, j)
+            ordr[k] = b.GetBondTypeAsDouble() if b else 0.0
+        return ordr[k]
+
+    for src, snk in arrows:
+        if src[0] == "rad":
+            i = idx[src[1]]
+            if rad[i] < 1:
+                raise ValueError(f"no unpaired electron on atom {src[1]}")
+            rad[i] -= 1
+        elif src[0] == "b":
+            i, j = idx[src[1]], idx[src[2]]
+            if order(i, j) < 1:
+                raise ValueError(f"fish-hook source bond {src} absent")
+            if len(src) == 4:
+                ordr[key(i, j)] = order(i, j) - 1
+                rad[idx[src[3]]] += 1
+            else:
+                pend_break[key(i, j)] = pend_break.get(key(i, j), 0) + 1
+        else:
+            raise ValueError("bad fish-hook source " + str(src))
+        if snk[0] == "rad":
+            rad[idx[snk[1]]] += 1
+        elif snk[0] == "nb":
+            i, j = idx[snk[1]], idx[snk[2]]
+            pend_form[key(i, j)] = pend_form.get(key(i, j), 0) + 1
+        else:
+            raise ValueError("bad fish-hook sink " + str(snk))
+    for k, n in pend_break.items():
+        if n % 2:
+            raise ValueError("odd number of fish-hooks leaving bond " + str(k))
+        ordr[k] = order(*k) - n // 2
+    for k, n in pend_form.items():
+        if n % 2:
+            raise ValueError("odd number of fish-hooks entering bond " + str(k))
+        ordr[k] = order(*k) + n // 2
+    for (i, j), v in ordr.items():
+        if v < 0 or v > 3:
+            raise ValueError("bond order out of range")
+        b = rw.GetBondBetweenAtoms(i, j)
+        if v == 0:
+            if b:
+                rw.RemoveBond(i, j)
+            continue
+        t = {1.0: Chem.BondType.SINGLE, 2.0: Chem.BondType.DOUBLE, 3.0: Chem.BondType.TRIPLE}[v]
+        if b:
+            b.SetBondType(t)
+        else:
+            rw.AddBond(i, j, t)
+    for a in rw.GetAtoms():
+        a.SetNumRadicalElectrons(rad[a.GetIdx()])
+        a.SetNumExplicitHs(0)
+        a.SetNoImplicit(True)
+    for mp, q in (charges or {}).items():
+        rw.GetAtomWithIdx(idx[mp]).SetFormalCharge(q)
+    out = rw.GetMol()
+    try:
+        out.UpdatePropertyCache(strict=True)
+    except Exception as e:  # noqa
+        raise ValueError("invalid valence after fish-hook push: " + str(e))
+    ps = Chem.RemoveHsParameters()
+    ps.removeMapped = False
+    out = Chem.RemoveHs(out, ps, sanitize=False)
+    out.UpdatePropertyCache(strict=False)
+    return out
 
 
 def push(smi, arrows, carbanions=(), hydrides=(), stereo=False, radicals=()):
@@ -93,7 +182,7 @@ def push(smi, arrows, carbanions=(), hydrides=(), stereo=False, radicals=()):
     return canon(out, stereo=stereo)
 
 
-def _push(smi, arrows, carbanions=(), hydrides=(), radicals=()):
+def _push(smi, arrows, carbanions=(), hydrides=(), radicals=(), charges=None):
     m = Chem.AddHs(parse(smi))
     rw = Chem.RWMol(m)
     idx = {a.GetAtomMapNum(): a.GetIdx() for a in rw.GetAtoms() if a.GetAtomMapNum()}
@@ -157,6 +246,8 @@ def _push(smi, arrows, carbanions=(), hydrides=(), radicals=()):
                 raise ValueError(f"carbon with {b} bonds")
         elif z == 1:
             a.SetFormalCharge(-1 if mp in hydrides else (1 if b == 0 else 0))
+    for mp, q in (charges or {}).items():
+        rw.GetAtomWithIdx(idx[mp]).SetFormalCharge(q)
     out = rw.GetMol()
     try:
         out.UpdatePropertyCache(strict=True)

@@ -25,7 +25,7 @@ Fish-hook mechanisms need `chem.ALLOW_RADICAL[0]=True` (build_all already does t
   (JEE/GATE/CSIR/IChO); no copyrighted problems reproduced.
 
 ## Pending (priority order)
-1. NEW Part 15 "Important orders in GOC" (user chose this; NOT started): tables with reasons for acidity
+1. DONE (commit after b24ebea): Part 15 "Important orders" in content/orders.py (answers unchecked; extend with more families if wanted). Old note:: tables with reasons for acidity
    (carboxylic acids incl. halo/position, benzoic acids/ortho effect, phenols, alcohols solution vs gas, hybridisation,
    HX), basicity (aliphatic amines aq/gas, aromatic, N-heterocycles, guanidine), −I/+I/±M orders, leaving groups,
    carbonyl electrophilicity, acid-derivative reactivity, EAS activation, alkene stability (heats of hydrogenation:

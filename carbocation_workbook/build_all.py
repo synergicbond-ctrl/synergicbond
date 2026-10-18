@@ -8,7 +8,7 @@ import content.lg as lg
 import content.gen_F as gF
 import content.gen_H as gH
 import content.gen_R as gR
-import content.carbanion as cbn, content.radical as rad, content.carbene as cbe, content.nitrene as nit, content.benzyne as bzy, content.overview as ovw
+import content.carbanion as cbn, content.radical as rad, content.carbene as cbe, content.nitrene as nit, content.benzyne as bzy, content.overview as ovw, content.orders as orders
 from engine import chem as _chem
 import content.user_ex2 as ux
 import content.user_ex3 as ux3
@@ -44,7 +44,7 @@ gR.build(B)
 cqs = cq.build(B)
 _chem.ALLOW_RADICAL[0] = True
 new_qs = []
-for _m in (cbn, rad, cbe, nit, bzy, ovw):
+for _m in (cbn, rad, cbe, nit, bzy, ovw, orders):
     new_qs += _m.build(B) or []
 _chem.ALLOW_RADICAL[0] = False
 B.part("Answers", "Part 3 — Leaving-Group Problems: Answers and Explanations")

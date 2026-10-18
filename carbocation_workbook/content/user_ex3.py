@@ -13,13 +13,22 @@ def build(B):
         qs.append(Q(f"E3-{n}", stem, S([(l, s) for l, s in pairs]), order, why))
 
     add("8", "Select the least stable cation.",
-        [("A", "C[CH2+]"), ("B", "CC[CH2+]"), ("C", "CC(C)[CH2+]"), ("D", "CC(C)(C)[CH2+]")], "(A)",
-        "All four are primary. Each larger alkyl group is a better +I donor and more polarisable, so ethyl, with the smallest substituent, is the least stable. (Counting α-C–H bonds alone would favour ethyl, which is why this is a ‘+I/polarisability’ answer, not a hyperconjugation one.)")
+        [("A", "C[CH2+]"), ("B", "CC[CH2+]"), ("C", "CC(C)[CH2+]"), ("D", "CC(C)(C)[CH2+]")], "(D)  neopentyl",
+        "All four are primary, so count the hyperconjugating C–H bonds on the carbon next to C<sup>+</sup>: ethyl 3, n-propyl 2, isobutyl 1, neopentyl 0 (its α-carbon is quaternary). "
+        "Stability ethyl &gt; propyl &gt; isobutyl &gt; neopentyl, so neopentyl is the least stable (the printed key in your PDF agrees). "
+        "<b>Correction:</b> an earlier build of this book answered (A) using a +I/polarisability argument; that is the gas-phase trend, but the exam answer follows the α-H count.")
     add("9(i)", "Arrange in decreasing stability.",
         [("a", "C[CH2+]"), ("b", "C[CH+]C"), ("c", "C[C+](C)C")], "c &gt; b &gt; a", "Tertiary &gt; secondary &gt; primary.")
     add("9(ii)", "Arrange in decreasing stability.",
         [("a", "[CH+]1CCCCC1"), ("b", "CC1CCCC[CH+]1"), ("c", "C[C+]1CCCCC1")], "c &gt; b &gt; a",
         "c is tertiary; a and b are secondary, and b carries an extra adjacent methyl-bearing carbon (more α-C–C/C–H hyperconjugation).")
+    add("9(iii)", "Arrange in decreasing stability (cyclopentyl-substituted cations).",
+        [("a", "C[CH+]C1CCCC1"), ("b", "C[C+](C)C1CCCC1"), ("c◊", "CC(C)C1CCC[CH+]1")], "b &gt; c &gt; a  (key)",
+        "b is tertiary. a and c are secondary; the key puts the ring cation c above the exocyclic cation a (cyclopentyl cations are favoured by relief of I-strain, and in c the isopropyl group adds hyperconjugating C–C/C–H bonds next to C<sup>+</sup>). ◊ The position of the isopropyl group in c is my reading of the drawing.")
+    add("9(vi)", "Arrange in decreasing stability (three alkyl cations from the chain drawings).",
+        [("a◊", "CCC(C)C[CH2+]"), ("b◊", "CC(C)CC[CH2+]"), ("c◊", "CCCC(C)[CH2+]")], "key: b &gt; c &gt; a;  your Allen solution page: a &gt; b &gt; c",
+        "<b>Conflict.</b> The printed answer key of your PDF gives b &gt; c &gt; a for 9(vi), but the worked solution on the ‘Electronic displacement effects’ page you also sent gives a &gt; b &gt; c (α-H = 2, 2, 1, then +I). "
+        "I cannot tell from the drawings which chain is which, so I do not choose between them. The rule they use is: count α C–H bonds first (more is better), and if equal, the stronger +I (larger or more branched alkyl) wins.")
     add("9(iv)", "Arrange the cycloalkyl cations in decreasing stability.",
         [("a", "[CH+]1CC1"), ("b", "[CH+]1CCC1"), ("c", "[CH+]1CCCC1"), ("d", "[CH+]1CCCCC1")], "d &gt; c &gt; b &gt; a  (textbook key)",
         "Textbook key: angle strain at the sp<sup>2</sup> centre (60° in cyclopropyl, 90° in cyclobutyl) destabilises the small rings. "

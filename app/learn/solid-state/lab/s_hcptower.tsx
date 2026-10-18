@@ -82,7 +82,6 @@ export function HcpTower() {
   const pool = [...balls.map((b) => ({ id: b.id, p: b.p })), ...extra];
   const near = focus ? [...pool].sort((m, n) => dist(m.p, focus) - dist(n.p, focus)).slice(0, want) : [];
   const nearIds = new Set(near.map((n) => n.id));
-  const layerOf = (b: { layer: "A" | "B" | "T" }) => (b.layer === "B" ? "B" : "A");
 
   const isHole = L.kind === "small" || L.kind === "big";
   const holeCol = L.kind === "big" ? "#ffffff" : C.rose;

@@ -8,6 +8,131 @@ import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, T
 const PANEL = "radial-gradient(120% 90% at 50% 18%, #17433f 0%, #0c1f1e 52%, #060f0f 100%)";
 void PANEL;
 
+/* ------------------------------------- icosahedron (B12) and C60 in 3D */
+
+const PHI = (1 + Math.sqrt(5)) / 2;
+
+function uniquePts(pts: V3[]): V3[] {
+  const out: V3[] = [];
+  for (const p of pts) if (!out.some((q) => Math.hypot(q[0] - p[0], q[1] - p[1], q[2] - p[2]) < 1e-6)) out.push(p);
+  return out;
+}
+
+/** all sign combinations and the three cyclic permutations of (a, b, c) */
+function cyc(a: number, b: number, c: number): V3[] {
+  const out: V3[] = [];
+  for (const sa of [1, -1]) for (const sb of [1, -1]) for (const sc of [1, -1]) {
+    const v: V3 = [a * sa, b * sb, c * sc];
+    out.push(v, [v[1], v[2], v[0]], [v[2], v[0], v[1]]);
+  }
+  return uniquePts(out);
+}
+
+const dist3 = (p: V3, q: V3) => Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2]);
+const dot3 = (p: V3, q: V3) => p[0] * q[0] + p[1] * q[1] + p[2] * q[2];
+
+/** Vertices (indices) of the face nearest to a direction, ordered round the axis. */
+function faceAround(pts: V3[], axis: V3, n: number): number[] {
+  const idx = pts.map((_, i) => i).sort((i, j) => dot3(pts[j], axis) - dot3(pts[i], axis)).slice(0, n);
+  const len = Math.hypot(axis[0], axis[1], axis[2]);
+  const k: V3 = [axis[0] / len, axis[1] / len, axis[2] / len];
+  const ref: V3 = Math.abs(k[1]) < 0.9 ? [0, 1, 0] : [1, 0, 0];
+  const u0: V3 = [k[1] * ref[2] - k[2] * ref[1], k[2] * ref[0] - k[0] * ref[2], k[0] * ref[1] - k[1] * ref[0]];
+  const ul = Math.hypot(u0[0], u0[1], u0[2]);
+  const u: V3 = [u0[0] / ul, u0[1] / ul, u0[2] / ul];
+  const v: V3 = [k[1] * u[2] - k[2] * u[1], k[2] * u[0] - k[0] * u[2], k[0] * u[1] - k[1] * u[0]];
+  return idx.sort((i, j) => Math.atan2(dot3(pts[i], v), dot3(pts[i], u)) - Math.atan2(dot3(pts[j], v), dot3(pts[j], u)));
+}
+
+function edgesOf(pts: V3[], d: number): [number, number][] {
+  const out: [number, number][] = [];
+  for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) if (Math.abs(dist3(pts[i], pts[j]) - d) < 1e-3) out.push([i, j]);
+  return out;
+}
+
+type IMode = "bonds" | "faces" | "carbon";
+
+function IcosahedronLab() {
+  const [mode, setMode] = useState<IMode>("bonds");
+  const [faces, setFaces] = useState(20);
+  const k = 0.95;
+  const pts = useMemo(() => cyc(0, 1, PHI).map((p) => [p[0] * k, p[1] * k, p[2] * k] as V3), []);
+  const edges = useMemo(() => edgesOf(pts, 2 * k), [pts]);
+  const tri = useMemo(() => {
+    const out: number[][] = [];
+    for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) for (let l = j + 1; l < pts.length; l++) {
+      if (Math.abs(dist3(pts[i], pts[j]) - 2 * k) < 1e-3 && Math.abs(dist3(pts[j], pts[l]) - 2 * k) < 1e-3 && Math.abs(dist3(pts[i], pts[l]) - 2 * k) < 1e-3) out.push([i, j, l]);
+    }
+    return out;
+  }, [pts]);
+  const nb = useMemo(() => edges.filter(([i, j]) => i === 0 || j === 0).map(([i, j]) => (i === 0 ? j : i)), [edges]);
+  const atoms: StageAtom[] = pts.map((p, i) => ({
+    id: `ic${i}`, p, r: mode === "carbon" && i === 0 ? 0.36 : 0.3,
+    color: mode === "carbon" && i === 0 ? C.rose : mode === "bonds" && i === 0 ? C.white : mode === "bonds" && nb.includes(i) ? "#ffd98a" : "#7fa4d6",
+    glow: mode === "bonds" && (i === 0 || nb.includes(i)),
+  }));
+  const bonds: StageBond[] = edges.map(([i, j], n) => ({ id: `ie${n}`, a: pts[i], b: pts[j], r: 0.04, color: mode === "bonds" && (i === 0 || j === 0) ? "#fff1b8" : "#cfe0e8", opacity: mode === "faces" ? 0.5 : 1 }));
+  const polys: StagePoly[] = mode === "faces" ? tri.slice(0, faces).map((t, n) => ({ id: `if${n}`, verts: t.map((i) => pts[i]), faces: [[0, 1, 2]], color: n % 2 ? C.teal : C.violet, opacity: 0.38 })) : [];
+  const says: Record<IMode, string> = {
+    bonds: "**B₁₂ icosahedron.** 12 boron atoms at the corners of a regular solid. The white atom is bonded to **5** neighbours (gold): every vertex has 5 neighbours, so edges = 12 × 5 ÷ 2 = **30**. These are three-centre two-electron bonds because boron is electron deficient.",
+    faces: `**Faces.** All faces are equilateral triangles. ${faces} of 20 are shown. Euler's rule checks the count: V − E + F = 12 − 30 + ${faces === 20 ? 20 : faces} ${faces === 20 ? "= **2** ✓" : "(slide to 20 for the full solid)"}.`,
+    carbon: "**B₁₁C icosahedron.** In boron carbide one corner is carbon (rose) instead of boron. Joined by a C–B–C chain (1 B + 2 C), the cell contains B₁₁C + CBC = **B₁₂C₃ = B₄C**.",
+  };
+  return (
+    <div className="grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+      <div className="space-y-3">
+        <Stage atoms={atoms} bonds={bonds} polys={polys} camera={{ key: `ico-${mode}`, az: 0.6, el: 0.35, dist: 7.6 }} autoRotate floorY={-3.2} height={440} label={`3D model of the B12 icosahedron: ${mode}`} hint="drag to look around" />
+        <Narration k={`${mode}-${faces}`}>
+          <Rich text={says[mode]} />
+        </Narration>
+      </div>
+      <div className="space-y-4">
+        <Tabs label="View" value={mode} onChange={setMode} items={[["bonds", "Atoms & bonds"], ["faces", "20 faces"], ["carbon", "B₁₁C"]] as const} />
+        {mode === "faces" && <Slider label="Triangular faces shown" value={faces} onChange={setFaces} min={0} max={20} step={1} show={`${faces} / 20`} />}
+        <Facts cols={2} items={[["Vertices (B)", "12"], ["Edges (B–B)", "30"], ["Faces", "20 triangles"], ["Neighbours per B", "5"]]} />
+      </div>
+    </div>
+  );
+}
+
+function C60Lab() {
+  const [pent, setPent] = useState(12);
+  const [hex, setHex] = useState(20);
+  const sc = 0.5;
+  const pts = useMemo(() => uniquePts([...cyc(0, 1, 3 * PHI), ...cyc(1, 2 + PHI, 2 * PHI), ...cyc(PHI, 2, 2 * PHI + 1)]).map((p) => [p[0] * sc, p[1] * sc, p[2] * sc] as V3), []);
+  const edges = useMemo(() => edgesOf(pts, 2 * sc), [pts]);
+  const pentFaces = useMemo(() => cyc(0, 1, PHI).map((a) => faceAround(pts, a, 5)), [pts]);
+  const hexFaces = useMemo(() => uniquePts([...cyc(1, 1, 1).filter((v) => v[0] !== 0), ...cyc(0, 1 / PHI, PHI)]).map((a) => faceAround(pts, a, 6)), [pts]);
+  const inPent = new Set(pentFaces.slice(0, pent).flat());
+  const atoms: StageAtom[] = pts.map((p, i) => ({ id: `cc${i}`, p, r: 0.13, color: inPent.has(i) ? C.rose : "#b9c7cc", glow: inPent.has(i) }));
+  const bonds: StageBond[] = edges.map(([i, j], n) => ({ id: `ce${n}`, a: pts[i], b: pts[j], r: 0.035, color: "#e3ecef" }));
+  const polys: StagePoly[] = [
+    ...pentFaces.slice(0, pent).map((f, n) => ({ id: `cp${n}`, verts: f.map((i) => pts[i]), faces: [[0, 1, 2, 3, 4]], color: C.rose, opacity: 0.55 })),
+    ...hexFaces.slice(0, hex).map((f, n) => ({ id: `ch${n}`, verts: f.map((i) => pts[i]), faces: [[0, 1, 2, 3, 4, 5]], color: C.teal, opacity: 0.28 })),
+  ];
+  const F = pent + hex;
+  return (
+    <div className="grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+      <div className="space-y-3">
+        <Stage atoms={atoms} bonds={bonds} polys={polys} camera={{ key: "c60", az: 0.5, el: 0.3, dist: 9.6 }} autoRotate floorY={-3.4} height={460} label="3D model of the C60 molecule, a truncated icosahedron" hint="drag to look around" />
+        <Narration k={`${pent}-${hex}`}>
+          <Rich text={`**C₆₀ is a truncated icosahedron:** ${pts.length} carbon atoms, ${edges.length} bonds. Pentagons (rose) **${pent} / 12**, hexagons (teal) **${hex} / 20**. Faces shown: ${F}. With all faces, V − E + F = ${pts.length} − ${edges.length} + 32 = **${pts.length - edges.length + 32}**. Each atom belongs to **1 pentagon and 2 hexagons**, so no two pentagons ever touch.`} />
+        </Narration>
+      </div>
+      <div className="space-y-4">
+        <Slider label="Pentagons shown" value={pent} onChange={setPent} min={0} max={12} step={1} show={`${pent} / 12`} />
+        <Slider label="Hexagons shown" value={hex} onChange={setHex} min={0} max={20} step={1} show={`${hex} / 20`} />
+        <div className="flex gap-2">
+          <Btn onClick={() => { setPent(12); setHex(0); }}>Pentagons only</Btn>
+          <Btn onClick={() => { setPent(0); setHex(20); }}>Hexagons only</Btn>
+          <Btn onClick={() => { setPent(12); setHex(20); }}>Both</Btn>
+        </div>
+        <Facts cols={2} items={[["Carbon atoms V", `${pts.length}`], ["C–C bonds E", `${edges.length}`], ["Faces F", "12 + 20 = 32"], ["Atoms per cell (fcc)", "4 molecules"]]} />
+      </div>
+    </div>
+  );
+}
+
 /* ------------------------------------------- diamond = two fcc lattices */
 
 const DT_STEPS = [
@@ -497,6 +622,7 @@ export function NetworkChapter() {
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Boron and boron carbide: the icosahedron</h3>
       <P t="Elemental boron and boron carbide are built from the **B₁₂ icosahedron**: 12 boron atoms at the corners of a solid with **20 equilateral triangular faces**. Each atom touches **5** others inside the icosahedron (the bonds are three-centre two-electron bonds because boron is electron deficient). In α-rhombohedral boron an icosahedron sits at each corner of a rhombohedral cell, so the cell holds **12 atoms**. In **boron carbide** the icosahedra are B₁₁C (one carbon replaces one boron) and are linked by C–B–C chains." />
+      <IcosahedronLab />
       <Derivation
         no="9.4"
         title="The icosahedron: faces, edges and the formula of boron carbide"
@@ -527,6 +653,7 @@ export function NetworkChapter() {
 
       <h3 className="pt-4 text-2xl font-bold text-[var(--foreground)]">Fullerene C₆₀ as a crystal</h3>
       <P t="C₆₀ molecules (a cage of 12 pentagons and 20 hexagons, Part 8) pack in an **fcc lattice** with edge **1417 pm**. As in any close-packed array there are **4 octahedral and 8 tetrahedral holes** per cell, so a metal can sit inside. When all 12 holes are filled by potassium the compound **K₃C₆₀** results, a superconductor below 18 K." />
+      <C60Lab />
       <div className="grid gap-4 md:grid-cols-2">
         <Worked
           q="Calculate the density of solid C₆₀ (fcc, a = 1417 pm, carbon = 12.01)."

@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { Chapter, Derivation, Facts, KeyIdea, P, Slider, Tex, Traps, Worked } from "./_ui";
+import { useMemo, useState } from "react";
+import { Stage, type CameraPose, type StageAtom, type StageBond, type StagePoly, type V3 } from "./_stage";
+import { C, CORNERS, EDGE_CENTRES, cubeEdges } from "./_geom";
+import { Btn, Chapter, Derivation, Facts, KeyIdea, Narration, P, Rich, Slider, Tabs, Tex, Traps, Worked, useTour } from "./_ui";
 
 /* ------------------------------------------------ tolerance factor lab */
 
@@ -60,6 +62,125 @@ function FullereneLab() {
       <p className="text-[15px] leading-7 text-[var(--text-muted)]">
         <Tex ex={`V-E+F=${V}-${E}+${F}=${V - E + F}`} /> every time. {names[h] ? `This is ${names[h]}.` : `This cage is C${V}.`} Drag the slider: the number of pentagons never changes, only the hexagons grow.
       </p>
+    </div>
+  );
+}
+
+/* --------------------------------------------- perovskite built in 3D */
+
+const PV_STEPS = [
+  "An empty cell: a cube of edge **a**. We will build **ABO₃** (CaTiO₃, SrTiO₃, BaTiO₃) inside it.",
+  "**B cations (small, gold)** go on the **8 corners**. Each corner is shared by 8 cells: $8\\times\\tfrac18=1$ B per cell.",
+  "**Oxide ions (blue)** go on the **12 edge centres**. Each is shared by 4 cells: $12\\times\\tfrac14=3$ O per cell.",
+  "**The A cation (big, violet)** fills the **cube centre**, wholly inside the cell: 1 A. The formula is **A₁B₁O₃ = ABO₃**.",
+  "**Every B sits in an octahedron of 6 O.** Take the corner B: 3 oxide ions are in this cell and 3 in the neighbouring cells (faint). Coordination number of B = **6**.",
+  "**A touches 12 oxide ions**, the 12 edge centres, all at the same distance $a\\sqrt2/2$. Coordination number of A = **12**. This contact is what the tolerance factor measures.",
+];
+
+function PerovskiteLab() {
+  const tour = useTour(5, 4200);
+  const step = tour.step;
+  const bGold = C.gold, oBlue = C.blue, aViolet = C.violet;
+  const focusB: V3 = [1, 1, 1];
+  const octO: V3[] = [[0, 1, 1], [1, 0, 1], [1, 1, 0], [2, 1, 1], [1, 2, 1], [1, 1, 2]];
+  const atoms: StageAtom[] = [
+    ...CORNERS.map((p, i) => ({ id: `b${i}`, p, r: 0.27, color: bGold, scale: step >= 1 ? 1 : 0, opacity: step >= 4 && !(p[0] === 1 && p[1] === 1 && p[2] === 1) ? 0.35 : 1, from: [p[0] * 2, p[1] * 2, p[2] * 2] as V3 })),
+    ...EDGE_CENTRES.map((p, i) => ({ id: `o${i}`, p, r: 0.34, color: oBlue, scale: step >= 2 ? 1 : 0, opacity: step === 4 && !octO.some((q) => q[0] === p[0] && q[1] === p[1] && q[2] === p[2]) ? 0.3 : 1, from: [p[0] * 2.2, p[1] * 2.2, p[2] * 2.2] as V3 })),
+    { id: "a", p: [0, 0, 0], r: 0.52, color: aViolet, scale: step >= 3 ? 1 : 0, opacity: step === 4 ? 0.4 : 1, from: [0, 3, 0], glow: step === 5 },
+    ...octO.filter((q) => q.some((c) => Math.abs(c) > 1.001)).map((q, i) => ({ id: `g${i}`, p: q, r: 0.34, color: oBlue, scale: step === 4 ? 1 : 0, opacity: 0.5, glow: true })),
+  ];
+  const bonds: StageBond[] = [
+    ...(step === 4 ? octO.map((q, i) => ({ id: `bo${i}`, a: focusB, b: q, r: 0.045, color: C.white })) : []),
+    ...(step === 5 ? EDGE_CENTRES.map((q, i) => ({ id: `ao${i}`, a: [0, 0, 0] as V3, b: q, r: 0.04, color: C.white })) : []),
+  ];
+  const polys: StagePoly[] = [];
+  if (step === 4) polys.push({ id: "oct", verts: octO, faces: [[0, 1, 4], [0, 4, 2], [0, 2, 5], [0, 5, 1], [3, 1, 4], [3, 4, 2], [3, 2, 5], [3, 5, 1]].map((f) => f), color: bGold, opacity: 0.22 });
+  const edges = useMemo(() => cubeEdges("pv", 1, [0, 0, 0], true, 0.6), []);
+  const cams: CameraPose[] = [
+    { key: "pv0", az: 0.7, el: 0.4, dist: 9 }, { key: "pv1", az: 0.7, el: 0.4, dist: 9 }, { key: "pv2", az: 0.9, el: 0.35, dist: 9.2 },
+    { key: "pv3", az: 0.6, el: 0.45, dist: 9.4 }, { key: "pv4", az: 0.65, el: 0.35, dist: 10.5, target: [1, 1, 1] }, { key: "pv5", az: 0.8, el: 0.4, dist: 9.4 },
+  ];
+  return (
+    <div className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5">
+      <div className="text-sm font-bold tracking-[0.14em] text-[var(--accent)]">BUILD A PEROVSKITE CELL</div>
+      <Stage atoms={atoms} bonds={bonds} lines={edges} polys={polys} camera={cams[step]} autoRotate={step === 0 || step === 3} floorY={-2.2} height={470} label="Animation: building the ABO3 perovskite unit cell" hint="drag to look around" />
+      <Narration k={step}>
+        <Rich text={PV_STEPS[step]} />
+      </Narration>
+      <div className="flex flex-wrap items-center gap-3">
+        <Btn primary onClick={tour.play}>▶ Build the cell</Btn>
+        <Btn onClick={() => tour.set(Math.max(0, step - 1))}>◀ Back</Btn>
+        <Btn onClick={() => tour.set(Math.min(5, step + 1))}>Next ▶</Btn>
+        <span className="text-sm text-[var(--text-muted)]">Step {step + 1} of 6</span>
+        <div className="ml-auto flex gap-3 text-sm">
+          <span className="rounded-lg border border-[var(--border)] px-3 py-1.5">A <b className="font-mono">{step >= 3 ? 1 : 0}</b></span>
+          <span className="rounded-lg border border-[var(--border)] px-3 py-1.5">B <b className="font-mono">{step >= 1 ? 1 : 0}</b></span>
+          <span className="rounded-lg border border-[var(--border)] px-3 py-1.5">O <b className="font-mono">{step >= 2 ? 3 : 0}</b></span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ---------------------------------------- spinel: filling the holes */
+
+function SpinelLab() {
+  const [kind, setKind] = useState<"normal" | "inverse">("normal");
+  const tour = useTour(4, 3200);
+  const step = tour.step;
+  const W = 640, H = 330;
+  const oX = [95, 245, 395, 545];
+  const tX = Array.from({ length: 8 }, (_, i) => 40 + i * 76);
+  const oc = [105, 255, 405, 555];
+  const slotsT = tX.map((x) => ({ x, y: 150 }));
+  const slotsO = oc.map((x) => ({ x, y: 250 }));
+  type Ion = { id: string; kind: "A" | "B"; slot: { x: number; y: number } };
+  const ions: Ion[] = kind === "normal"
+    ? [{ id: "A", kind: "A", slot: slotsT[3] }, { id: "B1", kind: "B", slot: slotsO[0] }, { id: "B2", kind: "B", slot: slotsO[2] }]
+    : [{ id: "B0", kind: "B", slot: slotsT[3] }, { id: "A", kind: "A", slot: slotsO[0] }, { id: "B2", kind: "B", slot: slotsO[2] }];
+  const shown = (i: number) => step >= 1 + i;
+  const says = [
+    "**One formula unit AB₂O₄** has **4 O²⁻** ions in a cubic close-packed array. Close packing gives **4 octahedral** and **8 tetrahedral** holes for these 4 oxide ions (squares and triangles below). Only **3 of the 12** holes are occupied by cations.",
+    kind === "normal" ? "**A²⁺ goes into a tetrahedral hole**: 1 of the 8 (one-eighth filled)." : "**A B³⁺ ion goes into the tetrahedral hole**: 1 of the 8 (one-eighth filled). In an inverse spinel it is B, not A, that takes the tetrahedral site.",
+    kind === "normal" ? "**The first B³⁺ goes into an octahedral hole**: 1 of the 4." : "**The A²⁺ ion goes into an octahedral hole**: 1 of the 4. In an inverse spinel A²⁺ is octahedral.",
+    kind === "normal" ? "**The second B³⁺ goes into another octahedral hole**: 2 of the 4 (one-half filled). **Normal spinel: A[B₂]O₄**, e.g. MgAl₂O₄, ZnFe₂O₄." : "**The second B³⁺ goes into another octahedral hole.** Octahedral holes now hold A and B. **Inverse spinel: B[AB]O₄**, e.g. Fe₃O₄ = Fe³⁺[Fe²⁺Fe³⁺]O₄, NiFe₂O₄.",
+    "**Summary.** Cations fill **1/8 of the tetrahedral** and **1/2 of the octahedral** holes in both forms. They differ only in **who sits where**, which is decided by crystal-field stabilisation (Ni²⁺ d⁸ prefers octahedral sites) and decides whether the solid is ferrimagnetic.",
+  ];
+  const col = (k: "A" | "B") => (k === "A" ? "#f2b13f" : "#9a84e6");
+  return (
+    <div className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5">
+      <div className="flex flex-wrap items-center gap-3">
+        <div className="text-sm font-bold tracking-[0.14em] text-[var(--accent)]">SPINEL: WHO FILLS WHICH HOLE</div>
+        <div className="ml-auto"><Tabs label="Spinel type" value={kind} onChange={(v) => { setKind(v); tour.set(4); }} items={[["normal", "Normal A[B₂]O₄"], ["inverse", "Inverse B[AB]O₄"]] as const} /></div>
+      </div>
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Spinel: 4 oxide ions with 8 tetrahedral and 4 octahedral holes; cations fill 1 and 2 of them" className="w-full rounded-xl border border-white/10" style={{ background: "radial-gradient(120% 90% at 50% 15%, #17433f 0%, #0c1f1e 55%, #060f0f 100%)" }}>
+        <text x={14} y={22} fill="#b8cbc7" fontSize={13}>4 O²⁻ in a close-packed array</text>
+        {oX.map((x, i) => <circle key={i} cx={x} cy={62} r={30} fill="#4c9be8" stroke="#0a1b2e" strokeWidth={2} />)}
+        {oX.map((x, i) => <text key={`t${i}`} x={x} y={67} textAnchor="middle" fill="#fff" fontSize={13} fontWeight={700}>O²⁻</text>)}
+        <text x={14} y={128} fill="#b8cbc7" fontSize={13}>8 tetrahedral holes (1 of 8 filled)</text>
+        {slotsT.map((s, i) => <polygon key={i} points={`${s.x},${s.y - 17} ${s.x - 17},${s.y + 14} ${s.x + 17},${s.y + 14}`} fill="none" stroke="#e8607a" strokeWidth={2} strokeDasharray="4 3" />)}
+        <text x={14} y={222} fill="#b8cbc7" fontSize={13}>4 octahedral holes (2 of 4 filled)</text>
+        {slotsO.map((s, i) => <rect key={i} x={s.x - 18} y={s.y - 18} width={36} height={36} fill="none" stroke="#e8e8e0" strokeWidth={2} strokeDasharray="4 3" />)}
+        {ions.map((ion, i) => {
+          const on = shown(i);
+          return (
+            <g key={ion.id} style={{ transform: `translate(${ion.slot.x}px, ${on ? ion.slot.y : ion.slot.y - 150}px)`, opacity: on ? 1 : 0, transition: "transform 900ms cubic-bezier(.2,.8,.2,1), opacity 400ms" }}>
+              <circle r={14} fill={col(ion.kind)} stroke="#0a0a0a" strokeWidth={2} />
+              <text y={5} textAnchor="middle" fontSize={12} fontWeight={800} fill="#10110f">{ion.kind}</text>
+            </g>
+          );
+        })}
+        <text x={W - 14} y={H - 12} textAnchor="end" fill="#b8cbc7" fontSize={12}>Tetrahedral {step >= 1 ? 1 : 0}/8 filled · Octahedral {Math.max(0, Math.min(2, step - 1))}/4 filled</text>
+      </svg>
+      <Narration k={`${kind}-${step}`}>
+        <Rich text={says[Math.min(step, 4)]} />
+      </Narration>
+      <div className="flex flex-wrap items-center gap-3">
+        <Btn primary onClick={tour.play}>▶ Fill the holes</Btn>
+        <Btn onClick={() => tour.set(Math.max(0, step - 1))}>◀ Back</Btn>
+        <Btn onClick={() => tour.set(Math.min(4, step + 1))}>Next ▶</Btn>
+        <span className="text-sm text-[var(--text-muted)]">Step {Math.min(step, 4) + 1} of 5</span>
+      </div>
     </div>
   );
 }
@@ -168,6 +289,7 @@ export function WestChapter() {
         result="t = \dfrac{r_A+r_O}{\sqrt{2}\,(r_B+r_O)}"
         note="Worked check, SrTiO₃ (r_Sr = 1.44 Å, r_Ti = 0.605 Å, r_O = 1.40 Å): t = 2.84 / (1.414 × 2.005) = 1.00, ideal cubic."
       />
+      <PerovskiteLab />
       <ToleranceLab />
       <KeyIdea title="Why BaTiO₃ is ferroelectric">
         {"For BaTiO₃ $t$ is slightly above 1: the Ti⁴⁺ ion is a little too small for its octahedral hole, so it sits off-centre. Two or more off-centre positions of equal energy give a permanent **electric dipole** that can be reversed by a field: this is **ferroelectricity**, and it is why BaTiO₃ is used in capacitors."}
@@ -189,6 +311,7 @@ export function WestChapter() {
         result="\text{normal: } \mathrm{A}[\mathrm{B}_2]\mathrm{O}_4 ;\qquad \text{inverse: } \mathrm{B}[\mathrm{AB}]\mathrm{O}_4"
         note="Which form wins depends on crystal-field stabilisation energy: ions with a large preference for octahedral sites (Ni²⁺ d⁸, Cr³⁺ d³) push themselves into octahedral voids, forcing Fe³⁺ (d⁵, no preference) into the tetrahedral holes."
       />
+      <SpinelLab />
       <div className="grid gap-4 md:grid-cols-2">
         <Worked
           q="Fe₃O₄ is an inverse spinel. Write its cation arrangement and estimate its magnetic moment per formula unit (spin only)."

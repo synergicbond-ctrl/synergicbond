@@ -113,3 +113,8 @@ Original-wording extras inspired by a university solid-state course (Kröger–V
 - `DiamondTwoFcc` (`lab/s_network.tsx`, derivation 9.1): diamond/zinc blende as two identical fcc lattices shifted by ¼ of the body diagonal; 6-step animation, final colours switch between diamond and ZnS. Source: handwritten notes p.52–53 (packing fraction, "two interpenetrating fcc structures displaced by ¼ of the long diagonal").
 - `FccFromLayers` (`lab/s_packing.tsx`, after `FccAlong111`): one fcc cell from 3 square layers (A B A, CN 4+4+4) or 4 hexagonal layers (A B C A, CN 3+6+3) with computed neighbour counts and a stacking-result table (AAA sc, ABAB-open bcc, ABA fcc, ABAB hcp, ABC fcc). Source: notes p.44 and p.31–35.
 - Derivations in Part 9 are now 9.1–9.6 (9.1 is the new two-fcc one). Part 9 questions: 41 (`_netq.ts`), 350 questions in total.
+
+## More 3D/animated labs (last pass)
+- Part 8 (`s_west.tsx`): `PerovskiteLab` (6-step 3D build of ABO3 with BO6 octahedron and 12-coordination of A) and `SpinelLab` (SVG animation of cations dropping into 1/8 tetrahedral and 1/2 octahedral holes; normal vs inverse).
+- Part 9 (`s_network.tsx`): `IcosahedronLab` (B12 atoms/bonds, 20 faces slider with Euler check, B11C) and `C60Lab` (truncated icosahedron from computed vertices; pentagon/hexagon sliders, V−E+F). Geometry helpers `cyc`, `edgesOf`, `faceAround`.
+- Part 9 questions: 45 (`_netq.ts`); 354 questions in total.

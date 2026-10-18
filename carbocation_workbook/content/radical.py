@@ -205,5 +205,7 @@ def build(B):
     q(16, "An optically active alkane R<sup>1</sup>R<sup>2</sup>R<sup>3</sup>C–H is brominated at the stereocentre by NBS. What is the stereochemical outcome?",
       None, "racemic bromide", "The radical formed at the stereocentre is planar (or rapidly inverting), so Br<sub>2</sub> attacks from either face with equal probability.")
     adv.problems(B, q)
+    from . import exam_extra
+    exam_extra.add("FR", q)
     B.answers(qs, with_stem=True)
     return qs

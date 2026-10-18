@@ -101,5 +101,7 @@ def build(B):
     q(10, "Why is the triplet the ground state for most nitrenes?",
       None, "two degenerate p orbitals each hold one electron (Hund’s rule)", "In R–N: the two non-bonding p orbitals on nitrogen are degenerate (cylindrical symmetry about the R–N axis), so the lowest-energy arrangement places one electron in each with parallel spins, exactly as in O<sub>2</sub> or the NH radical.")
     adv.problems(B, q)
+    from . import exam_extra
+    exam_extra.add("NI", q)
     B.answers(qs, with_stem=True)
     return qs

@@ -196,5 +196,7 @@ def build(B):
       None, "A–R; B–Q; C–P; D–S",
       "Soda lime gives CH<sub>3</sub><sup>−</sup> from acetate; CHCl<sub>3</sub>/KOH gives CCl<sub>3</sub><sup>−</sup> and then dichlorocarbene; base + carbonyl gives the enolate for the aldol; NaNH<sub>2</sub> deprotonates a terminal alkyne.")
     adv.problems(B, q)
+    from . import exam_extra
+    exam_extra.add("CA", q)
     B.answers(qs, with_stem=True)
     return qs

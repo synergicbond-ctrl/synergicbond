@@ -110,5 +110,7 @@ def build(B):
     q(10, "Compare benzyne with the other reactive intermediates: how many π electrons in the ring, and is it charged?",
       None, "6π (aromatic) + 2 electrons in the extra in-plane bond; neutral", "Benzyne has all electrons paired, no charge and no unpaired electrons; the unusual reactivity arises from strain and from the low-lying in-plane LUMO.")
     adv.problems(B, q)
+    from . import exam_extra
+    exam_extra.add("BZ", q)
     B.answers(qs, with_stem=True)
     return qs

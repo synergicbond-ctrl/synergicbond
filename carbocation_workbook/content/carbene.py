@@ -129,5 +129,7 @@ def build(B):
     q(12, "A stable, crystalline carbene is made from an imidazolium salt and a base. Which features make it stable?",
       S([("", "CC(C)c1cccc(C(C)C)c1N1C=CN(c2c(C(C)C)cccc2C(C)C)[C]1")]), "two π-donating N atoms and bulky N-substituents", "The two nitrogen lone pairs donate into the empty p orbital (singlet stabilised, amidine-like resonance) and the σ-withdrawing N atoms lower the σ lone pair energy; the large aryl groups prevent dimerisation to the tetraaminoethylene. Arduengo (1991).")
     adv.problems(B, q)
+    from . import exam_extra
+    exam_extra.add("CE", q)
     B.answers(qs, with_stem=True)
     return qs

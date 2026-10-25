@@ -1,0 +1,31 @@
+<h3 id="s35">32. Sources cross-checked</h3>
+<p>This chapter was written from first principles and checked against the books below. The books were used only to confirm facts, find topics and problem types; all explanations and problems here are original.</p>
+<div class="fig"><table class="ct"><thead><tr><th>Source (opened during the writing of this chapter)</th><th>What was used</th></tr></thead><tbody><tr><td>Clayden, Greeves, Warren, <i>Organic Chemistry</i> (OUP, 2012), the chapter on acidity and pK<sub>a</sub> values</td><td>confirmed the pK<sub>a</sub> anchors for ethanol (15.9) and acetic acid (4.8) and the explanation of the ≈ 10<sup>10</sup>-fold difference by delocalisation in the carboxylate</td></tr><tr><td>M. S. Chouhan, <i>Advanced Problems in Organic Chemistry</i> (16th ed.), the carboxylic acid and derivatives problem sections</td><td>scanned to see the kinds of questions set: carbonate/bicarbonate effervescence tests, solubility trends of diacids, which diacid is unaffected by heating, Dieckmann ring-size questions, Hofmann-type treatment of phthalamide and imides</td></tr><tr><td>Chemistry data compiled in this chapter (pK<sub>a</sub>, boiling points, mp)</td><td>standard reference values (approximate; rounded as in textbooks)</td></tr></tbody></table></div>
+<p>Quantities that depend on measured constants (pK<sub>a</sub> values, boiling points, melting points, K<sub>c</sub> = 4 for the ethanol/acetic acid esterification, σ and ρ values in the Hammett problem) are literature values rounded to the precision at which exams use them.</p>
+<h4>What the verification script checked</h4>
+<ul>
+<li>Every structure in the text and in the figures parses and every molecular formula and molar mass quoted for a named compound was recomputed (aspirin, ethyl acetoacetate, the Dieckmann product, lactide, benzocaine, tristearin, triolein, oleic and linoleic acids, barbital, barbituric acid, coumarin, phenolphthalein, benzilic acid, urea nitrate, and others).</li>
+<li>CIP labels were recomputed for the three tartaric acid stereoisomers, (S)-2-methylbutanoic acid and its Hofmann/Curtius product, 2-phenylpropanoic acid and its amine, the E/Z geometry of crotonic, isocrotonic, cinnamic and α-methyl-cinnamic acids and of acetophenone oxime, and the dibromosuccinic acid enantiomer.</li>
+<li>Stereoisomer counts (tartaric 3, dibromosuccinic 3, lactide 3, lactic 2, citric achiral, sec-butyl methanoate 2) and constitutional isomer counts (C<sub>4</sub>H<sub>8</sub>O<sub>2</sub>: 2 acids + 4 esters; C<sub>5</sub>H<sub>10</sub>O<sub>2</sub>: 4 acids, 9 esters) were enumerated by program.</li>
+<li>All numerical answers (pH, buffer, α, K<sub>c</sub> and yields, titrations, saponification and iodine values, Kolbe volumes, kinetic constants, Hammett factors, polymer masses, silver-salt and colligative analyses) were recalculated.</li>
+</ul>
+<h4>Not verified here</h4>
+<ul>
+<li>The pK<sub>a</sub>, boiling-point, and melting-point values themselves are recalled from standard tables (spot-checked only for ethanol and acetic acid); treat them as ±0.1 pK<sub>a</sub> unit and a few °C.</li>
+<li>Qualitative statements about reaction conditions (temperatures, yields, catalysts) come from standard textbook practice and were not experimentally checked.</li>
+<li>The mapping of these topics onto particular past JEE Advanced papers was not done paper by paper in this chapter.</li>
+</ul></section>
+</main>
+<script>
+const q=document.getElementById('q'),links=[...document.querySelectorAll('#nav a')];
+q.addEventListener('input',()=>{const v=q.value.toLowerCase();links.forEach(a=>a.style.display=a.dataset.t.includes(v)?'':'none')});
+const ds=()=>[...document.querySelectorAll('details')];
+document.getElementById('open').onclick=()=>ds().forEach(d=>d.open=true);
+document.getElementById('close').onclick=()=>ds().forEach(d=>d.open=false);
+window.addEventListener('beforeprint',()=>ds().forEach(d=>d.open=true));
+const secs=[...document.querySelectorAll('section')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>

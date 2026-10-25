@@ -1,0 +1,1019 @@
+{
+ "file": "15_Named_Reactions.html",
+ "partition_level": 3,
+ "sections_total": 112,
+ "sections_passed": 112,
+ "svg_in_sections": 589,
+ "svg_in_file": 589,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "15_Named_Reactions:named-reactions-rearrangements-and-reage/heading001",
+   "title": "Named Reactions, Rearrangements and Reagents",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 1,
+   "heading_id": "15_Named_Reactions:how-to-use-this-chapter/heading001",
+   "title": "How to use this chapter",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 2,
+   "heading_id": "15_Named_Reactions:part-a-carbon-carbon-bond-formation-coup/heading001",
+   "title": "Part A. Carbon–carbon bond formation (coupling and organometallics)",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 3,
+   "heading_id": "15_Named_Reactions:1-wurtz-reaction-alkane-synthesis/heading001",
+   "title": "1. Wurtz reaction (alkane synthesis)",
+   "dir": "003",
+   "pass": true,
+   "svg": 9,
+   "blocks": 16
+  },
+  {
+   "order": 4,
+   "heading_id": "15_Named_Reactions:2-wurtz-fittig-and-fittig-reactions-aryl/heading001",
+   "title": "2. Wurtz–Fittig and Fittig reactions (aryl–alkyl and aryl–aryl)",
+   "dir": "004",
+   "pass": true,
+   "svg": 6,
+   "blocks": 9
+  },
+  {
+   "order": 5,
+   "heading_id": "15_Named_Reactions:3-ullmann-reaction/heading001",
+   "title": "3. Ullmann reaction",
+   "dir": "005",
+   "pass": true,
+   "svg": 3,
+   "blocks": 4
+  },
+  {
+   "order": 6,
+   "heading_id": "15_Named_Reactions:4-kolbe-electrolysis-anodic-decarboxylat/heading001",
+   "title": "4. Kolbe electrolysis (anodic decarboxylative dimerisation)",
+   "dir": "006",
+   "pass": true,
+   "svg": 13,
+   "blocks": 15
+  },
+  {
+   "order": 7,
+   "heading_id": "15_Named_Reactions:5-corey-house-synthesis-lithium-dialkylc/heading001",
+   "title": "5. Corey–House synthesis (lithium dialkylcuprate coupling)",
+   "dir": "007",
+   "pass": true,
+   "svg": 4,
+   "blocks": 10
+  },
+  {
+   "order": 8,
+   "heading_id": "15_Named_Reactions:6-grignard-reaction-r-mgx-as-a-carbon-nu/heading001",
+   "title": "6. Grignard reaction (R–MgX as a carbon nucleophile)",
+   "dir": "008",
+   "pass": true,
+   "svg": 23,
+   "blocks": 28
+  },
+  {
+   "order": 9,
+   "heading_id": "15_Named_Reactions:7-friedel-crafts-alkylation-and-acylatio/heading001",
+   "title": "7. Friedel–Crafts alkylation and acylation",
+   "dir": "009",
+   "pass": true,
+   "svg": 15,
+   "blocks": 18
+  },
+  {
+   "order": 10,
+   "heading_id": "15_Named_Reactions:part-b-carbonyl-condensation-reactions/heading001",
+   "title": "Part B. Carbonyl condensation reactions",
+   "dir": "010",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 11,
+   "heading_id": "15_Named_Reactions:8-aldol-addition-and-condensation/heading001",
+   "title": "8. Aldol addition and condensation",
+   "dir": "011",
+   "pass": true,
+   "svg": 14,
+   "blocks": 24
+  },
+  {
+   "order": 12,
+   "heading_id": "15_Named_Reactions:9-claisen-schmidt-crossed-aldol-with-an-/heading001",
+   "title": "9. Claisen–Schmidt (crossed aldol with an aromatic aldehyde)",
+   "dir": "012",
+   "pass": true,
+   "svg": 10,
+   "blocks": 14
+  },
+  {
+   "order": 13,
+   "heading_id": "15_Named_Reactions:10-perkin-reaction/heading001",
+   "title": "10. Perkin reaction",
+   "dir": "013",
+   "pass": true,
+   "svg": 8,
+   "blocks": 9
+  },
+  {
+   "order": 14,
+   "heading_id": "15_Named_Reactions:11-knoevenagel-condensation/heading001",
+   "title": "11. Knoevenagel condensation",
+   "dir": "014",
+   "pass": true,
+   "svg": 8,
+   "blocks": 9
+  },
+  {
+   "order": 15,
+   "heading_id": "15_Named_Reactions:12-benzoin-condensation/heading001",
+   "title": "12. Benzoin condensation",
+   "dir": "015",
+   "pass": true,
+   "svg": 5,
+   "blocks": 9
+  },
+  {
+   "order": 16,
+   "heading_id": "15_Named_Reactions:13-cannizzaro-reaction-and-crossed-canni/heading001",
+   "title": "13. Cannizzaro reaction (and crossed Cannizzaro, Tishchenko)",
+   "dir": "016",
+   "pass": true,
+   "svg": 13,
+   "blocks": 16
+  },
+  {
+   "order": 17,
+   "heading_id": "15_Named_Reactions:14-michael-addition-conjugate-1-4-additi/heading001",
+   "title": "14. Michael addition (conjugate, 1,4-addition)",
+   "dir": "017",
+   "pass": true,
+   "svg": 8,
+   "blocks": 10
+  },
+  {
+   "order": 18,
+   "heading_id": "15_Named_Reactions:15-robinson-annulation-michael-then-intr/heading001",
+   "title": "15. Robinson annulation (Michael then intramolecular aldol)",
+   "dir": "018",
+   "pass": true,
+   "svg": 5,
+   "blocks": 9
+  },
+  {
+   "order": 19,
+   "heading_id": "15_Named_Reactions:16-mannich-reaction/heading001",
+   "title": "16. Mannich reaction",
+   "dir": "019",
+   "pass": true,
+   "svg": 8,
+   "blocks": 5
+  },
+  {
+   "order": 20,
+   "heading_id": "15_Named_Reactions:17-claisen-condensation-ester-condensati/heading001",
+   "title": "17. Claisen condensation (ester condensation)",
+   "dir": "020",
+   "pass": true,
+   "svg": 12,
+   "blocks": 11
+  },
+  {
+   "order": 21,
+   "heading_id": "15_Named_Reactions:18-dieckmann-condensation-intramolecular/heading001",
+   "title": "18. Dieckmann condensation (intramolecular Claisen)",
+   "dir": "021",
+   "pass": true,
+   "svg": 3,
+   "blocks": 8
+  },
+  {
+   "order": 22,
+   "heading_id": "15_Named_Reactions:19-acetoacetic-ester-and-malonic-ester-s/heading001",
+   "title": "19. Acetoacetic ester and malonic ester syntheses (alkylation of active methylene)",
+   "dir": "022",
+   "pass": true,
+   "svg": 8,
+   "blocks": 15
+  },
+  {
+   "order": 23,
+   "heading_id": "15_Named_Reactions:20-kinetic-and-thermodynamic-enolates-re/heading001",
+   "title": "20. Kinetic and thermodynamic enolates (regioselective enolate alkylation)",
+   "dir": "023",
+   "pass": true,
+   "svg": 4,
+   "blocks": 10
+  },
+  {
+   "order": 24,
+   "heading_id": "15_Named_Reactions:21-wittig-reaction-c-o-c-c/heading001",
+   "title": "21. Wittig reaction (C=O → C=C)",
+   "dir": "024",
+   "pass": true,
+   "svg": 10,
+   "blocks": 15
+  },
+  {
+   "order": 25,
+   "heading_id": "15_Named_Reactions:22-darzens-glycidic-ester-condensation/heading001",
+   "title": "22. Darzens glycidic ester condensation",
+   "dir": "025",
+   "pass": true,
+   "svg": 5,
+   "blocks": 8
+  },
+  {
+   "order": 26,
+   "heading_id": "15_Named_Reactions:23-reformatsky-reaction/heading001",
+   "title": "23. Reformatsky reaction",
+   "dir": "026",
+   "pass": true,
+   "svg": 5,
+   "blocks": 5
+  },
+  {
+   "order": 27,
+   "heading_id": "15_Named_Reactions:24-haloform-reaction-iodoform-and-chloro/heading001",
+   "title": "24. Haloform reaction (iodoform and chloroform tests)",
+   "dir": "027",
+   "pass": true,
+   "svg": 3,
+   "blocks": 13
+  },
+  {
+   "order": 28,
+   "heading_id": "15_Named_Reactions:25-pinacol-coupling-reductive-dimerisati/heading001",
+   "title": "25. Pinacol coupling (reductive dimerisation of ketones)",
+   "dir": "028",
+   "pass": true,
+   "svg": 3,
+   "blocks": 4
+  },
+  {
+   "order": 29,
+   "heading_id": "15_Named_Reactions:26-meerwein-ponndorf-verley-reduction-an/heading001",
+   "title": "26. Meerwein–Ponndorf–Verley reduction and Oppenauer oxidation",
+   "dir": "029",
+   "pass": true,
+   "svg": 4,
+   "blocks": 8
+  },
+  {
+   "order": 30,
+   "heading_id": "15_Named_Reactions:part-c-named-reactions-on-aromatic-rings/heading001",
+   "title": "Part C. Named reactions on aromatic rings",
+   "dir": "030",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 31,
+   "heading_id": "15_Named_Reactions:27-reimer-tiemann-reaction-ortho-formyla/heading001",
+   "title": "27. Reimer–Tiemann reaction (ortho-formylation of phenols)",
+   "dir": "031",
+   "pass": true,
+   "svg": 6,
+   "blocks": 10
+  },
+  {
+   "order": 32,
+   "heading_id": "15_Named_Reactions:28-kolbe-schmitt-reaction-carboxylation-/heading001",
+   "title": "28. Kolbe–Schmitt reaction (carboxylation of phenoxide)",
+   "dir": "032",
+   "pass": true,
+   "svg": 6,
+   "blocks": 5
+  },
+  {
+   "order": 33,
+   "heading_id": "15_Named_Reactions:29-gattermann-koch-and-gattermann-formyl/heading001",
+   "title": "29. Gattermann–Koch and Gattermann formylation; Houben–Hoesch ketone synthesis; Vilsmeier–Haack",
+   "dir": "033",
+   "pass": true,
+   "svg": 9,
+   "blocks": 12
+  },
+  {
+   "order": 34,
+   "heading_id": "15_Named_Reactions:30-etard-reaction-methylarene-aldehyde/heading001",
+   "title": "30. Etard reaction (methylarene → aldehyde)",
+   "dir": "034",
+   "pass": true,
+   "svg": 2,
+   "blocks": 4
+  },
+  {
+   "order": 35,
+   "heading_id": "15_Named_Reactions:31-lederer-manasse-reaction-hydroxymethy/heading001",
+   "title": "31. Lederer–Manasse reaction (hydroxymethylation of phenol)",
+   "dir": "035",
+   "pass": true,
+   "svg": 2,
+   "blocks": 3
+  },
+  {
+   "order": 36,
+   "heading_id": "15_Named_Reactions:32-diazotisation-and-the-sandmeyer-gatte/heading001",
+   "title": "32. Diazotisation and the Sandmeyer, Gattermann, Balz–Schiemann and related replacements",
+   "dir": "036",
+   "pass": true,
+   "svg": 10,
+   "blocks": 17
+  },
+  {
+   "order": 37,
+   "heading_id": "15_Named_Reactions:33-azo-coupling/heading001",
+   "title": "33. Azo coupling",
+   "dir": "037",
+   "pass": true,
+   "svg": 6,
+   "blocks": 5
+  },
+  {
+   "order": 38,
+   "heading_id": "15_Named_Reactions:34-dow-process-and-cumene-process-phenol/heading001",
+   "title": "34. Dow process and cumene process (phenol manufacture)",
+   "dir": "038",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 39,
+   "heading_id": "15_Named_Reactions:part-d-functional-group-interconversion/heading001",
+   "title": "Part D. Functional-group interconversion",
+   "dir": "039",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 40,
+   "heading_id": "15_Named_Reactions:35-finkelstein-and-swarts-reactions-halo/heading001",
+   "title": "35. Finkelstein and Swarts reactions (halogen exchange)",
+   "dir": "040",
+   "pass": true,
+   "svg": 6,
+   "blocks": 10
+  },
+  {
+   "order": 41,
+   "heading_id": "15_Named_Reactions:36-hunsdiecker-reaction-decarboxylative-/heading001",
+   "title": "36. Hunsdiecker reaction (decarboxylative bromination)",
+   "dir": "041",
+   "pass": true,
+   "svg": 5,
+   "blocks": 4
+  },
+  {
+   "order": 42,
+   "heading_id": "15_Named_Reactions:37-hell-volhard-zelinsky-hvz-halogenatio/heading001",
+   "title": "37. Hell–Volhard–Zelinsky (HVZ) α-halogenation of acids",
+   "dir": "042",
+   "pass": true,
+   "svg": 6,
+   "blocks": 10
+  },
+  {
+   "order": 43,
+   "heading_id": "15_Named_Reactions:38-gabriel-phthalimide-synthesis-primary/heading001",
+   "title": "38. Gabriel phthalimide synthesis (primary amines only)",
+   "dir": "043",
+   "pass": true,
+   "svg": 7,
+   "blocks": 9
+  },
+  {
+   "order": 44,
+   "heading_id": "15_Named_Reactions:39-hinsberg-test-and-carbylamine-isocyan/heading001",
+   "title": "39. Hinsberg test and carbylamine (isocyanide) reaction",
+   "dir": "044",
+   "pass": true,
+   "svg": 9,
+   "blocks": 7
+  },
+  {
+   "order": 45,
+   "heading_id": "15_Named_Reactions:40-williamson-ether-synthesis/heading001",
+   "title": "40. Williamson ether synthesis",
+   "dir": "045",
+   "pass": true,
+   "svg": 10,
+   "blocks": 10
+  },
+  {
+   "order": 46,
+   "heading_id": "15_Named_Reactions:41-lucas-test-and-victor-meyer-test-clas/heading001",
+   "title": "41. Lucas test and Victor Meyer test (classifying alcohols)",
+   "dir": "046",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 47,
+   "heading_id": "15_Named_Reactions:42-rosenmund-reduction-and-stephen-react/heading001",
+   "title": "42. Rosenmund reduction and Stephen reaction (to aldehydes)",
+   "dir": "047",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 48,
+   "heading_id": "15_Named_Reactions:43-clemmensen-and-wolff-kishner-reductio/heading001",
+   "title": "43. Clemmensen and Wolff–Kishner reductions (C=O → CH 2 )",
+   "dir": "048",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 49,
+   "heading_id": "15_Named_Reactions:44-birch-reduction-arene-1-4-cyclohexadi/heading001",
+   "title": "44. Birch reduction (arene → 1,4-cyclohexadiene)",
+   "dir": "049",
+   "pass": true,
+   "svg": 8,
+   "blocks": 8
+  },
+  {
+   "order": 50,
+   "heading_id": "15_Named_Reactions:45-alkyne-and-alkene-reductions-with-a-n/heading001",
+   "title": "45. Alkyne and alkene reductions with a name: Lindlar, Na/NH 3 , Sabatier–Senderens",
+   "dir": "050",
+   "pass": true,
+   "svg": 4,
+   "blocks": 9
+  },
+  {
+   "order": 51,
+   "heading_id": "15_Named_Reactions:46-kiliani-fischer-ruff-and-wohl-changin/heading001",
+   "title": "46. Kiliani–Fischer, Ruff and Wohl (changing the length of a sugar chain)",
+   "dir": "051",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 52,
+   "heading_id": "15_Named_Reactions:47-schotten-baumann-reaction-acylation-o/heading001",
+   "title": "47. Schotten–Baumann reaction (acylation of amines, alcohols, phenols)",
+   "dir": "052",
+   "pass": true,
+   "svg": 6,
+   "blocks": 5
+  },
+  {
+   "order": 53,
+   "heading_id": "15_Named_Reactions:48-appel-and-mitsunobu-reactions-alcohol/heading001",
+   "title": "48. Appel and Mitsunobu reactions (alcohol to halide or ester with inversion)",
+   "dir": "053",
+   "pass": true,
+   "svg": 4,
+   "blocks": 7
+  },
+  {
+   "order": 54,
+   "heading_id": "15_Named_Reactions:49-named-qualitative-tests-of-organic-an/heading001",
+   "title": "49. Named qualitative tests of organic analysis",
+   "dir": "054",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 55,
+   "heading_id": "15_Named_Reactions:part-e-rearrangements/heading001",
+   "title": "Part E. Rearrangements",
+   "dir": "055",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 56,
+   "heading_id": "15_Named_Reactions:50-pinacol-pinacolone-rearrangement/heading001",
+   "title": "50. Pinacol–pinacolone rearrangement",
+   "dir": "056",
+   "pass": true,
+   "svg": 8,
+   "blocks": 16
+  },
+  {
+   "order": 57,
+   "heading_id": "15_Named_Reactions:51-semipinacol-rearrangements-and-the-ti/heading001",
+   "title": "51. Semipinacol rearrangements and the Tiffeneau–Demjanov ring expansion",
+   "dir": "057",
+   "pass": true,
+   "svg": 2,
+   "blocks": 4
+  },
+  {
+   "order": 58,
+   "heading_id": "15_Named_Reactions:52-wagner-meerwein-rearrangement-and-car/heading001",
+   "title": "52. Wagner–Meerwein rearrangement and carbocation rearrangements",
+   "dir": "058",
+   "pass": true,
+   "svg": 5,
+   "blocks": 5
+  },
+  {
+   "order": 59,
+   "heading_id": "15_Named_Reactions:53-dienone-phenol-rearrangement/heading001",
+   "title": "53. Dienone–phenol rearrangement",
+   "dir": "059",
+   "pass": true,
+   "svg": 2,
+   "blocks": 4
+  },
+  {
+   "order": 60,
+   "heading_id": "15_Named_Reactions:54-hofmann-bromamide-hofmann-degradation/heading001",
+   "title": "54. Hofmann bromamide (Hofmann degradation) rearrangement",
+   "dir": "060",
+   "pass": true,
+   "svg": 6,
+   "blocks": 15
+  },
+  {
+   "order": 61,
+   "heading_id": "15_Named_Reactions:55-curtius-schmidt-and-lossen-rearrangem/heading001",
+   "title": "55. Curtius, Schmidt and Lossen rearrangements",
+   "dir": "061",
+   "pass": true,
+   "svg": 15,
+   "blocks": 12
+  },
+  {
+   "order": 62,
+   "heading_id": "15_Named_Reactions:56-beckmann-rearrangement/heading001",
+   "title": "56. Beckmann rearrangement",
+   "dir": "062",
+   "pass": true,
+   "svg": 8,
+   "blocks": 15
+  },
+  {
+   "order": 63,
+   "heading_id": "15_Named_Reactions:57-baeyer-villiger-oxidation-ketone-este/heading001",
+   "title": "57. Baeyer–Villiger oxidation (ketone → ester, cyclic ketone → lactone)",
+   "dir": "063",
+   "pass": true,
+   "svg": 14,
+   "blocks": 18
+  },
+  {
+   "order": 64,
+   "heading_id": "15_Named_Reactions:58-dakin-oxidation-and-the-cumene-hock-r/heading001",
+   "title": "58. Dakin oxidation and the cumene (Hock) rearrangement",
+   "dir": "064",
+   "pass": true,
+   "svg": 7,
+   "blocks": 6
+  },
+  {
+   "order": 65,
+   "heading_id": "15_Named_Reactions:59-favorskii-rearrangement/heading001",
+   "title": "59. Favorskii rearrangement",
+   "dir": "065",
+   "pass": true,
+   "svg": 9,
+   "blocks": 10
+  },
+  {
+   "order": 66,
+   "heading_id": "15_Named_Reactions:60-wolff-rearrangement-and-the-arndt-eis/heading001",
+   "title": "60. Wolff rearrangement and the Arndt–Eistert homologation",
+   "dir": "066",
+   "pass": true,
+   "svg": 9,
+   "blocks": 10
+  },
+  {
+   "order": 67,
+   "heading_id": "15_Named_Reactions:61-benzilic-acid-rearrangement/heading001",
+   "title": "61. Benzilic acid rearrangement",
+   "dir": "067",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 68,
+   "heading_id": "15_Named_Reactions:62-claisen-rearrangement-3-3-sigmatropic/heading001",
+   "title": "62. Claisen rearrangement ([3,3]-sigmatropic)",
+   "dir": "068",
+   "pass": true,
+   "svg": 8,
+   "blocks": 11
+  },
+  {
+   "order": 69,
+   "heading_id": "15_Named_Reactions:63-cope-and-oxy-cope-rearrangements/heading001",
+   "title": "63. Cope and oxy-Cope rearrangements",
+   "dir": "069",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 70,
+   "heading_id": "15_Named_Reactions:64-fries-rearrangement/heading001",
+   "title": "64. Fries rearrangement",
+   "dir": "070",
+   "pass": true,
+   "svg": 4,
+   "blocks": 9
+  },
+  {
+   "order": 71,
+   "heading_id": "15_Named_Reactions:65-benzidine-rearrangement-and-the-bambe/heading001",
+   "title": "65. Benzidine rearrangement (and the Bamberger, Orton, Hofmann–Martius family)",
+   "dir": "071",
+   "pass": true,
+   "svg": 10,
+   "blocks": 9
+  },
+  {
+   "order": 72,
+   "heading_id": "15_Named_Reactions:66-lobry-de-bruyn-van-ekenstein-transfor/heading001",
+   "title": "66. Lobry de Bruyn–van Ekenstein transformation (sugar isomerisation)",
+   "dir": "072",
+   "pass": true,
+   "svg": 2,
+   "blocks": 4
+  },
+  {
+   "order": 73,
+   "heading_id": "15_Named_Reactions:part-f-eliminations-pericyclic-reactions/heading001",
+   "title": "Part F. Eliminations, pericyclic reactions and carbene additions",
+   "dir": "073",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 74,
+   "heading_id": "15_Named_Reactions:67-saytzeff-vs-hofmann-elimination-regio/heading001",
+   "title": "67. Saytzeff vs Hofmann elimination (regiochemistry of E2)",
+   "dir": "074",
+   "pass": true,
+   "svg": 4,
+   "blocks": 10
+  },
+  {
+   "order": 75,
+   "heading_id": "15_Named_Reactions:68-hofmann-exhaustive-methylation-and-th/heading001",
+   "title": "68. Hofmann exhaustive methylation and the Cope elimination",
+   "dir": "075",
+   "pass": true,
+   "svg": 6,
+   "blocks": 10
+  },
+  {
+   "order": 76,
+   "heading_id": "15_Named_Reactions:69-chugaev-elimination-and-acetate-pyrol/heading001",
+   "title": "69. Chugaev elimination and acetate pyrolysis (syn eliminations)",
+   "dir": "076",
+   "pass": true,
+   "svg": 4,
+   "blocks": 4
+  },
+  {
+   "order": 77,
+   "heading_id": "15_Named_Reactions:70-diels-alder-reaction-4-2-cycloadditio/heading001",
+   "title": "70. Diels–Alder reaction ([4 + 2] cycloaddition)",
+   "dir": "077",
+   "pass": true,
+   "svg": 15,
+   "blocks": 18
+  },
+  {
+   "order": 78,
+   "heading_id": "15_Named_Reactions:71-simmons-smith-reaction-and-carbene-ad/heading001",
+   "title": "71. Simmons–Smith reaction and carbene additions to alkenes",
+   "dir": "078",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 79,
+   "heading_id": "15_Named_Reactions:72-stork-enamine-alkylation/heading001",
+   "title": "72. Stork enamine alkylation",
+   "dir": "079",
+   "pass": true,
+   "svg": 9,
+   "blocks": 5
+  },
+  {
+   "order": 80,
+   "heading_id": "15_Named_Reactions:part-g-the-reagent-by-reagent-table/heading001",
+   "title": "Part G. The reagent-by-reagent table",
+   "dir": "080",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 81,
+   "heading_id": "15_Named_Reactions:g1-reducing-agents/heading001",
+   "title": "G1. Reducing agents",
+   "dir": "081",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 82,
+   "heading_id": "15_Named_Reactions:g2-oxidising-agents/heading001",
+   "title": "G2. Oxidising agents",
+   "dir": "082",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 83,
+   "heading_id": "15_Named_Reactions:g3-halogenating-and-activating-agents/heading001",
+   "title": "G3. Halogenating and activating agents",
+   "dir": "083",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 84,
+   "heading_id": "15_Named_Reactions:g4-bases-and-nucleophiles/heading001",
+   "title": "G4. Bases and nucleophiles",
+   "dir": "084",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 85,
+   "heading_id": "15_Named_Reactions:g5-acids-lewis-acids-and-special-catalys/heading001",
+   "title": "G5. Acids, Lewis acids and special catalysts",
+   "dir": "085",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 86,
+   "heading_id": "15_Named_Reactions:g6-carbonyl-derivative-and-protecting-re/heading001",
+   "title": "G6. Carbonyl-derivative and protecting reagents",
+   "dir": "086",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 87,
+   "heading_id": "15_Named_Reactions:g7-reagent-selection-matrix-from-to/heading001",
+   "title": "G7. Reagent selection matrix (from → to)",
+   "dir": "087",
+   "pass": true,
+   "svg": 0,
+   "blocks": 10
+  },
+  {
+   "order": 88,
+   "heading_id": "15_Named_Reactions:part-h-road-map-syntheses-and-structure-/heading001",
+   "title": "Part H. Road-map syntheses and structure-deduction chains",
+   "dir": "088",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 89,
+   "heading_id": "15_Named_Reactions:h1-order-of-steps-on-a-benzene-ring/heading001",
+   "title": "H1. Order of steps on a benzene ring",
+   "dir": "089",
+   "pass": true,
+   "svg": 38,
+   "blocks": 19
+  },
+  {
+   "order": 90,
+   "heading_id": "15_Named_Reactions:h2-aliphatic-routes-chain-length-and-fun/heading001",
+   "title": "H2. Aliphatic routes: chain length and functional groups",
+   "dir": "090",
+   "pass": true,
+   "svg": 38,
+   "blocks": 17
+  },
+  {
+   "order": 91,
+   "heading_id": "15_Named_Reactions:h3-structure-deduction-chains/heading001",
+   "title": "H3. Structure-deduction chains",
+   "dir": "091",
+   "pass": true,
+   "svg": 20,
+   "blocks": 25
+  },
+  {
+   "order": 92,
+   "heading_id": "15_Named_Reactions:part-i-practice-problems-330-three-level/heading001",
+   "title": "Part I. Practice problems (330, three levels, full solutions)",
+   "dir": "092",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 93,
+   "heading_id": "15_Named_Reactions:level-1-foundation-1-110/heading001",
+   "title": "Level 1. Foundation (1–110)",
+   "dir": "093",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 94,
+   "heading_id": "15_Named_Reactions:block-a-name-the-reaction/heading001",
+   "title": "Block A. Name the reaction",
+   "dir": "094",
+   "pass": true,
+   "svg": 0,
+   "blocks": 76
+  },
+  {
+   "order": 95,
+   "heading_id": "15_Named_Reactions:block-b-predict-the-product/heading001",
+   "title": "Block B. Predict the product",
+   "dir": "095",
+   "pass": true,
+   "svg": 0,
+   "blocks": 106
+  },
+  {
+   "order": 96,
+   "heading_id": "15_Named_Reactions:block-c-carbon-count-and-chain-length/heading001",
+   "title": "Block C. Carbon count and chain length",
+   "dir": "096",
+   "pass": true,
+   "svg": 0,
+   "blocks": 46
+  },
+  {
+   "order": 97,
+   "heading_id": "15_Named_Reactions:block-d-rearrangements-and-mechanisms/heading001",
+   "title": "Block D. Rearrangements and mechanisms",
+   "dir": "097",
+   "pass": true,
+   "svg": 0,
+   "blocks": 46
+  },
+  {
+   "order": 98,
+   "heading_id": "15_Named_Reactions:block-e-reagent-selection/heading001",
+   "title": "Block E. Reagent selection",
+   "dir": "098",
+   "pass": true,
+   "svg": 0,
+   "blocks": 61
+  },
+  {
+   "order": 99,
+   "heading_id": "15_Named_Reactions:level-2-main-111-230/heading001",
+   "title": "Level 2. Main (111–230)",
+   "dir": "099",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 100,
+   "heading_id": "15_Named_Reactions:block-f-mechanism-based-products/heading001",
+   "title": "Block F. Mechanism-based products",
+   "dir": "100",
+   "pass": true,
+   "svg": 3,
+   "blocks": 88
+  },
+  {
+   "order": 101,
+   "heading_id": "15_Named_Reactions:block-g-multi-step-syntheses/heading001",
+   "title": "Block G. Multi-step syntheses",
+   "dir": "101",
+   "pass": true,
+   "svg": 0,
+   "blocks": 70
+  },
+  {
+   "order": 102,
+   "heading_id": "15_Named_Reactions:block-h-stereochemistry/heading001",
+   "title": "Block H. Stereochemistry",
+   "dir": "102",
+   "pass": true,
+   "svg": 0,
+   "blocks": 49
+  },
+  {
+   "order": 103,
+   "heading_id": "15_Named_Reactions:block-i-comparisons-scope-and-limitation/heading001",
+   "title": "Block I. Comparisons, scope and limitations",
+   "dir": "103",
+   "pass": true,
+   "svg": 0,
+   "blocks": 64
+  },
+  {
+   "order": 104,
+   "heading_id": "15_Named_Reactions:block-j-numerical-problems/heading001",
+   "title": "Block J. Numerical problems",
+   "dir": "104",
+   "pass": true,
+   "svg": 0,
+   "blocks": 46
+  },
+  {
+   "order": 105,
+   "heading_id": "15_Named_Reactions:block-k-tests-and-identification/heading001",
+   "title": "Block K. Tests and identification",
+   "dir": "105",
+   "pass": true,
+   "svg": 0,
+   "blocks": 49
+  },
+  {
+   "order": 106,
+   "heading_id": "15_Named_Reactions:level-3-advanced-231-330/heading001",
+   "title": "Level 3. Advanced (231–330)",
+   "dir": "106",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 107,
+   "heading_id": "15_Named_Reactions:block-l-one-or-more-correct-options-231-/heading001",
+   "title": "Block L. One or more correct options (231–260)",
+   "dir": "107",
+   "pass": true,
+   "svg": 0,
+   "blocks": 91
+  },
+  {
+   "order": 108,
+   "heading_id": "15_Named_Reactions:block-m-integer-answer-type-261-285/heading001",
+   "title": "Block M. Integer answer type (261–285)",
+   "dir": "108",
+   "pass": true,
+   "svg": 0,
+   "blocks": 76
+  },
+  {
+   "order": 109,
+   "heading_id": "15_Named_Reactions:block-n-matrix-match-286-295/heading001",
+   "title": "Block N. Matrix match (286–295)",
+   "dir": "109",
+   "pass": true,
+   "svg": 0,
+   "blocks": 31
+  },
+  {
+   "order": 110,
+   "heading_id": "15_Named_Reactions:block-o-paragraph-based-problems-296-313/heading001",
+   "title": "Block O. Paragraph-based problems (296–313)",
+   "dir": "110",
+   "pass": true,
+   "svg": 0,
+   "blocks": 55
+  },
+  {
+   "order": 111,
+   "heading_id": "15_Named_Reactions:block-p-assertion-and-reason-314-330/heading001",
+   "title": "Block P. Assertion and reason (314–330)",
+   "dir": "111",
+   "pass": true,
+   "svg": 0,
+   "blocks": 53
+  }
+ ]
+}

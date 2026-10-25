@@ -1,0 +1,281 @@
+{
+ "file": "07_Aromatic.html",
+ "partition_level": 3,
+ "sections_total": 30,
+ "sections_passed": 30,
+ "svg_in_sections": 384,
+ "svg_in_file": 384,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "07_Aromatic:aromatic-compounds/heading001",
+   "title": "Aromatic Compounds",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 1,
+   "heading_id": "07_Aromatic:contents/heading001",
+   "title": "Contents",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 2,
+   "heading_id": "07_Aromatic:how-to-use-this-chapter/heading001",
+   "title": "How to use this chapter",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 3,
+   "heading_id": "07_Aromatic:1-benzene-the-structure-problem/heading001",
+   "title": "1. Benzene: the structure problem",
+   "dir": "003",
+   "pass": true,
+   "svg": 11,
+   "blocks": 24
+  },
+  {
+   "order": 4,
+   "heading_id": "07_Aromatic:2-aromaticity-the-criteria/heading001",
+   "title": "2. Aromaticity: the criteria",
+   "dir": "004",
+   "pass": true,
+   "svg": 19,
+   "blocks": 24
+  },
+  {
+   "order": 5,
+   "heading_id": "07_Aromatic:3-physical-properties-and-spectroscopic-/heading001",
+   "title": "3. Physical properties and spectroscopic fingerprints",
+   "dir": "005",
+   "pass": true,
+   "svg": 2,
+   "blocks": 8
+  },
+  {
+   "order": 6,
+   "heading_id": "07_Aromatic:4-nomenclature-of-benzene-derivatives/heading001",
+   "title": "4. Nomenclature of benzene derivatives",
+   "dir": "006",
+   "pass": true,
+   "svg": 6,
+   "blocks": 10
+  },
+  {
+   "order": 7,
+   "heading_id": "07_Aromatic:5-counting-isomers-of-substituted-benzen/heading001",
+   "title": "5. Counting isomers of substituted benzenes",
+   "dir": "007",
+   "pass": true,
+   "svg": 0,
+   "blocks": 8
+  },
+  {
+   "order": 8,
+   "heading_id": "07_Aromatic:6-preparation-of-benzene-and-its-simple-/heading001",
+   "title": "6. Preparation of benzene and its simple derivatives",
+   "dir": "008",
+   "pass": true,
+   "svg": 7,
+   "blocks": 12
+  },
+  {
+   "order": 9,
+   "heading_id": "07_Aromatic:7-electrophilic-aromatic-substitution-th/heading001",
+   "title": "7. Electrophilic aromatic substitution: the general mechanism",
+   "dir": "009",
+   "pass": true,
+   "svg": 7,
+   "blocks": 22
+  },
+  {
+   "order": 10,
+   "heading_id": "07_Aromatic:8-the-electrophile-in-each-reaction/heading001",
+   "title": "8. The electrophile in each reaction",
+   "dir": "010",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 11,
+   "heading_id": "07_Aromatic:9-the-eas-reactions-one-by-one/heading001",
+   "title": "9. The EAS reactions one by one",
+   "dir": "011",
+   "pass": true,
+   "svg": 75,
+   "blocks": 102
+  },
+  {
+   "order": 12,
+   "heading_id": "07_Aromatic:10-directing-and-activating-effects-the-/heading001",
+   "title": "10. Directing and activating effects: the reasons",
+   "dir": "012",
+   "pass": true,
+   "svg": 18,
+   "blocks": 46
+  },
+  {
+   "order": 13,
+   "heading_id": "07_Aromatic:11-disubstituted-benzenes-what-happens-w/heading001",
+   "title": "11. Disubstituted benzenes: what happens when two groups compete",
+   "dir": "013",
+   "pass": true,
+   "svg": 3,
+   "blocks": 29
+  },
+  {
+   "order": 14,
+   "heading_id": "07_Aromatic:12-side-chain-reactions-of-alkylbenzenes/heading001",
+   "title": "12. Side-chain reactions of alkylbenzenes",
+   "dir": "014",
+   "pass": true,
+   "svg": 30,
+   "blocks": 45
+  },
+  {
+   "order": 15,
+   "heading_id": "07_Aromatic:13-addition-and-reduction-reactions-of-t/heading001",
+   "title": "13. Addition and reduction reactions of the ring",
+   "dir": "015",
+   "pass": true,
+   "svg": 16,
+   "blocks": 23
+  },
+  {
+   "order": 16,
+   "heading_id": "07_Aromatic:14-fused-polycyclic-arenes-naphthalene-a/heading001",
+   "title": "14. Fused polycyclic arenes: naphthalene, anthracene, phenanthrene",
+   "dir": "016",
+   "pass": true,
+   "svg": 30,
+   "blocks": 45
+  },
+  {
+   "order": 17,
+   "heading_id": "07_Aromatic:15-heteroaromatic-compounds-pyrrole-fura/heading001",
+   "title": "15. Heteroaromatic compounds: pyrrole, furan, thiophene, pyridine",
+   "dir": "017",
+   "pass": true,
+   "svg": 48,
+   "blocks": 52
+  },
+  {
+   "order": 18,
+   "heading_id": "07_Aromatic:16-nucleophilic-aromatic-substitution-sn/heading001",
+   "title": "16. Nucleophilic aromatic substitution (SNAr)",
+   "dir": "018",
+   "pass": true,
+   "svg": 14,
+   "blocks": 27
+  },
+  {
+   "order": 19,
+   "heading_id": "07_Aromatic:17-benzyne-elimination-addition/heading001",
+   "title": "17. Benzyne: elimination–addition",
+   "dir": "019",
+   "pass": true,
+   "svg": 11,
+   "blocks": 14
+  },
+  {
+   "order": 20,
+   "heading_id": "07_Aromatic:18-diazonium-salts-a-synthetic-hub/heading001",
+   "title": "18. Diazonium salts: a synthetic hub",
+   "dir": "020",
+   "pass": true,
+   "svg": 6,
+   "blocks": 11
+  },
+  {
+   "order": 21,
+   "heading_id": "07_Aromatic:19-multistep-synthesis-of-substituted-be/heading001",
+   "title": "19. Multistep synthesis of substituted benzenes: how to plan",
+   "dir": "021",
+   "pass": true,
+   "svg": 20,
+   "blocks": 33
+  },
+  {
+   "order": 22,
+   "heading_id": "07_Aromatic:20-revision-sheets/heading001",
+   "title": "20. Revision sheets",
+   "dir": "022",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 23,
+   "heading_id": "07_Aromatic:part-e-practice-problems-with-full-solut/heading001",
+   "title": "Part E. Practice problems (with full solutions)",
+   "dir": "023",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 24,
+   "heading_id": "07_Aromatic:level-1-main-single-concept-direct-appli/heading001",
+   "title": "Level 1: Main (single concept, direct application)",
+   "dir": "024",
+   "pass": true,
+   "svg": 4,
+   "blocks": 265
+  },
+  {
+   "order": 25,
+   "heading_id": "07_Aromatic:level-2-advanced-multi-correct-multi-ste/heading001",
+   "title": "Level 2: Advanced (multi-correct, multi-step products, mechanisms, comparison)",
+   "dir": "025",
+   "pass": true,
+   "svg": 28,
+   "blocks": 304
+  },
+  {
+   "order": 26,
+   "heading_id": "07_Aromatic:level-3-advanced-integer-answers-matrix-/heading001",
+   "title": "Level 3: Advanced (integer answers, matrix match, paragraphs, puzzles)",
+   "dir": "026",
+   "pass": true,
+   "svg": 17,
+   "blocks": 382
+  },
+  {
+   "order": 27,
+   "heading_id": "07_Aromatic:21-extra-topics-found-in-the-source-cros/heading001",
+   "title": "21. Extra topics found in the source cross-check",
+   "dir": "027",
+   "pass": true,
+   "svg": 6,
+   "blocks": 25
+  },
+  {
+   "order": 28,
+   "heading_id": "07_Aromatic:practice-additional-items/heading001",
+   "title": "Practice, additional items",
+   "dir": "028",
+   "pass": true,
+   "svg": 6,
+   "blocks": 25
+  },
+  {
+   "order": 29,
+   "heading_id": "07_Aromatic:appendix-sources-cross-checked/heading001",
+   "title": "Appendix: Sources cross-checked",
+   "dir": "029",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  }
+ ]
+}

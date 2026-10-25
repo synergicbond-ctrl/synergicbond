@@ -1,0 +1,15 @@
+<h3 id="s44">A.3 Not verified by program</h3>
+<p>Biochemical facts taken as standard textbook knowledge (ranges of branching frequency in glycogen/amylopectin, sweetness ratios, dimensions of B-DNA and the α-helix, enzyme optima, vitamin sources and deficiency diseases, the catalytic triad residue numbers, relative rates quoted as orders of magnitude) were checked against the opened books or are standard, but are not computable by RDKit. They are quoted as approximate where the literature values vary.</p></section>
+</main>
+<script>
+const q=document.getElementById('q'),links=[...document.querySelectorAll('#nav a')];
+q.addEventListener('input',()=>{const v=q.value.toLowerCase();links.forEach(a=>a.style.display=a.dataset.t.includes(v)?'':'none')});
+const ds=()=>[...document.querySelectorAll('details')];
+document.getElementById('open').onclick=()=>ds().forEach(d=>d.open=true);
+document.getElementById('close').onclick=()=>ds().forEach(d=>d.open=false);
+const secs=[...document.querySelectorAll('section')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>io.observe(s));
+</script>
+<script>window.addEventListener("beforeprint",function(){document.querySelectorAll("details").forEach(function(d){d.dataset.was=d.open?"1":"0";d.open=true})});window.addEventListener("afterprint",function(){document.querySelectorAll("details").forEach(function(d){d.open=d.dataset.was==="1"})});</script></body>
+</html>

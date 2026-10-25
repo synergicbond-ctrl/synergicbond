@@ -1,0 +1,74 @@
+{
+ "file": "SIR_FINAL.html",
+ "partition_level": 3,
+ "sections_total": 7,
+ "sections_passed": 7,
+ "svg_in_sections": 18,
+ "svg_in_file": 18,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "SIR_FINAL:1-the-core-idea/heading001",
+   "title": "1. The core idea",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 1,
+   "heading_id": "SIR_FINAL:2-basicity-of-anilines/heading001",
+   "title": "2. Basicity of anilines",
+   "dir": "001",
+   "pass": true,
+   "svg": 4,
+   "blocks": 15
+  },
+  {
+   "order": 2,
+   "heading_id": "SIR_FINAL:3-acidity-of-benzoic-acids/heading001",
+   "title": "3. Acidity of benzoic acids",
+   "dir": "002",
+   "pass": true,
+   "svg": 13,
+   "blocks": 33
+  },
+  {
+   "order": 3,
+   "heading_id": "SIR_FINAL:4-radicals-a-verified-case/heading001",
+   "title": "4. Radicals: a verified case",
+   "dir": "003",
+   "pass": true,
+   "svg": 1,
+   "blocks": 8
+  },
+  {
+   "order": 4,
+   "heading_id": "SIR_FINAL:5-cations-and-anions-no-verified-sir-ord/heading001",
+   "title": "5. Cations and anions: no verified SIR order",
+   "dir": "004",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 5,
+   "heading_id": "SIR_FINAL:6-practice-questions/heading001",
+   "title": "6. Practice questions",
+   "dir": "005",
+   "pass": true,
+   "svg": 0,
+   "blocks": 9
+  },
+  {
+   "order": 6,
+   "heading_id": "SIR_FINAL:7-sources/heading001",
+   "title": "7. Sources",
+   "dir": "006",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  }
+ ]
+}

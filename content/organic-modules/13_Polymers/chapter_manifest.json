@@ -1,0 +1,353 @@
+{
+ "file": "13_Polymers.html",
+ "partition_level": 3,
+ "sections_total": 38,
+ "sections_passed": 38,
+ "svg_in_sections": 197,
+ "svg_in_file": 197,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "13_Polymers:polymers/heading001",
+   "title": "Polymers",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 1,
+   "heading_id": "13_Polymers:contents/heading001",
+   "title": "Contents",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 2,
+   "heading_id": "13_Polymers:chapter-map-and-prerequisites/heading001",
+   "title": "Chapter map and prerequisites",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 3,
+   "heading_id": "13_Polymers:learning-objectives/heading001",
+   "title": "Learning objectives",
+   "dir": "003",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 4,
+   "heading_id": "13_Polymers:entry-check/heading001",
+   "title": "Entry check",
+   "dir": "004",
+   "pass": true,
+   "svg": 0,
+   "blocks": 22
+  },
+  {
+   "order": 5,
+   "heading_id": "13_Polymers:1-what-a-polymer-is-the-vocabulary/heading001",
+   "title": "1. What a polymer is: the vocabulary",
+   "dir": "005",
+   "pass": true,
+   "svg": 9,
+   "blocks": 10
+  },
+  {
+   "order": 6,
+   "heading_id": "13_Polymers:2-classification-five-independent-ways/heading001",
+   "title": "2. Classification: five independent ways",
+   "dir": "006",
+   "pass": true,
+   "svg": 3,
+   "blocks": 19
+  },
+  {
+   "order": 7,
+   "heading_id": "13_Polymers:3-chain-geometry-tacticity/heading001",
+   "title": "3. Chain geometry: tacticity",
+   "dir": "007",
+   "pass": true,
+   "svg": 2,
+   "blocks": 21
+  },
+  {
+   "order": 8,
+   "heading_id": "13_Polymers:4-summary-sheet-classification-at-a-glan/heading001",
+   "title": "4. Summary sheet: classification at a glance",
+   "dir": "008",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 9,
+   "heading_id": "13_Polymers:5-addition-chain-growth-polymerisation-t/heading001",
+   "title": "5. Addition (chain-growth) polymerisation: the general picture",
+   "dir": "009",
+   "pass": true,
+   "svg": 29,
+   "blocks": 72
+  },
+  {
+   "order": 10,
+   "heading_id": "13_Polymers:6-polymerisation-of-dienes-and-stereoche/heading001",
+   "title": "6. Polymerisation of dienes and stereochemistry of the unit",
+   "dir": "010",
+   "pass": true,
+   "svg": 7,
+   "blocks": 7
+  },
+  {
+   "order": 11,
+   "heading_id": "13_Polymers:7-copolymerisation/heading001",
+   "title": "7. Copolymerisation",
+   "dir": "011",
+   "pass": true,
+   "svg": 0,
+   "blocks": 9
+  },
+  {
+   "order": 12,
+   "heading_id": "13_Polymers:8-radical-addition-seen-through-frontier/heading001",
+   "title": "8. Radical addition seen through frontier orbitals",
+   "dir": "012",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 13,
+   "heading_id": "13_Polymers:9-named-addition-polymers-monomer-repeat/heading001",
+   "title": "9. Named addition polymers: monomer, repeat unit, conditions, properties, uses",
+   "dir": "013",
+   "pass": true,
+   "svg": 19,
+   "blocks": 51
+  },
+  {
+   "order": 14,
+   "heading_id": "13_Polymers:10-rubbers-and-diene-polymers/heading001",
+   "title": "10. Rubbers and diene polymers",
+   "dir": "014",
+   "pass": true,
+   "svg": 10,
+   "blocks": 29
+  },
+  {
+   "order": 15,
+   "heading_id": "13_Polymers:11-summary-sheet-addition-polymers/heading001",
+   "title": "11. Summary sheet: addition polymers",
+   "dir": "015",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 16,
+   "heading_id": "13_Polymers:12-condensation-step-growth-polymerisati/heading001",
+   "title": "12. Condensation (step-growth) polymerisation: the principles",
+   "dir": "016",
+   "pass": true,
+   "svg": 0,
+   "blocks": 23
+  },
+  {
+   "order": 17,
+   "heading_id": "13_Polymers:13-polyamides/heading001",
+   "title": "13. Polyamides",
+   "dir": "017",
+   "pass": true,
+   "svg": 28,
+   "blocks": 38
+  },
+  {
+   "order": 18,
+   "heading_id": "13_Polymers:14-polyesters/heading001",
+   "title": "14. Polyesters",
+   "dir": "018",
+   "pass": true,
+   "svg": 6,
+   "blocks": 9
+  },
+  {
+   "order": 19,
+   "heading_id": "13_Polymers:15-phenol-formaldehyde-resins-bakelite/heading001",
+   "title": "15. Phenol–formaldehyde resins (Bakelite)",
+   "dir": "019",
+   "pass": true,
+   "svg": 14,
+   "blocks": 20
+  },
+  {
+   "order": 20,
+   "heading_id": "13_Polymers:16-amino-resins/heading001",
+   "title": "16. Amino resins",
+   "dir": "020",
+   "pass": true,
+   "svg": 11,
+   "blocks": 8
+  },
+  {
+   "order": 21,
+   "heading_id": "13_Polymers:17-summary-sheet-condensation-polymers/heading001",
+   "title": "17. Summary sheet: condensation polymers",
+   "dir": "021",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 22,
+   "heading_id": "13_Polymers:18-biodegradable-polymers/heading001",
+   "title": "18. Biodegradable polymers",
+   "dir": "022",
+   "pass": true,
+   "svg": 10,
+   "blocks": 18
+  },
+  {
+   "order": 23,
+   "heading_id": "13_Polymers:19-physical-properties-of-polymers/heading001",
+   "title": "19. Physical properties of polymers",
+   "dir": "023",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 24,
+   "heading_id": "13_Polymers:20-natural-polymers-a-polymer-chemist-s-/heading001",
+   "title": "20. Natural polymers: a polymer-chemist’s view",
+   "dir": "024",
+   "pass": true,
+   "svg": 2,
+   "blocks": 3
+  },
+  {
+   "order": 25,
+   "heading_id": "13_Polymers:21-molecular-mass-of-polymers/heading001",
+   "title": "21. Molecular mass of polymers",
+   "dir": "025",
+   "pass": true,
+   "svg": 1,
+   "blocks": 69
+  },
+  {
+   "order": 26,
+   "heading_id": "13_Polymers:21a-conducting-polymers-conjugation-as-a/heading001",
+   "title": "21A. Conducting polymers: conjugation as a molecular-orbital picture",
+   "dir": "026",
+   "pass": true,
+   "svg": 3,
+   "blocks": 5
+  },
+  {
+   "order": 27,
+   "heading_id": "13_Polymers:consolidated-revision-compilations-a-to-/heading001",
+   "title": "Consolidated revision: compilations A to O",
+   "dir": "027",
+   "pass": true,
+   "svg": 17,
+   "blocks": 37
+  },
+  {
+   "order": 28,
+   "heading_id": "13_Polymers:22-graded-exercises-foundation-single-co/heading001",
+   "title": "22. Graded exercises: Foundation (single-correct and short answer)",
+   "dir": "028",
+   "pass": true,
+   "svg": 0,
+   "blocks": 246
+  },
+  {
+   "order": 29,
+   "heading_id": "13_Polymers:23-graded-exercises-application-and-inte/heading001",
+   "title": "23. Graded exercises: Application and Integration (multi-correct, matching, structures, assertion–reason)",
+   "dir": "029",
+   "pass": true,
+   "svg": 26,
+   "blocks": 239
+  },
+  {
+   "order": 30,
+   "heading_id": "13_Polymers:24-graded-exercises-advanced-numerical-i/heading001",
+   "title": "24. Graded exercises: Advanced (numerical, integer, paragraph and matrix)",
+   "dir": "030",
+   "pass": true,
+   "svg": 0,
+   "blocks": 209
+  },
+  {
+   "order": 31,
+   "heading_id": "13_Polymers:25-graded-exercises-advanced-continued/heading001",
+   "title": "25. Graded exercises: Advanced (continued)",
+   "dir": "031",
+   "pass": true,
+   "svg": 0,
+   "blocks": 105
+  },
+  {
+   "order": 32,
+   "heading_id": "13_Polymers:26-previous-year-questions/heading001",
+   "title": "26. Previous-year questions",
+   "dir": "032",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 33,
+   "heading_id": "13_Polymers:27-chapter-tests/heading001",
+   "title": "27. Chapter tests",
+   "dir": "033",
+   "pass": true,
+   "svg": 0,
+   "blocks": 100
+  },
+  {
+   "order": 34,
+   "heading_id": "13_Polymers:28-answer-keys/heading001",
+   "title": "28. Answer keys",
+   "dir": "034",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 35,
+   "heading_id": "13_Polymers:29-detailed-solutions/heading001",
+   "title": "29. Detailed solutions",
+   "dir": "035",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 36,
+   "heading_id": "13_Polymers:30-glossary-and-index/heading001",
+   "title": "30. Glossary and index",
+   "dir": "036",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 37,
+   "heading_id": "13_Polymers:appendix-sources-cross-checked-and-what-/heading001",
+   "title": "Appendix: Sources cross-checked and what was not verified",
+   "dir": "037",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  }
+ ]
+}

@@ -1,0 +1,335 @@
+{
+ "file": "10_Acids_Derivatives.html",
+ "partition_level": 3,
+ "sections_total": 36,
+ "sections_passed": 36,
+ "svg_in_sections": 567,
+ "svg_in_file": 567,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "10_Acids_Derivatives:carboxylic-acids-and-derivatives/heading001",
+   "title": "Carboxylic Acids and Derivatives",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 1,
+   "heading_id": "10_Acids_Derivatives:1-the-carboxylic-acid-family-at-a-glance/heading001",
+   "title": "1. The carboxylic acid family at a glance",
+   "dir": "001",
+   "pass": true,
+   "svg": 13,
+   "blocks": 7
+  },
+  {
+   "order": 2,
+   "heading_id": "10_Acids_Derivatives:2-nomenclature-iupac-and-priority/heading001",
+   "title": "2. Nomenclature (IUPAC) and priority",
+   "dir": "002",
+   "pass": true,
+   "svg": 8,
+   "blocks": 14
+  },
+  {
+   "order": 3,
+   "heading_id": "10_Acids_Derivatives:3-physical-properties-and-structure/heading001",
+   "title": "3. Physical properties and structure",
+   "dir": "003",
+   "pass": true,
+   "svg": 0,
+   "blocks": 10
+  },
+  {
+   "order": 4,
+   "heading_id": "10_Acids_Derivatives:4-structure-of-the-carboxyl-group-and-of/heading001",
+   "title": "4. Structure of the carboxyl group and of the carboxylate ion",
+   "dir": "004",
+   "pass": true,
+   "svg": 2,
+   "blocks": 4
+  },
+  {
+   "order": 5,
+   "heading_id": "10_Acids_Derivatives:5-acidity-of-carboxylic-acids-the-full-t/heading001",
+   "title": "5. Acidity of carboxylic acids: the full treatment",
+   "dir": "005",
+   "pass": true,
+   "svg": 2,
+   "blocks": 47
+  },
+  {
+   "order": 6,
+   "heading_id": "10_Acids_Derivatives:6-preparation-of-carboxylic-acids/heading001",
+   "title": "6. Preparation of carboxylic acids",
+   "dir": "006",
+   "pass": true,
+   "svg": 27,
+   "blocks": 40
+  },
+  {
+   "order": 7,
+   "heading_id": "10_Acids_Derivatives:7-reactions-of-carboxylic-acids/heading001",
+   "title": "7. Reactions of carboxylic acids",
+   "dir": "007",
+   "pass": true,
+   "svg": 49,
+   "blocks": 91
+  },
+  {
+   "order": 8,
+   "heading_id": "10_Acids_Derivatives:8-nucleophilic-acyl-substitution-the-cen/heading001",
+   "title": "8. Nucleophilic acyl substitution (the central mechanism)",
+   "dir": "008",
+   "pass": true,
+   "svg": 27,
+   "blocks": 31
+  },
+  {
+   "order": 9,
+   "heading_id": "10_Acids_Derivatives:9-acyl-chlorides/heading001",
+   "title": "9. Acyl chlorides",
+   "dir": "009",
+   "pass": true,
+   "svg": 16,
+   "blocks": 21
+  },
+  {
+   "order": 10,
+   "heading_id": "10_Acids_Derivatives:10-acid-anhydrides/heading001",
+   "title": "10. Acid anhydrides",
+   "dir": "010",
+   "pass": true,
+   "svg": 22,
+   "blocks": 31
+  },
+  {
+   "order": 11,
+   "heading_id": "10_Acids_Derivatives:11-esters/heading001",
+   "title": "11. Esters",
+   "dir": "011",
+   "pass": true,
+   "svg": 35,
+   "blocks": 58
+  },
+  {
+   "order": 12,
+   "heading_id": "10_Acids_Derivatives:12-amides/heading001",
+   "title": "12. Amides",
+   "dir": "012",
+   "pass": true,
+   "svg": 28,
+   "blocks": 48
+  },
+  {
+   "order": 13,
+   "heading_id": "10_Acids_Derivatives:13-nitriles-cyanides/heading001",
+   "title": "13. Nitriles (cyanides)",
+   "dir": "013",
+   "pass": true,
+   "svg": 9,
+   "blocks": 19
+  },
+  {
+   "order": 14,
+   "heading_id": "10_Acids_Derivatives:14-rearrangements-that-convert-carbonyl-/heading001",
+   "title": "14. Rearrangements that convert carbonyl derivatives into amines",
+   "dir": "014",
+   "pass": true,
+   "svg": 29,
+   "blocks": 42
+  },
+  {
+   "order": 15,
+   "heading_id": "10_Acids_Derivatives:15-hydrogens-enolates-and-the-synthesis-/heading001",
+   "title": "15. α-Hydrogens, enolates and the synthesis of C–C bonds",
+   "dir": "015",
+   "pass": true,
+   "svg": 3,
+   "blocks": 14
+  },
+  {
+   "order": 16,
+   "heading_id": "10_Acids_Derivatives:16-claisen-condensation/heading001",
+   "title": "16. Claisen condensation",
+   "dir": "016",
+   "pass": true,
+   "svg": 24,
+   "blocks": 40
+  },
+  {
+   "order": 17,
+   "heading_id": "10_Acids_Derivatives:17-acetoacetic-ester-synthesis/heading001",
+   "title": "17. Acetoacetic ester synthesis",
+   "dir": "017",
+   "pass": true,
+   "svg": 15,
+   "blocks": 31
+  },
+  {
+   "order": 18,
+   "heading_id": "10_Acids_Derivatives:18-malonic-ester-synthesis/heading001",
+   "title": "18. Malonic ester synthesis",
+   "dir": "018",
+   "pass": true,
+   "svg": 17,
+   "blocks": 24
+  },
+  {
+   "order": 19,
+   "heading_id": "10_Acids_Derivatives:19-related-carbon-carbon-forming-reactio/heading001",
+   "title": "19. Related carbon–carbon forming reactions of acid derivatives",
+   "dir": "019",
+   "pass": true,
+   "svg": 15,
+   "blocks": 19
+  },
+  {
+   "order": 20,
+   "heading_id": "10_Acids_Derivatives:20-summary-sheet-active-methylene-reacti/heading001",
+   "title": "20. Summary sheet: active-methylene reactions",
+   "dir": "020",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 21,
+   "heading_id": "10_Acids_Derivatives:21-dicarboxylic-acids/heading001",
+   "title": "21. Dicarboxylic acids",
+   "dir": "021",
+   "pass": true,
+   "svg": 25,
+   "blocks": 40
+  },
+  {
+   "order": 22,
+   "heading_id": "10_Acids_Derivatives:22-hydroxy-acids/heading001",
+   "title": "22. Hydroxy acids",
+   "dir": "022",
+   "pass": true,
+   "svg": 29,
+   "blocks": 35
+  },
+  {
+   "order": 23,
+   "heading_id": "10_Acids_Derivatives:23-unsaturated-acids-fatty-acids-fats-an/heading001",
+   "title": "23. Unsaturated acids, fatty acids, fats and soaps",
+   "dir": "023",
+   "pass": true,
+   "svg": 11,
+   "blocks": 26
+  },
+  {
+   "order": 24,
+   "heading_id": "10_Acids_Derivatives:24-distinguishing-tests-and-identificati/heading001",
+   "title": "24. Distinguishing tests and identification",
+   "dir": "024",
+   "pass": true,
+   "svg": 0,
+   "blocks": 20
+  },
+  {
+   "order": 25,
+   "heading_id": "10_Acids_Derivatives:25-reagent-logic-choosing-the-reagent/heading001",
+   "title": "25. Reagent logic: choosing the reagent",
+   "dir": "025",
+   "pass": true,
+   "svg": 0,
+   "blocks": 11
+  },
+  {
+   "order": 26,
+   "heading_id": "10_Acids_Derivatives:25a-mechanism-atlas-step-by-step-with-th/heading001",
+   "title": "25A. Mechanism atlas: step by step, with the reason for every step and an orbital view",
+   "dir": "026",
+   "pass": true,
+   "svg": 37,
+   "blocks": 30
+  },
+  {
+   "order": 27,
+   "heading_id": "10_Acids_Derivatives:26-practice-set-level-1-foundation-singl/heading001",
+   "title": "26. Practice set, Level 1: Foundation (single correct and short answer)",
+   "dir": "027",
+   "pass": true,
+   "svg": 24,
+   "blocks": 372
+  },
+  {
+   "order": 28,
+   "heading_id": "10_Acids_Derivatives:27-practice-set-level-2-main-multi-step-/heading001",
+   "title": "27. Practice set, Level 2: Main (multi-step and numerical)",
+   "dir": "028",
+   "pass": true,
+   "svg": 30,
+   "blocks": 293
+  },
+  {
+   "order": 29,
+   "heading_id": "10_Acids_Derivatives:28-practice-set-level-3-advanced/heading001",
+   "title": "28. Practice set, Level 3: Advanced",
+   "dir": "029",
+   "pass": true,
+   "svg": 9,
+   "blocks": 327
+  },
+  {
+   "order": 30,
+   "heading_id": "10_Acids_Derivatives:29-acid-derivatives-in-nature-and-medici/heading001",
+   "title": "29. Acid derivatives in nature and medicine",
+   "dir": "030",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 31,
+   "heading_id": "10_Acids_Derivatives:30-rapid-fire-facts-read-the-night-befor/heading001",
+   "title": "30. Rapid-fire facts (read the night before)",
+   "dir": "031",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 32,
+   "heading_id": "10_Acids_Derivatives:31-common-traps-collected/heading001",
+   "title": "31. Common traps, collected",
+   "dir": "032",
+   "pass": true,
+   "svg": 27,
+   "blocks": 105
+  },
+  {
+   "order": 33,
+   "heading_id": "10_Acids_Derivatives:33-mixed-review-applications-and-analysi/heading001",
+   "title": "33. Mixed review: applications and analysis (Level 2 and 3)",
+   "dir": "033",
+   "pass": true,
+   "svg": 6,
+   "blocks": 104
+  },
+  {
+   "order": 34,
+   "heading_id": "10_Acids_Derivatives:34-long-form-synthesis-and-mechanism-pro/heading001",
+   "title": "34. Long-form synthesis and mechanism problems (Advanced)",
+   "dir": "034",
+   "pass": true,
+   "svg": 28,
+   "blocks": 40
+  },
+  {
+   "order": 35,
+   "heading_id": "10_Acids_Derivatives:32-sources-cross-checked/heading001",
+   "title": "32. Sources cross-checked",
+   "dir": "035",
+   "pass": true,
+   "svg": 0,
+   "blocks": 8
+  }
+ ]
+}

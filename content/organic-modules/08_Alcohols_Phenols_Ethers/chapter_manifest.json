@@ -1,0 +1,920 @@
+{
+ "file": "08_Alcohols_Phenols_Ethers.html",
+ "partition_level": 3,
+ "sections_total": 101,
+ "sections_passed": 101,
+ "svg_in_sections": 456,
+ "svg_in_file": 456,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "08_Alcohols_Phenols_Ethers:part-iv-practice-problems/heading001",
+   "title": "PART IV — PRACTICE PROBLEMS",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 1,
+   "heading_id": "08_Alcohols_Phenols_Ethers:contents/heading001",
+   "title": "Contents",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 2,
+   "heading_id": "08_Alcohols_Phenols_Ethers:how-to-use-this-chapter/heading001",
+   "title": "How to use this chapter",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 3,
+   "heading_id": "08_Alcohols_Phenols_Ethers:1-structure-classification-and-nomenclat/heading001",
+   "title": "1. Structure, classification and nomenclature",
+   "dir": "003",
+   "pass": true,
+   "svg": 9,
+   "blocks": 8
+  },
+  {
+   "order": 4,
+   "heading_id": "08_Alcohols_Phenols_Ethers:1-1-iupac-nomenclature-of-alcohols/heading001",
+   "title": "1.1 IUPAC nomenclature of alcohols",
+   "dir": "004",
+   "pass": true,
+   "svg": 13,
+   "blocks": 15
+  },
+  {
+   "order": 5,
+   "heading_id": "08_Alcohols_Phenols_Ethers:2-physical-properties-and-hydrogen-bondi/heading001",
+   "title": "2. Physical properties and hydrogen bonding",
+   "dir": "005",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 6,
+   "heading_id": "08_Alcohols_Phenols_Ethers:3-preparation-of-alcohols/heading001",
+   "title": "3. Preparation of alcohols",
+   "dir": "006",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 7,
+   "heading_id": "08_Alcohols_Phenols_Ethers:3-1-from-alkenes/heading001",
+   "title": "3.1 From alkenes",
+   "dir": "007",
+   "pass": true,
+   "svg": 20,
+   "blocks": 25
+  },
+  {
+   "order": 8,
+   "heading_id": "08_Alcohols_Phenols_Ethers:3-2-reduction-of-carbonyl-compounds/heading001",
+   "title": "3.2 Reduction of carbonyl compounds",
+   "dir": "008",
+   "pass": true,
+   "svg": 16,
+   "blocks": 13
+  },
+  {
+   "order": 9,
+   "heading_id": "08_Alcohols_Phenols_Ethers:3-3-grignard-and-organolithium-reagents/heading001",
+   "title": "3.3 Grignard and organolithium reagents",
+   "dir": "009",
+   "pass": true,
+   "svg": 15,
+   "blocks": 17
+  },
+  {
+   "order": 10,
+   "heading_id": "08_Alcohols_Phenols_Ethers:3-4-from-alkyl-halides-amines-and-other-/heading001",
+   "title": "3.4 From alkyl halides, amines and other derivatives",
+   "dir": "010",
+   "pass": true,
+   "svg": 5,
+   "blocks": 4
+  },
+  {
+   "order": 11,
+   "heading_id": "08_Alcohols_Phenols_Ethers:3-5-industrial-and-biochemical-routes-fr/heading001",
+   "title": "3.5 Industrial and biochemical routes (frequently asked as statements)",
+   "dir": "011",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 12,
+   "heading_id": "08_Alcohols_Phenols_Ethers:3-6-summary-ways-to-make-an-alcohol-of-a/heading001",
+   "title": "3.6 Summary: ways to make an alcohol of a given type",
+   "dir": "012",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 13,
+   "heading_id": "08_Alcohols_Phenols_Ethers:29-3-ethers/heading001",
+   "title": "29.3 Ethers",
+   "dir": "013",
+   "pass": true,
+   "svg": 0,
+   "blocks": 97
+  },
+  {
+   "order": 14,
+   "heading_id": "08_Alcohols_Phenols_Ethers:29-4-epoxides/heading001",
+   "title": "29.4 Epoxides",
+   "dir": "014",
+   "pass": true,
+   "svg": 0,
+   "blocks": 46
+  },
+  {
+   "order": 15,
+   "heading_id": "08_Alcohols_Phenols_Ethers:29-5-crown-ethers-and-thiols/heading001",
+   "title": "29.5 Crown ethers and thiols",
+   "dir": "015",
+   "pass": true,
+   "svg": 0,
+   "blocks": 31
+  },
+  {
+   "order": 16,
+   "heading_id": "08_Alcohols_Phenols_Ethers:29-6-mixed-foundation-questions/heading001",
+   "title": "29.6 Mixed foundation questions",
+   "dir": "016",
+   "pass": true,
+   "svg": 0,
+   "blocks": 31
+  },
+  {
+   "order": 17,
+   "heading_id": "08_Alcohols_Phenols_Ethers:30-level-2-main/heading001",
+   "title": "30. Level 2 — Main",
+   "dir": "017",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 18,
+   "heading_id": "08_Alcohols_Phenols_Ethers:30-1-alcohols/heading001",
+   "title": "30.1 Alcohols",
+   "dir": "018",
+   "pass": true,
+   "svg": 0,
+   "blocks": 97
+  },
+  {
+   "order": 19,
+   "heading_id": "08_Alcohols_Phenols_Ethers:30-2-phenols/heading001",
+   "title": "30.2 Phenols",
+   "dir": "019",
+   "pass": true,
+   "svg": 0,
+   "blocks": 82
+  },
+  {
+   "order": 20,
+   "heading_id": "08_Alcohols_Phenols_Ethers:30-3-ethers/heading001",
+   "title": "30.3 Ethers",
+   "dir": "020",
+   "pass": true,
+   "svg": 0,
+   "blocks": 37
+  },
+  {
+   "order": 21,
+   "heading_id": "08_Alcohols_Phenols_Ethers:30-4-epoxides-crown-ethers-and-thiols/heading001",
+   "title": "30.4 Epoxides, crown ethers and thiols",
+   "dir": "021",
+   "pass": true,
+   "svg": 0,
+   "blocks": 37
+  },
+  {
+   "order": 22,
+   "heading_id": "08_Alcohols_Phenols_Ethers:30-5-multi-step-reasoning-mechanisms-and/heading001",
+   "title": "30.5 Multi-step reasoning, mechanisms and calculations (Level 2)",
+   "dir": "022",
+   "pass": true,
+   "svg": 0,
+   "blocks": 133
+  },
+  {
+   "order": 23,
+   "heading_id": "08_Alcohols_Phenols_Ethers:31-level-3-jee-advanced/heading001",
+   "title": "31. Level 3 — JEE Advanced",
+   "dir": "023",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 24,
+   "heading_id": "08_Alcohols_Phenols_Ethers:31-1-multiple-correct-questions-one-or-m/heading001",
+   "title": "31.1 Multiple-correct questions (one or more options correct)",
+   "dir": "024",
+   "pass": true,
+   "svg": 0,
+   "blocks": 112
+  },
+  {
+   "order": 25,
+   "heading_id": "08_Alcohols_Phenols_Ethers:31-2-integer-type-questions-answer-is-a-/heading001",
+   "title": "31.2 Integer-type questions (answer is a single non-negative integer)",
+   "dir": "025",
+   "pass": true,
+   "svg": 0,
+   "blocks": 79
+  },
+  {
+   "order": 26,
+   "heading_id": "08_Alcohols_Phenols_Ethers:31-3-matrix-match-questions/heading001",
+   "title": "31.3 Matrix-match questions",
+   "dir": "026",
+   "pass": true,
+   "svg": 0,
+   "blocks": 26
+  },
+  {
+   "order": 27,
+   "heading_id": "08_Alcohols_Phenols_Ethers:31-4-paragraph-based-questions/heading001",
+   "title": "31.4 Paragraph-based questions",
+   "dir": "027",
+   "pass": true,
+   "svg": 0,
+   "blocks": 81
+  },
+  {
+   "order": 28,
+   "heading_id": "08_Alcohols_Phenols_Ethers:31-5-structure-elucidation-and-quantitat/heading001",
+   "title": "31.5 Structure-elucidation and quantitative problems",
+   "dir": "028",
+   "pass": true,
+   "svg": 0,
+   "blocks": 115
+  },
+  {
+   "order": 29,
+   "heading_id": "08_Alcohols_Phenols_Ethers:4-acidity-and-basicity-of-alcohols/heading001",
+   "title": "4. Acidity and basicity of alcohols",
+   "dir": "029",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 30,
+   "heading_id": "08_Alcohols_Phenols_Ethers:4-1-acidity/heading001",
+   "title": "4.1 Acidity",
+   "dir": "030",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 31,
+   "heading_id": "08_Alcohols_Phenols_Ethers:4-2-basicity-the-oxygen-lone-pair/heading001",
+   "title": "4.2 Basicity (the oxygen lone pair)",
+   "dir": "031",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 32,
+   "heading_id": "08_Alcohols_Phenols_Ethers:5-reactions-of-the-o-h-bond/heading001",
+   "title": "5. Reactions of the O–H bond",
+   "dir": "032",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 33,
+   "heading_id": "08_Alcohols_Phenols_Ethers:5-1-with-active-metals-and-bases/heading001",
+   "title": "5.1 With active metals and bases",
+   "dir": "033",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 34,
+   "heading_id": "08_Alcohols_Phenols_Ethers:5-2-esterification-acylation-of-the-alco/heading001",
+   "title": "5.2 Esterification (acylation of the alcohol)",
+   "dir": "034",
+   "pass": true,
+   "svg": 4,
+   "blocks": 8
+  },
+  {
+   "order": 35,
+   "heading_id": "08_Alcohols_Phenols_Ethers:5-3-tosylates-and-mesylates-turning-oh-i/heading001",
+   "title": "5.3 Tosylates and mesylates: turning OH into a leaving group without breaking C–O",
+   "dir": "035",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 36,
+   "heading_id": "08_Alcohols_Phenols_Ethers:6-replacement-of-the-oh-group-by-halogen/heading001",
+   "title": "6. Replacement of the OH group by halogen",
+   "dir": "036",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 37,
+   "heading_id": "08_Alcohols_Phenols_Ethers:6-1-with-hydrogen-halides/heading001",
+   "title": "6.1 With hydrogen halides",
+   "dir": "037",
+   "pass": true,
+   "svg": 10,
+   "blocks": 10
+  },
+  {
+   "order": 38,
+   "heading_id": "08_Alcohols_Phenols_Ethers:6-2-the-lucas-test-zncl-2-conc-hcl/heading001",
+   "title": "6.2 The Lucas test (ZnCl 2 /conc. HCl)",
+   "dir": "038",
+   "pass": true,
+   "svg": 0,
+   "blocks": 12
+  },
+  {
+   "order": 39,
+   "heading_id": "08_Alcohols_Phenols_Ethers:6-3-the-victor-meyer-test-primary-second/heading001",
+   "title": "6.3 The Victor Meyer test (primary, secondary, tertiary)",
+   "dir": "039",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 40,
+   "heading_id": "08_Alcohols_Phenols_Ethers:6-4-phosphorus-and-sulphur-reagents-no-c/heading001",
+   "title": "6.4 Phosphorus and sulphur reagents (no carbocation, no rearrangement)",
+   "dir": "040",
+   "pass": true,
+   "svg": 4,
+   "blocks": 9
+  },
+  {
+   "order": 41,
+   "heading_id": "08_Alcohols_Phenols_Ethers:7-dehydration-of-alcohols/heading001",
+   "title": "7. Dehydration of alcohols",
+   "dir": "041",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 42,
+   "heading_id": "08_Alcohols_Phenols_Ethers:7-1-intramolecular-dehydration-to-alkene/heading001",
+   "title": "7.1 Intramolecular dehydration (to alkenes)",
+   "dir": "042",
+   "pass": true,
+   "svg": 20,
+   "blocks": 13
+  },
+  {
+   "order": 43,
+   "heading_id": "08_Alcohols_Phenols_Ethers:7-2-intermolecular-dehydration-to-ethers/heading001",
+   "title": "7.2 Intermolecular dehydration (to ethers)",
+   "dir": "043",
+   "pass": true,
+   "svg": 2,
+   "blocks": 21
+  },
+  {
+   "order": 44,
+   "heading_id": "08_Alcohols_Phenols_Ethers:8-oxidation-of-alcohols/heading001",
+   "title": "8. Oxidation of alcohols",
+   "dir": "044",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 45,
+   "heading_id": "08_Alcohols_Phenols_Ethers:8-1-chromium-vi-reagents-and-their-mecha/heading001",
+   "title": "8.1 Chromium(VI) reagents and their mechanism",
+   "dir": "045",
+   "pass": true,
+   "svg": 6,
+   "blocks": 7
+  },
+  {
+   "order": 46,
+   "heading_id": "08_Alcohols_Phenols_Ethers:8-2-non-chromium-oxidants/heading001",
+   "title": "8.2 Non-chromium oxidants",
+   "dir": "046",
+   "pass": true,
+   "svg": 8,
+   "blocks": 18
+  },
+  {
+   "order": 47,
+   "heading_id": "08_Alcohols_Phenols_Ethers:8-3-the-iodoform-haloform-test/heading001",
+   "title": "8.3 The iodoform (haloform) test",
+   "dir": "047",
+   "pass": true,
+   "svg": 3,
+   "blocks": 13
+  },
+  {
+   "order": 48,
+   "heading_id": "08_Alcohols_Phenols_Ethers:8-4-oxidation-summary/heading001",
+   "title": "8.4 Oxidation summary",
+   "dir": "048",
+   "pass": true,
+   "svg": 5,
+   "blocks": 2
+  },
+  {
+   "order": 49,
+   "heading_id": "08_Alcohols_Phenols_Ethers:9-diols-and-glycols/heading001",
+   "title": "9. Diols and glycols",
+   "dir": "049",
+   "pass": true,
+   "svg": 4,
+   "blocks": 7
+  },
+  {
+   "order": 50,
+   "heading_id": "08_Alcohols_Phenols_Ethers:9-1-stereochemistry-of-making-vicinal-di/heading001",
+   "title": "9.1 Stereochemistry of making vicinal diols from alkenes",
+   "dir": "050",
+   "pass": true,
+   "svg": 12,
+   "blocks": 13
+  },
+  {
+   "order": 51,
+   "heading_id": "08_Alcohols_Phenols_Ethers:9-2-cleavage-of-vicinal-diols-periodic-a/heading001",
+   "title": "9.2 Cleavage of vicinal diols: periodic acid and lead tetra-acetate",
+   "dir": "051",
+   "pass": true,
+   "svg": 12,
+   "blocks": 12
+  },
+  {
+   "order": 52,
+   "heading_id": "08_Alcohols_Phenols_Ethers:9-3-the-pinacol-rearrangement/heading001",
+   "title": "9.3 The pinacol rearrangement",
+   "dir": "052",
+   "pass": true,
+   "svg": 17,
+   "blocks": 25
+  },
+  {
+   "order": 53,
+   "heading_id": "08_Alcohols_Phenols_Ethers:10-glycerol-propane-1-2-3-triol/heading001",
+   "title": "10. Glycerol (propane-1,2,3-triol)",
+   "dir": "053",
+   "pass": true,
+   "svg": 12,
+   "blocks": 17
+  },
+  {
+   "order": 54,
+   "heading_id": "08_Alcohols_Phenols_Ethers:10-1-other-polyhydric-alcohols-quick-fac/heading001",
+   "title": "10.1 Other polyhydric alcohols (quick facts)",
+   "dir": "054",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 55,
+   "heading_id": "08_Alcohols_Phenols_Ethers:11-alcohols-map-and-summary/heading001",
+   "title": "11. Alcohols: map and summary",
+   "dir": "055",
+   "pass": true,
+   "svg": 8,
+   "blocks": 12
+  },
+  {
+   "order": 56,
+   "heading_id": "08_Alcohols_Phenols_Ethers:12-structure-nomenclature-and-physical-p/heading001",
+   "title": "12. Structure, nomenclature and physical properties of phenols",
+   "dir": "056",
+   "pass": true,
+   "svg": 14,
+   "blocks": 13
+  },
+  {
+   "order": 57,
+   "heading_id": "08_Alcohols_Phenols_Ethers:13-preparation-of-phenol/heading001",
+   "title": "13. Preparation of phenol",
+   "dir": "057",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 58,
+   "heading_id": "08_Alcohols_Phenols_Ethers:13-1-the-cumene-hock-process-the-industr/heading001",
+   "title": "13.1 The cumene (Hock) process — the industrial route",
+   "dir": "058",
+   "pass": true,
+   "svg": 15,
+   "blocks": 15
+  },
+  {
+   "order": 59,
+   "heading_id": "08_Alcohols_Phenols_Ethers:13-2-other-preparations/heading001",
+   "title": "13.2 Other preparations",
+   "dir": "059",
+   "pass": true,
+   "svg": 6,
+   "blocks": 11
+  },
+  {
+   "order": 60,
+   "heading_id": "08_Alcohols_Phenols_Ethers:14-acidity-of-phenols/heading001",
+   "title": "14. Acidity of phenols",
+   "dir": "060",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 61,
+   "heading_id": "08_Alcohols_Phenols_Ethers:14-1-why-phenol-is-more-acidic-than-alco/heading001",
+   "title": "14.1 Why phenol is more acidic than alcohols",
+   "dir": "061",
+   "pass": true,
+   "svg": 2,
+   "blocks": 3
+  },
+  {
+   "order": 62,
+   "heading_id": "08_Alcohols_Phenols_Ethers:14-2-why-phenol-is-less-acidic-than-a-ca/heading001",
+   "title": "14.2 Why phenol is less acidic than a carboxylic acid",
+   "dir": "062",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 63,
+   "heading_id": "08_Alcohols_Phenols_Ethers:14-3-effect-of-ring-substituents/heading001",
+   "title": "14.3 Effect of ring substituents",
+   "dir": "063",
+   "pass": true,
+   "svg": 0,
+   "blocks": 22
+  },
+  {
+   "order": 64,
+   "heading_id": "08_Alcohols_Phenols_Ethers:15-electrophilic-substitution-of-phenol/heading001",
+   "title": "15. Electrophilic substitution of phenol",
+   "dir": "064",
+   "pass": true,
+   "svg": 17,
+   "blocks": 26
+  },
+  {
+   "order": 65,
+   "heading_id": "08_Alcohols_Phenols_Ethers:16-named-reactions-of-phenols/heading001",
+   "title": "16. Named reactions of phenols",
+   "dir": "065",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 66,
+   "heading_id": "08_Alcohols_Phenols_Ethers:16-1-reimer-tiemann-reaction-ortho-formy/heading001",
+   "title": "16.1 Reimer–Tiemann reaction (ortho-formylation)",
+   "dir": "066",
+   "pass": true,
+   "svg": 13,
+   "blocks": 14
+  },
+  {
+   "order": 67,
+   "heading_id": "08_Alcohols_Phenols_Ethers:16-2-kolbe-schmitt-reaction-ortho-carbox/heading001",
+   "title": "16.2 Kolbe–Schmitt reaction (ortho-carboxylation)",
+   "dir": "067",
+   "pass": true,
+   "svg": 11,
+   "blocks": 17
+  },
+  {
+   "order": 68,
+   "heading_id": "08_Alcohols_Phenols_Ethers:16-3-fries-rearrangement/heading001",
+   "title": "16.3 Fries rearrangement",
+   "dir": "068",
+   "pass": true,
+   "svg": 4,
+   "blocks": 6
+  },
+  {
+   "order": 69,
+   "heading_id": "08_Alcohols_Phenols_Ethers:16-4-claisen-rearrangement/heading001",
+   "title": "16.4 Claisen rearrangement",
+   "dir": "069",
+   "pass": true,
+   "svg": 10,
+   "blocks": 14
+  },
+  {
+   "order": 70,
+   "heading_id": "08_Alcohols_Phenols_Ethers:16-5-lederer-manasse-reaction-phenol-and/heading001",
+   "title": "16.5 Lederer–Manasse reaction: phenol and formaldehyde",
+   "dir": "070",
+   "pass": true,
+   "svg": 7,
+   "blocks": 4
+  },
+  {
+   "order": 71,
+   "heading_id": "08_Alcohols_Phenols_Ethers:16-6-phthalein-reaction/heading001",
+   "title": "16.6 Phthalein reaction",
+   "dir": "071",
+   "pass": true,
+   "svg": 3,
+   "blocks": 3
+  },
+  {
+   "order": 72,
+   "heading_id": "08_Alcohols_Phenols_Ethers:17-other-reactions-of-phenols/heading001",
+   "title": "17. Other reactions of phenols",
+   "dir": "072",
+   "pass": true,
+   "svg": 4,
+   "blocks": 13
+  },
+  {
+   "order": 73,
+   "heading_id": "08_Alcohols_Phenols_Ethers:18-tests-and-identification-of-phenols/heading001",
+   "title": "18. Tests and identification of phenols",
+   "dir": "073",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 74,
+   "heading_id": "08_Alcohols_Phenols_Ethers:19-important-phenols-and-derived-compoun/heading001",
+   "title": "19. Important phenols and derived compounds",
+   "dir": "074",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 75,
+   "heading_id": "08_Alcohols_Phenols_Ethers:19-1-summary-of-part-ii/heading001",
+   "title": "19.1 Summary of Part II",
+   "dir": "075",
+   "pass": true,
+   "svg": 11,
+   "blocks": 12
+  },
+  {
+   "order": 76,
+   "heading_id": "08_Alcohols_Phenols_Ethers:20-ethers-structure-nomenclature-isomeri/heading001",
+   "title": "20. Ethers: structure, nomenclature, isomerism and properties",
+   "dir": "076",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 77,
+   "heading_id": "08_Alcohols_Phenols_Ethers:20-1-nomenclature/heading001",
+   "title": "20.1 Nomenclature",
+   "dir": "077",
+   "pass": true,
+   "svg": 10,
+   "blocks": 4
+  },
+  {
+   "order": 78,
+   "heading_id": "08_Alcohols_Phenols_Ethers:20-2-isomerism/heading001",
+   "title": "20.2 Isomerism",
+   "dir": "078",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 79,
+   "heading_id": "08_Alcohols_Phenols_Ethers:20-3-physical-properties/heading001",
+   "title": "20.3 Physical properties",
+   "dir": "079",
+   "pass": true,
+   "svg": 0,
+   "blocks": 10
+  },
+  {
+   "order": 80,
+   "heading_id": "08_Alcohols_Phenols_Ethers:21-preparation-of-ethers/heading001",
+   "title": "21. Preparation of ethers",
+   "dir": "080",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 81,
+   "heading_id": "08_Alcohols_Phenols_Ethers:21-1-dehydration-of-primary-alcohols-sym/heading001",
+   "title": "21.1 Dehydration of primary alcohols (symmetrical ethers)",
+   "dir": "081",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 82,
+   "heading_id": "08_Alcohols_Phenols_Ethers:21-2-williamson-ether-synthesis/heading001",
+   "title": "21.2 Williamson ether synthesis",
+   "dir": "082",
+   "pass": true,
+   "svg": 14,
+   "blocks": 9
+  },
+  {
+   "order": 83,
+   "heading_id": "08_Alcohols_Phenols_Ethers:21-3-other-methods/heading001",
+   "title": "21.3 Other methods",
+   "dir": "083",
+   "pass": true,
+   "svg": 6,
+   "blocks": 12
+  },
+  {
+   "order": 84,
+   "heading_id": "08_Alcohols_Phenols_Ethers:22-reactions-of-ethers/heading001",
+   "title": "22. Reactions of ethers",
+   "dir": "084",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 85,
+   "heading_id": "08_Alcohols_Phenols_Ethers:22-1-cleavage-by-hydrogen-halides-hi-hbr/heading001",
+   "title": "22.1 Cleavage by hydrogen halides (HI > HBr > HCl)",
+   "dir": "085",
+   "pass": true,
+   "svg": 18,
+   "blocks": 23
+  },
+  {
+   "order": 86,
+   "heading_id": "08_Alcohols_Phenols_Ethers:22-2-other-reactions-of-ethers/heading001",
+   "title": "22.2 Other reactions of ethers",
+   "dir": "086",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 87,
+   "heading_id": "08_Alcohols_Phenols_Ethers:22-3-electrophilic-substitution-of-aryl-/heading001",
+   "title": "22.3 Electrophilic substitution of aryl ethers",
+   "dir": "087",
+   "pass": true,
+   "svg": 9,
+   "blocks": 14
+  },
+  {
+   "order": 88,
+   "heading_id": "08_Alcohols_Phenols_Ethers:23-summary-of-ethers/heading001",
+   "title": "23. Summary of ethers",
+   "dir": "088",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 89,
+   "heading_id": "08_Alcohols_Phenols_Ethers:24-epoxides-oxiranes/heading001",
+   "title": "24. Epoxides (oxiranes)",
+   "dir": "089",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 90,
+   "heading_id": "08_Alcohols_Phenols_Ethers:24-1-preparation-of-epoxides/heading001",
+   "title": "24.1 Preparation of epoxides",
+   "dir": "090",
+   "pass": true,
+   "svg": 6,
+   "blocks": 11
+  },
+  {
+   "order": 91,
+   "heading_id": "08_Alcohols_Phenols_Ethers:24-2-ring-opening-the-two-regimes/heading001",
+   "title": "24.2 Ring opening: the two regimes",
+   "dir": "091",
+   "pass": true,
+   "svg": 12,
+   "blocks": 11
+  },
+  {
+   "order": 92,
+   "heading_id": "08_Alcohols_Phenols_Ethers:24-3-stereochemistry/heading001",
+   "title": "24.3 Stereochemistry",
+   "dir": "092",
+   "pass": true,
+   "svg": 20,
+   "blocks": 31
+  },
+  {
+   "order": 93,
+   "heading_id": "08_Alcohols_Phenols_Ethers:24-4-reactions-of-epoxides-with-organome/heading001",
+   "title": "24.4 Reactions of epoxides with organometallics and hydrides; polymerisation",
+   "dir": "093",
+   "pass": true,
+   "svg": 12,
+   "blocks": 15
+  },
+  {
+   "order": 94,
+   "heading_id": "08_Alcohols_Phenols_Ethers:25-crown-ethers-and-related-macrocycles/heading001",
+   "title": "25. Crown ethers and related macrocycles",
+   "dir": "094",
+   "pass": true,
+   "svg": 4,
+   "blocks": 16
+  },
+  {
+   "order": 95,
+   "heading_id": "08_Alcohols_Phenols_Ethers:26-thiols-and-thioethers-sulphur-analogu/heading001",
+   "title": "26. Thiols and thioethers (sulphur analogues)",
+   "dir": "095",
+   "pass": true,
+   "svg": 19,
+   "blocks": 22
+  },
+  {
+   "order": 96,
+   "heading_id": "08_Alcohols_Phenols_Ethers:27-part-iii-summary/heading001",
+   "title": "27. Part III summary",
+   "dir": "096",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 97,
+   "heading_id": "08_Alcohols_Phenols_Ethers:28-how-the-problem-set-is-organised/heading001",
+   "title": "28. How the problem set is organised",
+   "dir": "097",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 98,
+   "heading_id": "08_Alcohols_Phenols_Ethers:29-level-1-foundation/heading001",
+   "title": "29. Level 1 — Foundation",
+   "dir": "098",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 99,
+   "heading_id": "08_Alcohols_Phenols_Ethers:29-1-alcohols/heading001",
+   "title": "29.1 Alcohols",
+   "dir": "099",
+   "pass": true,
+   "svg": 0,
+   "blocks": 139
+  },
+  {
+   "order": 100,
+   "heading_id": "08_Alcohols_Phenols_Ethers:29-2-phenols/heading001",
+   "title": "29.2 Phenols",
+   "dir": "100",
+   "pass": true,
+   "svg": 0,
+   "blocks": 109
+  }
+ ]
+}

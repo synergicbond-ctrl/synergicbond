@@ -1,0 +1,72 @@
+<h3 style="margin:0 0 6px;color:#1d4ed8">Animation: Newman projection of butane (C2–C3 rotation)</h3>
+  <p style="margin:0 0 10px;color:#555;font-size:14px">Rotate the front carbon. The back methyl groups sweep through every dihedral angle. Watch the energy and the labels change.</p>
+  <canvas id="nw-canvas" width="360" height="360" style="display:block;margin:0 auto;background:#fff;border-radius:8px"></canvas>
+  <div style="display:flex;gap:10px;justify-content:center;align-items:center;margin-top:10px;flex-wrap:wrap">
+    <button id="nw-play" style="padding:6px 14px;border-radius:8px;border:1px solid #1d4ed8;background:#1d4ed8;color:#fff;cursor:pointer">Pause</button>
+    <input id="nw-angle" type="range" min="0" max="360" value="0" style="width:260px">
+    <span id="nw-label" style="font-weight:600;min-width:200px;text-align:left"></span>
+  </div>
+</section>
+<script>
+(function(){
+  var c=document.getElementById('nw-canvas'), x=c.getContext('2d');
+  var slider=document.getElementById('nw-angle'), btn=document.getElementById('nw-play'), lab=document.getElementById('nw-label');
+  var cx=180, cy=180, R=120, deg=0, playing=true, last=null;
+  // Torsional energy (kcal/mol), standard approximate values for butane C2-C3
+  function energy(a){
+    var d=((a%360)+360)%360;
+    var pts=[[0,4.8],[60,0.9],[120,3.4],[180,0],[240,0.9],[300,3.4],[360,4.8]];
+    // piecewise linear between the listed points
+    for(var i=0;i<pts.length-1;i++){
+      if(d>=pts[i][0]&&d<=pts[i+1][0]){
+        var t=(d-pts[i][0])/(pts[i+1][0]-pts[i][0]);
+        return pts[i][1]+t*(pts[i+1][1]-pts[i][1]);
+      }
+    }
+    return 4.8;
+  }
+  function label(a){
+    var d=((a%360)+360)%360;
+    var name='';
+    if(Math.abs(d-180)<12) name='anti (most stable)';
+    else if(Math.abs(d-60)<12||Math.abs(d-300)<12) name='gauche';
+    else if(Math.abs(d-0)<12||Math.abs(d-120)<12||Math.abs(d-240)<12||Math.abs(d-360)<12) name='eclipsed';
+    return d.toFixed(0)+'° · '+name+' · E ≈ '+energy(d).toFixed(1)+' kcal/mol';
+  }
+  function bond(ang,color,group){
+    // one substituent from the centre: group 'front' (solid) or 'back' (dashed circle)
+    var r=R*0.78, ex=cx+r*Math.cos(ang), ey=cy+r*Math.sin(ang);
+    x.beginPath(); x.moveTo(cx,cy); x.lineTo(ex,ey);
+    x.lineWidth=4; x.strokeStyle=color; x.setLineDash(group==='back'?[6,5]:[]); x.stroke(); x.setLineDash([]);
+    x.beginPath(); x.arc(ex,ey,14,0,Math.PI*2); x.fillStyle='#fff'; x.fill(); x.strokeStyle=color; x.lineWidth=2; x.stroke();
+    return [ex,ey];
+  }
+  function draw(){
+    x.clearRect(0,0,c.width,c.height);
+    // front carbon: H, H, CH3 at 90, 210, 330 (fixed)
+    var front=[Math.PI/2, Math.PI*7/6, Math.PI*11/6];
+    front.forEach(function(a){ bond(a,'#111','front'); });
+    // back carbon: three groups rotated by deg
+    var back=[0,2*Math.PI/3,4*Math.PI/3].map(function(a){ return a+deg*Math.PI/180; });
+    back.forEach(function(a,i){
+      var col=(i===0)?'#7c3aed':'#64748b';
+      bond(a,col,'back');
+    });
+    // labels for the methyl groups
+    x.fillStyle='#111'; x.font='13px system-ui'; x.textAlign='center';
+    x.fillText('front C',cx,22); x.fillText('back C',cx,c.height-10);
+    lab.textContent=label(deg);
+  }
+  function step(ts){
+    if(last===null) last=ts;
+    var dt=ts-last; last=ts;
+    if(playing){ deg=(deg+dt*0.05)%360; slider.value=Math.round(deg); }
+    draw();
+    requestAnimationFrame(step);
+  }
+  slider.addEventListener('input',function(){ deg=parseFloat(slider.value); playing=false; btn.textContent='Play'; draw(); });
+  btn.addEventListener('click',function(){ playing=!playing; btn.textContent=playing?'Pause':'Play'; });
+  requestAnimationFrame(step);
+})();
+</script>
+

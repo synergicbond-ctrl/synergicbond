@@ -1,0 +1,20 @@
+{
+ "file": "02o_GOC_Resonance_Bank_Batch12.html",
+ "partition_level": 3,
+ "sections_total": 1,
+ "sections_passed": 1,
+ "svg_in_sections": 0,
+ "svg_in_file": 0,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "02o_GOC_Resonance_Bank_Batch12:sources/heading001",
+   "title": "Sources",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  }
+ ]
+}

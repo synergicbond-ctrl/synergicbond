@@ -1,0 +1,218 @@
+{
+ "file": "04_Intermediates_Mechanism.html",
+ "partition_level": 3,
+ "sections_total": 23,
+ "sections_passed": 23,
+ "svg_in_sections": 297,
+ "svg_in_file": 297,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "04_Intermediates_Mechanism:reaction-intermediates-and-mechanism/heading001",
+   "title": "Reaction Intermediates and Mechanism",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 1,
+   "heading_id": "04_Intermediates_Mechanism:chapter-map-objectives-and-entry-check/heading001",
+   "title": "Chapter map, objectives and entry check",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 17
+  },
+  {
+   "order": 2,
+   "heading_id": "04_Intermediates_Mechanism:1-what-a-mechanism-is-and-the-language-u/heading001",
+   "title": "1. What a mechanism is, and the language used to write it",
+   "dir": "002",
+   "pass": true,
+   "svg": 13,
+   "blocks": 32
+  },
+  {
+   "order": 3,
+   "heading_id": "04_Intermediates_Mechanism:2-reagents-electrophiles-nucleophiles-le/heading001",
+   "title": "2. Reagents: electrophiles, nucleophiles, leaving groups and solvents",
+   "dir": "003",
+   "pass": true,
+   "svg": 0,
+   "blocks": 34
+  },
+  {
+   "order": 4,
+   "heading_id": "04_Intermediates_Mechanism:3-classifying-reactions/heading001",
+   "title": "3. Classifying reactions",
+   "dir": "004",
+   "pass": true,
+   "svg": 1,
+   "blocks": 14
+  },
+  {
+   "order": 5,
+   "heading_id": "04_Intermediates_Mechanism:4-energetics-of-a-reaction/heading001",
+   "title": "4. Energetics of a reaction",
+   "dir": "005",
+   "pass": true,
+   "svg": 7,
+   "blocks": 56
+  },
+  {
+   "order": 6,
+   "heading_id": "04_Intermediates_Mechanism:5-carbocations/heading001",
+   "title": "5. Carbocations",
+   "dir": "006",
+   "pass": true,
+   "svg": 63,
+   "blocks": 121
+  },
+  {
+   "order": 7,
+   "heading_id": "04_Intermediates_Mechanism:6-carbanions/heading001",
+   "title": "6. Carbanions",
+   "dir": "007",
+   "pass": true,
+   "svg": 32,
+   "blocks": 95
+  },
+  {
+   "order": 8,
+   "heading_id": "04_Intermediates_Mechanism:7-free-radicals/heading001",
+   "title": "7. Free radicals",
+   "dir": "008",
+   "pass": true,
+   "svg": 35,
+   "blocks": 107
+  },
+  {
+   "order": 9,
+   "heading_id": "04_Intermediates_Mechanism:8-carbenes/heading001",
+   "title": "8. Carbenes",
+   "dir": "009",
+   "pass": true,
+   "svg": 23,
+   "blocks": 43
+  },
+  {
+   "order": 10,
+   "heading_id": "04_Intermediates_Mechanism:9-nitrenes/heading001",
+   "title": "9. Nitrenes",
+   "dir": "010",
+   "pass": true,
+   "svg": 8,
+   "blocks": 22
+  },
+  {
+   "order": 11,
+   "heading_id": "04_Intermediates_Mechanism:10-arynes/heading001",
+   "title": "10. Arynes",
+   "dir": "011",
+   "pass": true,
+   "svg": 19,
+   "blocks": 42
+  },
+  {
+   "order": 12,
+   "heading_id": "04_Intermediates_Mechanism:11-other-intermediates/heading001",
+   "title": "11. Other intermediates",
+   "dir": "012",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 13,
+   "heading_id": "04_Intermediates_Mechanism:12-gallery-of-drawn-mechanisms/heading001",
+   "title": "12. Gallery of drawn mechanisms",
+   "dir": "013",
+   "pass": true,
+   "svg": 44,
+   "blocks": 67
+  },
+  {
+   "order": 14,
+   "heading_id": "04_Intermediates_Mechanism:13-comparison-from-reagent-to-intermedia/heading001",
+   "title": "13. Comparison: from reagent to intermediate",
+   "dir": "014",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 15,
+   "heading_id": "04_Intermediates_Mechanism:consolidated-revision-compilations-a-to-/heading001",
+   "title": "Consolidated revision (compilations A to O)",
+   "dir": "015",
+   "pass": true,
+   "svg": 0,
+   "blocks": 34
+  },
+  {
+   "order": 16,
+   "heading_id": "04_Intermediates_Mechanism:exercise-set-1-foundation/heading001",
+   "title": "Exercise set 1: Foundation",
+   "dir": "016",
+   "pass": true,
+   "svg": 11,
+   "blocks": 386
+  },
+  {
+   "order": 17,
+   "heading_id": "04_Intermediates_Mechanism:exercise-set-2-application/heading001",
+   "title": "Exercise set 2: Application",
+   "dir": "017",
+   "pass": true,
+   "svg": 17,
+   "blocks": 315
+  },
+  {
+   "order": 18,
+   "heading_id": "04_Intermediates_Mechanism:exercise-set-3-integration/heading001",
+   "title": "Exercise set 3: Integration",
+   "dir": "018",
+   "pass": true,
+   "svg": 24,
+   "blocks": 366
+  },
+  {
+   "order": 19,
+   "heading_id": "04_Intermediates_Mechanism:exercise-set-4-advanced/heading001",
+   "title": "Exercise set 4: Advanced",
+   "dir": "019",
+   "pass": true,
+   "svg": 0,
+   "blocks": 300
+  },
+  {
+   "order": 20,
+   "heading_id": "04_Intermediates_Mechanism:chapter-tests/heading001",
+   "title": "Chapter tests",
+   "dir": "020",
+   "pass": true,
+   "svg": 0,
+   "blocks": 168
+  },
+  {
+   "order": 21,
+   "heading_id": "04_Intermediates_Mechanism:answer-key-for-the-exercise-sets-and-tes/heading001",
+   "title": "Answer key for the exercise sets and tests",
+   "dir": "021",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 22,
+   "heading_id": "04_Intermediates_Mechanism:glossary-index-and-source-notes/heading001",
+   "title": "Glossary, index and source notes",
+   "dir": "022",
+   "pass": true,
+   "svg": 0,
+   "blocks": 8
+  }
+ ]
+}

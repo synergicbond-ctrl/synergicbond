@@ -1,0 +1,308 @@
+{
+ "file": "03_Stereochemistry.html",
+ "partition_level": 3,
+ "sections_total": 33,
+ "sections_passed": 33,
+ "svg_in_sections": 1735,
+ "svg_in_file": 1735,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "03_Stereochemistry:animation-newman-projection-of-butane-c2/heading001",
+   "title": "Animation: Newman projection of butane (C2–C3 rotation)",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 1,
+   "heading_id": "03_Stereochemistry:isomerism-and-stereochemistry/heading001",
+   "title": "Isomerism and Stereochemistry",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 2,
+   "heading_id": "03_Stereochemistry:contents/heading001",
+   "title": "Contents",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 3,
+   "heading_id": "03_Stereochemistry:0-how-to-use-this-chapter/heading001",
+   "title": "0. How to use this chapter",
+   "dir": "003",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 4,
+   "heading_id": "03_Stereochemistry:1-the-map-of-isomerism/heading001",
+   "title": "1. The map of isomerism",
+   "dir": "004",
+   "pass": true,
+   "svg": 1,
+   "blocks": 5
+  },
+  {
+   "order": 5,
+   "heading_id": "03_Stereochemistry:2-structural-isomerism-the-six-patterns/heading001",
+   "title": "2. Structural isomerism: the six patterns",
+   "dir": "005",
+   "pass": true,
+   "svg": 46,
+   "blocks": 37
+  },
+  {
+   "order": 6,
+   "heading_id": "03_Stereochemistry:3-counting-structural-isomers-a-method-t/heading001",
+   "title": "3. Counting structural isomers: a method that does not miss anything",
+   "dir": "006",
+   "pass": true,
+   "svg": 32,
+   "blocks": 28
+  },
+  {
+   "order": 7,
+   "heading_id": "03_Stereochemistry:4-worked-examples-isomer-counting-in-the/heading001",
+   "title": "4. Worked examples: isomer counting in the JEE style",
+   "dir": "007",
+   "pass": true,
+   "svg": 19,
+   "blocks": 27
+  },
+  {
+   "order": 8,
+   "heading_id": "03_Stereochemistry:5-summary-sheet-structural-isomerism/heading001",
+   "title": "5. Summary sheet: structural isomerism",
+   "dir": "008",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 9,
+   "heading_id": "03_Stereochemistry:6-geometrical-isomerism-cis-trans-and-e-/heading001",
+   "title": "6. Geometrical isomerism: cis–trans and E/Z",
+   "dir": "009",
+   "pass": true,
+   "svg": 27,
+   "blocks": 71
+  },
+  {
+   "order": 10,
+   "heading_id": "03_Stereochemistry:7-special-cases-of-geometrical-isomerism/heading001",
+   "title": "7. Special cases of geometrical isomerism that JEE likes",
+   "dir": "010",
+   "pass": true,
+   "svg": 6,
+   "blocks": 11
+  },
+  {
+   "order": 11,
+   "heading_id": "03_Stereochemistry:8-chirality-and-symmetry/heading001",
+   "title": "8. Chirality and symmetry",
+   "dir": "011",
+   "pass": true,
+   "svg": 14,
+   "blocks": 29
+  },
+  {
+   "order": 12,
+   "heading_id": "03_Stereochemistry:9-optical-activity/heading001",
+   "title": "9. Optical activity",
+   "dir": "012",
+   "pass": true,
+   "svg": 4,
+   "blocks": 48
+  },
+  {
+   "order": 13,
+   "heading_id": "03_Stereochemistry:10-the-cip-system-in-depth-r-s-and-every/heading001",
+   "title": "10. The CIP system in depth: R/S and every tricky case",
+   "dir": "013",
+   "pass": true,
+   "svg": 31,
+   "blocks": 71
+  },
+  {
+   "order": 14,
+   "heading_id": "03_Stereochemistry:11-drawing-stereochemistry-wedge-fischer/heading001",
+   "title": "11. Drawing stereochemistry: wedge, Fischer, sawhorse, Newman",
+   "dir": "014",
+   "pass": true,
+   "svg": 74,
+   "blocks": 83
+  },
+  {
+   "order": 15,
+   "heading_id": "03_Stereochemistry:12-relationships-between-stereoisomers/heading001",
+   "title": "12. Relationships between stereoisomers",
+   "dir": "015",
+   "pass": true,
+   "svg": 6,
+   "blocks": 22
+  },
+  {
+   "order": 16,
+   "heading_id": "03_Stereochemistry:13-meso-compounds/heading001",
+   "title": "13. Meso compounds",
+   "dir": "016",
+   "pass": true,
+   "svg": 5,
+   "blocks": 13
+  },
+  {
+   "order": 17,
+   "heading_id": "03_Stereochemistry:14-counting-stereoisomers/heading001",
+   "title": "14. Counting stereoisomers",
+   "dir": "017",
+   "pass": true,
+   "svg": 0,
+   "blocks": 36
+  },
+  {
+   "order": 18,
+   "heading_id": "03_Stereochemistry:15-chirality-without-a-stereocentre/heading001",
+   "title": "15. Chirality without a stereocentre",
+   "dir": "018",
+   "pass": true,
+   "svg": 14,
+   "blocks": 45
+  },
+  {
+   "order": 19,
+   "heading_id": "03_Stereochemistry:16-conformational-analysis-of-open-chain/heading001",
+   "title": "16. Conformational analysis of open-chain molecules",
+   "dir": "019",
+   "pass": true,
+   "svg": 23,
+   "blocks": 48
+  },
+  {
+   "order": 20,
+   "heading_id": "03_Stereochemistry:17-ring-strain-and-the-shapes-of-small-r/heading001",
+   "title": "17. Ring strain and the shapes of small rings",
+   "dir": "020",
+   "pass": true,
+   "svg": 4,
+   "blocks": 10
+  },
+  {
+   "order": 21,
+   "heading_id": "03_Stereochemistry:18-cyclohexane-chair-boat-twist-boat/heading001",
+   "title": "18. Cyclohexane: chair, boat, twist-boat",
+   "dir": "021",
+   "pass": true,
+   "svg": 5,
+   "blocks": 13
+  },
+  {
+   "order": 22,
+   "heading_id": "03_Stereochemistry:19-substituted-cyclohexanes/heading001",
+   "title": "19. Substituted cyclohexanes",
+   "dir": "022",
+   "pass": true,
+   "svg": 24,
+   "blocks": 55
+  },
+  {
+   "order": 23,
+   "heading_id": "03_Stereochemistry:20-racemisation-resolution-and-asymmetri/heading001",
+   "title": "20. Racemisation, resolution and asymmetric synthesis",
+   "dir": "023",
+   "pass": true,
+   "svg": 15,
+   "blocks": 31
+  },
+  {
+   "order": 24,
+   "heading_id": "03_Stereochemistry:21-prochirality-and-topicity/heading001",
+   "title": "21. Prochirality and topicity",
+   "dir": "024",
+   "pass": true,
+   "svg": 0,
+   "blocks": 17
+  },
+  {
+   "order": 25,
+   "heading_id": "03_Stereochemistry:22-stereochemistry-of-substitution/heading001",
+   "title": "22. Stereochemistry of substitution",
+   "dir": "025",
+   "pass": true,
+   "svg": 15,
+   "blocks": 26
+  },
+  {
+   "order": 26,
+   "heading_id": "03_Stereochemistry:23-stereochemistry-of-elimination/heading001",
+   "title": "23. Stereochemistry of elimination",
+   "dir": "026",
+   "pass": true,
+   "svg": 10,
+   "blocks": 22
+  },
+  {
+   "order": 27,
+   "heading_id": "03_Stereochemistry:24-stereochemistry-of-addition-to-alkene/heading001",
+   "title": "24. Stereochemistry of addition to alkenes",
+   "dir": "027",
+   "pass": true,
+   "svg": 40,
+   "blocks": 45
+  },
+  {
+   "order": 28,
+   "heading_id": "03_Stereochemistry:25-stereochemistry-of-carbonyl-additions/heading001",
+   "title": "25. Stereochemistry of carbonyl additions",
+   "dir": "028",
+   "pass": true,
+   "svg": 5,
+   "blocks": 15
+  },
+  {
+   "order": 29,
+   "heading_id": "03_Stereochemistry:26-summary-sheet-stereochemistry-of-reac/heading001",
+   "title": "26. Summary sheet: stereochemistry of reactions",
+   "dir": "029",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 30,
+   "heading_id": "03_Stereochemistry:27-practice-set-level-1-main-direct-appl/heading001",
+   "title": "27. Practice set, Level 1 (Main): direct application",
+   "dir": "030",
+   "pass": true,
+   "svg": 476,
+   "blocks": 1160
+  },
+  {
+   "order": 31,
+   "heading_id": "03_Stereochemistry:28-practice-set-level-2-advanced-multi-s/heading001",
+   "title": "28. Practice set, Level 2 (Advanced): multi-step and multi-concept",
+   "dir": "031",
+   "pass": true,
+   "svg": 452,
+   "blocks": 1277
+  },
+  {
+   "order": 32,
+   "heading_id": "03_Stereochemistry:29-practice-set-level-3-advanced-integer/heading001",
+   "title": "29. Practice set, Level 3 (Advanced): integer, matrix-match and paragraph problems",
+   "dir": "032",
+   "pass": true,
+   "svg": 387,
+   "blocks": 433
+  }
+ ]
+}

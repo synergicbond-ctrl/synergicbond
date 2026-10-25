@@ -1,0 +1,108 @@
+[
+ {
+  "stem": "06_Haloalkanes",
+  "title": "S N 1 reaction in detail",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "SN1 mechanism, step by step",
+    "steps": "Step 1 (slow, rate-determining): the C–X bond ionises, giving a planar carbocation and X⁻. Rate = k[R–X].;;Step 2: the carbocation is sp² with an empty p-orbital, so the nucleophile can attack either face.;;Step 3 (fast): Nu attacks the carbocation to give the substitution product; a stereogenic carbon gives a mixture of both configurations.;;Note: a 1,2-hydride or alkyl shift can occur before attack if it gives a more stable carbocation."
+   },
+   {
+    "type": "energy",
+    "title": "SN1 energy profile (two steps)",
+    "points": "0:20,25:90,50:55,75:65,100:10",
+    "note": "Schematic profile: heights are illustrative, not measured values."
+   }
+  ]
+ },
+ {
+  "stem": "06_Haloalkanes",
+  "title": "The S N 2 reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "SN2 mechanism, step by step",
+    "steps": "Step 1: the nucleophile (Nu⁻) approaches the carbon from the side opposite the leaving group (backside attack, about 180° to the C–X bond).;;Step 2: a single transition state forms: Nu and X are both partly bonded to a planar, five-coordinate carbon; the other three groups lie in a plane.;;Step 3: in the same step the C–X bond breaks as the C–Nu bond forms; the leaving group departs with the bonding pair.;;Result: the configuration at carbon is inverted (Walden inversion). Rate = k[R–X][Nu⁻]."
+   },
+   {
+    "type": "energy",
+    "title": "SN2 energy profile (one step)",
+    "points": "0:25,50:90,100:10",
+    "note": "Schematic profile: heights are illustrative, not measured values."
+   }
+  ]
+ },
+ {
+  "stem": "06_Haloalkanes",
+  "title": "^13\\. The E2 reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "E2 mechanism, step by step",
+    "steps": "Step 1: a strong base approaches a β-hydrogen that is anti-periplanar to the leaving group.;;Step 2: in one concerted step the C–H bond breaks, the C=C π bond forms and the leaving group departs.;;Result: rate = k[R–X][Base]. The more substituted (Zaitsev) alkene is usually the major product; a bulky base can favour the less substituted (Hofmann) alkene."
+   }
+  ]
+ },
+ {
+  "stem": "06_Haloalkanes",
+  "title": "^14\\. The E1 reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "E1 mechanism, step by step",
+    "steps": "Step 1 (slow): the leaving group departs, giving a carbocation (the same first step as SN1). Rate = k[R–X].;;Step 2 (fast): a weak base removes a β-hydrogen from a carbon next to the cationic carbon.;;Result: the C=C bond forms; the more substituted (Zaitsev) alkene usually predominates. Rearrangement of the carbocation is possible."
+   }
+  ]
+ },
+ {
+  "stem": "09_Carbonyl",
+  "title": "^PART C\\. NUCLEOPHILIC ADDITION",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Nucleophilic addition to C=O, step by step",
+    "steps": "Step 1: the nucleophile attacks the electrophilic carbonyl carbon at about 107° to the C=O axis (Bürgi–Dunitz angle), interacting with the C=O π* orbital (the LUMO).;;Step 2: the C=O π electrons move onto oxygen, giving a tetrahedral alkoxide intermediate; the carbon changes from sp² to sp³.;;Step 3: protonation of the alkoxide (by acid or solvent) gives the addition product.;;Reactivity: aldehydes react faster than ketones because the carbonyl carbon is less hindered and more electrophilic."
+   }
+  ]
+ },
+ {
+  "stem": "09_Carbonyl",
+  "title": "^25\\. The aldol reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Base-catalysed aldol reaction, step by step",
+    "steps": "Step 1: a base removes an α-hydrogen from one carbonyl compound, forming an enolate.;;Step 2: the enolate carbon attacks the carbonyl carbon of a second molecule, forming a new C–C bond and an alkoxide.;;Step 3: protonation of the alkoxide gives the β-hydroxy carbonyl compound (the aldol).;;Step 4: on heating, loss of water (E1cB) gives the α,β-unsaturated carbonyl compound."
+   }
+  ]
+ },
+ {
+  "stem": "07_Aromatic",
+  "title": "^7\\. Electrophilic aromatic substitution: the general mechanism",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Electrophilic aromatic substitution, step by step",
+    "steps": "Step 1: the electrophile E⁺ is generated (for nitration, NO₂⁺ from HNO₃ and H₂SO₄).;;Step 2 (slow, rate-determining): the π system of benzene attacks E⁺, giving a resonance-stabilised arenium ion (σ-complex); aromaticity is temporarily lost.;;Step 3 (fast): a base removes H⁺ from the sp³ carbon, restoring aromaticity and giving the substituted benzene."
+   },
+   {
+    "type": "energy",
+    "title": "EAS energy profile (two steps)",
+    "points": "0:20,25:85,50:60,75:65,100:15",
+    "note": "Schematic profile: heights are illustrative, not measured values."
+   }
+  ]
+ },
+ {
+  "stem": "04_Intermediates_Mechanism",
+  "title": "^5\\. Carbocations",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "1,2-hydride shift in a carbocation",
+    "steps": "Start: a secondary carbocation is next to a carbon that carries a hydrogen and is more substituted.;;Step 1: the hydrogen moves with its bonding pair to the cationic carbon (1,2-hydride shift).;;Result: the positive charge is now on the more substituted carbon, giving a more stable (tertiary) carbocation."
+   }
+  ]
+ }
+]

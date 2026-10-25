@@ -1,0 +1,486 @@
+[
+ {
+  "id": "CARB-001",
+  "stem_marked": "How many hydrogen atoms of propanone are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "6",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "2 α-carbon(s) with H: 3, 3. Total = 6, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "6",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-002",
+  "stem_marked": "How many hydrogen atoms of butanone are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "5",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "2 α-carbon(s) with H: 2, 3. Total = 5, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "5",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-003",
+  "stem_marked": "How many hydrogen atoms of pentan-3-one are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "4",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "2 α-carbon(s) with H: 2, 2. Total = 4, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "4",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-004",
+  "stem_marked": "How many hydrogen atoms of acetophenone are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "3",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "1 α-carbon(s) with H: 3. Total = 3, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "3",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-005",
+  "stem_marked": "How many hydrogen atoms of cyclohexanone are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "4",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "2 α-carbon(s) with H: 2, 2. Total = 4, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "4",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-006",
+  "stem_marked": "How many hydrogen atoms of benzophenone are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "0",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "No α-carbon carries a hydrogen on an sp^{3} centre that can be removed, so nothing exchanges. (An aldehydic H is attached to the carbonyl carbon itself, not to an α-carbon.)"
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "0",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-007",
+  "stem_marked": "How many hydrogen atoms of 2-methylpropanal are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "1",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "1 α-carbon(s) with H: 1. Total = 1, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "1",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-008",
+  "stem_marked": "How many hydrogen atoms of 2,2-dimethylpropanal are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "0",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "No α-carbon carries a hydrogen on an sp^{3} centre that can be removed, so nothing exchanges. (An aldehydic H is attached to the carbonyl carbon itself, not to an α-carbon.)"
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "0",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-009",
+  "stem_marked": "How many hydrogen atoms of benzaldehyde are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "0",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "No α-carbon carries a hydrogen on an sp^{3} centre that can be removed, so nothing exchanges. (An aldehydic H is attached to the carbonyl carbon itself, not to an α-carbon.)"
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "0",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-010",
+  "stem_marked": "How many hydrogen atoms of phenylacetaldehyde are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "2",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "1 α-carbon(s) with H: 2. Total = 2, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "2",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-011",
+  "stem_marked": "How many hydrogen atoms of 1-phenylpropan-2-one are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "5",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "2 α-carbon(s) with H: 3, 2. Total = 5, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "5",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-012",
+  "stem_marked": "How many hydrogen atoms of pentane-2,4-dione are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "10",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "4 α-carbon(s) with H: 3, 2, 2, 3. Total = 10, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": [
+   "Locate every sp^{3} carbon bonded to a C=O carbon: C1 (CH_{3}, 3 H), C3 (CH_{2} lying between the two C=O groups, 2 H) and C5 (CH_{3}, 3 H).",
+   "Count each carbon once: 3 + 2 + 3 = 8. The C3 CH_{2} is alpha to both carbonyls, but its two hydrogens are still only two hydrogens.",
+   "All 8 exchange for D in NaOD/D_{2}O through the enolate, so the answer is 8."
+  ],
+  "flags": [],
+  "review": {
+   "status": "ERROR",
+   "note": "Key 10 is wrong. Exchangeable α-H: C1 CH3 (3) + C3 CH2 between the two C=O (2) + C5 CH3 (3) = 8. Steps count the C3 CH2 twice (4 α-carbons, 3,2,2,3).",
+   "corrected_key": "8",
+   "reviewer": "AI reasoning check (not a second human reviewer)"
+  }
+ },
+ {
+  "id": "CARB-013",
+  "stem_marked": "How many hydrogen atoms of butane-2,3-dione are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "6",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "2 α-carbon(s) with H: 3, 3. Total = 6, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "6",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-014",
+  "stem_marked": "How many hydrogen atoms of 2-methylcyclohexanone are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "3",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "2 α-carbon(s) with H: 2, 1. Total = 3, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "3",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-015",
+  "stem_marked": "How many hydrogen atoms of 2,2-dimethylcyclohexanone are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "2",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "1 α-carbon(s) with H: 2. Total = 2, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "2",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-016",
+  "stem_marked": "How many hydrogen atoms of 2,2,4,4-tetramethylpentan-3-one are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "0",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "No α-carbon carries a hydrogen on an sp^{3} centre that can be removed, so nothing exchanges. (An aldehydic H is attached to the carbonyl carbon itself, not to an α-carbon.)"
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "0",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-017",
+  "stem_marked": "How many hydrogen atoms of 2,4-dimethylpentan-3-one are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "2",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "2 α-carbon(s) with H: 1, 1. Total = 2, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "2",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-018",
+  "stem_marked": "How many hydrogen atoms of cyclopentanone are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "4",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "2 α-carbon(s) with H: 2, 2. Total = 4, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "4",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-019",
+  "stem_marked": "How many hydrogen atoms of ethyl acetoacetate are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "7",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "3 α-carbon(s) with H: 3, 2, 2. Total = 7, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": [
+   "Ethyl acetoacetate is CH_{3}–CO–CH_{2}–CO–O–CH2CH3. The sp^{3} carbons bonded to a C=O carbon are the CH_{3} (3 H) and the CH_{2} between the two carbonyls (2 H).",
+   "The OCH_{2} of the ethyl group is bonded to oxygen, not to a carbonyl carbon, so its hydrogens are not alpha hydrogens and do not exchange.",
+   "Total = 3 + 2 = 5, so the answer is 5."
+  ],
+  "flags": [],
+  "review": {
+   "status": "ERROR",
+   "note": "Key 7 is wrong. Ethyl acetoacetate CH3COCH2COOEt: α-H are CH3 (3) + CH2 (2) = 5. The OCH2 of the ester is attached to O, not to a carbonyl carbon, so it is not α. Steps count the CH2 twice and include the ester OCH2.",
+   "corrected_key": "5",
+   "reviewer": "AI reasoning check (not a second human reviewer)"
+  }
+ },
+ {
+  "id": "CARB-020",
+  "stem_marked": "How many hydrogen atoms of but-2-enal are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "0",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "No α-carbon carries a hydrogen on an sp^{3} centre that can be removed, so nothing exchanges. (An aldehydic H is attached to the carbonyl carbon itself, not to an α-carbon.)"
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "NEEDS-DECISION",
+   "note": "Key 0 counts only the sp2 alpha carbon. Under NaOD/D2O the gamma CH3 of an alpha,beta-unsaturated aldehyde can exchange through the extended (dienolate) enolate, so the answer could be 3. The stem does not say whether gamma-H exchange counts. Decide the intended answer or reword the stem.",
+   "corrected_key": "0 or 3 (stem ambiguous)",
+   "reviewer": "AI reasoning check; second AI reviewer (Sonnet) flagged as unsure"
+  }
+ },
+ {
+  "id": "CARB-021",
+  "stem_marked": "How many hydrogen atoms of but-3-en-2-one are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "3",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "1 α-carbon(s) with H: 3. Total = 3, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "3",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-022",
+  "stem_marked": "How many hydrogen atoms of 3,3-dimethylbutan-2-one are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "3",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "1 α-carbon(s) with H: 3. Total = 3, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "3",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-023",
+  "stem_marked": "How many hydrogen atoms of butanal are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "2",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "1 α-carbon(s) with H: 2. Total = 2, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "2",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-024",
+  "stem_marked": "How many hydrogen atoms of cyclohexane-1,4-dione are replaced by deuterium when it is shaken with D_{2}O and a trace of NaOD?",
+  "figure_count": 1,
+  "answer_key": "8",
+  "solution_steps": [
+   "Locate every carbon directly bonded to a C=O carbon (α-carbons) and count the H atoms on each sp^{3} α-carbon.",
+   "4 α-carbon(s) with H: 2, 2, 2, 2. Total = 8, all of which exchange for D in NaOD/D_{2}O via the enolate."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Structure, α-hydrogen count and key agree on re-check.",
+   "corrected_key": "8",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ },
+ {
+  "id": "CARB-025",
+  "stem_marked": "Which of the following give a yellow precipitate with I_{2}/NaOH? Mark all that apply.",
+  "figure_count": 6,
+  "answer_key": "A, B, C, D, E, F",
+  "solution_steps": [
+   "(A) ethanal: positive – contains CH_{3}CO– (methyl ketone / ethanal).",
+   "(B) ethanol: positive – is ethanol, the only primary alcohol that forms CH_{3}CHO.",
+   "(C) propan-2-ol: positive – contains CH_{3}CH(OH)– (oxidised in situ to CH_{3}CO–).",
+   "(D) butan-2-ol: positive – contains CH_{3}CH(OH)– (oxidised in situ to CH_{3}CO–).",
+   "(E) propanone: positive – contains CH_{3}CO– (methyl ketone / ethanal).",
+   "(F) butanone: positive – contains CH_{3}CO– (methyl ketone / ethanal)."
+  ],
+  "corrected_solution_steps": null,
+  "flags": [],
+  "review": {
+   "status": "VERIFIED-BY-REASONING",
+   "note": "Drawings checked against names: A ethanal, B ethanol, C propan-2-ol, D butan-2-ol, E propanone, F butanone. All six have CH3CO– or CH3CH(OH)– and give iodoform, so the key A,B,C,D,E,F is correct.",
+   "corrected_key": "A,B,C,D,E,F",
+   "reviewer": "AI reasoning check (not a second human reviewer)",
+   "second_reviewer": "Sonnet independent re-check: agree"
+  }
+ }
+]

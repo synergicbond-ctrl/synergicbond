@@ -1,0 +1,13 @@
+<h3 id="s43">A.2 What was verified by program (verify12.py)</h3>
+<p>Run with RDKit and Python; all checks pass.</p>
+<ul>
+<li><b>Stereochemistry:</b> Fischer codes → SMILES for all 8 D-aldohexoses, 4 D-aldopentoses, 2 tetroses, glyceraldehyde and D-fructose, validated against the known CIP descriptors (glucose 2R,3S,4R,5R; mannose 2S,3S,4R,5R; galactose 2R,3S,4S,5R; etc.); CIP labels of all 20 L-amino acids (S except L-cysteine R; Ile 2S,3S; Thr 2S,3R); adenosine and 2′-deoxyadenosine ring labels; L-ascorbic acid; adrenaline.</li>
+<li><b>Counts:</b> stereoisomer numbers of aldotrioses to aldoheptoses, ketohexoses and ketoheptoses, pyranose (32), thr/ile (4 each), cholesterol (8 stereocentres), sucrose (9 stereocentres, 8 OH), ATP (4 carbon stereocentres).</li>
+<li><b>Symmetry results:</b> the palindrome rule (meso aldaric acids from allose and galactose; from ribose and xylose among pentoses; meso alditols), the four osazone families of the eight D-aldohexoses, the Kiliani–Fischer parent/child relations, the aldaric-acid pairs obtained from different sugars (glucose/L-gulose; altrose/talose).</li>
+<li><b>Disaccharides:</b> SMILES of maltose, cellobiose, lactose, trehalose built by a stereo-preserving link and checked by in-silico hydrolysis (donor α/β configuration preserved); sucrose hydrolysis; formulas and masses of methylated sugars.</li>
+<li><b>Periodate counts:</b> an automatic cleavage simulation reproduces glucose (5 HIO<sub>4</sub>: 5 HCOOH + HCHO), fructose (5: 3 HCOOH + 2 HCHO + CO<sub>2</sub>), glucitol (5: 4 HCOOH + 2 HCHO), methyl pyranoside (2, 1 HCOOH) and methyl furanoside (2, 1 HCHO).</li>
+<li><b>Formulas and masses:</b> the five nucleobases, nucleosides, ATP, glucose 6-phosphate, 13 vitamins, four steroid hormones, thyroxine, adrenaline, five fatty acids, triglycerides, phospholipid, peptides (Gly–Gly, tetrapeptide, pentapeptide, Leu-enkephalin, aspartame, glutathione, collagen model).</li>
+<li><b>Numerical answers:</b> every worked numerical in the chapter (mutarotation, kinetics, invert sugar and polarimetry, saponification and iodine values, Michaelis–Menten, pI and speciation, Kjeldahl, DNA mass and length, PCR, Meselson–Stahl, SPPS yield, cellulose derivative substitution, methylation analysis, Van Slyke) is recomputed in the script.</li>
+<li><b>Sequence logic:</b> trypsin, chymotrypsin and CNBr fragment counts for the 17-residue and 5-residue peptides; the template/mRNA/peptide translation and hydrogen-bond count of the 18-bp gene segment; the genetic-code degeneracy sum (61).</li>
+<li><b>Content audit:</b> no institute name appears in the output; the problem and example counts are read from the built HTML.</li>
+</ul>

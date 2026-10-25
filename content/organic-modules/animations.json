@@ -890,5 +890,181 @@
     "steps": "Monomers carry two functional groups (such as a diacid and a diamine); any two molecules can react, giving dimers, trimers and so on.;;Each coupling releases a small molecule (water, HCl), as in nylon-6,6 from adipic acid and hexamethylenediamine.;;Molar mass rises slowly. A high degree of polymerisation needs a conversion near 99% (Carothers equation: Xn = 1/(1 − p)).;;An exact 1:1 ratio of the functional groups is needed; an excess of one monomer limits chain length."
    }
   ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^5\\.2 Esterification",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Fischer esterification, step by step",
+    "steps": "Step 1: the acid catalyst protonates the carbonyl oxygen of the carboxylic acid.;;Step 2: the alcohol oxygen attacks the carbonyl carbon, giving a tetrahedral intermediate; proton transfer follows.;;Step 3: water leaves from the tetrahedral intermediate, and loss of H⁺ gives the ester.;;All steps are reversible; use excess alcohol or remove water to push the equilibrium toward the ester. Labelling shows the alkoxy oxygen comes from the alcohol and the acyl C–O(H) bond breaks."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^6\\.1 With hydrogen halides",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Alcohol + HX, step by step",
+    "steps": "Step 1: HX protonates the OH group, giving R–OH₂⁺.;;Tertiary and secondary (benzylic/allylic) alcohols: water leaves to give a carbocation (SN1), then X⁻ attacks. Rearrangement is possible.;;Primary alcohols: X⁻ attacks the protonated alcohol directly (SN2) with inversion at carbon.;;Reactivity of HX: HI > HBr > HCl; ZnCl₂ helps with HCl. Alcohol reactivity: 3° > 2° > 1° (SN1 path)."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^6\\.2 The Lucas test",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Lucas test, step by step",
+    "steps": "Reagent: anhydrous ZnCl₂ in concentrated HCl. ZnCl₂ coordinates the alcohol oxygen, making OH a better leaving group.;;Tertiary alcohol: the carbocation forms at once and chloride adds; the insoluble alkyl chloride makes the solution turn cloudy immediately.;;Secondary alcohol: turbidity appears in about 5 minutes.;;Primary alcohol: no turbidity at room temperature (SN2 is slow). The test fails for alcohols with more than 6 carbons (not soluble in the reagent)."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^9\\.3 The pinacol rearrangement",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Pinacol rearrangement of a 1,2-diol, step by step",
+    "steps": "Step 1: acid protonates one OH, and water leaves to give a carbocation (at the carbon giving the more stable cation).;;Step 2: a group on the neighbouring carbon (methyl, aryl, H) shifts to the cation (1,2-shift).;;Step 3: the oxygen lone pair stabilises the new cation, giving a protonated ketone.;;Step 4: loss of H⁺ gives the ketone (for pinacol, pinacolone, (CH₃)₃C–CO–CH₃)."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^16\\.3 Fries rearrangement",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Fries rearrangement, step by step",
+    "steps": "Substrate: a phenolic ester (Ar–O–CO–R) with AlCl₃.;;Step 1: AlCl₃ complexes the carbonyl oxygen, and the acyl group is transferred to the ring as an acylium-type species (intermolecular or intimate ion pair).;;Step 2: electrophilic acylation of the activated ring at the ortho or para position, then work-up.;;Result: hydroxyaryl ketones. Low temperature favours para; high temperature favours ortho (chelated by Al, thermodynamic)."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^16\\.4 Claisen rearrangement",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Aromatic Claisen rearrangement, step by step",
+    "steps": "Substrate: allyl phenyl ether, heated to about 200 °C.;;Step 1: a concerted [3,3]-sigmatropic shift through a six-membered cyclic transition state moves the allyl group from O to the ortho carbon, with inversion of the allyl unit (the γ-carbon bonds to the ring).;;Step 2: the resulting cyclohexadienone tautomerises, restoring the aromatic ring and giving o-allylphenol.;;If both ortho positions are blocked, a second [3,3] shift (Cope) moves the allyl group to the para position."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^22\\.1 Cleavage by hydrogen halides",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Cleavage of an ether with HI, step by step",
+    "steps": "Step 1: HI protonates the ether oxygen, giving an oxonium ion R–O⁺(H)–R′.;;Step 2 (primary/methyl groups): I⁻ attacks the less hindered carbon by SN2, giving R–I and R′–OH.;;With a tertiary group, the C–O bond ionises (SN1) and the tertiary iodide forms.;;Excess HI converts the alcohol to a second alkyl iodide. Aryl alkyl ethers give an alkyl iodide and phenol (the aryl C–O bond does not break)."
+   }
+  ]
+ },
+ {
+  "stem": "09_Carbonyl",
+  "title": "^29\\. The Knoevenagel condensation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Knoevenagel condensation, step by step",
+    "steps": "Step 1: a weak base (piperidine, pyridine) removes a proton from the active methylene compound (such as CH₂(CO₂Et)₂), giving a stabilised enolate.;;Step 2: the enolate adds to the aldehyde or ketone carbonyl carbon, giving a β-hydroxy intermediate.;;Step 3: dehydration (loss of H₂O) gives the α,β-unsaturated product.;;Doebner variant: with malonic acid in pyridine, decarboxylation follows, giving a cinnamic-type acid."
+   }
+  ]
+ },
+ {
+  "stem": "09_Carbonyl",
+  "title": "^30\\. The Mannich reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Mannich reaction, step by step",
+    "steps": "Step 1: an amine (secondary) and formaldehyde condense to the iminium ion, CH₂=N⁺R₂.;;Step 2: the enol (or enolate) of a ketone with an α-hydrogen attacks the iminium ion at carbon.;;Result: a β-amino ketone (Mannich base), R–CO–CH₂–CH₂–NR₂.;;Heating the Mannich base can eliminate the amine, giving an α,β-unsaturated ketone."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^48\\. Mechanism: imine formation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Imine formation and the pH profile",
+    "steps": "Step 1: the amine adds to the carbonyl carbon, giving a carbinolamine (tetrahedral intermediate).;;Step 2: acid protonates the OH group of the carbinolamine, and water leaves with the nitrogen lone pair, giving an iminium ion; loss of H⁺ gives the imine.;;pH profile: the rate is highest near pH 4 to 5. At lower pH the amine is protonated and not nucleophilic; at higher pH the OH is not protonated enough to leave.;;Reductive amination: NaBH₃CN or H₂/Ni then reduces the C=N to the amine."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^36\\. Mechanism: acylation of an amine",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Acylation of an amine by an acid chloride",
+    "steps": "Step 1: the nitrogen lone pair attacks the acyl chloride carbonyl carbon, giving a tetrahedral intermediate.;;Step 2: the C=O re-forms and Cl⁻ is expelled, giving the N-acylammonium ion.;;Step 3: a base (pyridine or a second equivalent of amine) removes H⁺, giving the amide.;;The amide N is much less basic and nucleophilic than the amine, so the reaction stops at the monoacylated product."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^57\\. Mechanism: Curtius and Lossen",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Curtius rearrangement, step by step",
+    "steps": "Step 1: an acyl chloride and NaN₃ give the acyl azide, R–CO–N₃.;;Step 2: on heating, the R group migrates from carbon to nitrogen as N₂ leaves (concerted), forming the isocyanate R–N=C=O. R keeps its configuration.;;Step 3: water adds to the isocyanate, giving a carbamic acid, which loses CO₂ to give R–NH₂.;;Lossen: the same migration occurs from an O-acylated hydroxamic acid in base. Both give an amine with one carbon fewer than the acid."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^47\\. Schotten–Baumann reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Schotten–Baumann acylation",
+    "steps": "Conditions: an acyl chloride with an amine, alcohol or phenol in the presence of aqueous NaOH (or pyridine).;;Step 1: the nucleophile (RNH₂, ROH or ArO⁻) attacks the acyl chloride's carbonyl carbon, forming a tetrahedral intermediate.;;Step 2: Cl⁻ leaves, forming the amide or ester.;;The base neutralises the HCl formed, which would otherwise protonate the amine and stop the reaction."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^59\\. Favorskii rearrangement",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Favorskii rearrangement, step by step",
+    "steps": "Substrate: an α-halo ketone that has an α′-hydrogen, with an alkoxide or hydroxide base.;;Step 1: the base removes the α′-hydrogen, forming an enolate.;;Step 2: the enolate displaces the halide intramolecularly, forming a strained cyclopropanone intermediate.;;Step 3: the nucleophile (RO⁻) adds to the cyclopropanone C=O, and the ring opens to the more stable carbanion; protonation gives the rearranged ester (or acid). A cyclic α-halo ketone undergoes ring contraction."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^63\\. Cope and oxy-Cope",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Cope rearrangement",
+    "steps": "Substrate: a 1,5-diene (C=C–C–C–C=C).;;A concerted [3,3]-sigmatropic shift through a chair-like six-membered transition state breaks the central C3–C4 σ bond and makes a new C1–C6 σ bond.;;The equilibrium favours the more stable (more substituted or conjugated) diene.;;Oxy-Cope: a hydroxyl at C3 gives an enol, which tautomerises to a carbonyl compound, making the reaction irreversible."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^72\\. Stork enamine alkylation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Stork enamine alkylation, step by step",
+    "steps": "Step 1: a ketone and a secondary amine (such as pyrrolidine), with acid catalysis, give an enamine and water.;;Step 2: the enamine β-carbon (nucleophilic, from the nitrogen lone pair) attacks an alkyl halide or Michael acceptor, giving an iminium salt.;;Step 3: aqueous hydrolysis gives the α-alkylated ketone and regenerates the amine.;;Advantage over enolate chemistry: milder, and gives monoalkylation under neutral conditions."
+   }
+  ]
  }
 ]

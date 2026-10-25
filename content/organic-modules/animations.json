@@ -104,5 +104,115 @@
     "steps": "Start: a secondary carbocation is next to a carbon that carries a hydrogen and is more substituted.;;Step 1: the hydrogen moves with its bonding pair to the cationic carbon (1,2-hydride shift).;;Result: the positive charge is now on the more substituted carbon, giving a more stable (tertiary) carbocation."
    }
   ]
+ },
+ {
+  "stem": "05_Hydrocarbons",
+  "title": "^5\\. Free-radical halogenation of alkanes",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Free-radical chlorination of an alkane, step by step",
+    "steps": "Initiation: UV light or heat splits Cl–Cl homolytically: Cl₂ → 2 Cl•.;;Propagation 1: a chlorine atom abstracts a hydrogen from the alkane: R–H + Cl• → R• + HCl.;;Propagation 2: the alkyl radical takes a chlorine atom from Cl₂: R• + Cl₂ → R–Cl + Cl•. The chlorine atom is regenerated, so the chain continues.;;Termination: two radicals combine (Cl• + Cl•, R• + Cl•, R• + R•), which removes radicals and ends the chain.;;Selectivity: weaker C–H bonds react faster (3° > 2° > 1°); bromine is much more selective than chlorine."
+   }
+  ]
+ },
+ {
+  "stem": "05_Hydrocarbons",
+  "title": "^18\\. Electrophilic addition to alkenes: the general picture",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Electrophilic addition of HBr to propene (Markovnikov), step by step",
+    "steps": "Step 1: the π electrons of the alkene attack the electrophilic hydrogen of H–Br, and H–Br breaks heterolytically.;;Step 2: hydrogen adds to the carbon that gives the more stable carbocation. For propene, H adds to CH₂, giving a secondary carbocation.;;Step 3: bromide ion attacks the carbocation, giving 2-bromopropane (the Markovnikov product).;;Note: if a 1,2-hydride or alkyl shift can give a more stable carbocation, rearranged products form."
+   }
+  ]
+ },
+ {
+  "stem": "05_Hydrocarbons",
+  "title": "^19\\. Anti-Markovnikov addition of HBr",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Peroxide effect: radical addition of HBr to propene, step by step",
+    "steps": "Initiation: a peroxide splits into alkoxy radicals, and RO• takes a hydrogen from HBr: RO• + HBr → ROH + Br•.;;Step 1: the bromine atom adds to the less substituted carbon of the alkene, giving the more stable (secondary) carbon radical.;;Step 2: the carbon radical takes a hydrogen from HBr, giving the product and regenerating Br•, so the chain continues.;;Result: the anti-Markovnikov product, 1-bromopropane. Under ordinary conditions only HBr shows this peroxide effect."
+   }
+  ]
+ },
+ {
+  "stem": "10_Acids_Derivatives",
+  "title": "^8\\. Nucleophilic acyl substitution",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Nucleophilic acyl substitution (addition–elimination), step by step",
+    "steps": "Step 1 (addition): the nucleophile attacks the carbonyl carbon, the C=O π bond breaks, and a tetrahedral intermediate forms.;;Step 2 (elimination): the C=O re-forms and the leaving group is expelled (Cl⁻ from an acyl chloride, RCOO⁻ from an anhydride, RO⁻ from an ester).;;Reactivity order: acyl chloride > anhydride > ester ≈ carboxylic acid > amide, following leaving-group ability and resonance donation into the carbonyl."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^7\\.1 Intramolecular dehydration",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Acid-catalysed dehydration of a secondary or tertiary alcohol (E1), step by step",
+    "steps": "Step 1: the acid protonates the OH group, giving R–OH₂⁺, which has a good leaving group (H₂O).;;Step 2 (slow): water leaves, giving a carbocation.;;Step 3: a base (H₂O or HSO₄⁻) removes a β-hydrogen, forming the C=C bond. The more substituted (Zaitsev) alkene predominates.;;Notes: ease of dehydration is 3° > 2° > 1°, and the carbocation may rearrange before the alkene forms."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^39\\. Mechanism: Hofmann bromamide",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Hofmann bromamide degradation, step by step",
+    "steps": "Step 1: Br₂/NaOH converts the primary amide into the N-bromoamide, R–CO–NHBr.;;Step 2: base removes the N–H proton, giving the N-bromoamide anion.;;Step 3: the R group migrates from carbon to nitrogen as bromide leaves, forming an isocyanate, R–N=C=O. The migrating group keeps its configuration.;;Step 4: water adds to the isocyanate to give a carbamic acid, which loses CO₂ to give the primary amine R–NH₂, with one carbon fewer than the amide."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^50\\. Pinacol–pinacolone rearrangement",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Pinacol–pinacolone rearrangement, step by step",
+    "steps": "Step 1: acid protonates one OH group of the vicinal diol.;;Step 2: water leaves, giving a carbocation at the more stabilised carbon.;;Step 3: a group on the neighbouring carbinol carbon migrates to the cationic carbon (1,2-shift).;;Step 4: the oxygen lone pair stabilises the new cation as a protonated carbonyl; loss of H⁺ gives the ketone (pinacolone)."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^56\\. Beckmann rearrangement",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Beckmann rearrangement of an oxime, step by step",
+    "steps": "Step 1: acid (or PCl₅ or TsCl) converts the oxime OH into a good leaving group.;;Step 2: the group anti to the leaving group migrates from carbon to nitrogen as the leaving group departs, giving a nitrilium ion.;;Step 3: water adds to the nitrilium carbon.;;Step 4: tautomerisation gives the N-substituted amide. For cyclohexanone oxime the product is caprolactam."
+   }
+  ]
+ },
+ {
+  "stem": "13_Polymers",
+  "title": "^5\\. Addition \\(chain-growth\\) polymerisation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Free-radical chain polymerisation, step by step",
+    "steps": "Initiation: an initiator such as a peroxide decomposes into radicals, and a radical adds to the C=C of a monomer to give a new radical.;;Propagation: the growing chain radical adds to another monomer, and this repeats many times.;;Termination: two chain radicals combine or disproportionate, which ends the chain.;;Chain transfer to another molecule can stop one chain and start another, lowering the molar mass."
+   }
+  ]
+ },
+ {
+  "stem": "12_Biomolecules",
+  "title": "^6\\.1 Mutarotation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Mutarotation of D-glucose, step by step",
+    "steps": "Step 1: in water, the cyclic hemiacetal (α- or β-D-glucopyranose) opens to the free-chain aldehyde form, present in only a tiny amount.;;Step 2: the ring-closing oxygen (O-5) attacks the aldehyde carbon (C-1) from either face.;;Step 3: attack from one face gives the α anomer; from the other face, the β anomer.;;Result: the specific rotation drifts from +112° (pure α) or +18.7° (pure β) to a constant +52.7°, an equilibrium of about 36% α and 64% β."
+   }
+  ]
  }
 ]

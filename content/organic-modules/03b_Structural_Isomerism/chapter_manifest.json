@@ -1,0 +1,29 @@
+{
+ "file": "03b_Structural_Isomerism.html",
+ "partition_level": 3,
+ "sections_total": 2,
+ "sections_passed": 2,
+ "svg_in_sections": 194,
+ "svg_in_file": 194,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "03b_Structural_Isomerism:structural-isomerism-what-it-is/heading001",
+   "title": "Structural isomerism: what it is",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 1,
+   "heading_id": "03b_Structural_Isomerism:practice-counting-and-classifying-isomer/heading001",
+   "title": "Practice: counting and classifying isomers",
+   "dir": "001",
+   "pass": true,
+   "svg": 194,
+   "blocks": 134
+  }
+ ]
+}

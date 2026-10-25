@@ -214,5 +214,214 @@
     "steps": "Step 1: in water, the cyclic hemiacetal (α- or β-D-glucopyranose) opens to the free-chain aldehyde form, present in only a tiny amount.;;Step 2: the ring-closing oxygen (O-5) attacks the aldehyde carbon (C-1) from either face.;;Step 3: attack from one face gives the α anomer; from the other face, the β anomer.;;Result: the specific rotation drifts from +112° (pure α) or +18.7° (pure β) to a constant +52.7°, an equilibrium of about 36% α and 64% β."
    }
   ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^7\\. Friedel–Crafts alkylation and acylation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Friedel–Crafts acylation, step by step",
+    "steps": "Step 1: AlCl₃ takes Cl⁻ from the acyl chloride, giving the acylium ion R–C≡O⁺, which does not rearrange.;;Step 2: the arene π system attacks the acylium ion, giving the arenium (σ-complex) ion.;;Step 3: AlCl₄⁻ removes the ring proton, restoring aromaticity and giving the aryl ketone.;;Note: the ketone product complexes AlCl₃, so more than one equivalent of AlCl₃ is needed. The deactivated ring does not acylate a second time."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^21\\. Wittig reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Wittig reaction, step by step",
+    "steps": "Step 1: Ph₃P reacts with an alkyl halide (SN2) to give the phosphonium salt.;;Step 2: a strong base removes an α-hydrogen, giving the ylide Ph₃P⁺–C⁻R₂.;;Step 3: the ylide carbon attacks the carbonyl carbon, giving a betaine and then a four-membered oxaphosphetane.;;Step 4: the oxaphosphetane collapses to the alkene and Ph₃P=O. The strong P=O bond drives the reaction."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^6\\. Grignard reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Grignard addition to a carbonyl, step by step",
+    "steps": "Step 1: Mg inserts into the C–X bond of R–X in dry ether, giving R–MgX. The carbon is now strongly nucleophilic.;;Step 2: the R group attacks the carbonyl carbon and the C=O π bond breaks, giving a magnesium alkoxide.;;Step 3: aqueous acid (H₃O⁺) protonates the alkoxide.;;Result: formaldehyde gives a primary alcohol, other aldehydes give secondary alcohols, ketones give tertiary alcohols. Any acidic H (water, alcohol) destroys the reagent."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^13\\. Cannizzaro reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Cannizzaro reaction, step by step",
+    "steps": "Condition: an aldehyde with no α-hydrogen, in concentrated NaOH.;;Step 1: OH⁻ adds to the carbonyl carbon of one molecule, giving a tetrahedral alkoxide anion.;;Step 2: this anion transfers a hydride (H⁻) to the carbonyl carbon of a second aldehyde molecule.;;Step 3: the donor becomes the carboxylic acid (then its carboxylate salt) and the acceptor becomes the alkoxide, which is protonated to the alcohol.;;Result: one half is oxidised and the other half reduced (disproportionation)."
+   }
+  ]
+ },
+ {
+  "stem": "10_Acids_Derivatives",
+  "title": "^16\\. Claisen condensation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Claisen condensation of ethyl acetate, step by step",
+    "steps": "Step 1: ethoxide removes an α-hydrogen from the ester, giving an enolate. Only a small amount forms.;;Step 2: the enolate attacks the carbonyl carbon of a second ester molecule, giving a tetrahedral intermediate.;;Step 3: ethoxide is expelled, giving the β-keto ester.;;Step 4: the β-keto ester has very acidic α-hydrogens (between two C=O), so base removes one. This forms a stable enolate and drives the equilibrium forward, so a full equivalent of base is needed.;;Step 5: acid work-up gives the neutral β-keto ester."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^40\\. Williamson ether synthesis",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Williamson ether synthesis, step by step",
+    "steps": "Step 1: a strong base (Na or NaH) converts the alcohol or phenol to its alkoxide RO⁻.;;Step 2: the alkoxide attacks the alkyl halide by SN2, with backside attack and inversion at carbon.;;Step 3: the halide leaves, giving the ether R–O–R'.;;Limit: use a methyl or primary alkyl halide. Secondary and tertiary halides give elimination (alkenes) instead."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^24\\.4 Reactions of epoxides",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Ring opening of an epoxide, step by step",
+    "steps": "Basic or nucleophilic conditions (RO⁻, RMgX, LiAlH₄): the nucleophile attacks the less hindered carbon by SN2, with inversion, relieving ring strain.;;The resulting alkoxide is protonated in the work-up to give the alcohol.;;Acidic conditions: the epoxide oxygen is protonated first, and the nucleophile attacks the carbon that better bears positive charge (the more substituted carbon).;;In both cases attack is from the face opposite the oxygen, so the product has trans (anti) stereochemistry."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^41\\. Mechanism: diazotisation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Diazotisation of a primary aromatic amine, step by step",
+    "steps": "Step 1: NaNO₂ + HCl at 0–5 °C gives nitrous acid, then the nitrosonium ion NO⁺.;;Step 2: the amine nitrogen attacks NO⁺, giving an N-nitrosoammonium ion; loss of H⁺ gives the N-nitrosoamine.;;Step 3: tautomerisation gives the diazohydroxide, Ar–N=N–OH.;;Step 4: protonation and loss of water give the arenediazonium ion, Ar–N₂⁺. It is stable only at low temperature (0–5 °C)."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^43\\. Mechanism: azo coupling",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Azo coupling, step by step",
+    "steps": "The diazonium ion is a weak electrophile, so it couples only with strongly activated rings (phenoxide, aniline).;;Step 1: the activated ring attacks the terminal nitrogen of Ar–N₂⁺, usually at the para position (ortho if para is blocked).;;Step 2: loss of H⁺ restores aromaticity, giving the azo compound Ar–N=N–Ar', which is coloured.;;pH: phenols couple in mildly alkaline solution (pH 9–10), amines in mildly acidic solution (pH 4–5)."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^38\\. Mechanism: the Gabriel synthesis",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Gabriel synthesis of a primary amine, step by step",
+    "steps": "Step 1: base removes the acidic N–H of phthalimide, giving the phthalimide anion.;;Step 2: the anion attacks a primary alkyl halide by SN2, giving N-alkylphthalimide.;;Step 3: hydrazinolysis (or hydrolysis) cleaves the imide, releasing the primary amine R–NH₂ and phthalhydrazide.;;Result: a pure primary amine with no 2° or 3° amine contamination. It fails with aryl halides because they do not undergo SN2."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^44\\. Mechanism: Hofmann elimination",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Hofmann elimination, step by step",
+    "steps": "Step 1: exhaustive methylation with excess CH₃I converts the amine to a quaternary ammonium iodide.;;Step 2: Ag₂O/H₂O exchanges iodide for hydroxide, giving R₄N⁺ OH⁻.;;Step 3: on heating, OH⁻ removes a β-hydrogen in an E2 step while NMe₃ leaves.;;Regiochemistry: the bulky leaving group makes the least hindered β-hydrogen the one removed, so the least substituted alkene (Hofmann product) predominates."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^45\\. Mechanism: nucleophilic aromatic substitution",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "SNAr on a nitro-activated aryl halide, step by step",
+    "steps": "Requirement: a strong electron-withdrawing group (such as NO₂) ortho or para to the leaving group.;;Step 1 (slow): the nucleophile attacks the carbon bearing the halogen, giving a resonance-stabilised Meisenheimer complex. The negative charge is delocalised onto the nitro group.;;Step 2 (fast): the halide leaves and aromaticity is restored.;;Reactivity: the rate-determining step is attack, so F > Cl > Br > I, the opposite of SN2 leaving-group order."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^57\\. Baeyer–Villiger oxidation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Baeyer–Villiger oxidation, step by step",
+    "steps": "Step 1: the peracid protonates the carbonyl oxygen, and its OOH group adds to the carbonyl carbon, giving the Criegee intermediate.;;Step 2: a group on carbon migrates to the adjacent oxygen as the carboxylate leaves.;;Migratory aptitude: tertiary > cyclohexyl ≈ secondary > phenyl > primary > methyl. The migrating group keeps its configuration.;;Result: a ketone becomes an ester, and a cyclic ketone becomes a lactone."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^70\\. Diels–Alder reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Diels–Alder reaction, step by step",
+    "steps": "Reactants: a conjugated diene (4π electrons) and a dienophile (2π electrons), usually bearing an electron-withdrawing group.;;The diene must adopt the s-cis conformation.;;The reaction is a single concerted step: two new C–C σ bonds form and a new C=C forms, giving a cyclohexene.;;Stereochemistry: it is suprafacial on both partners, so the stereochemistry of the dienophile is kept in the product. The endo product usually predominates."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^44\\. Birch reduction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Birch reduction of benzene, step by step",
+    "steps": "Step 1: sodium in liquid ammonia (with an alcohol) donates an electron to the arene, giving a radical anion.;;Step 2: the alcohol protonates the radical anion, giving a cyclohexadienyl radical.;;Step 3: a second electron gives a cyclohexadienyl anion, which is protonated again.;;Result: 1,4-cyclohexadiene. Electron-donating groups (such as OMe) end up on the remaining C=C; electron-withdrawing groups (such as COOH) end up on the sp³ carbons."
+   }
+  ]
+ },
+ {
+  "stem": "09_Carbonyl",
+  "title": "^24\\. The haloform reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Haloform (iodoform) reaction, step by step",
+    "steps": "Requirement: a methyl ketone, CH₃–CO–R (or an alcohol oxidised to one, such as ethanol or propan-2-ol).;;Step 1: base forms the enolate, which is halogenated at the α-carbon. This repeats until all three α-hydrogens are replaced, giving R–CO–CX₃.;;Step 2: OH⁻ attacks the carbonyl carbon, and the CX₃⁻ group leaves because three halogens stabilise it.;;Step 3: proton transfer gives the carboxylate RCOO⁻ and the haloform CHX₃. With iodine, yellow CHI₃ precipitates (the iodoform test)."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^14\\. Michael addition",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Michael (1,4-conjugate) addition, step by step",
+    "steps": "Step 1: base removes a proton from the donor (such as a malonate or β-keto ester), giving a stabilised enolate.;;Step 2: the enolate attacks the β-carbon of the α,β-unsaturated carbonyl (the acceptor), giving a new enolate.;;Step 3: protonation of this enolate gives the 1,4-adduct.;;Soft nucleophiles (enolates, cuprates) prefer 1,4-addition; hard nucleophiles (RLi, RMgX) tend to give 1,2-addition."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^37\\. Hell–Volhard–Zelinsky",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Hell–Volhard–Zelinsky reaction, step by step",
+    "steps": "Requirement: a carboxylic acid with at least one α-hydrogen.;;Step 1: PBr₃ (or P + Br₂) converts the acid to the acyl bromide.;;Step 2: the acyl bromide enolises more easily than the acid, and Br₂ brominates the α-carbon.;;Step 3: water hydrolyses the α-bromo acyl bromide to the α-bromo carboxylic acid."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^27\\. Reimer–Tiemann reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Reimer–Tiemann reaction, step by step",
+    "steps": "Step 1: NaOH removes a proton from CHCl₃, which loses Cl⁻ to give dichlorocarbene, :CCl₂.;;Step 2: phenoxide is attacked by the electron-poor carbene at the ortho position, giving a dichloromethyl intermediate.;;Step 3: hydrolysis of the CHCl₂ group by hydroxide gives the aldehyde.;;Result: salicylaldehyde (o-hydroxybenzaldehyde) is the main product, with a little para isomer."
+   }
+  ]
  }
 ]

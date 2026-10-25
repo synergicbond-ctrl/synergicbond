@@ -1066,5 +1066,137 @@
     "steps": "Step 1: a ketone and a secondary amine (such as pyrrolidine), with acid catalysis, give an enamine and water.;;Step 2: the enamine β-carbon (nucleophilic, from the nitrogen lone pair) attacks an alkyl halide or Michael acceptor, giving an iminium salt.;;Step 3: aqueous hydrolysis gives the α-alkylated ketone and regenerates the amine.;;Advantage over enolate chemistry: milder, and gives monoalkylation under neutral conditions."
    }
   ]
+ },
+ {
+  "stem": "09_Carbonyl",
+  "title": "^27\\. The benzoin condensation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Benzoin condensation, step by step",
+    "steps": "Step 1: cyanide adds to the carbonyl carbon of one benzaldehyde, giving a cyanohydrin alkoxide; proton transfer gives a carbanion stabilised by the nitrile (the acyl-anion equivalent).;;Step 2: this carbanion attacks the carbonyl carbon of a second benzaldehyde, forming a new C–C bond.;;Step 3: proton transfer and loss of cyanide regenerate the catalyst and give benzoin, PhCH(OH)–CO–Ph.;;Requirement: an aromatic aldehyde with no α-hydrogen. The cyanide ion reverses the polarity of the carbonyl carbon (umpolung)."
+   }
+  ]
+ },
+ {
+  "stem": "09_Carbonyl",
+  "title": "^28\\. The Perkin reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Perkin reaction, step by step",
+    "steps": "Reagents: an aromatic aldehyde, an acid anhydride with α-hydrogens (acetic anhydride) and its sodium salt (sodium acetate) as the base, heated.;;Step 1: acetate removes an α-hydrogen from the anhydride, giving an enolate.;;Step 2: the enolate adds to the aldehyde carbonyl, giving an alkoxide that becomes a β-acyloxy (mixed anhydride) intermediate.;;Step 3: elimination of acetic acid forms the C=C, and hydrolysis gives the α,β-unsaturated acid. Benzaldehyde gives cinnamic acid."
+   }
+  ]
+ },
+ {
+  "stem": "09_Carbonyl",
+  "title": "^32\\. The Robinson annulation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Robinson annulation, step by step",
+    "steps": "Step 1 (Michael addition): the enolate of a ketone adds to the β-carbon of an α,β-unsaturated ketone such as methyl vinyl ketone, giving a 1,5-diketone.;;Step 2 (intramolecular aldol): an enolate formed from one ketone attacks the other carbonyl, closing a six-membered ring.;;Step 3 (dehydration): loss of water from the aldol gives a cyclohexenone.;;Result: a new six-membered ring fused onto the original ketone, the basis of steroid and terpene ring synthesis."
+   }
+  ]
+ },
+ {
+  "stem": "09_Carbonyl",
+  "title": "^55\\. Hydration, hemiacetals and ring-chain",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Hemiacetal and acetal formation, step by step",
+    "steps": "Step 1: with acid, the carbonyl oxygen is protonated and the alcohol oxygen adds to the carbonyl carbon, giving a hemiacetal after loss of H⁺. Hemiacetals are usually not isolable for simple aldehydes.;;Step 2: acid protonates the hemiacetal OH, and water leaves, giving an oxocarbenium ion.;;Step 3: a second alcohol molecule adds to the oxocarbenium ion, and loss of H⁺ gives the acetal (a protecting group, stable to base).;;Intramolecularly, a hydroxy aldehyde (such as glucose) closes to a cyclic hemiacetal, which is why sugars exist mainly as rings."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^37\\. Mechanism: Hinsberg",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Hinsberg test, step by step",
+    "steps": "Reagent: benzenesulfonyl chloride, PhSO₂Cl, with aqueous NaOH.;;Primary amine: the nitrogen attacks sulfur, chloride leaves, giving PhSO₂NHR. This sulfonamide still has an N–H that NaOH removes, so it dissolves as a salt; acidification precipitates it.;;Secondary amine: gives PhSO₂NR₂, with no N–H, which is insoluble in alkali.;;Tertiary amine: no stable sulfonamide forms, so there is no reaction with the reagent."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^40\\. Mechanism: the carbylamine",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Carbylamine (isocyanide) reaction, step by step",
+    "steps": "Reagents: a primary amine, chloroform and KOH (only primary amines react).;;Step 1: hydroxide removes a proton from CHCl₃, which loses Cl⁻ to give dichlorocarbene, :CCl₂.;;Step 2: the amine nitrogen attacks the carbene carbon, and successive losses of HCl (with base) give the isocyanide, R–N⁺≡C⁻.;;Result: an isocyanide with a foul smell, used as a test for primary amines. Secondary and tertiary amines do not give it."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^42\\. Mechanism: the fate of the diazonium",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Reactions of an arenediazonium ion",
+    "steps": "Sandmeyer: Cu(I)Cl, CuBr or CuCN replaces N₂⁺ by Cl, Br or CN, by a radical process on copper.;;Balz–Schiemann: the tetrafluoroborate salt, ArN₂⁺BF₄⁻, is heated, giving ArF, N₂ and BF₃.;;Hydrolysis: warming the aqueous diazonium salt gives the phenol (aryl cation captured by water).;;Reduction: H₃PO₂ replaces N₂⁺ by H, which allows an amino group to be used as a temporary directing group."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^4\\. Kolbe electrolysis",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Kolbe electrolysis, step by step",
+    "steps": "A concentrated aqueous solution of a sodium carboxylate is electrolysed.;;Anode: the carboxylate gives up an electron and loses CO₂, giving an alkyl radical (RCOO⁻ → RCOO• → R• + CO₂).;;Two alkyl radicals combine, giving the alkane R–R with twice the carbons of R.;;Cathode: water is reduced, giving H₂ and OH⁻. A mixture of two carboxylates gives a statistical mixture of R–R, R–R′ and R′–R′."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^36\\. Hunsdiecker reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Hunsdiecker reaction, step by step",
+    "steps": "Step 1: the silver salt of the carboxylic acid reacts with bromine to give an acyl hypobromite, RCOO–Br.;;Step 2: homolysis of the weak O–Br bond gives a carboxyl radical, RCOO•, and Br•.;;Step 3: the carboxyl radical loses CO₂, giving R•, which takes Br from another acyl hypobromite (chain propagation).;;Result: an alkyl bromide with one carbon fewer than the acid."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^29\\. Gattermann–Koch",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Gattermann–Koch formylation, step by step",
+    "steps": "Reagents: CO, HCl and AlCl₃ with CuCl, on a benzene ring.;;Step 1: CO and HCl with the Lewis acid generate the formyl cation, HC≡O⁺, the electrophile.;;Step 2: the arene attacks the formyl cation, giving the arenium ion; loss of H⁺ restores aromaticity.;;Result: an aryl aldehyde (benzene gives benzaldehyde). The method fails for phenols and amines, which complex the Lewis acid."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^18\\. Dieckmann condensation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Dieckmann condensation, step by step",
+    "steps": "Substrate: a diester such as diethyl hexanedioate, with NaOEt.;;Step 1: ethoxide removes an α-hydrogen from one ester, giving an enolate.;;Step 2: the enolate attacks the other ester carbonyl intramolecularly, forming a ring and expelling ethoxide: a cyclic β-keto ester.;;Step 3: the β-keto ester is deprotonated by base, which drives the equilibrium; acid work-up gives the cyclic product. 1,6-diesters give five-membered rings and 1,7-diesters give six-membered rings."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^25\\. Pinacol coupling",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Pinacol coupling, step by step",
+    "steps": "Reagent: magnesium amalgam (or Mg or Zn), with a ketone such as acetone.;;Step 1: the metal transfers an electron to the carbonyl, forming a ketyl radical anion.;;Step 2: two ketyl radicals combine at carbon, forming the C–C bond.;;Step 3: protonation gives the 1,2-diol (pinacol, 2,3-dimethylbutane-2,3-diol). Acid then converts it by the pinacol rearrangement to pinacolone."
+   }
+  ]
  }
 ]

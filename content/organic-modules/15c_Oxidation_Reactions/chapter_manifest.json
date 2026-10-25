@@ -3,8 +3,8 @@
  "partition_level": 3,
  "sections_total": 2,
  "sections_passed": 2,
- "svg_in_sections": 61,
- "svg_in_file": 61,
+ "svg_in_sections": 83,
+ "svg_in_file": 83,
  "partition_reproduces_file_bytes": true,
  "sections": [
   {
@@ -22,8 +22,8 @@
    "title": "Practice: products and reagents",
    "dir": "001",
    "pass": true,
-   "svg": 61,
-   "blocks": 101
+   "svg": 83,
+   "blocks": 128
   }
  ]
 }

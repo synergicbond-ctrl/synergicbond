@@ -10841,8 +10841,8 @@
   "title": "Practice: products and reagents",
   "chapter": "Reduction Reactions",
   "basis": "new generated content (standard textbook reactions)",
-  "blocks": 107,
-  "svg": 61,
+  "blocks": 131,
+  "svg": 78,
   "verified_lossless": true
  },
  {
@@ -10863,8 +10863,8 @@
   "title": "Practice: products and reagents",
   "chapter": "Oxidation Reactions",
   "basis": "new generated content (standard textbook reactions)",
-  "blocks": 101,
-  "svg": 61,
+  "blocks": 128,
+  "svg": 83,
   "verified_lossless": true
  }
 ]

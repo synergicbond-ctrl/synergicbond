@@ -670,5 +670,225 @@
     "steps": "Conditions: an unactivated aryl halide with a very strong base such as NaNH₂ in liquid NH₃.;;Step 1: the base removes a proton ortho to the halogen, and the halide leaves, giving benzyne with a strained 'triple bond' in the ring.;;Step 2: the nucleophile (NH₂⁻) adds to either carbon of the aryne, then the aryl anion is protonated.;;Result: with a substituted ring, the incoming group can end up on the carbon next to the original one (cine substitution), giving a mixture of isomers."
    }
   ]
+ },
+ {
+  "stem": "05_Hydrocarbons",
+  "title": "^21\\. Addition of halogens",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Bromine addition to an alkene, step by step",
+    "steps": "Step 1: as Br₂ approaches, the alkene π electrons polarise the Br–Br bond; Br⁺ is transferred to the alkene, forming a cyclic bromonium ion and Br⁻.;;Step 2: Br⁻ attacks one carbon of the bromonium ion from the side opposite the bridging bromine (backside attack).;;Result: anti addition. Cyclohexene gives trans-1,2-dibromocyclohexane. A cis alkene gives the racemic pair of one diastereomer, a trans alkene the other.;;In water the solvent attacks the bromonium ion instead, giving a bromohydrin (Markovnikov, anti)."
+   }
+  ]
+ },
+ {
+  "stem": "05_Hydrocarbons",
+  "title": "^25\\. Allylic substitution",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Allylic bromination with NBS, step by step",
+    "steps": "NBS supplies a very low, steady concentration of Br₂ (from HBr + NBS), so ionic addition to the C=C is suppressed.;;Initiation: light or a peroxide makes Br• radicals.;;Propagation 1: Br• removes an allylic hydrogen, giving a resonance-stabilised allyl radical and HBr.;;Propagation 2: the allyl radical takes Br from Br₂, giving the allyl bromide and a new Br•. An unsymmetrical allyl radical can give two isomeric bromides."
+   }
+  ]
+ },
+ {
+  "stem": "05_Hydrocarbons",
+  "title": "^26\\. Carbenes and cyclopropanation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Cyclopropanation, step by step",
+    "steps": "Simmons–Smith: CH₂I₂ with Zn(Cu) gives a zinc carbenoid, ICH₂ZnI, which transfers CH₂ to the alkene in one concerted step.;;Dichlorocarbene: CHCl₃ with a base gives :CCl₂, which adds to the alkene to give a 1,1-dichlorocyclopropane.;;Both additions are stereospecific and syn: a cis alkene gives a cis-substituted cyclopropane, and a trans alkene gives trans."
+   }
+  ]
+ },
+ {
+  "stem": "05_Hydrocarbons",
+  "title": "^39\\. Electrophilic addition to conjugated dienes",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "HBr addition to buta-1,3-diene: 1,2 versus 1,4",
+    "steps": "Step 1: H⁺ adds to C-1, giving the resonance-stabilised allylic cation (positive charge shared by C-2 and C-4).;;Step 2: Br⁻ can attack C-2, giving the 1,2-adduct (3-bromobut-1-ene) quickly.;;Step 2 alternative: Br⁻ attacks C-4, giving the 1,4-adduct (1-bromobut-2-ene), which has the more substituted, more stable C=C.;;Low temperature gives mostly 1,2 (kinetic control); higher temperature gives mostly 1,4 (thermodynamic control, equilibrating products)."
+   }
+  ]
+ },
+ {
+  "stem": "06_Haloalkanes",
+  "title": "^9\\. S N i",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "SNi with thionyl chloride, step by step",
+    "steps": "Step 1: the alcohol attacks SOCl₂, giving an alkyl chlorosulfite, R–O–S(=O)Cl, and HCl.;;Step 2: the C–O bond ionises and the chloride is delivered from the same face by the departing chlorosulfite, in an ion pair.;;Result: SO₂ escapes and the alkyl chloride forms with retention of configuration.;;With pyridine present, chloride attacks from the back (SN2) instead, and the product has inverted configuration."
+   }
+  ]
+ },
+ {
+  "stem": "06_Haloalkanes",
+  "title": "^10\\. Neighbouring-group participation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Neighbouring-group participation, step by step",
+    "steps": "Setup: a neighbouring group with a lone pair (such as SR, NR₂, Br or COO⁻) sits close to the leaving group.;;Step 1: the neighbouring group displaces the leaving group by an internal SN2 attack, forming a cyclic intermediate (inversion #1). The rate is higher than for an analogue with no such group.;;Step 2: the external nucleophile opens the ring from the back (inversion #2).;;Result: two inversions give overall retention of configuration, and the rate is enhanced."
+   }
+  ]
+ },
+ {
+  "stem": "06_Haloalkanes",
+  "title": "^15\\. The E1cB reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "E1cB elimination, step by step",
+    "steps": "Requirement: an acidic β-hydrogen (next to C=O, NO₂ or CN) and a poor leaving group (such as OH or OR).;;Step 1: the base removes the acidic β-hydrogen, giving a stabilised carbanion (the conjugate base).;;Step 2 (slow): the carbanion expels the leaving group, forming the C=C.;;Example: the dehydration step of the aldol condensation. Compare E1 (leaving group first) and E2 (single concerted step)."
+   }
+  ]
+ },
+ {
+  "stem": "06_Haloalkanes",
+  "title": "^21\\. Nucleophilic aromatic substitution",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "SNAr (addition–elimination), step by step",
+    "steps": "Requirement: electron-withdrawing groups (NO₂) ortho or para to the leaving group.;;Step 1 (slow): the nucleophile adds to the ring carbon bearing the halogen, giving the resonance-stabilised Meisenheimer complex.;;Step 2 (fast): the halide leaves and the aromatic ring re-forms.;;More nitro groups make the reaction faster; the order of leaving-group reactivity is F > Cl > Br > I."
+   }
+  ]
+ },
+ {
+  "stem": "07_Aromatic",
+  "title": "^8\\. The electrophile in each reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Generating the electrophiles of EAS",
+    "steps": "Nitration: HNO₃ + H₂SO₄ → H₂NO₃⁺ → NO₂⁺ (nitronium ion) + H₂O.;;Sulfonation: fuming H₂SO₄ gives SO₃ as the electrophile (HSO₃⁺ in some descriptions). Sulfonation is reversible.;;Halogenation: Br₂ + FeBr₃ polarises Br–Br, so Br⁺ is transferred to the ring (Br–Br···FeBr₃).;;Friedel–Crafts: R–Cl + AlCl₃ gives R⁺ (or the polarised complex), and RCOCl + AlCl₃ gives the acylium ion RCO⁺."
+   }
+  ]
+ },
+ {
+  "stem": "10_Acids_Derivatives",
+  "title": "^17\\. Acetoacetic ester synthesis",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Acetoacetic ester synthesis of a ketone, step by step",
+    "steps": "Step 1: NaOEt removes an α-hydrogen between the two carbonyls (pKa ≈ 11), giving a stabilised enolate.;;Step 2: the enolate attacks a primary alkyl halide by SN2, giving the α-alkyl acetoacetic ester. A second alkylation is possible.;;Step 3: aqueous NaOH hydrolyses the ester to the β-keto acid.;;Step 4: on heating, the β-keto acid decarboxylates (loses CO₂) through a cyclic six-membered transition state, giving a methyl ketone R–CH₂–CO–CH₃."
+   }
+  ]
+ },
+ {
+  "stem": "10_Acids_Derivatives",
+  "title": "^18\\. Malonic ester synthesis",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Malonic ester synthesis of a carboxylic acid, step by step",
+    "steps": "Step 1: NaOEt removes an α-hydrogen of diethyl malonate (pKa ≈ 13), giving a stabilised enolate.;;Step 2: the enolate is alkylated by a primary alkyl halide (SN2). Repeat for a dialkyl product.;;Step 3: hydrolysis (NaOH, then H₃O⁺) converts both esters to a malonic acid.;;Step 4: heating decarboxylates the substituted malonic acid, giving R–CH₂–COOH: the alkyl group R from R–X gains a CH₂COOH unit (two carbons)."
+   }
+  ]
+ },
+ {
+  "stem": "12_Biomolecules",
+  "title": "^6\\.3 Osazone formation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Osazone formation, step by step",
+    "steps": "Step 1: phenylhydrazine condenses with the C-1 aldehyde to give a phenylhydrazone.;;Step 2: a second molecule of phenylhydrazine oxidises the C-2 CHOH to C=O, releasing aniline and NH₃.;;Step 3: a third molecule condenses with the new C-2 carbonyl, giving the osazone (three equivalents of phenylhydrazine in all).;;Result: C-1 and C-2 become identical in glucose, fructose and mannose, so they give the same osazone."
+   }
+  ]
+ },
+ {
+  "stem": "12_Biomolecules",
+  "title": "^6\\.4 Kiliani cyanohydrin step and the Strecker",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Kiliani chain extension and Strecker amino acid synthesis",
+    "steps": "Kiliani: cyanide adds to the aldehyde carbon of the sugar, giving a cyanohydrin and creating a new stereocentre (two epimers).;;Hydrolysis of the nitrile gives an aldonic acid (lactone); reduction then gives an aldose with one more carbon.;;Strecker: an aldehyde reacts with NH₃ to form an imine, which cyanide attacks, giving an α-aminonitrile.;;Hydrolysis of the nitrile gives the racemic α-amino acid."
+   }
+  ]
+ },
+ {
+  "stem": "12_Biomolecules",
+  "title": "^6\\.6 DCC coupling",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "DCC peptide coupling, step by step",
+    "steps": "Step 1: the carboxylic acid of the N-protected amino acid adds to one C=N of DCC, giving an O-acylisourea (an activated acyl derivative).;;Step 2: the amine of the second amino acid attacks the activated carbonyl, forming a tetrahedral intermediate.;;Step 3: dicyclohexylurea (DCU) is expelled, leaving the new peptide (amide) bond.;;DCU is insoluble and filtered off. Protecting groups on the other amine and acid groups prevent unwanted couplings."
+   }
+  ]
+ },
+ {
+  "stem": "12_Biomolecules",
+  "title": "^6\\.7 Edman degradation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Edman degradation, step by step",
+    "steps": "Step 1: phenyl isothiocyanate (PhN=C=S) reacts with the free N-terminal amino group at mildly basic pH, giving a phenylthiocarbamoyl (PTC) peptide.;;Step 2: anhydrous acid cleaves the first peptide bond, releasing the N-terminal residue as a thiazolinone.;;Step 3: the thiazolinone is converted to the stable phenylthiohydantoin (PTH) amino acid and identified.;;The rest of the chain (one residue shorter) is left intact, so the cycle can be repeated."
+   }
+  ]
+ },
+ {
+  "stem": "12_Biomolecules",
+  "title": "^6\\.9 Enediol and the Lobry",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Lobry de Bruyn–van Ekenstein transformation",
+    "steps": "In dilute base, the α-hydrogen of an aldose (C-2) is removed, giving an enediolate (C-1=C-2 with O⁻).;;Protonation at C-2 re-forms either epimer; protonation at C-1 gives the ketose.;;Result: glucose, mannose and fructose interconvert through the common enediol.;;Because of this, fructose (a ketose) gives positive tests with Tollens' and Fehling's reagents, which look for aldehydes."
+   }
+  ]
+ },
+ {
+  "stem": "12_Biomolecules",
+  "title": "^6\\.10 Base hydrolysis of RNA",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Why RNA is hydrolysed by base but DNA survives",
+    "steps": "RNA has a 2′-OH group on ribose next to the phosphodiester linkage; DNA has no 2′-OH.;;Step 1: base deprotonates the 2′-OH, and the 2′-O⁻ attacks the adjacent phosphorus, forming a five-membered cyclic 2′,3′-phosphate and expelling the 5′-O of the next nucleotide (chain cleaved).;;Step 2: water opens the cyclic phosphate to give 2′- and 3′-phosphate monomers.;;DNA has no 2′-OH and so no intramolecular nucleophile; this is why DNA is stable and suitable for storing genetic information."
+   }
+  ]
+ },
+ {
+  "stem": "12_Biomolecules",
+  "title": "^6\\.11 Serine protease",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Chymotrypsin (serine protease), step by step",
+    "steps": "Catalytic triad: Ser-195, His-57 and Asp-102. His acts as a general base and takes the proton from Ser-OH.;;Stage 1 (acylation): the Ser alkoxide attacks the peptide carbonyl, forming a tetrahedral intermediate (stabilised by the oxyanion hole); the C–N bond breaks, releasing the amine part and leaving an acyl-enzyme.;;Stage 2 (deacylation): water, activated by His, attacks the acyl-enzyme, forming a second tetrahedral intermediate.;;The Ser–acyl bond breaks, releasing the carboxylic acid half and regenerating the free enzyme."
+   }
+  ]
+ },
+ {
+  "stem": "12_Biomolecules",
+  "title": "^6\\.12 Acid-catalysed amide and ester hydrolysis",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Acid-catalysed ester hydrolysis (AAC2), step by step",
+    "steps": "Step 1: H⁺ protonates the carbonyl oxygen, making the carbon more electrophilic.;;Step 2: water attacks, forming a tetrahedral intermediate.;;Step 3: proton transfer converts the OR group into a good leaving group (ROH).;;Step 4: the alcohol leaves and the C=O re-forms; loss of H⁺ gives the carboxylic acid. Every step is reversible, so a large excess of water drives hydrolysis."
+   }
+  ]
+ },
+ {
+  "stem": "13_Polymers",
+  "title": "^12\\. Condensation \\(step-growth\\) polymerisation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Step-growth polymerisation, step by step",
+    "steps": "Monomers carry two functional groups (such as a diacid and a diamine); any two molecules can react, giving dimers, trimers and so on.;;Each coupling releases a small molecule (water, HCl), as in nylon-6,6 from adipic acid and hexamethylenediamine.;;Molar mass rises slowly. A high degree of polymerisation needs a conversion near 99% (Carothers equation: Xn = 1/(1 − p)).;;An exact 1:1 ratio of the functional groups is needed; an excess of one monomer limits chain length."
+   }
+  ]
  }
 ]

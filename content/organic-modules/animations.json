@@ -277,7 +277,7 @@
    {
     "type": "steps",
     "title": "Williamson ether synthesis, step by step",
-    "steps": "Step 1: a strong base (Na or NaH) converts the alcohol or phenol to its alkoxide RO⁻.;;Step 2: the alkoxide attacks the alkyl halide by SN2, with backside attack and inversion at carbon.;;Step 3: the halide leaves, giving the ether R–O–R'.;;Limit: use a methyl or primary alkyl halide. Secondary and tertiary halides give elimination (alkenes) instead."
+    "steps": "Step 1: a strong base (Na or NaH) converts the alcohol or phenol to its alkoxide RO⁻.;;Step 2: the alkoxide attacks the alkyl halide by SN2, with backside attack and inversion at carbon.;;Step 3: the halide leaves, giving the ether R–O–R'.;;Limit: use a methyl or primary alkyl halide. Secondary halides give mostly elimination, and tertiary halides give only elimination (alkenes)."
    }
   ]
  },
@@ -420,7 +420,7 @@
    {
     "type": "steps",
     "title": "Reimer–Tiemann reaction, step by step",
-    "steps": "Step 1: NaOH removes a proton from CHCl₃, which loses Cl⁻ to give dichlorocarbene, :CCl₂.;;Step 2: phenoxide is attacked by the electron-poor carbene at the ortho position, giving a dichloromethyl intermediate.;;Step 3: hydrolysis of the CHCl₂ group by hydroxide gives the aldehyde.;;Result: salicylaldehyde (o-hydroxybenzaldehyde) is the main product, with a little para isomer."
+    "steps": "Step 1: NaOH removes a proton from CHCl₃, which loses Cl⁻ to give dichlorocarbene, :CCl₂.;;Step 2: the electron-rich phenoxide ring attacks the electron-poor carbene at the ortho position, giving a dichloromethyl intermediate.;;Step 3: hydrolysis of the CHCl₂ group by hydroxide gives the aldehyde.;;Result: salicylaldehyde (o-hydroxybenzaldehyde) is the main product, with a little para isomer."
    }
   ]
  },

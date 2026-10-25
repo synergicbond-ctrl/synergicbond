@@ -10822,5 +10822,49 @@
   "blocks": 134,
   "svg": 194,
   "verified_lossless": true
+ },
+ {
+  "file": "15b_Reduction_Reactions.html",
+  "section_dir": "000",
+  "heading_id": "15b_Reduction_Reactions:reduction-reactions-reagents-and-what-th/heading001",
+  "title": "Reduction reactions: reagents and what they do",
+  "chapter": "Reduction Reactions",
+  "basis": "new generated content (standard textbook reactions)",
+  "blocks": 5,
+  "svg": 0,
+  "verified_lossless": true
+ },
+ {
+  "file": "15b_Reduction_Reactions.html",
+  "section_dir": "001",
+  "heading_id": "15b_Reduction_Reactions:practice-products-and-reagents/heading001",
+  "title": "Practice: products and reagents",
+  "chapter": "Reduction Reactions",
+  "basis": "new generated content (standard textbook reactions)",
+  "blocks": 107,
+  "svg": 61,
+  "verified_lossless": true
+ },
+ {
+  "file": "15c_Oxidation_Reactions.html",
+  "section_dir": "000",
+  "heading_id": "15c_Oxidation_Reactions:oxidation-reactions-reagents-and-what-th/heading001",
+  "title": "Oxidation reactions: reagents and what they do",
+  "chapter": "Oxidation Reactions",
+  "basis": "new generated content (standard textbook reactions)",
+  "blocks": 5,
+  "svg": 0,
+  "verified_lossless": true
+ },
+ {
+  "file": "15c_Oxidation_Reactions.html",
+  "section_dir": "001",
+  "heading_id": "15c_Oxidation_Reactions:practice-products-and-reagents/heading001",
+  "title": "Practice: products and reagents",
+  "chapter": "Oxidation Reactions",
+  "basis": "new generated content (standard textbook reactions)",
+  "blocks": 101,
+  "svg": 61,
+  "verified_lossless": true
  }
 ]

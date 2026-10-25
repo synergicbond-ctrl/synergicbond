@@ -423,5 +423,169 @@
     "steps": "Step 1: NaOH removes a proton from CHCl₃, which loses Cl⁻ to give dichlorocarbene, :CCl₂.;;Step 2: phenoxide is attacked by the electron-poor carbene at the ortho position, giving a dichloromethyl intermediate.;;Step 3: hydrolysis of the CHCl₂ group by hydroxide gives the aldehyde.;;Result: salicylaldehyde (o-hydroxybenzaldehyde) is the main product, with a little para isomer."
    }
   ]
+ },
+ {
+  "stem": "05_Hydrocarbons",
+  "title": "^20\\. Water-forming additions",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Hydroboration–oxidation, step by step",
+    "steps": "Step 1: BH₃ (as BH₃·THF) adds across the C=C in one concerted step. Boron goes to the less hindered carbon and hydrogen to the other, both on the same face (syn addition).;;Step 2: this repeats until a trialkylborane R₃B forms.;;Step 3: H₂O₂/NaOH replaces each C–B bond with C–OH, with retention of configuration.;;Result: syn, anti-Markovnikov addition of water. A terminal alkene gives the primary alcohol; there is no carbocation, so no rearrangement."
+   },
+   {
+    "type": "steps",
+    "title": "Oxymercuration–demercuration, step by step",
+    "steps": "Step 1: Hg(OAc)₂ adds to the alkene, forming a cyclic mercurinium ion.;;Step 2: water attacks the more substituted carbon (the one bearing more positive charge) from the opposite face.;;Step 3: NaBH₄ replaces the C–Hg bond with C–H.;;Result: Markovnikov addition of water without carbocation rearrangement."
+   }
+  ]
+ },
+ {
+  "stem": "05_Hydrocarbons",
+  "title": "^22\\. Epoxidation and the two routes to diols",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Epoxidation with a peracid, then ring opening to a diol",
+    "steps": "Step 1: the alkene π bond attacks the electrophilic terminal oxygen of RCO₃H in a single concerted step (the 'butterfly' transition state).;;Step 2: the oxygen is delivered to one face, so a cis alkene gives a cis epoxide and a trans alkene a trans epoxide (syn addition).;;Route A: acid-catalysed hydrolysis opens the epoxide by backside attack, giving the anti (trans) diol.;;Route B: OsO₄ or cold alkaline KMnO₄ adds both OH groups to the same face, giving the syn (cis) diol."
+   }
+  ]
+ },
+ {
+  "stem": "05_Hydrocarbons",
+  "title": "^24\\. Catalytic hydrogenation of alkenes",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Catalytic hydrogenation, step by step",
+    "steps": "Step 1: H₂ adsorbs on the metal surface (Pd, Pt or Ni) and the H–H bond breaks, giving metal-bound hydrogen atoms.;;Step 2: the alkene adsorbs on the surface through its π bond.;;Step 3: two hydrogen atoms transfer to the same face of the C=C, so the addition is syn.;;Step 4: the alkane desorbs. Less hindered alkenes react faster, and a heterogeneous catalyst does not reduce benzene under mild conditions."
+   }
+  ]
+ },
+ {
+  "stem": "05_Hydrocarbons",
+  "title": "^32\\. Reduction of alkynes",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Controlling alkyne reduction: cis, trans or full",
+    "steps": "H₂ with Lindlar catalyst (poisoned Pd): syn addition of H₂ stops at the alkene, giving the cis (Z) alkene.;;Na or Li in liquid NH₃: an electron adds to the alkyne, giving a radical anion; it is protonated to a vinyl radical, then reduced and protonated again.;;The vinyl anion prefers the trans arrangement, so dissolving-metal reduction gives the trans (E) alkene.;;H₂ with ordinary Pd/C: the reaction does not stop at the alkene and gives the alkane."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^3\\.2 Reduction of carbonyl compounds",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Hydride reduction of a ketone, step by step",
+    "steps": "Step 1: the hydride donor (H⁻ from NaBH₄ or LiAlH₄) attacks the carbonyl carbon, breaking the C=O π bond to give an alkoxide.;;Step 2: protonation of the alkoxide (solvent for NaBH₄, or water/acid work-up for LiAlH₄) gives the alcohol.;;Result: an aldehyde gives a primary alcohol and a ketone a secondary alcohol.;;Selectivity: NaBH₄ reduces aldehydes and ketones only. LiAlH₄ also reduces esters, acids and amides, and reacts violently with water."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^8\\. Oxidation of alcohols$",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Chromic acid oxidation of a secondary alcohol, step by step",
+    "steps": "Step 1: the alcohol reacts with H₂CrO₄ to form a chromate ester, R₂CH–O–CrO₃H.;;Step 2: a base (water) removes the α-hydrogen while the O–Cr bond breaks, forming C=O and reducing Cr(VI) to Cr(IV). The orange solution turns green as Cr(III) forms.;;Result: a secondary alcohol gives a ketone; a primary alcohol gives an aldehyde, which aqueous chromic acid oxidises further to the acid.;;PCC in dry CH₂Cl₂ stops at the aldehyde. Tertiary alcohols have no α-hydrogen and are not oxidised."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^43\\. Clemmensen and Wolff–Kishner",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Wolff–Kishner reduction, step by step",
+    "steps": "Step 1: the ketone condenses with hydrazine (NH₂NH₂) to give a hydrazone, C=N–NH₂.;;Step 2: base (KOH) removes an N–H proton and the carbon is protonated, giving a diazene anion.;;Step 3: loss of N₂ gives a carbanion, which is protonated by the solvent.;;Result: C=O becomes CH₂ under strongly basic conditions. Use it for acid-sensitive substrates."
+   },
+   {
+    "type": "steps",
+    "title": "Clemmensen reduction, in outline",
+    "steps": "Reagent: zinc amalgam (Zn–Hg) and concentrated HCl, heated.;;The reaction takes place on the zinc surface; the exact mechanism is not fully settled.;;Result: C=O becomes CH₂ under strongly acidic conditions. Use it for base-sensitive substrates.;;Choose by sensitivity: Clemmensen for acid-stable compounds, Wolff–Kishner for base-stable ones."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^26\\. Meerwein–Ponndorf–Verley",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "MPV reduction and Oppenauer oxidation",
+    "steps": "MPV: aluminium isopropoxide, Al(OiPr)₃, coordinates the ketone oxygen through aluminium.;;A hydride transfers from the isopropoxide α-C–H to the carbonyl carbon through a six-membered cyclic transition state.;;The ketone becomes the alcohol and the isopropoxide becomes acetone, which is distilled off to drive the equilibrium.;;Oppenauer is the reverse: a secondary alcohol is oxidised to a ketone with excess acetone or another ketone as hydride acceptor. C=C bonds are untouched."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^53\\. Mechanism: LiAlH 4 reduction of an amide",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "LiAlH₄ reduction of an amide to an amine, step by step",
+    "steps": "Step 1: hydride adds to the amide carbonyl carbon, giving a tetrahedral aluminate intermediate.;;Step 2: the nitrogen lone pair pushes out the O–Al group (oxygen leaves as an aluminate), forming an iminium ion.;;Step 3: a second hydride adds to the iminium carbon.;;Result: C=O becomes CH₂, giving the amine with the same number of carbons. The oxygen is lost as an aluminate, not as an alcohol."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^49\\. Mechanism: the reduction ladder of nitrobenzene",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Reduction of nitrobenzene in acid and in base",
+    "steps": "Acidic medium (Sn/HCl or Fe/HCl): Ar–NO₂ → Ar–N=O (nitroso) → Ar–NHOH (hydroxylamine) → Ar–NH₂ (aniline).;;Each stage takes two electrons and two protons, so the full reduction takes six electrons and six protons.;;Neutral medium (Zn/NH₄Cl): the reaction stops at the hydroxylamine, Ar–NHOH.;;Alkaline medium (Zn/NaOH): nitroso and hydroxylamine intermediates condense, giving azoxybenzene, then azobenzene and hydrazobenzene."
+   }
+  ]
+ },
+ {
+  "stem": "09_Carbonyl",
+  "title": "^37\\. Oxidation of aldehydes: Tollens",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Tollens' test, step by step",
+    "steps": "Reagent: [Ag(NH₃)₂]⁺ in alkaline solution (ammoniacal silver nitrate).;;Step 1: the aldehyde hydrate (RCH(OH)₂) is oxidised, losing two electrons.;;Step 2: each Ag⁺ gains one electron, so two Ag⁺ are reduced to metallic silver for each aldehyde.;;Result: a silver mirror forms and the aldehyde becomes the carboxylate. Ketones do not react (except α-hydroxy ketones)."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^42\\. Rosenmund reduction and Stephen",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Rosenmund reduction, step by step",
+    "steps": "Reagent: H₂ over Pd on BaSO₄, poisoned with quinoline or sulfur.;;The acyl chloride adsorbs on the catalyst and hydrogenolysis replaces Cl with H, giving the aldehyde and HCl.;;The poison weakens the catalyst, so the aldehyde is not reduced further to the alcohol.;;Compare Stephen reduction: SnCl₂/HCl reduces a nitrile to an imine salt, which hydrolyses to the aldehyde."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^58\\. Dakin oxidation",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Dakin oxidation, step by step",
+    "steps": "Requirement: an o- or p-hydroxy aryl aldehyde or ketone, treated with H₂O₂ in base.;;Step 1: HOO⁻ adds to the carbonyl carbon, giving a tetrahedral intermediate.;;Step 2: the aryl group migrates from carbon to oxygen as hydroxide leaves, forming an aryl formate (or ester).;;Step 3: hydrolysis gives the catechol or hydroquinone, with the carbon-chain carbonyl lost as formate or carboxylate."
+   }
+  ]
+ },
+ {
+  "stem": "15_Named_Reactions",
+  "title": "^30\\. Etard reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Etard reaction, in outline",
+    "steps": "Reagent: chromyl chloride, CrO₂Cl₂, in CS₂ or CCl₄ with a methylarene such as toluene.;;The CH₃ group forms a brown solid chromium complex (the Étard complex), and the oxidation stops at this stage.;;Hydrolysis of the complex with water gives the aldehyde.;;Result: ArCH₃ becomes ArCHO with no over-oxidation to the acid."
+   }
+  ]
  }
 ]

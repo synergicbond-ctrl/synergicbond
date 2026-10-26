@@ -1,0 +1,29 @@
+{
+ "file": "09e_SN_Problems_A.html",
+ "partition_level": 3,
+ "sections_total": 2,
+ "sections_passed": 2,
+ "svg_in_sections": 46,
+ "svg_in_file": 46,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "09e_SN_Problems_A:further-problems-mechanism-kinetics-and-/heading001",
+   "title": "Further problems: mechanism, kinetics and stereochemistry (part A)",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 1,
+   "heading_id": "09e_SN_Problems_A:practice-problems-with-full-solutions/heading001",
+   "title": "Practice problems with full solutions",
+   "dir": "001",
+   "pass": true,
+   "svg": 46,
+   "blocks": 230
+  }
+ ]
+}

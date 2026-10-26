@@ -1,0 +1,29 @@
+{
+ "file": "10f_Elim_Problems_B.html",
+ "partition_level": 3,
+ "sections_total": 2,
+ "sections_passed": 2,
+ "svg_in_sections": 101,
+ "svg_in_file": 101,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "10f_Elim_Problems_B:further-problems-orientation-stereochemi/heading001",
+   "title": "Further problems: orientation, stereochemistry and competition (part B)",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 1,
+   "heading_id": "10f_Elim_Problems_B:practice-problems-with-full-solutions/heading001",
+   "title": "Practice problems with full solutions",
+   "dir": "001",
+   "pass": true,
+   "svg": 101,
+   "blocks": 188
+  }
+ ]
+}

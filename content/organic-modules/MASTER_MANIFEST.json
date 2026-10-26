@@ -12186,5 +12186,93 @@
   "blocks": 248,
   "svg": 167,
   "verified_lossless": true
+ },
+ {
+  "file": "09e_SN_Problems_A.html",
+  "section_dir": "000",
+  "heading_id": "09e_SN_Problems_A:further-problems-mechanism-kinetics-and-/heading001",
+  "title": "Further problems: mechanism, kinetics and stereochemistry (part A)",
+  "chapter": "Nucleophilic Substitution",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 3,
+  "svg": 0,
+  "verified_lossless": true
+ },
+ {
+  "file": "09e_SN_Problems_A.html",
+  "section_dir": "001",
+  "heading_id": "09e_SN_Problems_A:practice-problems-with-full-solutions/heading001",
+  "title": "Practice problems with full solutions",
+  "chapter": "Nucleophilic Substitution",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 230,
+  "svg": 46,
+  "verified_lossless": true
+ },
+ {
+  "file": "10f_Elim_Problems_B.html",
+  "section_dir": "000",
+  "heading_id": "10f_Elim_Problems_B:further-problems-orientation-stereochemi/heading001",
+  "title": "Further problems: orientation, stereochemistry and competition (part B)",
+  "chapter": "Elimination Reactions",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 3,
+  "svg": 0,
+  "verified_lossless": true
+ },
+ {
+  "file": "10f_Elim_Problems_B.html",
+  "section_dir": "001",
+  "heading_id": "10f_Elim_Problems_B:practice-problems-with-full-solutions/heading001",
+  "title": "Practice problems with full solutions",
+  "chapter": "Elimination Reactions",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 188,
+  "svg": 101,
+  "verified_lossless": true
+ },
+ {
+  "file": "09f_SN_Problems_B.html",
+  "section_dir": "000",
+  "heading_id": "09f_SN_Problems_B:further-problems-substitution-in-synthes/heading001",
+  "title": "Further problems: substitution in synthesis and special cases (part B)",
+  "chapter": "Nucleophilic Substitution",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 3,
+  "svg": 0,
+  "verified_lossless": true
+ },
+ {
+  "file": "09f_SN_Problems_B.html",
+  "section_dir": "001",
+  "heading_id": "09f_SN_Problems_B:practice-problems-with-full-solutions/heading001",
+  "title": "Practice problems with full solutions",
+  "chapter": "Nucleophilic Substitution",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 242,
+  "svg": 91,
+  "verified_lossless": true
+ },
+ {
+  "file": "10e_Elim_Problems_A.html",
+  "section_dir": "000",
+  "heading_id": "10e_Elim_Problems_A:further-problems-e1-e2-and-e1cb-part-a/heading001",
+  "title": "Further problems: E1, E2 and E1cB (part A)",
+  "chapter": "Elimination Reactions",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 3,
+  "svg": 0,
+  "verified_lossless": true
+ },
+ {
+  "file": "10e_Elim_Problems_A.html",
+  "section_dir": "001",
+  "heading_id": "10e_Elim_Problems_A:practice-problems-with-full-solutions/heading001",
+  "title": "Practice problems with full solutions",
+  "chapter": "Elimination Reactions",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 194,
+  "svg": 71,
+  "verified_lossless": true
  }
 ]

@@ -3,8 +3,8 @@
  "partition_level": 3,
  "sections_total": 2,
  "sections_passed": 2,
- "svg_in_sections": 194,
- "svg_in_file": 194,
+ "svg_in_sections": 236,
+ "svg_in_file": 236,
  "partition_reproduces_file_bytes": true,
  "sections": [
   {
@@ -22,8 +22,8 @@
    "title": "Practice: counting and classifying isomers",
    "dir": "001",
    "pass": true,
-   "svg": 194,
-   "blocks": 134
+   "svg": 236,
+   "blocks": 155
   }
  ]
 }

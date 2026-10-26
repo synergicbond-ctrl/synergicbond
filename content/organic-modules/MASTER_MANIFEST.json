@@ -10802,28 +10802,6 @@
   "verified_lossless": true
  },
  {
-  "file": "03b_Structural_Isomerism.html",
-  "section_dir": "000",
-  "heading_id": "03b_Structural_Isomerism:structural-isomerism-what-it-is/heading001",
-  "title": "Structural isomerism: what it is",
-  "chapter": "Structural Isomerism",
-  "basis": "new generated content (program-computed)",
-  "blocks": 4,
-  "svg": 0,
-  "verified_lossless": true
- },
- {
-  "file": "03b_Structural_Isomerism.html",
-  "section_dir": "001",
-  "heading_id": "03b_Structural_Isomerism:practice-counting-and-classifying-isomer/heading001",
-  "title": "Practice: counting and classifying isomers",
-  "chapter": "Structural Isomerism",
-  "basis": "new generated content (program-computed)",
-  "blocks": 134,
-  "svg": 194,
-  "verified_lossless": true
- },
- {
   "file": "15b_Reduction_Reactions.html",
   "section_dir": "000",
   "heading_id": "15b_Reduction_Reactions:reduction-reactions-reagents-and-what-th/heading001",
@@ -10865,6 +10843,28 @@
   "basis": "new generated content (standard textbook reactions)",
   "blocks": 128,
   "svg": 83,
+  "verified_lossless": true
+ },
+ {
+  "file": "03b_Structural_Isomerism.html",
+  "section_dir": "000",
+  "heading_id": "03b_Structural_Isomerism:structural-isomerism-what-it-is/heading001",
+  "title": "Structural isomerism: what it is",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (program-computed)",
+  "blocks": 4,
+  "svg": 0,
+  "verified_lossless": true
+ },
+ {
+  "file": "03b_Structural_Isomerism.html",
+  "section_dir": "001",
+  "heading_id": "03b_Structural_Isomerism:practice-counting-and-classifying-isomer/heading001",
+  "title": "Practice: counting and classifying isomers",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (program-computed)",
+  "blocks": 155,
+  "svg": 236,
   "verified_lossless": true
  }
 ]

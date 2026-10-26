@@ -1,0 +1,15 @@
+<h3 id="s96">Source notes</h3>
+<p><b>Origin of the material.</b> This chapter was written for the Synergic Bond JEE Chemistry Module. The explanations, worked illustrations, problems and figures are original. One Synergic Bond question paper on purification and characterisation was read to check the coverage of question types; its data and wording were not reused. No previous-year question from any examination is reproduced. <b>Verification.</b> Numerical illustrations and problems were computed with Python; structures and formulae were checked with RDKit; NMR signal counts come from topological symmetry classes (not stereochemical subtleties). Colours and observations in the test tables, and the IR, NMR and mass-spectral ranges, are the standard laboratory and textbook values stated from the author's knowledge; they were not re-derived experimentally. <b>General references for further reading</b> (listed as reading, not as the source of any specific figure; they were not opened while this module was prepared): NCERT Chemistry, Class 11, Unit on organic chemistry principles and techniques; A. I. Vogel, Textbook of Practical Organic Chemistry; R. M. Silverstein, F. X. Webster and D. J. Kiemle, Spectrometric Identification of Organic Compounds; D. L. Pavia et al., Introduction to Spectroscopy; J. Clayden, N. Greeves and S. Warren, Organic Chemistry. <b>Layout note.</b> The print layout asks for Century Schoolbook 9 pt. That font is not installed on the machine used to render this file, so the print style names it first and falls back to Charter (a similar text serif); the screen version uses the system sans-serif.</p></section>
+</main>
+<script>
+const q=document.getElementById('q'),links=[...document.querySelectorAll('#nav a')];
+q.addEventListener('input',()=>{const v=q.value.toLowerCase();links.forEach(a=>a.style.display=a.dataset.t.includes(v)?'':'none')});
+const ds=()=>[...document.querySelectorAll('details')];
+document.getElementById('open').onclick=()=>ds().forEach(d=>d.open=true);
+document.getElementById('close').onclick=()=>ds().forEach(d=>d.open=false);
+const secs=[...document.querySelectorAll('section')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>io.observe(s));
+</script>
+<script>addEventListener("beforeprint",function(){document.querySelectorAll("details").forEach(function(d){d.open=true})})</script></body>
+</html>

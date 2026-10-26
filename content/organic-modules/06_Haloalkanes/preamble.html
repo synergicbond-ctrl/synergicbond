@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alkyl and Aryl Halides — JEE Advanced</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1b2130;--mute:#586275;--line:#d8dce5;--soft:#eef1f6;--ok:#15803d;--no:#b91c1c;--w:19rem}
+@media(prefers-color-scheme:dark){:root{--bg:#10131a;--card:#181d27;--ink:#e8ebf2;--mute:#9aa4b6;--line:#2b3242;--soft:#212838;--ok:#4ade80;--no:#f87171}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:12px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.62 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+aside{position:fixed;inset:0 auto 0 0;width:var(--w);overflow-y:auto;background:var(--card);border-right:1px solid var(--line);padding:.8rem .7rem 2rem;z-index:30}
+aside h1{font-size:1.05rem;margin:.1rem .3rem .5rem}
+aside input{width:100%;font:inherit;padding:.35rem .6rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+aside nav{display:flex;flex-direction:column;gap:.15rem;margin-top:.6rem}
+aside nav a{display:flex;gap:.5rem;align-items:center;text-decoration:none;color:var(--ink);font-size:.88rem;padding:.3rem .5rem;border-radius:7px;border-left:4px solid var(--c)}
+aside nav a span{background:var(--c);color:#fff;border-radius:99px;min-width:1.5rem;text-align:center;font-size:.72rem;padding:0 .3rem}
+aside nav a:hover,aside nav a.cur{background:var(--soft)}
+.btns{display:flex;gap:.4rem;margin:.6rem 0 0;flex-wrap:wrap}
+button{font:inherit;font-size:.8rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:7px;padding:.25rem .65rem;cursor:pointer}
+button:hover{border-color:var(--mute)}
+main{margin-left:var(--w);max-width:60rem;padding:1rem 1.2rem 4rem}
+.top{padding:1rem 0 .3rem}.top h1{margin:0;font-size:clamp(1.6rem,4vw,2.4rem)}.top p{color:var(--mute);margin:.3rem 0}
+section{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:1.2rem 1.4rem;margin:1.4rem 0}
+.chh .num{font-size:.78rem;color:var(--c);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.chh h2{margin:.1rem 0;color:var(--c);font-size:1.6rem}.lead{color:var(--mute);margin:.1rem 0 .6rem}
+h3{margin:1.6rem 0 .4rem;font-size:1.12rem;color:var(--c);border-bottom:1px solid var(--line);padding-bottom:.15rem}
+p{margin:.5rem 0}ul{padding-left:1.3rem}li{margin:.2rem 0}
+.box{border-radius:0 9px 9px 0;padding:.5rem .85rem;margin:.6rem 0;border-left:4px solid var(--c);background:color-mix(in srgb,var(--c) 9%,transparent)}
+.box .bl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--c);margin-right:.4rem}
+.box.trap{border-color:var(--no);background:color-mix(in srgb,var(--no) 9%,transparent)}.box.trap .bl{color:var(--no)}
+.box.tip{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 10%,transparent)}.box.tip .bl{color:var(--ok)}
+.box.f{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.93rem;overflow-x:auto}
+.ex,.pq{border:1px solid var(--line);border-radius:10px;padding:.6rem .9rem;margin:.8rem 0;background:var(--card)}
+.ex{border-left:5px solid var(--c)}.pq{border-left:5px solid var(--mute)}
+.qh{margin-bottom:.1rem}.qh b{color:var(--c)}.pq .qh b{color:var(--mute)}
+.tag{font-size:.7rem;padding:0 .45rem;border-radius:4px;background:var(--soft);border:1px solid var(--line);color:var(--mute);margin-left:.3rem}
+details{margin-top:.5rem}summary{cursor:pointer;font-weight:600;color:var(--c)}
+.sol{margin-top:.3rem;padding:.4rem .8rem;border-radius:8px;background:var(--soft)}
+ol.st{padding-left:1.3rem;margin:.3rem 0}ol.st li::marker{color:var(--c);font-weight:700}
+.fig{margin:.7rem 0;overflow-x:auto;text-align:center}.fig svg{max-width:100%;height:auto}
+svg text{fill:var(--ink);font-family:system-ui,sans-serif}
+.sch{margin:.8rem 0;padding:.5rem .6rem;background:#fff;border:1px solid var(--line);border-radius:10px;overflow-x:auto;color:#1b2130}
+.sch .row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.2rem .5rem;min-width:min-content}
+.sch .sp{display:inline-flex;align-items:center;gap:.3rem}.sch .m svg{display:block;max-width:none;height:auto}.sch .pl{font-weight:700;color:#586275}
+.sch .ar{display:inline-flex;flex-direction:column;align-items:center;min-width:3.2rem;font-size:.78rem;line-height:1.15}.sch .rg{color:#1b2130;text-align:center;max-width:9rem}.sch .ln{font-size:1.5rem;line-height:1;color:#586275}
+.sch .mc{display:inline-flex;flex-direction:column;align-items:center}.sch .lb{font-size:.78rem;color:#1b2130;text-align:center;max-width:9rem}
+.sch .cap{font-size:.8rem;color:#586275;text-align:center;margin-top:.2rem}
+@media(max-width:900px){aside{position:static;width:auto;border-right:0;border-bottom:1px solid var(--line)}main{margin-left:0}}
+@media print{aside{display:none}main{margin:0;max-width:none}details{display:block}details>summary{display:none}details>*{display:block}section{break-inside:auto}}
+h4.sub{margin:1.1rem 0 .2rem;font-size:1rem;color:var(--c)}@page{size:A4;margin:14mm}table.tb{border-collapse:collapse;width:100%;margin:.2rem 0;font-size:.88rem}table.tb th,table.tb td{border:1px solid var(--line);padding:.28rem .5rem;text-align:left;vertical-align:top}table.tb th{background:var(--soft)}table.tb tr{break-inside:avoid}.toc{columns:2;font-size:.9rem;margin:.6rem 0}.toc h4{column-span:all;margin:.2rem 0}.toc li{break-inside:avoid}.fig{text-align:left}.sch svg .s0{fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.7px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s1{fill:none;fill-rule:evenodd;stroke:#00CC00;stroke-width:1.7px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s2{fill:none;stroke:#000000;stroke-width:1.7px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;}.sch svg .s3{fill:none;fill-rule:evenodd;stroke:#7F4C19;stroke-width:1.7px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s4{fill:none;fill-rule:evenodd;stroke:#A01EEF;stroke-width:1.7px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s5{fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:1.7px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s6{fill:none;fill-rule:evenodd;stroke:#33CCCC;stroke-width:1.7px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s7{fill:none;fill-rule:evenodd;stroke:#0000FF;stroke-width:1.7px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s8{fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s9{fill:#000000;fill-rule:evenodd;fill-opacity:1;stroke:#000000;stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;}.sch svg .s10{fill:#7F4C19;fill-rule:evenodd;fill-opacity:1;stroke:#7F4C19;stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;}.sch svg .s11{fill:none;fill-rule:evenodd;stroke:#A01EEF;stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s12{fill:none;fill-rule:evenodd;stroke:#CCCC00;stroke-width:1.7px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s13{fill:none;fill-rule:evenodd;stroke:#00CC00;stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s14{fill:#00CC00;fill-rule:evenodd;fill-opacity:1;stroke:#00CC00;stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;}.sch svg .s15{fill:#000000;fill-rule:evenodd;fill-opacity:1;stroke:#000000;stroke-width:0.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;}.sch svg .s16{fill:none;fill-rule:evenodd;stroke:#7F4C19;stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1}.sch svg .s17{fill:#FF0000;fill-rule:evenodd;fill-opacity:1;stroke:#FF0000;stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;}
+</style>
+</head>
+<body>
+<aside>
+<h1>Alkyl and Aryl Halides — JEE Advanced</h1>
+<input id="q" placeholder="Filter chapters…" aria-label="Filter chapters">
+<div class="btns"><button id="open">Expand all solutions</button><button id="close">Collapse</button></div>
+<nav id="nav">
+<a href="#o06" style="--c:#2563eb" data-t="alkyl &amp; aryl halides"><span>6</span> Alkyl &amp; Aryl Halides</a>
+</nav>
+</aside>
+<main>
+<div class="top"><h1>Alkyl and Aryl Halides — JEE Advanced</h1><p>Mechanism-first notes, reagents, traps, worked examples and practice problems for every chapter · 1 chapters</p></div>
+<section id="o06" style="--c:#2563eb"><div class="chh"><span class="num">Chapter 6</span>

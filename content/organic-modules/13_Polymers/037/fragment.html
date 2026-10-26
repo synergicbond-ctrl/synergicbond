@@ -1,0 +1,24 @@
+<h3 id="s36">Appendix: Sources cross-checked and what was not verified</h3>
+<p><b>Opened and used for this chapter (page numbers are PDF page numbers):</b></p>
+<ol>
+<li>Wade, <i>Organic Chemistry</i>, 9th ed., Chapter 26 “Synthetic Polymers”: PDF pp. 1328–1333 and 1341. Used to cross-check: definitions of isotactic, syndiotactic and atactic chains and the stereochemical control by Ziegler–Natta catalysts (TiCl<sub>4</sub> + triethylaluminium); latex of <i>Hevea brasiliensis</i>, vulcanisation by –S–S– cross-links and the sulphur ranges (about 1–2 % soft, 2–5 % medium, 10–30 % hard rubber); Saran as a vinyl chloride–vinylidene chloride copolymer; ABS; nylon salt formation and heating to give nylon-6,6; nylon-6 from caprolactam with a trace of water; PET by transesterification of dimethyl terephthalate; polyacetylene and the 2000 Nobel Prize; poly(vinyl alcohol) made through poly(vinyl acetate). The problem types on acid hydrolysis of nylon, alkaline hydrolysis of polyester and the PVA route gave ideas for original problems here.</li>
+<li>Clayden, Greeves, Warren, <i>Organic Chemistry</i> (2012): PDF p. 1103, migratory insertion as the chain-extension step that, repeated indefinitely, gives Ziegler–Natta polymers (basis of the Cossee–Arlman description in section 5.5).</li>
+<li>The repository’s own earlier Polymers notes (NCERT-style content: reaction conditions, temperatures, catalysts and uses) were the starting syllabus and were kept as the baseline for conditions.</li>
+<li>Structures, formulae, repeat-unit masses and CIP/tacticity labels were checked with RDKit; every numerical answer in the practice sets was recomputed in Python (script `verify13.py`).</li>
+</ol>
+<p><b>Searched but not used:</b> M.S. Chouhan’s <i>Advanced Problems in Organic Chemistry</i> contains only incidental mentions of polymers (PDF pp. 184, 592, 602); no problem from it was used or adapted.</p>
+<p><b>Not opened for this chapter:</b> McMurry, Finar, Eliel, Kalsi, the ICHO volumes, Klein, Sykes, the coaching test papers and previous JEE Advanced papers. No claim is made that they were consulted.</p>
+<p><b>Stated from standard knowledge, not matched to a book in this session (treat numbers as typical values):</b> melting points and glass-transition temperatures (LDPE, HDPE, PP, PS, PMMA, PVC, PET, nylon-6, nylon-6,6, nylon-6,10), densities and crystallinities, the ceiling temperature of α-methylstyrene, the industrial routes to monomers (PTFE monomer from CHClF<sub>2</sub>, acrylonitrile ammoxidation, chloroprene from vinylacetylene), Kevlar and Nomex properties, the 1,5-hydrogen back-biting description of LDPE branching, the C–F bond energy, the PDI values for different mechanisms and the reactivity-ratio picture of copolymers. The orbital explanations (SOMO–π* control, Bürgi–Dunitz attack, n<sub>N</sub>→π* amide delocalisation, π-band picture of polyacetylene) are standard frontier-orbital arguments, stated qualitatively.</p></section>
+</main>
+<script>
+const q=document.getElementById('q'),links=[...document.querySelectorAll('#nav a')];
+q.addEventListener('input',()=>{const v=q.value.toLowerCase();links.forEach(a=>a.style.display=a.dataset.t.includes(v)?'':'none')});
+const ds=()=>[...document.querySelectorAll('details')];
+document.getElementById('open').onclick=()=>ds().forEach(d=>d.open=true);
+document.getElementById('close').onclick=()=>ds().forEach(d=>d.open=false);
+const secs=[...document.querySelectorAll('section')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+{
+ "topic": "Inductive effect (GOC)",
+ "source": "02_GOC.html",
+ "source_sha256": "75e1168fbde49f76",
+ "blocks": [
+  {
+   "tag": "h3",
+   "sha256": "56ca8c7a063c10e4",
+   "chars": 34
+  },
+  {
+   "tag": "div",
+   "sha256": "3f7a9cfca9662a4b",
+   "chars": 25
+  },
+  {
+   "tag": "p",
+   "sha256": "9338a818395fd280",
+   "chars": 337
+  },
+  {
+   "tag": "ul",
+   "sha256": "dbf5ebf8cc9c2069",
+   "chars": 349
+  },
+  {
+   "tag": "p",
+   "sha256": "898191fd6069297e",
+   "chars": 162
+  },
+  {
+   "tag": "div",
+   "sha256": "502f7fff2c8704ef",
+   "chars": 638
+  },
+  {
+   "tag": "div",
+   "sha256": "e4f1d818c045090c",
+   "chars": 295
+  },
+  {
+   "tag": "p",
+   "sha256": "990c00c6e7ac7bf3",
+   "chars": 98
+  },
+  {
+   "tag": "div",
+   "sha256": "51041194025cc056",
+   "chars": 90
+  },
+  {
+   "tag": "div",
+   "sha256": "ec41c0c544b3b7ee",
+   "chars": 30
+  },
+  {
+   "tag": "div",
+   "sha256": "481945f9ec6da00c",
+   "chars": 234
+  },
+  {
+   "tag": "div",
+   "sha256": "c1e2af3f9d4c28a5",
+   "chars": 744
+  },
+  {
+   "tag": "div",
+   "sha256": "b6c1d98131c1ec65",
+   "chars": 170
+  },
+  {
+   "tag": "div",
+   "sha256": "c50656865f2979c4",
+   "chars": 163
+  },
+  {
+   "tag": "div",
+   "sha256": "c676f8cf55319512",
+   "chars": 484
+  },
+  {
+   "tag": "div",
+   "sha256": "f59fe4b3205516b6",
+   "chars": 325
+  },
+  {
+   "tag": "div",
+   "sha256": "173d2fafc3f53b77",
+   "chars": 367
+  },
+  {
+   "tag": "div",
+   "sha256": "cdd2d8020b616ae8",
+   "chars": 591
+  },
+  {
+   "tag": "div",
+   "sha256": "ec77d6cd94339d54",
+   "chars": 38
+  },
+  {
+   "tag": "ul",
+   "sha256": "92211ed282d3e60d",
+   "chars": 837
+  },
+  {
+   "tag": "div",
+   "sha256": "31adbf8cb0395004",
+   "chars": 515
+  },
+  {
+   "tag": "div",
+   "sha256": "fc006ed70b967ced",
+   "chars": 44
+  },
+  {
+   "tag": "p",
+   "sha256": "d812af4658238459",
+   "chars": 439
+  },
+  {
+   "tag": "div",
+   "sha256": "17008776dc83910f",
+   "chars": 74
+  },
+  {
+   "tag": "p",
+   "sha256": "02ed61e3537f3cd4",
+   "chars": 514
+  },
+  {
+   "tag": "div",
+   "sha256": "08f9916106548928",
+   "chars": 670
+  }
+ ],
+ "svg_files": 13,
+ "animations": [
+  {
+   "type": "inductive",
+   "sign": "-I",
+   "label": "electron-withdrawing substituent",
+   "chain": "X,Cα,Cβ,Cγ",
+   "placement": "after-section"
+  },
+  {
+   "type": "inductive",
+   "sign": "+I",
+   "label": "electron-donating alkyl group",
+   "chain": "R,Cα,Cβ,Cγ",
+   "placement": "after-section"
+  }
+ ],
+ "animation_library": "dev-pilots/sb-anim.js"
+}

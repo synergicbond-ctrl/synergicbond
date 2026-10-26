@@ -1,0 +1,749 @@
+{
+ "file": "11_Amines.html",
+ "partition_level": 3,
+ "sections_total": 82,
+ "sections_passed": 82,
+ "svg_in_sections": 495,
+ "svg_in_file": 495,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "11_Amines:amines-diazonium-salts/heading001",
+   "title": "Amines & Diazonium Salts",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 1,
+   "heading_id": "11_Amines:1-orientation-what-this-chapter-covers-a/heading001",
+   "title": "1. Orientation: what this chapter covers and how it is examined",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 2,
+   "heading_id": "11_Amines:2-classification-nomenclature-and-isomer/heading001",
+   "title": "2. Classification, nomenclature and isomerism",
+   "dir": "002",
+   "pass": true,
+   "svg": 24,
+   "blocks": 26
+  },
+  {
+   "order": 3,
+   "heading_id": "11_Amines:3-structure-and-bonding-of-the-amino-gro/heading001",
+   "title": "3. Structure and bonding of the amino group",
+   "dir": "003",
+   "pass": true,
+   "svg": 2,
+   "blocks": 6
+  },
+  {
+   "order": 4,
+   "heading_id": "11_Amines:4-physical-properties/heading001",
+   "title": "4. Physical properties",
+   "dir": "004",
+   "pass": true,
+   "svg": 2,
+   "blocks": 12
+  },
+  {
+   "order": 5,
+   "heading_id": "11_Amines:5-basicity-the-central-topic/heading001",
+   "title": "5. Basicity — the central topic",
+   "dir": "005",
+   "pass": true,
+   "svg": 32,
+   "blocks": 62
+  },
+  {
+   "order": 6,
+   "heading_id": "11_Amines:6-map-of-the-preparative-routes/heading001",
+   "title": "6. Map of the preparative routes",
+   "dir": "006",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 7,
+   "heading_id": "11_Amines:7-reduction-methods/heading001",
+   "title": "7. Reduction methods",
+   "dir": "007",
+   "pass": true,
+   "svg": 24,
+   "blocks": 21
+  },
+  {
+   "order": 8,
+   "heading_id": "11_Amines:8-ammonolysis-of-alkyl-halides-hofmann-s/heading001",
+   "title": "8. Ammonolysis of alkyl halides (Hofmann's method)",
+   "dir": "008",
+   "pass": true,
+   "svg": 5,
+   "blocks": 5
+  },
+  {
+   "order": 9,
+   "heading_id": "11_Amines:9-gabriel-phthalimide-synthesis/heading001",
+   "title": "9. Gabriel phthalimide synthesis",
+   "dir": "009",
+   "pass": true,
+   "svg": 4,
+   "blocks": 14
+  },
+  {
+   "order": 10,
+   "heading_id": "11_Amines:10-hofmann-bromamide-hofmann-degradation/heading001",
+   "title": "10. Hofmann bromamide (Hofmann degradation)",
+   "dir": "010",
+   "pass": true,
+   "svg": 10,
+   "blocks": 19
+  },
+  {
+   "order": 11,
+   "heading_id": "11_Amines:11-other-degradations-curtius-schmidt-lo/heading001",
+   "title": "11. Other degradations: Curtius, Schmidt, Lossen",
+   "dir": "011",
+   "pass": true,
+   "svg": 4,
+   "blocks": 4
+  },
+  {
+   "order": 12,
+   "heading_id": "11_Amines:12-route-chooser-summary/heading001",
+   "title": "12. Route chooser (summary)",
+   "dir": "012",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 13,
+   "heading_id": "11_Amines:13-the-reactivity-map-of-an-amine/heading001",
+   "title": "13. The reactivity map of an amine",
+   "dir": "013",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 14,
+   "heading_id": "11_Amines:14-alkylation-quaternary-salts-and-the-h/heading001",
+   "title": "14. Alkylation, quaternary salts and the Hofmann elimination",
+   "dir": "014",
+   "pass": true,
+   "svg": 11,
+   "blocks": 28
+  },
+  {
+   "order": 15,
+   "heading_id": "11_Amines:15-acylation-and-sulphonylation/heading001",
+   "title": "15. Acylation and sulphonylation",
+   "dir": "015",
+   "pass": true,
+   "svg": 25,
+   "blocks": 24
+  },
+  {
+   "order": 16,
+   "heading_id": "11_Amines:16-the-nitrous-acid-reactions-nano-2-hcl/heading001",
+   "title": "16. The nitrous acid reactions (NaNO 2 + HCl)",
+   "dir": "016",
+   "pass": true,
+   "svg": 12,
+   "blocks": 22
+  },
+  {
+   "order": 17,
+   "heading_id": "11_Amines:17-oxidation-of-amines/heading001",
+   "title": "17. Oxidation of amines",
+   "dir": "017",
+   "pass": true,
+   "svg": 4,
+   "blocks": 4
+  },
+  {
+   "order": 18,
+   "heading_id": "11_Amines:18-identification-of-unknown-amines-a-wo/heading001",
+   "title": "18. Identification of unknown amines — a working scheme",
+   "dir": "018",
+   "pass": true,
+   "svg": 0,
+   "blocks": 11
+  },
+  {
+   "order": 19,
+   "heading_id": "11_Amines:19-aniline-structure-preparation-and-wha/heading001",
+   "title": "19. Aniline: structure, preparation, and what makes it special",
+   "dir": "019",
+   "pass": true,
+   "svg": 6,
+   "blocks": 3
+  },
+  {
+   "order": 20,
+   "heading_id": "11_Amines:20-electrophilic-substitution-of-aniline/heading001",
+   "title": "20. Electrophilic substitution of aniline",
+   "dir": "020",
+   "pass": true,
+   "svg": 18,
+   "blocks": 19
+  },
+  {
+   "order": 21,
+   "heading_id": "11_Amines:21-other-reactions-specific-to-aniline/heading001",
+   "title": "21. Other reactions specific to aniline",
+   "dir": "021",
+   "pass": true,
+   "svg": 3,
+   "blocks": 4
+  },
+  {
+   "order": 22,
+   "heading_id": "11_Amines:22-reactions-of-aniline-hydrochloride-an/heading001",
+   "title": "22. Reactions of aniline hydrochloride and the identity tests of aniline",
+   "dir": "022",
+   "pass": true,
+   "svg": 3,
+   "blocks": 15
+  },
+  {
+   "order": 23,
+   "heading_id": "11_Amines:23-summary-sheet-aniline/heading001",
+   "title": "23. Summary sheet — aniline",
+   "dir": "023",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 24,
+   "heading_id": "11_Amines:24-formation-and-stability-of-arenediazo/heading001",
+   "title": "24. Formation and stability of arenediazonium salts",
+   "dir": "024",
+   "pass": true,
+   "svg": 2,
+   "blocks": 6
+  },
+  {
+   "order": 25,
+   "heading_id": "11_Amines:25-replacement-reactions-loss-of-n-2/heading001",
+   "title": "25. Replacement reactions (loss of N 2 )",
+   "dir": "025",
+   "pass": true,
+   "svg": 14,
+   "blocks": 12
+  },
+  {
+   "order": 26,
+   "heading_id": "11_Amines:26-retention-of-n-2-reduction-and-coupli/heading001",
+   "title": "26. Retention of N 2 : reduction and coupling",
+   "dir": "026",
+   "pass": true,
+   "svg": 15,
+   "blocks": 19
+  },
+  {
+   "order": 27,
+   "heading_id": "11_Amines:27-azo-dyes-and-indicators/heading001",
+   "title": "27. Azo dyes and indicators",
+   "dir": "027",
+   "pass": true,
+   "svg": 3,
+   "blocks": 4
+  },
+  {
+   "order": 28,
+   "heading_id": "11_Amines:28-synthetic-planning-with-diazonium-sal/heading001",
+   "title": "28. Synthetic planning with diazonium salts",
+   "dir": "028",
+   "pass": true,
+   "svg": 0,
+   "blocks": 20
+  },
+  {
+   "order": 29,
+   "heading_id": "11_Amines:29-structure-nomenclature-and-properties/heading001",
+   "title": "29. Structure, nomenclature and properties",
+   "dir": "029",
+   "pass": true,
+   "svg": 6,
+   "blocks": 5
+  },
+  {
+   "order": 30,
+   "heading_id": "11_Amines:30-preparation/heading001",
+   "title": "30. Preparation",
+   "dir": "030",
+   "pass": true,
+   "svg": 9,
+   "blocks": 10
+  },
+  {
+   "order": 31,
+   "heading_id": "11_Amines:31-acidity-of-nitroalkanes-nitro-aci-tau/heading001",
+   "title": "31. Acidity of nitroalkanes: nitro–aci tautomerism",
+   "dir": "031",
+   "pass": true,
+   "svg": 13,
+   "blocks": 12
+  },
+  {
+   "order": 32,
+   "heading_id": "11_Amines:32-reactions-of-nitro-compounds/heading001",
+   "title": "32. Reactions of nitro compounds",
+   "dir": "032",
+   "pass": true,
+   "svg": 6,
+   "blocks": 29
+  },
+  {
+   "order": 33,
+   "heading_id": "11_Amines:33-nitriles-cyanides-and-isocyanides-car/heading001",
+   "title": "33. Nitriles (cyanides) and isocyanides (carbylamines)",
+   "dir": "033",
+   "pass": true,
+   "svg": 24,
+   "blocks": 33
+  },
+  {
+   "order": 34,
+   "heading_id": "11_Amines:34-the-orbital-picture-of-the-nitrogen-l/heading001",
+   "title": "34. The orbital picture of the nitrogen lone pair",
+   "dir": "034",
+   "pass": true,
+   "svg": 3,
+   "blocks": 11
+  },
+  {
+   "order": 35,
+   "heading_id": "11_Amines:35-mechanism-sn2-alkylation-of-an-amine-/heading001",
+   "title": "35. Mechanism: SN2 alkylation of an amine (ammonolysis; exhaustive methylation)",
+   "dir": "035",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 36,
+   "heading_id": "11_Amines:36-mechanism-acylation-of-an-amine-by-an/heading001",
+   "title": "36. Mechanism: acylation of an amine by an acid chloride",
+   "dir": "036",
+   "pass": true,
+   "svg": 5,
+   "blocks": 5
+  },
+  {
+   "order": 37,
+   "heading_id": "11_Amines:37-mechanism-hinsberg-s-reagent-sulphony/heading001",
+   "title": "37. Mechanism: Hinsberg's reagent (sulphonylation)",
+   "dir": "037",
+   "pass": true,
+   "svg": 5,
+   "blocks": 5
+  },
+  {
+   "order": 38,
+   "heading_id": "11_Amines:38-mechanism-the-gabriel-synthesis/heading001",
+   "title": "38. Mechanism: the Gabriel synthesis",
+   "dir": "038",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 39,
+   "heading_id": "11_Amines:39-mechanism-hofmann-bromamide-degradati/heading001",
+   "title": "39. Mechanism: Hofmann bromamide (degradation) reaction, step by step",
+   "dir": "039",
+   "pass": true,
+   "svg": 6,
+   "blocks": 5
+  },
+  {
+   "order": 40,
+   "heading_id": "11_Amines:40-mechanism-the-carbylamine-isocyanide-/heading001",
+   "title": "40. Mechanism: the carbylamine (isocyanide) reaction",
+   "dir": "040",
+   "pass": true,
+   "svg": 5,
+   "blocks": 3
+  },
+  {
+   "order": 41,
+   "heading_id": "11_Amines:41-mechanism-diazotisation-step-by-step/heading001",
+   "title": "41. Mechanism: diazotisation, step by step",
+   "dir": "041",
+   "pass": true,
+   "svg": 5,
+   "blocks": 4
+  },
+  {
+   "order": 42,
+   "heading_id": "11_Amines:42-mechanism-the-fate-of-the-diazonium-i/heading001",
+   "title": "42. Mechanism: the fate of the diazonium ion — Sandmeyer, Balz–Schiemann, hydrolysis, deamination",
+   "dir": "042",
+   "pass": true,
+   "svg": 5,
+   "blocks": 9
+  },
+  {
+   "order": 43,
+   "heading_id": "11_Amines:43-mechanism-azo-coupling-step-by-step-w/heading001",
+   "title": "43. Mechanism: azo coupling, step by step, with the orbital argument",
+   "dir": "043",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 44,
+   "heading_id": "11_Amines:44-mechanism-hofmann-elimination-e2-and-/heading001",
+   "title": "44. Mechanism: Hofmann elimination (E2) and the Cope elimination (Ei), with stereoelectronics",
+   "dir": "044",
+   "pass": true,
+   "svg": 5,
+   "blocks": 6
+  },
+  {
+   "order": 45,
+   "heading_id": "11_Amines:45-mechanism-nucleophilic-aromatic-subst/heading001",
+   "title": "45. Mechanism: nucleophilic aromatic substitution (SNAr) on nitro-activated rings",
+   "dir": "045",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 46,
+   "heading_id": "11_Amines:46-mechanism-the-henry-reaction-and-nitr/heading001",
+   "title": "46. Mechanism: the Henry reaction and nitro–aci tautomerism",
+   "dir": "046",
+   "pass": true,
+   "svg": 4,
+   "blocks": 4
+  },
+  {
+   "order": 47,
+   "heading_id": "11_Amines:47-mechanisms-of-nitrile-and-isocyanide-/heading001",
+   "title": "47. Mechanisms of nitrile and isocyanide reactions",
+   "dir": "047",
+   "pass": true,
+   "svg": 9,
+   "blocks": 8
+  },
+  {
+   "order": 48,
+   "heading_id": "11_Amines:48-mechanism-imine-formation-reductive-a/heading001",
+   "title": "48. Mechanism: imine formation, reductive amination and the pH profile",
+   "dir": "048",
+   "pass": true,
+   "svg": 7,
+   "blocks": 4
+  },
+  {
+   "order": 49,
+   "heading_id": "11_Amines:49-mechanism-the-reduction-ladder-of-nit/heading001",
+   "title": "49. Mechanism: the reduction ladder of nitrobenzene (6 electrons, 6 protons)",
+   "dir": "049",
+   "pass": true,
+   "svg": 3,
+   "blocks": 5
+  },
+  {
+   "order": 50,
+   "heading_id": "11_Amines:50-mechanism-electrophilic-substitution-/heading001",
+   "title": "50. Mechanism: electrophilic substitution on aniline — bromination, nitration, sulphonation",
+   "dir": "050",
+   "pass": true,
+   "svg": 2,
+   "blocks": 3
+  },
+  {
+   "order": 51,
+   "heading_id": "11_Amines:51-mechanism-nitrosation-of-2-and-3-amin/heading001",
+   "title": "51. Mechanism: nitrosation of 2° and 3° amines; the fate of aliphatic diazonium ions",
+   "dir": "051",
+   "pass": true,
+   "svg": 4,
+   "blocks": 4
+  },
+  {
+   "order": 52,
+   "heading_id": "11_Amines:52-mechanism-eschweiler-clarke-methylati/heading001",
+   "title": "52. Mechanism: Eschweiler–Clarke methylation (why it stops at the tertiary amine)",
+   "dir": "052",
+   "pass": true,
+   "svg": 4,
+   "blocks": 3
+  },
+  {
+   "order": 53,
+   "heading_id": "11_Amines:53-mechanism-lialh-4-reduction-of-an-ami/heading001",
+   "title": "53. Mechanism: LiAlH 4 reduction of an amide to an amine (why C=O becomes CH 2 )",
+   "dir": "053",
+   "pass": true,
+   "svg": 4,
+   "blocks": 4
+  },
+  {
+   "order": 54,
+   "heading_id": "11_Amines:54-mechanism-stephen-reduction-of-a-nitr/heading001",
+   "title": "54. Mechanism: Stephen reduction of a nitrile to an aldehyde",
+   "dir": "054",
+   "pass": true,
+   "svg": 3,
+   "blocks": 3
+  },
+  {
+   "order": 55,
+   "heading_id": "11_Amines:55-mechanism-skraup-quinoline-synthesis-/heading001",
+   "title": "55. Mechanism: Skraup quinoline synthesis (aniline + glycerol)",
+   "dir": "055",
+   "pass": true,
+   "svg": 5,
+   "blocks": 3
+  },
+  {
+   "order": 56,
+   "heading_id": "11_Amines:56-mechanism-bamberger-and-benzidine-rea/heading001",
+   "title": "56. Mechanism: Bamberger and benzidine rearrangements (what happens to PhNHOH and PhNHNHPh in acid)",
+   "dir": "056",
+   "pass": true,
+   "svg": 2,
+   "blocks": 3
+  },
+  {
+   "order": 57,
+   "heading_id": "11_Amines:57-mechanism-curtius-and-lossen-the-same/heading001",
+   "title": "57. Mechanism: Curtius and Lossen — the same migration without a base",
+   "dir": "057",
+   "pass": true,
+   "svg": 3,
+   "blocks": 3
+  },
+  {
+   "order": 58,
+   "heading_id": "11_Amines:58-mechanism-amine-addition-to-an-epoxid/heading001",
+   "title": "58. Mechanism: amine addition to an epoxide and to an α,β-unsaturated nitrile",
+   "dir": "058",
+   "pass": true,
+   "svg": 4,
+   "blocks": 4
+  },
+  {
+   "order": 59,
+   "heading_id": "11_Amines:59-distinction-tests-one-decisive-test-p/heading001",
+   "title": "59. Distinction tests (one decisive test per pair)",
+   "dir": "059",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 60,
+   "heading_id": "11_Amines:60-reagent-product-capsule/heading001",
+   "title": "60. Reagent → product capsule",
+   "dir": "060",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 61,
+   "heading_id": "11_Amines:61-named-reactions-of-the-chapter-in-one/heading001",
+   "title": "61. Named reactions of the chapter in one line",
+   "dir": "061",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 62,
+   "heading_id": "11_Amines:62-frequent-errors-and-traps-in-this-cha/heading001",
+   "title": "62. Frequent errors and traps in this chapter",
+   "dir": "062",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 63,
+   "heading_id": "11_Amines:63-estimation-of-nitrogen-numerical-meth/heading001",
+   "title": "63. Estimation of nitrogen — numerical methods",
+   "dir": "063",
+   "pass": true,
+   "svg": 0,
+   "blocks": 26
+  },
+  {
+   "order": 64,
+   "heading_id": "11_Amines:64-worked-problem-gallery-ten-longer-pro/heading001",
+   "title": "64. Worked-problem gallery: ten longer problems solved the way you should write them in an exam",
+   "dir": "064",
+   "pass": true,
+   "svg": 15,
+   "blocks": 38
+  },
+  {
+   "order": 65,
+   "heading_id": "11_Amines:65-level-1-set-a-classification-naming-i/heading001",
+   "title": "65. Level 1, set A — classification, naming, isomers, physical properties",
+   "dir": "065",
+   "pass": true,
+   "svg": 1,
+   "blocks": 32
+  },
+  {
+   "order": 66,
+   "heading_id": "11_Amines:66-level-1-set-b-basicity/heading001",
+   "title": "66. Level 1, set B — basicity",
+   "dir": "066",
+   "pass": true,
+   "svg": 0,
+   "blocks": 88
+  },
+  {
+   "order": 67,
+   "heading_id": "11_Amines:67-level-1-set-c-preparation-of-amines/heading001",
+   "title": "67. Level 1, set C — preparation of amines",
+   "dir": "067",
+   "pass": true,
+   "svg": 2,
+   "blocks": 49
+  },
+  {
+   "order": 68,
+   "heading_id": "11_Amines:68-level-1-set-d-reactions-and-tests-of-/heading001",
+   "title": "68. Level 1, set D — reactions and tests of amines",
+   "dir": "068",
+   "pass": true,
+   "svg": 7,
+   "blocks": 68
+  },
+  {
+   "order": 69,
+   "heading_id": "11_Amines:69-level-1-set-e-aniline-diazonium-salts/heading001",
+   "title": "69. Level 1, set E — aniline, diazonium salts, nitro compounds, cyanides",
+   "dir": "069",
+   "pass": true,
+   "svg": 5,
+   "blocks": 91
+  },
+  {
+   "order": 70,
+   "heading_id": "11_Amines:70-level-2-set-a-basicity-structure-and-/heading001",
+   "title": "70. Level 2, set A — basicity, structure and equilibria",
+   "dir": "070",
+   "pass": true,
+   "svg": 16,
+   "blocks": 98
+  },
+  {
+   "order": 71,
+   "heading_id": "11_Amines:71-level-2-set-b-preparation-mechanisms-/heading001",
+   "title": "71. Level 2, set B — preparation, mechanisms and elimination",
+   "dir": "071",
+   "pass": true,
+   "svg": 6,
+   "blocks": 72
+  },
+  {
+   "order": 72,
+   "heading_id": "11_Amines:72-level-2-set-c-diazonium-chemistry-aro/heading001",
+   "title": "72. Level 2, set C — diazonium chemistry, aromatic substitution, nitro, cyanide, identification",
+   "dir": "072",
+   "pass": true,
+   "svg": 9,
+   "blocks": 74
+  },
+  {
+   "order": 73,
+   "heading_id": "11_Amines:73-level-2-set-d-diazonium-coupling-vari/heading001",
+   "title": "73. Level 2, set D — diazonium coupling variants, triazenes and tests",
+   "dir": "073",
+   "pass": true,
+   "svg": 3,
+   "blocks": 33
+  },
+  {
+   "order": 74,
+   "heading_id": "11_Amines:74-level-2-set-e-multi-correct-and-state/heading001",
+   "title": "74. Level 2, set E — multi-correct and statement problems",
+   "dir": "074",
+   "pass": true,
+   "svg": 7,
+   "blocks": 94
+  },
+  {
+   "order": 75,
+   "heading_id": "11_Amines:75-level-3-set-a-integer-type-and-numeri/heading001",
+   "title": "75. Level 3, set A — integer-type and numerical problems",
+   "dir": "075",
+   "pass": true,
+   "svg": 0,
+   "blocks": 73
+  },
+  {
+   "order": 76,
+   "heading_id": "11_Amines:76-level-3-set-b-paragraph-based-problem/heading001",
+   "title": "76. Level 3, set B — paragraph-based problems",
+   "dir": "076",
+   "pass": true,
+   "svg": 12,
+   "blocks": 88
+  },
+  {
+   "order": 77,
+   "heading_id": "11_Amines:77-level-3-set-c-matrix-match/heading001",
+   "title": "77. Level 3, set C — matrix match",
+   "dir": "077",
+   "pass": true,
+   "svg": 0,
+   "blocks": 19
+  },
+  {
+   "order": 78,
+   "heading_id": "11_Amines:78-level-3-set-d-multi-step-identificati/heading001",
+   "title": "78. Level 3, set D — multi-step identification",
+   "dir": "078",
+   "pass": true,
+   "svg": 13,
+   "blocks": 42
+  },
+  {
+   "order": 79,
+   "heading_id": "11_Amines:79-level-3-set-e-multi-step-synthesis/heading001",
+   "title": "79. Level 3, set E — multi-step synthesis",
+   "dir": "079",
+   "pass": true,
+   "svg": 8,
+   "blocks": 33
+  },
+  {
+   "order": 80,
+   "heading_id": "11_Amines:80-level-3-set-f-mechanism-and-orbital-r/heading001",
+   "title": "80. Level 3, set F — mechanism and orbital-reasoning problems",
+   "dir": "080",
+   "pass": true,
+   "svg": 1,
+   "blocks": 45
+  },
+  {
+   "order": 81,
+   "heading_id": "11_Amines:72-sources-cross-checked-and-verificatio/heading001",
+   "title": "72. Sources cross-checked and verification notes",
+   "dir": "081",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  }
+ ]
+}

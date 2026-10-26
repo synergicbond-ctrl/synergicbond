@@ -1,0 +1,461 @@
+{
+ "file": "06_Haloalkanes.html",
+ "partition_level": 3,
+ "sections_total": 50,
+ "sections_passed": 50,
+ "svg_in_sections": 444,
+ "svg_in_file": 444,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "06_Haloalkanes:alkyl-aryl-halides/heading001",
+   "title": "Alkyl & Aryl Halides",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 1,
+   "heading_id": "06_Haloalkanes:0-how-to-read-this-chapter/heading001",
+   "title": "0. How to read this chapter",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 2,
+   "heading_id": "06_Haloalkanes:1-the-carbon-halogen-bond-structure-pola/heading001",
+   "title": "1. The carbon–halogen bond: structure, polarity and physical properties",
+   "dir": "002",
+   "pass": true,
+   "svg": 7,
+   "blocks": 25
+  },
+  {
+   "order": 3,
+   "heading_id": "06_Haloalkanes:2-nomenclature/heading001",
+   "title": "2. Nomenclature",
+   "dir": "003",
+   "pass": true,
+   "svg": 6,
+   "blocks": 9
+  },
+  {
+   "order": 4,
+   "heading_id": "06_Haloalkanes:3-preparation-of-alkyl-halides/heading001",
+   "title": "3. Preparation of alkyl halides",
+   "dir": "004",
+   "pass": true,
+   "svg": 31,
+   "blocks": 62
+  },
+  {
+   "order": 5,
+   "heading_id": "06_Haloalkanes:4-nucleophilic-substitution-at-sp-3-carb/heading001",
+   "title": "4. Nucleophilic substitution at sp 3 carbon: the big picture",
+   "dir": "005",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 6,
+   "heading_id": "06_Haloalkanes:5-the-s-n-2-reaction-in-detail/heading001",
+   "title": "5. The S N 2 reaction in detail",
+   "dir": "006",
+   "pass": true,
+   "svg": 24,
+   "blocks": 69
+  },
+  {
+   "order": 7,
+   "heading_id": "06_Haloalkanes:6-synthetic-uses-of-s-n-2-the-toolbox/heading001",
+   "title": "6. Synthetic uses of S N 2 (the toolbox)",
+   "dir": "007",
+   "pass": true,
+   "svg": 9,
+   "blocks": 15
+  },
+  {
+   "order": 8,
+   "heading_id": "06_Haloalkanes:7-the-s-n-1-reaction-in-detail/heading001",
+   "title": "7. The S N 1 reaction in detail",
+   "dir": "008",
+   "pass": true,
+   "svg": 20,
+   "blocks": 27
+  },
+  {
+   "order": 9,
+   "heading_id": "06_Haloalkanes:8-comparing-s-n-1-and-s-n-2-deciding-whi/heading001",
+   "title": "8. Comparing S N 1 and S N 2: deciding which mechanism operates",
+   "dir": "009",
+   "pass": true,
+   "svg": 4,
+   "blocks": 29
+  },
+  {
+   "order": 10,
+   "heading_id": "06_Haloalkanes:9-s-n-i-substitution-nucleophilic-intern/heading001",
+   "title": "9. S N i: substitution nucleophilic internal",
+   "dir": "010",
+   "pass": true,
+   "svg": 2,
+   "blocks": 5
+  },
+  {
+   "order": 11,
+   "heading_id": "06_Haloalkanes:10-neighbouring-group-participation-anch/heading001",
+   "title": "10. Neighbouring-group participation (anchimeric assistance)",
+   "dir": "011",
+   "pass": true,
+   "svg": 4,
+   "blocks": 8
+  },
+  {
+   "order": 12,
+   "heading_id": "06_Haloalkanes:11-ambident-nucleophiles/heading001",
+   "title": "11. Ambident nucleophiles",
+   "dir": "012",
+   "pass": true,
+   "svg": 0,
+   "blocks": 11
+  },
+  {
+   "order": 13,
+   "heading_id": "06_Haloalkanes:12-elimination-reactions-dehydrohalogena/heading001",
+   "title": "12. Elimination reactions: dehydrohalogenation",
+   "dir": "013",
+   "pass": true,
+   "svg": 3,
+   "blocks": 3
+  },
+  {
+   "order": 14,
+   "heading_id": "06_Haloalkanes:13-the-e2-reaction/heading001",
+   "title": "13. The E2 reaction",
+   "dir": "014",
+   "pass": true,
+   "svg": 22,
+   "blocks": 49
+  },
+  {
+   "order": 15,
+   "heading_id": "06_Haloalkanes:14-the-e1-reaction/heading001",
+   "title": "14. The E1 reaction",
+   "dir": "015",
+   "pass": true,
+   "svg": 5,
+   "blocks": 7
+  },
+  {
+   "order": 16,
+   "heading_id": "06_Haloalkanes:15-the-e1cb-reaction/heading001",
+   "title": "15. The E1cB reaction",
+   "dir": "016",
+   "pass": true,
+   "svg": 2,
+   "blocks": 6
+  },
+  {
+   "order": 17,
+   "heading_id": "06_Haloalkanes:16-substitution-versus-elimination-the-c/heading001",
+   "title": "16. Substitution versus elimination: the competition map",
+   "dir": "017",
+   "pass": true,
+   "svg": 18,
+   "blocks": 34
+  },
+  {
+   "order": 18,
+   "heading_id": "06_Haloalkanes:17-reactions-of-alkyl-halides-with-metal/heading001",
+   "title": "17. Reactions of alkyl halides with metals and reducing agents",
+   "dir": "018",
+   "pass": true,
+   "svg": 14,
+   "blocks": 20
+  },
+  {
+   "order": 19,
+   "heading_id": "06_Haloalkanes:18-organometallic-compounds-grignard-and/heading001",
+   "title": "18. Organometallic compounds: Grignard and organolithium reagents",
+   "dir": "019",
+   "pass": true,
+   "svg": 2,
+   "blocks": 7
+  },
+  {
+   "order": 20,
+   "heading_id": "06_Haloalkanes:19-allylic-benzylic-and-vinylic-halides/heading001",
+   "title": "19. Allylic, benzylic and vinylic halides",
+   "dir": "020",
+   "pass": true,
+   "svg": 10,
+   "blocks": 14
+  },
+  {
+   "order": 21,
+   "heading_id": "06_Haloalkanes:20-aryl-halides-structure-and-general-re/heading001",
+   "title": "20. Aryl halides: structure and general reactivity",
+   "dir": "021",
+   "pass": true,
+   "svg": 7,
+   "blocks": 6
+  },
+  {
+   "order": 22,
+   "heading_id": "06_Haloalkanes:21-nucleophilic-aromatic-substitution-ad/heading001",
+   "title": "21. Nucleophilic aromatic substitution: addition–elimination (S N Ar)",
+   "dir": "022",
+   "pass": true,
+   "svg": 14,
+   "blocks": 30
+  },
+  {
+   "order": 23,
+   "heading_id": "06_Haloalkanes:22-benzyne-elimination-addition/heading001",
+   "title": "22. Benzyne: elimination–addition",
+   "dir": "023",
+   "pass": true,
+   "svg": 13,
+   "blocks": 22
+  },
+  {
+   "order": 24,
+   "heading_id": "06_Haloalkanes:23-other-reactions-of-aryl-halides/heading001",
+   "title": "23. Other reactions of aryl halides",
+   "dir": "024",
+   "pass": true,
+   "svg": 10,
+   "blocks": 13
+  },
+  {
+   "order": 25,
+   "heading_id": "06_Haloalkanes:24-polyhalogen-compounds/heading001",
+   "title": "24. Polyhalogen compounds",
+   "dir": "025",
+   "pass": true,
+   "svg": 10,
+   "blocks": 16
+  },
+  {
+   "order": 26,
+   "heading_id": "06_Haloalkanes:25-summary-sheets/heading001",
+   "title": "25. Summary sheets",
+   "dir": "026",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 27,
+   "heading_id": "06_Haloalkanes:26-mechanism-clinic-how-to-attack-a-pred/heading001",
+   "title": "26. Mechanism clinic: how to attack a \"predict the product\" question",
+   "dir": "027",
+   "pass": true,
+   "svg": 0,
+   "blocks": 16
+  },
+  {
+   "order": 28,
+   "heading_id": "06_Haloalkanes:27-practice-set-level-1-main-structure-p/heading001",
+   "title": "27. Practice set, Level 1 (Main): structure, properties and preparation",
+   "dir": "028",
+   "pass": true,
+   "svg": 10,
+   "blocks": 143
+  },
+  {
+   "order": 29,
+   "heading_id": "06_Haloalkanes:28-practice-set-level-1-main-nucleophili/heading001",
+   "title": "28. Practice set, Level 1 (Main): nucleophilic substitution",
+   "dir": "029",
+   "pass": true,
+   "svg": 8,
+   "blocks": 136
+  },
+  {
+   "order": 30,
+   "heading_id": "06_Haloalkanes:29-practice-set-level-1-main-elimination/heading001",
+   "title": "29. Practice set, Level 1 (Main): elimination and competition",
+   "dir": "030",
+   "pass": true,
+   "svg": 1,
+   "blocks": 90
+  },
+  {
+   "order": 31,
+   "heading_id": "06_Haloalkanes:30-practice-set-level-1-main-organometal/heading001",
+   "title": "30. Practice set, Level 1 (Main): organometallics, aryl halides, polyhalo compounds",
+   "dir": "031",
+   "pass": true,
+   "svg": 0,
+   "blocks": 101
+  },
+  {
+   "order": 32,
+   "heading_id": "06_Haloalkanes:31-practice-set-level-2-advanced-substit/heading001",
+   "title": "31. Practice set, Level 2 (Advanced): substitution, stereochemistry and mechanism",
+   "dir": "032",
+   "pass": true,
+   "svg": 14,
+   "blocks": 106
+  },
+  {
+   "order": 33,
+   "heading_id": "06_Haloalkanes:32-practice-set-level-2-advanced-elimina/heading001",
+   "title": "32. Practice set, Level 2 (Advanced): elimination and substitution versus elimination",
+   "dir": "033",
+   "pass": true,
+   "svg": 19,
+   "blocks": 164
+  },
+  {
+   "order": 34,
+   "heading_id": "06_Haloalkanes:33-practice-set-level-2-advanced-synthes/heading001",
+   "title": "33. Practice set, Level 2 (Advanced): synthesis, selectivity and data interpretation",
+   "dir": "034",
+   "pass": true,
+   "svg": 12,
+   "blocks": 118
+  },
+  {
+   "order": 35,
+   "heading_id": "06_Haloalkanes:34-practice-set-level-3-advanced-integer/heading001",
+   "title": "34. Practice set, Level 3 (Advanced): integer-type problems",
+   "dir": "035",
+   "pass": true,
+   "svg": 0,
+   "blocks": 166
+  },
+  {
+   "order": 36,
+   "heading_id": "06_Haloalkanes:35-practice-set-level-3-advanced-matrix-/heading001",
+   "title": "35. Practice set, Level 3 (Advanced): matrix-match problems",
+   "dir": "036",
+   "pass": true,
+   "svg": 0,
+   "blocks": 55
+  },
+  {
+   "order": 37,
+   "heading_id": "06_Haloalkanes:36-practice-set-level-3-advanced-paragra/heading001",
+   "title": "36. Practice set, Level 3 (Advanced): paragraph-based problems",
+   "dir": "037",
+   "pass": true,
+   "svg": 7,
+   "blocks": 170
+  },
+  {
+   "order": 38,
+   "heading_id": "06_Haloalkanes:37-energy-profiles-the-hammond-postulate/heading001",
+   "title": "37. Energy profiles, the Hammond postulate and what they predict",
+   "dir": "038",
+   "pass": true,
+   "svg": 1,
+   "blocks": 6
+  },
+  {
+   "order": 39,
+   "heading_id": "06_Haloalkanes:38-a-catalogue-of-carbocation-rearrangem/heading001",
+   "title": "38. A catalogue of carbocation rearrangements",
+   "dir": "039",
+   "pass": true,
+   "svg": 8,
+   "blocks": 15
+  },
+  {
+   "order": 40,
+   "heading_id": "06_Haloalkanes:39-reaction-roadmaps/heading001",
+   "title": "39. Reaction roadmaps",
+   "dir": "040",
+   "pass": true,
+   "svg": 54,
+   "blocks": 31
+  },
+  {
+   "order": 41,
+   "heading_id": "06_Haloalkanes:40-further-worked-examples-multi-step-pr/heading001",
+   "title": "40. Further worked examples: multi-step problems",
+   "dir": "041",
+   "pass": true,
+   "svg": 0,
+   "blocks": 41
+  },
+  {
+   "order": 42,
+   "heading_id": "06_Haloalkanes:41-pairs-that-students-confuse/heading001",
+   "title": "41. Pairs that students confuse",
+   "dir": "042",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 43,
+   "heading_id": "06_Haloalkanes:42-practice-set-level-2-advanced-supplem/heading001",
+   "title": "42. Practice set, Level 2 (Advanced, supplementary): analytical, quantitative and statement-type problems",
+   "dir": "043",
+   "pass": true,
+   "svg": 0,
+   "blocks": 69
+  },
+  {
+   "order": 44,
+   "heading_id": "06_Haloalkanes:43-additions-from-the-cross-check-agains/heading001",
+   "title": "43. Additions from the cross-check against textbooks",
+   "dir": "044",
+   "pass": true,
+   "svg": 10,
+   "blocks": 47
+  },
+  {
+   "order": 45,
+   "heading_id": "06_Haloalkanes:45-worked-problem-types-transition-state/heading001",
+   "title": "45. Worked problem types: transition states, retrosynthesis and multi-step products",
+   "dir": "045",
+   "pass": true,
+   "svg": 4,
+   "blocks": 6
+  },
+  {
+   "order": 46,
+   "heading_id": "06_Haloalkanes:46-worked-examples-a-final-round-of-mixe/heading001",
+   "title": "46. Worked examples: a final round of mixed products",
+   "dir": "046",
+   "pass": true,
+   "svg": 10,
+   "blocks": 45
+  },
+  {
+   "order": 47,
+   "heading_id": "06_Haloalkanes:47-practice-set-level-2-advanced-supplem/heading001",
+   "title": "47. Practice set, Level 2 (Advanced, supplementary 2): drawn answers",
+   "dir": "047",
+   "pass": true,
+   "svg": 39,
+   "blocks": 53
+  },
+  {
+   "order": 48,
+   "heading_id": "06_Haloalkanes:48-practice-set-level-2-advanced-supplem/heading001",
+   "title": "48. Practice set, Level 2 (Advanced, supplementary 3): stereochemical bookkeeping in S N 2",
+   "dir": "048",
+   "pass": true,
+   "svg": 10,
+   "blocks": 21
+  },
+  {
+   "order": 49,
+   "heading_id": "06_Haloalkanes:44-appendix-sources-cross-checked/heading001",
+   "title": "44. Appendix: sources cross-checked",
+   "dir": "049",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  }
+ ]
+}

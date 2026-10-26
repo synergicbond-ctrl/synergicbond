@@ -1,0 +1,425 @@
+{
+ "file": "12_Biomolecules.html",
+ "partition_level": 3,
+ "sections_total": 46,
+ "sections_passed": 46,
+ "svg_in_sections": 237,
+ "svg_in_file": 237,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "12_Biomolecules:biomolecules/heading001",
+   "title": "Biomolecules",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 1,
+   "heading_id": "12_Biomolecules:contents/heading001",
+   "title": "Contents",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 2,
+   "heading_id": "12_Biomolecules:how-to-use-this-chapter/heading001",
+   "title": "How to use this chapter",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 3,
+   "heading_id": "12_Biomolecules:1-1-what-is-a-carbohydrate/heading001",
+   "title": "1.1 What is a carbohydrate?",
+   "dir": "003",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 4,
+   "heading_id": "12_Biomolecules:1-2-fischer-projections-rules-you-can-us/heading001",
+   "title": "1.2 Fischer projections: rules you can use without losing marks",
+   "dir": "004",
+   "pass": true,
+   "svg": 26,
+   "blocks": 36
+  },
+  {
+   "order": 5,
+   "heading_id": "12_Biomolecules:1-3-structure-of-glucose-the-experimenta/heading001",
+   "title": "1.3 Structure of glucose: the experimental evidence",
+   "dir": "005",
+   "pass": true,
+   "svg": 7,
+   "blocks": 23
+  },
+  {
+   "order": 6,
+   "heading_id": "12_Biomolecules:1-4-ring-structures-hemiacetals-pyranose/heading001",
+   "title": "1.4 Ring structures: hemiacetals, pyranose and furanose",
+   "dir": "006",
+   "pass": true,
+   "svg": 12,
+   "blocks": 15
+  },
+  {
+   "order": 7,
+   "heading_id": "12_Biomolecules:1-5-mutarotation/heading001",
+   "title": "1.5 Mutarotation",
+   "dir": "007",
+   "pass": true,
+   "svg": 0,
+   "blocks": 24
+  },
+  {
+   "order": 8,
+   "heading_id": "12_Biomolecules:1-6-reactions-of-monosaccharides/heading001",
+   "title": "1.6 Reactions of monosaccharides",
+   "dir": "008",
+   "pass": true,
+   "svg": 20,
+   "blocks": 64
+  },
+  {
+   "order": 9,
+   "heading_id": "12_Biomolecules:1-7-fructose-pentoses-and-other-monosacc/heading001",
+   "title": "1.7 Fructose, pentoses and other monosaccharides worth knowing",
+   "dir": "009",
+   "pass": true,
+   "svg": 4,
+   "blocks": 12
+  },
+  {
+   "order": 10,
+   "heading_id": "12_Biomolecules:1-8-disaccharides/heading001",
+   "title": "1.8 Disaccharides",
+   "dir": "010",
+   "pass": true,
+   "svg": 8,
+   "blocks": 29
+  },
+  {
+   "order": 11,
+   "heading_id": "12_Biomolecules:1-9-polysaccharides/heading001",
+   "title": "1.9 Polysaccharides",
+   "dir": "011",
+   "pass": true,
+   "svg": 0,
+   "blocks": 33
+  },
+  {
+   "order": 12,
+   "heading_id": "12_Biomolecules:2-1-amino-acids-structure-and-stereochem/heading001",
+   "title": "2.1 α-Amino acids: structure and stereochemistry",
+   "dir": "012",
+   "pass": true,
+   "svg": 24,
+   "blocks": 20
+  },
+  {
+   "order": 13,
+   "heading_id": "12_Biomolecules:2-2-acid-base-behaviour-of-amino-acids/heading001",
+   "title": "2.2 Acid–base behaviour of amino acids",
+   "dir": "013",
+   "pass": true,
+   "svg": 6,
+   "blocks": 49
+  },
+  {
+   "order": 14,
+   "heading_id": "12_Biomolecules:2-3-synthesis-of-amino-acids/heading001",
+   "title": "2.3 Synthesis of α-amino acids",
+   "dir": "014",
+   "pass": true,
+   "svg": 9,
+   "blocks": 9
+  },
+  {
+   "order": 15,
+   "heading_id": "12_Biomolecules:2-4-reactions-of-amino-acids/heading001",
+   "title": "2.4 Reactions of amino acids",
+   "dir": "015",
+   "pass": true,
+   "svg": 7,
+   "blocks": 31
+  },
+  {
+   "order": 16,
+   "heading_id": "12_Biomolecules:2-5-peptides-and-the-peptide-bond/heading001",
+   "title": "2.5 Peptides and the peptide bond",
+   "dir": "016",
+   "pass": true,
+   "svg": 4,
+   "blocks": 24
+  },
+  {
+   "order": 17,
+   "heading_id": "12_Biomolecules:2-6-peptide-synthesis/heading001",
+   "title": "2.6 Peptide synthesis",
+   "dir": "017",
+   "pass": true,
+   "svg": 11,
+   "blocks": 25
+  },
+  {
+   "order": 18,
+   "heading_id": "12_Biomolecules:2-7-peptide-sequencing/heading001",
+   "title": "2.7 Peptide sequencing",
+   "dir": "018",
+   "pass": true,
+   "svg": 6,
+   "blocks": 35
+  },
+  {
+   "order": 19,
+   "heading_id": "12_Biomolecules:3-1-levels-of-protein-structure/heading001",
+   "title": "3.1 Levels of protein structure",
+   "dir": "019",
+   "pass": true,
+   "svg": 0,
+   "blocks": 14
+  },
+  {
+   "order": 20,
+   "heading_id": "12_Biomolecules:3-2-denaturation-solubility-and-tests/heading001",
+   "title": "3.2 Denaturation, solubility and tests",
+   "dir": "020",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 21,
+   "heading_id": "12_Biomolecules:3-3-enzymes/heading001",
+   "title": "3.3 Enzymes",
+   "dir": "021",
+   "pass": true,
+   "svg": 0,
+   "blocks": 44
+  },
+  {
+   "order": 22,
+   "heading_id": "12_Biomolecules:4-1-components-bases-sugars-nucleosides-/heading001",
+   "title": "4.1 Components: bases, sugars, nucleosides, nucleotides",
+   "dir": "022",
+   "pass": true,
+   "svg": 11,
+   "blocks": 10
+  },
+  {
+   "order": 23,
+   "heading_id": "12_Biomolecules:4-2-polynucleotides-and-the-structure-of/heading001",
+   "title": "4.2 Polynucleotides and the structure of DNA",
+   "dir": "023",
+   "pass": true,
+   "svg": 2,
+   "blocks": 9
+  },
+  {
+   "order": 24,
+   "heading_id": "12_Biomolecules:4-3-rna-and-the-flow-of-genetic-informat/heading001",
+   "title": "4.3 RNA and the flow of genetic information",
+   "dir": "024",
+   "pass": true,
+   "svg": 0,
+   "blocks": 42
+  },
+  {
+   "order": 25,
+   "heading_id": "12_Biomolecules:5-1-vitamins/heading001",
+   "title": "5.1 Vitamins",
+   "dir": "025",
+   "pass": true,
+   "svg": 12,
+   "blocks": 29
+  },
+  {
+   "order": 26,
+   "heading_id": "12_Biomolecules:5-2-hormones/heading001",
+   "title": "5.2 Hormones",
+   "dir": "026",
+   "pass": true,
+   "svg": 6,
+   "blocks": 6
+  },
+  {
+   "order": 27,
+   "heading_id": "12_Biomolecules:5-3-lipids/heading001",
+   "title": "5.3 Lipids",
+   "dir": "027",
+   "pass": true,
+   "svg": 11,
+   "blocks": 43
+  },
+  {
+   "order": 28,
+   "heading_id": "12_Biomolecules:6-1-mutarotation-how-the-ring-opens-and-/heading001",
+   "title": "6.1 Mutarotation: how the ring opens and recloses",
+   "dir": "028",
+   "pass": true,
+   "svg": 6,
+   "blocks": 6
+  },
+  {
+   "order": 29,
+   "heading_id": "12_Biomolecules:6-2-glycoside-formation-and-the-anomeric/heading001",
+   "title": "6.2 Glycoside formation and the anomeric effect",
+   "dir": "029",
+   "pass": true,
+   "svg": 6,
+   "blocks": 6
+  },
+  {
+   "order": 30,
+   "heading_id": "12_Biomolecules:6-3-osazone-formation-step-by-step/heading001",
+   "title": "6.3 Osazone formation, step by step",
+   "dir": "030",
+   "pass": true,
+   "svg": 6,
+   "blocks": 4
+  },
+  {
+   "order": 31,
+   "heading_id": "12_Biomolecules:6-4-kiliani-cyanohydrin-step-and-the-str/heading001",
+   "title": "6.4 Kiliani cyanohydrin step and the Strecker synthesis",
+   "dir": "031",
+   "pass": true,
+   "svg": 8,
+   "blocks": 5
+  },
+  {
+   "order": 32,
+   "heading_id": "12_Biomolecules:6-5-the-peptide-bond-resonance-and-a-thr/heading001",
+   "title": "6.5 The peptide bond: resonance and a three-orbital picture",
+   "dir": "032",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 33,
+   "heading_id": "12_Biomolecules:6-6-dcc-coupling-step-by-step/heading001",
+   "title": "6.6 DCC coupling, step by step",
+   "dir": "033",
+   "pass": true,
+   "svg": 7,
+   "blocks": 5
+  },
+  {
+   "order": 34,
+   "heading_id": "12_Biomolecules:6-7-edman-degradation-step-by-step/heading001",
+   "title": "6.7 Edman degradation, step by step",
+   "dir": "034",
+   "pass": true,
+   "svg": 7,
+   "blocks": 4
+  },
+  {
+   "order": 35,
+   "heading_id": "12_Biomolecules:6-8-ninhydrin-and-periodate-two-reagents/heading001",
+   "title": "6.8 Ninhydrin and periodate: two reagents with a clean mechanism",
+   "dir": "035",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 36,
+   "heading_id": "12_Biomolecules:6-9-enediol-and-the-lobry-de-bruyn-van-e/heading001",
+   "title": "6.9 Enediol and the Lobry de Bruyn–van Ekenstein transformation",
+   "dir": "036",
+   "pass": true,
+   "svg": 3,
+   "blocks": 4
+  },
+  {
+   "order": 37,
+   "heading_id": "12_Biomolecules:6-10-base-hydrolysis-of-rna-and-why-dna-/heading001",
+   "title": "6.10 Base hydrolysis of RNA (and why DNA survives)",
+   "dir": "037",
+   "pass": true,
+   "svg": 2,
+   "blocks": 3
+  },
+  {
+   "order": 38,
+   "heading_id": "12_Biomolecules:6-11-serine-protease-chymotrypsin-a-pept/heading001",
+   "title": "6.11 Serine protease (chymotrypsin): a peptide bond hydrolysed in two stages",
+   "dir": "038",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 39,
+   "heading_id": "12_Biomolecules:6-12-acid-catalysed-amide-and-ester-hydr/heading001",
+   "title": "6.12 Acid-catalysed amide and ester hydrolysis and the \"tetrahedral intermediate\" rule",
+   "dir": "039",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 40,
+   "heading_id": "12_Biomolecules:level-1-main-type-problems-single-correc/heading001",
+   "title": "Level 1: Main-type problems (single correct or numerical)",
+   "dir": "040",
+   "pass": true,
+   "svg": 0,
+   "blocks": 511
+  },
+  {
+   "order": 41,
+   "heading_id": "12_Biomolecules:level-2-advanced-type-problems/heading001",
+   "title": "Level 2: Advanced-type problems",
+   "dir": "041",
+   "pass": true,
+   "svg": 0,
+   "blocks": 349
+  },
+  {
+   "order": 42,
+   "heading_id": "12_Biomolecules:level-3-paragraph-and-multi-step-problem/heading001",
+   "title": "Level 3: Paragraph and multi-step problems",
+   "dir": "042",
+   "pass": true,
+   "svg": 6,
+   "blocks": 337
+  },
+  {
+   "order": 43,
+   "heading_id": "12_Biomolecules:a-1-sources-actually-opened/heading001",
+   "title": "A.1 Sources actually opened",
+   "dir": "043",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 44,
+   "heading_id": "12_Biomolecules:a-2-what-was-verified-by-program-verify1/heading001",
+   "title": "A.2 What was verified by program (verify12.py)",
+   "dir": "044",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 45,
+   "heading_id": "12_Biomolecules:a-3-not-verified-by-program/heading001",
+   "title": "A.3 Not verified by program",
+   "dir": "045",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  }
+ ]
+}

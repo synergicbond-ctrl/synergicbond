@@ -1,0 +1,182 @@
+{
+ "file": "02b_Steric_Inhibition_of_Resonance.html",
+ "partition_level": 3,
+ "sections_total": 19,
+ "sections_passed": 19,
+ "svg_in_sections": 0,
+ "svg_in_file": 0,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:1-definition-and-conditions/heading001",
+   "title": "1. Definition and conditions",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 1,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:2-why-the-overlap-falls/heading001",
+   "title": "2. Why the overlap falls",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 2,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:3-consequences-for-acidity-and-basicity/heading001",
+   "title": "3. Consequences for acidity and basicity",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 3,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:4-stability-of-planar-intermediates/heading001",
+   "title": "4. Stability of planar intermediates",
+   "dir": "003",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 4,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:5-verified-data-used/heading001",
+   "title": "5. Verified data used",
+   "dir": "004",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 5,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:a-acidity/heading001",
+   "title": "A. Acidity",
+   "dir": "005",
+   "pass": true,
+   "svg": 0,
+   "blocks": 39
+  },
+  {
+   "order": 6,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:b-basicity/heading001",
+   "title": "B. Basicity",
+   "dir": "006",
+   "pass": true,
+   "svg": 0,
+   "blocks": 31
+  },
+  {
+   "order": 7,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:c-hammett-estimates/heading001",
+   "title": "C. Hammett estimates",
+   "dir": "007",
+   "pass": true,
+   "svg": 0,
+   "blocks": 21
+  },
+  {
+   "order": 8,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:d-resonance-energy/heading001",
+   "title": "D. Resonance energy",
+   "dir": "008",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 9,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:e-hyperconjugation/heading001",
+   "title": "E. Hyperconjugation",
+   "dir": "009",
+   "pass": true,
+   "svg": 0,
+   "blocks": 11
+  },
+  {
+   "order": 10,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:f-dipole-moments/heading001",
+   "title": "F. Dipole moments",
+   "dir": "010",
+   "pass": true,
+   "svg": 0,
+   "blocks": 16
+  },
+  {
+   "order": 11,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:g-bond-lengths/heading001",
+   "title": "G. Bond lengths",
+   "dir": "011",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 12,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:h-aromaticity/heading001",
+   "title": "H. Aromaticity",
+   "dir": "012",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 13,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:i-counting/heading001",
+   "title": "I. Counting",
+   "dir": "013",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 14,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:j-steric-inhibition-of-resonance/heading001",
+   "title": "J. Steric inhibition of resonance",
+   "dir": "014",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 15,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:k-intermediate-stability/heading001",
+   "title": "K. Intermediate stability",
+   "dir": "015",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 16,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:l-equilibrium-constants/heading001",
+   "title": "L. Equilibrium constants",
+   "dir": "016",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 17,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:exam-level-multi-step-set-added-this-run/heading001",
+   "title": "Exam-level multi-step set (added this run)",
+   "dir": "017",
+   "pass": true,
+   "svg": 0,
+   "blocks": 8
+  },
+  {
+   "order": 18,
+   "heading_id": "02b_Steric_Inhibition_of_Resonance:sources/heading001",
+   "title": "Sources",
+   "dir": "018",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  }
+ ]
+}

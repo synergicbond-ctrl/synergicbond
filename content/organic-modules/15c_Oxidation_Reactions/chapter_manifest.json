@@ -1,0 +1,29 @@
+{
+ "file": "15c_Oxidation_Reactions.html",
+ "partition_level": 3,
+ "sections_total": 2,
+ "sections_passed": 2,
+ "svg_in_sections": 83,
+ "svg_in_file": 83,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "15c_Oxidation_Reactions:oxidation-reactions-reagents-and-what-th/heading001",
+   "title": "Oxidation reactions: reagents and what they do",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 1,
+   "heading_id": "15c_Oxidation_Reactions:practice-products-and-reagents/heading001",
+   "title": "Practice: products and reagents",
+   "dir": "001",
+   "pass": true,
+   "svg": 83,
+   "blocks": 128
+  }
+ ]
+}

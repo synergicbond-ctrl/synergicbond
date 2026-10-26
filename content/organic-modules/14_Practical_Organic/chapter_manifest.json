@@ -1,0 +1,893 @@
+{
+ "file": "14_Practical_Organic.html",
+ "partition_level": 3,
+ "sections_total": 98,
+ "sections_passed": 98,
+ "svg_in_sections": 55,
+ "svg_in_file": 55,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "14_Practical_Organic:practical-organic-chemistry/heading001",
+   "title": "Practical Organic Chemistry",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 1,
+   "heading_id": "14_Practical_Organic:contents/heading001",
+   "title": "Contents",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 2,
+   "heading_id": "14_Practical_Organic:chapter-map-and-prerequisites/heading001",
+   "title": "Chapter map and prerequisites",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 3,
+   "heading_id": "14_Practical_Organic:learning-objectives-and-entry-check/heading001",
+   "title": "Learning objectives and entry check",
+   "dir": "003",
+   "pass": true,
+   "svg": 0,
+   "blocks": 22
+  },
+  {
+   "order": 4,
+   "heading_id": "14_Practical_Organic:1-why-purify-and-what-pure-means/heading001",
+   "title": "1. Why purify, and what \"pure\" means",
+   "dir": "004",
+   "pass": true,
+   "svg": 0,
+   "blocks": 15
+  },
+  {
+   "order": 5,
+   "heading_id": "14_Practical_Organic:2-methods-based-on-solids-crystallisatio/heading001",
+   "title": "2. Methods based on solids: crystallisation and sublimation",
+   "dir": "005",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 6,
+   "heading_id": "14_Practical_Organic:2-1-crystallisation/heading001",
+   "title": "2.1 Crystallisation",
+   "dir": "006",
+   "pass": true,
+   "svg": 0,
+   "blocks": 10
+  },
+  {
+   "order": 7,
+   "heading_id": "14_Practical_Organic:2-2-sublimation/heading001",
+   "title": "2.2 Sublimation",
+   "dir": "007",
+   "pass": true,
+   "svg": 0,
+   "blocks": 9
+  },
+  {
+   "order": 8,
+   "heading_id": "14_Practical_Organic:3-methods-based-on-liquids-distillation/heading001",
+   "title": "3. Methods based on liquids: distillation",
+   "dir": "008",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 9,
+   "heading_id": "14_Practical_Organic:3-1-simple-distillation/heading001",
+   "title": "3.1 Simple distillation",
+   "dir": "009",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 10,
+   "heading_id": "14_Practical_Organic:3-2-fractional-distillation/heading001",
+   "title": "3.2 Fractional distillation",
+   "dir": "010",
+   "pass": true,
+   "svg": 1,
+   "blocks": 5
+  },
+  {
+   "order": 11,
+   "heading_id": "14_Practical_Organic:3-3-azeotropes/heading001",
+   "title": "3.3 Azeotropes",
+   "dir": "011",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 12,
+   "heading_id": "14_Practical_Organic:3-4-distillation-under-reduced-pressure-/heading001",
+   "title": "3.4 Distillation under reduced pressure (vacuum distillation)",
+   "dir": "012",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 13,
+   "heading_id": "14_Practical_Organic:3-5-steam-distillation/heading001",
+   "title": "3.5 Steam distillation",
+   "dir": "013",
+   "pass": true,
+   "svg": 0,
+   "blocks": 22
+  },
+  {
+   "order": 14,
+   "heading_id": "14_Practical_Organic:4-differential-extraction/heading001",
+   "title": "4. Differential extraction",
+   "dir": "014",
+   "pass": true,
+   "svg": 1,
+   "blocks": 15
+  },
+  {
+   "order": 15,
+   "heading_id": "14_Practical_Organic:5-chromatography/heading001",
+   "title": "5. Chromatography",
+   "dir": "015",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 16,
+   "heading_id": "14_Practical_Organic:5-1-column-chromatography/heading001",
+   "title": "5.1 Column chromatography",
+   "dir": "016",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 17,
+   "heading_id": "14_Practical_Organic:5-2-thin-layer-chromatography-and-r-f/heading001",
+   "title": "5.2 Thin layer chromatography and R f",
+   "dir": "017",
+   "pass": true,
+   "svg": 1,
+   "blocks": 20
+  },
+  {
+   "order": 18,
+   "heading_id": "14_Practical_Organic:5a-comparison-of-purification-methods-qu/heading001",
+   "title": "5A. Comparison of purification methods (quick selection table)",
+   "dir": "018",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 19,
+   "heading_id": "14_Practical_Organic:6-detection-of-carbon-and-hydrogen/heading001",
+   "title": "6. Detection of carbon and hydrogen",
+   "dir": "019",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 20,
+   "heading_id": "14_Practical_Organic:7-lassaigne-s-test-detection-of-nitrogen/heading001",
+   "title": "7. Lassaigne's test: detection of nitrogen, sulphur and halogens",
+   "dir": "020",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 21,
+   "heading_id": "14_Practical_Organic:7-1-preparing-the-sodium-fusion-extract-/heading001",
+   "title": "7.1 Preparing the sodium fusion extract (SFE, Lassaigne's extract)",
+   "dir": "021",
+   "pass": true,
+   "svg": 4,
+   "blocks": 7
+  },
+  {
+   "order": 22,
+   "heading_id": "14_Practical_Organic:7-2-test-for-nitrogen-prussian-blue/heading001",
+   "title": "7.2 Test for nitrogen: Prussian blue",
+   "dir": "022",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 23,
+   "heading_id": "14_Practical_Organic:7-3-test-for-sulphur/heading001",
+   "title": "7.3 Test for sulphur",
+   "dir": "023",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 24,
+   "heading_id": "14_Practical_Organic:7-4-compounds-containing-both-nitrogen-a/heading001",
+   "title": "7.4 Compounds containing both nitrogen and sulphur",
+   "dir": "024",
+   "pass": true,
+   "svg": 0,
+   "blocks": 9
+  },
+  {
+   "order": 25,
+   "heading_id": "14_Practical_Organic:7-5-test-for-halogens/heading001",
+   "title": "7.5 Test for halogens",
+   "dir": "025",
+   "pass": true,
+   "svg": 0,
+   "blocks": 14
+  },
+  {
+   "order": 26,
+   "heading_id": "14_Practical_Organic:7-6-test-for-phosphorus/heading001",
+   "title": "7.6 Test for phosphorus",
+   "dir": "026",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 27,
+   "heading_id": "14_Practical_Organic:7-7-oxygen/heading001",
+   "title": "7.7 Oxygen",
+   "dir": "027",
+   "pass": true,
+   "svg": 0,
+   "blocks": 8
+  },
+  {
+   "order": 28,
+   "heading_id": "14_Practical_Organic:8-other-tests-summary-and-exam-style-cas/heading001",
+   "title": "8. Other tests, summary and exam-style cases",
+   "dir": "028",
+   "pass": true,
+   "svg": 0,
+   "blocks": 18
+  },
+  {
+   "order": 29,
+   "heading_id": "14_Practical_Organic:9-functional-group-tests-general-strateg/heading001",
+   "title": "9. Functional group tests: general strategy",
+   "dir": "029",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 30,
+   "heading_id": "14_Practical_Organic:9a-solubility-classification-the-first-c/heading001",
+   "title": "9A. Solubility classification: the first chemical test",
+   "dir": "030",
+   "pass": true,
+   "svg": 0,
+   "blocks": 8
+  },
+  {
+   "order": 31,
+   "heading_id": "14_Practical_Organic:10-tests-for-hydrocarbons-halides-alcoho/heading001",
+   "title": "10. Tests for hydrocarbons, halides, alcohols, phenols and ethers",
+   "dir": "031",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 32,
+   "heading_id": "14_Practical_Organic:10-1-unsaturation-alkenes-alkynes/heading001",
+   "title": "10.1 Unsaturation (alkenes, alkynes)",
+   "dir": "032",
+   "pass": true,
+   "svg": 2,
+   "blocks": 4
+  },
+  {
+   "order": 33,
+   "heading_id": "14_Practical_Organic:10-2-alkyl-and-aryl-halides/heading001",
+   "title": "10.2 Alkyl and aryl halides",
+   "dir": "033",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 34,
+   "heading_id": "14_Practical_Organic:10-3-alcohols/heading001",
+   "title": "10.3 Alcohols",
+   "dir": "034",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 35,
+   "heading_id": "14_Practical_Organic:10-4-phenols/heading001",
+   "title": "10.4 Phenols",
+   "dir": "035",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 36,
+   "heading_id": "14_Practical_Organic:10-5-ethers/heading001",
+   "title": "10.5 Ethers",
+   "dir": "036",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 37,
+   "heading_id": "14_Practical_Organic:11-tests-for-carbonyl-compounds-acids-an/heading001",
+   "title": "11. Tests for carbonyl compounds, acids and their derivatives",
+   "dir": "037",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 38,
+   "heading_id": "14_Practical_Organic:11-1-aldehydes-and-ketones/heading001",
+   "title": "11.1 Aldehydes and ketones",
+   "dir": "038",
+   "pass": true,
+   "svg": 3,
+   "blocks": 13
+  },
+  {
+   "order": 39,
+   "heading_id": "14_Practical_Organic:11-2-carboxylic-acids/heading001",
+   "title": "11.2 Carboxylic acids",
+   "dir": "039",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 40,
+   "heading_id": "14_Practical_Organic:11-3-esters-amides-acid-derivatives/heading001",
+   "title": "11.3 Esters, amides, acid derivatives",
+   "dir": "040",
+   "pass": true,
+   "svg": 0,
+   "blocks": 12
+  },
+  {
+   "order": 41,
+   "heading_id": "14_Practical_Organic:12-tests-for-nitrogen-compounds-carbohyd/heading001",
+   "title": "12. Tests for nitrogen compounds, carbohydrates and proteins",
+   "dir": "041",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 42,
+   "heading_id": "14_Practical_Organic:12-1-amines/heading001",
+   "title": "12.1 Amines",
+   "dir": "042",
+   "pass": true,
+   "svg": 3,
+   "blocks": 5
+  },
+  {
+   "order": 43,
+   "heading_id": "14_Practical_Organic:12-2-nitro-compounds/heading001",
+   "title": "12.2 Nitro compounds",
+   "dir": "043",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 44,
+   "heading_id": "14_Practical_Organic:12-3-carbohydrates/heading001",
+   "title": "12.3 Carbohydrates",
+   "dir": "044",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 45,
+   "heading_id": "14_Practical_Organic:12-4-amino-acids-and-proteins/heading001",
+   "title": "12.4 Amino acids and proteins",
+   "dir": "045",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 46,
+   "heading_id": "14_Practical_Organic:13-separation-of-binary-mixtures-and-dis/heading001",
+   "title": "13. Separation of binary mixtures and distinguishing pairs",
+   "dir": "046",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 47,
+   "heading_id": "14_Practical_Organic:13-1-chemical-separation-by-acid-base-ex/heading001",
+   "title": "13.1 Chemical separation by acid–base extraction",
+   "dir": "047",
+   "pass": true,
+   "svg": 1,
+   "blocks": 13
+  },
+  {
+   "order": 48,
+   "heading_id": "14_Practical_Organic:13-2-distinguishing-pairs-single-reagent/heading001",
+   "title": "13.2 Distinguishing pairs (single reagent)",
+   "dir": "048",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 49,
+   "heading_id": "14_Practical_Organic:14-quantitative-analysis-from-percentage/heading001",
+   "title": "14. Quantitative analysis: from percentage composition to formula",
+   "dir": "049",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 50,
+   "heading_id": "14_Practical_Organic:14-1-empirical-and-molecular-formula/heading001",
+   "title": "14.1 Empirical and molecular formula",
+   "dir": "050",
+   "pass": true,
+   "svg": 0,
+   "blocks": 11
+  },
+  {
+   "order": 51,
+   "heading_id": "14_Practical_Organic:15-estimation-of-carbon-and-hydrogen-lie/heading001",
+   "title": "15. Estimation of carbon and hydrogen: Liebig's combustion method",
+   "dir": "051",
+   "pass": true,
+   "svg": 0,
+   "blocks": 19
+  },
+  {
+   "order": 52,
+   "heading_id": "14_Practical_Organic:16-estimation-of-nitrogen-the-dumas-meth/heading001",
+   "title": "16. Estimation of nitrogen: the Dumas method",
+   "dir": "052",
+   "pass": true,
+   "svg": 0,
+   "blocks": 20
+  },
+  {
+   "order": 53,
+   "heading_id": "14_Practical_Organic:17-estimation-of-nitrogen-the-kjeldahl-m/heading001",
+   "title": "17. Estimation of nitrogen: the Kjeldahl method",
+   "dir": "053",
+   "pass": true,
+   "svg": 0,
+   "blocks": 17
+  },
+  {
+   "order": 54,
+   "heading_id": "14_Practical_Organic:18-estimation-of-halogens-sulphur-and-ph/heading001",
+   "title": "18. Estimation of halogens, sulphur and phosphorus: Carius method",
+   "dir": "054",
+   "pass": true,
+   "svg": 0,
+   "blocks": 33
+  },
+  {
+   "order": 55,
+   "heading_id": "14_Practical_Organic:18-1-oxygen/heading001",
+   "title": "18.1 Oxygen",
+   "dir": "055",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 56,
+   "heading_id": "14_Practical_Organic:19-molecular-mass-and-formula-determinat/heading001",
+   "title": "19. Molecular mass and formula determination",
+   "dir": "056",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 57,
+   "heading_id": "14_Practical_Organic:19-1-vapour-density-and-victor-meyer-s-m/heading001",
+   "title": "19.1 Vapour density and Victor Meyer's method",
+   "dir": "057",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 58,
+   "heading_id": "14_Practical_Organic:19-2-colligative-properties/heading001",
+   "title": "19.2 Colligative properties",
+   "dir": "058",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 59,
+   "heading_id": "14_Practical_Organic:19-3-basicity-of-acids-and-acidity-of-ba/heading001",
+   "title": "19.3 Basicity of acids and acidity of bases: the silver salt and chloroplatinate methods",
+   "dir": "059",
+   "pass": true,
+   "svg": 0,
+   "blocks": 11
+  },
+  {
+   "order": 60,
+   "heading_id": "14_Practical_Organic:19-4-eudiometry-of-gaseous-organic-compo/heading001",
+   "title": "19.4 Eudiometry of gaseous organic compounds",
+   "dir": "060",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 61,
+   "heading_id": "14_Practical_Organic:20-degree-of-unsaturation-double-bond-eq/heading001",
+   "title": "20. Degree of unsaturation (double-bond equivalent, DBE)",
+   "dir": "061",
+   "pass": true,
+   "svg": 6,
+   "blocks": 19
+  },
+  {
+   "order": 62,
+   "heading_id": "14_Practical_Organic:21-infrared-spectroscopy-for-structure-d/heading001",
+   "title": "21. Infrared spectroscopy for structure deduction",
+   "dir": "062",
+   "pass": true,
+   "svg": 1,
+   "blocks": 22
+  },
+  {
+   "order": 63,
+   "heading_id": "14_Practical_Organic:22-proton-nmr-h-nmr-spectroscopy/heading001",
+   "title": "22. Proton NMR (¹H NMR) spectroscopy",
+   "dir": "063",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 64,
+   "heading_id": "14_Practical_Organic:22-1-number-of-signals/heading001",
+   "title": "22.1 Number of signals",
+   "dir": "064",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 65,
+   "heading_id": "14_Practical_Organic:22-2-chemical-shift/heading001",
+   "title": "22.2 Chemical shift",
+   "dir": "065",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 66,
+   "heading_id": "14_Practical_Organic:22-3-spin-spin-splitting/heading001",
+   "title": "22.3 Spin-spin splitting",
+   "dir": "066",
+   "pass": true,
+   "svg": 6,
+   "blocks": 10
+  },
+  {
+   "order": 67,
+   "heading_id": "14_Practical_Organic:22-4-c-nmr-in-one-table/heading001",
+   "title": "22.4 ¹³C NMR in one table",
+   "dir": "067",
+   "pass": true,
+   "svg": 0,
+   "blocks": 18
+  },
+  {
+   "order": 68,
+   "heading_id": "14_Practical_Organic:23-mass-spectrometry-in-a-nutshell/heading001",
+   "title": "23. Mass spectrometry in a nutshell",
+   "dir": "068",
+   "pass": true,
+   "svg": 0,
+   "blocks": 12
+  },
+  {
+   "order": 69,
+   "heading_id": "14_Practical_Organic:24-putting-it-all-together-a-systematic-/heading001",
+   "title": "24. Putting it all together: a systematic route",
+   "dir": "069",
+   "pass": true,
+   "svg": 0,
+   "blocks": 11
+  },
+  {
+   "order": 70,
+   "heading_id": "14_Practical_Organic:consolidated-revision-compilations-a-to-/heading001",
+   "title": "Consolidated revision (compilations A to O)",
+   "dir": "070",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 71,
+   "heading_id": "14_Practical_Organic:a-all-important-orders-and-trends/heading001",
+   "title": "A. All important orders and trends",
+   "dir": "071",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 72,
+   "heading_id": "14_Practical_Organic:b-all-exceptions/heading001",
+   "title": "B. All exceptions",
+   "dir": "072",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 73,
+   "heading_id": "14_Practical_Organic:c-all-special-cases/heading001",
+   "title": "C. All special cases",
+   "dir": "073",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 74,
+   "heading_id": "14_Practical_Organic:d-unique-and-less-discussed-theory-enric/heading001",
+   "title": "D. Unique and less-discussed theory (enrichment unless stated)",
+   "dir": "074",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 75,
+   "heading_id": "14_Practical_Organic:e-imp-collection/heading001",
+   "title": "E. IMP collection",
+   "dir": "075",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 76,
+   "heading_id": "14_Practical_Organic:f-hyf-collection/heading001",
+   "title": "F. HYF collection",
+   "dir": "076",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 77,
+   "heading_id": "14_Practical_Organic:g-mot-lens-and-bonding-insights/heading001",
+   "title": "G. MOT Lens and Bonding Insights",
+   "dir": "077",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 78,
+   "heading_id": "14_Practical_Organic:h-formula-and-derivation-register/heading001",
+   "title": "H. Formula and derivation register",
+   "dir": "078",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 79,
+   "heading_id": "14_Practical_Organic:i-reaction-and-reagent-register/heading001",
+   "title": "I. Reaction and reagent register",
+   "dir": "079",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 80,
+   "heading_id": "14_Practical_Organic:j-structure-and-geometry-register/heading001",
+   "title": "J. Structure and geometry register",
+   "dir": "080",
+   "pass": true,
+   "svg": 8,
+   "blocks": 3
+  },
+  {
+   "order": 81,
+   "heading_id": "14_Practical_Organic:k-confusing-pairs/heading001",
+   "title": "K. Confusing pairs",
+   "dir": "081",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 82,
+   "heading_id": "14_Practical_Organic:l-traps-false-statements-and-corrections/heading001",
+   "title": "L. Traps, false statements and corrections",
+   "dir": "082",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 83,
+   "heading_id": "14_Practical_Organic:m-problem-solving-methods/heading001",
+   "title": "M. Problem-solving methods",
+   "dir": "083",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 84,
+   "heading_id": "14_Practical_Organic:n-graphs-and-experimental-observations/heading001",
+   "title": "N. Graphs and experimental observations",
+   "dir": "084",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 85,
+   "heading_id": "14_Practical_Organic:o-rapid-self-test-answers-follow/heading001",
+   "title": "O. Rapid self-test (answers follow)",
+   "dir": "085",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 86,
+   "heading_id": "14_Practical_Organic:graded-exercises/heading001",
+   "title": "Graded exercises",
+   "dir": "086",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 87,
+   "heading_id": "14_Practical_Organic:problem-set-a-purification-extraction-an/heading001",
+   "title": "Problem set A: purification, extraction and chromatography",
+   "dir": "087",
+   "pass": true,
+   "svg": 0,
+   "blocks": 80
+  },
+  {
+   "order": 88,
+   "heading_id": "14_Practical_Organic:problem-set-b-detection-of-elements-lass/heading001",
+   "title": "Problem set B: detection of elements (Lassaigne and related tests)",
+   "dir": "088",
+   "pass": true,
+   "svg": 0,
+   "blocks": 76
+  },
+  {
+   "order": 89,
+   "heading_id": "14_Practical_Organic:problem-set-c-functional-group-tests-sep/heading001",
+   "title": "Problem set C: functional-group tests, separation of mixtures and identification",
+   "dir": "089",
+   "pass": true,
+   "svg": 0,
+   "blocks": 124
+  },
+  {
+   "order": 90,
+   "heading_id": "14_Practical_Organic:problem-set-d-quantitative-analysis-and-/heading001",
+   "title": "Problem set D: quantitative analysis and molecular formula",
+   "dir": "090",
+   "pass": true,
+   "svg": 0,
+   "blocks": 116
+  },
+  {
+   "order": 91,
+   "heading_id": "14_Practical_Organic:problem-set-e-degree-of-unsaturation-ir-/heading001",
+   "title": "Problem set E: degree of unsaturation, IR, NMR, mass spectra and structure deduction",
+   "dir": "091",
+   "pass": true,
+   "svg": 10,
+   "blocks": 115
+  },
+  {
+   "order": 92,
+   "heading_id": "14_Practical_Organic:problem-set-f-mixed-multi-concept-and-pa/heading001",
+   "title": "Problem set F: mixed, multi-concept and paragraph problems",
+   "dir": "092",
+   "pass": true,
+   "svg": 8,
+   "blocks": 64
+  },
+  {
+   "order": 93,
+   "heading_id": "14_Practical_Organic:chapter-test-1-purification-chromatograp/heading001",
+   "title": "Chapter Test 1: purification, chromatography, elements and functional groups",
+   "dir": "093",
+   "pass": true,
+   "svg": 0,
+   "blocks": 47
+  },
+  {
+   "order": 94,
+   "heading_id": "14_Practical_Organic:chapter-test-2-quantitative-analysis-and/heading001",
+   "title": "Chapter Test 2: quantitative analysis and structure deduction",
+   "dir": "094",
+   "pass": true,
+   "svg": 0,
+   "blocks": 47
+  },
+  {
+   "order": 95,
+   "heading_id": "14_Practical_Organic:answer-keys/heading001",
+   "title": "Answer keys",
+   "dir": "095",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 96,
+   "heading_id": "14_Practical_Organic:glossary-and-index/heading001",
+   "title": "Glossary and index",
+   "dir": "096",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 97,
+   "heading_id": "14_Practical_Organic:source-notes/heading001",
+   "title": "Source notes",
+   "dir": "097",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  }
+ ]
+}

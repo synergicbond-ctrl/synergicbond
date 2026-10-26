@@ -21,6 +21,7 @@ export const PREMIUM_LEARN_ELIGIBLE_PROGRAM_KEYS = {
   "chemical-equilibrium": ["jee-advanced"],
   // Solid State master notes are authored for the JEE Advanced track only.
   "solid-state": ["jee-advanced"],
+  "organic-chemistry": ["jee-advanced"],
   isomerism: [
     "neet", "jee-main", "jee-advanced",
     "cbse:class-11", "isc:class-11", "icse:class-11", "state-boards:class-11",

@@ -1,0 +1,29 @@
+{
+ "file": "02c_GOC_Question_Bank_Paper_Batch.html",
+ "partition_level": 3,
+ "sections_total": 2,
+ "sections_passed": 2,
+ "svg_in_sections": 0,
+ "svg_in_file": 0,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "02c_GOC_Question_Bank_Paper_Batch:sources/heading001",
+   "title": "Sources",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 1,
+   "heading_id": "02c_GOC_Question_Bank_Paper_Batch:flags/heading001",
+   "title": "Flags",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  }
+ ]
+}

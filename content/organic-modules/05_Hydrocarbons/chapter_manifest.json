@@ -1,0 +1,524 @@
+{
+ "file": "05_Hydrocarbons.html",
+ "partition_level": 3,
+ "sections_total": 57,
+ "sections_passed": 57,
+ "svg_in_sections": 536,
+ "svg_in_file": 536,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "05_Hydrocarbons:hydrocarbons/heading001",
+   "title": "Hydrocarbons",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 1,
+   "heading_id": "05_Hydrocarbons:contents/heading001",
+   "title": "Contents",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 2,
+   "heading_id": "05_Hydrocarbons:1-what-this-chapter-covers-and-how-to-us/heading001",
+   "title": "1. What this chapter covers and how to use it",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 3,
+   "heading_id": "05_Hydrocarbons:2-classification-of-hydrocarbons/heading001",
+   "title": "2. Classification of hydrocarbons",
+   "dir": "003",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 4,
+   "heading_id": "05_Hydrocarbons:3-alkanes-structure-isomerism-and-physic/heading001",
+   "title": "3. Alkanes: structure, isomerism and physical properties",
+   "dir": "004",
+   "pass": true,
+   "svg": 11,
+   "blocks": 21
+  },
+  {
+   "order": 5,
+   "heading_id": "05_Hydrocarbons:4-preparation-of-alkanes/heading001",
+   "title": "4. Preparation of alkanes",
+   "dir": "005",
+   "pass": true,
+   "svg": 19,
+   "blocks": 56
+  },
+  {
+   "order": 6,
+   "heading_id": "05_Hydrocarbons:5-free-radical-halogenation-of-alkanes/heading001",
+   "title": "5. Free-radical halogenation of alkanes",
+   "dir": "006",
+   "pass": true,
+   "svg": 6,
+   "blocks": 38
+  },
+  {
+   "order": 7,
+   "heading_id": "05_Hydrocarbons:6-counting-the-monohalogenation-products/heading001",
+   "title": "6. Counting the monohalogenation products of an alkane",
+   "dir": "007",
+   "pass": true,
+   "svg": 0,
+   "blocks": 10
+  },
+  {
+   "order": 8,
+   "heading_id": "05_Hydrocarbons:7-other-reactions-of-alkanes/heading001",
+   "title": "7. Other reactions of alkanes",
+   "dir": "008",
+   "pass": true,
+   "svg": 2,
+   "blocks": 17
+  },
+  {
+   "order": 9,
+   "heading_id": "05_Hydrocarbons:8-conformations-of-alkanes/heading001",
+   "title": "8. Conformations of alkanes",
+   "dir": "009",
+   "pass": true,
+   "svg": 6,
+   "blocks": 23
+  },
+  {
+   "order": 10,
+   "heading_id": "05_Hydrocarbons:9-summary-sheet-alkanes/heading001",
+   "title": "9. Summary sheet: alkanes",
+   "dir": "010",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 11,
+   "heading_id": "05_Hydrocarbons:10-cycloalkanes-structure-nomenclature-a/heading001",
+   "title": "10. Cycloalkanes: structure, nomenclature and isomerism",
+   "dir": "011",
+   "pass": true,
+   "svg": 14,
+   "blocks": 10
+  },
+  {
+   "order": 12,
+   "heading_id": "05_Hydrocarbons:11-ring-strain-baeyer-theory-and-its-fai/heading001",
+   "title": "11. Ring strain: Baeyer theory and its failure",
+   "dir": "012",
+   "pass": true,
+   "svg": 8,
+   "blocks": 31
+  },
+  {
+   "order": 13,
+   "heading_id": "05_Hydrocarbons:12-conformations-of-cycloalkanes/heading001",
+   "title": "12. Conformations of cycloalkanes",
+   "dir": "013",
+   "pass": true,
+   "svg": 13,
+   "blocks": 42
+  },
+  {
+   "order": 14,
+   "heading_id": "05_Hydrocarbons:13-decalin-and-fused-rings/heading001",
+   "title": "13. Decalin and fused rings",
+   "dir": "014",
+   "pass": true,
+   "svg": 2,
+   "blocks": 5
+  },
+  {
+   "order": 15,
+   "heading_id": "05_Hydrocarbons:14-bridged-fused-and-spiro-hydrocarbons-/heading001",
+   "title": "14. Bridged, fused and spiro hydrocarbons (von Baeyer nomenclature)",
+   "dir": "015",
+   "pass": true,
+   "svg": 7,
+   "blocks": 8
+  },
+  {
+   "order": 16,
+   "heading_id": "05_Hydrocarbons:15-summary-sheet-cycloalkanes/heading001",
+   "title": "15. Summary sheet: cycloalkanes",
+   "dir": "016",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 17,
+   "heading_id": "05_Hydrocarbons:16-alkenes-structure-geometry-and-stabil/heading001",
+   "title": "16. Alkenes: structure, geometry and stability",
+   "dir": "017",
+   "pass": true,
+   "svg": 4,
+   "blocks": 22
+  },
+  {
+   "order": 18,
+   "heading_id": "05_Hydrocarbons:17-preparation-of-alkenes/heading001",
+   "title": "17. Preparation of alkenes",
+   "dir": "018",
+   "pass": true,
+   "svg": 24,
+   "blocks": 66
+  },
+  {
+   "order": 19,
+   "heading_id": "05_Hydrocarbons:18-electrophilic-addition-to-alkenes-the/heading001",
+   "title": "18. Electrophilic addition to alkenes: the general picture",
+   "dir": "019",
+   "pass": true,
+   "svg": 27,
+   "blocks": 39
+  },
+  {
+   "order": 20,
+   "heading_id": "05_Hydrocarbons:19-anti-markovnikov-addition-of-hbr-the-/heading001",
+   "title": "19. Anti-Markovnikov addition of HBr: the peroxide (Kharasch) effect",
+   "dir": "020",
+   "pass": true,
+   "svg": 7,
+   "blocks": 15
+  },
+  {
+   "order": 21,
+   "heading_id": "05_Hydrocarbons:20-water-forming-additions-oxymercuratio/heading001",
+   "title": "20. Water-forming additions: oxymercuration and hydroboration",
+   "dir": "021",
+   "pass": true,
+   "svg": 10,
+   "blocks": 26
+  },
+  {
+   "order": 22,
+   "heading_id": "05_Hydrocarbons:21-addition-of-halogens-and-related-reag/heading001",
+   "title": "21. Addition of halogens and related reagents",
+   "dir": "022",
+   "pass": true,
+   "svg": 24,
+   "blocks": 32
+  },
+  {
+   "order": 23,
+   "heading_id": "05_Hydrocarbons:22-epoxidation-and-the-two-routes-to-dio/heading001",
+   "title": "22. Epoxidation and the two routes to diols",
+   "dir": "023",
+   "pass": true,
+   "svg": 20,
+   "blocks": 29
+  },
+  {
+   "order": 24,
+   "heading_id": "05_Hydrocarbons:23-oxidative-cleavage-of-alkenes/heading001",
+   "title": "23. Oxidative cleavage of alkenes",
+   "dir": "024",
+   "pass": true,
+   "svg": 16,
+   "blocks": 27
+  },
+  {
+   "order": 25,
+   "heading_id": "05_Hydrocarbons:24-catalytic-hydrogenation-of-alkenes/heading001",
+   "title": "24. Catalytic hydrogenation of alkenes",
+   "dir": "025",
+   "pass": true,
+   "svg": 2,
+   "blocks": 14
+  },
+  {
+   "order": 26,
+   "heading_id": "05_Hydrocarbons:25-allylic-substitution-nbs-and-high-tem/heading001",
+   "title": "25. Allylic substitution: NBS and high-temperature halogenation",
+   "dir": "026",
+   "pass": true,
+   "svg": 9,
+   "blocks": 15
+  },
+  {
+   "order": 27,
+   "heading_id": "05_Hydrocarbons:26-carbenes-and-cyclopropanation/heading001",
+   "title": "26. Carbenes and cyclopropanation",
+   "dir": "027",
+   "pass": true,
+   "svg": 6,
+   "blocks": 10
+  },
+  {
+   "order": 28,
+   "heading_id": "05_Hydrocarbons:27-other-reactions-of-alkenes/heading001",
+   "title": "27. Other reactions of alkenes",
+   "dir": "028",
+   "pass": true,
+   "svg": 6,
+   "blocks": 13
+  },
+  {
+   "order": 29,
+   "heading_id": "05_Hydrocarbons:28-reagent-by-reagent-summary-for-alkene/heading001",
+   "title": "28. Reagent-by-reagent summary for alkenes",
+   "dir": "029",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 30,
+   "heading_id": "05_Hydrocarbons:29-summary-sheet-alkenes/heading001",
+   "title": "29. Summary sheet: alkenes",
+   "dir": "030",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 31,
+   "heading_id": "05_Hydrocarbons:30-alkynes-structure-and-acidity/heading001",
+   "title": "30. Alkynes: structure and acidity",
+   "dir": "031",
+   "pass": true,
+   "svg": 2,
+   "blocks": 11
+  },
+  {
+   "order": 32,
+   "heading_id": "05_Hydrocarbons:31-preparation-of-alkynes/heading001",
+   "title": "31. Preparation of alkynes",
+   "dir": "032",
+   "pass": true,
+   "svg": 4,
+   "blocks": 9
+  },
+  {
+   "order": 33,
+   "heading_id": "05_Hydrocarbons:32-reduction-of-alkynes-stereochemical-c/heading001",
+   "title": "32. Reduction of alkynes: stereochemical control",
+   "dir": "033",
+   "pass": true,
+   "svg": 6,
+   "blocks": 10
+  },
+  {
+   "order": 34,
+   "heading_id": "05_Hydrocarbons:33-addition-reactions-of-alkynes/heading001",
+   "title": "33. Addition reactions of alkynes",
+   "dir": "034",
+   "pass": true,
+   "svg": 18,
+   "blocks": 23
+  },
+  {
+   "order": 35,
+   "heading_id": "05_Hydrocarbons:34-acetylide-chemistry-and-c-c-bond-form/heading001",
+   "title": "34. Acetylide chemistry and C–C bond formation",
+   "dir": "035",
+   "pass": true,
+   "svg": 2,
+   "blocks": 4
+  },
+  {
+   "order": 36,
+   "heading_id": "05_Hydrocarbons:35-isomerisation-oligomerisation-and-pol/heading001",
+   "title": "35. Isomerisation, oligomerisation and polymerisation",
+   "dir": "036",
+   "pass": true,
+   "svg": 13,
+   "blocks": 10
+  },
+  {
+   "order": 37,
+   "heading_id": "05_Hydrocarbons:36-summary-sheet-alkynes/heading001",
+   "title": "36. Summary sheet: alkynes",
+   "dir": "037",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 38,
+   "heading_id": "05_Hydrocarbons:37-dienes-classification-and-structure/heading001",
+   "title": "37. Dienes: classification and structure",
+   "dir": "038",
+   "pass": true,
+   "svg": 7,
+   "blocks": 13
+  },
+  {
+   "order": 39,
+   "heading_id": "05_Hydrocarbons:38-preparation-of-dienes/heading001",
+   "title": "38. Preparation of dienes",
+   "dir": "039",
+   "pass": true,
+   "svg": 2,
+   "blocks": 3
+  },
+  {
+   "order": 40,
+   "heading_id": "05_Hydrocarbons:39-electrophilic-addition-to-conjugated-/heading001",
+   "title": "39. Electrophilic addition to conjugated dienes: 1,2 vs 1,4",
+   "dir": "040",
+   "pass": true,
+   "svg": 5,
+   "blocks": 12
+  },
+  {
+   "order": 41,
+   "heading_id": "05_Hydrocarbons:40-the-diels-alder-reaction/heading001",
+   "title": "40. The Diels–Alder reaction",
+   "dir": "041",
+   "pass": true,
+   "svg": 28,
+   "blocks": 37
+  },
+  {
+   "order": 42,
+   "heading_id": "05_Hydrocarbons:41-polymers-from-dienes/heading001",
+   "title": "41. Polymers from dienes",
+   "dir": "042",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 43,
+   "heading_id": "05_Hydrocarbons:42-summary-sheet-dienes/heading001",
+   "title": "42. Summary sheet: dienes",
+   "dir": "043",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 44,
+   "heading_id": "05_Hydrocarbons:43-interconversions-moving-around-the-hy/heading001",
+   "title": "43. Interconversions: moving around the hydrocarbon map",
+   "dir": "044",
+   "pass": true,
+   "svg": 0,
+   "blocks": 25
+  },
+  {
+   "order": 45,
+   "heading_id": "05_Hydrocarbons:44-master-table-named-and-must-know-reag/heading001",
+   "title": "44. Master table: named and \"must-know\" reagents of this chapter",
+   "dir": "045",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 46,
+   "heading_id": "05_Hydrocarbons:45-problem-bank-level-1-foundation-and-j/heading001",
+   "title": "45. Problem bank, Level 1 (foundation and JEE Main): alkanes and cycloalkanes",
+   "dir": "046",
+   "pass": true,
+   "svg": 0,
+   "blocks": 222
+  },
+  {
+   "order": 47,
+   "heading_id": "05_Hydrocarbons:46-problem-bank-level-1-alkenes/heading001",
+   "title": "46. Problem bank, Level 1: alkenes",
+   "dir": "047",
+   "pass": true,
+   "svg": 2,
+   "blocks": 211
+  },
+  {
+   "order": 48,
+   "heading_id": "05_Hydrocarbons:47-problem-bank-level-1-alkynes-and-dien/heading001",
+   "title": "47. Problem bank, Level 1: alkynes and dienes",
+   "dir": "048",
+   "pass": true,
+   "svg": 0,
+   "blocks": 157
+  },
+  {
+   "order": 49,
+   "heading_id": "05_Hydrocarbons:48-problem-bank-level-2-jee-advanced-sty/heading001",
+   "title": "48. Problem bank, Level 2 (JEE Advanced style): alkanes, cycloalkanes and elimination",
+   "dir": "049",
+   "pass": true,
+   "svg": 1,
+   "blocks": 166
+  },
+  {
+   "order": 50,
+   "heading_id": "05_Hydrocarbons:49-problem-bank-level-2-alkene-addition-/heading001",
+   "title": "49. Problem bank, Level 2: alkene addition, stereochemistry and cleavage",
+   "dir": "050",
+   "pass": true,
+   "svg": 7,
+   "blocks": 164
+  },
+  {
+   "order": 51,
+   "heading_id": "05_Hydrocarbons:50-problem-bank-level-2-alkynes-dienes-a/heading001",
+   "title": "50. Problem bank, Level 2: alkynes, dienes and cycloaddition",
+   "dir": "051",
+   "pass": true,
+   "svg": 6,
+   "blocks": 139
+  },
+  {
+   "order": 52,
+   "heading_id": "05_Hydrocarbons:51-problem-bank-level-3-integer-type-and/heading001",
+   "title": "51. Problem bank, Level 3 (integer type and hard counting)",
+   "dir": "052",
+   "pass": true,
+   "svg": 0,
+   "blocks": 134
+  },
+  {
+   "order": 53,
+   "heading_id": "05_Hydrocarbons:52-problem-bank-level-3-structure-elucid/heading001",
+   "title": "52. Problem bank, Level 3: structure elucidation and multi-step synthesis",
+   "dir": "053",
+   "pass": true,
+   "svg": 15,
+   "blocks": 130
+  },
+  {
+   "order": 54,
+   "heading_id": "05_Hydrocarbons:53-problem-bank-draw-the-product-reactio/heading001",
+   "title": "53. Problem bank: draw the product (reaction-prediction drill)",
+   "dir": "054",
+   "pass": true,
+   "svg": 163,
+   "blocks": 190
+  },
+  {
+   "order": 55,
+   "heading_id": "05_Hydrocarbons:54-problem-bank-level-3-mixed-reasoning-/heading001",
+   "title": "54. Problem bank, Level 3: mixed reasoning and paragraph sets",
+   "dir": "055",
+   "pass": true,
+   "svg": 0,
+   "blocks": 113
+  },
+  {
+   "order": 56,
+   "heading_id": "05_Hydrocarbons:55-problem-bank-conformations-figures-an/heading001",
+   "title": "55. Problem bank: conformations, figures and extra counting",
+   "dir": "056",
+   "pass": true,
+   "svg": 12,
+   "blocks": 104
+  }
+ ]
+}

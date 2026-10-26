@@ -1,0 +1,1217 @@
+{
+ "file": "01_IUPAC_Nomenclature.html",
+ "partition_level": 3,
+ "sections_total": 134,
+ "sections_passed": 134,
+ "svg_in_sections": 670,
+ "svg_in_file": 670,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "01_IUPAC_Nomenclature:iupac-nomenclature/heading001",
+   "title": "IUPAC Nomenclature",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 1,
+   "heading_id": "01_IUPAC_Nomenclature:contents/heading001",
+   "title": "Contents",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 2,
+   "heading_id": "01_IUPAC_Nomenclature:chapter-map-and-prerequisites/heading001",
+   "title": "Chapter map and prerequisites",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 3,
+   "heading_id": "01_IUPAC_Nomenclature:learning-objectives/heading001",
+   "title": "Learning objectives",
+   "dir": "003",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 4,
+   "heading_id": "01_IUPAC_Nomenclature:entry-check/heading001",
+   "title": "Entry check",
+   "dir": "004",
+   "pass": true,
+   "svg": 0,
+   "blocks": 17
+  },
+  {
+   "order": 5,
+   "heading_id": "01_IUPAC_Nomenclature:part-1-the-language-of-organic-names/heading001",
+   "title": "Part 1 · The language of organic names",
+   "dir": "005",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 6,
+   "heading_id": "01_IUPAC_Nomenclature:1-1-what-a-name-must-do/heading001",
+   "title": "1.1 What a name must do",
+   "dir": "006",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 7,
+   "heading_id": "01_IUPAC_Nomenclature:1-2-rule-sets-and-which-one-a-problem-us/heading001",
+   "title": "1.2 Rule-sets and which one a problem uses",
+   "dir": "007",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 8,
+   "heading_id": "01_IUPAC_Nomenclature:1-3-anatomy-of-a-name/heading001",
+   "title": "1.3 Anatomy of a name",
+   "dir": "008",
+   "pass": true,
+   "svg": 1,
+   "blocks": 5
+  },
+  {
+   "order": 9,
+   "heading_id": "01_IUPAC_Nomenclature:1-4-roots-and-multiplying-prefixes/heading001",
+   "title": "1.4 Roots and multiplying prefixes",
+   "dir": "009",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 10,
+   "heading_id": "01_IUPAC_Nomenclature:1-5-carbon-classes-and-the-alkyl-groups/heading001",
+   "title": "1.5 Carbon classes and the alkyl groups",
+   "dir": "010",
+   "pass": true,
+   "svg": 29,
+   "blocks": 10
+  },
+  {
+   "order": 11,
+   "heading_id": "01_IUPAC_Nomenclature:1-6-reading-and-writing-structures/heading001",
+   "title": "1.6 Reading and writing structures",
+   "dir": "011",
+   "pass": true,
+   "svg": 2,
+   "blocks": 22
+  },
+  {
+   "order": 12,
+   "heading_id": "01_IUPAC_Nomenclature:part-2-alkanes-branched-chains-and-cyclo/heading001",
+   "title": "Part 2 · Alkanes, branched chains and cycloalkanes",
+   "dir": "012",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 13,
+   "heading_id": "01_IUPAC_Nomenclature:2-1-the-five-step-method-for-a-branched-/heading001",
+   "title": "2.1 The five-step method for a branched alkane",
+   "dir": "013",
+   "pass": true,
+   "svg": 3,
+   "blocks": 17
+  },
+  {
+   "order": 14,
+   "heading_id": "01_IUPAC_Nomenclature:2-2-lowest-locants-the-first-point-of-di/heading001",
+   "title": "2.2 Lowest locants: the first point of difference",
+   "dir": "014",
+   "pass": true,
+   "svg": 1,
+   "blocks": 8
+  },
+  {
+   "order": 15,
+   "heading_id": "01_IUPAC_Nomenclature:2-3-complex-branched-substituents/heading001",
+   "title": "2.3 Complex (branched) substituents",
+   "dir": "015",
+   "pass": true,
+   "svg": 4,
+   "blocks": 9
+  },
+  {
+   "order": 16,
+   "heading_id": "01_IUPAC_Nomenclature:2-4-alphabetical-order-and-tie-breaking/heading001",
+   "title": "2.4 Alphabetical order and tie-breaking",
+   "dir": "016",
+   "pass": true,
+   "svg": 1,
+   "blocks": 8
+  },
+  {
+   "order": 17,
+   "heading_id": "01_IUPAC_Nomenclature:2-5-the-alkane-isomers-of-c-to-c-drawn-a/heading001",
+   "title": "2.5 The alkane isomers of C₄ to C₇, drawn and named",
+   "dir": "017",
+   "pass": true,
+   "svg": 19,
+   "blocks": 9
+  },
+  {
+   "order": 18,
+   "heading_id": "01_IUPAC_Nomenclature:2-6-cycloalkanes/heading001",
+   "title": "2.6 Cycloalkanes",
+   "dir": "018",
+   "pass": true,
+   "svg": 7,
+   "blocks": 13
+  },
+  {
+   "order": 19,
+   "heading_id": "01_IUPAC_Nomenclature:2-7-halogen-and-nitro-compounds-in-subst/heading001",
+   "title": "2.7 Halogen and nitro compounds in substitutive nomenclature",
+   "dir": "019",
+   "pass": true,
+   "svg": 7,
+   "blocks": 8
+  },
+  {
+   "order": 20,
+   "heading_id": "01_IUPAC_Nomenclature:2-8-topic-checkpoint/heading001",
+   "title": "2.8 Topic checkpoint",
+   "dir": "020",
+   "pass": true,
+   "svg": 0,
+   "blocks": 10
+  },
+  {
+   "order": 21,
+   "heading_id": "01_IUPAC_Nomenclature:part-3-unsaturated-hydrocarbons-alkenes-/heading001",
+   "title": "Part 3 · Unsaturated hydrocarbons: alkenes, alkynes, dienes, enynes",
+   "dir": "021",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 22,
+   "heading_id": "01_IUPAC_Nomenclature:3-1-alkenes-and-alkynes/heading001",
+   "title": "3.1 Alkenes and alkynes",
+   "dir": "022",
+   "pass": true,
+   "svg": 12,
+   "blocks": 23
+  },
+  {
+   "order": 23,
+   "heading_id": "01_IUPAC_Nomenclature:3-2-enynes-and-the-tie-rule/heading001",
+   "title": "3.2 Enynes and the tie rule",
+   "dir": "023",
+   "pass": true,
+   "svg": 2,
+   "blocks": 9
+  },
+  {
+   "order": 24,
+   "heading_id": "01_IUPAC_Nomenclature:3-3-cycloalkenes-cycloalkynes/heading001",
+   "title": "3.3 Cycloalkenes, cycloalkynes",
+   "dir": "024",
+   "pass": true,
+   "svg": 6,
+   "blocks": 7
+  },
+  {
+   "order": 25,
+   "heading_id": "01_IUPAC_Nomenclature:3-4-unsaturated-substituent-groups/heading001",
+   "title": "3.4 Unsaturated substituent groups",
+   "dir": "025",
+   "pass": true,
+   "svg": 3,
+   "blocks": 4
+  },
+  {
+   "order": 26,
+   "heading_id": "01_IUPAC_Nomenclature:3-5-types-of-diene-and-the-naming-conseq/heading001",
+   "title": "3.5 Types of diene and the naming consequences",
+   "dir": "026",
+   "pass": true,
+   "svg": 5,
+   "blocks": 5
+  },
+  {
+   "order": 27,
+   "heading_id": "01_IUPAC_Nomenclature:3-6-counting-the-isomers-of-c-h-and-c-h/heading001",
+   "title": "3.6 Counting the isomers of C₄H₈ and C₅H₁₀",
+   "dir": "027",
+   "pass": true,
+   "svg": 5,
+   "blocks": 6
+  },
+  {
+   "order": 28,
+   "heading_id": "01_IUPAC_Nomenclature:3-7-topic-checkpoint/heading001",
+   "title": "3.7 Topic checkpoint",
+   "dir": "028",
+   "pass": true,
+   "svg": 0,
+   "blocks": 10
+  },
+  {
+   "order": 29,
+   "heading_id": "01_IUPAC_Nomenclature:part-4-functional-groups-suffixes-prefix/heading001",
+   "title": "Part 4 · Functional groups: suffixes, prefixes and the order of seniority",
+   "dir": "029",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 30,
+   "heading_id": "01_IUPAC_Nomenclature:4-1-the-seniority-table/heading001",
+   "title": "4.1 The seniority table",
+   "dir": "030",
+   "pass": true,
+   "svg": 0,
+   "blocks": 8
+  },
+  {
+   "order": 31,
+   "heading_id": "01_IUPAC_Nomenclature:4-2-alcohols-and-phenols/heading001",
+   "title": "4.2 Alcohols and phenols",
+   "dir": "031",
+   "pass": true,
+   "svg": 10,
+   "blocks": 16
+  },
+  {
+   "order": 32,
+   "heading_id": "01_IUPAC_Nomenclature:4-3-ethers-the-alkoxy-prefix/heading001",
+   "title": "4.3 Ethers: the alkoxy prefix",
+   "dir": "032",
+   "pass": true,
+   "svg": 7,
+   "blocks": 7
+  },
+  {
+   "order": 33,
+   "heading_id": "01_IUPAC_Nomenclature:4-4-aldehydes-and-ketones/heading001",
+   "title": "4.4 Aldehydes and ketones",
+   "dir": "033",
+   "pass": true,
+   "svg": 11,
+   "blocks": 11
+  },
+  {
+   "order": 34,
+   "heading_id": "01_IUPAC_Nomenclature:4-5-carboxylic-acids-and-their-derivativ/heading001",
+   "title": "4.5 Carboxylic acids and their derivatives",
+   "dir": "034",
+   "pass": true,
+   "svg": 28,
+   "blocks": 20
+  },
+  {
+   "order": 35,
+   "heading_id": "01_IUPAC_Nomenclature:4-6-amines/heading001",
+   "title": "4.6 Amines",
+   "dir": "035",
+   "pass": true,
+   "svg": 7,
+   "blocks": 7
+  },
+  {
+   "order": 36,
+   "heading_id": "01_IUPAC_Nomenclature:4-7-nitro-nitroso-isocyanide-and-diazoni/heading001",
+   "title": "4.7 Nitro, nitroso, isocyanide and diazonium",
+   "dir": "036",
+   "pass": true,
+   "svg": 4,
+   "blocks": 4
+  },
+  {
+   "order": 37,
+   "heading_id": "01_IUPAC_Nomenclature:4-8-sulphur-compounds/heading001",
+   "title": "4.8 Sulphur compounds",
+   "dir": "037",
+   "pass": true,
+   "svg": 4,
+   "blocks": 3
+  },
+  {
+   "order": 38,
+   "heading_id": "01_IUPAC_Nomenclature:4-9-topic-summary-and-checkpoint/heading001",
+   "title": "4.9 Topic summary and checkpoint",
+   "dir": "038",
+   "pass": true,
+   "svg": 0,
+   "blocks": 11
+  },
+  {
+   "order": 39,
+   "heading_id": "01_IUPAC_Nomenclature:part-5-polyfunctional-compounds-the-mast/heading001",
+   "title": "Part 5 · Polyfunctional compounds: the master procedure",
+   "dir": "039",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 40,
+   "heading_id": "01_IUPAC_Nomenclature:5-1-the-master-procedure/heading001",
+   "title": "5.1 The master procedure",
+   "dir": "040",
+   "pass": true,
+   "svg": 0,
+   "blocks": 8
+  },
+  {
+   "order": 41,
+   "heading_id": "01_IUPAC_Nomenclature:5-2-choosing-the-chain-the-principal-gro/heading001",
+   "title": "5.2 Choosing the chain: the principal groups come first",
+   "dir": "041",
+   "pass": true,
+   "svg": 3,
+   "blocks": 13
+  },
+  {
+   "order": 42,
+   "heading_id": "01_IUPAC_Nomenclature:5-3-choosing-the-prefix-form-of-a-lower-/heading001",
+   "title": "5.3 Choosing the prefix form of a lower-priority group",
+   "dir": "042",
+   "pass": true,
+   "svg": 6,
+   "blocks": 4
+  },
+  {
+   "order": 43,
+   "heading_id": "01_IUPAC_Nomenclature:5-4-numbering-with-several-kinds-of-loca/heading001",
+   "title": "5.4 Numbering with several kinds of locant",
+   "dir": "043",
+   "pass": true,
+   "svg": 7,
+   "blocks": 29
+  },
+  {
+   "order": 44,
+   "heading_id": "01_IUPAC_Nomenclature:5-5-same-group-more-than-once-groups-on-/heading001",
+   "title": "5.5 Same group more than once; groups on a ring and on its side chain",
+   "dir": "044",
+   "pass": true,
+   "svg": 6,
+   "blocks": 7
+  },
+  {
+   "order": 45,
+   "heading_id": "01_IUPAC_Nomenclature:5-6-biologically-and-industrially-import/heading001",
+   "title": "5.6 Biologically and industrially important polyfunctional molecules",
+   "dir": "045",
+   "pass": true,
+   "svg": 13,
+   "blocks": 7
+  },
+  {
+   "order": 46,
+   "heading_id": "01_IUPAC_Nomenclature:5-7-common-mistakes-and-how-to-test-for-/heading001",
+   "title": "5.7 Common mistakes and how to test for them",
+   "dir": "046",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 47,
+   "heading_id": "01_IUPAC_Nomenclature:5-8-topic-checkpoint/heading001",
+   "title": "5.8 Topic checkpoint",
+   "dir": "047",
+   "pass": true,
+   "svg": 0,
+   "blocks": 14
+  },
+  {
+   "order": 48,
+   "heading_id": "01_IUPAC_Nomenclature:part-6-cyclic-systems-monocyclic-bridged/heading001",
+   "title": "Part 6 · Cyclic systems: monocyclic, bridged, spiro, fused and heterocyclic",
+   "dir": "048",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 49,
+   "heading_id": "01_IUPAC_Nomenclature:6-1-monocyclic-rings-with-a-principal-gr/heading001",
+   "title": "6.1 Monocyclic rings with a principal group",
+   "dir": "049",
+   "pass": true,
+   "svg": 7,
+   "blocks": 13
+  },
+  {
+   "order": 50,
+   "heading_id": "01_IUPAC_Nomenclature:6-2-bridged-bicyclic-compounds-the-von-b/heading001",
+   "title": "6.2 Bridged bicyclic compounds: the von Baeyer system",
+   "dir": "050",
+   "pass": true,
+   "svg": 8,
+   "blocks": 19
+  },
+  {
+   "order": 51,
+   "heading_id": "01_IUPAC_Nomenclature:6-3-spiro-compounds/heading001",
+   "title": "6.3 Spiro compounds",
+   "dir": "051",
+   "pass": true,
+   "svg": 3,
+   "blocks": 5
+  },
+  {
+   "order": 52,
+   "heading_id": "01_IUPAC_Nomenclature:6-4-fused-polycyclic-aromatics/heading001",
+   "title": "6.4 Fused polycyclic aromatics",
+   "dir": "052",
+   "pass": true,
+   "svg": 7,
+   "blocks": 5
+  },
+  {
+   "order": 53,
+   "heading_id": "01_IUPAC_Nomenclature:6-6-ring-substituent-groups/heading001",
+   "title": "6.6 Ring substituent groups",
+   "dir": "053",
+   "pass": true,
+   "svg": 1,
+   "blocks": 9
+  },
+  {
+   "order": 54,
+   "heading_id": "01_IUPAC_Nomenclature:6-7-topic-checkpoint/heading001",
+   "title": "6.7 Topic checkpoint",
+   "dir": "054",
+   "pass": true,
+   "svg": 0,
+   "blocks": 10
+  },
+  {
+   "order": 55,
+   "heading_id": "01_IUPAC_Nomenclature:part-7-benzene-derivatives-and-aromatic-/heading001",
+   "title": "Part 7 · Benzene derivatives and aromatic side chains",
+   "dir": "055",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 56,
+   "heading_id": "01_IUPAC_Nomenclature:7-1-benzene-as-the-parent/heading001",
+   "title": "7.1 Benzene as the parent",
+   "dir": "056",
+   "pass": true,
+   "svg": 8,
+   "blocks": 8
+  },
+  {
+   "order": 57,
+   "heading_id": "01_IUPAC_Nomenclature:7-2-retained-parent-names-the-substituen/heading001",
+   "title": "7.2 Retained parent names: the substituent that gives the name is C-1",
+   "dir": "057",
+   "pass": true,
+   "svg": 11,
+   "blocks": 19
+  },
+  {
+   "order": 58,
+   "heading_id": "01_IUPAC_Nomenclature:7-3-derivatives-of-benzoic-acid-and-benz/heading001",
+   "title": "7.3 Derivatives of benzoic acid and benzenesulfonic acid",
+   "dir": "058",
+   "pass": true,
+   "svg": 8,
+   "blocks": 3
+  },
+  {
+   "order": 59,
+   "heading_id": "01_IUPAC_Nomenclature:7-4-aromatic-side-chains-benzene-as-pare/heading001",
+   "title": "7.4 Aromatic side chains: benzene as parent or as substituent?",
+   "dir": "059",
+   "pass": true,
+   "svg": 16,
+   "blocks": 13
+  },
+  {
+   "order": 60,
+   "heading_id": "01_IUPAC_Nomenclature:7-5-common-names-of-disubstituted-benzen/heading001",
+   "title": "7.5 Common names of disubstituted benzenes",
+   "dir": "060",
+   "pass": true,
+   "svg": 6,
+   "blocks": 4
+  },
+  {
+   "order": 61,
+   "heading_id": "01_IUPAC_Nomenclature:7-6-ring-or-substituent-a-decision-table/heading001",
+   "title": "7.6 Ring or substituent? A decision table",
+   "dir": "061",
+   "pass": true,
+   "svg": 5,
+   "blocks": 3
+  },
+  {
+   "order": 62,
+   "heading_id": "01_IUPAC_Nomenclature:7-7-topic-checkpoint/heading001",
+   "title": "7.7 Topic checkpoint",
+   "dir": "062",
+   "pass": true,
+   "svg": 0,
+   "blocks": 10
+  },
+  {
+   "order": 63,
+   "heading_id": "01_IUPAC_Nomenclature:part-8-stereodescriptors-inside-names/heading001",
+   "title": "Part 8 · Stereodescriptors inside names",
+   "dir": "063",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 64,
+   "heading_id": "01_IUPAC_Nomenclature:8-1-where-descriptors-go/heading001",
+   "title": "8.1 Where descriptors go",
+   "dir": "064",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 65,
+   "heading_id": "01_IUPAC_Nomenclature:8-2-the-cip-priority-rules-needed-for-bo/heading001",
+   "title": "8.2 The CIP priority rules (needed for both E/Z and R/S)",
+   "dir": "065",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 66,
+   "heading_id": "01_IUPAC_Nomenclature:8-3-e-z-for-double-bonds/heading001",
+   "title": "8.3 E/Z for double bonds",
+   "dir": "066",
+   "pass": true,
+   "svg": 7,
+   "blocks": 13
+  },
+  {
+   "order": 67,
+   "heading_id": "01_IUPAC_Nomenclature:8-4-r-s-for-stereocentres/heading001",
+   "title": "8.4 R/S for stereocentres",
+   "dir": "067",
+   "pass": true,
+   "svg": 5,
+   "blocks": 10
+  },
+  {
+   "order": 68,
+   "heading_id": "01_IUPAC_Nomenclature:8-5-several-stereocentres-meso-compounds/heading001",
+   "title": "8.5 Several stereocentres, meso compounds and counting",
+   "dir": "068",
+   "pass": true,
+   "svg": 3,
+   "blocks": 6
+  },
+  {
+   "order": 69,
+   "heading_id": "01_IUPAC_Nomenclature:8-6-rings-cis-trans-and-r-s-together/heading001",
+   "title": "8.6 Rings: cis/trans and R/S together",
+   "dir": "069",
+   "pass": true,
+   "svg": 2,
+   "blocks": 3
+  },
+  {
+   "order": 70,
+   "heading_id": "01_IUPAC_Nomenclature:8-7-a-bridged-example-camphor/heading001",
+   "title": "8.7 A bridged example: camphor",
+   "dir": "070",
+   "pass": true,
+   "svg": 2,
+   "blocks": 3
+  },
+  {
+   "order": 71,
+   "heading_id": "01_IUPAC_Nomenclature:8-8-writing-a-full-name-a-checklist/heading001",
+   "title": "8.8 Writing a full name: a checklist",
+   "dir": "071",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 72,
+   "heading_id": "01_IUPAC_Nomenclature:8-9-topic-checkpoint/heading001",
+   "title": "8.9 Topic checkpoint",
+   "dir": "072",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 73,
+   "heading_id": "01_IUPAC_Nomenclature:part-9-trivial-names-and-reagent-type-co/heading001",
+   "title": "Part 9 · Trivial names and reagent-type compounds",
+   "dir": "073",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 74,
+   "heading_id": "01_IUPAC_Nomenclature:9-1-hydrocarbons-and-halogen-compounds/heading001",
+   "title": "9.1 Hydrocarbons and halogen compounds",
+   "dir": "074",
+   "pass": true,
+   "svg": 26,
+   "blocks": 3
+  },
+  {
+   "order": 75,
+   "heading_id": "01_IUPAC_Nomenclature:9-2-alcohols-ethers-and-oxygen-heterocyc/heading001",
+   "title": "9.2 Alcohols, ethers and oxygen heterocycles",
+   "dir": "075",
+   "pass": true,
+   "svg": 15,
+   "blocks": 2
+  },
+  {
+   "order": 76,
+   "heading_id": "01_IUPAC_Nomenclature:9-3-aldehydes-and-ketones/heading001",
+   "title": "9.3 Aldehydes and ketones",
+   "dir": "076",
+   "pass": true,
+   "svg": 19,
+   "blocks": 2
+  },
+  {
+   "order": 77,
+   "heading_id": "01_IUPAC_Nomenclature:9-4-carboxylic-acids/heading001",
+   "title": "9.4 Carboxylic acids",
+   "dir": "077",
+   "pass": true,
+   "svg": 37,
+   "blocks": 4
+  },
+  {
+   "order": 78,
+   "heading_id": "01_IUPAC_Nomenclature:9-5-acid-derivatives-amines-and-other-ni/heading001",
+   "title": "9.5 Acid derivatives, amines and other nitrogen compounds",
+   "dir": "078",
+   "pass": true,
+   "svg": 28,
+   "blocks": 3
+  },
+  {
+   "order": 79,
+   "heading_id": "01_IUPAC_Nomenclature:9-6-phenols-and-other-aromatics/heading001",
+   "title": "9.6 Phenols and other aromatics",
+   "dir": "079",
+   "pass": true,
+   "svg": 10,
+   "blocks": 2
+  },
+  {
+   "order": 80,
+   "heading_id": "01_IUPAC_Nomenclature:9-7-acyl-group-names/heading001",
+   "title": "9.7 Acyl group names",
+   "dir": "080",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 81,
+   "heading_id": "01_IUPAC_Nomenclature:9-8-topic-checkpoint/heading001",
+   "title": "9.8 Topic checkpoint",
+   "dir": "081",
+   "pass": true,
+   "svg": 0,
+   "blocks": 10
+  },
+  {
+   "order": 82,
+   "heading_id": "01_IUPAC_Nomenclature:part-10-traps-differences-between-rule-s/heading001",
+   "title": "Part 10 · Traps, differences between rule-sets, and counting questions",
+   "dir": "082",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 83,
+   "heading_id": "01_IUPAC_Nomenclature:10-1-common-wrong-answers/heading001",
+   "title": "10.1 Common wrong answers",
+   "dir": "083",
+   "pass": true,
+   "svg": 23,
+   "blocks": 6
+  },
+  {
+   "order": 84,
+   "heading_id": "01_IUPAC_Nomenclature:10-2-where-the-1979-1993-rules-and-the-2/heading001",
+   "title": "10.2 Where the 1979/1993 rules and the 2013 recommendations differ",
+   "dir": "084",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 85,
+   "heading_id": "01_IUPAC_Nomenclature:10-3-counting-questions-how-to-extract-t/heading001",
+   "title": "10.3 Counting questions: how to extract the number you are asked for",
+   "dir": "085",
+   "pass": true,
+   "svg": 1,
+   "blocks": 7
+  },
+  {
+   "order": 86,
+   "heading_id": "01_IUPAC_Nomenclature:10-4-a-mental-flow-chart-for-any-naming-/heading001",
+   "title": "10.4 A mental flow chart for any naming question",
+   "dir": "086",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 87,
+   "heading_id": "01_IUPAC_Nomenclature:10-5-summary-sheet-traps/heading001",
+   "title": "10.5 Summary sheet — traps",
+   "dir": "087",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 88,
+   "heading_id": "01_IUPAC_Nomenclature:part-11-consolidated-revision/heading001",
+   "title": "Part 11 · Consolidated revision",
+   "dir": "088",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 89,
+   "heading_id": "01_IUPAC_Nomenclature:11a-all-important-orders-and-trends/heading001",
+   "title": "11A · All important orders and trends",
+   "dir": "089",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 90,
+   "heading_id": "01_IUPAC_Nomenclature:11b-all-exceptions/heading001",
+   "title": "11B · All exceptions",
+   "dir": "090",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 91,
+   "heading_id": "01_IUPAC_Nomenclature:11c-all-special-cases/heading001",
+   "title": "11C · All special cases",
+   "dir": "091",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 92,
+   "heading_id": "01_IUPAC_Nomenclature:11d-unique-and-less-discussed-theory/heading001",
+   "title": "11D · Unique and less-discussed theory",
+   "dir": "092",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 93,
+   "heading_id": "01_IUPAC_Nomenclature:11e-important-point-collection/heading001",
+   "title": "11E · Important-point collection",
+   "dir": "093",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 94,
+   "heading_id": "01_IUPAC_Nomenclature:11f-high-yield-facts/heading001",
+   "title": "11F · High-yield facts",
+   "dir": "094",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 95,
+   "heading_id": "01_IUPAC_Nomenclature:11g-molecular-orbital-lens-and-bonding-i/heading001",
+   "title": "11G · Molecular-orbital lens and bonding insights",
+   "dir": "095",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 96,
+   "heading_id": "01_IUPAC_Nomenclature:11h-formula-and-derivation-register/heading001",
+   "title": "11H · Formula and derivation register",
+   "dir": "096",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 97,
+   "heading_id": "01_IUPAC_Nomenclature:11i-reaction-and-reagent-register/heading001",
+   "title": "11I · Reaction and reagent register",
+   "dir": "097",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 98,
+   "heading_id": "01_IUPAC_Nomenclature:11j-structure-and-geometry-register/heading001",
+   "title": "11J · Structure and geometry register",
+   "dir": "098",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 99,
+   "heading_id": "01_IUPAC_Nomenclature:11k-confusing-pairs/heading001",
+   "title": "11K · Confusing pairs",
+   "dir": "099",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 100,
+   "heading_id": "01_IUPAC_Nomenclature:11l-traps-false-statements-and-correctio/heading001",
+   "title": "11L · Traps, false statements and corrections",
+   "dir": "100",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 101,
+   "heading_id": "01_IUPAC_Nomenclature:11m-problem-solving-methods/heading001",
+   "title": "11M · Problem-solving methods",
+   "dir": "101",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 102,
+   "heading_id": "01_IUPAC_Nomenclature:11n-graphs-and-experimental-observations/heading001",
+   "title": "11N · Graphs and experimental observations",
+   "dir": "102",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 103,
+   "heading_id": "01_IUPAC_Nomenclature:11o-rapid-self-test/heading001",
+   "title": "11O · Rapid self-test",
+   "dir": "103",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 104,
+   "heading_id": "01_IUPAC_Nomenclature:part-12-graded-exercises/heading001",
+   "title": "Part 12 · Graded exercises",
+   "dir": "104",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 105,
+   "heading_id": "01_IUPAC_Nomenclature:level-1-a-alkanes-and-cycloalkanes/heading001",
+   "title": "Level 1 · A. Alkanes and cycloalkanes",
+   "dir": "105",
+   "pass": true,
+   "svg": 12,
+   "blocks": 37
+  },
+  {
+   "order": 106,
+   "heading_id": "01_IUPAC_Nomenclature:level-1-b-alkenes-alkynes-and-dienes/heading001",
+   "title": "Level 1 · B. Alkenes, alkynes and dienes",
+   "dir": "106",
+   "pass": true,
+   "svg": 10,
+   "blocks": 31
+  },
+  {
+   "order": 107,
+   "heading_id": "01_IUPAC_Nomenclature:level-1-c-halides-alcohols-ethers/heading001",
+   "title": "Level 1 · C. Halides, alcohols, ethers",
+   "dir": "107",
+   "pass": true,
+   "svg": 11,
+   "blocks": 34
+  },
+  {
+   "order": 108,
+   "heading_id": "01_IUPAC_Nomenclature:level-1-d-carbonyl-compounds-and-acid-de/heading001",
+   "title": "Level 1 · D. Carbonyl compounds and acid derivatives",
+   "dir": "108",
+   "pass": true,
+   "svg": 12,
+   "blocks": 37
+  },
+  {
+   "order": 109,
+   "heading_id": "01_IUPAC_Nomenclature:level-1-e-amines-and-nitro-compounds/heading001",
+   "title": "Level 1 · E. Amines and nitro compounds",
+   "dir": "109",
+   "pass": true,
+   "svg": 6,
+   "blocks": 19
+  },
+  {
+   "order": 110,
+   "heading_id": "01_IUPAC_Nomenclature:level-1-f-benzene-derivatives/heading001",
+   "title": "Level 1 · F. Benzene derivatives",
+   "dir": "110",
+   "pass": true,
+   "svg": 10,
+   "blocks": 31
+  },
+  {
+   "order": 111,
+   "heading_id": "01_IUPAC_Nomenclature:level-1-g-from-name-to-structure/heading001",
+   "title": "Level 1 · G. From name to structure",
+   "dir": "111",
+   "pass": true,
+   "svg": 0,
+   "blocks": 19
+  },
+  {
+   "order": 112,
+   "heading_id": "01_IUPAC_Nomenclature:level-2-a-polyfunctional-compounds/heading001",
+   "title": "Level 2 · A. Polyfunctional compounds",
+   "dir": "112",
+   "pass": true,
+   "svg": 20,
+   "blocks": 61
+  },
+  {
+   "order": 113,
+   "heading_id": "01_IUPAC_Nomenclature:level-2-b-chain-selection-and-numbering-/heading001",
+   "title": "Level 2 · B. Chain selection and numbering traps",
+   "dir": "113",
+   "pass": true,
+   "svg": 11,
+   "blocks": 34
+  },
+  {
+   "order": 114,
+   "heading_id": "01_IUPAC_Nomenclature:level-2-c-rings-bridged-and-fused-system/heading001",
+   "title": "Level 2 · C. Rings, bridged and fused systems, heterocycles",
+   "dir": "114",
+   "pass": true,
+   "svg": 12,
+   "blocks": 37
+  },
+  {
+   "order": 115,
+   "heading_id": "01_IUPAC_Nomenclature:level-2-d-stereodescriptors/heading001",
+   "title": "Level 2 · D. Stereodescriptors",
+   "dir": "115",
+   "pass": true,
+   "svg": 12,
+   "blocks": 37
+  },
+  {
+   "order": 116,
+   "heading_id": "01_IUPAC_Nomenclature:level-2-e-choose-the-correct-name-single/heading001",
+   "title": "Level 2 · E. Choose the correct name (single answer)",
+   "dir": "116",
+   "pass": true,
+   "svg": 10,
+   "blocks": 31
+  },
+  {
+   "order": 117,
+   "heading_id": "01_IUPAC_Nomenclature:level-2-f-trivial-names-and-multiple-cor/heading001",
+   "title": "Level 2 · F. Trivial names and multiple-correct statements",
+   "dir": "117",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 118,
+   "heading_id": "01_IUPAC_Nomenclature:level-3-a-integer-type-questions/heading001",
+   "title": "Level 3 · A. Integer-type questions",
+   "dir": "118",
+   "pass": true,
+   "svg": 22,
+   "blocks": 84
+  },
+  {
+   "order": 119,
+   "heading_id": "01_IUPAC_Nomenclature:level-3-b-matrix-match-questions/heading001",
+   "title": "Level 3 · B. Matrix-match questions",
+   "dir": "119",
+   "pass": true,
+   "svg": 4,
+   "blocks": 12
+  },
+  {
+   "order": 120,
+   "heading_id": "01_IUPAC_Nomenclature:level-3-c-paragraph-comprehension-questi/heading001",
+   "title": "Level 3 · C. Paragraph (comprehension) questions",
+   "dir": "120",
+   "pass": true,
+   "svg": 4,
+   "blocks": 28
+  },
+  {
+   "order": 121,
+   "heading_id": "01_IUPAC_Nomenclature:level-3-d-multiple-correct-statements/heading001",
+   "title": "Level 3 · D. Multiple-correct statements",
+   "dir": "121",
+   "pass": true,
+   "svg": 1,
+   "blocks": 24
+  },
+  {
+   "order": 122,
+   "heading_id": "01_IUPAC_Nomenclature:level-3-e-encoded-answer-problems/heading001",
+   "title": "Level 3 · E. Encoded-answer problems",
+   "dir": "122",
+   "pass": true,
+   "svg": 6,
+   "blocks": 20
+  },
+  {
+   "order": 123,
+   "heading_id": "01_IUPAC_Nomenclature:level-3-f-build-up-problems/heading001",
+   "title": "Level 3 · F. Build-up problems",
+   "dir": "123",
+   "pass": true,
+   "svg": 2,
+   "blocks": 8
+  },
+  {
+   "order": 124,
+   "heading_id": "01_IUPAC_Nomenclature:level-3-g-classifying-groups-and-countin/heading001",
+   "title": "Level 3 · G. Classifying groups and counting correct pairs",
+   "dir": "124",
+   "pass": true,
+   "svg": 0,
+   "blocks": 9
+  },
+  {
+   "order": 125,
+   "heading_id": "01_IUPAC_Nomenclature:part-13-chapter-tests/heading001",
+   "title": "Part 13 · Chapter tests",
+   "dir": "125",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 126,
+   "heading_id": "01_IUPAC_Nomenclature:test-a/heading001",
+   "title": "Test A",
+   "dir": "126",
+   "pass": true,
+   "svg": 13,
+   "blocks": 41
+  },
+  {
+   "order": 127,
+   "heading_id": "01_IUPAC_Nomenclature:test-b/heading001",
+   "title": "Test B",
+   "dir": "127",
+   "pass": true,
+   "svg": 12,
+   "blocks": 38
+  },
+  {
+   "order": 128,
+   "heading_id": "01_IUPAC_Nomenclature:part-14-answer-keys/heading001",
+   "title": "Part 14 · Answer keys",
+   "dir": "128",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 129,
+   "heading_id": "01_IUPAC_Nomenclature:part-15-detailed-solutions/heading001",
+   "title": "Part 15 · Detailed solutions",
+   "dir": "129",
+   "pass": true,
+   "svg": 9,
+   "blocks": 703
+  },
+  {
+   "order": 130,
+   "heading_id": "01_IUPAC_Nomenclature:part-16-rapid-self-test-answers/heading001",
+   "title": "Part 16 · Rapid self-test answers",
+   "dir": "130",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 131,
+   "heading_id": "01_IUPAC_Nomenclature:part-17-glossary-index-and-source-notes/heading001",
+   "title": "Part 17 · Glossary, index and source notes",
+   "dir": "131",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 132,
+   "heading_id": "01_IUPAC_Nomenclature:13-1-glossary/heading001",
+   "title": "13.1 Glossary",
+   "dir": "132",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 133,
+   "heading_id": "01_IUPAC_Nomenclature:13-3-source-notes/heading001",
+   "title": "13.3 Source notes",
+   "dir": "133",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  }
+ ]
+}

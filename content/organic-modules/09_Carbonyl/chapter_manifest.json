@@ -1,0 +1,668 @@
+{
+ "file": "09_Carbonyl.html",
+ "partition_level": 3,
+ "sections_total": 73,
+ "sections_passed": 73,
+ "svg_in_sections": 1981,
+ "svg_in_file": 1981,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "09_Carbonyl:aldehydes-ketones/heading001",
+   "title": "Aldehydes & Ketones",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 1,
+   "heading_id": "09_Carbonyl:how-to-use-this-chapter/heading001",
+   "title": "How to use this chapter",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  },
+  {
+   "order": 2,
+   "heading_id": "09_Carbonyl:part-a-structure-nomenclature-physical-p/heading001",
+   "title": "PART A. STRUCTURE, NOMENCLATURE, PHYSICAL PROPERTIES",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 3,
+   "heading_id": "09_Carbonyl:1-the-carbonyl-group/heading001",
+   "title": "1. The carbonyl group",
+   "dir": "003",
+   "pass": true,
+   "svg": 10,
+   "blocks": 12
+  },
+  {
+   "order": 4,
+   "heading_id": "09_Carbonyl:2-nomenclature/heading001",
+   "title": "2. Nomenclature",
+   "dir": "004",
+   "pass": true,
+   "svg": 44,
+   "blocks": 27
+  },
+  {
+   "order": 5,
+   "heading_id": "09_Carbonyl:3-physical-properties/heading001",
+   "title": "3. Physical properties",
+   "dir": "005",
+   "pass": true,
+   "svg": 8,
+   "blocks": 12
+  },
+  {
+   "order": 6,
+   "heading_id": "09_Carbonyl:4-summary-sheet-for-part-a/heading001",
+   "title": "4. Summary sheet for Part A",
+   "dir": "006",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 7,
+   "heading_id": "09_Carbonyl:part-b-preparation-of-aldehydes-and-keto/heading001",
+   "title": "PART B. PREPARATION OF ALDEHYDES AND KETONES",
+   "dir": "007",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 8,
+   "heading_id": "09_Carbonyl:5-overview-of-preparative-methods/heading001",
+   "title": "5. Overview of preparative methods",
+   "dir": "008",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 9,
+   "heading_id": "09_Carbonyl:6-family-1-oxidation-methods/heading001",
+   "title": "6. Family 1: oxidation methods",
+   "dir": "009",
+   "pass": true,
+   "svg": 35,
+   "blocks": 26
+  },
+  {
+   "order": 10,
+   "heading_id": "09_Carbonyl:7-family-2-hydration-of-alkynes/heading001",
+   "title": "7. Family 2: hydration of alkynes",
+   "dir": "010",
+   "pass": true,
+   "svg": 9,
+   "blocks": 8
+  },
+  {
+   "order": 11,
+   "heading_id": "09_Carbonyl:8-family-3-partial-reduction-of-acid-der/heading001",
+   "title": "8. Family 3: partial reduction of acid derivatives",
+   "dir": "011",
+   "pass": true,
+   "svg": 12,
+   "blocks": 12
+  },
+  {
+   "order": 12,
+   "heading_id": "09_Carbonyl:9-family-4-c-c-bond-formation-giving-ket/heading001",
+   "title": "9. Family 4: C–C bond formation giving ketones",
+   "dir": "012",
+   "pass": true,
+   "svg": 16,
+   "blocks": 12
+  },
+  {
+   "order": 13,
+   "heading_id": "09_Carbonyl:10-family-5-aromatic-acylation-and-formy/heading001",
+   "title": "10. Family 5: aromatic acylation and formylation",
+   "dir": "013",
+   "pass": true,
+   "svg": 16,
+   "blocks": 13
+  },
+  {
+   "order": 14,
+   "heading_id": "09_Carbonyl:11-preparation-of-hcho-ch-3-cho-and-acet/heading001",
+   "title": "11. Preparation of HCHO, CH 3 CHO and acetone: industrial routes",
+   "dir": "014",
+   "pass": true,
+   "svg": 3,
+   "blocks": 4
+  },
+  {
+   "order": 15,
+   "heading_id": "09_Carbonyl:12-worked-examples-on-preparations/heading001",
+   "title": "12. Worked examples on preparations",
+   "dir": "015",
+   "pass": true,
+   "svg": 8,
+   "blocks": 25
+  },
+  {
+   "order": 16,
+   "heading_id": "09_Carbonyl:13-summary-sheet-for-part-b/heading001",
+   "title": "13. Summary sheet for Part B",
+   "dir": "016",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 17,
+   "heading_id": "09_Carbonyl:part-c-nucleophilic-addition-to-the-carb/heading001",
+   "title": "PART C. NUCLEOPHILIC ADDITION TO THE CARBONYL GROUP",
+   "dir": "017",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 18,
+   "heading_id": "09_Carbonyl:14-the-mechanism-in-three-lines/heading001",
+   "title": "14. The mechanism, in three lines",
+   "dir": "018",
+   "pass": true,
+   "svg": 7,
+   "blocks": 7
+  },
+  {
+   "order": 19,
+   "heading_id": "09_Carbonyl:15-reactivity-order-and-the-factors-behi/heading001",
+   "title": "15. Reactivity order and the factors behind it",
+   "dir": "019",
+   "pass": true,
+   "svg": 8,
+   "blocks": 17
+  },
+  {
+   "order": 20,
+   "heading_id": "09_Carbonyl:16-specific-nucleophilic-additions/heading001",
+   "title": "16. Specific nucleophilic additions",
+   "dir": "020",
+   "pass": true,
+   "svg": 65,
+   "blocks": 49
+  },
+  {
+   "order": 21,
+   "heading_id": "09_Carbonyl:17-addition-elimination-with-nitrogen-nu/heading001",
+   "title": "17. Addition–elimination with nitrogen nucleophiles",
+   "dir": "021",
+   "pass": true,
+   "svg": 35,
+   "blocks": 42
+  },
+  {
+   "order": 22,
+   "heading_id": "09_Carbonyl:18-olefination-reactions/heading001",
+   "title": "18. Olefination reactions",
+   "dir": "022",
+   "pass": true,
+   "svg": 29,
+   "blocks": 27
+  },
+  {
+   "order": 23,
+   "heading_id": "09_Carbonyl:part-d-chemistry-of-the-hydrogen/heading001",
+   "title": "PART D. CHEMISTRY OF THE α-HYDROGEN",
+   "dir": "023",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 24,
+   "heading_id": "09_Carbonyl:20-keto-enol-tautomerism/heading001",
+   "title": "20. Keto–enol tautomerism",
+   "dir": "024",
+   "pass": true,
+   "svg": 13,
+   "blocks": 22
+  },
+  {
+   "order": 25,
+   "heading_id": "09_Carbonyl:21-acidity-of-hydrogens/heading001",
+   "title": "21. Acidity of α-hydrogens",
+   "dir": "025",
+   "pass": true,
+   "svg": 3,
+   "blocks": 7
+  },
+  {
+   "order": 26,
+   "heading_id": "09_Carbonyl:22-kinetic-and-thermodynamic-enolates/heading001",
+   "title": "22. Kinetic and thermodynamic enolates",
+   "dir": "026",
+   "pass": true,
+   "svg": 12,
+   "blocks": 13
+  },
+  {
+   "order": 27,
+   "heading_id": "09_Carbonyl:23-halogenation/heading001",
+   "title": "23. α-Halogenation",
+   "dir": "027",
+   "pass": true,
+   "svg": 13,
+   "blocks": 13
+  },
+  {
+   "order": 28,
+   "heading_id": "09_Carbonyl:24-the-haloform-reaction/heading001",
+   "title": "24. The haloform reaction",
+   "dir": "028",
+   "pass": true,
+   "svg": 13,
+   "blocks": 20
+  },
+  {
+   "order": 29,
+   "heading_id": "09_Carbonyl:25-the-aldol-reaction/heading001",
+   "title": "25. The aldol reaction",
+   "dir": "029",
+   "pass": true,
+   "svg": 60,
+   "blocks": 41
+  },
+  {
+   "order": 30,
+   "heading_id": "09_Carbonyl:part-e-disproportionation-and-condensati/heading001",
+   "title": "PART E. DISPROPORTIONATION AND CONDENSATION REACTIONS",
+   "dir": "030",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 31,
+   "heading_id": "09_Carbonyl:26-the-cannizzaro-reaction/heading001",
+   "title": "26. The Cannizzaro reaction",
+   "dir": "031",
+   "pass": true,
+   "svg": 34,
+   "blocks": 38
+  },
+  {
+   "order": 32,
+   "heading_id": "09_Carbonyl:27-the-benzoin-condensation/heading001",
+   "title": "27. The benzoin condensation",
+   "dir": "032",
+   "pass": true,
+   "svg": 9,
+   "blocks": 10
+  },
+  {
+   "order": 33,
+   "heading_id": "09_Carbonyl:28-the-perkin-reaction/heading001",
+   "title": "28. The Perkin reaction",
+   "dir": "033",
+   "pass": true,
+   "svg": 9,
+   "blocks": 8
+  },
+  {
+   "order": 34,
+   "heading_id": "09_Carbonyl:29-the-knoevenagel-condensation/heading001",
+   "title": "29. The Knoevenagel condensation",
+   "dir": "034",
+   "pass": true,
+   "svg": 9,
+   "blocks": 6
+  },
+  {
+   "order": 35,
+   "heading_id": "09_Carbonyl:30-the-mannich-reaction/heading001",
+   "title": "30. The Mannich reaction",
+   "dir": "035",
+   "pass": true,
+   "svg": 6,
+   "blocks": 7
+  },
+  {
+   "order": 36,
+   "heading_id": "09_Carbonyl:31-the-michael-addition/heading001",
+   "title": "31. The Michael addition",
+   "dir": "036",
+   "pass": true,
+   "svg": 9,
+   "blocks": 8
+  },
+  {
+   "order": 37,
+   "heading_id": "09_Carbonyl:32-the-robinson-annulation/heading001",
+   "title": "32. The Robinson annulation",
+   "dir": "037",
+   "pass": true,
+   "svg": 16,
+   "blocks": 18
+  },
+  {
+   "order": 38,
+   "heading_id": "09_Carbonyl:33-darzens-henry-and-pinacol-reactions/heading001",
+   "title": "33. Darzens, Henry and pinacol reactions",
+   "dir": "038",
+   "pass": true,
+   "svg": 15,
+   "blocks": 12
+  },
+  {
+   "order": 39,
+   "heading_id": "09_Carbonyl:34-summary-sheet-for-part-e/heading001",
+   "title": "34. Summary sheet for Part E",
+   "dir": "039",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 40,
+   "heading_id": "09_Carbonyl:part-f-reduction-oxidation-and-rearrange/heading001",
+   "title": "PART F. REDUCTION, OXIDATION AND REARRANGEMENTS",
+   "dir": "040",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 41,
+   "heading_id": "09_Carbonyl:35-reduction-of-c-o-to-ch-2/heading001",
+   "title": "35. Reduction of C=O to CH 2",
+   "dir": "041",
+   "pass": true,
+   "svg": 10,
+   "blocks": 15
+  },
+  {
+   "order": 42,
+   "heading_id": "09_Carbonyl:36-reduction-to-alcohols-stereochemistry/heading001",
+   "title": "36. Reduction to alcohols: stereochemistry and selectivity",
+   "dir": "042",
+   "pass": true,
+   "svg": 5,
+   "blocks": 7
+  },
+  {
+   "order": 43,
+   "heading_id": "09_Carbonyl:37-oxidation-of-aldehydes-tollens-fehlin/heading001",
+   "title": "37. Oxidation of aldehydes: Tollens', Fehling's, Benedict's",
+   "dir": "043",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 44,
+   "heading_id": "09_Carbonyl:38-the-baeyer-villiger-oxidation/heading001",
+   "title": "38. The Baeyer–Villiger oxidation",
+   "dir": "044",
+   "pass": true,
+   "svg": 30,
+   "blocks": 24
+  },
+  {
+   "order": 45,
+   "heading_id": "09_Carbonyl:part-g-unsaturated-carbonyl-compounds/heading001",
+   "title": "PART G. α,β-UNSATURATED CARBONYL COMPOUNDS",
+   "dir": "045",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 46,
+   "heading_id": "09_Carbonyl:39-structure-and-the-two-electrophilic-s/heading001",
+   "title": "39. Structure and the two electrophilic sites",
+   "dir": "046",
+   "pass": true,
+   "svg": 25,
+   "blocks": 24
+  },
+  {
+   "order": 47,
+   "heading_id": "09_Carbonyl:40-industrially-and-biologically-importa/heading001",
+   "title": "40. Industrially and biologically important carbonyl compounds",
+   "dir": "047",
+   "pass": true,
+   "svg": 7,
+   "blocks": 6
+  },
+  {
+   "order": 48,
+   "heading_id": "09_Carbonyl:41-summary-sheet-for-parts-f-and-g/heading001",
+   "title": "41. Summary sheet for Parts F and G",
+   "dir": "048",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 49,
+   "heading_id": "09_Carbonyl:part-h-tests-reagents-and-problem-solvin/heading001",
+   "title": "PART H. TESTS, REAGENTS AND PROBLEM-SOLVING TOOLKIT",
+   "dir": "049",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 50,
+   "heading_id": "09_Carbonyl:42-chemical-tests-for-carbonyl-compounds/heading001",
+   "title": "42. Chemical tests for carbonyl compounds",
+   "dir": "050",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 51,
+   "heading_id": "09_Carbonyl:43-the-reagent-master-table-what-a-reage/heading001",
+   "title": "43. The reagent master table (what a reagent does to C=O compounds)",
+   "dir": "051",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 52,
+   "heading_id": "09_Carbonyl:44-fifty-common-traps-and-exceptions/heading001",
+   "title": "44. Fifty common traps and exceptions",
+   "dir": "052",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 53,
+   "heading_id": "09_Carbonyl:45-structure-elucidation-a-method/heading001",
+   "title": "45. Structure elucidation: a method",
+   "dir": "053",
+   "pass": true,
+   "svg": 10,
+   "blocks": 27
+  },
+  {
+   "order": 54,
+   "heading_id": "09_Carbonyl:46-comparative-tables/heading001",
+   "title": "46. Comparative tables",
+   "dir": "054",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 55,
+   "heading_id": "09_Carbonyl:47-mechanism-writing-checklist/heading001",
+   "title": "47. Mechanism-writing checklist",
+   "dir": "055",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 56,
+   "heading_id": "09_Carbonyl:48-summary-sheet-for-part-h/heading001",
+   "title": "48. Summary sheet for Part H",
+   "dir": "056",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 57,
+   "heading_id": "09_Carbonyl:part-i-extra-topics-and-problem-types-fr/heading001",
+   "title": "PART I. EXTRA TOPICS AND PROBLEM TYPES FROM THE CROSS-CHECK",
+   "dir": "057",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 58,
+   "heading_id": "09_Carbonyl:49-keto-acids-decarboxylation-and-the-ac/heading001",
+   "title": "49. β-Keto acids, decarboxylation and the acetoacetic ester synthesis",
+   "dir": "058",
+   "pass": true,
+   "svg": 18,
+   "blocks": 17
+  },
+  {
+   "order": 59,
+   "heading_id": "09_Carbonyl:50-isotopic-labelling-in-carbonyl-chemis/heading001",
+   "title": "50. Isotopic labelling in carbonyl chemistry",
+   "dir": "059",
+   "pass": true,
+   "svg": 3,
+   "blocks": 12
+  },
+  {
+   "order": 60,
+   "heading_id": "09_Carbonyl:51-oxidation-numbers-and-counting-redox-/heading001",
+   "title": "51. Oxidation numbers and counting redox changes",
+   "dir": "060",
+   "pass": true,
+   "svg": 0,
+   "blocks": 8
+  },
+  {
+   "order": 61,
+   "heading_id": "09_Carbonyl:52-retrosynthesis-of-enones-and-hydroxyc/heading001",
+   "title": "52. Retrosynthesis of enones and β-hydroxycarbonyls (aldol disconnection)",
+   "dir": "061",
+   "pass": true,
+   "svg": 20,
+   "blocks": 11
+  },
+  {
+   "order": 62,
+   "heading_id": "09_Carbonyl:53-enamines-and-imines-which-pair-forms-/heading001",
+   "title": "53. Enamines and imines: which pair forms them?",
+   "dir": "062",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 63,
+   "heading_id": "09_Carbonyl:54-cyanohydrins-in-carbohydrate-chemistr/heading001",
+   "title": "54. Cyanohydrins in carbohydrate chemistry (Kiliani–Fischer)",
+   "dir": "063",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 64,
+   "heading_id": "09_Carbonyl:55-hydration-hemiacetals-and-ring-chain-/heading001",
+   "title": "55. Hydration, hemiacetals and ring-chain tautomerism",
+   "dir": "064",
+   "pass": true,
+   "svg": 4,
+   "blocks": 4
+  },
+  {
+   "order": 65,
+   "heading_id": "09_Carbonyl:56-summary-sheet-for-part-i/heading001",
+   "title": "56. Summary sheet for Part I",
+   "dir": "065",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 66,
+   "heading_id": "09_Carbonyl:part-j-worked-problems-longer-reasoning-/heading001",
+   "title": "PART J. WORKED PROBLEMS: LONGER REASONING CHAINS",
+   "dir": "066",
+   "pass": true,
+   "svg": 0,
+   "blocks": 1
+  },
+  {
+   "order": 67,
+   "heading_id": "09_Carbonyl:57-worked-problems-that-combine-several-/heading001",
+   "title": "57. Worked problems that combine several reactions",
+   "dir": "067",
+   "pass": true,
+   "svg": 42,
+   "blocks": 46
+  },
+  {
+   "order": 68,
+   "heading_id": "09_Carbonyl:problem-set-1-level-1-main-type-problems/heading001",
+   "title": "PROBLEM SET 1: LEVEL 1 (Main-type problems)",
+   "dir": "068",
+   "pass": true,
+   "svg": 342,
+   "blocks": 995
+  },
+  {
+   "order": 69,
+   "heading_id": "09_Carbonyl:problem-set-2-level-2-advanced-single-an/heading001",
+   "title": "PROBLEM SET 2: LEVEL 2 (Advanced single- and multiple-correct, reasoning)",
+   "dir": "069",
+   "pass": true,
+   "svg": 579,
+   "blocks": 921
+  },
+  {
+   "order": 70,
+   "heading_id": "09_Carbonyl:problem-set-3-level-3-integer-paragraph-/heading001",
+   "title": "PROBLEM SET 3: LEVEL 3 (Integer, paragraph and matrix-match)",
+   "dir": "070",
+   "pass": true,
+   "svg": 360,
+   "blocks": 717
+  },
+  {
+   "order": 71,
+   "heading_id": "09_Carbonyl:appendix-a-named-reactions-of-this-chapt/heading001",
+   "title": "Appendix A. Named reactions of this chapter at a glance",
+   "dir": "071",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 72,
+   "heading_id": "09_Carbonyl:appendix-b-sources-cross-checked/heading001",
+   "title": "Appendix B. Sources cross-checked",
+   "dir": "072",
+   "pass": true,
+   "svg": 0,
+   "blocks": 4
+  }
+ ]
+}

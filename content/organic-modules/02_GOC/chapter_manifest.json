@@ -1,0 +1,245 @@
+{
+ "file": "02_GOC.html",
+ "partition_level": 3,
+ "sections_total": 26,
+ "sections_passed": 26,
+ "svg_in_sections": 793,
+ "svg_in_file": 793,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "02_GOC:general-organic-chemistry/heading001",
+   "title": "General Organic Chemistry",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 1,
+   "heading_id": "02_GOC:contents/heading001",
+   "title": "Contents",
+   "dir": "001",
+   "pass": true,
+   "svg": 0,
+   "blocks": 2
+  },
+  {
+   "order": 2,
+   "heading_id": "02_GOC:1-how-this-chapter-is-organised-and-why-/heading001",
+   "title": "1. How this chapter is organised and why it decides your organic score",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 9
+  },
+  {
+   "order": 3,
+   "heading_id": "02_GOC:2-lewis-structures-formal-charge-and-the/heading001",
+   "title": "2. Lewis structures, formal charge and the language of structures",
+   "dir": "003",
+   "pass": true,
+   "svg": 12,
+   "blocks": 30
+  },
+  {
+   "order": 4,
+   "heading_id": "02_GOC:3-hybridisation/heading001",
+   "title": "3. Hybridisation",
+   "dir": "004",
+   "pass": true,
+   "svg": 21,
+   "blocks": 41
+  },
+  {
+   "order": 5,
+   "heading_id": "02_GOC:4-bond-lengths-bond-strengths-and-bond-a/heading001",
+   "title": "4. Bond lengths, bond strengths and bond angles",
+   "dir": "005",
+   "pass": true,
+   "svg": 6,
+   "blocks": 27
+  },
+  {
+   "order": 6,
+   "heading_id": "02_GOC:5-dipole-moment/heading001",
+   "title": "5. Dipole moment",
+   "dir": "006",
+   "pass": true,
+   "svg": 12,
+   "blocks": 54
+  },
+  {
+   "order": 7,
+   "heading_id": "02_GOC:6-the-inductive-effect-i-effect/heading001",
+   "title": "6. The inductive effect (I effect)",
+   "dir": "007",
+   "pass": true,
+   "svg": 13,
+   "blocks": 44
+  },
+  {
+   "order": 8,
+   "heading_id": "02_GOC:7-the-electromeric-effect-e-effect/heading001",
+   "title": "7. The electromeric effect (E effect)",
+   "dir": "008",
+   "pass": true,
+   "svg": 9,
+   "blocks": 20
+  },
+  {
+   "order": 9,
+   "heading_id": "02_GOC:8-the-mesomeric-resonance-effect/heading001",
+   "title": "8. The mesomeric (resonance) effect",
+   "dir": "009",
+   "pass": true,
+   "svg": 19,
+   "blocks": 40
+  },
+  {
+   "order": 10,
+   "heading_id": "02_GOC:9-resonance-rules-drawing-and-stability/heading001",
+   "title": "9. Resonance: rules, drawing and stability",
+   "dir": "010",
+   "pass": true,
+   "svg": 36,
+   "blocks": 68
+  },
+  {
+   "order": 11,
+   "heading_id": "02_GOC:10-hyperconjugation/heading001",
+   "title": "10. Hyperconjugation",
+   "dir": "011",
+   "pass": true,
+   "svg": 10,
+   "blocks": 41
+  },
+  {
+   "order": 12,
+   "heading_id": "02_GOC:11-electronic-effects-comparison-and-mas/heading001",
+   "title": "11. Electronic effects: comparison and master table",
+   "dir": "012",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 13,
+   "heading_id": "02_GOC:12-aromaticity-anti-aromaticity-and-non-/heading001",
+   "title": "12. Aromaticity, anti-aromaticity and non-aromaticity",
+   "dir": "013",
+   "pass": true,
+   "svg": 39,
+   "blocks": 79
+  },
+  {
+   "order": 14,
+   "heading_id": "02_GOC:13-acidity-the-complete-treatment/heading001",
+   "title": "13. Acidity: the complete treatment",
+   "dir": "014",
+   "pass": true,
+   "svg": 23,
+   "blocks": 137
+  },
+  {
+   "order": 15,
+   "heading_id": "02_GOC:14-basicity/heading001",
+   "title": "14. Basicity",
+   "dir": "015",
+   "pass": true,
+   "svg": 15,
+   "blocks": 73
+  },
+  {
+   "order": 16,
+   "heading_id": "02_GOC:15-steric-inhibition-of-resonance-the-or/heading001",
+   "title": "15. Steric inhibition of resonance, the ortho effect and intramolecular hydrogen bonding",
+   "dir": "016",
+   "pass": true,
+   "svg": 16,
+   "blocks": 59
+  },
+  {
+   "order": 17,
+   "heading_id": "02_GOC:16-reactive-intermediates-and-their-stab/heading001",
+   "title": "16. Reactive intermediates and their stability",
+   "dir": "017",
+   "pass": true,
+   "svg": 45,
+   "blocks": 82
+  },
+  {
+   "order": 18,
+   "heading_id": "02_GOC:17-tautomerism/heading001",
+   "title": "17. Tautomerism",
+   "dir": "018",
+   "pass": true,
+   "svg": 32,
+   "blocks": 58
+  },
+  {
+   "order": 19,
+   "heading_id": "02_GOC:18-hydrogen-bonding-and-the-physical-pro/heading001",
+   "title": "18. Hydrogen bonding and the physical properties of organic compounds",
+   "dir": "019",
+   "pass": true,
+   "svg": 11,
+   "blocks": 65
+  },
+  {
+   "order": 20,
+   "heading_id": "02_GOC:19-electrophiles-nucleophiles-leaving-gr/heading001",
+   "title": "19. Electrophiles, nucleophiles, leaving groups and reaction types",
+   "dir": "020",
+   "pass": true,
+   "svg": 22,
+   "blocks": 53
+  },
+  {
+   "order": 21,
+   "heading_id": "02_GOC:practice-set-1-level-1-foundation-acidit/heading001",
+   "title": "Practice Set 1 — Level 1 (foundation): acidity and basicity",
+   "dir": "021",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 22,
+   "heading_id": "02_GOC:practice-set-2-level-2-main-and-advanced/heading001",
+   "title": "Practice Set 2 — Level 2 (main and advanced): ranking and calculation",
+   "dir": "022",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 23,
+   "heading_id": "02_GOC:practice-set-3-level-3-advanced-passages/heading001",
+   "title": "Practice Set 3 — Level 3 (advanced): passages, multi-concept and numerical problems",
+   "dir": "023",
+   "pass": true,
+   "svg": 0,
+   "blocks": 13
+  },
+  {
+   "order": 24,
+   "heading_id": "02_GOC:graded-exercises/heading001",
+   "title": "Graded Exercises",
+   "dir": "024",
+   "pass": true,
+   "svg": 385,
+   "blocks": 2840
+  },
+  {
+   "order": 25,
+   "heading_id": "02_GOC:detailed-solutions/heading001",
+   "title": "Detailed Solutions",
+   "dir": "025",
+   "pass": true,
+   "svg": 67,
+   "blocks": 1230
+  }
+ ]
+}

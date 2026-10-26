@@ -1,0 +1,21 @@
+<h3 id="s72">Appendix B. Sources cross-checked</h3>
+<p>This chapter was written from the existing short notes and rebuilt around worked mechanisms. Every structure was parsed with RDKit; formulas, isomer counts, stereoisomer counts, products of ozonolysis, aldol, Baeyer–Villiger, Wittig and Grignard disconnections and the numerical answers were generated or checked by script, and the printed IUPAC names in the generated problems were checked by a name-to-structure parser. The following books were actually opened while preparing the chapter; all problems and explanations are original.</p>
+<ol>
+<li><b>Advanced Problems in Organic Chemistry for JEE (M. S. Chouhan, 16th edition)</b> – the aldehydes-and-ketones chapter (about pp. 395–475 of the PDF) was scanned for question stems. Used only to identify problem *types* that this chapter lacked: hydrate stability and equilibrium constants, enamine-forming pairs, decarboxylation of β-keto acids and the bridgehead exception, aldol retrosynthesis (donor and acceptor choice, cis-jasmone), intramolecular Cannizzaro, isotopic labelling and oxidation-state bookkeeping, product counting including stereoisomers.</li>
+<li><b>Organic Chemistry (J. Clayden, N. Greeves, S. Warren, Oxford University Press, 2012)</b> – the passage on the Luche reduction (chapter on conjugate addition, p. 506 of the printed book), the conditions for kinetic enolates (enolate regiochemistry chapter), and the Baeyer–Villiger section "Which group migrates?" (chapter on participation, rearrangement and fragmentation, pp. 953–954) with its yield data for competing phenyl and alkyl migration. These were used to correct the migratory-aptitude discussion (secondary alkyl and phenyl are close; the isopropyl phenyl ketone gives a mixture) and to confirm the Luche and kinetic-enolate descriptions.</li>
+<li><b>Organic Chemistry, 9th edition (L. G. Wade)</b> – a keyword scan of the whole text to see which named reactions it treats, and the problem on the aldol self-condensation of acetone (about 5 % conversion to diacetone alcohol at 25 °C), which fixed the equilibrium figure quoted in Section 25.3.</li>
+</ol>
+<p>Opened but not used: Himanshu Pandey, *Advanced Problems* (scanned images without a text layer, so it could not be searched); the David Klein assignment folder (listed; it has no carbonyl chapter among its titles). Not opened: the other books named in the project brief (Sykes, Nasipuri, McMurry, Finar and the remaining Drive volumes), the JEE Advanced past papers, and every olympiad collection. Nothing from them is claimed.</p></section>
+</main>
+<script>
+const q=document.getElementById('q'),links=[...document.querySelectorAll('#nav a')];
+q.addEventListener('input',()=>{const v=q.value.toLowerCase();links.forEach(a=>a.style.display=a.dataset.t.includes(v)?'':'none')});
+const ds=()=>[...document.querySelectorAll('details')];
+document.getElementById('open').onclick=()=>ds().forEach(d=>d.open=true);
+document.getElementById('close').onclick=()=>ds().forEach(d=>d.open=false);
+const secs=[...document.querySelectorAll('section')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>io.observe(s));
+</script>
+<script>addEventListener("beforeprint",function(){document.querySelectorAll("details").forEach(function(d){d.open=true})})</script></body>
+</html>

@@ -1,0 +1,20 @@
+<h3 id="h132">13.3 Source notes</h3>
+<p>The module was written for this course. Names and structures were checked by a program (name-to-structure parsing, numbering and alphabetical checks, CIP labelling and isomer enumeration) as described in the editorial coverage report, which is kept separate from this chapter. <b>Sources cross-checked.</b> The following references were opened, and the sections listed were used to check the rules stated in the module.</p>
+<ol>
+<li>IUPAC Recommendations 2013, Nomenclature of Organic Chemistry (Favre and Powell, Royal Society of Chemistry, ISBN 978-0-85404-182-4): Chapter P-4, sections P-41 (seniority of classes), P-44.1 (seniority of parent structures) and P-44.1.2 (senior atom). Used for the 2013 comparisons in §1.2, §2.6, §5.1 and Part 10.</li>
+<li>Wade, Organic Chemistry, 9th edition: Chapter 3, section 3-3 (nomenclature of alkanes: the rules, the alkyl group table and the complex substituent method) and Appendix III to V (the priority table, substituent and functional group naming, aromatic nomenclature, the polycyclic and spiro rules). Used for §2.1–2.4, §4.1, §7.1–7.2 and §6.3.</li>
+</ol>
+<p><b>Not used.</b> No other book or paper is cited. Where a value or rule could not be checked against a source opened for this chapter, it is marked as a convention in the text (for example the 1979/1993 and 2013 difference) rather than presented as a fact from a source.</p></section>
+</main>
+<script>
+const q=document.getElementById('q'),links=[...document.querySelectorAll('#nav a')];
+q.addEventListener('input',()=>{const v=q.value.toLowerCase();links.forEach(a=>a.style.display=a.dataset.t.includes(v)?'':'none')});
+const ds=()=>[...document.querySelectorAll('details')];
+document.getElementById('open').onclick=()=>ds().forEach(d=>d.open=true);
+document.getElementById('close').onclick=()=>ds().forEach(d=>d.open=false);
+const secs=[...document.querySelectorAll('section')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<h3 id="s49">44. Appendix: sources cross-checked</h3>
+<p>Every item listed here was actually opened during the preparation of this chapter. Examples and practice problems are original; numerical data and rules were cross-checked against these sources, not copied.</p>
+<ul class="stp">
+<li><b>Organic Chemistry, 9th edition, L. G. Wade (PDF).</b> Pages around 209 (activation energies and relative rates of halogen-atom abstraction from methane), 363–369 (stereochemistry of E2, Zaitsev/Hofmann examples with ethoxide and tert-butoxide, comparison table of E1 and E2). Used to cross-check: the 71 : 29 and 28 : 72 product ratios for 2-bromo-2-methylbutane; the anti-coplanar requirement; the kinetic isotope effect in chlorination (12 : 1); the types of substitution-versus-elimination problem for tertiary and cyclic halides.</li>
+<li><b>Organic Chemistry, 2nd edition, Clayden, Greeves and Warren (PDF).</b> Pages around 426 (E2 in a cyclohexyl chloride, hindered-base orientation, 69 : 31 and 28 : 73 ethoxide/tert-butoxide ratios), 550–552 (benzyne mechanism, regiochemistry with methoxy substituents, benzyne from diazotised anthranilic acid, steric and electronic reasons), 959–960 (neighbouring-group participation in the acetolysis of trans-2-acetoxycyclohexyl tosylate). Used to cross-check the benzyne and NGP sections.</li>
+<li><b>David Klein assignment set: "Alkyl Halides: Nucleophilic Substitution and Elimination Reactions" (problem list).</b> Used only to identify problem types (drawing transition states, counting alkenes, E2 stereochemistry, retrosynthesis of ethers, SN2 dealkylation of esters, ambident naphthoxide alkylation, solvolysis of substituted benzyl halides); none of its problems is reproduced.</li>
+<li><b>Internal brief (LONG_BRIEF.md) and the earlier chapter notes (org/06_haloalkanes.txt).</b> Used for the style, build rules and the original short list of topics.</li>
+</ul>
+<p><b>Opened but not found useful for this chapter:</b> Himanshu Pandey, <i>Advanced Problems</i> (no text hits for alkyl-halide topics in the text layer; possibly scanned images, so it could not be searched). <b>Not opened:</b> Peter Sykes, March, Nasipuri, M. S. Chouhan, McMurry, Finar, Eliel, Kalsi, the ICHO compilations, the user's coaching-test PDFs and any JEE Advanced past papers. Statements in this chapter that are not tied to the pages above come from the author's own knowledge and from RDKit/Python checks (structures, CIP labels, isomer counts, numerical results); literature numbers such as relative rates and product percentages are quoted as approximate.</p></section>
+</main>
+<script>
+const q=document.getElementById('q'),links=[...document.querySelectorAll('#nav a')];
+q.addEventListener('input',()=>{const v=q.value.toLowerCase();links.forEach(a=>a.style.display=a.dataset.t.includes(v)?'':'none')});
+const ds=()=>[...document.querySelectorAll('details')];
+document.getElementById('open').onclick=()=>ds().forEach(d=>d.open=true);
+document.getElementById('close').onclick=()=>ds().forEach(d=>d.open=false);
+const secs=[...document.querySelectorAll('section')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>

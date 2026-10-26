@@ -1,0 +1,27 @@
+<h3 id="s81">72. Sources cross-checked and verification notes</h3>
+<p><b>Books and problem collections actually opened while preparing this chapter</b> (used to find missing topics, standard facts and question types; all explanations and problems are written in my own words):</p>
+<ol class="refs">
+<li>L. G. Wade, <i>Organic Chemistry</i>, 9th ed., Chapter 19 (Amines): nomenclature (pp. 943–944), basicity and hybridisation, including the pK<sub>b</sub> values of pyridine, piperidine and acetonitrile (p. 952), amine salts (p. 952), exhaustive methylation and Hofmann elimination including the Hofmann rule and the anti-periplanar requirement (pp. 967–969).</li>
+<li>J. Clayden, N. Greeves and S. Warren, <i>Organic Chemistry</i>, 2nd ed. (2012): the comparison of nucleophilicity of triethylamine, quinuclidine and DABCO toward methyl iodide (pp. 818–819).</li>
+<li>M. S. Chouhan, <i>Advanced Problems in Organic Chemistry for JEE</i>, 16th ed.: the diazonium-coupling and amine-test questions on pp. 543–546 and 555–558 and the differentiation questions on p. 586 were used only to see which <b>question types</b> are asked (order of reactivity of substituted diazonium ions, triazene/aminoazo chemistry, butter yellow, aniline vs cyclohexylamine tests). No problem text was copied.</li>
+</ol>
+<p><b>Verification performed by computer.</b></p>
+<ul>
+<li>Every structure drawn in the schemes and answer boxes was parsed by RDKit (invalid SMILES stop the build).</li>
+<li>Isomer counts (C<sub>3</sub>H<sub>9</sub>N: 4; C<sub>4</sub>H<sub>11</sub>N: 8 with classes 4/3/1; C<sub>5</sub>H<sub>13</sub>N: 17 with classes 8/6/3 and 4 chiral isomers) were obtained by exhaustive enumeration.</li>
+<li>Molecular formulae and molar masses quoted for named compounds (e.g. Sudan I C<sub>16</sub>H<sub>12</sub>N<sub>2</sub>O 248.3; methyl orange C<sub>14</sub>H<sub>14</sub>N<sub>3</sub>NaO<sub>3</sub>S 327.3) were computed with RDKit; numerical answers (pH, Kjeldahl, Dumas, chloroplatinate, yields) were recomputed in Python (see the verification script).</li>
+</ul>
+<p><b>What was not independently verified.</b> The pK<sub>a</sub>/pK<sub>b</sub> values of substituted anilines, heterocycles and the other tabulated constants are standard literature values quoted from memory and from Wade where indicated; their exact third digits may differ between sources, and the exam-relevant <b>orders</b> are what the notes rely on. Colour and observation details of classical tests (for example the shade of nitrolic acid and pseudonitrole colours, aniline–bleaching-powder violet) follow the usual textbook statements and were not re-observed. Reaction conditions (temperatures and pH windows) are the standard textbook ones.</p></section>
+</main>
+<script>
+const q=document.getElementById('q'),links=[...document.querySelectorAll('#nav a')];
+q.addEventListener('input',()=>{const v=q.value.toLowerCase();links.forEach(a=>a.style.display=a.dataset.t.includes(v)?'':'none')});
+const ds=()=>[...document.querySelectorAll('details')];
+document.getElementById('open').onclick=()=>ds().forEach(d=>d.open=true);
+document.getElementById('close').onclick=()=>ds().forEach(d=>d.open=false);
+const secs=[...document.querySelectorAll('section')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>

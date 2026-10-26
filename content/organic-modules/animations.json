@@ -1198,5 +1198,170 @@
     "steps": "Reagent: magnesium amalgam (or Mg or Zn), with a ketone such as acetone.;;Step 1: the metal transfers an electron to the carbonyl, forming a ketyl radical anion.;;Step 2: two ketyl radicals combine at carbon, forming the C–C bond.;;Step 3: protonation gives the 1,2-diol (pinacol, 2,3-dimethylbutane-2,3-diol). Acid then converts it by the pinacol rearrangement to pinacolone."
    }
   ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^7\\.2 Intermolecular dehydration",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Ether formation by dehydration of a primary alcohol, step by step",
+    "steps": "Conditions: excess alcohol, concentrated H₂SO₄ at about 140 °C (compare 170 °C, which gives the alkene).;;Step 1: H₂SO₄ protonates one molecule of the alcohol, giving R–OH₂⁺.;;Step 2: a second alcohol molecule attacks the carbon of R–OH₂⁺ by SN2, displacing water.;;Step 3: loss of H⁺ gives the ether R–O–R. This works for primary alcohols; secondary and tertiary alcohols mainly eliminate."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^5\\.3 Tosylates and mesylates",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Converting an alcohol to a tosylate, step by step",
+    "steps": "Reagent: TsCl (p-toluenesulfonyl chloride) with pyridine.;;Step 1: the alcohol oxygen attacks sulfur, displacing chloride; pyridine takes the proton. The C–O bond of the alcohol is not broken, so the carbon keeps its configuration.;;Result: R–OTs, in which tosylate is an excellent leaving group (the conjugate base of a strong acid).;;Step 2 (later): a nucleophile attacks carbon by SN2 and displaces TsO⁻, with inversion at that carbon."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^6\\.4 Phosphorus and sulphur reagents",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "SOCl₂ and PBr₃ with an alcohol",
+    "steps": "SOCl₂ with pyridine: the alcohol attacks sulfur, giving a chlorosulfite; chloride then attacks carbon by SN2 (inversion) and SO₂ leaves. The by-products SO₂ and HCl are gases, so the alkyl chloride is easy to isolate.;;PBr₃: the alcohol oxygen attacks phosphorus, displacing bromide and giving R–O–PBr₂ (an excellent leaving group).;;Bromide then attacks carbon by SN2 with inversion; there is no free carbocation, so no rearrangement.;;Use these for primary and secondary alcohols when HX would cause rearrangement."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^13\\.1 The cumene \\(Hock\\) process",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Cumene process, step by step",
+    "steps": "Step 1: benzene and propene (acid catalyst) give cumene (isopropylbenzene) by Friedel–Crafts alkylation.;;Step 2: air oxidation at the benzylic C–H (radical chain) gives cumene hydroperoxide.;;Step 3: acid converts the hydroperoxide: protonation, then migration of phenyl from carbon to oxygen as water leaves.;;Step 4: water adds to the resulting cation and the hemiketal breaks down to phenol and acetone, both valuable products."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^15\\. Electrophilic substitution of phenol",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Why phenol is so reactive towards electrophiles",
+    "steps": "The oxygen lone pair is delocalised into the ring (+M), raising electron density at the ortho and para carbons.;;Attack at ortho or para gives an arenium ion with an extra resonance structure in which oxygen carries the positive charge (an oxonium ion), so the intermediate is stabilised.;;Result: bromine water gives 2,4,6-tribromophenol with no catalyst; dilute HNO₃ gives o- and p-nitrophenol.;;In phenoxide, the effect is even larger, so substitution is faster still."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^16\\.5 Lederer–Manasse reaction",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Phenol and formaldehyde (Lederer–Manasse), step by step",
+    "steps": "Step 1: phenoxide (or phenol with acid) attacks the carbonyl carbon of formaldehyde at the ortho or para position, forming a hydroxymethylphenol after proton transfer.;;Step 2: in acid, the benzylic OH is protonated and lost, giving a benzyl cation that reacts with another phenol ring (methylene bridge).;;Repeated reaction at the ortho and para positions builds a cross-linked network.;;The product is Bakelite, a thermosetting phenol–formaldehyde resin."
+   }
+  ]
+ },
+ {
+  "stem": "08_Alcohols_Phenols_Ethers",
+  "title": "^24\\.2 Ring opening: the two regimes",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Epoxide ring opening: acidic versus basic conditions",
+    "steps": "Basic or strongly nucleophilic conditions (RO⁻, RMgX, LiAlH₄): the nucleophile attacks the less hindered carbon by SN2, with inversion; the alkoxide formed is protonated later.;;Acidic conditions: the epoxide oxygen is protonated first, making the C–O bonds weaker and giving partial positive charge on the carbon that can best stabilise it.;;The nucleophile (H₂O or ROH) then attacks that more substituted carbon, still from the back side.;;Both regimes give trans (anti) products, but the regiochemistry is opposite for an unsymmetrical epoxide."
+   }
+  ]
+ },
+ {
+  "stem": "13_Polymers",
+  "title": "^13\\. Polyamides",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Nylon-6,6 by step-growth polymerisation",
+    "steps": "Monomers: adipic acid (HOOC–(CH₂)₄–COOH) and hexamethylenediamine (H₂N–(CH₂)₆–NH₂).;;Step 1: the diacid and diamine form a salt (nylon salt), which fixes the 1:1 ratio.;;Step 2: heating drives amide formation, releasing water; each amide link joins an acid end to an amine end.;;Result: –[NH–(CH₂)₆–NH–CO–(CH₂)₄–CO]ₙ–, nylon-6,6 (6 carbons in each monomer). Removing the water is needed to reach a high molar mass."
+   }
+  ]
+ },
+ {
+  "stem": "13_Polymers",
+  "title": "^15\\. Phenol–formaldehyde resins",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Bakelite formation, step by step",
+    "steps": "Step 1: phenol and formaldehyde (with acid or base) give o- and p-hydroxymethylphenols.;;Step 2: these condense with more phenol, losing water and forming –CH₂– bridges; with acid and excess phenol the linear polymer novolac forms.;;Step 3: novolac is heated with hexamethylenetetramine (a formaldehyde source), which cross-links the chains through the remaining ortho/para positions.;;Result: Bakelite, a rigid, thermosetting, three-dimensional network that cannot be remelted."
+   }
+  ]
+ },
+ {
+  "stem": "13_Polymers",
+  "title": "^10\\. Rubbers and diene polymers",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Natural rubber and vulcanisation",
+    "steps": "Natural rubber is cis-1,4-polyisoprene: each unit has a Z-configured C=C in the chain, so the chains coil and the polymer is elastic.;;Gutta-percha is the trans isomer, which packs well and is hard rather than elastic.;;Vulcanisation: heating rubber with sulfur forms –S–S– cross-links between chains at the allylic positions.;;More cross-links give a harder, less elastic material; 3–5 % sulfur gives tyre-type rubber."
+   }
+  ]
+ },
+ {
+  "stem": "07_Aromatic",
+  "title": "^9\\. The EAS reactions one by one",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Nitration and sulfonation of benzene",
+    "steps": "Nitration: HNO₃ + H₂SO₄ → NO₂⁺. The arene attacks NO₂⁺ to give the arenium ion, and HSO₄⁻ removes H⁺: nitrobenzene. The reaction is irreversible.;;Sulfonation: fuming H₂SO₄ gives SO₃, which the arene attacks; proton loss gives benzenesulfonic acid.;;Sulfonation is reversible: heating the sulfonic acid in dilute aqueous acid removes SO₃H, so it can serve as a blocking group.;;Halogenation uses X₂ with a Lewis acid; Friedel–Crafts alkylation and acylation use R–Cl or RCOCl with AlCl₃."
+   }
+  ]
+ },
+ {
+  "stem": "07_Aromatic",
+  "title": "^10\\. Directing and activating effects: the reasons",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Why substituents direct ortho/para or meta",
+    "steps": "Draw the arenium ion for attack at the ortho, meta and para positions and compare their resonance forms.;;An electron-donating group (OH, NH₂, alkyl) can stabilise the positive charge when attack is at ortho or para, because the positive charge falls on the carbon bearing the group. So it is activating and ortho/para-directing.;;An electron-withdrawing group (NO₂, C=O, CN) puts positive charge next to a positive-bearing carbon in the ortho and para intermediates, which is destabilising. Meta attack avoids this, so the group is deactivating and meta-directing.;;Halogens are an exception: they withdraw by induction (deactivating) but donate by resonance, so they direct ortho/para."
+   }
+  ]
+ },
+ {
+  "stem": "07_Aromatic",
+  "title": "^12\\. Side-chain reactions of alkylbenzenes",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Benzylic bromination, step by step",
+    "steps": "Reagent: NBS with light or a peroxide (or Br₂ and light), on toluene.;;Initiation: Br• forms from a trace of Br₂.;;Propagation 1: Br• removes a benzylic hydrogen, giving the resonance-stabilised benzyl radical and HBr.;;Propagation 2: the benzyl radical takes Br from Br₂ to give benzyl bromide and a new Br•. With excess halogen, the side chain is substituted again (PhCHBr₂, PhCBr₃)."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^8\\. Ammonolysis of alkyl halides",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Ammonolysis and why it over-alkylates",
+    "steps": "Step 1: ammonia attacks R–X by SN2, giving R–NH₃⁺ X⁻; excess ammonia deprotonates it to the primary amine.;;Step 2: the primary amine is more nucleophilic than ammonia, so it attacks another R–X, giving the secondary amine.;;Step 3: this repeats to the tertiary amine and finally the quaternary ammonium salt, so a mixture forms.;;A large excess of NH₃ favours the primary amine; the Gabriel synthesis gives pure primary amines."
+   }
+  ]
+ },
+ {
+  "stem": "11_Amines",
+  "title": "^16\\. The nitrous acid reactions",
+  "widgets": [
+   {
+    "type": "steps",
+    "title": "Nitrous acid with 1°, 2° and 3° amines",
+    "steps": "Nitrous acid is made in situ from NaNO₂ + HCl, and the electrophile is NO⁺.;;Primary aliphatic amine: gives an unstable diazonium ion that loses N₂, giving a carbocation and a mixture of alcohols and alkenes. Primary aromatic amine at 0–5 °C: gives a stable diazonium salt.;;Secondary amine: gives an N-nitrosoamine, R₂N–N=O (yellow oil).;;Tertiary aliphatic amine: forms only a salt (no stable product). Tertiary aromatic amine: nitrosation at the para carbon of the ring (a C-nitroso compound)."
+   }
+  ]
  }
 ]

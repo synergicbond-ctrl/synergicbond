@@ -1,0 +1,155 @@
+{
+ "file": "03c_Structural_Isomerism_Notes.html",
+ "partition_level": 3,
+ "sections_total": 16,
+ "sections_passed": 16,
+ "svg_in_sections": 273,
+ "svg_in_file": 273,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "03c_Structural_Isomerism_Notes:1-chain-skeletal-isomerism/heading001",
+   "title": "1. Chain (skeletal) isomerism",
+   "dir": "000",
+   "pass": true,
+   "svg": 7,
+   "blocks": 12
+  },
+  {
+   "order": 1,
+   "heading_id": "03c_Structural_Isomerism_Notes:2-position-isomerism/heading001",
+   "title": "2. Position isomerism",
+   "dir": "001",
+   "pass": true,
+   "svg": 9,
+   "blocks": 14
+  },
+  {
+   "order": 2,
+   "heading_id": "03c_Structural_Isomerism_Notes:3-functional-group-isomerism/heading001",
+   "title": "3. Functional-group isomerism",
+   "dir": "002",
+   "pass": true,
+   "svg": 8,
+   "blocks": 11
+  },
+  {
+   "order": 3,
+   "heading_id": "03c_Structural_Isomerism_Notes:4-metamerism/heading001",
+   "title": "4. Metamerism",
+   "dir": "003",
+   "pass": true,
+   "svg": 7,
+   "blocks": 12
+  },
+  {
+   "order": 4,
+   "heading_id": "03c_Structural_Isomerism_Notes:5-ring-chain-isomerism/heading001",
+   "title": "5. Ring-chain isomerism",
+   "dir": "004",
+   "pass": true,
+   "svg": 8,
+   "blocks": 11
+  },
+  {
+   "order": 5,
+   "heading_id": "03c_Structural_Isomerism_Notes:6-tautomerism-keto-enol-and-why-the-keto/heading001",
+   "title": "6. Tautomerism: keto-enol and why the keto form usually wins",
+   "dir": "005",
+   "pass": true,
+   "svg": 6,
+   "blocks": 11
+  },
+  {
+   "order": 6,
+   "heading_id": "03c_Structural_Isomerism_Notes:7-other-tautomerisms-imine-enamine-nitro/heading001",
+   "title": "7. Other tautomerisms: imine-enamine, nitro-aci and lactam-lactim",
+   "dir": "006",
+   "pass": true,
+   "svg": 6,
+   "blocks": 11
+  },
+  {
+   "order": 7,
+   "heading_id": "03c_Structural_Isomerism_Notes:8-degrees-of-unsaturation-and-what-a-for/heading001",
+   "title": "8. Degrees of unsaturation and what a formula tells you",
+   "dir": "007",
+   "pass": true,
+   "svg": 4,
+   "blocks": 9
+  },
+  {
+   "order": 8,
+   "heading_id": "03c_Structural_Isomerism_Notes:9-a-systematic-method-for-enumerating-is/heading001",
+   "title": "9. A systematic method for enumerating isomers",
+   "dir": "008",
+   "pass": true,
+   "svg": 4,
+   "blocks": 9
+  },
+  {
+   "order": 9,
+   "heading_id": "03c_Structural_Isomerism_Notes:10-isomer-families-by-formula-type/heading001",
+   "title": "10. Isomer families by formula type",
+   "dir": "009",
+   "pass": true,
+   "svg": 7,
+   "blocks": 10
+  },
+  {
+   "order": 10,
+   "heading_id": "03c_Structural_Isomerism_Notes:11-isomerism-in-aromatic-compounds/heading001",
+   "title": "11. Isomerism in aromatic compounds",
+   "dir": "010",
+   "pass": true,
+   "svg": 14,
+   "blocks": 13
+  },
+  {
+   "order": 11,
+   "heading_id": "03c_Structural_Isomerism_Notes:12-counting-substituted-derivatives-by-s/heading001",
+   "title": "12. Counting substituted derivatives by symmetry",
+   "dir": "011",
+   "pass": true,
+   "svg": 5,
+   "blocks": 11
+  },
+  {
+   "order": 12,
+   "heading_id": "03c_Structural_Isomerism_Notes:13-chemical-tests-that-distinguish-funct/heading001",
+   "title": "13. Chemical tests that distinguish functional isomers",
+   "dir": "012",
+   "pass": true,
+   "svg": 10,
+   "blocks": 9
+  },
+  {
+   "order": 13,
+   "heading_id": "03c_Structural_Isomerism_Notes:14-properties-of-isomers-boiling-point-a/heading001",
+   "title": "14. Properties of isomers: boiling point and acidity",
+   "dir": "013",
+   "pass": true,
+   "svg": 5,
+   "blocks": 11
+  },
+  {
+   "order": 14,
+   "heading_id": "03c_Structural_Isomerism_Notes:15-the-boundary-between-structural-isome/heading001",
+   "title": "15. The boundary between structural isomerism and stereoisomerism",
+   "dir": "014",
+   "pass": true,
+   "svg": 6,
+   "blocks": 11
+  },
+  {
+   "order": 15,
+   "heading_id": "03c_Structural_Isomerism_Notes:practice-problems-with-full-solutions/heading001",
+   "title": "Practice problems with full solutions",
+   "dir": "015",
+   "pass": true,
+   "svg": 167,
+   "blocks": 248
+  }
+ ]
+}

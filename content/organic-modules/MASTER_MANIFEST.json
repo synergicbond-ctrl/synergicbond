@@ -12010,5 +12010,181 @@
   "blocks": 251,
   "svg": 76,
   "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "000",
+  "heading_id": "03c_Structural_Isomerism_Notes:1-chain-skeletal-isomerism/heading001",
+  "title": "1. Chain (skeletal) isomerism",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 12,
+  "svg": 7,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "001",
+  "heading_id": "03c_Structural_Isomerism_Notes:2-position-isomerism/heading001",
+  "title": "2. Position isomerism",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 14,
+  "svg": 9,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "002",
+  "heading_id": "03c_Structural_Isomerism_Notes:3-functional-group-isomerism/heading001",
+  "title": "3. Functional-group isomerism",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 11,
+  "svg": 8,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "003",
+  "heading_id": "03c_Structural_Isomerism_Notes:4-metamerism/heading001",
+  "title": "4. Metamerism",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 12,
+  "svg": 7,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "004",
+  "heading_id": "03c_Structural_Isomerism_Notes:5-ring-chain-isomerism/heading001",
+  "title": "5. Ring-chain isomerism",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 11,
+  "svg": 8,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "005",
+  "heading_id": "03c_Structural_Isomerism_Notes:6-tautomerism-keto-enol-and-why-the-keto/heading001",
+  "title": "6. Tautomerism: keto-enol and why the keto form usually wins",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 11,
+  "svg": 6,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "006",
+  "heading_id": "03c_Structural_Isomerism_Notes:7-other-tautomerisms-imine-enamine-nitro/heading001",
+  "title": "7. Other tautomerisms: imine-enamine, nitro-aci and lactam-lactim",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 11,
+  "svg": 6,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "007",
+  "heading_id": "03c_Structural_Isomerism_Notes:8-degrees-of-unsaturation-and-what-a-for/heading001",
+  "title": "8. Degrees of unsaturation and what a formula tells you",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 9,
+  "svg": 4,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "008",
+  "heading_id": "03c_Structural_Isomerism_Notes:9-a-systematic-method-for-enumerating-is/heading001",
+  "title": "9. A systematic method for enumerating isomers",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 9,
+  "svg": 4,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "009",
+  "heading_id": "03c_Structural_Isomerism_Notes:10-isomer-families-by-formula-type/heading001",
+  "title": "10. Isomer families by formula type",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 10,
+  "svg": 7,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "010",
+  "heading_id": "03c_Structural_Isomerism_Notes:11-isomerism-in-aromatic-compounds/heading001",
+  "title": "11. Isomerism in aromatic compounds",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 13,
+  "svg": 14,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "011",
+  "heading_id": "03c_Structural_Isomerism_Notes:12-counting-substituted-derivatives-by-s/heading001",
+  "title": "12. Counting substituted derivatives by symmetry",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 11,
+  "svg": 5,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "012",
+  "heading_id": "03c_Structural_Isomerism_Notes:13-chemical-tests-that-distinguish-funct/heading001",
+  "title": "13. Chemical tests that distinguish functional isomers",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 9,
+  "svg": 10,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "013",
+  "heading_id": "03c_Structural_Isomerism_Notes:14-properties-of-isomers-boiling-point-a/heading001",
+  "title": "14. Properties of isomers: boiling point and acidity",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 11,
+  "svg": 5,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "014",
+  "heading_id": "03c_Structural_Isomerism_Notes:15-the-boundary-between-structural-isome/heading001",
+  "title": "15. The boundary between structural isomerism and stereoisomerism",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 11,
+  "svg": 6,
+  "verified_lossless": true
+ },
+ {
+  "file": "03c_Structural_Isomerism_Notes.html",
+  "section_dir": "015",
+  "heading_id": "03c_Structural_Isomerism_Notes:practice-problems-with-full-solutions/heading001",
+  "title": "Practice problems with full solutions",
+  "chapter": "Structural Isomerism",
+  "basis": "new generated content (spec-built, AI-written, AI-reviewed)",
+  "blocks": 248,
+  "svg": 167,
+  "verified_lossless": true
  }
 ]

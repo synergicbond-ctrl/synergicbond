@@ -1,0 +1,76 @@
+/* Organic course content: native site styling (dark, Synergic Bond tokens).
+   Fragments come from the chapter modules; their drawings were made for a light page,
+   so SVGs are inverted into the dark theme (hues are preserved). */
+.oc-content { color: var(--text-body); font-family: var(--font-sans); font-size: 1.02rem; line-height: 1.72; max-width: 62rem; margin-inline: auto; overflow-wrap: anywhere; }
+.oc-content h1, .oc-content h2, .oc-content h3, .oc-content h4 { font-family: var(--font-display); color: var(--foreground); letter-spacing: -0.01em; line-height: 1.25; }
+.oc-content h1 { font-size: 2rem; margin: 1.6rem 0 .6rem; }
+.oc-content h2 { font-size: 1.7rem; margin: 2.2rem 0 .7rem; font-weight: 800; }
+.oc-content h3 { font-size: 1.3rem; margin: 1.8rem 0 .5rem; padding-bottom: .25rem; border-bottom: 1px solid var(--border); font-weight: 800; }
+.oc-content h4 { font-size: 1.05rem; margin: 1.3rem 0 .3rem; font-weight: 700; }
+.oc-content p { margin: .65rem 0; }
+.oc-content ul, .oc-content ol { padding-left: 1.4rem; margin: .5rem 0; }
+.oc-content li { margin: .25rem 0; }
+.oc-content a { color: var(--accent); text-underline-offset: 3px; }
+.oc-content b, .oc-content strong { color: var(--foreground); }
+.oc-content sub, .oc-content sup { line-height: 0; }
+.oc-content hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.oc-content code, .oc-content .formula { font-family: var(--font-mono); }
+
+/* drawings */
+.oc-content svg { max-width: 100%; height: auto; filter: invert(1) hue-rotate(180deg); }
+.oc-content .oc-anim svg, .oc-content .sb-anim svg { filter: none; }
+.oc-content .sch, .oc-content .fig { margin: .9rem 0; padding: .6rem .7rem; background: var(--surface); border: 1px solid var(--border); border-radius: .6rem; overflow-x: auto; text-align: center; color: var(--text-body); }
+.oc-content .sch .row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: .25rem .6rem; min-width: min-content; }
+.oc-content .sch .sp { display: inline-flex; align-items: center; gap: .3rem; }
+.oc-content .sch .m svg { display: block; max-width: none; height: auto; }
+.oc-content .sch .pl { font-weight: 700; color: var(--text-muted); }
+.oc-content .sch .ar { display: inline-flex; flex-direction: column; align-items: center; min-width: 3.2rem; font-size: .78rem; line-height: 1.15; }
+.oc-content .sch .rg { color: var(--text-body); text-align: center; max-width: 9rem; }
+.oc-content .sch .ln { font-size: 1.5rem; line-height: 1; color: var(--text-muted); }
+.oc-content .sch .mc { display: inline-flex; flex-direction: column; align-items: center; }
+.oc-content .sch .lb { font-size: .78rem; color: var(--text-body); text-align: center; max-width: 9rem; }
+.oc-content .cap { font-size: .82rem; color: var(--text-muted); text-align: center; margin-top: .25rem; }
+.oc-content .iso { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0; }
+.oc-content .iso .m { border: 1px solid var(--border); border-radius: .4rem; background: var(--surface); padding: .1rem; }
+.oc-content .tw { overflow-x: auto; margin: .8rem 0; }
+.oc-content .stk { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+
+/* callout boxes: chrome stays neutral, meaning colours are the content scale */
+.oc-content .box { margin: .8rem 0; padding: .6rem .95rem; border-left: 4px solid var(--accent); border-radius: 0 .5rem .5rem 0; background: var(--surface); }
+.oc-content .box .bl { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin-right: .45rem; }
+.oc-content .box.key { border-color: var(--accent); }
+.oc-content .box.trap { border-color: var(--chem-trap); } .oc-content .box.trap .bl { color: var(--chem-trap); }
+.oc-content .box.tip, .oc-content .box.ok { border-color: var(--chem-rule); } .oc-content .box.tip .bl, .oc-content .box.ok .bl { color: var(--chem-rule); }
+.oc-content .box.f { border-color: var(--chem-energy); font-family: var(--font-mono); font-size: .93rem; overflow-x: auto; }
+.oc-content .lbox { border-left: 4px solid var(--chem-bond); background: var(--surface); border-radius: 0 .5rem .5rem 0; padding: .4rem .8rem; margin: .5rem 0; }
+.oc-content .lbox .lbl { font-weight: 800; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--chem-bond); margin-right: .4rem; }
+.oc-content .chk { border: 1px dashed var(--border-strong); border-radius: .5rem; padding: .4rem .8rem; margin: .7rem 0; background: var(--surface); }
+.oc-content .stmt { font-weight: 600; background: var(--surface); border: 1px solid var(--border); border-radius: .4rem; padding: .4rem .7rem; margin: .5rem 0; }
+
+/* worked examples and practice problems */
+.oc-content .ex, .oc-content .pq { margin: 1rem 0; padding: .75rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: .6rem; }
+.oc-content .ex { border-left: 4px solid var(--accent); }
+.oc-content .pq { border-left: 4px solid var(--border-strong); }
+.oc-content .qh { margin-bottom: .2rem; }
+.oc-content .qh b { color: var(--accent); }
+.oc-content .pq .qh b { color: var(--text-faint); }
+.oc-content .tag { font-size: .7rem; padding: 0 .45rem; margin-left: .35rem; border-radius: .25rem; border: 1px solid var(--border); background: var(--surface-2); color: var(--text-muted); }
+.oc-content .opts p { margin: .2rem 0; padding-left: .3rem; }
+.oc-content details { margin-top: .6rem; }
+.oc-content summary { cursor: pointer; font-weight: 700; color: var(--accent); }
+.oc-content summary:hover { text-decoration: underline; }
+.oc-content .sol { margin-top: .4rem; padding: .5rem .9rem; border-radius: .5rem; background: var(--surface-2); border: 1px solid var(--border); }
+.oc-content ol.st { padding-left: 1.4rem; }
+.oc-content ol.st li::marker { color: var(--accent); font-weight: 700; }
+
+/* tables */
+.oc-content table { width: 100%; border-collapse: collapse; margin: .8rem 0; font-size: .92rem; }
+.oc-content th, .oc-content td { border: 1px solid var(--border); padding: .35rem .6rem; text-align: left; vertical-align: top; }
+.oc-content th { background: var(--surface-2); color: var(--foreground); }
+
+/* contents lists inside fragments */
+.oc-content .toc { background: var(--surface); border: 1px solid var(--border); border-radius: .6rem; padding: .6rem 1rem; columns: 2; }
+.oc-content .toc ol { list-style: none; padding-left: 0; margin: .3rem 0; }
+.oc-content .toc li { break-inside: avoid; font-size: .92rem; }
+.oc-content .toc a { text-decoration: none; color: var(--text-body); } .oc-content .toc a:hover { text-decoration: underline; color: var(--accent); }
+@media (max-width: 700px) { .oc-content { font-size: 1rem; } .oc-content .toc { columns: 1; } }

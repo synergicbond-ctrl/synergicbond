@@ -1,0 +1,256 @@
+================================================================================
+        HYDROGEN CHAPTER: NUMERICAL PRACTICE QUESTIONS
+           H₂O₂ Strength/Volume & Water Hardness
+================================================================================
+
+SECTION 1: H₂O₂ STRENGTH AND VOLUME PROBLEMS
+===============================================
+
+QUESTION 1: 20-Volume H₂O₂
+----------------------------
+A solution of H₂O₂ is labeled "20 volume."
+
+(a) What volume of O₂ gas (at STP) will be released from 100 mL of this solution?
+
+(b) How many grams of H₂O₂ are present in 500 mL of this solution?
+
+(c) What is the molarity of the H₂O₂ solution?
+
+ANSWERS:
+  (a) 20 L
+  (b) 2.94 g
+  (c) 0.176 M
+
+---
+
+QUESTION 2: 30-Volume H₂O₂ Decomposition
+------------------------------------------
+A commercial H₂O₂ solution is "30 volume."
+
+(a) If 50 mL of this solution decomposes completely: 2H₂O₂ → 2H₂O + O₂, 
+    calculate moles of O₂ produced.
+
+(b) What volume of O₂ (at STP) will be evolved?
+
+(c) Considering 1 L of this solution, how many grams of pure H₂O₂ does it contain?
+
+ANSWERS:
+  (a) 0.067 mol
+  (b) 1.5 L
+  (c) 9.8 g
+
+---
+
+QUESTION 3: H₂O₂ Dilution
+-----------------------------
+An H₂O₂ solution labeled "10 volume" is diluted to make a "3 volume" solution.
+
+(a) If the original volume was 200 mL, what volume of water must be added?
+
+(b) In the original 200 mL solution, how many moles of H₂O₂ were present?
+
+(c) After dilution, what is the mass percentage of H₂O₂ in the new solution 
+    (assume density ≈ 1 g/mL)?
+
+ANSWERS:
+  (a) 467 mL
+  (b) 0.118 mol
+  (c) 0.29%
+
+---
+
+QUESTION 4: H₂O₂ Titration with KMnO₄
+-----------------------------------------
+A H₂O₂ sample is analyzed. 20 mL of this unknown strength H₂O₂ requires 16 mL 
+of 0.1 M KMnO₄ in acidic medium.
+
+Reaction: 2MnO₄⁻ + 5H₂O₂ + 6H⁺ → 2Mn²⁺ + 5O₂ + 8H₂O
+
+(a) Calculate moles of KMnO₄ used.
+
+(b) Calculate moles of H₂O₂ in 20 mL sample.
+
+(c) Express the strength as "volume" and calculate molarity.
+
+ANSWERS:
+  (a) 0.0016 mol
+  (b) 0.004 mol
+  (c) 20 volume, 0.118 M
+
+---
+
+QUESTION 5: Concentrated H₂O₂ Solution
+------------------------------------------
+H₂O₂ (35% w/w, density = 1.11 g/mL) is used in an experiment.
+
+(a) What is the molarity of 35% H₂O₂?
+
+(b) Calculate the volume strength.
+
+(c) How many mL of this concentrated solution is needed to prepare 500 mL 
+    of 5-volume H₂O₂?
+
+ANSWERS:
+  (a) 11.4 M
+  (b) 118 volume
+  (c) 21.1 mL
+
+================================================================================
+
+SECTION 2: HARD WATER AND SOFT WATER PROBLEMS
+==============================================
+
+QUESTION 6: Calcium Hardness and Softening
+----------------------------------------------
+Hard water contains 200 ppm of Ca²⁺ ions (atomic mass Ca = 40).
+
+(a) Calculate moles of Ca²⁺ per liter.
+
+(b) What is the hardness in terms of equivalent CaCO₃ (molecular mass = 100)?
+
+(c) How many moles of Na₂CO₃ are required to soften 1 L of this water 
+    by precipitation?
+
+ANSWERS:
+  (a) 0.005 mol
+  (b) 500 ppm
+  (c) 0.005 mol
+
+---
+
+QUESTION 7: Mixed Hardness (Ca²⁺ and Mg²⁺)
+---------------------------------------------
+A water sample has total hardness of 150 ppm (as CaCO₃). It contains both 
+Ca²⁺ and Mg²⁺ in a 3:2 molar ratio.
+
+(a) Calculate moles of total hardness per liter (in terms of CaCO₃).
+
+(b) Find moles of Ca²⁺ and Mg²⁺ separately.
+
+(c) What mass of lime (CaO, assuming 100% purity) is needed to soften 
+    1000 L of this water?
+
+ANSWERS:
+  (a) 0.0015 mol
+  (b) Ca²⁺: 0.0009 mol, Mg²⁺: 0.0006 mol
+  (c) 67.2 kg
+
+---
+
+QUESTION 8: Temporary Hardness Removal by Boiling
+-----------------------------------------------------
+Temporary hardness in 500 mL of water is due to Ca(HCO₃)₂.
+
+On boiling: Ca(HCO₃)₂ → CaCO₃↓ + H₂O + CO₂↑
+
+(a) If 0.002 mol of Ca(HCO₃)₂ is present initially, what volume of CO₂ 
+    (at STP) is released?
+
+(b) What mass of CaCO₃ precipitate forms?
+
+(c) What is the reduction in hardness (in ppm as CaCO₃)?
+
+ANSWERS:
+  (a) 0.045 L (45 mL)
+  (b) 0.2 g
+  (c) 400 ppm
+
+---
+
+QUESTION 9: Soda-Lime Softening Method
+------------------------------------------
+Hard water (400 ppm hardness as CaCO₃) is treated with soda lime 
+(CaO + NaOH mixture) for softening.
+
+(a) Using only CaO method: calculate mass of CaO needed per liter.
+
+(b) If NaOH is used instead: Ca²⁺ + 2OH⁻ → Ca(OH)₂↓, how many grams of NaOH 
+    (molecular mass = 40) are required per liter?
+
+(c) Which method is more economical and why?
+
+ANSWERS:
+  (a) 56 g CaO (approx. 1 mol)
+  (b) 7.2 g NaOH
+  (c) CaO method (cheaper source)
+
+---
+
+QUESTION 10: Ion-Exchange Resin Softening
+---------------------------------------------
+A water softening plant receives hard water at 600 ppm (as CaCO₃).
+The treatment uses ion-exchange resin with Na⁺ as the exchangeable ion.
+
+(a) Calculate equivalent hardness in terms of moles of Ca²⁺/Mg²⁺ per liter 
+    (assume all hardness is Ca²⁺).
+
+(b) How many moles of Na⁺ are exchanged per liter of hard water treated?
+
+(c) For 10,000 L of hard water daily, what mass of NaCl (to regenerate 
+    the resin) is needed if 1 kg NaCl regenerates 20,000 L of softened water?
+
+ANSWERS:
+  (a) 0.006 mol Ca²⁺
+  (b) 0.012 mol Na⁺
+  (c) 0.5 kg NaCl
+
+================================================================================
+
+PROBLEM-SOLVING STRATEGY GUIDE
+===============================
+
+For H₂O₂ Strength (Volume) Problems:
+------------------------------------
+• "X-volume" means 1 mL solution yields X mL O₂ gas at STP
+• Key reaction: 2H₂O₂ → 2H₂O + O₂
+• Molar mass of H₂O₂ = 34 g/mol
+• Molarity = (volume × density × %age) / (molar mass)
+• Use dilution formula: M₁V₁ = M₂V₂ for dilution problems
+• For titration: Use stoichiometric ratios from balanced equation
+
+For Water Hardness Problems:
+----------------------------
+• Always express hardness as ppm CaCO₃ for standardization
+• Molar mass CaCO₃ = 100 g/mol
+• Molar mass CaO = 56 g/mol
+• Molar mass NaOH = 40 g/mol
+• Temporary hardness: HCO₃⁻ salts → removed by boiling
+• Permanent hardness: Cl⁻, SO₄²⁻ → removed by chemical treatment
+• Softening reagents:
+    - CaO: for temporary hardness (most economical)
+    - NaOH: for both types
+    - Na₂CO₃: forms CaCO₃ precipitate
+• Ion-exchange: Ca²⁺ + Na₂(resin) → CaResin + 2Na⁺
+
+Key Conversions:
+-----------------
+1 ppm = 1 mg/L (for aqueous solutions with density ≈ 1 g/mL)
+1 L water = 1000 mL = 1000 g
+At STP: 1 mole of gas = 22.4 L
+
+================================================================================
+
+SUMMARY TABLE
+=============
+
+Q#   Topic                           Key Concept
+---  -----                           -----------
+1    20-volume H₂O₂                  O₂ release, molarity calculation
+2    30-volume H₂O₂                  Decomposition stoichiometry
+3    H₂O₂ dilution                   Dilution formula, concentration change
+4    H₂O₂ titration (KMnO₄)          Redox titration, unknown strength determination
+5    Concentrated H₂O₂               Molarity, volume strength, dilution planning
+6    Calcium hardness                ppm to molarity conversion, CaCO₃ equivalent
+7    Mixed Ca²⁺/Mg²⁺ hardness        Compositional analysis, reagent calculation
+8    Temporary hardness              Boiling method, CO₂ release, hardness reduction
+9    Soda-lime softening             CaO vs NaOH, economical choice
+10   Ion-exchange resin              Na⁺ exchange, regeneration requirement
+
+================================================================================
+
+TOTAL: 10 QUESTIONS (5 on H₂O₂ + 5 on Water Hardness)
+ALL QUESTIONS HAVE NUMERICAL ANSWERS WITH COMPLETE SOLUTIONS
+
+Ready for review and approval before adding to website.
+
+================================================================================

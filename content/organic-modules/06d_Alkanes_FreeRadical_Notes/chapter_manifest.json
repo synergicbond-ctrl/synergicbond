@@ -1,0 +1,137 @@
+{
+ "file": "06d_Alkanes_FreeRadical_Notes.html",
+ "partition_level": 3,
+ "sections_total": 14,
+ "sections_passed": 14,
+ "svg_in_sections": 110,
+ "svg_in_file": 110,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:1-bonding-and-sp-3-geometry/heading001",
+   "title": "1. Bonding and sp 3 geometry",
+   "dir": "000",
+   "pass": true,
+   "svg": 4,
+   "blocks": 8
+  },
+  {
+   "order": 1,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:2-nomenclature-recap-and-physical-proper/heading001",
+   "title": "2. Nomenclature recap and physical properties",
+   "dir": "001",
+   "pass": true,
+   "svg": 4,
+   "blocks": 8
+  },
+  {
+   "order": 2,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:3-preparation-i-hydrogenation-reduction-/heading001",
+   "title": "3. Preparation I: hydrogenation, reduction of halides and Grignard reagents",
+   "dir": "002",
+   "pass": true,
+   "svg": 6,
+   "blocks": 10
+  },
+  {
+   "order": 3,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:4-preparation-ii-wurtz-kolbe-soda-lime-c/heading001",
+   "title": "4. Preparation II: Wurtz, Kolbe, soda lime, Corey–House and carbonyl reduction",
+   "dir": "003",
+   "pass": true,
+   "svg": 8,
+   "blocks": 12
+  },
+  {
+   "order": 4,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:5-free-radical-chain-halogenation-the-me/heading001",
+   "title": "5. Free-radical chain halogenation: the mechanism",
+   "dir": "004",
+   "pass": true,
+   "svg": 6,
+   "blocks": 8
+  },
+  {
+   "order": 5,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:6-energetics-bond-energies-and-the-hammo/heading001",
+   "title": "6. Energetics, bond energies and the Hammond postulate",
+   "dir": "005",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 6,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:7-selectivity-and-calculation-of-product/heading001",
+   "title": "7. Selectivity and calculation of product distribution",
+   "dir": "006",
+   "pass": true,
+   "svg": 2,
+   "blocks": 8
+  },
+  {
+   "order": 7,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:8-stereochemistry-of-radical-halogenatio/heading001",
+   "title": "8. Stereochemistry of radical halogenation",
+   "dir": "007",
+   "pass": true,
+   "svg": 5,
+   "blocks": 9
+  },
+  {
+   "order": 8,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:9-allylic-and-benzylic-halogenation-radi/heading001",
+   "title": "9. Allylic and benzylic halogenation; radical stability",
+   "dir": "008",
+   "pass": true,
+   "svg": 6,
+   "blocks": 9
+  },
+  {
+   "order": 9,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:10-combustion-pyrolysis-isomerisation-ar/heading001",
+   "title": "10. Combustion, pyrolysis, isomerisation, aromatisation and other reactions",
+   "dir": "009",
+   "pass": true,
+   "svg": 6,
+   "blocks": 10
+  },
+  {
+   "order": 10,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:11-conformations-of-ethane-and-butane-an/heading001",
+   "title": "11. Conformations of ethane and butane, and cycloalkane strain",
+   "dir": "010",
+   "pass": true,
+   "svg": 4,
+   "blocks": 9
+  },
+  {
+   "order": 11,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:12-cfcs-and-ozone-depletion-the-peroxide/heading001",
+   "title": "12. CFCs and ozone depletion; the peroxide effect",
+   "dir": "011",
+   "pass": true,
+   "svg": 5,
+   "blocks": 7
+  },
+  {
+   "order": 12,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:13-counting-monohalogenated-products-inc/heading001",
+   "title": "13. Counting monohalogenated products including stereoisomers",
+   "dir": "012",
+   "pass": true,
+   "svg": 3,
+   "blocks": 8
+  },
+  {
+   "order": 13,
+   "heading_id": "06d_Alkanes_FreeRadical_Notes:practice-problems-with-full-solutions/heading001",
+   "title": "Practice problems with full solutions",
+   "dir": "013",
+   "pass": true,
+   "svg": 51,
+   "blocks": 281
+  }
+ ]
+}

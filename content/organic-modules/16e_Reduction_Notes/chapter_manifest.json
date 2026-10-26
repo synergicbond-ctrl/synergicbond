@@ -1,0 +1,146 @@
+{
+ "file": "16e_Reduction_Notes.html",
+ "partition_level": 3,
+ "sections_total": 15,
+ "sections_passed": 15,
+ "svg_in_sections": 160,
+ "svg_in_file": 160,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "16e_Reduction_Notes:1-what-reduction-means-in-organic-chemis/heading001",
+   "title": "1. What reduction means in organic chemistry",
+   "dir": "000",
+   "pass": true,
+   "svg": 4,
+   "blocks": 8
+  },
+  {
+   "order": 1,
+   "heading_id": "16e_Reduction_Notes:2-hydride-reagents-compared/heading001",
+   "title": "2. Hydride reagents compared",
+   "dir": "001",
+   "pass": true,
+   "svg": 5,
+   "blocks": 7
+  },
+  {
+   "order": 2,
+   "heading_id": "16e_Reduction_Notes:3-stereochemistry-of-hydride-attack/heading001",
+   "title": "3. Stereochemistry of hydride attack",
+   "dir": "002",
+   "pass": true,
+   "svg": 4,
+   "blocks": 7
+  },
+  {
+   "order": 3,
+   "heading_id": "16e_Reduction_Notes:4-catalytic-hydrogenation-mode-and-selec/heading001",
+   "title": "4. Catalytic hydrogenation: mode and selectivity",
+   "dir": "003",
+   "pass": true,
+   "svg": 4,
+   "blocks": 7
+  },
+  {
+   "order": 4,
+   "heading_id": "16e_Reduction_Notes:5-heats-of-hydrogenation-and-alkene-stab/heading001",
+   "title": "5. Heats of hydrogenation and alkene stability",
+   "dir": "004",
+   "pass": true,
+   "svg": 3,
+   "blocks": 8
+  },
+  {
+   "order": 5,
+   "heading_id": "16e_Reduction_Notes:6-hydrogenation-of-arenes-and-of-other-f/heading001",
+   "title": "6. Hydrogenation of arenes and of other functional groups",
+   "dir": "005",
+   "pass": true,
+   "svg": 7,
+   "blocks": 8
+  },
+  {
+   "order": 6,
+   "heading_id": "16e_Reduction_Notes:7-dissolving-metal-reductions/heading001",
+   "title": "7. Dissolving-metal reductions",
+   "dir": "006",
+   "pass": true,
+   "svg": 6,
+   "blocks": 10
+  },
+  {
+   "order": 7,
+   "heading_id": "16e_Reduction_Notes:8-deoxygenation-of-carbonyl-groups-c-o-t/heading001",
+   "title": "8. Deoxygenation of carbonyl groups: C=O to CH 2",
+   "dir": "007",
+   "pass": true,
+   "svg": 6,
+   "blocks": 7
+  },
+  {
+   "order": 8,
+   "heading_id": "16e_Reduction_Notes:9-reduction-of-carboxylic-acid-derivativ/heading001",
+   "title": "9. Reduction of carboxylic acid derivatives",
+   "dir": "008",
+   "pass": true,
+   "svg": 4,
+   "blocks": 7
+  },
+  {
+   "order": 9,
+   "heading_id": "16e_Reduction_Notes:10-reduction-of-nitro-azide-oxime-and-im/heading001",
+   "title": "10. Reduction of nitro, azide, oxime and imine groups; reductive amination",
+   "dir": "009",
+   "pass": true,
+   "svg": 5,
+   "blocks": 8
+  },
+  {
+   "order": 10,
+   "heading_id": "16e_Reduction_Notes:11-meerwein-ponndorf-verley-reduction-tr/heading001",
+   "title": "11. Meerwein–Ponndorf–Verley reduction, transfer hydrogenation and diimide",
+   "dir": "010",
+   "pass": true,
+   "svg": 4,
+   "blocks": 7
+  },
+  {
+   "order": 11,
+   "heading_id": "16e_Reduction_Notes:12-hydride-opening-of-epoxides/heading001",
+   "title": "12. Hydride opening of epoxides",
+   "dir": "011",
+   "pass": true,
+   "svg": 6,
+   "blocks": 7
+  },
+  {
+   "order": 12,
+   "heading_id": "16e_Reduction_Notes:13-chemoselectivity-which-group-reduces-/heading001",
+   "title": "13. Chemoselectivity: which group reduces first",
+   "dir": "012",
+   "pass": true,
+   "svg": 4,
+   "blocks": 7
+  },
+  {
+   "order": 13,
+   "heading_id": "16e_Reduction_Notes:14-counting-hydrogen-and-hydride-equival/heading001",
+   "title": "14. Counting hydrogen and hydride equivalents",
+   "dir": "013",
+   "pass": true,
+   "svg": 1,
+   "blocks": 7
+  },
+  {
+   "order": 14,
+   "heading_id": "16e_Reduction_Notes:practice-problems-with-full-solutions/heading001",
+   "title": "Practice problems with full solutions",
+   "dir": "014",
+   "pass": true,
+   "svg": 97,
+   "blocks": 269
+  }
+ ]
+}

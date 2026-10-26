@@ -1,0 +1,146 @@
+{
+ "file": "09d_Nucleophilic_Substitution_Notes.html",
+ "partition_level": 3,
+ "sections_total": 15,
+ "sections_passed": 15,
+ "svg_in_sections": 98,
+ "svg_in_file": 98,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:1-the-sn2-mechanism-backside-attack-and-/heading001",
+   "title": "1. The SN2 mechanism: backside attack and inversion",
+   "dir": "000",
+   "pass": true,
+   "svg": 2,
+   "blocks": 6
+  },
+  {
+   "order": 1,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:2-structure-and-sn2-reactivity-steric-ef/heading001",
+   "title": "2. Structure and SN2 reactivity: steric effects",
+   "dir": "001",
+   "pass": true,
+   "svg": 5,
+   "blocks": 7
+  },
+  {
+   "order": 2,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:3-the-sn1-mechanism-carbocations-and-rac/heading001",
+   "title": "3. The SN1 mechanism: carbocations and racemisation",
+   "dir": "002",
+   "pass": true,
+   "svg": 2,
+   "blocks": 6
+  },
+  {
+   "order": 3,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:4-carbocation-rearrangements-in-substitu/heading001",
+   "title": "4. Carbocation rearrangements in substitution",
+   "dir": "003",
+   "pass": true,
+   "svg": 4,
+   "blocks": 6
+  },
+  {
+   "order": 4,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:5-nucleophilicity-basicity-and-solvent-e/heading001",
+   "title": "5. Nucleophilicity, basicity and solvent effects",
+   "dir": "004",
+   "pass": true,
+   "svg": 0,
+   "blocks": 5
+  },
+  {
+   "order": 5,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:6-leaving-group-ability/heading001",
+   "title": "6. Leaving-group ability",
+   "dir": "005",
+   "pass": true,
+   "svg": 2,
+   "blocks": 5
+  },
+  {
+   "order": 6,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:7-allylic-benzylic-vinylic-aryl-and-brid/heading001",
+   "title": "7. Allylic, benzylic, vinylic, aryl and bridgehead halides",
+   "dir": "006",
+   "pass": true,
+   "svg": 5,
+   "blocks": 8
+  },
+  {
+   "order": 7,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:8-sni-and-neighbouring-group-participati/heading001",
+   "title": "8. SNi and neighbouring-group participation: retention of configuration",
+   "dir": "007",
+   "pass": true,
+   "svg": 4,
+   "blocks": 6
+  },
+  {
+   "order": 8,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:9-ambident-nucleophiles-and-the-kornblum/heading001",
+   "title": "9. Ambident nucleophiles and the Kornblum idea",
+   "dir": "008",
+   "pass": true,
+   "svg": 4,
+   "blocks": 6
+  },
+  {
+   "order": 9,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:10-stereochemical-bookkeeping-inversion-/heading001",
+   "title": "10. Stereochemical bookkeeping: inversion, retention and labels",
+   "dir": "009",
+   "pass": true,
+   "svg": 2,
+   "blocks": 6
+  },
+  {
+   "order": 10,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:11-kinetics-rate-laws-orders-and-the-arr/heading001",
+   "title": "11. Kinetics: rate laws, orders and the Arrhenius equation",
+   "dir": "010",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 11,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:12-substitution-as-a-synthetic-tool-name/heading001",
+   "title": "12. Substitution as a synthetic tool: named reactions and limits",
+   "dir": "011",
+   "pass": true,
+   "svg": 8,
+   "blocks": 7
+  },
+  {
+   "order": 12,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:13-intramolecular-substitution-rings-epo/heading001",
+   "title": "13. Intramolecular substitution: rings, epoxides and lactones",
+   "dir": "012",
+   "pass": true,
+   "svg": 6,
+   "blocks": 6
+  },
+  {
+   "order": 13,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:14-competition-with-elimination-and-subs/heading001",
+   "title": "14. Competition with elimination, and substitution at carbonyl carbon",
+   "dir": "013",
+   "pass": true,
+   "svg": 4,
+   "blocks": 6
+  },
+  {
+   "order": 14,
+   "heading_id": "09d_Nucleophilic_Substitution_Notes:practice-problems-with-full-solutions/heading001",
+   "title": "Practice problems with full solutions",
+   "dir": "014",
+   "pass": true,
+   "svg": 50,
+   "blocks": 269
+  }
+ ]
+}

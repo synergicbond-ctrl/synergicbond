@@ -1,0 +1,164 @@
+{
+ "file": "12d_Ethers_Epoxides_Notes.html",
+ "partition_level": 3,
+ "sections_total": 17,
+ "sections_passed": 17,
+ "svg_in_sections": 205,
+ "svg_in_file": 205,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "12d_Ethers_Epoxides_Notes:1-structure-and-bonding-of-ethers-and-ep/heading001",
+   "title": "1. Structure and bonding of ethers and epoxides",
+   "dir": "000",
+   "pass": true,
+   "svg": 6,
+   "blocks": 8
+  },
+  {
+   "order": 1,
+   "heading_id": "12d_Ethers_Epoxides_Notes:2-nomenclature-alkoxy-oxa-and-cyclic-nam/heading001",
+   "title": "2. Nomenclature: alkoxy, oxa and cyclic names",
+   "dir": "001",
+   "pass": true,
+   "svg": 10,
+   "blocks": 10
+  },
+  {
+   "order": 2,
+   "heading_id": "12d_Ethers_Epoxides_Notes:3-physical-properties/heading001",
+   "title": "3. Physical properties",
+   "dir": "002",
+   "pass": true,
+   "svg": 0,
+   "blocks": 7
+  },
+  {
+   "order": 3,
+   "heading_id": "12d_Ethers_Epoxides_Notes:4-preparation-of-ethers/heading001",
+   "title": "4. Preparation of ethers",
+   "dir": "003",
+   "pass": true,
+   "svg": 11,
+   "blocks": 8
+  },
+  {
+   "order": 4,
+   "heading_id": "12d_Ethers_Epoxides_Notes:5-williamson-synthesis-scope-and-choice-/heading001",
+   "title": "5. Williamson synthesis: scope and choice of reagents",
+   "dir": "004",
+   "pass": true,
+   "svg": 4,
+   "blocks": 7
+  },
+  {
+   "order": 5,
+   "heading_id": "12d_Ethers_Epoxides_Notes:6-cleavage-of-ethers-by-hi-and-hbr/heading001",
+   "title": "6. Cleavage of ethers by HI and HBr",
+   "dir": "005",
+   "pass": true,
+   "svg": 9,
+   "blocks": 8
+  },
+  {
+   "order": 6,
+   "heading_id": "12d_Ethers_Epoxides_Notes:7-peroxide-formation-and-safe-handling/heading001",
+   "title": "7. Peroxide formation and safe handling",
+   "dir": "006",
+   "pass": true,
+   "svg": 2,
+   "blocks": 7
+  },
+  {
+   "order": 7,
+   "heading_id": "12d_Ethers_Epoxides_Notes:8-claisen-rearrangement-of-allyl-aryl-et/heading001",
+   "title": "8. Claisen rearrangement of allyl aryl ethers",
+   "dir": "007",
+   "pass": true,
+   "svg": 6,
+   "blocks": 8
+  },
+  {
+   "order": 8,
+   "heading_id": "12d_Ethers_Epoxides_Notes:9-ethers-as-protecting-groups/heading001",
+   "title": "9. Ethers as protecting groups",
+   "dir": "008",
+   "pass": true,
+   "svg": 8,
+   "blocks": 8
+  },
+  {
+   "order": 9,
+   "heading_id": "12d_Ethers_Epoxides_Notes:10-epoxides-preparation/heading001",
+   "title": "10. Epoxides: preparation",
+   "dir": "009",
+   "pass": true,
+   "svg": 6,
+   "blocks": 8
+  },
+  {
+   "order": 10,
+   "heading_id": "12d_Ethers_Epoxides_Notes:11-epoxide-ring-opening-acidic-versus-ba/heading001",
+   "title": "11. Epoxide ring opening: acidic versus basic conditions",
+   "dir": "010",
+   "pass": true,
+   "svg": 6,
+   "blocks": 8
+  },
+  {
+   "order": 11,
+   "heading_id": "12d_Ethers_Epoxides_Notes:12-reactions-of-epoxides-with-nucleophil/heading001",
+   "title": "12. Reactions of epoxides with nucleophiles; polymerisation",
+   "dir": "011",
+   "pass": true,
+   "svg": 6,
+   "blocks": 9
+  },
+  {
+   "order": 12,
+   "heading_id": "12d_Ethers_Epoxides_Notes:13-crown-ethers-and-cation-binding/heading001",
+   "title": "13. Crown ethers and cation binding",
+   "dir": "012",
+   "pass": true,
+   "svg": 3,
+   "blocks": 8
+  },
+  {
+   "order": 13,
+   "heading_id": "12d_Ethers_Epoxides_Notes:14-thioethers-and-thiols-compared-with-e/heading001",
+   "title": "14. Thioethers and thiols compared with ethers and alcohols",
+   "dir": "013",
+   "pass": true,
+   "svg": 5,
+   "blocks": 6
+  },
+  {
+   "order": 14,
+   "heading_id": "12d_Ethers_Epoxides_Notes:15-tests-and-identification-of-ethers/heading001",
+   "title": "15. Tests and identification of ethers",
+   "dir": "014",
+   "pass": true,
+   "svg": 4,
+   "blocks": 5
+  },
+  {
+   "order": 15,
+   "heading_id": "12d_Ethers_Epoxides_Notes:16-counting-isomers-of-ethers-metamerism/heading001",
+   "title": "16. Counting isomers of ethers; metamerism",
+   "dir": "015",
+   "pass": true,
+   "svg": 3,
+   "blocks": 7
+  },
+  {
+   "order": 16,
+   "heading_id": "12d_Ethers_Epoxides_Notes:practice-problems-with-full-solutions/heading001",
+   "title": "Practice problems with full solutions",
+   "dir": "016",
+   "pass": true,
+   "svg": 116,
+   "blocks": 287
+  }
+ ]
+}

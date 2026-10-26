@@ -1,0 +1,146 @@
+{
+ "file": "14d_Phenols_Notes.html",
+ "partition_level": 3,
+ "sections_total": 15,
+ "sections_passed": 15,
+ "svg_in_sections": 160,
+ "svg_in_file": 160,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "14d_Phenols_Notes:1-structure-of-phenol-and-resonance-in-p/heading001",
+   "title": "1. Structure of phenol and resonance in phenol and phenoxide",
+   "dir": "000",
+   "pass": true,
+   "svg": 5,
+   "blocks": 10
+  },
+  {
+   "order": 1,
+   "heading_id": "14d_Phenols_Notes:2-acidity-of-phenol-comparison-with-alco/heading001",
+   "title": "2. Acidity of phenol: comparison with alcohols, water, carbonic acid and carboxylic acids",
+   "dir": "001",
+   "pass": true,
+   "svg": 3,
+   "blocks": 9
+  },
+  {
+   "order": 2,
+   "heading_id": "14d_Phenols_Notes:3-effect-of-substituents-on-the-acidity-/heading001",
+   "title": "3. Effect of substituents on the acidity of phenols",
+   "dir": "002",
+   "pass": true,
+   "svg": 2,
+   "blocks": 9
+  },
+  {
+   "order": 3,
+   "heading_id": "14d_Phenols_Notes:4-preparation-of-phenols/heading001",
+   "title": "4. Preparation of phenols",
+   "dir": "003",
+   "pass": true,
+   "svg": 7,
+   "blocks": 9
+  },
+  {
+   "order": 4,
+   "heading_id": "14d_Phenols_Notes:5-electrophilic-substitution-of-phenol-h/heading001",
+   "title": "5. Electrophilic substitution of phenol: halogenation, nitration, sulfonation, Friedel–Crafts",
+   "dir": "004",
+   "pass": true,
+   "svg": 9,
+   "blocks": 10
+  },
+  {
+   "order": 5,
+   "heading_id": "14d_Phenols_Notes:6-kolbe-schmitt-reimer-tiemann-and-gatte/heading001",
+   "title": "6. Kolbe–Schmitt, Reimer–Tiemann and Gattermann reactions",
+   "dir": "005",
+   "pass": true,
+   "svg": 6,
+   "blocks": 9
+  },
+  {
+   "order": 6,
+   "heading_id": "14d_Phenols_Notes:7-reactions-of-the-oh-group-ethers-ester/heading001",
+   "title": "7. Reactions of the OH group: ethers, esters, Schotten–Baumann, Williamson",
+   "dir": "006",
+   "pass": true,
+   "svg": 9,
+   "blocks": 9
+  },
+  {
+   "order": 7,
+   "heading_id": "14d_Phenols_Notes:8-oxidation-and-reduction-of-phenols/heading001",
+   "title": "8. Oxidation and reduction of phenols",
+   "dir": "007",
+   "pass": true,
+   "svg": 8,
+   "blocks": 9
+  },
+  {
+   "order": 8,
+   "heading_id": "14d_Phenols_Notes:9-coupling-of-phenols-with-diazonium-sal/heading001",
+   "title": "9. Coupling of phenols with diazonium salts",
+   "dir": "008",
+   "pass": true,
+   "svg": 9,
+   "blocks": 7
+  },
+  {
+   "order": 9,
+   "heading_id": "14d_Phenols_Notes:10-claisen-and-fries-rearrangements/heading001",
+   "title": "10. Claisen and Fries rearrangements",
+   "dir": "009",
+   "pass": true,
+   "svg": 6,
+   "blocks": 9
+  },
+  {
+   "order": 10,
+   "heading_id": "14d_Phenols_Notes:11-phenol-formaldehyde-resins-and-other-/heading001",
+   "title": "11. Phenol–formaldehyde resins and other condensation products",
+   "dir": "010",
+   "pass": true,
+   "svg": 10,
+   "blocks": 9
+  },
+  {
+   "order": 11,
+   "heading_id": "14d_Phenols_Notes:12-chemical-tests-for-phenols/heading001",
+   "title": "12. Chemical tests for phenols",
+   "dir": "011",
+   "pass": true,
+   "svg": 2,
+   "blocks": 7
+  },
+  {
+   "order": 12,
+   "heading_id": "14d_Phenols_Notes:13-separation-of-phenols-by-acid-base-ex/heading001",
+   "title": "13. Separation of phenols by acid–base extraction",
+   "dir": "012",
+   "pass": true,
+   "svg": 0,
+   "blocks": 6
+  },
+  {
+   "order": 13,
+   "heading_id": "14d_Phenols_Notes:14-important-phenols-and-their-uses/heading001",
+   "title": "14. Important phenols and their uses",
+   "dir": "013",
+   "pass": true,
+   "svg": 7,
+   "blocks": 9
+  },
+  {
+   "order": 14,
+   "heading_id": "14d_Phenols_Notes:practice-problems-with-full-solutions/heading001",
+   "title": "Practice problems with full solutions",
+   "dir": "014",
+   "pass": true,
+   "svg": 77,
+   "blocks": 302
+  }
+ ]
+}

@@ -398,6 +398,16 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     description: "Bond fission, carbocations, carbanions, radicals, carbenes, inductive/resonance/hyperconjugation/electromeric effects, aromaticity, and acid-base strength — with 25 JEE Advanced-pattern questions.",
   },
   {
+    id: "reaction-intermediates",
+    syllabusId: "general-organic-chemistry",
+    sectionLabel: "Reaction intermediates deep dive",
+    title: "Reaction Intermediates",
+    href: "/learn/jee-advanced/organic-chemistry/reaction-intermediates",
+    lessonLabel: "14 parts",
+    premium: true,
+    description: "Carbocations in depth (generation, stability orders, rearrangements, non-classical ions), carbanions, free radicals, carbenes, nitrenes, benzyne and radical ions — with arrow-validated mechanisms and worked JEE Advanced-pattern problems.",
+  },
+  {
     id: "hydrocarbons",
     syllabusId: "hydrocarbons",
     title: "Hydrocarbons",
@@ -495,6 +505,11 @@ export interface CourseGroupCard {
 }
 
 export const COURSE_GROUP_CARDS: Record<string, CourseGroupCard> = {
+  "general-organic-chemistry": {
+    href: "/learn/jee-advanced/organic-chemistry/goc",
+    description:
+      "General Organic Chemistry in two parts — the free GOC chapter (bond fission, electronic effects, aromaticity, acid–base strength) and the Reaction Intermediates deep dive (carbocations, carbanions, free radicals, carbenes, nitrenes, benzyne, radical ions with worked problems).",
+  },
   "mole-concept": {
     href: "/notes/mole-concept",
     description:

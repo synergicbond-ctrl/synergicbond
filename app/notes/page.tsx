@@ -3,6 +3,7 @@ import { NOTES_CHAPTERS } from "@/lib/notesEngine";
 import { isFreeChapter } from "@/lib/freeChapters";
 import { createClient } from "@/lib/supabase/server";
 import { isProActive } from "@/lib/subscription";
+import Link from "next/link";
 
 export const metadata = {
   title: "Chapter Notes — SYNERGIC BOND",
@@ -33,6 +34,20 @@ export default async function NotesPage() {
 
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <div className="mx-auto max-w-5xl px-4 pt-8 sm:px-6 md:pt-12">
+        <Link
+          href="/learn/jee-advanced/organic-course"
+          className="block rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 transition hover:border-[var(--accent)]"
+        >
+          <p className="text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)]">JEE Advanced · Organic Chemistry</p>
+          <h2 className="mt-1 text-xl font-bold">Organic Chemistry: complete 23-chapter course</h2>
+          <p className="mt-1 text-sm text-[var(--text-muted)]">
+            IUPAC to biomolecules and practical organic: theory, drawn structures, mechanism animations and
+            about 8,000 solved practice problems. Available with a JEE Advanced plan.
+          </p>
+          <span className="mt-3 inline-block text-sm font-semibold">Open the course →</span>
+        </Link>
+      </div>
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 md:py-12">
         <NotesExplorer
           chapters={chapters}

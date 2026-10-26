@@ -389,6 +389,16 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
   },
   // ── Organic Chemistry (JEE Advanced) ─────────────────────────────────────
   {
+    id: "organic-complete-course",
+    syllabusId: "general-organic-chemistry",
+    sectionLabel: "Complete course",
+    title: "Organic Chemistry: complete 23-chapter course",
+    href: "/learn/jee-advanced/organic-course",
+    lessonLabel: "23 chapters",
+    premium: true,
+    description: "The full JEE Advanced organic course from IUPAC nomenclature and isomerism to biomolecules and practical organic chemistry: theory, drawn structures, mechanism animations and about 8,000 solved practice problems.",
+  },
+  {
     id: "general-organic-chemistry",
     syllabusId: "general-organic-chemistry",
     title: "General Organic Chemistry",

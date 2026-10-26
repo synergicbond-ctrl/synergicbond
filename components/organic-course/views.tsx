@@ -8,6 +8,15 @@ import { animationHtml, readChapter, readFragment, scopedSvgStyles } from "@/lib
 
 const DISCIPLINE = "JEE Advanced · Organic Chemistry";
 
+const SUB = "₀₁₂₃₄₅₆₇₈₉";
+/** Section titles come from extracted text, where subscripts appear as separate tokens ("S N 2", "LiAlH 4"). */
+export function tidyTitle(t: string): string {
+  return t
+    .replace(/\bS N ?(1|2|i|Ar)\b/g, "SN$1")
+    .replace(/\b(LiAlH|NaBH|NaNO|NaNH|CH|CO|SO|NO|PCl|PBr|H|Br|Cl|O|N) (\d)\b/g, (_m, a: string, d: string) => a + SUB[Number(d)]);
+}
+
+
 const card = "group flex items-start gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition hover:border-[var(--accent)]/40";
 const badge = "flex shrink-0 items-center justify-center rounded-lg bg-[var(--surface-2)] px-3 py-2 font-mono text-sm font-bold text-[var(--accent)]";
 
@@ -69,7 +78,7 @@ export function ChapterView({ base, slug }: { base: string; slug: string }) {
           <Link key={s.stem + s.section_dir} href={`${base}/section/${s.stem}/${s.section_dir}`} className={card}>
             <span className={badge}>{String(k + 1).padStart(2, "0")}</span>
             <div className="min-w-0 flex-1">
-              <h3 className="font-bold text-[var(--foreground)]">{s.title}</h3>
+              <h3 className="font-bold text-[var(--foreground)]">{tidyTitle(s.title)}</h3>
             </div>
             <span className="flex shrink-0 text-[var(--text-muted)]">→</span>
           </Link>
@@ -89,7 +98,7 @@ export function SectionView({ base, stem, dir, animSrc }: { base: string; stem: 
   const si = ch.sections.findIndex(s => s.stem === stem && s.section_dir === dir);
   const sec = ch.sections[si];
   const prev = ch.sections[si - 1], next = ch.sections[si + 1];
-  const link = (s: typeof sec) => ({ href: `${base}/section/${s.stem}/${s.section_dir}`, label: s.title });
+  const link = (s: typeof sec) => ({ href: `${base}/section/${s.stem}/${s.section_dir}`, label: tidyTitle(s.title) });
   const scope = `ocs-${stem.replace(/[^A-Za-z0-9]/g, "")}`;
   const css = scopedSvgStyles(stem, scope);
   return (
@@ -99,7 +108,7 @@ export function SectionView({ base, stem, dir, animSrc }: { base: string; stem: 
       chapterSlug="organic-course"
       free={false}
       lessonNumber={`Section ${si + 1} of ${ch.sections.length}`}
-      lessonTitle={sec.title}
+      lessonTitle={tidyTitle(sec.title)}
       hubRef={{ href: `${base}/chapter/${ch.slug}`, label: ch.name }}
       prevRef={prev ? link(prev) : undefined}
       nextRef={next ? link(next) : undefined}

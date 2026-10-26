@@ -1,16 +1,16 @@
 /* Synergic Bond — chapter animations (no external libraries). Widgets are declared in HTML:
    <div class="sb-anim" data-type="inductive|sir|resonance|steps|energy" ...></div>  */
 (function () {
-  var TEXT = '#111', MUTED = '#555', ACC = '#1d4ed8', LINE = '#e5e7eb', BG = '#f7f9ff';
+  var TEXT = '#f6efdf', MUTED = '#b9b5ad', ACC = '#e3b341', LINE = 'rgba(246,239,223,0.17)', BG = '#0b0f10';
   function box(el, title) {
-    el.style.cssText = 'max-width:760px;margin:22px auto;padding:16px;border:1px solid ' + LINE + ';border-radius:12px;background:' + BG + ';font-family:system-ui,sans-serif;color:' + TEXT;
+    el.style.cssText = 'max-width:760px;margin:22px auto;padding:16px;border:1px solid ' + LINE + ';border-radius:12px;background:' + BG + ';font-family:inherit;color:' + TEXT;
     var h = document.createElement('h3'); h.textContent = title; h.style.cssText = 'margin:0 0 6px;color:' + ACC + ';font-size:17px';
     el.appendChild(h);
   }
   var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function btn(label) {
     var b = document.createElement('button'); b.textContent = label;
-    b.style.cssText = 'padding:6px 14px;border-radius:8px;border:1px solid ' + ACC + ';background:' + ACC + ';color:#fff;cursor:pointer;font-size:14px';
+    b.style.cssText = 'padding:6px 14px;border-radius:8px;border:1px solid ' + ACC + ';background:' + ACC + ';color:#111;font-weight:700;cursor:pointer;font-size:14px';
     return b;
   }
   function a11y(b, name) { b.setAttribute('aria-label', name); b.tabIndex = 0; return b; }
@@ -116,7 +116,7 @@
   function steps(el) {
     var list = (el.dataset.steps || '').split(';;').filter(Boolean), i = 0;
     box(el, el.dataset.title || 'Mechanism');
-    var line = document.createElement('div'); line.style.cssText = 'min-height:64px;font-size:16px;padding:10px;background:#fff;border-radius:8px;border:1px solid ' + LINE;
+    var line = document.createElement('div'); line.style.cssText = 'min-height:64px;font-size:16px;padding:10px;background:#101516;border-radius:8px;border:1px solid ' + LINE;
     var row = document.createElement('div'); row.style.cssText = 'display:flex;gap:8px;justify-content:center;margin-top:10px';
     var prev = btn('Back'), next = btn('Next'), auto = btn('Play');
     row.appendChild(prev); row.appendChild(auto); row.appendChild(next);
@@ -160,5 +160,5 @@
   }
 
   var map = { inductive: inductive, sir: sir, resonance: resonance, steps: steps, energy: energy };
-  document.querySelectorAll('.sb-anim').forEach(function (el) { var f = map[el.dataset.type]; if (f) f(el); });
+  document.querySelectorAll('.sb-anim').forEach(function (el) { if (el.dataset.sbInit) return; var f = map[el.dataset.type]; if (f) { el.dataset.sbInit = '1'; f(el); } });
 })();

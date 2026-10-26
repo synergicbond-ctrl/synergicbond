@@ -46,3 +46,20 @@ export function animationHtml(stem: string, sectionTitle: string | null): string
     .map(w => `<div class="sb-anim" ${Object.entries(w).map(([k, v]) => `data-${k}="${esc(String(v))}"`).join(" ")}></div>`)
     .join("\n");
 }
+
+/**
+ * The drawings in a chapter use generated class names (.s0, .s1 ...) whose meaning differs from file to file.
+ * Keep only those SVG class rules from the chapter's own styles and prefix them with a per-chapter scope class,
+ * so sections from different chapters can sit in one page without clashing.
+ */
+export function scopedSvgStyles(stem: string, scope: string): string {
+  if (!/^[A-Za-z0-9_.-]+$/.test(stem) || !/^[A-Za-z0-9_-]+$/.test(scope)) return "";
+  const css = readStyles(stem).replace(/<\/?style[^>]*>/g, "\n");
+  const out: string[] = [];
+  for (const m of css.matchAll(/([^{}@]+)\{([^{}]*)\}/g)) {
+    const sel = m[1].trim();
+    if (!/\.s\d+\b/.test(sel) || !/svg|\.s\d+/.test(sel)) continue;
+    out.push(sel.split(",").map(x => `.${scope} ${x.trim()}`).join(",") + `{${m[2].trim()}}`);
+  }
+  return out.join("\n");
+}

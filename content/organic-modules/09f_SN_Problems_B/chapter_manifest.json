@@ -1,0 +1,29 @@
+{
+ "file": "09f_SN_Problems_B.html",
+ "partition_level": 3,
+ "sections_total": 2,
+ "sections_passed": 2,
+ "svg_in_sections": 91,
+ "svg_in_file": 91,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "09f_SN_Problems_B:further-problems-substitution-in-synthes/heading001",
+   "title": "Further problems: substitution in synthesis and special cases (part B)",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 1,
+   "heading_id": "09f_SN_Problems_B:practice-problems-with-full-solutions/heading001",
+   "title": "Practice problems with full solutions",
+   "dir": "001",
+   "pass": true,
+   "svg": 91,
+   "blocks": 242
+  }
+ ]
+}

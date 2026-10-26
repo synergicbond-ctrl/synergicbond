@@ -1,0 +1,29 @@
+{
+ "file": "10e_Elim_Problems_A.html",
+ "partition_level": 3,
+ "sections_total": 2,
+ "sections_passed": 2,
+ "svg_in_sections": 71,
+ "svg_in_file": 71,
+ "partition_reproduces_file_bytes": true,
+ "sections": [
+  {
+   "order": 0,
+   "heading_id": "10e_Elim_Problems_A:further-problems-e1-e2-and-e1cb-part-a/heading001",
+   "title": "Further problems: E1, E2 and E1cB (part A)",
+   "dir": "000",
+   "pass": true,
+   "svg": 0,
+   "blocks": 3
+  },
+  {
+   "order": 1,
+   "heading_id": "10e_Elim_Problems_A:practice-problems-with-full-solutions/heading001",
+   "title": "Practice problems with full solutions",
+   "dir": "001",
+   "pass": true,
+   "svg": 71,
+   "blocks": 194
+  }
+ ]
+}

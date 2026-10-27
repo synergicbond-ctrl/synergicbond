@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Contribution and Sharing of Particles in Unit Cells",
 } as const;
 
-const data = {
+export const data = {
   "part": 6,
   "slug": "contribution-and-sharing-of-particles-in-unit-cells",
   "title": "Contribution and Sharing of Particles in Unit Cells",

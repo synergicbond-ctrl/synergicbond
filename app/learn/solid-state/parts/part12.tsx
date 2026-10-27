@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Effective Number of Atoms per Unit Cell (Z)",
 } as const;
 
-const data = {
+export const data = {
   "part": 12,
   "slug": "effective-number-of-atoms-per-unit-cell-z",
   "title": "Effective Number of Atoms per Unit Cell (Z)",

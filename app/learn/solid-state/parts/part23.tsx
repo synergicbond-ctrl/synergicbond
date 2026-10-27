@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Magnetic Properties of Solids",
 } as const;
 
-const data = {
+export const data = {
   "part": 23,
   "slug": "magnetic-properties-of-solids",
   "title": "Magnetic Properties of Solids",

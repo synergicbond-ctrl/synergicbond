@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Atomic Radius–Edge Length Relations",
 } as const;
 
-const data = {
+export const data = {
   "part": 13,
   "slug": "atomic-radius-edge-length-relations",
   "title": "Atomic Radius–Edge Length Relations",

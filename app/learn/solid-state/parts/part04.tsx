@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Classification of Crystalline Solids",
 } as const;
 
-const data = {
+export const data = {
   "part": 4,
   "slug": "classification-of-crystalline-solids",
   "title": "Classification of Crystalline Solids",

@@ -6,7 +6,7 @@ export const partInfo = {
   title: "Fourteen Bravais Lattices",
 } as const;
 
-const data = {
+export const data = {
   "part": 10,
   "slug": "fourteen-bravais-lattices",
   "title": "Fourteen Bravais Lattices",

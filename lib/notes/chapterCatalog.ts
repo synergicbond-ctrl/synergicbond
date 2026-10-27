@@ -141,11 +141,11 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     id: "solid-state",
     syllabusId: "solid-state",
     title: "Solid State",
-    href: "/learn/solid-state/master",
-    lessonLabel: "10 parts",
+    href: "/learn/solid-state",
+    lessonLabel: "7 parts · 3D models, derivations and practice",
     premium: true,
     description:
-      "Complete JEE Advanced Solid State notes covering crystal classification, lattices and unit cells, seven crystal systems, packing, voids, radius-ratio rules, important ionic structures, defects, electrical properties and magnetism.",
+      "The whole chapter built in front of you: 3D unit cells you can slice, close packing and voids, radius-ratio and ionic structures, defects, band theory, p-n junctions, superconductors and magnetic domains, with step-by-step derivations, worked problems, the complete written notes and a practice set with answer key.",
   },
   // ── Atomic Structure ───────────────────────────────────────────────────────
   {

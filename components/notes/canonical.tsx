@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
+import { AppShell } from "@/components/AppShell";
 import { LessonTick } from "@/components/chapter-ui/LessonTick";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -793,7 +794,6 @@ export interface CanonicalChapterPageProps {
 }
 
 export function CanonicalChapterPage({
-  mode,
   discipline,
   chapterTitle,
   chapterSlug,
@@ -802,63 +802,19 @@ export function CanonicalChapterPage({
   children,
   tabs,
 }: CanonicalChapterPageProps) {
+  // Same reader shell as every other chapter page; the header strings are unchanged.
   return (
-    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      {/* CANONICAL CHAPTER HEADER — identical across all modes */}
-      <header className="border-b border-[var(--border)] bg-[var(--surface)] px-6 py-8 sm:px-8">
-        <div className="mx-auto max-w-[1560px]">
-          <div className="mb-4 text-sm font-bold uppercase tracking-[0.15em] text-[var(--text-muted)]">
-            {discipline}
-          </div>
-
-          <div className="mb-6 flex items-start justify-between gap-4">
-            <div className="flex-1 min-w-0">
-              <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-5xl">
-                {chapterTitle}
-              </h1>
-              {description && (
-                <p className="mt-3 text-base leading-relaxed text-[var(--text-body)]">
-                  {description}
-                </p>
-              )}
-            </div>
-            {free !== undefined && (
-              <div className="flex shrink-0 items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--background)] px-4 py-2">
-                <span className="text-xs font-black uppercase tracking-widest text-[var(--text-muted)]">
-                  {free ? "FREE" : "PREMIUM"}
-                </span>
-              </div>
-            )}
-          </div>
-
-          {tabs && tabs.length > 0 && (
-            <nav className="flex flex-wrap gap-2">
-              {tabs.map((tab, idx) => (
-                <Link
-                  key={idx}
-                  href={tab.href}
-                  aria-current={tab.active ? "page" : undefined}
-                  className={`rounded-lg border px-4 py-2 text-sm font-bold transition ${
-                    tab.active
-                      ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--accent)]"
-                      : "border-[var(--border)] text-[var(--text-body)] hover:border-[var(--accent)]/50"
-                  }`}
-                >
-                  {tab.label}
-                </Link>
-              ))}
-            </nav>
-          )}
-        </div>
-      </header>
-
-      {/* MODE-SPECIFIC CONTENT AREA */}
-      <main className="mx-auto px-6 py-8 sm:px-8" style={{ maxWidth: "1480px" }}>
-        <div className="space-y-8">
-          {children}
-        </div>
-      </main>
-    </div>
+    <AppShell
+      discipline={discipline}
+      chapterTitle={chapterTitle}
+      chapterSlug={chapterSlug}
+      description={description}
+      free={free}
+      tabs={tabs}
+      fullWidth
+    >
+      <div className="space-y-8">{children}</div>
+    </AppShell>
   );
 }
 

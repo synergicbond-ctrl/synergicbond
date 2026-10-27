@@ -13,6 +13,16 @@ const slug = (s: string) =>
     .replace(/^-+|-+$/g, "")
     .slice(0, 60) || "section";
 
+/** Which typed block a section heading introduces, if any. */
+export function headingKind(text: string): string | null {
+  const t = text.toLowerCase();
+  if (/\btraps?\b|common mistake|misconception|pitfall/.test(t)) return "trap";
+  if (/\bjee\b/.test(t)) return "jee";
+  if (/worked example|solved example|\bexamples?\b/.test(t)) return "example";
+  if (/\bformulae?\b|\bequations?\b/.test(t)) return "formula";
+  return null;
+}
+
 /**
  * Reads the page it sits on (renders nothing):
  *  - collects h2/h3 headings into the outline, giving id-less headings an id so they can be linked to
@@ -30,6 +40,12 @@ export function ReaderObserver({ chapterId, initialTopic }: { chapterId: string;
     const headings = Array.from(root.querySelectorAll<HTMLElement>("h2, h3")).filter(
       (h) => !h.closest("[data-reader-skip]") && (h.textContent ?? "").trim().length > 0,
     );
+    // Colour a section heading by what it introduces ("Formula", "Worked example", "Trap", "JEE"),
+    // on any chapter. Only an attribute is set: the heading text and the page structure stay as written.
+    for (const h of headings) {
+      const kind = headingKind(h.textContent ?? "");
+      if (kind) h.setAttribute("data-kind", kind);
+    }
     const items: OutlineItem[] = headings.map((h) => {
       if (!h.id) {
         let id = slug(h.textContent ?? "");

@@ -937,3 +937,10 @@
 .legendList button:hover, .legendList button:focus-visible { background: color-mix(in srgb, var(--c) 14%, transparent); outline: none; }
 .legendList button span { display: grid; place-items: center; width: 1.5em; height: 1.5em; border-radius: 6px; background: color-mix(in srgb, var(--c) 22%, transparent); color: var(--c); font-size: 0.85em; }
 .legendList button em { margin-left: auto; font-style: normal; font-size: 0.8em; opacity: 0.7; }
+
+/* Section headings that introduce a typed block are tagged in that block's colour (any chapter) */
+.root :is(h2, h3)[data-kind] { padding-left: 0.6em; border-left: 3px solid var(--kc, transparent); }
+.root :is(h2, h3)[data-kind="formula"] { --kc: var(--c-formula); }
+.root :is(h2, h3)[data-kind="example"] { --kc: var(--c-example); }
+.root :is(h2, h3)[data-kind="trap"] { --kc: var(--c-trap); }
+.root :is(h2, h3)[data-kind="jee"] { --kc: var(--c-jee); }

@@ -18,15 +18,40 @@ export const BLOCK_META: Record<BlockKind, { label: string; glyph: string; cssVa
   visual: { label: "Diagram", glyph: "◉", cssVar: "--c-visual" },
 };
 
-export function Block({ kind, title, children }: { kind: BlockKind; title?: string; children: ReactNode }) {
+export function Block({
+  kind,
+  title,
+  as = "section",
+  children,
+}: {
+  kind: BlockKind;
+  title?: string;
+  /** "figure" keeps a real <figure>/<figcaption> for diagrams */
+  as?: "section" | "figure";
+  children: ReactNode;
+}) {
   const meta = BLOCK_META[kind];
   const label = title ?? meta.label;
+  const glyph = (
+    <span className={styles.glyph} aria-hidden="true">
+      {meta.glyph}
+    </span>
+  );
+  if (as === "figure") {
+    return (
+      <figure className={styles.block} data-block={kind} aria-label={label}>
+        <figcaption className={styles.tag}>
+          {glyph}
+          {label}
+        </figcaption>
+        <div className={styles.body}>{children}</div>
+      </figure>
+    );
+  }
   return (
     <section className={styles.block} data-block={kind} aria-label={label}>
       <p className={styles.tag}>
-        <span className={styles.glyph} aria-hidden="true">
-          {meta.glyph}
-        </span>
+        {glyph}
         {label}
       </p>
       <div className={styles.body}>{children}</div>

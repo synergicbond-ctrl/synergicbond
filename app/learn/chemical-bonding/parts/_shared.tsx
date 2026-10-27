@@ -133,7 +133,7 @@ export function TrapCallout({ trap, reality }: { trap: ReactNode; reality: React
     <Block kind="trap" title="Common trap">
       <p>{trap}</p>
       <p>
-        <strong>Reality: </strong>
+        <strong>Reality</strong>{" "}
         {reality}
       </p>
     </Block>
@@ -237,7 +237,7 @@ export function DataTable({ headers, rows }: { headers: ReactNode[]; rows: React
 
 export function DiagramBox({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <Block kind="visual" title={title}>
+    <Block kind="visual" title={title} as="figure">
       <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "1rem", overflowX: "auto" }}>
         {children}
       </div>

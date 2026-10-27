@@ -21,8 +21,8 @@ export interface NoteSection {
 
 /** Chapter shell: scroll-progress bar + sticky TOC + content column. */
 
-export function Glass({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`rounded-lg border border-[var(--border)] bg-[var(--surface)] ${className}`}>{children}</div>;
+export function Glass({ children, className = "", block }: { children: ReactNode; className?: string; block?: "formula" | "example" | "trap" | "jee" | "modern" | "visual" }) {
+  return <div data-block={block} className={`rounded-lg border border-[var(--border)] bg-[var(--surface)] ${className}`}>{children}</div>;
 }
 
 export function Hero({ eyebrow, title, accent, lead, stats }: {
@@ -58,7 +58,7 @@ export function Section({ id, eyebrow, title, children }: { id: string; eyebrow:
 
 export function FormulaCard({ name, formula, vars }: { name: string; formula: string; vars: { sym: string; mean: string }[] }) {
   return (
-    <Glass className="p-5">
+    <Glass block="formula" className="p-5">
       <div className="text-xs font-bold uppercase tracking-wider text-white/40">{name}</div>
       <div className="mt-2 rounded-lg bg-[var(--background)] px-4 py-3 text-center text-xl font-black text-[var(--accent)]">{renderChemistry(formula)}</div>
       <div className="mt-3 space-y-1">
@@ -90,7 +90,7 @@ export function CalloutList({ variant, items }: { variant: "mistake" | "ncert"; 
   return (
     <div className="space-y-3">
       {items.map((t, i) => (
-        <div key={i} className={`flex gap-3 rounded-lg border p-4 ${meta.ring}`}>
+        <div key={i} data-block={variant === "mistake" ? "trap" : "example"} className={`flex gap-3 rounded-lg border p-4 ${meta.ring}`}>
           <span className={meta.iconCls}>{meta.icon}</span>
           <p className="text-sm text-white/80">{renderChemistry(t)}</p>
         </div>
@@ -103,7 +103,7 @@ export function JeeFocus({ items }: { items: { t: string; tag: string }[] }) {
   return (
     <div className="grid gap-3 sm:grid-cols-2">
       {items.map((c) => (
-        <Glass key={c.t} className="flex items-center justify-between gap-3 p-4">
+        <Glass key={c.t} block="jee" className="flex items-center justify-between gap-3 p-4">
           <span className="text-sm font-semibold text-white">{c.t}</span>
           <span className="shrink-0 rounded-full border border-amber-400/30 bg-amber-400/10 px-2 py-0.5 text-[10px] font-bold uppercase text-amber-300">{c.tag}</span>
         </Glass>

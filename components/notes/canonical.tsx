@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
+import { LessonTick } from "@/components/chapter-ui/LessonTick";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Canonical JEE Advanced Notes Design System.
@@ -456,6 +457,7 @@ export function ChapterLessonCard({ lesson, current }: { lesson: LessonRef; curr
       <span className="sbnLessonNumber">{lesson.number}</span>
       <span className="sbnLessonTitle">{lesson.title}</span>
       {lesson.meta && <span className="sbnLessonMeta">{lesson.meta}</span>}
+      <LessonTick href={lesson.href} />
     </Link>
   );
 }

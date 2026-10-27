@@ -140,7 +140,7 @@ export function P({ children }: { children: React.ReactNode }) {
 
 export function Formula({ children }: { children: React.ReactNode }) {
   return (
-    <div className="formulaBox"
+    <div className="formulaBox" data-block="formula"
       style={{
         fontFamily: T.mono,
         fontSize: 15,
@@ -205,7 +205,7 @@ export function MathInline({ tex }: { tex: string }) {
 
 export function DefinitionBox({ term, children }: { term: string; children: React.ReactNode }) {
   return (
-    <div style={{ background: "rgba(127,217,184,0.07)", border: `1px solid ${T.d}66`, borderRadius: 12, padding: "14px 16px", margin: "12px 0" }}>
+    <div data-block="definition" style={{ background: "rgba(127,217,184,0.07)", border: `1px solid ${T.d}66`, borderRadius: 12, padding: "14px 16px", margin: "12px 0" }}>
       <div style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 900, letterSpacing: 0.7, textTransform: "uppercase", color: T.d, marginBottom: 6 }}>NCERT-aligned definition</div>
       <div style={{ fontFamily: T.serif, fontSize: 18, fontWeight: 800, color: T.text, marginBottom: 5 }}>{term}</div>
       <div style={{ fontFamily: T.sans, fontSize: 14.2, lineHeight: 1.7, color: T.text }}>{children}</div>
@@ -301,6 +301,7 @@ export function Callout({
   const c = map[kind];
   return (
     <div
+      data-block={kind === "warn" ? "trap" : kind === "special" ? "jee" : undefined}
       style={{
         borderLeft: `3px solid ${c.color}`,
         background: "rgba(255,255,255,0.02)",
@@ -585,7 +586,7 @@ export function WorkedExample({
   accent?: string;
 }) {
   return (
-    <div className="workedExample periodicityWorkedExample"
+    <div className="workedExample periodicityWorkedExample" data-block="example"
       style={{
         border: `1px solid ${accent}55`,
         borderTop: `4px solid ${accent}`,

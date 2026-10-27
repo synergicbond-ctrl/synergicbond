@@ -1,8 +1,9 @@
 import { AppShell } from "@/components/AppShell";
 import { renderChemistry } from "@/lib/renderChemistry";
 import { Glass, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet } from "@/components/notes/premium";
-import { CanonicalNotesStyles, ChapterLessonGrid } from "@/components/notes/canonical";
-import { chemBondPartMeta, CHEM_BOND_GROUPS } from "./parts/_shared";
+import { Atlas } from "@/components/chapter-ui/Atlas";
+import { chemBondPartMeta } from "./parts/_shared";
+import { CHEM_BOND_CHAPTER, readerData, readerGroups, stripSegments } from "./parts/readerData";
 
 const SHAPES = [
   { sn: "2", shape: "Linear", ex: "BeCl₂, CO₂", ang: "180°" },
@@ -21,7 +22,25 @@ export default function ChemicalBondingNotes() {
       chapterSlug="chemical-bonding"
       description="A 189-topic deep chapter: energetic origin of bonding → ionic thermochemistry → orbitals/VBT/hybridisation/VSEPR → inorganic structures and special bonding → dipoles/resonance/hydrogen bonding → full MOT → Fajans/intermolecular forces → carbon allotropes and silicates. Historical exam models are retained, but modern bonding caveats are stated explicitly."
       free={false}
+      reader={readerData}
     >
+      <Section id="parts" eyebrow="Authoritative sequence" title={`Chemical Bonding — All ${chemBondPartMeta.length} Parts`}>
+        <p className="mb-5 max-w-3xl text-white/65">Parts 1–23 follow Topics 1–189 in exact master order; Part 24 is integrated JEE Advanced practice. Topic numbers remain visible inside every lesson for auditability.</p>
+        <Atlas
+          chapter={CHEM_BOND_CHAPTER}
+          title="Where you are in this chapter"
+          eyebrow="Chapter map · 189 topics · 24 parts"
+          intro="Every topic is one coloured block, grouped into units. Pick up where you stopped, or jump anywhere."
+          facts={[
+            { value: String(CHEM_BOND_CHAPTER.totalTopics), label: "topics" },
+            { value: String(chemBondPartMeta.length - 1), label: "theory parts" },
+            { value: String(readerGroups.length - 1), label: "units" },
+          ]}
+          groups={readerGroups}
+          segments={stripSegments}
+        />
+      </Section>
+
       <div className="mx-auto max-w-3xl space-y-10">
       <div className="grid gap-3 sm:grid-cols-3">
         <Glass className="p-4 text-center">
@@ -105,21 +124,6 @@ export default function ChemicalBondingNotes() {
           { t: "Lattice/Born–Landé/Kapustinskii + hydration/solubility thermodynamics", tag: "Advanced" },
           { t: "Back bonding, multicentre bonds, inorganic structures and silicate topology", tag: "Differentiator" },
         ]} />
-      </Section>
-
-      <Section id="parts" eyebrow="Authoritative sequence" title={`Chemical Bonding — All ${chemBondPartMeta.length} Parts`}>
-        <p className="mb-5 max-w-3xl text-white/65">Parts 1–23 follow Topics 1–189 in exact master order; Part 24 is integrated JEE Advanced practice. Topic numbers remain visible inside every lesson for auditability.</p>
-        <CanonicalNotesStyles />
-        <div className="space-y-7">
-          {CHEM_BOND_GROUPS.map((group, index) => (
-            <div key={group.label} id={`bond-group-${index + 1}`} style={{ scrollMarginTop: 90 }}>
-              <h3 className="sbnLessonGroupLabel" style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>
-                {group.label}<span className="ml-2 text-sm font-semibold normal-case tracking-normal" style={{ color: "#91a9bc" }}>Parts {String(group.from).padStart(2, "0")}–{String(group.to).padStart(2, "0")}</span>
-              </h3>
-              <ChapterLessonGrid lessons={chemBondPartMeta.filter((p) => p.part >= group.from && p.part <= group.to).map((p) => ({ href: p.href, number: `Part ${String(p.part).padStart(2, "0")}`, title: p.title, meta: p.tag }))} />
-            </div>
-          ))}
-        </div>
       </Section>
 
       <Section id="revision" eyebrow="One screen" title="Revision Sheet">

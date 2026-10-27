@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { ComfortPanel } from "@/components/chapter-ui/ComfortPanel";
 import { Highlighter, HighlightsPanel } from "@/components/chapter-ui/Highlighter";
+import { InThisTopic } from "@/components/chapter-ui/InThisTopic";
 import { LessonDone } from "@/components/chapter-ui/LessonDone";
 import { MobileDock } from "@/components/chapter-ui/MobileDock";
 import { ModeSwitch } from "@/components/chapter-ui/ModeSwitch";
@@ -160,6 +161,7 @@ export function AppShell({
 
           <aside className={styles.side} aria-label="Reading tools">
             <ComfortPanel />
+            <InThisTopic />
             <HighlightsPanel chapterId={chapterId} />
           </aside>
         </div>

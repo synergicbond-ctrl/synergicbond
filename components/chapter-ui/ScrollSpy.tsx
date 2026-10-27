@@ -42,7 +42,12 @@ export function ReaderObserver({ chapterId, initialTopic }: { chapterId: string;
       return { id: h.id, text: (h.textContent ?? "").replace(/\s+/g, " ").trim(), level: h.tagName === "H3" ? 3 : 2 };
     });
     // Skim/Exam only make sense where the explanatory text itself is typed (a "concept" block)
-    setOutline(items, !!root.querySelector('[data-block="concept"]'));
+    const blocks: Record<string, number> = {};
+    root.querySelectorAll("[data-block]").forEach((el) => {
+      const k = el.getAttribute("data-block") ?? "";
+      blocks[k] = (blocks[k] ?? 0) + 1;
+    });
+    setOutline(items, !!root.querySelector('[data-block="concept"]'), blocks);
 
     if (typeof IntersectionObserver === "undefined") return;
     const topics = Array.from(root.querySelectorAll<HTMLElement>("[data-topic]"));

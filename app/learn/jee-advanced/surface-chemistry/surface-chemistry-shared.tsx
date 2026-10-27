@@ -59,7 +59,7 @@ export function FormulaCard({
   note?: ReactNode;
 }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[.08] via-slate-950/85 to-violet-400/[.07]">
+    <div data-block="formula" className="overflow-hidden rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[.08] via-slate-950/85 to-violet-400/[.07]">
       <div className="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-cyan-200">
         {title}
       </div>
@@ -132,7 +132,7 @@ export function DataTable({ headers, rows }: { headers: ReactNode[]; rows: React
 
 export function Trap({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-lg border border-rose-400/25 bg-rose-400/[.065] px-4 py-3 text-sm leading-6 text-rose-100">
+    <div data-block="trap" className="rounded-lg border border-rose-400/25 bg-rose-400/[.065] px-4 py-3 text-sm leading-6 text-rose-100">
       <b className="mr-2 uppercase tracking-[.13em] text-rose-300">JEE trap</b>
       {children}
     </div>
@@ -141,7 +141,7 @@ export function Trap({ children }: { children: ReactNode }) {
 
 export function Key({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-lg border border-amber-300/25 bg-amber-300/[.06] px-4 py-3 text-sm leading-6 text-amber-50">
+    <div data-block="jee" className="rounded-lg border border-amber-300/25 bg-amber-300/[.06] px-4 py-3 text-sm leading-6 text-amber-50">
       <b className="mr-2 uppercase tracking-[.13em] text-amber-200">Key idea</b>
       {children}
     </div>
@@ -162,7 +162,7 @@ export function Example({
   answer: ReactNode;
 }) {
   return (
-    <details open={number === 1} className="group overflow-hidden rounded-lg border border-white/10 bg-slate-950/70">
+    <details data-block="example" open={number === 1} className="group overflow-hidden rounded-lg border border-white/10 bg-slate-950/70">
       <summary className="cursor-pointer list-none p-5 sm:p-6">
         <div className="flex gap-4">
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-violet-300/20 bg-violet-400/10 font-bold text-violet-200">

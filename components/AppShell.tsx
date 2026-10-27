@@ -1,15 +1,33 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import { ComfortPanel } from "@/components/chapter-ui/ComfortPanel";
+import { Highlighter, HighlightsPanel } from "@/components/chapter-ui/Highlighter";
+import { InThisTopic } from "@/components/chapter-ui/InThisTopic";
+import { LessonDone } from "@/components/chapter-ui/LessonDone";
+import { MobileDock } from "@/components/chapter-ui/MobileDock";
+import { ModeSwitch } from "@/components/chapter-ui/ModeSwitch";
+import { RailContent } from "@/components/chapter-ui/RailContent";
+import { ReaderRoot } from "@/components/chapter-ui/ReaderRoot";
+import { ReaderObserver } from "@/components/chapter-ui/ScrollSpy";
+import { SearchButton, SearchPalette } from "@/components/chapter-ui/SearchPalette";
+import { SettingsPopover } from "@/components/chapter-ui/SettingsPopover";
+import { PageStrip, StickyStrip } from "@/components/chapter-ui/TopicStrip";
+import styles from "@/components/chapter-ui/reader.module.css";
+import type { ReaderData } from "@/components/chapter-ui/types";
 import { CanonicalNotesStyles } from "@/components/notes/canonical";
 
 /**
  * UNIFIED APPLICATION SHELL
  *
- * One canonical visual architecture for all chapters and lessons.
- * Replaces: canonical.tsx, premium.tsx, SbcCourseChrome.tsx
+ * One canonical page architecture for every chapter and lesson. It owns the page chrome only:
+ * top bar, contents rail, reading tools, search, highlights, phone dock and previous/next.
+ * It never touches the lesson content passed as `children`.
  *
- * Required props allow chapters to configure their headers while maintaining
- * visual consistency across the entire platform.
+ * Every string the previous shell rendered (discipline, chapter title, description, FREE/PREMIUM,
+ * tabs, lesson number, hub link, lesson title, previous/next labels) is still rendered.
+ *
+ * A chapter that has structured data (numbered topics) passes `reader` to get the chapter map, the
+ * per-topic rail and chapter-wide search. Without it the rail and search use the page's own headings.
  */
 
 export interface ContentSection {
@@ -39,22 +57,17 @@ export interface AppShellConfig {
 
   // Layout control
   fullWidth?: boolean;
-  sidebarSections?: ContentSection[]; // For sticky TOC sidebar
-  maxContentWidth?: string; // Default: 1480px
+  sidebarSections?: ContentSection[]; // kept for compatibility; the rail is built from the page headings
+  maxContentWidth?: string; // kept for compatibility
+
+  /** optional chapter data: chapter map, topic rail, chapter-wide search */
+  reader?: ReaderData;
 
   children: ReactNode;
 }
 
-/**
- * Global AppShell — the single rendering system for all chapters.
- *
- * Visual specifications:
- * - Background: var(--background) (near-black)
- * - Text: var(--foreground) (ivory)
- * - Accents: var(--accent) (Synergic Bond gold)
- * - Borders: var(--border) (restrained)
- * - No neon glow, no giant gradients, no chapter-specific colors
- */
+const nn = (n: number) => String(n).padStart(2, "0");
+
 export function AppShell({
   discipline,
   chapterTitle,
@@ -68,132 +81,125 @@ export function AppShell({
   nextRef,
   hubRef,
   fullWidth,
+  reader,
   children,
 }: AppShellConfig) {
   const isLesson = !!lessonNumber;
-  const contentMaxWidth = fullWidth ? "100%" : "1480px";
+  const chapterId = reader?.chapter.id ?? chapterSlug;
+  const partIdx = reader?.part !== undefined ? reader.parts.findIndex((p) => p.part === reader.part) : -1;
+  const part = reader && partIdx >= 0 ? reader.parts[partIdx] : undefined;
+  const nextPart = reader && partIdx >= 0 && partIdx < reader.parts.length - 1 ? reader.parts[partIdx + 1] : undefined;
+  const where = part ? `${part.groupLabel} · Part ${nn(part.part)}` : chapterTitle;
+
+  const tabsRow =
+    tabs && tabs.length > 0 ? (
+      <nav className={styles.tabsRow} aria-label="Chapter sections">
+        {tabs.map((tab, idx) => (
+          <Link key={idx} href={tab.href} data-active={tab.active ? "1" : undefined}>
+            {tab.label}
+          </Link>
+        ))}
+      </nav>
+    ) : null;
 
   return (
-    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+    <ReaderRoot chapterId={chapterId}>
       <AppShellStyles />
       <CanonicalNotesStyles />
 
-      {/* CHAPTER HEADER */}
-      <header className="border-b border-[var(--border)] bg-[var(--surface)] px-6 py-8 sm:px-8">
-        <div className="mx-auto max-w-[1560px]">
-          {/* Breadcrumb / Discipline */}
-          <div className="mb-4 text-sm font-bold uppercase tracking-[0.15em] text-[var(--text-muted)]">
-            {discipline}
-          </div>
+      {reader && isLesson ? <StickyStrip chapterId={chapterId} segments={reader.segments} where={where} /> : null}
+      {!reader && isLesson ? <PageStrip where={`${chapterTitle} · ${lessonNumber}`} /> : null}
 
-          {/* Chapter Title */}
-          <div className="mb-6 flex items-start justify-between gap-4">
-            <div className="flex-1 min-w-0">
-              <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-5xl">
-                {chapterTitle}
-              </h1>
-              {description && (
-                <p className="mt-3 text-base leading-relaxed text-[var(--text-body)]">
-                  {description}
-                </p>
-              )}
+      {/* TOP BAR: where you are, plus search and reading settings on every page */}
+      <div className={styles.topbar}>
+        <div className={styles.crumbs}>
+          <span className={styles.disc}>{discipline}</span>
+          <h1>{chapterTitle}</h1>
+          {free !== undefined && <span className={styles.badge}>{free ? "FREE" : "PREMIUM"}</span>}
+        </div>
+        <div className={styles.topActions}>
+          <SearchButton className={styles.search} label="Search" />
+          <SettingsPopover chapterId={chapterId} />
+        </div>
+      </div>
+
+      {isLesson ? (
+        <div className={styles.shell} style={part ? ({ "--h": part.hue } as CSSProperties) : undefined}>
+          <aside className={styles.rail} aria-label="Contents">
+            <RailContent chapterId={chapterId} part={part} nextPart={nextPart} />
+          </aside>
+
+          <main className={styles.main} data-reader-content="" data-wide={fullWidth ? "1" : undefined}>
+            <div className={styles.lessonBar}>
+              {hubRef ? <Link href={hubRef.href}>← {hubRef.label}</Link> : <span />}
+              <span>{lessonNumber}</span>
             </div>
-            {free !== undefined && (
-              <div className="flex shrink-0 items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--background)] px-4 py-2">
-                <span className="text-xs font-black uppercase tracking-widest text-[var(--text-muted)]">
-                  {free ? "FREE" : "PREMIUM"}
-                </span>
-              </div>
+            {lessonTitle && <h2 className={styles.lessonTitle}>{lessonTitle}</h2>}
+            {tabsRow}
+            {description && (
+              <details className={styles.about}>
+                <summary>About this chapter</summary>
+                <p>{description}</p>
+              </details>
             )}
-          </div>
+            <ModeSwitch />
+            <div className={styles.content}>{children}</div>
+            <LessonDone chapterId={chapterId} />
+            {(prevRef || nextRef) && (
+              <nav className={styles.pager} aria-label="Previous and next lesson">
+                {prevRef ? <Link href={prevRef.href}>← {prevRef.label}</Link> : <span />}
+                {nextRef ? (
+                  <Link href={nextRef.href} data-next="1">
+                    {nextRef.label} →
+                  </Link>
+                ) : (
+                  <span />
+                )}
+              </nav>
+            )}
+          </main>
 
-          {/* Chapter Navigation Tabs */}
-          {tabs && tabs.length > 0 && (
-            <nav className="flex flex-wrap gap-2">
-              {tabs.map((tab, idx) => (
-                <Link
-                  key={idx}
-                  href={tab.href}
-                  className={`rounded-lg border px-4 py-2 text-sm font-bold transition ${
-                    tab.active
-                      ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--accent)]"
-                      : "border-[var(--border)] text-[var(--text-body)] hover:border-[var(--accent)]/50"
-                  }`}
-                >
-                  {tab.label}
+          <aside className={styles.side} aria-label="Reading tools">
+            <ComfortPanel />
+            <InThisTopic />
+            <HighlightsPanel chapterId={chapterId} />
+          </aside>
+        </div>
+      ) : (
+        <main className={styles.hubShell} data-reader-content="" style={fullWidth ? { maxWidth: "100%" } : undefined}>
+          {description && <p className={styles.intro}>{description}</p>}
+          {tabsRow}
+          <div className={styles.content} style={{ marginTop: "1.5rem" }}>
+            {children}
+          </div>
+          {(prevRef || nextRef) && (
+            <nav className={styles.pager} aria-label="Previous and next">
+              {prevRef ? <Link href={prevRef.href}>← {prevRef.label}</Link> : <span />}
+              {nextRef ? (
+                <Link href={nextRef.href} data-next="1">
+                  {nextRef.label} →
                 </Link>
-              ))}
+              ) : (
+                <span />
+              )}
             </nav>
           )}
-        </div>
-      </header>
-
-      {/* LESSON STRIP (if lesson) */}
-      {isLesson && (
-        <div className="border-b border-[var(--border)] bg-[var(--surface)]/50 px-6 py-3 sm:px-8">
-          <div className="mx-auto flex max-w-[1560px] items-center justify-between gap-4">
-            {hubRef && (
-              <Link href={hubRef.href} className="text-sm font-bold text-[var(--accent)] hover:underline">
-                ← {hubRef.label}
-              </Link>
-            )}
-            {lessonNumber && (
-              <span className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">
-                {lessonNumber}
-              </span>
-            )}
-          </div>
-        </div>
+        </main>
       )}
 
-      {/* CONTENT AREA */}
-      <main
-        className="mx-auto px-6 py-8 sm:px-8"
-        style={{ maxWidth: contentMaxWidth }}
-      >
-        {/* Lesson Title (if present) */}
-        {isLesson && lessonTitle && (
-          <div className="mb-8 border-b border-[var(--border)] pb-8">
-            <h2 className="text-3xl font-black leading-tight sm:text-4xl">
-              {lessonTitle}
-            </h2>
-          </div>
-        )}
-
-        {/* Content */}
-        <div className="space-y-8">
-          {children}
-        </div>
-      </main>
-
-      {/* PREVIOUS/NEXT NAVIGATION */}
-      {(prevRef || nextRef) && (
-        <div className="border-t border-[var(--border)] bg-[var(--surface)]/50 px-6 py-8 sm:px-8">
-          <div className="mx-auto flex max-w-[1560px] items-center justify-between gap-4">
-            {prevRef ? (
-              <Link
-                href={prevRef.href}
-                className="flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 font-bold transition hover:border-[var(--accent)]/50 hover:text-[var(--accent)]"
-              >
-                ← {prevRef.label}
-              </Link>
-            ) : (
-              <div />
-            )}
-            {nextRef ? (
-              <Link
-                href={nextRef.href}
-                className="flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 font-bold transition hover:border-[var(--accent)]/50 hover:text-[var(--accent)]"
-              >
-                {nextRef.label} →
-              </Link>
-            ) : (
-              <div />
-            )}
-          </div>
-        </div>
-      )}
-    </div>
+      {isLesson ? (
+        <MobileDock
+          chapterId={chapterId}
+          hubHref={hubRef?.href}
+          part={part}
+          nextPart={nextPart}
+          next={nextRef}
+        />
+      ) : null}
+      <SearchPalette items={reader?.searchItems} chapterTitle={chapterTitle} />
+      <Highlighter chapterId={chapterId} />
+      <ReaderObserver chapterId={chapterId} initialTopic={part?.topics[0]?.number ?? null} />
+    </ReaderRoot>
   );
 }
 

@@ -10,7 +10,7 @@ import { ReaderRoot } from "@/components/chapter-ui/ReaderRoot";
 import { ReaderObserver } from "@/components/chapter-ui/ScrollSpy";
 import { SearchButton, SearchPalette } from "@/components/chapter-ui/SearchPalette";
 import { SettingsPopover } from "@/components/chapter-ui/SettingsPopover";
-import { StickyStrip } from "@/components/chapter-ui/TopicStrip";
+import { PageStrip, StickyStrip } from "@/components/chapter-ui/TopicStrip";
 import styles from "@/components/chapter-ui/reader.module.css";
 import type { ReaderData } from "@/components/chapter-ui/types";
 import { CanonicalNotesStyles } from "@/components/notes/canonical";
@@ -107,6 +107,7 @@ export function AppShell({
       <CanonicalNotesStyles />
 
       {reader && isLesson ? <StickyStrip chapterId={chapterId} segments={reader.segments} where={where} /> : null}
+      {!reader && isLesson ? <PageStrip where={`${chapterTitle} · ${lessonNumber}`} /> : null}
 
       {/* TOP BAR: where you are, plus search and reading settings on every page */}
       <div className={styles.topbar}>

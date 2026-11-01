@@ -41,6 +41,10 @@ table.sites tfoot td { color: var(--accent); font-weight: 700; border-bottom: 0;
 .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; vertical-align: -1px; }
 .lbl.tag { width: 18px; height: 18px; padding: 0; display: grid; place-items: center; border: 0; border-radius: 50%; color: #ffffff; font: 800 11px/1 inherit; text-shadow: 0 1px 1px rgba(0,0,0,.35); box-shadow: 0 0 0 1.5px rgba(255,255,255,.75); }
 .tagdot { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; margin-right: 8px; color: #ffffff; font: 800 11px/1 inherit; font-style: normal; vertical-align: -3px; }
+.btn[aria-pressed="true"] { background: var(--accent); color: #111; border-color: var(--accent); }
+.embed header.top, .embed #structs, .embed footer { display: none; }
+.embed .wrap { padding: 6px; }
+.embed .stage { min-height: 400px; }
 .panel { background: linear-gradient(180deg, #0d1213, #0a0e0f); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; }
 .panel h2 { margin: 0 0 4px; font-size: 1.3rem; color: var(--fg); letter-spacing: -0.01em; }
 .panel .sub { margin: 0 0 12px; color: var(--muted); font-size: 13px; }

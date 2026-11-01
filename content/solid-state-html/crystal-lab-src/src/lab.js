@@ -56,7 +56,7 @@ const SITE = {
   hexinside: { col: 0x8a3fa6, name: "inside (middle layer)", css: "#8a3fa6", tag: "I" },
 };
 const ORDER = ["sc", "bcc", "fcc", "hcp", "nacl", "cscl", "zns", "diamond"];
-const MODES = [["pos", "Positions"], ["view", "Structure"], ["grow", "Crystallise"], ["share", "Atom sharing (Z)"], ["pack", "Packing"], ["voids", "Voids"], ["cn", "Coordination"], ["plane", "Miller planes"]];
+const MODES = [["pos", "Positions"], ["view", "Structure"], ["grow", "Crystallise"], ["share", "Atom sharing (Z)"], ["pack", "Packing"], ["voids", "Voids"], ["cn", "Coordination"], ["plane", "Miller planes"], ["layers", "fcc layers"]];
 const BASE_R = { metal: .13, anion: .14, cation: .1, zn: .09, s: .13, carbon: .1 };
 const frac = (x) => (Math.abs(x - 1) < 1e-9 ? "1" : Math.abs(x - .5) < 1e-9 ? "½" : Math.abs(x - .25) < 1e-9 ? "¼" : Math.abs(x - .125) < 1e-9 ? "⅛" : Math.abs(x - 1 / 6) < 1e-9 ? "⅙" : x.toFixed(2));
 const nb = (p) => p.filter((v) => v === 0 || v === 1).length;
@@ -124,6 +124,26 @@ function supercell(s) { // 2×2×2 block (cubic) or a 2-layer hex patch, for the
   const seen = new Set(), out = [];
   for (const x of pts) { const key = x.q.map((v) => v.toFixed(3)).join(","); if (!seen.has(key)) { seen.add(key); out.push({ q: [(x.q[0] - 1) / 2, (x.q[1] - 1) / 2, (x.q[2] - 1) / 2], k: x.k }); } }
   return out;
+}
+
+// ───────────────────────────── fcc built from layers ─────────────────────────────
+// SCP: square layers along z (3 in the cell: 5 + 4 + 5 atoms). HCP: close-packed (111) layers (4 in the cell: 1 + 6 + 6 + 1).
+const L_COL = [0x2f7fd6, 0xc62839, 0x2fa046]; // layer A, B, C
+const L_NAME = ["A", "B", "C"];
+const GROUP = { below: { css: "#ff7ab6", hex: 0xff7ab6, name: "below" }, plane: { css: "#e3b341", hex: 0xe3b341, name: "in the same layer" }, above: { css: "#3cc8e8", hex: 0x3cc8e8, name: "above" } };
+const LAYER_DT = 1.0;
+function layerCoord(way, p) { return way === "scp" ? p[2] : p[0] + p[1] + p[2]; } // p in cell fractions
+function layerIndex(way, c) { return way === "scp" ? ((Math.round(c * 2) % 2) + 2) % 2 : ((Math.round(c) % 3) + 3) % 3; }
+function layersModel(way) {
+  const cell = cellAtoms("fcc");
+  const keyOf = (p) => +layerCoord(way, p).toFixed(3);
+  const coords = [...new Set(cell.map((a) => keyOf(a.p)))].sort((x, y) => x - y);
+  const nb = neighbours("fcc"); // centre atom (centred coords) and its 12 neighbours
+  const centreP = nb.centre.q.map((v) => v + .5);
+  const c0 = layerCoord(way, centreP);
+  const groups = nb.nn.map((x) => { const p = x.q.map((v) => v + .5); const dc = +(layerCoord(way, p) - c0).toFixed(3); return { q: x.q, p, grp: Math.abs(dc) < 1e-6 ? "plane" : dc < 0 ? "below" : "above" }; });
+  const count = (g) => groups.filter((x) => x.grp === g).length;
+  return { cell, coords, nb, c0, groups, counts: { below: count("below"), plane: count("plane"), above: count("above") }, keyOf, centreP };
 }
 
 // ───────────────────────────── renderer, scene, look ─────────────────────────────
@@ -247,7 +267,7 @@ function polyhedron(points, color) {
 }
 
 // ───────────────────────────── state & UI ─────────────────────────────
-const st = { s: "fcc", mode: "pos", showLabels: true, t0: performance.now(), hkl: [1, 1, 1], temp: 0, dis: 0, ttemp: 0, tdis: 0, phase: "crystal", liquid: [] };
+const st = { s: "fcc", mode: "pos", way: "scp", showLabels: true, t0: performance.now(), hkl: [1, 1, 1], temp: 0, dis: 0, ttemp: 0, tdis: 0, phase: "crystal", liquid: [] };
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 if (reduce) controls.autoRotate = false;
 const $ = (id) => document.getElementById(id);
@@ -262,6 +282,14 @@ function setTargets() {
     const n = neighbours(s);
     list = [{ ...n.centre, r: (BASE_R[n.centre.k] ?? .12) + .02, centre: true }, ...n.nn.map((x) => ({ ...x, r: BASE_R[x.k] ?? .12, nn: true }))];
     st.nn = n;
+  } else if (st.mode === "layers") {
+    const m = layersModel(st.way); st.lm = m;
+    const order = new Map(m.coords.map((c, i) => [c, i]));
+    list = m.cell.map((a) => { const c = m.keyOf(a.p); return { ...a, r: .095, col: L_COL[layerIndex(st.way, c)], layer: order.get(c), delay: order.get(c) * LAYER_DT }; });
+    st.cnStart = m.coords.length * LAYER_DT + .9;
+    // neighbours that lie outside the cell: drawn after the layers, so the 12 are all visible
+    const inCell = (q) => q.every((v) => Math.abs(v) < .5 + 1e-6);
+    m.groups.forEach((g) => { if (!inCell(g.q)) list.push({ q: g.q, k: "metal", r: .095, col: L_COL[layerIndex(st.way, layerCoord(st.way, g.p))], layer: -1, extra: true, delay: st.cnStart - .35 }); });
   } else list = cellAtoms(s).map((a) => ({ ...a, r: BASE_R[a.k] ?? .12 }));
   if (st.mode === "pack" || st.mode === "share") list.forEach((a) => (a.r = d.rT[a.k] ?? a.r));
   if (st.mode === "pos") list.forEach((a) => (a.r = .085));
@@ -273,9 +301,10 @@ function setTargets() {
     if (a) {
       const q = st.mode === "grow" ? a.q : a.q;
       sl.tgt.copy(toWorld(q, s)); if (st.mode === "grow") sl.tgt.multiplyScalar(1);
-      sl.tr = a.r * unit(s) * scaleR; sl.tcol.setHex(bySite && a.site ? SITE[a.site].col : (COL[a.k] ?? COL.metal)); sl.info = a;
-      if (sl.r < 1e-4) { sl.pos.copy(sl.tgt).multiplyScalar(0.02); }
-      sl.delay = (reduce ? 0 : i * 0.012);
+      sl.tr = a.r * unit(s) * scaleR; sl.tcol.setHex(a.col != null ? a.col : bySite && a.site ? SITE[a.site].col : (COL[a.k] ?? COL.metal)); sl.info = a;
+      if (st.mode === "layers") { sl.r = 0; sl.col.copy(sl.tcol); sl.pos.copy(sl.tgt); sl.pos.y += reduce ? 0 : 3.2; }
+      else if (sl.r < 1e-4) { sl.pos.copy(sl.tgt).multiplyScalar(0.02); }
+      sl.delay = a.delay != null ? (reduce ? 0 : a.delay) : (reduce ? 0 : i * 0.012);
     } else { sl.tr = 0; sl.info = null; }
   }
   if (st.mode === "grow") st.liquid = list.map(() => new THREE.Vector3((Math.random() - .5) * 4.4, (Math.random() - .5) * 4.4, (Math.random() - .5) * 4.4));
@@ -284,6 +313,8 @@ function setTargets() {
 
 function buildModeFx() {
   clearFx(); bonds.count = 0;
+  for (let i = 0; i < 16; i++) bonds.setColorAt(i, tmpC.setHex(0xf6efdf));
+  if (bonds.instanceColor) bonds.instanceColor.needsUpdate = true;
   const s = st.s, d = S[s];
   atomMat.clippingPlanes = null; atomMat.side = THREE.FrontSide; atomMat.needsUpdate = true;
   frame.visible = st.mode !== "grow";
@@ -323,6 +354,45 @@ function buildModeFx() {
     bonds.count = pts.length;
   }
   if (st.mode === "plane") buildPlanes();
+  if (st.mode === "layers") buildLayers();
+}
+function buildLayers() {
+  const m = st.lm, way = st.way;
+  st.layerInfo = [];
+  m.coords.forEach((c, li) => {
+    const idx = layerIndex(way, c), col = L_COL[idx];
+    const atomsHere = m.cell.filter((a) => m.keyOf(a.p) === c);
+    // translucent tray = the 2D layer's slice through the cell
+    const poly = planePolygon(way === "scp" ? [0, 0, 1] : [1, 1, 1], c);
+    const g = new THREE.Group(); g.userData = { layer: li, delay: li * LAYER_DT };
+    if (poly.length >= 3) {
+      const w = poly.map((p) => toWorld([p[0] - .5, p[1] - .5, p[2] - .5], "fcc"));
+      const geo = new THREE.BufferGeometry(), pos = [];
+      for (let i = 1; i < w.length - 1; i++) pos.push(...w[0].toArray(), ...w[i].toArray(), ...w[i + 1].toArray());
+      geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); geo.computeVertexNormals();
+      g.add(new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0, side: THREE.DoubleSide, depthWrite: false })));
+      g.add(new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(w), new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: 0 })));
+      st.layerInfo.push({ name: L_NAME[idx], n: atomsHere.length, css: "#" + col.toString(16).padStart(6, "0"), anchor: w.reduce((a, v) => (v.x > a.x ? v : a), w[0]).clone() });
+    } else {
+      // a single corner atom (HCP end layers): label sits at the atom
+      const a0 = atomsHere[0]; st.layerInfo.push({ name: L_NAME[idx], n: atomsHere.length, css: "#" + col.toString(16).padStart(6, "0"), anchor: toWorld(a0.q, "fcc") });
+    }
+    // in-plane contacts: atoms at the nearest distance (a/√2) inside this layer
+    const seg = [];
+    for (let i = 0; i < atomsHere.length; i++) for (let j = i + 1; j < atomsHere.length; j++) {
+      const A = atomsHere[i].p, B = atomsHere[j].p, dd = Math.hypot(A[0] - B[0], A[1] - B[1], A[2] - B[2]);
+      if (Math.abs(dd - Math.SQRT1_2) < 1e-4) seg.push(toWorld(atomsHere[i].q, "fcc"), toWorld(atomsHere[j].q, "fcc"));
+    }
+    if (seg.length) g.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(seg), new THREE.LineBasicMaterial({ color: 0xf6efdf, transparent: true, opacity: 0 })));
+    fx.add(g);
+  });
+  // the 12 neighbours of the glowing atom, grouped
+  const c = toWorld(st.lm.nb.centre.q, "fcc");
+  st.bondEnds = m.groups.map((x) => ({ a: c.clone(), b: toWorld(x.q, "fcc"), grp: x.grp }));
+  const order = ["below", "plane", "above"]; st.bondEnds.sort((x, y) => order.indexOf(x.grp) - order.indexOf(y.grp));
+  bonds.count = st.bondEnds.length;
+  st.bondEnds.forEach((b, i) => bonds.setColorAt(i, tmpC.setHex(GROUP[b.grp].hex)));
+  if (bonds.instanceColor) bonds.instanceColor.needsUpdate = true;
 }
 function ionicPolyColour(d) { return d.ionic ? 0xb376ff : 0xe3b341; }
 function voidBall(pos, color, r) {
@@ -375,8 +445,13 @@ function setBig(n, cap) { if (bigNum.textContent !== n) bigNum.textContent = n; 
 function chips() {
   $("structs").innerHTML = ORDER.map((k) => `<button aria-pressed="${k === st.s}" data-s="${k}">${S[k].name.replace(/ \(.*\)$/, "")}</button>`).join("");
   $("modes").innerHTML = MODES.map(([k, n]) => `<button aria-pressed="${k === st.mode}" data-m="${k}">${n}</button>`).join("");
-  $("structs").querySelectorAll("button").forEach((b) => (b.onclick = () => go(b.dataset.s, st.mode)));
-  $("modes").querySelectorAll("button").forEach((b) => (b.onclick = () => go(st.s, b.dataset.m)));
+  $("structs").querySelectorAll("button").forEach((b) => (b.onclick = () => go(b.dataset.s, st.mode === "layers" ? "pos" : st.mode)));
+  $("modes").querySelectorAll("button").forEach((b) => (b.onclick = () => go(b.dataset.m === "layers" ? "fcc" : st.s, b.dataset.m)));
+  if (document.body.classList.contains("embed") && st.mode === "layers") {
+    // inside the notes only the two ways of building fcc are offered, at the top where they can be seen
+    $("modes").innerHTML = `<button aria-pressed="${st.way === "scp"}" data-way="scp">3 square layers (SCP)</button><button aria-pressed="${st.way === "hcp"}" data-way="hcp">4 hexagonal layers (HCP)</button>`;
+    $("modes").querySelectorAll("button").forEach((b2) => (b2.onclick = () => { st.way = b2.dataset.way; setTargets(); buildModeFx(); chips(); panel(); lastTally = ""; }));
+  }
 }
 function go(s, mode) {
   const changed = s !== st.s;
@@ -393,7 +468,7 @@ function panel() {
   facts.push(["Examples", d.ex]);
   $("facts").innerHTML = facts.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
   $("hudL").innerHTML = `<b>${d.name}</b>`; $("hudR").textContent = MODES.find((m) => m[0] === st.mode)[1];
-  tally.style.display = st.mode === "share" ? "" : "none";
+  tally.style.display = st.mode === "share" || st.mode === "layers" ? "" : "none";
   const c = $("controls"); c.innerHTML = ""; let note = "";
   setBig("", "");
   if (st.mode === "pos") {
@@ -409,6 +484,13 @@ function panel() {
     $("lbl").onclick = () => { st.showLabels = !st.showLabels; panel(); };
     note = "Each colour and letter is one kind of position: C corner, E edge centre, F face centre, B body centre, T tetrahedral site, I inside (hcp middle layer). Drag to turn the cell and check every corner, edge centre, face centre and the body centre.";
     setBig(String(list.length), "atoms drawn in this cell");
+  }
+  if (st.mode === "layers") {
+    const hcp = st.way === "hcp";
+    c.innerHTML = `<div class="row"><button class="btn way" data-way="scp" aria-pressed="${!hcp}">3 square layers (SCP)</button><button class="btn way" data-way="hcp" aria-pressed="${hcp}">4 hexagonal layers (HCP)</button></div>`;
+    c.querySelectorAll("[data-way]").forEach((b) => (b.onclick = () => { st.way = b.dataset.way; setTargets(); buildModeFx(); panel(); lastTally = ""; }));
+    note = hcp ? "Close-packed (111) layers stack A B C A. Four of them are needed to build the fcc cell, corner to opposite corner. Each atom touches 6 in its own layer, 3 below and 3 above: CN = 12 (3 + 6 + 3)."
+      : "Square-packed layers stack A B A. Three of them are needed to build the fcc cell. Each atom touches 4 in its own layer, 4 below and 4 above: CN = 12 (4 + 4 + 4).";
   }
   if (st.mode === "view") note = "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.";
   if (st.mode === "grow") {
@@ -494,6 +576,7 @@ function frameLoop() {
     }
     if (started) { sl.pos.lerp(target, st.mode === "grow" ? 1 - Math.exp(-dt * 14) : k); }
     let rT = sl.tr;
+    if (st.mode === "layers" && !started) rT = 0;
     if (st.mode === "pack" && sl.info) rT = (0.04 + (sl.tr / unit(s) - .04) * ease(Math.min(1, (t - .4) / 2.4))) * unit(s);
     sl.r += (rT - sl.r) * k;
     sl.col.lerp(sl.tcol, k);
@@ -502,6 +585,10 @@ function frameLoop() {
     if (st.mode === "cn" && sl.info?.centre) sl.tglow = .9;
     if (st.mode === "plane" && sl.info && st.activePlane != null && !isHex(s)) {
       const p = sl.info.p; if (p) { const v = st.hkl[0] * p[0] + st.hkl[1] * p[1] + st.hkl[2] * p[2]; if (Math.abs(v - st.activePlane) < 1e-6) sl.tglow = 1; }
+    }
+    if (st.mode === "layers" && sl.info && t > st.cnStart) {
+      const lm = st.lm, cp = lm.nb.centre.q, q = sl.info.q;
+      if (Math.hypot(q[0] - cp[0], q[1] - cp[1], q[2] - cp[2]) < 1e-6) sl.tglow = .9;
     }
     sl.glow += (sl.tglow - sl.glow) * (1 - Math.exp(-dt * 8));
     dummy.position.copy(sl.pos); dummy.scale.setScalar(Math.max(0.0001, sl.r)); dummy.updateMatrix();
@@ -541,6 +628,7 @@ function frameLoop() {
     const poly = fx.children[0];
     if (poly) { const pp = ease(Math.min(1, Math.max(0, (t - .8 - n * .18) / .9))); poly.scale.setScalar(Math.max(.001, pp)); }
   }
+  if (st.mode === "layers" && st.bondEnds) layersFrame(t, dt);
   // voids pulse
   if (st.mode === "voids") fx.children.forEach((o, i) => { if (o.userData.pulse == null) o.scale.setScalar(ease(Math.min(1, Math.max(0, (t - .3 - i * .08) / .6)))); });
   // plane sweep
@@ -562,6 +650,42 @@ function frameLoop() {
 const tmpV = new THREE.Vector3(), tmpW = new THREE.Vector3(), tmpC = new THREE.Color();
 
 let lastTally = "";
+function layersFrame(t, dt) {
+  const m = st.lm, nL = m.coords.length;
+  // trays and in-plane contacts fade in as each layer lands
+  fx.children.forEach((g) => {
+    if (g.userData.layer == null) return;
+    const p = ease(Math.min(1, Math.max(0, (t - g.userData.delay - .35) / .7)));
+    g.children.forEach((o, i) => { o.material.opacity = i === 0 ? .14 * p : i === 1 ? .85 * p : .6 * p; });
+  });
+  // bonds to the 12 neighbours grow group by group
+  const gd = { below: 0, plane: 1, above: 2 }, per = { below: 0, plane: 0, above: 0 }, shown = { below: 0, plane: 0, above: 0 };
+  st.bondEnds.forEach((b, i) => {
+    const gi = gd[b.grp], k = per[b.grp]++;
+    const start = st.cnStart + gi * 1.5 + k * .12;
+    const p = ease(Math.min(1, Math.max(0, (t - start) / .45)));
+    if (p > .98) shown[b.grp]++;
+    const end = tmpV.copy(b.a).lerp(b.b, p), len = Math.max(1e-4, b.a.distanceTo(end));
+    dir.copy(end).sub(b.a).normalize(); tmpQ.setFromUnitVectors(up, dir.lengthSq() ? dir : up);
+    dummy.position.copy(b.a).lerp(end, .5); dummy.quaternion.copy(tmpQ); dummy.scale.set(.03, len, .03); dummy.updateMatrix();
+    bonds.setMatrixAt(i, dummy.matrix); dummy.quaternion.identity();
+  });
+  bonds.instanceMatrix.needsUpdate = true;
+  // readout
+  const landed = Math.min(nL, Math.floor(t / LAYER_DT) + 1);
+  const tot = shown.below + shown.plane + shown.above, c = m.counts;
+  const hcp = st.way === "hcp";
+  const rows = [];
+  for (let i = 0; i < landed; i++) { const idx = layerIndex(st.way, m.coords[i]), n = m.cell.filter((a) => m.keyOf(a.p) === m.coords[i]).length; rows.push(`layer ${i + 1} = <span style="color:#${L_COL[idx].toString(16).padStart(6, "0")}">${L_NAME[idx]}</span> · ${n} atom${n > 1 ? "s" : ""}`); }
+  let html = rows.join("<br>");
+  if (t > st.cnStart) {
+    const part = (g) => `<span style="color:${GROUP[g].css}">${shown[g]}</span>`;
+    html += `<br>CN of the glowing atom:<br>${part("below")} below + ${part("plane")} in-plane + ${part("above")} above = <span class="hl">${tot}</span>`;
+  }
+  if (html !== lastTally) { tally.innerHTML = html; lastTally = html; }
+  if (t < st.cnStart) setBig(`${landed} / ${nL}`, hcp ? "close-packed layers stacking A B C A — four are needed" : "square layers stacking A B A — three are needed");
+  else setBig(tot >= 12 ? `${c.below} + ${c.plane} + ${c.above} = 12` : `${tot}`, tot >= 12 ? `coordination number of fcc, counted ${hcp ? "3 + 6 + 3" : "4 + 4 + 4"}` : "counting the neighbours of the glowing atom…");
+}
 function shareTally(t) {
   const d = S[st.s], list = st.list || [];
   const step = Math.max(0, Math.min(list.length, Math.floor((t - 2.6) / .42) + 1));
@@ -582,6 +706,19 @@ function shareTally(t) {
 
 // share fractions floating over the atoms
 function updateLabels(t) {
+  if (st.mode === "layers" && st.layerInfo) {
+    const n = st.layerInfo.length;
+    while (labelEls.length < n) { const e = document.createElement("span"); e.className = "lbl"; labels.appendChild(e); labelEls.push(e); }
+    const rect = renderer.domElement.getBoundingClientRect();
+    labelEls.forEach((e, i) => {
+      if (i >= n || t < i * LAYER_DT + .6) { e.style.display = "none"; return; }
+      const L = st.layerInfo[i], v = tmpV.copy(L.anchor).project(camera);
+      e.style.display = ""; e.className = "lbl"; e.style.background = "rgba(4,6,6,.82)"; e.style.borderColor = L.css; e.style.color = L.css;
+      e.textContent = `${L.name} · ${L.n} atom${L.n > 1 ? "s" : ""}`;
+      e.style.transform = `translate(${(v.x * .5 + .5) * rect.width}px, ${(-v.y * .5 + .5) * rect.height}px) translate(14px, -50%)`;
+    });
+    return;
+  }
   const want = st.mode === "share" || (st.mode === "pos" && st.showLabels) ? st.list.length : 0;
   while (labelEls.length < want) { const e = document.createElement("span"); e.className = "lbl"; labels.appendChild(e); labelEls.push(e); }
   const rect = renderer.domElement.getBoundingClientRect();
@@ -597,6 +734,7 @@ function updateLabels(t) {
     e.textContent = pos ? SITE[a.site].tag : frac(a.share);
     e.className = pos ? "lbl tag" : "lbl";
     e.style.background = pos ? SITE[a.site].css : "";
+    e.style.borderColor = ""; e.style.color = "";
     e.style.transform = `translate(${(v.x * .5 + .5) * rect.width}px, ${(-v.y * .5 + .5) * rect.height}px) translate(-50%, ${st.mode === "pos" ? "-50%" : "-150%"})`;
   });
 }
@@ -615,5 +753,14 @@ renderer.domElement.addEventListener("keydown", (e) => {
   const off = camera.position.clone().sub(controls.target); const sph = new THREE.Spherical().setFromVector3(off);
   sph.theta += m[0]; sph.phi = Math.max(.2, Math.min(Math.PI - .2, sph.phi + m[1])); off.setFromSpherical(sph); camera.position.copy(controls.target).add(off);
 });
+// deep links: crystal-lab.html#fcc/layers/hcp/embed
+{
+  const h = location.hash.slice(1).split("/").filter(Boolean);
+  if (S[h[0]]) st.s = h[0];
+  if (MODES.some((m) => m[0] === h[1])) st.mode = h[1];
+  if (h.includes("hcp")) st.way = "hcp";
+  if (h.includes("embed")) document.body.classList.add("embed");
+  if (st.mode === "layers") st.s = "fcc";
+}
 resize(); buildFrame(st.s); setTargets(); buildModeFx(); chips(); panel();
 requestAnimationFrame(frameLoop);

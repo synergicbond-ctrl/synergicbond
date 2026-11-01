@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Block, ConceptBlock } from "@/components/chapter-ui/blocks";
+import { FccLayersNotes } from "./FccLayersNotes";
 import { SOLID_STATE_PARTS } from "../parts";
 
 const SOLID_STATE_PART_COUNT = SOLID_STATE_PARTS.length;
@@ -66,6 +67,9 @@ export function SolidStatePartPage({ data }: { data: SolidStatePartData }) {
           <SectionBlocks blocks={section.blocks} title={section.title} />
         </section>
       ))}
+
+      {/* Part 17 (Packing in Solids): how fcc is built from square or hexagonal layers, with the animation */}
+      {data.part === 17 ? <FccLayersNotes /> : null}
 
       {data.traps.length > 0 ? (
         <Block kind="trap" title="JEE Advanced traps & edge cases">

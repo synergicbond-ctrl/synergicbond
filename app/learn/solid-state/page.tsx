@@ -63,6 +63,19 @@ export default function SolidStatePage() {
           Open the Solid State Master →
         </Link>
       </section>
+      <section className="mb-8 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
+        <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--text-muted)]">Animations and offline copies</p>
+        <h2 className="mt-2 text-2xl font-black tracking-tight md:text-3xl">Crystal Lab and the whole chapter as HTML</h2>
+        <p className="mt-3 max-w-4xl text-sm leading-7 text-[var(--text-muted)]">
+          Rotate unit cells in 3D, watch atom sharing, packing, voids and coordination, and see fcc built from 3 square layers or 4 hexagonal layers.
+          The interactive chapter keeps every animation; the one-page copy is plain HTML.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <a href="/learn/solid-state/files/crystal-lab.html" className="inline-flex rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-3 text-sm font-black transition hover:border-[var(--accent)]/40">Crystal Lab (3D) →</a>
+          <a href="/learn/solid-state/files/solid-state-interactive.html" className="inline-flex rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-3 text-sm font-black transition hover:border-[var(--accent)]/40">Interactive chapter →</a>
+          <a href="/learn/solid-state/files/solid-state-full.html" className="inline-flex rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-3 text-sm font-black transition hover:border-[var(--accent)]/40">One-page HTML →</a>
+        </div>
+      </section>
       <ChapterLessonGroups groups={groups} anchorPrefix="solid-group" />
       </div>
     </AppShell>

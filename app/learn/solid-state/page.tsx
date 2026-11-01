@@ -40,13 +40,6 @@ export default function SolidStatePage() {
       description="A structured sequence from crystalline and amorphous solids through crystal lattices, unit-cell geometry, Bravais systems, packing, voids, radius ratio, important structures, defects, electrical properties and magnetism."
       free={true}
       reader={solidStateReader}
-      tabs={[
-        { label: "All 23 parts", href: "/learn/solid-state", active: true },
-        ...GROUPS.map((group, index) => ({
-          label: group.label,
-          href: `/learn/solid-state#solid-group-${index + 1}`,
-        })),
-      ]}
     >
       <div className="mx-auto max-w-3xl">
       <section className="mb-8 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">

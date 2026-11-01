@@ -46,8 +46,17 @@ const S = {
     basis: fccPts.flatMap((p) => [{ p, k: "carbon" }, { p: [p[0] + .25, p[1] + .25, p[2] + .25], k: "carbon" }]),
     Z: "8", CN: "4", poly: "tetrahedron", pf: R3 * Math.PI / 16, rel: "√3 a = 8r", rT: { carbon: R3 / 8 }, ex: "C (diamond), Si, Ge", centre: [.25, .25, .25] },
 };
+// position-in-cell colours (used by Positions and Atom sharing)
+const SITE = {
+  corner: { col: 0x37c8f4, name: "corner", css: "#37c8f4", tag: "C" },
+  edge: { col: 0xff775d, name: "edge centre", css: "#ff775d", tag: "E" },
+  face: { col: 0x50dc7b, name: "face centre", css: "#50dc7b", tag: "F" },
+  body: { col: 0xe3b341, name: "body centre", css: "#e3b341", tag: "B" },
+  inside: { col: 0xb376ff, name: "inside (tetrahedral site)", css: "#b376ff", tag: "T" },
+  hexinside: { col: 0xb376ff, name: "inside (middle layer)", css: "#b376ff", tag: "I" },
+};
 const ORDER = ["sc", "bcc", "fcc", "hcp", "nacl", "cscl", "zns", "diamond"];
-const MODES = [["view", "Structure"], ["grow", "Crystallise"], ["share", "Atom sharing (Z)"], ["pack", "Packing"], ["voids", "Voids"], ["cn", "Coordination"], ["plane", "Miller planes"]];
+const MODES = [["pos", "Positions"], ["view", "Structure"], ["grow", "Crystallise"], ["share", "Atom sharing (Z)"], ["pack", "Packing"], ["voids", "Voids"], ["cn", "Coordination"], ["plane", "Miller planes"]];
 const BASE_R = { metal: .13, anion: .14, cation: .1, zn: .09, s: .13, carbon: .1 };
 const frac = (x) => (Math.abs(x - 1) < 1e-9 ? "1" : Math.abs(x - .5) < 1e-9 ? "½" : Math.abs(x - .25) < 1e-9 ? "¼" : Math.abs(x - .125) < 1e-9 ? "⅛" : Math.abs(x - 1 / 6) < 1e-9 ? "⅙" : x.toFixed(2));
 const nb = (p) => p.filter((v) => v === 0 || v === 1).length;
@@ -64,15 +73,19 @@ function toWorld(q, s) { // q already centred in model units of a
 function hcpCell() {
   const out = [];
   for (const z of [0, HC]) {
-    for (let k = 0; k < 6; k++) out.push({ q: [Math.cos(k * Math.PI / 3), Math.sin(k * Math.PI / 3), z - HC / 2], k: "metal", share: 1 / 6, role: "corner" });
-    out.push({ q: [0, 0, z - HC / 2], k: "metal", share: .5, role: "face" });
+    for (let k = 0; k < 6; k++) out.push({ q: [Math.cos(k * Math.PI / 3), Math.sin(k * Math.PI / 3), z - HC / 2], k: "metal", share: 1 / 6, role: "corner", site: "corner" });
+    out.push({ q: [0, 0, z - HC / 2], k: "metal", share: .5, role: "face", site: "face" });
   }
-  for (let k = 0; k < 3; k++) { const t = Math.PI / 2 + k * 2 * Math.PI / 3; out.push({ q: [Math.cos(t) / R3, Math.sin(t) / R3, 0], k: "metal", share: 1, role: "inside" }); }
+  for (let k = 0; k < 3; k++) { const t = Math.PI / 2 + k * 2 * Math.PI / 3; out.push({ q: [Math.cos(t) / R3, Math.sin(t) / R3, 0], k: "metal", share: 1, role: "inside", site: "hexinside" }); }
   return out;
 }
 function cellAtoms(s) {
   if (isHex(s)) return hcpCell();
-  return S[s].atoms.map((a) => ({ q: [a.p[0] - .5, a.p[1] - .5, a.p[2] - .5], k: a.k, share: [1, .5, .25, .125][nb(a.p)], role: ["inside", "face", "edge", "corner"][nb(a.p)], p: a.p }));
+  return S[s].atoms.map((a) => {
+    const n = nb(a.p), body = a.p.every((v) => v === .5);
+    const site = ["inside", "face", "edge", "corner"][n] === "inside" ? (body ? "body" : "inside") : ["inside", "face", "edge", "corner"][n];
+    return { q: [a.p[0] - .5, a.p[1] - .5, a.p[2] - .5], k: a.k, share: [1, .5, .25, .125][n], role: ["inside", "face", "edge", "corner"][n], site, p: a.p };
+  });
 }
 function latticePoints(s, range) { // fractional points of the extended lattice
   const d = S[s], pts = [];
@@ -134,11 +147,11 @@ const pmrem = new THREE.PMREMGenerator(renderer);
 scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 
 const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
-camera.position.set(6.2, 4.2, 7.4);
+camera.position.set(4.3, 2.9, 5.2);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; controls.dampingFactor = 0.07;
-controls.minDistance = 4; controls.maxDistance = 18;
-controls.autoRotate = true; controls.autoRotateSpeed = 0.7;
+controls.minDistance = 3.2; controls.maxDistance = 14;
+controls.autoRotate = true; controls.autoRotateSpeed = 0.35;
 controls.target.set(0, 0, 0);
 
 const key = new THREE.DirectionalLight(0xfff3df, 1.9);
@@ -163,12 +176,12 @@ const dust = (() => {
   for (let i = 0; i < n; i++) { pos[i * 3] = (Math.random() - .5) * 26; pos[i * 3 + 1] = Math.random() * 12 - 3; pos[i * 3 + 2] = (Math.random() - .5) * 26; }
   g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
   const m = new THREE.PointsMaterial({ size: 0.035, color: 0xf6efdf, transparent: true, opacity: 0.35, depthWrite: false });
-  const p = new THREE.Points(g, m); scene.add(p); return p;
+  const p = new THREE.Points(g, m); p.visible = false; return p; // off: twinkling points tire the eyes
 })();
 
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
-const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.45, 0.4, 0.92);
+const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.12, 0.3, 0.96);
 composer.addPass(bloom);
 composer.addPass(new OutputPass());
 
@@ -234,7 +247,7 @@ function polyhedron(points, color) {
 }
 
 // ───────────────────────────── state & UI ─────────────────────────────
-const st = { s: "fcc", mode: "view", t0: performance.now(), hkl: [1, 1, 1], temp: 0, dis: 0, ttemp: 0, tdis: 0, phase: "crystal", liquid: [] };
+const st = { s: "fcc", mode: "pos", showLabels: true, t0: performance.now(), hkl: [1, 1, 1], temp: 0, dis: 0, ttemp: 0, tdis: 0, phase: "crystal", liquid: [] };
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 if (reduce) controls.autoRotate = false;
 const $ = (id) => document.getElementById(id);
@@ -251,6 +264,8 @@ function setTargets() {
     st.nn = n;
   } else list = cellAtoms(s).map((a) => ({ ...a, r: BASE_R[a.k] ?? .12 }));
   if (st.mode === "pack" || st.mode === "share") list.forEach((a) => (a.r = d.rT[a.k] ?? a.r));
+  if (st.mode === "pos") list.forEach((a) => (a.r = .085));
+  const bySite = st.mode === "pos" || st.mode === "share";
   st.list = list;
   const scaleR = st.mode === "grow" ? .5 : 1;
   for (let i = 0; i < MAX; i++) {
@@ -258,7 +273,7 @@ function setTargets() {
     if (a) {
       const q = st.mode === "grow" ? a.q : a.q;
       sl.tgt.copy(toWorld(q, s)); if (st.mode === "grow") sl.tgt.multiplyScalar(1);
-      sl.tr = a.r * unit(s) * scaleR; sl.tcol.setHex(COL[a.k] ?? COL.metal); sl.info = a;
+      sl.tr = a.r * unit(s) * scaleR; sl.tcol.setHex(bySite && a.site ? SITE[a.site].col : (COL[a.k] ?? COL.metal)); sl.info = a;
       if (sl.r < 1e-4) { sl.pos.copy(sl.tgt).multiplyScalar(0.02); }
       sl.delay = (reduce ? 0 : i * 0.012);
     } else { sl.tr = 0; sl.info = null; }
@@ -311,7 +326,7 @@ function buildModeFx() {
 }
 function ionicPolyColour(d) { return d.ionic ? 0xb376ff : 0xe3b341; }
 function voidBall(pos, color, r) {
-  const m = new THREE.Mesh(new THREE.SphereGeometry(r, 24, 16), new THREE.MeshBasicMaterial({ color: new THREE.Color(color).multiplyScalar(2.2), transparent: true, opacity: .9 }));
+  const m = new THREE.Mesh(new THREE.SphereGeometry(r, 24, 16), new THREE.MeshBasicMaterial({ color, transparent: true, opacity: .85 }));
   m.position.copy(pos); m.userData.pulse = Math.random() * 6; return m;
 }
 
@@ -381,6 +396,20 @@ function panel() {
   tally.style.display = st.mode === "share" ? "" : "none";
   const c = $("controls"); c.innerHTML = ""; let note = "";
   setBig("", "");
+  if (st.mode === "pos") {
+    const list = cellAtoms(st.s), sites = {};
+    list.forEach((a) => { const key = a.site; sites[key] = sites[key] || { n: 0, share: a.share }; sites[key].n++; });
+    const order = ["corner", "edge", "face", "body", "inside", "hexinside"].filter((k2) => sites[k2]);
+    const rows = order.map((k2) => `<tr><td><i class="tagdot" style="background:${SITE[k2].css}">${SITE[k2].tag}</i>${SITE[k2].name}</td><td>${sites[k2].n}</td><td>${frac(sites[k2].share)}</td><td>${fmt(sites[k2].n * sites[k2].share)}</td></tr>`).join("");
+    const total = order.reduce((a2, k2) => a2 + sites[k2].n * sites[k2].share, 0);
+    c.innerHTML = `<table class="sites"><thead><tr><th>Position</th><th>Atoms</th><th>Share</th><th>Counts</th></tr></thead><tbody>${rows}</tbody><tfoot><tr><td>${S[st.s].ionic ? "Total ions in this cell" : "Total in this cell"}</td><td></td><td></td><td>${fmt(total)}</td></tr></tfoot></table>`;
+    const row2 = document.createElement("div"); row2.className = "row";
+    row2.innerHTML = `<button class="btn" id="lbl">${st.showLabels ? "Hide labels" : "Show labels"}</button>`;
+    c.appendChild(row2);
+    $("lbl").onclick = () => { st.showLabels = !st.showLabels; panel(); };
+    note = "Each colour and letter is one kind of position: C corner, E edge centre, F face centre, B body centre, T tetrahedral site, I inside (hcp middle layer). Drag to turn the cell and check every corner, edge centre, face centre and the body centre.";
+    setBig(String(list.length), "atoms drawn in this cell");
+  }
   if (st.mode === "view") note = "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.";
   if (st.mode === "grow") {
     c.innerHTML = `<div class="row"><button class="btn" id="melt">🔥 Melt</button><button class="btn" id="slow">❄ Cool slowly</button><button class="btn" id="quench">⚡ Quench</button></div>
@@ -418,6 +447,7 @@ function legend() {
   const d = S[st.s], kinds = [...new Set((st.list || []).map((a) => a.k))];
   const hex = (n) => "#" + n.toString(16).padStart(6, "0");
   let html = kinds.map((k) => `<span>${d.names ? d.names[k] : k === "carbon" ? "C" : "atom"}<i style="background:${hex(COL[k])}"></i></span>`).join("");
+  if (st.mode === "pos" || st.mode === "share") { const sites = [...new Set((st.list || []).map((a) => a.site).filter(Boolean))]; html = sites.map((k2) => `<span>${st.mode === "pos" ? SITE[k2].tag + " · " : ""}${SITE[k2].name}<i style="background:${SITE[k2].css}"></i></span>`).join(""); }
   if (st.mode === "voids" && d.voids) html += `<span>octahedral void<i style="background:#ff775d"></i></span><span>tetrahedral void<i style="background:#e3b341"></i></span>`;
   $("legend").innerHTML = html;
 }
@@ -459,8 +489,8 @@ function frameLoop() {
     if (st.mode === "grow" && sl.info) {
       const L = st.liquid[i];
       const time = performance.now() / 1000;
-      const amp = .32 * st.temp + .02;
-      target = tmpV.copy(sl.tgt).lerp(L, st.dis).add(tmpW.set(Math.sin(time * 9.1 + i * 1.7), Math.sin(time * 8.3 + i * 2.3), Math.cos(time * 7.7 + i * .9)).multiplyScalar(amp));
+      const amp = .22 * st.temp + .01;
+      target = tmpV.copy(sl.tgt).lerp(L, st.dis).add(tmpW.set(Math.sin(time * 2.6 + i * 1.7), Math.sin(time * 2.2 + i * 2.3), Math.cos(time * 2.4 + i * .9)).multiplyScalar(amp));
     }
     if (started) { sl.pos.lerp(target, st.mode === "grow" ? 1 - Math.exp(-dt * 14) : k); }
     let rT = sl.tr;
@@ -476,11 +506,11 @@ function frameLoop() {
     sl.glow += (sl.tglow - sl.glow) * (1 - Math.exp(-dt * 8));
     dummy.position.copy(sl.pos); dummy.scale.setScalar(Math.max(0.0001, sl.r)); dummy.updateMatrix();
     atoms.setMatrixAt(i, dummy.matrix); atoms.setColorAt(i, sl.col);
-    dummy.scale.setScalar(Math.max(0.0001, sl.r * (1.18 + .08 * Math.sin(performance.now() / 180)) * (sl.glow > .02 ? 1 : 0))); dummy.updateMatrix();
-    glow.setMatrixAt(i, dummy.matrix); glow.setColorAt(i, tmpC.copy(sl.col).multiplyScalar(sl.glow * 1.6));
+    dummy.scale.setScalar(Math.max(0.0001, sl.r * 1.22 * (sl.glow > .02 ? 1 : 0))); dummy.updateMatrix();
+    glow.setMatrixAt(i, dummy.matrix); glow.setColorAt(i, tmpC.copy(sl.col).multiplyScalar(sl.glow * 0.45));
   }
   atoms.instanceMatrix.needsUpdate = true; atoms.instanceColor.needsUpdate = true;
-  glow.instanceMatrix.needsUpdate = true; glow.instanceColor.needsUpdate = true; glowMat.opacity = .55;
+  glow.instanceMatrix.needsUpdate = true; glow.instanceColor.needsUpdate = true; glowMat.opacity = .35;
 
   // atom-sharing: walls close in, then the tally runs
   if (st.mode === "share" && clipPlanes.length) {
@@ -512,18 +542,18 @@ function frameLoop() {
     if (poly) { const pp = ease(Math.min(1, Math.max(0, (t - .8 - n * .18) / .9))); poly.scale.setScalar(Math.max(.001, pp)); }
   }
   // voids pulse
-  if (st.mode === "voids") fx.children.forEach((o, i) => { if (o.userData.pulse != null) o.scale.setScalar(1 + .25 * Math.sin(performance.now() / 300 + o.userData.pulse)); else o.scale.setScalar(ease(Math.min(1, Math.max(0, (t - .3 - i * .08) / .6)))); });
+  if (st.mode === "voids") fx.children.forEach((o, i) => { if (o.userData.pulse == null) o.scale.setScalar(ease(Math.min(1, Math.max(0, (t - .3 - i * .08) / .6)))); });
   // plane sweep
   if (st.mode === "plane" && st.planes?.length) {
-    const n = st.planes.length, idx = Math.floor(t / 1.1) % n;
+    const n = st.planes.length, idx = Math.floor(t / 2.4) % n;
     st.activePlane = st.planes[idx].userData.c;
-    st.planes.forEach((g, i) => { g.children[0].material.opacity = i === idx ? .42 : .07; g.children[1].material.opacity = i === idx ? 1 : .25; });
+    st.planes.forEach((g, i) => { const m0 = g.children[0].material, m1 = g.children[1].material, on = i === idx; m0.opacity += ((on ? .32 : .06) - m0.opacity) * k * .5; m1.opacity += ((on ? .9 : .25) - m1.opacity) * k * .5; });
     const [h, kk, l] = st.hkl, s2 = h * h + kk * kk + l * l;
     setBig(`d = a/${Number.isInteger(Math.sqrt(s2)) ? Math.sqrt(s2) : "√" + s2}`, `(${h} ${kk} ${l}) planes · d = ${(1 / Math.sqrt(s2)).toFixed(3)} a · glowing atoms lie on the lit plane`);
   } else st.activePlane = null;
 
   dust.rotation.y += dt * .01;
-  frameMat.opacity = .45 + .1 * Math.sin(performance.now() / 900);
+  frameMat.opacity = .6;
   controls.update();
   composer.render();
   updateLabels(t);
@@ -552,18 +582,22 @@ function shareTally(t) {
 
 // share fractions floating over the atoms
 function updateLabels(t) {
-  const want = st.mode === "share" ? st.list.length : 0;
+  const want = st.mode === "share" || (st.mode === "pos" && st.showLabels) ? st.list.length : 0;
   while (labelEls.length < want) { const e = document.createElement("span"); e.className = "lbl"; labels.appendChild(e); labelEls.push(e); }
   const rect = renderer.domElement.getBoundingClientRect();
   labelEls.forEach((e, i) => {
     if (i >= want) { e.style.display = "none"; return; }
-    const sl = slot[i]; const step = Math.floor((t - 2.6) / .42);
+    const sl = slot[i]; const step = st.mode === "pos" ? Infinity : Math.floor((t - 2.6) / .42);
     if (i > step) { e.style.display = "none"; return; }
     const v = tmpV.copy(sl.pos).project(camera);
     if (v.z > 1) { e.style.display = "none"; return; }
     e.style.display = "";
-    e.textContent = frac(st.list[i].share);
-    e.style.transform = `translate(${(v.x * .5 + .5) * rect.width}px, ${(-v.y * .5 + .5) * rect.height}px) translate(-50%, -150%)`;
+    const a = st.list[i];
+    const pos = st.mode === "pos";
+    e.textContent = pos ? SITE[a.site].tag : frac(a.share);
+    e.className = pos ? "lbl tag" : "lbl";
+    e.style.background = pos ? SITE[a.site].css : "";
+    e.style.transform = `translate(${(v.x * .5 + .5) * rect.width}px, ${(-v.y * .5 + .5) * rect.height}px) translate(-50%, ${st.mode === "pos" ? "-50%" : "-150%"})`;
   });
 }
 

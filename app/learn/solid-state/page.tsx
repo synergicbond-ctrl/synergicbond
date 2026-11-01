@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ChapterLessonGroups, type LessonGroup } from "@/components/notes/canonical";
 import { AppShell } from "@/components/AppShell";
 import { SOLID_STATE_PARTS } from "./parts";
+import { solidStateReader } from "./parts/readerData";
 
 export const metadata = {
   title: "Solid State — JEE Advanced | Synergic Bond",
@@ -38,6 +39,7 @@ export default function SolidStatePage() {
       chapterSlug="solid-state"
       description="A structured sequence from crystalline and amorphous solids through crystal lattices, unit-cell geometry, Bravais systems, packing, voids, radius ratio, important structures, defects, electrical properties and magnetism."
       free={true}
+      reader={solidStateReader}
       tabs={[
         { label: "All 23 parts", href: "/learn/solid-state", active: true },
         ...GROUPS.map((group, index) => ({

@@ -126,7 +126,7 @@ export function AppShell({
       {isLesson ? (
         <div className={styles.shell} style={part ? ({ "--h": part.hue } as CSSProperties) : undefined}>
           <aside className={styles.rail} aria-label="Contents">
-            <RailContent chapterId={chapterId} part={part} nextPart={nextPart} />
+            <RailContent chapterId={chapterId} parts={reader?.parts} part={part} nextPart={nextPart} />
           </aside>
 
           <main className={styles.main} data-reader-content="" data-wide={fullWidth ? "1" : undefined}>

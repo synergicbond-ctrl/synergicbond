@@ -1,10 +1,12 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { AppShell } from "@/components/AppShell";
 import type { LessonRef } from "@/components/notes/canonical";
 import { SOLID_STATE_PARTS } from "../parts";
+import { solidStateReader } from "../parts/readerData";
 
 export function generateStaticParams() {
-  return SOLID_STATE_PARTS.map((part) => ({ part: String(part.part) }));
+  // numbers are the pages; slugs are kept so older links redirect to them
+  return SOLID_STATE_PARTS.flatMap((part) => [{ part: String(part.part) }, { part: part.slug }]);
 }
 
 function lessonRef(index: number): LessonRef | undefined {
@@ -31,6 +33,9 @@ export async function generateMetadata({ params }: { params: Promise<{ part: str
 export default async function SolidStatePartRoute({ params }: { params: Promise<{ part: string }> }) {
   const { part } = await params;
   const number = Number(part);
+  // older links use the part slug (e.g. /learn/solid-state/seven-crystal-systems): send them to the part
+  const bySlug = SOLID_STATE_PARTS.find((item) => item.slug === part);
+  if (bySlug) redirect(`/learn/solid-state/${bySlug.part}`);
   const currentIndex = SOLID_STATE_PARTS.findIndex((item) => item.part === number);
   if (!Number.isInteger(number) || currentIndex < 0) notFound();
 
@@ -53,6 +58,7 @@ export default async function SolidStatePartRoute({ params }: { params: Promise<
       hubRef={{ href: "/learn/solid-state", label: "All 23 parts" }}
       prevRef={prevRef ? { href: prevRef.href, label: prevRef.number } : undefined}
       nextRef={nextRef ? { href: nextRef.href, label: nextRef.number } : undefined}
+      reader={{ ...solidStateReader, part: number }}
     >
       <div className="mx-auto max-w-3xl">
         <PartComponent />

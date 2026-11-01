@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crystal Lab — Solid State</title>
+<style>
+:root { --bg:#040606; --surface:#0b0f10; --surface-2:#101516; --fg:#f6efdf; --body:#f1eee7; --muted:#b9b5ad;
+  --line:rgba(246,239,223,.17); --accent:#e3b341; --bond:#37c8f4; --orbital:#b376ff; --rule:#50dc7b; --trap:#ff775d; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--body); font: 15px/1.55 "Inter Tight", Inter, system-ui, -apple-system, sans-serif; }
+a { color: var(--accent); }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 16px; }
+header.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; margin-bottom: 12px; }
+header.top h1 { margin: 0; font-size: 1.7rem; color: var(--fg); letter-spacing: -0.01em; }
+header.top p { margin: 0; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+.chips button { appearance: none; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 999px; padding: 6px 12px; font: 600 13px/1 inherit; cursor: pointer; transition: border-color .2s, background .2s, transform .15s; }
+.chips button:hover { border-color: var(--accent); }
+.chips button[aria-pressed="true"] { background: var(--accent); color: #111; border-color: var(--accent); }
+.chips button:active { transform: scale(.97); }
+.grid { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr) 340px; }
+@media (max-width: 960px) { .grid { grid-template-columns: 1fr; } }
+.stage { position: relative; background: radial-gradient(ellipse at 50% 40%, #0e1517 0%, #040606 70%); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; min-height: 460px; touch-action: none; }
+canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+canvas:active { cursor: grabbing; }
+.hud { position: absolute; left: 14px; top: 12px; right: 14px; display: flex; justify-content: space-between; pointer-events: none; font-size: 13px; color: var(--muted); }
+.hud b { color: var(--fg); }
+.big { position: absolute; left: 14px; bottom: 12px; pointer-events: none; }
+.big .num { font: 800 40px/1 inherit; color: var(--accent); letter-spacing: -0.02em; }
+.big .cap { color: var(--muted); font-size: 13px; }
+.legend { position: absolute; right: 14px; bottom: 12px; display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--muted); pointer-events: none; text-align: right; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-left: 6px; vertical-align: -1px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.panel h2 { margin: 0 0 6px; font-size: 1.25rem; color: var(--fg); }
+.panel .sub { margin: 0 0 12px; color: var(--muted); font-size: 13px; }
+dl.facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; margin: 0 0 12px; }
+dl.facts dt { color: var(--muted); font-size: 13px; }
+dl.facts dd { margin: 0; color: var(--fg); font-weight: 600; }
+.tally { min-height: 3.2em; padding: 10px 12px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--line); font: 600 14px/1.5 ui-monospace, "JetBrains Mono", monospace; color: var(--fg); margin-bottom: 12px; }
+.tally .hl { color: var(--accent); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+.row label { color: var(--muted); font-size: 13px; }
+.row input[type=number] { width: 52px; background: var(--surface-2); color: var(--fg); border: 1px solid var(--line); border-radius: 8px; padding: 4px 6px; font: inherit; }
+.row input[type=range] { accent-color: var(--accent); flex: 1; }
+.note { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+.btn { appearance: none; border: 1px solid var(--line); background: var(--surface-2); color: var(--fg); border-radius: 10px; padding: 7px 12px; font: 600 13px/1 inherit; cursor: pointer; }
+.btn:hover { border-color: var(--accent); }
+footer { color: var(--muted); font-size: 12px; margin-top: 14px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Crystal Lab</h1>
+    <p>Drag to rotate · scroll or pinch to zoom · arrow keys work too</p>
+  </header>
+
+  <div class="chips" role="group" aria-label="Structure" id="structs"></div>
+  <div class="chips" role="group" aria-label="Mode" id="modes"></div>
+
+  <div class="grid">
+    <div class="stage" id="stage">
+      <canvas id="cv" aria-label="Rotatable 3D model of the selected unit cell" role="img" tabindex="0"></canvas>
+      <div class="hud"><span id="hudL"></span><span id="hudR"></span></div>
+      <div class="big"><div class="num" id="bigNum"></div><div class="cap" id="bigCap"></div></div>
+      <div class="legend" id="legend"></div>
+    </div>
+
+    <aside class="panel" aria-live="polite">
+      <h2 id="title"></h2>
+      <p class="sub" id="subtitle"></p>
+      <dl class="facts" id="facts"></dl>
+      <div class="tally" id="tally"></div>
+      <div id="controls"></div>
+      <p class="note" id="note"></p>
+    </aside>
+  </div>
+  <footer>Part of the Solid State chapter · <a href="index.html">Chapter contents</a> · <a href="solid-state-interactive.html">Interactive chapter</a></footer>
+</div>
+
+<script>
+"use strict";
+// ───────────────────────── data (standard textbook values) ─────────────────────────
+const C = { metal: "#37c8f4", anion: "#50dc7b", cation: "#b376ff", zn: "#e3b341", s: "#ff775d", carbon: "#cbd5e1", octa: "#ff775d", tetra: "#e3b341" };
+const R2 = Math.SQRT2, R3 = Math.sqrt(3);
+const corners = [], faces = [[.5,.5,0],[.5,.5,1],[.5,0,.5],[.5,1,.5],[0,.5,.5],[1,.5,.5]], edges = [];
+for (const x of [0,1]) for (const y of [0,1]) for (const z of [0,1]) corners.push([x,y,z]);
+for (const a of [0,1]) for (const b of [0,1]) { edges.push([.5,a,b]); edges.push([a,.5,b]); edges.push([a,b,.5]); }
+const tet4 = [[.25,.25,.25],[.75,.75,.25],[.75,.25,.75],[.25,.75,.75]];
+const tet8 = []; for (const x of [.25,.75]) for (const y of [.25,.75]) for (const z of [.25,.75]) tet8.push([x,y,z]);
+const octaFCC = [...edges, [.5,.5,.5]];
+
+// basis = species + fractional positions of one lattice point's motif (used to grow neighbours)
+const S = {
+  sc: { name: "Simple cubic", sub: "Atoms at the 8 corners only", cubic: true,
+    atoms: corners.map((p) => ({ p, k: "metal" })), basis: [{ p: [0,0,0], k: "metal" }],
+    Z: "1", CN: "6", pf: Math.PI / 6, rel: "a = 2r", rTouch: { metal: .5 }, ex: "Po (α-polonium)", centre: [0,0,0] },
+  bcc: { name: "Body-centred cubic", sub: "Corners + one atom at the body centre", cubic: true,
+    atoms: [...corners.map((p) => ({ p, k: "metal" })), { p: [.5,.5,.5], k: "metal" }],
+    basis: [{ p: [0,0,0], k: "metal" }, { p: [.5,.5,.5], k: "metal" }],
+    Z: "2", CN: "8", pf: R3 * Math.PI / 8, rel: "√3 a = 4r (body diagonal)", rTouch: { metal: R3 / 4 }, ex: "Na, K, Cr, Fe (α)", centre: [.5,.5,.5] },
+  fcc: { name: "Face-centred cubic (ccp)", sub: "Corners + the 6 face centres", cubic: true,
+    atoms: [...corners.map((p) => ({ p, k: "metal" })), ...faces.map((p) => ({ p, k: "metal" }))],
+    basis: [[0,0,0],[.5,.5,0],[.5,0,.5],[0,.5,.5]].map((p) => ({ p, k: "metal" })),
+    Z: "4", CN: "12", pf: Math.PI / (3 * R2), rel: "√2 a = 4r (face diagonal)", rTouch: { metal: R2 / 4 }, ex: "Cu, Ag, Au, Al", centre: [.5,.5,0], voids: true },
+  hcp: { name: "Hexagonal close packed", sub: "ABAB… stacking, hexagonal prism of 3 cells", cubic: false, hex: true,
+    Z: "6 (per hexagonal prism)", CN: "12", pf: Math.PI / (3 * R2), rel: "a = 2r, c/a = √(8/3) ≈ 1.633", rTouch: { metal: .5 }, ex: "Mg, Zn, Ti, Co", voids: true },
+  nacl: { name: "Rock salt (NaCl)", sub: "Cl⁻ in fcc; Na⁺ in every octahedral void", cubic: true, ionic: true,
+    atoms: [...corners.map((p) => ({ p, k: "anion" })), ...faces.map((p) => ({ p, k: "anion" })), ...edges.map((p) => ({ p, k: "cation" })), { p: [.5,.5,.5], k: "cation" }],
+    basis: [[0,0,0],[.5,.5,0],[.5,0,.5],[0,.5,.5]].flatMap((p) => [{ p, k: "anion" }, { p: [p[0] + .5, p[1], p[2]], k: "cation" }]),
+    Z: "4 NaCl units", CN: "6 : 6", pf: null, rel: "a = 2(r⁺ + r⁻)", ratio: "r⁺/r⁻ = 0.414 – 0.732 (octahedral)",
+    rTouch: { anion: .5 / 1.56, cation: .5 * .56 / 1.56 }, ex: "NaCl, KCl, MgO, AgCl", centre: [.5,.5,.5], centreKind: "cation",
+    names: { anion: "Cl⁻", cation: "Na⁺" } },
+  cscl: { name: "Caesium chloride (CsCl)", sub: "Cl⁻ at corners, Cs⁺ at the body centre", cubic: true, ionic: true,
+    atoms: [...corners.map((p) => ({ p, k: "anion" })), { p: [.5,.5,.5], k: "cation" }],
+    basis: [{ p: [0,0,0], k: "anion" }, { p: [.5,.5,.5], k: "cation" }],
+    Z: "1 CsCl unit", CN: "8 : 8", pf: null, rel: "√3 a = 2(r⁺ + r⁻)", ratio: "r⁺/r⁻ ≥ 0.732 (cubic)",
+    rTouch: { anion: (R3 / 2) / 1.92, cation: (R3 / 2) * .92 / 1.92 }, ex: "CsCl, CsBr, CsI", centre: [.5,.5,.5], centreKind: "cation",
+    names: { anion: "Cl⁻", cation: "Cs⁺" } },
+  zns: { name: "Zinc blende (ZnS)", sub: "S²⁻ in fcc; Zn²⁺ in half the tetrahedral voids", cubic: true, ionic: true,
+    atoms: [...corners.map((p) => ({ p, k: "s" })), ...faces.map((p) => ({ p, k: "s" })), ...tet4.map((p) => ({ p, k: "zn" }))],
+    basis: [[0,0,0],[.5,.5,0],[.5,0,.5],[0,.5,.5]].flatMap((p) => [{ p, k: "s" }, { p: [p[0] + .25, p[1] + .25, p[2] + .25], k: "zn" }]),
+    Z: "4 ZnS units", CN: "4 : 4", pf: null, rel: "√3 a = 4(r⁺ + r⁻)", ratio: "r⁺/r⁻ = 0.225 – 0.414 (tetrahedral)",
+    rTouch: { s: (R3 / 4) / 1.33, zn: (R3 / 4) * .33 / 1.33 }, ex: "ZnS, CuCl, CdS, HgS", centre: [.25,.25,.25], centreKind: "zn",
+    names: { s: "S²⁻", zn: "Zn²⁺" } },
+  diamond: { name: "Diamond cubic", sub: "fcc + 4 of the 8 tetrahedral voids, all carbon", cubic: true,
+    atoms: [...corners.map((p) => ({ p, k: "carbon" })), ...faces.map((p) => ({ p, k: "carbon" })), ...tet4.map((p) => ({ p, k: "carbon" }))],
+    basis: [[0,0,0],[.5,.5,0],[.5,0,.5],[0,.5,.5]].flatMap((p) => [{ p, k: "carbon" }, { p: [p[0] + .25, p[1] + .25, p[2] + .25], k: "carbon" }]),
+    Z: "8", CN: "4", pf: R3 * Math.PI / 16, rel: "√3 a = 8r", rTouch: { carbon: R3 / 8 }, ex: "C (diamond), Si, Ge", centre: [.25,.25,.25] },
+};
+const ORDER = ["sc", "bcc", "fcc", "hcp", "nacl", "cscl", "zns", "diamond"];
+const MODES = [
+  ["view", "Structure"], ["share", "Atom sharing (Z)"], ["pack", "Packing"], ["voids", "Voids"], ["cn", "Coordination"], ["plane", "Miller planes"],
+];
+
+// HCP prism (a = 1, ideal c)
+const HC = Math.sqrt(8 / 3);
+function hcpAtoms() {
+  const out = [];
+  for (const z of [0, HC]) {
+    for (let k = 0; k < 6; k++) out.push({ q: [Math.cos(k * Math.PI / 3), Math.sin(k * Math.PI / 3), z], k: "metal", share: 1 / 6, role: "corner" });
+    out.push({ q: [0, 0, z], k: "metal", share: 1 / 2, role: "face" });
+  }
+  const r = 1 / R3;
+  for (let k = 0; k < 3; k++) { const t = Math.PI / 2 + k * 2 * Math.PI / 3; out.push({ q: [r * Math.cos(t), r * Math.sin(t), HC / 2], k: "metal", share: 1, role: "inside" }); }
+  return out;
+}
+const sharesOf = (p) => { const b = p.filter((v) => v === 0 || v === 1).length; return [1, .5, .25, .125][b]; };
+const roleOf = (p) => ["inside", "face", "edge", "corner"][p.filter((v) => v === 0 || v === 1).length];
+const frac = (x) => ({ 1: "1", .5: "½", .25: "¼", .125: "⅛", [1 / 6]: "⅙" }[x] ?? x.toFixed(2));
+
+// ───────────────────────── state ─────────────────────────
+const st = { s: "fcc", mode: "view", yaw: -0.6, pitch: 0.35, tyaw: -0.6, tpitch: 0.35, zoom: 1, auto: true, t0: performance.now(), hkl: [1, 1, 1], cnIdx: 0 };
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (reduce) st.auto = false;
+
+// ───────────────────────── scene building ─────────────────────────
+function cellAtoms() {
+  const d = S[st.s];
+  if (d.hex) return hcpAtoms().map((a) => ({ ...a, q: [a.q[0], a.q[1], a.q[2] - HC / 2] }));
+  return d.atoms.map((a) => ({ q: [a.p[0] - .5, a.p[1] - .5, a.p[2] - .5], k: a.k, share: sharesOf(a.p), role: roleOf(a.p), p: a.p }));
+}
+// nearest neighbours of the chosen centre, grown from the lattice
+function neighbours() {
+  const d = S[st.s];
+  let pts = [], centre, centreKind;
+  if (d.hex) {
+    const a1 = [1, 0, 0], a2 = [-.5, R3 / 2, 0], c = [0, 0, HC];
+    const basis = [[0, 0, 0], [1 / 3, 2 / 3, .5]];
+    for (let i = -2; i <= 2; i++) for (let j = -2; j <= 2; j++) for (let k = -1; k <= 1; k++) for (const b of basis) {
+      const f = [i + b[0], j + b[1], k + b[2]];
+      pts.push({ q: [f[0] * a1[0] + f[1] * a2[0], f[0] * a1[1] + f[1] * a2[1], f[2] * c[2]], k: "metal" });
+    }
+    const b = basis[1]; centre = [b[0] * a1[0] + b[1] * a2[0], b[0] * a1[1] + b[1] * a2[1], b[2] * HC]; centreKind = "metal";
+  } else {
+    for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) for (let k = -1; k <= 1; k++) for (const b of d.basis)
+      pts.push({ q: [b.p[0] + i, b.p[1] + j, b.p[2] + k], k: b.k });
+    centre = d.centre; centreKind = d.centreKind || d.basis[0].k;
+  }
+  const dist = (u, v) => Math.hypot(u[0] - v[0], u[1] - v[1], u[2] - v[2]);
+  const others = pts.filter((x) => dist(x.q, centre) > 1e-6 && (!d.ionic || x.k !== centreKind));
+  const m = Math.min(...others.map((x) => dist(x.q, centre)));
+  const nn = others.filter((x) => Math.abs(dist(x.q, centre) - m) < 1e-4);
+  const shift = d.hex ? [0, 0, -HC / 2] : [-.5, -.5, -.5];
+  const mv = (q) => [q[0] + shift[0], q[1] + shift[1], q[2] + shift[2]];
+  return { centre: { q: mv(centre), k: centreKind }, nn: nn.map((x) => ({ q: mv(x.q), k: x.k })), d: m };
+}
+function voidPoints() {
+  const d = S[st.s];
+  if (st.s === "fcc") return [
+    ...octaFCC.map((p) => ({ q: [p[0] - .5, p[1] - .5, p[2] - .5], kind: "octa", share: sharesOf(p) })),
+    ...tet8.map((p) => ({ q: [p[0] - .5, p[1] - .5, p[2] - .5], kind: "tetra", share: 1 })),
+  ];
+  if (d.hex) {
+    // octahedral voids lie over the C positions between the A and B layers; tetrahedral above/below each A/B atom
+    const out = [];
+    const r = 1 / R3;
+    for (let k = 0; k < 3; k++) { const t = -Math.PI / 2 + k * 2 * Math.PI / 3; for (const z of [HC / 4, 3 * HC / 4]) out.push({ q: [r * Math.cos(t), r * Math.sin(t), z - HC / 2], kind: "octa", share: 1 }); }
+    for (let k = 0; k < 3; k++) { const t = Math.PI / 2 + k * 2 * Math.PI / 3; for (const z of [HC / 8, 7 * HC / 8]) out.push({ q: [r * Math.cos(t), r * Math.sin(t), z - HC / 2], kind: "tetra", share: 1 }); }
+    for (const z of [3 * HC / 8, 5 * HC / 8]) out.push({ q: [0, 0, z - HC / 2], kind: "tetra", share: 1 });
+    // the six vertical edges of the prism carry two more each, every one shared by three prisms (12 × ⅓ = 4)
+    for (let k = 0; k < 6; k++) for (const z of [3 * HC / 8, 5 * HC / 8]) out.push({ q: [Math.cos(k * Math.PI / 3), Math.sin(k * Math.PI / 3), z - HC / 2], kind: "tetra", share: 1 / 3 });
+    return out;
+  }
+  return [];
+}
+
+// ───────────────────────── rendering ─────────────────────────
+const cv = document.getElementById("cv"), g = cv.getContext("2d");
+let W = 0, H = 0, DPR = 1;
+function resize() {
+  const r = cv.parentElement.getBoundingClientRect();
+  DPR = Math.min(2, window.devicePixelRatio || 1);
+  W = r.width; H = Math.max(460, Math.min(680, r.width * .78));
+  cv.style.height = H + "px"; cv.width = W * DPR; cv.height = H * DPR; g.setTransform(DPR, 0, 0, DPR, 0, 0);
+}
+addEventListener("resize", resize);
+function project(q) {
+  const [x, y, z] = q, cy = Math.cos(st.yaw), sy = Math.sin(st.yaw), cp = Math.cos(st.pitch), sp = Math.sin(st.pitch);
+  // z is "up" in the model; rotate about it (yaw), then tilt (pitch)
+  const x1 = x * cy - y * sy, y1 = x * sy + y * cy;
+  const yv = y1 * cp - z * sp, zv = y1 * sp + z * cp;
+  const scale = Math.min(W, H) * .42 * st.zoom * (S[st.s].hex ? .78 : 1);
+  const persp = 3.2 / (3.2 + yv);
+  return { x: W / 2 + x1 * scale * persp, y: H / 2 - zv * scale * persp, d: yv, s: scale * persp };
+}
+function ball(p, r, col, alpha = 1, glow = 0) {
+  if (r <= .5) return;
+  g.globalAlpha = alpha;
+  if (glow) { g.shadowColor = col; g.shadowBlur = glow; }
+  const gr = g.createRadialGradient(p.x - r * .35, p.y - r * .4, r * .1, p.x, p.y, r);
+  gr.addColorStop(0, "#ffffff"); gr.addColorStop(.18, col); gr.addColorStop(1, shade(col, -.55));
+  g.fillStyle = gr; g.beginPath(); g.arc(p.x, p.y, r, 0, Math.PI * 2); g.fill();
+  g.shadowBlur = 0; g.globalAlpha = 1;
+}
+function shade(hex, f) {
+  const n = parseInt(hex.slice(1), 16); let r = n >> 16, gg = (n >> 8) & 255, b = n & 255;
+  const m = (v) => Math.max(0, Math.min(255, Math.round(f < 0 ? v * (1 + f) : v + (255 - v) * f)));
+  return `rgb(${m(r)},${m(gg)},${m(b)})`;
+}
+function line(a, b, col, w = 1, alpha = 1, dash) {
+  g.globalAlpha = alpha; g.strokeStyle = col; g.lineWidth = w; if (dash) g.setLineDash(dash);
+  g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke(); g.setLineDash([]); g.globalAlpha = 1;
+}
+function cellEdges() {
+  const d = S[st.s];
+  if (d.hex) {
+    const out = [], ring = (z) => Array.from({ length: 6 }, (_, k) => [Math.cos(k * Math.PI / 3), Math.sin(k * Math.PI / 3), z - HC / 2]);
+    const lo = ring(0), hi = ring(HC);
+    for (let k = 0; k < 6; k++) { out.push([lo[k], lo[(k + 1) % 6]], [hi[k], hi[(k + 1) % 6]], [lo[k], hi[k]]); }
+    return out;
+  }
+  const v = corners.map((p) => [p[0] - .5, p[1] - .5, p[2] - .5]), out = [];
+  for (let i = 0; i < 8; i++) for (let j = i + 1; j < 8; j++) { const dd = corners[i].reduce((s, x, k) => s + Math.abs(x - corners[j][k]), 0); if (dd === 1) out.push([v[i], v[j]]); }
+  return out;
+}
+const ease = (t) => t < 0 ? 0 : t > 1 ? 1 : t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+function draw(now) {
+  const t = (now - st.t0) / 1000;
+  if (st.auto && !drag) st.tyaw += .0035;
+  st.yaw += (st.tyaw - st.yaw) * .12; st.pitch += (st.tpitch - st.pitch) * .12;
+  g.clearRect(0, 0, W, H);
+  const d = S[st.s];
+  const atoms = cellAtoms();
+  const items = [];
+  // cell box
+  for (const [a, b] of cellEdges()) { const pa = project(a), pb = project(b); items.push({ d: (pa.d + pb.d) / 2 + 5, f: () => line(pa, pb, "rgba(246,239,223,.35)", 1.2) }); }
+
+  const baseR = { metal: .13, anion: .14, cation: .1, zn: .09, s: .13, carbon: .1 };
+  const radiusFor = (k) => {
+    if (st.mode !== "pack") return baseR[k] ?? .12;
+    const grow = ease(Math.min(1, t / 2.4));
+    const rt = (d.rTouch && d.rTouch[k]) ?? .12;
+    return .04 + (rt - .04) * grow;
+  };
+
+  if (st.mode === "cn") {
+    const nb = neighbours();
+    const pc = project(nb.centre.q);
+    const reveal = Math.min(nb.nn.length, Math.floor(t * 4));
+    nb.nn.forEach((x, i) => {
+      const p = project(x.q);
+      const show = i < reveal;
+      items.push({ d: (p.d + pc.d) / 2, f: () => show && line(pc, p, C[x.k] || C.metal, 2, .85) });
+      items.push({ d: p.d, f: () => ball(p, p.s * (baseR[x.k] ?? .12), C[x.k] || C.metal, show ? 1 : .15, show ? 10 : 0) });
+    });
+    items.push({ d: pc.d, f: () => ball(pc, pc.s * ((baseR[nb.centre.k] ?? .12) + .02), "#ffffff", 1, 24) });
+    // faint cell atoms for context
+    atoms.forEach((a) => { const p = project(a.q); items.push({ d: p.d, f: () => ball(p, p.s * .05, C[a.k] || C.metal, .25) }); });
+    setBig(`${Math.min(reveal, nb.nn.length)}`, `nearest neighbours of the white ${d.names ? d.names[nb.centre.k] : "atom"} · distance ${nb.d.toFixed(3)} a`);
+  } else {
+    atoms.forEach((a, i) => {
+      const p = project(a.q);
+      let alpha = 1, glow = 0, r = p.s * radiusFor(a.k);
+      if (st.mode === "share") {
+        const step = shareStep(t, atoms.length);
+        alpha = i < step ? 1 : .18; glow = i === step - 1 ? 22 : 0;
+        items.push({ d: p.d - .001, f: () => { if (i < step) label(p, frac(a.share), r); } });
+      }
+      if (st.mode === "voids") alpha = .35;
+      items.push({ d: p.d, f: () => ball(p, r, C[a.k] || C.metal, alpha, glow) });
+    });
+  }
+
+  if (st.mode === "voids") {
+    voidPoints().forEach((v, i) => {
+      const p = project(v.q);
+      const pulse = .5 + .5 * Math.sin(t * 3 + i);
+      const col = C[v.kind];
+      items.push({ d: p.d, f: () => {
+        g.globalAlpha = .9; g.strokeStyle = col; g.lineWidth = 2;
+        g.beginPath(); g.arc(p.x, p.y, p.s * (.05 + .025 * pulse), 0, Math.PI * 2); g.stroke();
+        g.globalAlpha = .25 + .25 * pulse; g.fillStyle = col; g.beginPath(); g.arc(p.x, p.y, p.s * .045, 0, Math.PI * 2); g.fill(); g.globalAlpha = 1;
+      } });
+    });
+  }
+
+  if (st.mode === "plane" && d.cubic) {
+    const poly = planePolygon(st.hkl);
+    if (poly.length >= 3) {
+      const pp = poly.map((q) => project([q[0] - .5, q[1] - .5, q[2] - .5]));
+      const depth = pp.reduce((s, p) => s + p.d, 0) / pp.length;
+      const shimmer = .22 + .1 * Math.sin(t * 2.2);
+      items.push({ d: depth, f: () => {
+        g.globalAlpha = shimmer; g.fillStyle = C.tetra; g.beginPath(); pp.forEach((p, i) => (i ? g.lineTo(p.x, p.y) : g.moveTo(p.x, p.y))); g.closePath(); g.fill();
+        g.globalAlpha = .95; g.strokeStyle = C.tetra; g.lineWidth = 2; g.stroke(); g.globalAlpha = 1;
+      } });
+    }
+  }
+
+  items.sort((a, b) => b.d - a.d).forEach((it) => it.f());
+  if (st.mode === "pack") packHud(t);
+  requestAnimationFrame(draw);
+}
+function label(p, txt, r) {
+  g.font = "700 12px Inter Tight, system-ui, sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
+  const w = g.measureText(txt).width + 10;
+  g.fillStyle = "rgba(4,6,6,.8)"; g.beginPath(); g.roundRect ? g.roundRect(p.x - w / 2, p.y - r - 18, w, 16, 8) : g.rect(p.x - w / 2, p.y - r - 18, w, 16); g.fill();
+  g.fillStyle = "#e3b341"; g.fillText(txt, p.x, p.y - r - 10);
+}
+function setBig(n, cap) { bigNum.textContent = n; bigCap.textContent = cap; }
+
+// atom-sharing tally: one atom added every 0.45 s
+function shareStep(t, n) { return Math.min(n, Math.floor(t / .45) + 1); }
+let lastTally = "";
+function updateTally() {
+  const d = S[st.s], atoms = cellAtoms();
+  if (st.mode !== "share") return;
+  const t = (performance.now() - st.t0) / 1000, step = shareStep(t, atoms.length);
+  const groups = {};
+  atoms.slice(0, step).forEach((a) => {
+    const key = `${a.k}|${a.share}|${a.role}`;
+    groups[key] = (groups[key] || 0) + 1;
+  });
+  const lines = []; const totals = {};
+  for (const [key, n] of Object.entries(groups)) {
+    const [k, share, role] = key.split("|");
+    const nm = d.names ? d.names[k] : "";
+    lines.push(`${n} ${role}${n > 1 ? "s" : ""} × ${frac(+share)}${nm ? " " + nm : ""} = ${fmt(n * share)}`);
+    totals[k] = (totals[k] || 0) + n * share;
+  }
+  const sum = Object.entries(totals).map(([k, v]) => `${fmt(v)}${d.names ? " " + d.names[k] : ""}`).join(" + ");
+  const html = lines.join("<br>") + `<br><span class="hl">Z = ${sum}${step === atoms.length ? " ✓" : " …"}</span>`;
+  if (html !== lastTally) { tally.innerHTML = html; lastTally = html; }
+  setBig(Object.values(totals).reduce((a, b) => a + b, 0) ? fmt(Object.values(totals).reduce((a, b) => a + b, 0)) : "0",
+    step === atoms.length ? "atoms that belong to this cell" : "counting the share of each atom…");
+}
+const fmt = (v) => (Math.abs(v - Math.round(v)) < 1e-9 ? String(Math.round(v)) : v.toFixed(3).replace(/0+$/, ""));
+
+function packHud(t) {
+  const d = S[st.s];
+  const grow = ease(Math.min(1, t / 2.4));
+  if (d.pf) setBig(`${(d.pf * 100 * Math.pow(.04 / (d.rTouch.metal || d.rTouch.carbon) + (1 - .04 / (d.rTouch.metal || d.rTouch.carbon)) * grow, 3)).toFixed(1)}%`,
+    grow < 1 ? "spheres growing until they touch…" : `packing efficiency · ${d.rel}`);
+  else setBig(grow < 1 ? "…" : "touch", grow < 1 ? "ions growing until anion and cation touch" : `${d.rel} · ${d.ratio}`);
+}
+
+// plane h x + k y + l z = c clipped to the unit cube (origin shifted for negative indices)
+function planePolygon([h, k, l]) {
+  if (!h && !k && !l) return [];
+  const c = 1 + Math.min(0, h) + Math.min(0, k) + Math.min(0, l);
+  const n = [h, k, l], pts = [];
+  const cube = corners;
+  for (let i = 0; i < 8; i++) for (let j = i + 1; j < 8; j++) {
+    const a = cube[i], b = cube[j];
+    if (a.reduce((s, x, q) => s + Math.abs(x - b[q]), 0) !== 1) continue;
+    const fa = n[0] * a[0] + n[1] * a[1] + n[2] * a[2] - c, fb = n[0] * b[0] + n[1] * b[1] + n[2] * b[2] - c;
+    if (Math.abs(fa) < 1e-9) pts.push(a);
+    if (fa * fb < 0) { const s = fa / (fa - fb); pts.push([a[0] + s * (b[0] - a[0]), a[1] + s * (b[1] - a[1]), a[2] + s * (b[2] - a[2])]); }
+  }
+  const uniq = []; for (const p of pts) if (!uniq.some((u) => Math.hypot(u[0] - p[0], u[1] - p[1], u[2] - p[2]) < 1e-6)) uniq.push(p);
+  if (uniq.length < 3) return uniq;
+  const cx = uniq.reduce((s, p) => [s[0] + p[0], s[1] + p[1], s[2] + p[2]], [0, 0, 0]).map((v) => v / uniq.length);
+  const nn = Math.hypot(h, k, l), nu = [h / nn, k / nn, l / nn];
+  let u = Math.abs(nu[0]) < .9 ? [1, 0, 0] : [0, 1, 0];
+  const dot = u[0] * nu[0] + u[1] * nu[1] + u[2] * nu[2]; u = [u[0] - dot * nu[0], u[1] - dot * nu[1], u[2] - dot * nu[2]];
+  const ul = Math.hypot(...u); u = u.map((x) => x / ul);
+  const v = [nu[1] * u[2] - nu[2] * u[1], nu[2] * u[0] - nu[0] * u[2], nu[0] * u[1] - nu[1] * u[0]];
+  return uniq.sort((p, q) => {
+    const a = Math.atan2((p[0] - cx[0]) * v[0] + (p[1] - cx[1]) * v[1] + (p[2] - cx[2]) * v[2], (p[0] - cx[0]) * u[0] + (p[1] - cx[1]) * u[1] + (p[2] - cx[2]) * u[2]);
+    const b = Math.atan2((q[0] - cx[0]) * v[0] + (q[1] - cx[1]) * v[1] + (q[2] - cx[2]) * v[2], (q[0] - cx[0]) * u[0] + (q[1] - cx[1]) * u[1] + (q[2] - cx[2]) * u[2]);
+    return a - b;
+  });
+}
+
+// ───────────────────────── panel ─────────────────────────
+const $ = (id) => document.getElementById(id);
+const bigNum = $("bigNum"), bigCap = $("bigCap"), tally = $("tally");
+function legend() {
+  const d = S[st.s], kinds = [...new Set(cellAtoms().map((a) => a.k))];
+  let html = kinds.map((k) => `<span>${d.names ? d.names[k] : k === "carbon" ? "C" : "atom"}<i style="background:${C[k]}"></i></span>`).join("");
+  if (st.mode === "voids") html += `<span>octahedral void<i style="background:${C.octa}"></i></span><span>tetrahedral void<i style="background:${C.tetra}"></i></span>`;
+  $("legend").innerHTML = html;
+}
+function panel() {
+  const d = S[st.s];
+  $("title").textContent = d.name; $("subtitle").textContent = d.sub;
+  const facts = [["Atoms per cell, Z", d.Z], ["Coordination number", d.CN], ["Packing efficiency", d.pf ? `${(d.pf * 100).toFixed(1)}%` : "depends on the ion sizes"], ["Radius relation", d.rel]];
+  if (d.ratio) facts.push(["Radius ratio", d.ratio]);
+  facts.push(["Examples", d.ex]);
+  $("facts").innerHTML = facts.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
+  $("hudL").innerHTML = `<b>${d.name}</b>`;
+  $("hudR").textContent = MODES.find((m) => m[0] === st.mode)[1];
+  const c = $("controls"); c.innerHTML = "";
+  tally.style.display = st.mode === "share" ? "" : "none";
+  let note = "";
+  if (st.mode === "view") { note = "Spin it: every structure is the same cube (or prism) with atoms at different positions."; setBig("", ""); }
+  if (st.mode === "share") note = "Corner ⅛, edge ¼, face ½, inside 1. The tally adds them atom by atom.";
+  if (st.mode === "pack") note = d.pf ? "Spheres grow from points until neighbours touch along the contact direction; the counter tracks the fraction of the cell they fill." : "For ionic crystals the filled fraction depends on the two radii; the contact rule and radius-ratio window are shown.";
+  if (st.mode === "voids") {
+    note = st.s === "fcc" ? "fcc: 4 octahedral voids (12 edge centres × ¼ + 1 body centre) and 8 tetrahedral voids per cell — 1 and 2 per atom."
+      : st.s === "hcp" ? "hcp: 6 octahedral and 12 tetrahedral voids per hexagonal prism — again 1 and 2 per atom."
+      : "Voids are shown for the close-packed structures. Pick fcc or hcp.";
+    setBig(st.s === "fcc" ? "4 + 8" : st.s === "hcp" ? "6 + 12" : "", st.s === "fcc" || st.s === "hcp" ? "octahedral + tetrahedral voids per cell" : "");
+  }
+  if (st.mode === "cn") note = d.ionic ? "Bonds appear one by one to the nearest ions of opposite charge." : "Bonds appear one by one to the nearest atoms.";
+  if (st.mode === "plane") {
+    if (!d.cubic) { note = "Miller planes are drawn for the cubic structures."; setBig("", ""); }
+    else {
+      c.innerHTML = `<div class="row"><label>h</label><input type="number" min="-3" max="3" value="${st.hkl[0]}" id="h"><label>k</label><input type="number" min="-3" max="3" value="${st.hkl[1]}" id="k"><label>l</label><input type="number" min="-3" max="3" value="${st.hkl[2]}" id="l"></div>
+        <div class="row">${[[1,0,0],[1,1,0],[1,1,1],[2,0,0],[2,2,0],[1,1,-1]].map((x) => `<button class="btn" data-hkl="${x.join(",")}">(${x.map((v) => (v < 0 ? "<span style='text-decoration:overline'>" + -v + "</span>" : v)).join("")})</button>`).join("")}</div>`;
+      const upd = () => { st.hkl = ["h", "k", "l"].map((id) => Math.max(-3, Math.min(3, parseInt($(id).value || "0", 10)))); planeBig(); };
+      ["h", "k", "l"].forEach((id) => $(id).addEventListener("input", upd));
+      c.querySelectorAll("[data-hkl]").forEach((b) => b.addEventListener("click", () => { st.hkl = b.dataset.hkl.split(",").map(Number); ["h", "k", "l"].forEach((id, i) => ($(id).value = st.hkl[i])); planeBig(); }));
+      note = "The plane cuts the axes at a/h, a/k, a/l (a zero index means parallel). Interplanar spacing d = a / √(h² + k² + l²).";
+      planeBig();
+    }
+  }
+  const auto = document.createElement("div"); auto.className = "row";
+  auto.innerHTML = `<button class="btn" id="auto">${st.auto ? "Pause rotation" : "Rotate"}</button><button class="btn" id="replay">Replay animation</button><label for="zoom">Zoom</label><input type="range" id="zoom" min="0.6" max="1.6" step="0.01" value="${st.zoom}">`;
+  c.appendChild(auto);
+  $("auto").onclick = () => { st.auto = !st.auto; $("auto").textContent = st.auto ? "Pause rotation" : "Rotate"; };
+  $("replay").onclick = () => { st.t0 = performance.now(); lastTally = ""; };
+  $("zoom").oninput = (e) => (st.zoom = +e.target.value);
+  $("note").textContent = note;
+  legend();
+}
+function planeBig() {
+  const [h, k, l] = st.hkl; const s = h * h + k * k + l * l;
+  setBig(s ? `d = a/${Number.isInteger(Math.sqrt(s)) ? Math.sqrt(s) : "√" + s}` : "—", s ? `(${h} ${k} ${l}) plane · d = ${(1 / Math.sqrt(s)).toFixed(3)} a` : "choose indices that are not all zero");
+}
+function chips() {
+  $("structs").innerHTML = ORDER.map((k) => `<button aria-pressed="${k === st.s}" data-s="${k}">${S[k].name.replace(/ \(.*\)$/, "")}</button>`).join("");
+  $("modes").innerHTML = MODES.map(([k, n]) => `<button aria-pressed="${k === st.mode}" data-m="${k}">${n}</button>`).join("");
+  $("structs").querySelectorAll("button").forEach((b) => (b.onclick = () => { st.s = b.dataset.s; st.t0 = performance.now(); lastTally = ""; chips(); panel(); }));
+  $("modes").querySelectorAll("button").forEach((b) => (b.onclick = () => { st.mode = b.dataset.m; st.t0 = performance.now(); lastTally = ""; chips(); panel(); }));
+}
+
+// ───────────────────────── input ─────────────────────────
+let drag = null;
+cv.addEventListener("pointerdown", (e) => { drag = { x: e.clientX, y: e.clientY }; cv.setPointerCapture(e.pointerId); });
+cv.addEventListener("pointermove", (e) => {
+  if (!drag) return;
+  st.tyaw += (e.clientX - drag.x) * .01; st.tpitch = Math.max(-1.4, Math.min(1.4, st.tpitch + (e.clientY - drag.y) * .01));
+  drag = { x: e.clientX, y: e.clientY };
+});
+cv.addEventListener("pointerup", () => (drag = null));
+cv.addEventListener("wheel", (e) => { e.preventDefault(); st.zoom = Math.max(.6, Math.min(1.6, st.zoom - e.deltaY * .001)); const z = $("zoom"); if (z) z.value = st.zoom; }, { passive: false });
+cv.addEventListener("keydown", (e) => {
+  const k = { ArrowLeft: [-.15, 0], ArrowRight: [.15, 0], ArrowUp: [0, -.12], ArrowDown: [0, .12] }[e.key];
+  if (k) { e.preventDefault(); st.tyaw += k[0]; st.tpitch = Math.max(-1.4, Math.min(1.4, st.tpitch + k[1])); }
+});
+
+resize(); chips(); panel(); requestAnimationFrame(draw);
+setInterval(updateTally, 120);
+</script>
+</body>
+</html>

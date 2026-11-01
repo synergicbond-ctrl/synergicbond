@@ -10,7 +10,7 @@ import { ConvexGeometry } from "three/examples/jsm/geometries/ConvexGeometry.js"
 
 // ───────────────────────────── chemistry (standard textbook values) ─────────────────────────────
 const R2 = Math.SQRT2, R3 = Math.sqrt(3), HC = Math.sqrt(8 / 3);
-const COL = { metal: 0x37c8f4, anion: 0x50dc7b, cation: 0xb376ff, zn: 0xe3b341, s: 0xff775d, carbon: 0xd6dde6 };
+const COL = { metal: 0x2f7fd6, anion: 0x2fa046, cation: 0x8a3fa6, zn: 0xc3ccd6, s: 0xe0b020, carbon: 0x7d8796 };
 const corners = []; for (const x of [0, 1]) for (const y of [0, 1]) for (const z of [0, 1]) corners.push([x, y, z]);
 const faces = [[.5, .5, 0], [.5, .5, 1], [.5, 0, .5], [.5, 1, .5], [0, .5, .5], [1, .5, .5]];
 const edges = []; for (const a of [0, 1]) for (const b of [0, 1]) { edges.push([.5, a, b], [a, .5, b], [a, b, .5]); }
@@ -48,12 +48,12 @@ const S = {
 };
 // position-in-cell colours (used by Positions and Atom sharing)
 const SITE = {
-  corner: { col: 0x37c8f4, name: "corner", css: "#37c8f4", tag: "C" },
-  edge: { col: 0xff775d, name: "edge centre", css: "#ff775d", tag: "E" },
-  face: { col: 0x50dc7b, name: "face centre", css: "#50dc7b", tag: "F" },
-  body: { col: 0xe3b341, name: "body centre", css: "#e3b341", tag: "B" },
-  inside: { col: 0xb376ff, name: "inside (tetrahedral site)", css: "#b376ff", tag: "T" },
-  hexinside: { col: 0xb376ff, name: "inside (middle layer)", css: "#b376ff", tag: "I" },
+  corner: { col: 0x2f7fd6, name: "corner", css: "#2f7fd6", tag: "C" },
+  edge: { col: 0xc62839, name: "edge centre", css: "#c62839", tag: "E" },
+  face: { col: 0x2fa046, name: "face centre", css: "#2fa046", tag: "F" },
+  body: { col: 0xe0a91c, name: "body centre", css: "#e0a91c", tag: "B" },
+  inside: { col: 0x8a3fa6, name: "inside (tetrahedral site)", css: "#8a3fa6", tag: "T" },
+  hexinside: { col: 0x8a3fa6, name: "inside (middle layer)", css: "#8a3fa6", tag: "I" },
 };
 const ORDER = ["sc", "bcc", "fcc", "hcp", "nacl", "cscl", "zns", "diamond"];
 const MODES = [["pos", "Positions"], ["view", "Structure"], ["grow", "Crystallise"], ["share", "Atom sharing (Z)"], ["pack", "Packing"], ["voids", "Voids"], ["cn", "Coordination"], ["plane", "Miller planes"]];
@@ -130,8 +130,8 @@ function supercell(s) { // 2×2×2 block (cubic) or a 2-layer hex patch, for the
 const stage = document.getElementById("stage");
 const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
 renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 0.92;
+renderer.toneMapping = THREE.NeutralToneMapping;
+renderer.toneMappingExposure = 1.0;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.localClippingEnabled = true;
@@ -154,19 +154,19 @@ controls.minDistance = 3.2; controls.maxDistance = 14;
 controls.autoRotate = true; controls.autoRotateSpeed = 0.35;
 controls.target.set(0, 0, 0);
 
-const key = new THREE.DirectionalLight(0xfff3df, 1.9);
+const key = new THREE.DirectionalLight(0xffffff, 2.3);
 key.position.set(5, 9, 6); key.castShadow = true;
 key.shadow.mapSize.set(2048, 2048); key.shadow.camera.near = 1; key.shadow.camera.far = 30;
 key.shadow.camera.left = -6; key.shadow.camera.right = 6; key.shadow.camera.top = 6; key.shadow.camera.bottom = -6; key.shadow.radius = 6; key.shadow.bias = -0.0004;
 scene.add(key);
-const rim = new THREE.DirectionalLight(0x37c8f4, 1.1); rim.position.set(-7, 3, -6); scene.add(rim);
-const fill = new THREE.HemisphereLight(0xf6efdf, 0x040606, 0.25); scene.add(fill);
+const rim = new THREE.DirectionalLight(0xbfd8ff, 0.45); rim.position.set(-7, 3, -6); scene.add(rim);
+const fill = new THREE.HemisphereLight(0xffffff, 0x1a1f22, 0.9); scene.add(fill);
 
 // floor: soft shadow catcher + a faint gold halo
 const FLOOR_Y = -2.15;
 const floor = new THREE.Mesh(new THREE.CircleGeometry(9, 64), new THREE.ShadowMaterial({ opacity: 0.42 }));
 floor.rotation.x = -Math.PI / 2; floor.position.y = FLOOR_Y; floor.receiveShadow = true; scene.add(floor);
-const haloTex = (() => { const c = document.createElement("canvas"); c.width = c.height = 256; const g = c.getContext("2d"); const gr = g.createRadialGradient(128, 128, 0, 128, 128, 128); gr.addColorStop(0, "rgba(227,179,65,0.22)"); gr.addColorStop(0.45, "rgba(55,200,244,0.07)"); gr.addColorStop(1, "rgba(0,0,0,0)"); g.fillStyle = gr; g.fillRect(0, 0, 256, 256); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; })();
+const haloTex = (() => { const c = document.createElement("canvas"); c.width = c.height = 256; const g = c.getContext("2d"); const gr = g.createRadialGradient(128, 128, 0, 128, 128, 128); gr.addColorStop(0, "rgba(220,226,232,0.10)"); gr.addColorStop(0.5, "rgba(220,226,232,0.03)"); gr.addColorStop(1, "rgba(0,0,0,0)"); g.fillStyle = gr; g.fillRect(0, 0, 256, 256); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; })();
 const halo = new THREE.Mesh(new THREE.CircleGeometry(6.5, 64), new THREE.MeshBasicMaterial({ map: haloTex, transparent: true, depthWrite: false }));
 halo.rotation.x = -Math.PI / 2; halo.position.y = FLOOR_Y + 0.002; scene.add(halo);
 
@@ -188,7 +188,7 @@ composer.addPass(new OutputPass());
 // ───────────────────────────── atoms (instanced, morphing) ─────────────────────────────
 const MAX = 220;
 const sphere = new THREE.SphereGeometry(1, 48, 32);
-const atomMat = new THREE.MeshPhysicalMaterial({ roughness: 0.32, metalness: 0.0, clearcoat: 0.7, clearcoatRoughness: 0.18, envMapIntensity: 0.55, side: THREE.FrontSide });
+const atomMat = new THREE.MeshPhongMaterial({ shininess: 80, specular: new THREE.Color(0x6a6a6a), side: THREE.FrontSide });
 atomMat.onBeforeCompile = (sh) => { sh.fragmentShader = sh.fragmentShader.replace("#include <dithering_fragment>", "#include <dithering_fragment>\n if (!gl_FrontFacing) { gl_FragColor.rgb = mix(gl_FragColor.rgb * 0.30, vec3(0.89,0.70,0.25) * 0.55, 0.35); }"); };
 const atoms = new THREE.InstancedMesh(sphere, atomMat, MAX);
 atoms.instanceMatrix.setUsage(THREE.DynamicDrawUsage);

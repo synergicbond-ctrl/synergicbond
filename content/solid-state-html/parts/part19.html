@@ -6,24 +6,31 @@
 <title>Radius Ratio and Limiting Geometry — Solid State</title>
 
 <style>
-:root { --bg:#fff; --fg:#1b1f24; --muted:#56606b; --line:#d7dce2; --accent:#1a5fb4; }
+:root { --bg:#040606; --surface:#0b0f10; --surface-2:#101516; --fg:#f6efdf; --body:#f1eee7; --muted:#b9b5ad;
+  --line:rgba(246,239,223,.17); --accent:#e3b341; --bond:#37c8f4; --orbital:#b376ff; --rule:#50dc7b; --trap:#ff775d; }
 * { box-sizing: border-box; }
-body { margin: 0; font: 16px/1.65 Georgia, "Times New Roman", serif; color: var(--fg); background: var(--bg); }
-main { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
-nav.top { font: 14px/1.4 Arial, sans-serif; margin-bottom: 1.5rem; }
-nav.top a { color: var(--accent); margin-right: 1rem; }
-h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
-h2 { font-size: 1.4rem; margin: 2rem 0 .6rem; border-bottom: 1px solid var(--line); padding-bottom: .3rem; }
-h3 { font-size: 1.15rem; margin: 1.4rem 0 .4rem; }
+body { margin: 0; font: 16px/1.7 "Inter Tight", "Inter", system-ui, -apple-system, sans-serif; color: var(--body); background: var(--bg); }
+main { max-width: 56rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+h1, h2, h3, h4 { font-weight: 800; letter-spacing: -0.01em; color: var(--fg); }
+h1 { font-size: 2.1rem; margin: 0 0 .5rem; }
+h2 { font-size: 1.5rem; margin: 2.2rem 0 .6rem; border-bottom: 1px solid var(--line); padding-bottom: .3rem; }
+h3 { font-size: 1.2rem; margin: 1.5rem 0 .4rem; }
+h4 { font-size: 1.05rem; margin: 1.2rem 0 .3rem; }
+p, li, dd { color: var(--body); }
+strong, dt { color: var(--fg); }
 table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 15px; }
 th, td { border: 1px solid var(--line); padding: .45rem .6rem; text-align: left; vertical-align: top; }
-th { background: #f3f5f8; }
-pre { background: #f6f8fa; border: 1px solid var(--line); padding: .8rem; overflow-x: auto; font: 13px/1.5 "Courier New", monospace; }
-figure { margin: 1.2rem 0; }
-figcaption { font: 13px Arial, sans-serif; color: var(--muted); }
+th { background: var(--surface-2); color: var(--fg); }
+td { color: var(--body); }
+pre { background: var(--surface); border: 1px solid var(--line); color: var(--fg); padding: .8rem; overflow-x: auto; font: 13px/1.5 ui-monospace, "JetBrains Mono", monospace; }
 svg { max-width: 100%; height: auto; }
-ul, ol { padding-left: 1.4rem; }
-.meta { font: 14px Arial, sans-serif; color: var(--muted); }
+figure { margin: 1.2rem 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: .8rem; }
+figcaption { font: 13px/1.5 system-ui, sans-serif; color: var(--muted); }
+.label { font: 14px system-ui, sans-serif; color: var(--fg); padding: .1rem .45rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface-2); }
+input, select { font: inherit; accent-color: var(--accent); }
+.katex { color: var(--fg); }
+.katex-display { overflow-x: auto; }
 </style>
 </head>
 <body>

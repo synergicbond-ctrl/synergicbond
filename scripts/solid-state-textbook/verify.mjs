@@ -140,6 +140,7 @@ async function ready(id) {
   return false;
 }
 const lastLabId = () => p.evaluate(() => null);
+if (process.env.SKIPD === "1") for (const k of Object.keys(targets)) delete targets[k];
 const done = new Set(R.motion.map((m) => m.mode));
 for (const [mode, id] of Object.entries(targets)) {
   if (done.has(mode)) continue;

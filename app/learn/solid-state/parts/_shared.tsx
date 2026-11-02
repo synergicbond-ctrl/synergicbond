@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Block, ConceptBlock } from "@/components/chapter-ui/blocks";
 import { FccLayersNotes } from "./FccLayersNotes";
+import { LabEmbed } from "./LabEmbed";
+import { CHAPTER_LABS } from "./labs";
 import { SOLID_STATE_PARTS } from "../parts";
 
 const SOLID_STATE_PART_COUNT = SOLID_STATE_PARTS.length;
@@ -60,6 +62,10 @@ export function SolidStatePartPage({ data }: { data: SolidStatePartData }) {
       </header>
 
       {data.intro ? <ConceptBlock lead={data.intro} /> : null}
+
+      {(CHAPTER_LABS[data.part] ?? []).map((lab) => (
+        <LabEmbed key={lab.hash} hash={lab.hash} title={lab.title} caption={lab.caption} />
+      ))}
 
       {data.sections.map((section) => (
         <section key={section.title} className="space-y-5">

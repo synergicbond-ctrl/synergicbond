@@ -1451,7 +1451,29 @@
    "stepMs": 352
   }
  ],
- "widgets": {},
+ "widgets": {
+  "densityDefault": "d = Z·M ÷ (NA·a³) = (2 × 55.85) ÷ (6.022×10²³ × (287×10⁻¹⁰ cm)³) = 7.846 g cm⁻³",
+  "densityExpected": 7.846,
+  "radius": {
+   "0.2": "r₊ ⁄ r₋ = 0.20 → triangular hole, coordination number 3",
+   "0.3": "r₊ ⁄ r₋ = 0.30 → tetrahedral hole, coordination number 4",
+   "0.5": "r₊ ⁄ r₋ = 0.50 → octahedral hole, coordination number 6",
+   "0.8": "r₊ ⁄ r₋ = 0.80 → cubic hole, coordination number 8",
+   "0.99": "r₊ ⁄ r₋ = 0.99 → cubic hole, coordination number 8"
+  },
+  "defects": {
+   "Vacancy": "Vacancy: one lattice site is empty. The density falls slightly.",
+   "Interstitial": "Interstitial: an extra atom sits in a hole between lattice sites. The density rises.",
+   "Substitution": "Substitution: a foreign atom replaces a host atom. A charge difference must be compensated.",
+   "Schottky": "Schottky pair: equal numbers of cation and anion vacancies. The density falls and the crystal stays neutral.",
+   "Frenkel": "Frenkel pair: an ion moves from its site into a nearby hole. The density is almost unchanged."
+  },
+  "packingBars": [
+   "52.36%",
+   "68.02%",
+   "74.05%"
+  ]
+ },
  "print": {},
  "failures": [],
  "maxLiveFrames": 3,
@@ -1486,5 +1508,13 @@
   },
   "densityIron": 7.846332927811214
  },
- "resumedAt": "2026-11-02T17:00:55.716Z"
+ "resumedAt": "2026-11-02T17:00:55.716Z",
+ "offlineMode": {
+  "katexFontLoaded": true,
+  "katexRendered": true,
+  "dataUriImages": true,
+  "labRunsOffline": true,
+  "failedRequests": 0,
+  "pageErrors": 0
+ }
 }

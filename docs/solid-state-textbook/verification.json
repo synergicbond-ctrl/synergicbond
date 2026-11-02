@@ -1,24 +1,24 @@
 {
- "when": "2026-11-02T12:00:28.509Z",
+ "when": "2026-11-02T12:03:18.763Z",
  "engine": "Chromium 153.0.8010.12",
  "viewports": [
   {
    "width": 320,
-   "overflow": 131,
+   "overflow": 0,
    "labs": 51,
    "widgets": 11,
    "posterOk": true,
-   "wideElements": 54,
+   "wideElements": 0,
    "pageErrors": 0,
    "errorSample": []
   },
   {
    "width": 390,
-   "overflow": 61,
+   "overflow": 0,
    "labs": 51,
    "widgets": 11,
    "posterOk": true,
-   "wideElements": 36,
+   "wideElements": 0,
    "pageErrors": 0,
    "errorSample": []
   },
@@ -80,14 +80,5 @@
  "motion": [],
  "widgets": {},
  "print": {},
- "failures": [
-  {
-   "where": "layout 320",
-   "what": "page scrolls sideways by 131px"
-  },
-  {
-   "where": "layout 390",
-   "what": "page scrolls sideways by 61px"
-  }
- ]
+ "failures": []
 }

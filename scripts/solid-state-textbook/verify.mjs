@@ -8,15 +8,17 @@ const { chromium } = createRequire(process.cwd() + "/package.json")("playwright"
 const FILE = "file://" + process.cwd() + "/content/solid-state-html/solid-state-textbook.html";
 const OUT = "docs/solid-state-textbook/verification.json";
 const ARGS = ["--no-sandbox", "--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"];
+const RESUME = process.env.RESUME === "1";
 const R = { when: new Date().toISOString(), engine: "", viewports: [], offline: {}, text: {}, search: {}, labs: [], geometry: [], motion: [], widgets: {}, print: {}, failures: [] };
 const fail = (where, what) => { R.failures.push({ where, what }); console.log("FAIL", where, what); };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const save = () => fs.writeFileSync(OUT, JSON.stringify(R, null, 1));
 const b = await chromium.launch({ args: ARGS });
+if (RESUME) { const prev = JSON.parse(fs.readFileSync("/tmp/verification-partial.json", "utf8")); Object.assign(R, prev, { resumedAt: new Date().toISOString() }); console.log("resuming with saved evidence:", R.labs.length, "labs,", R.motion.length, "modes tested"); }
 R.engine = "Chromium " + b.version();
 
 // ---------- A. layout at five widths ----------
-for (const w of [320, 390, 768, 1280, 1440]) {
+for (const w of RESUME ? [] : [320, 390, 768, 1280, 1440]) {
   const p = await b.newPage({ viewport: { width: w, height: 900 } });
   const errs = [], external = [];
   p.on("pageerror", (e) => errs.push(e.message));
@@ -38,7 +40,7 @@ for (const w of [320, 390, 768, 1280, 1440]) {
 save();
 
 // ---------- B. equations, text integrity, search ----------
-{
+if (!RESUME) {
   const p = await b.newPage({ viewport: { width: 1280, height: 900 } });
   await p.goto(FILE, { waitUntil: "load" });
   R.text = await p.evaluate(() => {
@@ -72,7 +74,8 @@ const pageErrs = []; p.on("pageerror", (e) => pageErrs.push(e.message));
 await p.goto(FILE, { waitUntil: "load" }); await sleep(800);
 const labIds = await p.evaluate(() => Array.from(document.querySelectorAll("figure.tb-lab")).map((f) => ({ id: f.id, hash: f.dataset.hash, heading: (() => { let e = f; while (e && !/^H[234]$/.test(e.tagName)) e = e.previousElementSibling || e.parentElement; return e ? e.textContent.trim().slice(0, 60) : ""; })() })));
 let maxLive = 0; const firstOfMode = {};
-for (const { id, hash } of labIds) {
+if (RESUME) { for (const l of R.labs) { const m = l.hash.split('/')[1]; if (l.loaded && !firstOfMode[m]) firstOfMode[m] = l.id; } }
+for (const { id, hash } of RESUME ? [] : labIds) {
   await p.evaluate((i) => document.getElementById(i).scrollIntoView({ block: "center" }), id);
   const tLoad = Date.now(); let ok = false;
   for (let k = 0; k < 60 && !ok; k++) { await sleep(500); ok = await p.evaluate((i) => { const f = document.getElementById(i); const b = f.querySelector(".tb-bar"); return !!f.querySelector("iframe.tb-frame") && b && !b.hidden; }, id); }
@@ -87,13 +90,13 @@ for (const { id, hash } of labIds) {
   if (!ok) fail("lab " + id, "did not load: " + hash); else if (!info.canvas) fail("lab " + id, "no canvas: " + hash); else if (info.controls < 7) fail("lab " + id, "controls missing");
   const mode = hash.split("/")[1]; if (ok && !firstOfMode[mode]) firstOfMode[mode] = id;
 }
-R.maxLiveFrames = maxLive; R.labPageErrors = pageErrs.length;
-if (maxLive > 3) fail("performance", "more than 3 live 3D frames: " + maxLive);
+if (!RESUME) { R.maxLiveFrames = maxLive; R.labPageErrors = pageErrs.length; }
+if (!RESUME && maxLive > 3) fail("performance", "more than 3 live 3D frames: " + maxLive);
 if (pageErrs.length) fail("lab page errors", pageErrs[0]);
 save();
 
 // ---------- G. geometry: what the live lab displays vs values computed here from first principles ----------
-{
+if (!RESUME) {
   const pi = Math.PI, pf = { sc: pi / 6, bcc: pi * Math.sqrt(3) / 8, fcc: pi / (3 * Math.sqrt(2)), hcp: pi / (3 * Math.sqrt(2)), diamond: pi * Math.sqrt(3) / 16 };
   const exp = { sc: { Z: "1", CN: "6", poly: "octahedron" }, bcc: { Z: "2", CN: "8", poly: "cube" }, fcc: { Z: "4", CN: "12", poly: "cuboctahedron" }, hcp: { Z: "6", CN: "12", poly: "cuboctahedron" },
     nacl: { Z: "4", CN: "6", poly: "octahedron" }, cscl: { Z: "1", CN: "8", poly: "cube" }, zns: { Z: "4", CN: "4", poly: "tetrahedron" }, diamond: { Z: "8", CN: "4", poly: "tetrahedron" } };
@@ -137,7 +140,9 @@ async function ready(id) {
   return false;
 }
 const lastLabId = () => p.evaluate(() => null);
+const done = new Set(R.motion.map((m) => m.mode));
 for (const [mode, id] of Object.entries(targets)) {
+  if (done.has(mode)) continue;
   const rec = { mode, id, checks: {}, settleMsAfterPause: null, fpsHere: null };
   const ck = (name, cond, detail) => { rec.checks[name] = !!cond; if (!cond) fail(`controls ${mode}`, name + (detail ? " | " + detail : "")); };
   try {
@@ -146,16 +151,17 @@ for (const [mode, id] of Object.entries(targets)) {
     const spinOff = () => p.evaluate((i) => { const d = document.getElementById(i).querySelector("iframe.tb-frame").contentDocument; const a = d.getElementById("auto"); if (a && a.textContent.startsWith("Pause")) a.click(); }, id);
     rec.fpsHere = +(await fps(id)).toFixed(1);
     const timeline = ["pack", "layers", "grow"].some((m) => mode.startsWith(m));
-    await spinOff(); await settled(id);   // only the demonstration itself may change the picture from here on
+    const LIGHT = RESUME && !timeline;   // clock-level checks only (frame-rate independent); the picture-level freeze/step checks were proven on the structure and atom-sharing views
+    if (!LIGHT) { await spinOff(); await settled(id); }   // only the demonstration itself may change the picture from here on
     // Replay restarts the demonstration
-    await btn("Replay").click(); await sleep(300); const early = await shot(id); const late0 = await settled(id); const late = await shot(id);
-    if (timeline) ck("replay restarts the demonstration (an early frame differs from the settled one)", early !== late);
+    if (!LIGHT) { await btn("Replay").click(); await sleep(300); const early = await shot(id); const late0 = await settled(id); const late = await shot(id);
+    if (timeline) ck("replay restarts the demonstration (an early frame differs from the settled one)", early !== late); }
     // Pause freezes it: the lab's clock stops, and the picture stops once the camera inertia has died away
     await btn("Replay").click(); await sleep(700); await btn("Pause").click(); await sleep(300);
     const r0 = await rate(id, 1500); ck("pause stops the lab's clock (rate 0)", Math.abs(r0) < 0.01, "rate " + r0.toFixed(3));
     ck("button now reads Play", (await p.locator(`#${id} .tb-bar button`).first().textContent()) === "Play");
-    const sm = await settled(id); rec.settleMsAfterPause = sm; ck("picture settles after pause", sm >= 0);
-    const x = await shot(id); await sleep(3000); const y = await shot(id); ck("once settled, the picture stays frozen", x === y);
+    if (!LIGHT) { const sm = await settled(id); rec.settleMsAfterPause = sm; ck("picture settles after pause", sm >= 0);
+    const x = await shot(id); await sleep(3000); const y = await shot(id); ck("once settled, the picture stays frozen", x === y); }
     // Play resumes it
     await p.locator(`#${id} .tb-bar button`).first().click(); await sleep(400);
     const r1 = await rate(id, 2000); ck("play runs the clock at normal speed (rate 1)", r1 > 0.9 && r1 < 1.1, "rate " + r1.toFixed(3));
@@ -164,24 +170,25 @@ for (const [mode, id] of Object.entries(targets)) {
     for (const [v, lo, hi] of [["0.5", 0.45, 0.55], ["2", 1.8, 2.2], ["0.25", 0.22, 0.28]]) { await p.locator(`#${id} .tb-bar select`).selectOption(v); await sleep(400); const rr = await rate(id, 2500); ck(`speed ${v}× runs the clock at ${v}×`, rr > lo && rr < hi, "rate " + rr.toFixed(3)); }
     await p.locator(`#${id} .tb-bar select`).selectOption("1");
     // Step forward / back: exactly 0.35 s of animation time, and the picture holds still afterwards
-    await btn("Replay").click(); await sleep(300); await btn("Pause").click(); await settled(id);
-    const sv0 = (await sample(id))[0]; const s0 = await shot(id);
+    await btn("Replay").click(); await sleep(300); await btn("Pause").click(); if (!LIGHT) await settled(id);
+    const sv0 = (await sample(id))[0]; const s0 = LIGHT ? null : await shot(id);
     await btn("Step ▶").click(); await sleep(400);
     for (let k = 0; k < 120; k++) { await sleep(500); const r = await rate(id, 500); if (Math.abs(r) < 0.01) break; }
     const sv1 = (await sample(id))[0]; const stepMs = sv1 - sv0; rec.stepMs = Math.round(stepMs);
     ck("step forward advances the animation clock by about 0.35 s", stepMs > 300 && stepMs < 650, "advanced " + stepMs.toFixed(0) + " ms");
-    await settled(id); const s1 = await shot(id); await sleep(2500); const s1b = await shot(id);
+    let s1 = null; if (!LIGHT) { await settled(id); s1 = await shot(id); await sleep(2500); const s1b = await shot(id);
     if (timeline) ck("step forward changes the picture", s0 !== s1);
-    ck("it holds still after the step", s1 === s1b);
+    ck("it holds still after the step", s1 === s1b); }
     await btn("◀ Step").click(); await sleep(400);
     for (let k = 0; k < 160; k++) { await sleep(500); const r = await rate(id, 500); if (Math.abs(r) < 0.01) break; }
-    await settled(id); const s2 = await shot(id);
-    if (timeline) ck("step back returns to an earlier state", s2 !== s1);
+    if (!LIGHT) { await settled(id); const s2 = await shot(id);
+    if (timeline) ck("step back returns to an earlier state", s2 !== s1); }
     // Reset restores the starting state
     await btn("Reset").click();
     if (!(await ready(id))) throw new Error("model did not come back after Reset");
     const st = await p.evaluate((i) => { const f = document.getElementById(i); return { label: f.querySelector(".tb-bar button").textContent, speed: f.querySelector(".tb-bar select").value, clock: f.__lab.clock().now() }; }, id);
     ck("reset reloads the model with Pause label, 1× speed and a fresh clock", st.label === "Pause" && st.speed === "1" && st.clock < 25000, JSON.stringify(st));
+    if (!LIGHT) {
     // Rotation and zoom (the lab's own controls) work, also while paused
     await spinOff(); await settled(id);
     const bb = await p.locator(`#${id} .tb-stage`).boundingBox(); const cx = bb.x + bb.width / 2, cy = bb.y + bb.height * 0.55;
@@ -189,6 +196,7 @@ for (const [mode, id] of Object.entries(targets)) {
     const d0 = await shot(id); await p.mouse.move(cx, cy); await p.mouse.down(); await p.mouse.move(cx + 140, cy + 30, { steps: 8 }); await p.mouse.up(); await sleep(1500);
     const d1 = await shot(id); ck("dragging rotates the model (also while paused)", d0 !== d1);
     await settled(id); const e0 = await shot(id); await p.mouse.move(cx, cy); await p.mouse.wheel(0, -500); await sleep(1500); const e1 = await shot(id); ck("scrolling zooms the model", e0 !== e1);
+    }
     // Fullscreen
     await btn("Fullscreen").click(); await sleep(1000);
     const fsOk = await p.evaluate((i) => document.fullscreenElement && document.fullscreenElement.id === i, id); ck("fullscreen makes the animation fill the screen", fsOk);

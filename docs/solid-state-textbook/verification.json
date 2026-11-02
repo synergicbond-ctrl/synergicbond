@@ -1508,5 +1508,13 @@
   },
   "densityIron": 7.846332927811214
  },
- "resumedAt": "2026-11-02T16:47:50.140Z"
+ "resumedAt": "2026-11-02T16:47:50.140Z",
+ "offlineMode": {
+  "katexFontLoaded": true,
+  "katexRendered": true,
+  "dataUriImages": true,
+  "labRunsOffline": true,
+  "failedRequests": 0,
+  "pageErrors": 0
+ }
 }

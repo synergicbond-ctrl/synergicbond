@@ -1403,7 +1403,31 @@
    ]
   }
  ],
- "motion": [],
+ "motion": [
+  {
+   "mode": "view",
+   "id": "anim-1",
+   "checks": {
+    "pause stops the lab's clock (rate 0)": true,
+    "button now reads Play": true,
+    "picture settles after pause": true,
+    "once settled, the picture stays frozen": true,
+    "play runs the clock at normal speed (rate 1)": true,
+    "speed 0.5× runs the clock at 0.5×": true,
+    "speed 2× runs the clock at 2×": true,
+    "speed 0.25× runs the clock at 0.25×": true,
+    "step forward advances the animation clock by about 0.35 s": true,
+    "it holds still after the step": true,
+    "reset reloads the model with Pause label, 1× speed and a fresh clock": true,
+    "dragging rotates the model (also while paused)": true,
+    "scrolling zooms the model": true,
+    "fullscreen makes the animation fill the screen": true
+   },
+   "settleMsAfterPause": 79065,
+   "fpsHere": 3,
+   "stepMs": 363
+  }
+ ],
  "widgets": {},
  "print": {},
  "failures": [],

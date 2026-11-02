@@ -16,8 +16,11 @@
   var CLOCK = "<script>(function(){var real=performance.now.bind(performance),v=0,last=real(),speed=1,paused=false;" +
     "function tick(){var r=real();if(!paused)v+=(r-last)*speed;last=r;return v}" +
     "Object.defineProperty(performance,'now',{configurable:true,value:tick});" +
-    "var n=0,raf=window.requestAnimationFrame.bind(window);window.requestAnimationFrame=function(cb){return raf(function(t){n++;cb(t)})};" +
-    "window.__labClock={set:function(p,s){tick();paused=p;speed=s},now:tick,frames:function(){return n}};})();<\/script>";
+    "var n=0,halted=false,held=null,raf=window.requestAnimationFrame.bind(window);" +
+    "function run(cb){raf(function(t){if(halted){held=cb;return}n++;cb(t)})}" +
+    "window.requestAnimationFrame=function(cb){if(halted){held=cb;return 0}return raf(function(t){if(halted){held=cb;return}n++;cb(t)})};" +
+    "window.__labClock={set:function(p,s){tick();paused=p;speed=s},now:tick,frames:function(){return n}," +
+    "halt:function(h){if(h===halted)return;halted=h;if(!h&&held){var c=held;held=null;run(c)}},isHalted:function(){return halted}};})();<\/script>";
 
   function getLab() {
     if (labText === null) {
@@ -49,7 +52,7 @@
         else if (!pause && st.rotWas && !on) { a.click(); st.rotWas = false; }
       } catch (e) {}
     }
-    function apply() { var c = clock(); if (!c) return; var p = st.userPaused || st.sysPaused; c.set(p, st.speed); spin(p); }
+    function apply() { var c = clock(); if (!c) return; var p = st.userPaused || st.sysPaused; c.set(p, st.speed); spin(p); c.halt(!!st.sysPaused); }   // offscreen: stop rendering altogether, not just the clock
 
     // ----- toolbar -----
     var bPlay = el("button", "tb-btn", "Pause"); bPlay.type = "button"; bPlay.setAttribute("aria-label", "Pause or play the demonstration");

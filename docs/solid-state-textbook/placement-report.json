@@ -176,9 +176,9 @@
   },
   {
    "heading": "1. Sharing Fractions",
-   "where": "master-content",
+   "where": "part-section",
    "beforeExample": false,
-   "theoryBlocksAbove": 1
+   "theoryBlocksAbove": 2
   },
   {
    "heading": "2. Body-Centred Cell (I)",
@@ -230,7 +230,7 @@
   },
   {
    "heading": "2. Simple Cubic \u2014 First Six Shells",
-   "where": "master-content",
+   "where": "part-section",
    "beforeExample": false,
    "theoryBlocksAbove": 1
   },
@@ -290,7 +290,7 @@
   },
   {
    "heading": "1. Classical Radius-Ratio Table",
-   "where": "master-content",
+   "where": "part-section",
    "beforeExample": false,
    "theoryBlocksAbove": 1
   },

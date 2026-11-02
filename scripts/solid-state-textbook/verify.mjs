@@ -2,6 +2,8 @@
 // Writes docs/solid-state-textbook/verification.json. Tests real state changes, not just that buttons exist.
 import { createRequire } from "node:module";
 import fs from "node:fs";
+import crypto from "node:crypto";
+import { execSync } from "node:child_process";
 const { chromium } = createRequire(process.cwd() + "/package.json")("playwright");
 const FILE = "file://" + process.cwd() + "/content/solid-state-html/solid-state-textbook.html";
 const OUT = "docs/solid-state-textbook/verification.json";
@@ -72,7 +74,7 @@ const labIds = await p.evaluate(() => Array.from(document.querySelectorAll("figu
 let maxLive = 0; const firstOfMode = {};
 for (const { id, hash } of labIds) {
   await p.evaluate((i) => document.getElementById(i).scrollIntoView({ block: "center" }), id);
-  let ok = false;
+  const tLoad = Date.now(); let ok = false;
   for (let k = 0; k < 60 && !ok; k++) { await sleep(500); ok = await p.evaluate((i) => { const f = document.getElementById(i); const b = f.querySelector(".tb-bar"); return !!f.querySelector("iframe.tb-frame") && b && !b.hidden; }, id); }
   await sleep(1500);
   const live = await p.evaluate(() => document.querySelectorAll("iframe.tb-frame").length); maxLive = Math.max(maxLive, live);
@@ -81,7 +83,7 @@ for (const { id, hash } of labIds) {
     try { const doc = fr.contentDocument; d = { canvas: !!doc.querySelector("canvas"), facts: (doc.getElementById("facts") || {}).innerText || "", big: ((doc.getElementById("bigNum") || {}).textContent || "") + " | " + ((doc.getElementById("bigCap") || {}).textContent || ""),
       tally: (doc.getElementById("tally") || {}).innerText || "", note: (doc.getElementById("note") || {}).textContent || "", sites: (doc.querySelector("table.sites tfoot") || {}).innerText || "", hud: ((doc.getElementById("hudR") || {}).textContent || "") }; } catch (e) { d = { error: String(e) }; }
     return { ...d, controls: f.querySelectorAll(".tb-bar button, .tb-bar select").length }; }, id) : {};
-  R.labs.push({ id, hash, loaded: ok, canvas: !!info.canvas, controls: info.controls || 0, liveFramesNow: live, ...info });
+  R.labs.push({ id, hash, loadMs: ok ? Date.now() - tLoad - 1500 : null, loaded: ok, canvas: !!info.canvas, controls: info.controls || 0, liveFramesNow: live, ...info });
   if (!ok) fail("lab " + id, "did not load: " + hash); else if (!info.canvas) fail("lab " + id, "no canvas: " + hash); else if (info.controls < 7) fail("lab " + id, "controls missing");
   const mode = hash.split("/")[1]; if (ok && !firstOfMode[mode]) firstOfMode[mode] = id;
 }
@@ -128,7 +130,7 @@ async function shot(id) { const bb = await p.locator(`#${id} .tb-stage`).boundin
 const sample = (id) => p.evaluate((i) => { const c = document.getElementById(i).__lab.clock(); return [c.now(), performance.now(), c.frames()]; }, id);
 async function rate(id, ms) { const a = await sample(id); await sleep(ms); const c = await sample(id); return (c[0] - a[0]) / (c[1] - a[1]); }
 async function fps(id) { const a = await sample(id); await sleep(1500); const c = await sample(id); return (c[2] - a[2]) / ((c[1] - a[1]) / 1000); }
-async function settled(id, maxMs = 90000) { const t0 = Date.now(); let prev = await shot(id); while (Date.now() - t0 < maxMs) { await sleep(1000); const cur = await shot(id); if (cur === prev) return Date.now() - t0; prev = cur; } return -1; }
+async function settled(id, maxMs = 150000) { const t0 = Date.now(); let prev = await shot(id); while (Date.now() - t0 < maxMs) { await sleep(1000); const cur = await shot(id); if (cur === prev) return Date.now() - t0; prev = cur; } return -1; }
 async function ready(id) {
   await p.evaluate((i) => document.getElementById(i).scrollIntoView({ block: "center" }), id);
   for (let k = 0; k < 80; k++) { await sleep(500); if (await p.evaluate((i) => { const f = document.getElementById(i); const b = f.querySelector(".tb-bar"); const fr = f.querySelector("iframe.tb-frame"); let cv = false; try { cv = !!fr.contentDocument.querySelector("canvas"); } catch {} return !!fr && cv && b && !b.hidden; }, id)) { await sleep(2500); return true; } }
@@ -209,6 +211,83 @@ for (const [mode, id] of Object.entries(targets)) {
   const pk = p.locator("figure.tb-w[data-widget=packing]").first(); await pk.scrollIntoViewIfNeeded(); await sleep(1800);
   w.packingBars = await pk.locator(".tb-fill").evaluateAll((els) => els.map((e) => e.style.width)); if (w.packingBars.join() !== "52.36%,68.02%,74.05%") fail("packing bars", w.packingBars.join());
   R.widgets = w;
+}
+save();
+
+// ---------- H. offline: the browser is put in offline mode, so any outside dependency would fail ----------
+{
+  const ctx = await b.newContext({ offline: true, viewport: { width: 1280, height: 900 } });
+  const op = await ctx.newPage(); const errs = [], failed = [];
+  op.on("pageerror", (e) => errs.push(e.message)); op.on("requestfailed", (r) => failed.push(r.url().slice(0, 80)));
+  await op.goto(FILE, { waitUntil: "load" }); await sleep(1500);
+  const id0 = labIds[Math.floor(labIds.length / 2)].id;
+  await op.evaluate((i) => document.getElementById(i).scrollIntoView({ block: "center" }), id0);
+  let ok = false; for (let k = 0; k < 60 && !ok; k++) { await sleep(500); ok = await op.evaluate((i) => { const f = document.getElementById(i); const b = f.querySelector(".tb-bar"); const fr = f.querySelector("iframe.tb-frame"); let cv = false; try { cv = !!fr.contentDocument.querySelector("canvas"); } catch {} return !!fr && cv && b && !b.hidden; }, id0); }
+  R.offlineMode = await op.evaluate(async () => ({ katexFontLoaded: (await document.fonts.load("16px KaTeX_Main")).length > 0, katexRendered: document.querySelectorAll(".katex").length > 1000, dataUriImages: Array.from(document.images).every((i) => i.src.startsWith("data:")) }));
+  R.offlineMode.labRunsOffline = ok; R.offlineMode.failedRequests = failed.length; R.offlineMode.pageErrors = errs.length;
+  if (!ok) fail("offline", "a 3D model did not start with the network disabled"); if (failed.length) fail("offline", "requests failed: " + failed[0]); if (errs.length) fail("offline", errs[0]);
+  if (!R.offlineMode.katexFontLoaded || !R.offlineMode.katexRendered) fail("offline", "maths fonts or equations missing offline");
+  await ctx.close();
+}
+save();
+
+// ---------- I. the original lab is untouched, and its own behaviour still works inside the wrapper ----------
+{
+  const fileSha = crypto.createHash("sha256").update(fs.readFileSync("content/solid-state-html/crystal-lab.html")).digest("hex");
+  const embeddedSha = await p.evaluate(async () => { const b64 = document.getElementById("tb-lab-src").textContent.trim(); const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0)); const h = await crypto.subtle.digest("SHA-256", bytes); return Array.from(new Uint8Array(h)).map((x) => x.toString(16).padStart(2, "0")).join(""); });
+  let gitUnchanged = false; try { execSync("git diff --quiet checkpoint-before-textbook-rebuild HEAD -- content/solid-state-html/crystal-lab.html content/solid-state-html/crystal-lab-src", { stdio: "ignore" }); gitUnchanged = true; } catch {}
+  R.labIntegrity = { embeddedEqualsRepoFile: embeddedSha === fileSha, sha256: fileSha.slice(0, 16), unchangedSinceCheckpoint: gitUnchanged };
+  if (!R.labIntegrity.embeddedEqualsRepoFile) fail("lab integrity", "embedded lab differs from content/solid-state-html/crystal-lab.html"); if (!gitUnchanged) fail("lab integrity", "lab files changed since the checkpoint");
+  // the lab's own buttons, driven inside the wrapper
+  const target = R.labs.find((l) => l.hash === "fcc/pos"); const beh = {};
+  if (target) {
+    await p.evaluate((i) => document.getElementById(i).scrollIntoView({ block: "center" }), target.id); await sleep(4000);
+    const readyNow = await p.evaluate((i) => !!document.getElementById(i).querySelector("iframe.tb-frame"), target.id);
+    if (readyNow) {
+      const r1 = await p.evaluate(async (i) => { const d = document.getElementById(i).querySelector("iframe.tb-frame").contentDocument; const w = (ms) => new Promise((r) => setTimeout(r, ms)); const out = {};
+        d.querySelector('#modes button[data-m="share"]').click(); await w(800); out.shareMode = d.getElementById("hudR").textContent; out.tallyShown = getComputedStyle(d.getElementById("tally")).display !== "none";
+        d.querySelector('#structs button[data-s="bcc"]').click(); await w(800); out.structure = d.getElementById("title").textContent; out.bccFacts = d.getElementById("facts").innerText.replace(/\s+/g, " ").slice(0, 60);
+        const a = d.getElementById("auto"); const before = a.textContent; a.click(); await w(200); out.rotateToggled = a.textContent !== before; a.click();
+        d.getElementById("replay").click(); await w(300); out.replayRan = true; return out; }, target.id);
+      Object.assign(beh, r1);
+    }
+  }
+  R.labBehaviour = beh;
+  if (beh.shareMode !== "Atom sharing (Z)") fail("lab behaviour", "mode chip did not switch the view"); if (!beh.tallyShown) fail("lab behaviour", "atom-sharing tally not shown");
+  if (!/Body-centred/.test(beh.structure || "")) fail("lab behaviour", "structure chip did not switch the structure"); if (!beh.rotateToggled) fail("lab behaviour", "the lab's own Rotate button stopped working");
+  // the wrapped lab shows the same facts as the standalone lab at the same link
+  R.labMatchesStandalone = [];
+  for (const h of ["fcc/pos", "bcc/pack", "nacl/cn", "diamond/view", "hcp/voids"]) {
+    const rec = R.labs.find((l) => l.hash === h); if (!rec || !rec.facts) { R.labMatchesStandalone.push({ hash: h, tested: false }); continue; }
+    const sp = await b.newPage({ viewport: { width: 760, height: 600 } }); await sp.goto("file://" + process.cwd() + "/content/solid-state-html/crystal-lab.html#" + h + "/embed", { waitUntil: "load" }); await sleep(3000);
+    const sf = await sp.evaluate(() => document.getElementById("facts").innerText); await sp.close();
+    const same = sf.replace(/\s+/g, " ") === rec.facts.replace(/\s+/g, " "); R.labMatchesStandalone.push({ hash: h, tested: true, same }); if (!same) fail("lab behaviour", `${h}: facts differ from the standalone lab`);
+  }
+}
+save();
+
+// ---------- P. performance: hardware-independent numbers (main-thread time, frames, contexts, memory) ----------
+{
+  const cdp = await p.context().newCDPSession(p); await cdp.send("Performance.enable");
+  const metrics = async () => { const { metrics: m } = await cdp.send("Performance.getMetrics"); const o = {}; m.forEach((x) => (o[x.name] = x.value)); return o; };
+  const frames = () => p.evaluate(() => Array.from(document.querySelectorAll("figure.tb-lab")).map((f) => (f.__lab && f.__lab.clock() ? f.__lab.clock().frames() : 0)).reduce((a, b) => a + b, 0));
+  const measure = async (secs) => { const a = await metrics(), fa = await frames(); await sleep(secs * 1000); const c = await metrics(), fb = await frames(); const busy = (c.TaskDuration - a.TaskDuration) / secs; const fr = (fb - fa) / secs;
+    return { mainThreadBusyFraction: +busy.toFixed(3), scriptFraction: +((c.ScriptDuration - a.ScriptDuration) / secs).toFixed(3), framesPerSecond: +fr.toFixed(2), mainThreadMsPerFrame: fr > 0.05 ? +((busy * 1000) / fr).toFixed(1) : null, jsHeapMB: +(c.JSHeapUsedSize / 1048576).toFixed(1), live: await p.evaluate(() => document.querySelectorAll("iframe.tb-frame").length), halted: await p.evaluate(() => Array.from(document.querySelectorAll("figure.tb-lab")).filter((f) => f.querySelector("iframe.tb-frame") && f.__lab.clock() && f.__lab.clock().isHalted()).length) }; };
+  const P = {};
+  await p.evaluate(() => window.scrollTo(0, 0)); await sleep(5000);
+  P.topOfPageOffscreenModelsHalted = await measure(6);
+  const mid = labIds[Math.floor(labIds.length / 2)].id; await p.evaluate((i) => document.getElementById(i).scrollIntoView({ block: "center" }), mid);
+  for (let k = 0; k < 60; k++) { await sleep(500); if (await p.evaluate((i) => { const f = document.getElementById(i); const b = f.querySelector(".tb-bar"); return b && !b.hidden; }, mid)) break; }
+  await sleep(3000); P.oneModelOnScreen = await measure(8);
+  // pausing the demonstration leaves rendering on (so you can still turn the model) but costs no animation time
+  await p.locator(`#${mid} .tb-bar button`).first().click(); await sleep(1500); P.onScreenButPaused = await measure(6); await p.locator(`#${mid} .tb-bar button`).first().click();
+  const loads = R.labs.map((l) => l.loadMs).filter((x) => x != null).sort((a, b) => a - b); P.modelStartMsMedian = loads[Math.floor(loads.length / 2)]; P.modelStartMsMax = loads[loads.length - 1];
+  P.page = await p.evaluate(() => ({ domContentLoadedMs: Math.round(performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart), htmlMB: +(document.documentElement.outerHTML.length / 1048576).toFixed(1) }));
+  P.note = "Frames per second here are limited by SwiftShader (software rendering on the test machine's CPU) and say nothing about a student's device. The hardware-independent figures are main-thread time per frame, the number of live WebGL contexts (never more than 3), halted offscreen models, heap size and start-up time.";
+  R.performance = P;
+  if (P.topOfPageOffscreenModelsHalted.mainThreadBusyFraction > 0.05) fail("performance", "offscreen models still cost main-thread time: " + P.topOfPageOffscreenModelsHalted.mainThreadBusyFraction);
+  if (P.topOfPageOffscreenModelsHalted.live !== P.topOfPageOffscreenModelsHalted.halted) fail("performance", "not every live offscreen model is halted");
+  if (P.oneModelOnScreen.live > 3) fail("performance", "more than 3 live models");
 }
 save();
 

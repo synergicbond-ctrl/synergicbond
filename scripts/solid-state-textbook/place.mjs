@@ -19,7 +19,8 @@ const result = await p.evaluate(({ plan, replaces }) => {
     const h = hs[0], par = h.parentElement, next = h.nextElementSibling;
     const frag = document.createElement("div"); frag.innerHTML = item.figs.join("\n");
     let container, ref = null, where;
-    if (next && next.tagName === "DIV") {                       // Master: the content div follows the heading
+    const wrapsTable = next && next.tagName === "DIV" && (next.matches(".overflow-x-auto") || next.querySelector(":scope > table"));   // a table's scroll box is not a place for an animation
+    if (next && next.tagName === "DIV" && !wrapsTable) {          // Master: the content div follows the heading
       container = next; ref = [...next.children].find(isExample) || null; where = "master-content";
     } else if (par && par.tagName === "SECTION" && par.firstElementChild === h) {   // 23 parts: heading and its blocks share one section
       container = par; ref = [...par.children].slice(1).find(isExample) || null; where = "part-section";

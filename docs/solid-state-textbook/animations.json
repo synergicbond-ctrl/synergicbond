@@ -17,9 +17,9 @@
   "ref": "sc/share",
   "title": "Simple cubic: atom sharing",
   "heading": "1. Sharing Fractions",
-  "placement": "master-content",
+  "placement": "part-section",
   "placedBeforeExample": false,
-  "theoryBlocksAbove": 1
+  "theoryBlocksAbove": 2
  },
  {
   "n": 3,
@@ -116,7 +116,7 @@
   "ref": "sc/cn",
   "title": "Simple cubic: coordination",
   "heading": "2. Simple Cubic — First Six Shells",
-  "placement": "master-content",
+  "placement": "part-section",
   "placedBeforeExample": false,
   "theoryBlocksAbove": 1
  },
@@ -204,7 +204,7 @@
   "ref": "radius",
   "title": "Radius ratio and coordination number",
   "heading": "1. Classical Radius-Ratio Table",
-  "placement": "master-content",
+  "placement": "part-section",
   "placedBeforeExample": false,
   "theoryBlocksAbove": 1
  },

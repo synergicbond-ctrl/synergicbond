@@ -5602,7 +5602,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
   var CLOCK = "<script>(function(){var real=performance.now.bind(performance),v=0,last=real(),speed=1,paused=false;" +
     "function tick(){var r=real();if(!paused)v+=(r-last)*speed;last=r;return v}" +
     "Object.defineProperty(performance,'now',{configurable:true,value:tick});" +
-    "window.__labClock={set:function(p,s){tick();paused=p;speed=s},now:tick};})();<\/script>";
+    "var n=0,raf=window.requestAnimationFrame.bind(window);window.requestAnimationFrame=function(cb){return raf(function(t){n++;cb(t)})};" +
+    "window.__labClock={set:function(p,s){tick();paused=p;speed=s},now:tick,frames:function(){return n}};})();<\/script>";
 
   function getLab() {
     if (labText === null) {
@@ -5654,14 +5655,33 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
     bPlay.onclick = function () { st.userPaused = !st.userPaused; ppLabel(); apply(); };
     sel.onchange = function () { st.speed = parseFloat(sel.value); apply(); };
     bRep.onclick = function () { var c = clock(); if (!c) return; replayClick(); st.t0 = c.now(); st.userPaused = false; ppLabel(); apply(); };
-    bFwd.onclick = function () { var c = clock(); if (!c) return; st.userPaused = true; ppLabel(); spin(true); c.set(false, 1); setTimeout(apply, 350); };
+    // A step moves the demonstration on by exactly `ms` of animation time, rendered in at least ms/50 frames (the lab limits each frame to 0.05 s).
+    // The frame rate is measured first and the clock is run at the speed that makes those frames take `ms` of animation time, so a step
+    // looks the same on a slow device (a few frames per second) and on a fast one.
+    function runFor(ms, then) {
+      var c = clock(); if (!c) return;
+      var need = Math.max(3, Math.ceil(ms / 50)), f0 = c.frames(), r0 = performance.now();
+      setTimeout(function () {
+        var c2 = clock(); if (!c2) return;
+        var fps = Math.max(1, (c2.frames() - f0) / ((performance.now() - r0) / 1000));
+        var speed = Math.min(4, Math.max(0.05, (ms / 1000) / (need / fps)));
+        var v0 = c2.now(), g0 = c2.frames(), t0 = Date.now();
+        c2.set(false, speed);
+        var iv = setInterval(function () {
+          var cc = clock();
+          if (!cc) { clearInterval(iv); return; }
+          if ((cc.now() - v0 >= ms && cc.frames() - g0 >= need) || Date.now() - t0 > 30000) { clearInterval(iv); cc.__stepMs = cc.now() - v0; if (then) then(); apply(); }
+        }, 30);
+      }, 400);
+    }
+    bFwd.onclick = function () { var c = clock(); if (!c) return; st.userPaused = true; ppLabel(); spin(true); apply(); runFor(350); };
     bBack.onclick = function () {
       var c = clock(); if (!c) return;
       var target = Math.max(0, c.now() - st.t0 - 350);
       st.userPaused = true; ppLabel(); spin(true);
       replayClick(); st.t0 = c.now();
       if (target <= 0) { apply(); return; }
-      c.set(false, 4); setTimeout(apply, target / 4);
+      apply(); runFor(target);
     };
     bRes.onclick = function () { release(); st.userPaused = false; st.speed = 1; sel.value = "1"; ppLabel(); activate(); };
     bFull.onclick = function () {

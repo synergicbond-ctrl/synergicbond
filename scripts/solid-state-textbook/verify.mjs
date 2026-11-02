@@ -121,58 +121,76 @@ for (const [k, shown] of [["CN3", 0.155], ["CN4", 0.225], ["CN6", 0.414], ["CN8"
 save();
 
 // ---------- D. the controls change real state (one instance per mode, plus both layer variants) ----------
+// Software 3D here runs at only a few frames per second, so "frozen" is judged after the camera's inertia has died away,
+// and clock rates are measured against real time (not against a sleep, which is wrong while the page is busy rendering).
 const targets = { ...firstOfMode }; const lay = R.labs.filter((l) => l.hash.startsWith("fcc/layers")); lay.forEach((l) => { targets["layers:" + l.hash] = l.id; }); delete targets.layers;
-async function shot(id) { const bb = await p.locator(`#${id} .tb-stage`).boundingBox(); return (await p.screenshot({ clip: bb, timeout: 90000 })).toString("base64"); }
-const clockNow = (id) => p.evaluate((i) => { const f = document.getElementById(i).__lab; const c = f && f.clock(); return c ? c.now() : null; }, id);
-async function rate(id, ms) { const a = await clockNow(id); await sleep(ms); const c = await clockNow(id); return (c - a) / ms; }
+async function shot(id) { const bb = await p.locator(`#${id} .tb-stage`).boundingBox(); return (await p.screenshot({ clip: bb, timeout: 120000 })).toString("base64"); }
+const sample = (id) => p.evaluate((i) => { const c = document.getElementById(i).__lab.clock(); return [c.now(), performance.now(), c.frames()]; }, id);
+async function rate(id, ms) { const a = await sample(id); await sleep(ms); const c = await sample(id); return (c[0] - a[0]) / (c[1] - a[1]); }
+async function fps(id) { const a = await sample(id); await sleep(1500); const c = await sample(id); return (c[2] - a[2]) / ((c[1] - a[1]) / 1000); }
+async function settled(id, maxMs = 90000) { const t0 = Date.now(); let prev = await shot(id); while (Date.now() - t0 < maxMs) { await sleep(1000); const cur = await shot(id); if (cur === prev) return Date.now() - t0; prev = cur; } return -1; }
+async function ready(id) {
+  await p.evaluate((i) => document.getElementById(i).scrollIntoView({ block: "center" }), id);
+  for (let k = 0; k < 80; k++) { await sleep(500); if (await p.evaluate((i) => { const f = document.getElementById(i); const b = f.querySelector(".tb-bar"); const fr = f.querySelector("iframe.tb-frame"); let cv = false; try { cv = !!fr.contentDocument.querySelector("canvas"); } catch {} return !!fr && cv && b && !b.hidden; }, id)) { await sleep(2500); return true; } }
+  return false;
+}
+const lastLabId = () => p.evaluate(() => null);
 for (const [mode, id] of Object.entries(targets)) {
-  const rec = { mode, id, checks: {} };
+  const rec = { mode, id, checks: {}, settleMsAfterPause: null, fpsHere: null };
   const ck = (name, cond, detail) => { rec.checks[name] = !!cond; if (!cond) fail(`controls ${mode}`, name + (detail ? " | " + detail : "")); };
   try {
-    await p.evaluate((i) => document.getElementById(i).scrollIntoView({ block: "center" }), id); await sleep(2500);
+    if (!(await ready(id))) throw new Error("instance did not become ready");
     const btn = (name) => p.locator(`#${id} .tb-bar button`, { hasText: name }).first();
-    // switch the lab's own camera spin off, so only the demonstration itself can change the picture
-    await p.evaluate((i) => { const d = document.getElementById(i).querySelector("iframe.tb-frame").contentDocument; const a = d.getElementById("auto"); if (a && a.textContent.startsWith("Pause")) a.click(); }, id);
+    const spinOff = () => p.evaluate((i) => { const d = document.getElementById(i).querySelector("iframe.tb-frame").contentDocument; const a = d.getElementById("auto"); if (a && a.textContent.startsWith("Pause")) a.click(); }, id);
+    rec.fpsHere = +(await fps(id)).toFixed(1);
     const timeline = ["pack", "layers", "grow"].some((m) => mode.startsWith(m));
+    await spinOff(); await settled(id);   // only the demonstration itself may change the picture from here on
     // Replay restarts the demonstration
-    await btn("Replay").click(); await sleep(250); const early = await shot(id); await sleep(6500); const late = await shot(id);
-    if (timeline) ck("replay restarts the demonstration (early frame differs from settled frame)", early !== late);
-    // Pause freezes it: both the picture and the lab's clock
-    await btn("Replay").click(); await sleep(500); await btn("Pause").click(); await sleep(400);
-    const a = await shot(id); const r0 = await rate(id, 800); const b2 = await shot(id);
-    ck("pause freezes the picture", a === b2); ck("pause stops the lab's clock", Math.abs(r0) < 0.02, "rate " + r0.toFixed(3));
+    await btn("Replay").click(); await sleep(300); const early = await shot(id); const late0 = await settled(id); const late = await shot(id);
+    if (timeline) ck("replay restarts the demonstration (an early frame differs from the settled one)", early !== late);
+    // Pause freezes it: the lab's clock stops, and the picture stops once the camera inertia has died away
+    await btn("Replay").click(); await sleep(700); await btn("Pause").click(); await sleep(300);
+    const r0 = await rate(id, 1500); ck("pause stops the lab's clock (rate 0)", Math.abs(r0) < 0.01, "rate " + r0.toFixed(3));
     ck("button now reads Play", (await p.locator(`#${id} .tb-bar button`).first().textContent()) === "Play");
+    const sm = await settled(id); rec.settleMsAfterPause = sm; ck("picture settles after pause", sm >= 0);
+    const x = await shot(id); await sleep(3000); const y = await shot(id); ck("once settled, the picture stays frozen", x === y);
     // Play resumes it
-    await p.locator(`#${id} .tb-bar button`).first().click(); await sleep(300);
-    const r1 = await rate(id, 800); ck("play runs the clock at normal speed", r1 > 0.85 && r1 < 1.15, "rate " + r1.toFixed(3));
-    if (timeline) { const c0 = await shot(id); await sleep(5000); const c1 = await shot(id); ck("play continues the demonstration", c0 !== c1); }
+    await p.locator(`#${id} .tb-bar button`).first().click(); await sleep(400);
+    const r1 = await rate(id, 2000); ck("play runs the clock at normal speed (rate 1)", r1 > 0.9 && r1 < 1.1, "rate " + r1.toFixed(3));
+    if (timeline) { await btn("Replay").click(); await sleep(600); await btn("Pause").click(); await settled(id); const P = await shot(id); await p.locator(`#${id} .tb-bar button`).first().click(); await settled(id); const Q = await shot(id); ck("after Play the demonstration continues to its end", P !== Q); }
     // Speed
-    for (const [v, lo, hi] of [["0.5", 0.4, 0.6], ["2", 1.7, 2.3], ["0.25", 0.18, 0.32]]) { await p.locator(`#${id} .tb-bar select`).selectOption(v); await sleep(300); const rr = await rate(id, 1000); ck(`speed ${v}× runs the clock at ${v}×`, rr > lo && rr < hi, "rate " + rr.toFixed(3)); }
+    for (const [v, lo, hi] of [["0.5", 0.45, 0.55], ["2", 1.8, 2.2], ["0.25", 0.22, 0.28]]) { await p.locator(`#${id} .tb-bar select`).selectOption(v); await sleep(400); const rr = await rate(id, 2500); ck(`speed ${v}× runs the clock at ${v}×`, rr > lo && rr < hi, "rate " + rr.toFixed(3)); }
     await p.locator(`#${id} .tb-bar select`).selectOption("1");
-    // Step forward / back (only meaningful where there is a timeline)
-    if (timeline) {
-      await btn("Replay").click(); await sleep(120); await btn("Pause").click(); await sleep(400);
-      const s0 = await shot(id); await btn("Step ▶").click(); await sleep(900); const s1 = await shot(id); await sleep(700); const s1b = await shot(id);
-      ck("step forward advances the demonstration", s0 !== s1); ck("it holds still after the step", s1 === s1b);
-      await btn("◀ Step").click(); await sleep(1500); const s2 = await shot(id);
-      ck("step back returns to an earlier state", s2 !== s1);
-    }
+    // Step forward / back: exactly 0.35 s of animation time, and the picture holds still afterwards
+    await btn("Replay").click(); await sleep(300); await btn("Pause").click(); await settled(id);
+    const sv0 = (await sample(id))[0]; const s0 = await shot(id);
+    await btn("Step ▶").click(); await sleep(400);
+    for (let k = 0; k < 120; k++) { await sleep(500); const r = await rate(id, 500); if (Math.abs(r) < 0.01) break; }
+    const sv1 = (await sample(id))[0]; const stepMs = sv1 - sv0; rec.stepMs = Math.round(stepMs);
+    ck("step forward advances the animation clock by about 0.35 s", stepMs > 300 && stepMs < 650, "advanced " + stepMs.toFixed(0) + " ms");
+    await settled(id); const s1 = await shot(id); await sleep(2500); const s1b = await shot(id);
+    if (timeline) ck("step forward changes the picture", s0 !== s1);
+    ck("it holds still after the step", s1 === s1b);
+    await btn("◀ Step").click(); await sleep(400);
+    for (let k = 0; k < 160; k++) { await sleep(500); const r = await rate(id, 500); if (Math.abs(r) < 0.01) break; }
+    await settled(id); const s2 = await shot(id);
+    if (timeline) ck("step back returns to an earlier state", s2 !== s1);
     // Reset restores the starting state
-    await btn("Reset").click(); await sleep(6000);
-    const st = await p.evaluate((i) => { const f = document.getElementById(i); const fr = f.querySelector("iframe.tb-frame"); let cv = false; try { cv = !!fr.contentDocument.querySelector("canvas"); } catch {} return { cv, label: f.querySelector(".tb-bar button").textContent, speed: f.querySelector(".tb-bar select").value }; }, id);
-    ck("reset reloads the model", st.cv); ck("reset restores Pause label and 1× speed", st.label === "Pause" && st.speed === "1", JSON.stringify(st));
-    // Rotation and zoom (lab's own controls): drag changes the view, wheel zooms
-    await p.evaluate((i) => { const d = document.getElementById(i).querySelector("iframe.tb-frame").contentDocument; const a = d.getElementById("auto"); if (a && a.textContent.startsWith("Pause")) a.click(); }, id);
-    await sleep(1500);
+    await btn("Reset").click();
+    if (!(await ready(id))) throw new Error("model did not come back after Reset");
+    const st = await p.evaluate((i) => { const f = document.getElementById(i); return { label: f.querySelector(".tb-bar button").textContent, speed: f.querySelector(".tb-bar select").value, clock: f.__lab.clock().now() }; }, id);
+    ck("reset reloads the model with Pause label, 1× speed and a fresh clock", st.label === "Pause" && st.speed === "1" && st.clock < 25000, JSON.stringify(st));
+    // Rotation and zoom (the lab's own controls) work, also while paused
+    await spinOff(); await settled(id);
     const bb = await p.locator(`#${id} .tb-stage`).boundingBox(); const cx = bb.x + bb.width / 2, cy = bb.y + bb.height * 0.55;
-    await btn("Pause").click(); await sleep(300);
-    const d0 = await shot(id); await p.mouse.move(cx, cy); await p.mouse.down(); await p.mouse.move(cx + 140, cy + 30, { steps: 8 }); await p.mouse.up(); await sleep(900);
+    await btn("Pause").click(); await settled(id);
+    const d0 = await shot(id); await p.mouse.move(cx, cy); await p.mouse.down(); await p.mouse.move(cx + 140, cy + 30, { steps: 8 }); await p.mouse.up(); await sleep(1500);
     const d1 = await shot(id); ck("dragging rotates the model (also while paused)", d0 !== d1);
-    await p.mouse.move(cx, cy); await p.mouse.wheel(0, -500); await sleep(900); const d2 = await shot(id); ck("scrolling zooms the model", d1 !== d2);
+    await settled(id); const e0 = await shot(id); await p.mouse.move(cx, cy); await p.mouse.wheel(0, -500); await sleep(1500); const e1 = await shot(id); ck("scrolling zooms the model", e0 !== e1);
     // Fullscreen
-    await btn("Fullscreen").click(); await sleep(800);
+    await btn("Fullscreen").click(); await sleep(1000);
     const fsOk = await p.evaluate((i) => document.fullscreenElement && document.fullscreenElement.id === i, id); ck("fullscreen makes the animation fill the screen", fsOk);
-    await p.evaluate(() => document.exitFullscreen && document.fullscreenElement && document.exitFullscreen()); await sleep(500);
+    await p.evaluate(() => document.exitFullscreen && document.fullscreenElement && document.exitFullscreen()); await sleep(600);
   } catch (e) { fail(`controls ${mode}`, "test aborted: " + String(e.message).split("\n")[0]); rec.error = String(e.message).split("\n")[0]; }
   R.motion.push(rec); save();
 }

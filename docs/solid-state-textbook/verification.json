@@ -1,5 +1,5 @@
 {
- "when": "2026-11-02T13:23:25.878Z",
+ "when": "2026-11-02T13:24:19.391Z",
  "engine": "Chromium 153.0.8010.12",
  "viewports": [
   {
@@ -75,10 +75,1368 @@
   "coordination number": 40,
   "clickScrolls": true
  },
- "labs": [],
- "geometry": [],
+ "labs": [
+  {
+   "id": "anim-1",
+   "hash": "sc/view",
+   "loadMs": 6253,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 1,
+   "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-2",
+   "hash": "sc/share",
+   "loadMs": 5878,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 2,
+   "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
+   "big": "1 | atoms that belong to this cell",
+   "tally": "8 corners × ⅛ = 1\nZ = 1 ✓",
+   "note": "The cell walls slice every atom: a corner keeps ⅛ (⅙ in the hexagonal prism), an edge ¼, a face ½, an inside atom all of it. The tally adds up what stays inside.",
+   "sites": "",
+   "hud": "Atom sharing (Z)"
+  },
+  {
+   "id": "anim-3",
+   "hash": "bcc/view",
+   "loadMs": 5569,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n2\nCoordination\n8 · cube\nPacking efficiency\n68.0%\nRadius relation\n√3 a = 4r (body diagonal)\nExamples\nNa, K, Cr, Fe (α)",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-4",
+   "hash": "fcc/view",
+   "loadMs": 8697,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-5",
+   "hash": "sc/share",
+   "loadMs": 8098,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
+   "big": "1 | atoms that belong to this cell",
+   "tally": "8 corners × ⅛ = 1\nZ = 1 ✓",
+   "note": "The cell walls slice every atom: a corner keeps ⅛ (⅙ in the hexagonal prism), an edge ¼, a face ½, an inside atom all of it. The tally adds up what stays inside.",
+   "sites": "",
+   "hud": "Atom sharing (Z)"
+  },
+  {
+   "id": "anim-6",
+   "hash": "fcc/share",
+   "loadMs": 11486,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "4 | atoms that belong to this cell",
+   "tally": "8 corners × ⅛ = 1\n6 faces × ½ = 3\nZ = 4 ✓",
+   "note": "The cell walls slice every atom: a corner keeps ⅛ (⅙ in the hexagonal prism), an edge ¼, a face ½, an inside atom all of it. The tally adds up what stays inside.",
+   "sites": "",
+   "hud": "Atom sharing (Z)"
+  },
+  {
+   "id": "anim-7",
+   "hash": "bcc/share",
+   "loadMs": 10428,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n2\nCoordination\n8 · cube\nPacking efficiency\n68.0%\nRadius relation\n√3 a = 4r (body diagonal)\nExamples\nNa, K, Cr, Fe (α)",
+   "big": "2 | atoms that belong to this cell",
+   "tally": "8 corners × ⅛ = 1\n1 inside × 1 = 1\nZ = 2 ✓",
+   "note": "The cell walls slice every atom: a corner keeps ⅛ (⅙ in the hexagonal prism), an edge ¼, a face ½, an inside atom all of it. The tally adds up what stays inside.",
+   "sites": "",
+   "hud": "Atom sharing (Z)"
+  },
+  {
+   "id": "anim-8",
+   "hash": "sc/pack",
+   "loadMs": 6592,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
+   "big": "52.4% | packing efficiency · a = 2r",
+   "tally": "",
+   "note": "Spheres swell until neighbours touch along the contact direction; the counter tracks how much of the cell they fill.",
+   "sites": "",
+   "hud": "Packing"
+  },
+  {
+   "id": "anim-9",
+   "hash": "fcc/pack",
+   "loadMs": 6155,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "74.0% | packing efficiency · √2 a = 4r (face diagonal)",
+   "tally": "",
+   "note": "Spheres swell until neighbours touch along the contact direction; the counter tracks how much of the cell they fill.",
+   "sites": "",
+   "hud": "Packing"
+  },
+  {
+   "id": "anim-10",
+   "hash": "bcc/pack",
+   "loadMs": 5450,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n2\nCoordination\n8 · cube\nPacking efficiency\n68.0%\nRadius relation\n√3 a = 4r (body diagonal)\nExamples\nNa, K, Cr, Fe (α)",
+   "big": "68.0% | packing efficiency · √3 a = 4r (body diagonal)",
+   "tally": "",
+   "note": "Spheres swell until neighbours touch along the contact direction; the counter tracks how much of the cell they fill.",
+   "sites": "",
+   "hud": "Packing"
+  },
+  {
+   "id": "anim-11",
+   "hash": "sc/cn",
+   "loadMs": 7980,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
+   "big": "6 | nearest neighbours of the glowing atom · octahedron · distance 1.000 a",
+   "tally": "",
+   "note": "Bonds grow to the nearest atoms; together they outline the coordination polyhedron — a octahedron.",
+   "sites": "",
+   "hud": "Coordination"
+  },
+  {
+   "id": "anim-12",
+   "hash": "fcc/cn",
+   "loadMs": 7615,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "12 | nearest neighbours of the glowing atom · cuboctahedron · distance 0.707 a",
+   "tally": "",
+   "note": "Bonds grow to the nearest atoms; together they outline the coordination polyhedron — a cuboctahedron.",
+   "sites": "",
+   "hud": "Coordination"
+  },
+  {
+   "id": "anim-15",
+   "hash": "fcc/layers/scp",
+   "loadMs": 6849,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "6 | counting the neighbours of the glowing atom…",
+   "tally": "layer 1 = A · 5 atoms\nlayer 2 = B · 4 atoms\nlayer 3 = A · 5 atoms\nCN of the glowing atom:\n4 below + 2 in-plane + 0 above = 6",
+   "note": "Square-packed layers stack A B A. Three of them are needed to build the fcc cell. Each atom touches 4 in its own layer, 4 below and 4 above: CN = 12 (4 + 4 + 4).",
+   "sites": "",
+   "hud": "fcc layers"
+  },
+  {
+   "id": "anim-16",
+   "hash": "fcc/layers/hcp",
+   "loadMs": 6308,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "3 | counting the neighbours of the glowing atom…",
+   "tally": "layer 1 = A · 1 atom\nlayer 2 = B · 6 atoms\nlayer 3 = C · 6 atoms\nlayer 4 = A · 1 atom\nCN of the glowing atom:\n3 below + 0 in-plane + 0 above = 3",
+   "note": "Close-packed (111) layers stack A B C A. Four of them are needed to build the fcc cell, corner to opposite corner. Each atom touches 6 in its own layer, 3 below and 3 above: CN = 12 (3 + 6 + 3).",
+   "sites": "",
+   "hud": "fcc layers"
+  },
+  {
+   "id": "anim-17",
+   "hash": "fcc/voids",
+   "loadMs": 6571,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "4 + 8 | octahedral + tetrahedral voids per cell",
+   "tally": "",
+   "note": "fcc: 4 octahedral voids (12 edge centres × ¼ + 1 body centre; the coral octahedron) and 8 tetrahedral voids (the gold tetrahedra) — 1 and 2 per atom.",
+   "sites": "",
+   "hud": "Voids"
+  },
+  {
+   "id": "anim-18",
+   "hash": "hcp/voids",
+   "loadMs": 6768,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n6 per hexagonal prism\nCoordination\n12 · anticuboctahedron\nPacking efficiency\n74.0%\nRadius relation\na = 2r, c/a = √(8/3) ≈ 1.633\nExamples\nMg, Zn, Ti, Co",
+   "big": "6 + 12 | octahedral + tetrahedral voids per cell",
+   "tally": "",
+   "note": "hcp: 6 octahedral and 12 tetrahedral voids per hexagonal prism (8 inside + 12 on the vertical edges × ⅓) — again 1 and 2 per atom.",
+   "sites": "",
+   "hud": "Voids"
+  },
+  {
+   "id": "anim-20",
+   "hash": "cscl/cn",
+   "loadMs": 6683,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1 CsCl unit\nCoordination\n8 : 8 · cube\nPacking efficiency\ndepends on the ion sizes\nRadius relation\n√3 a = 2(r⁺ + r⁻)\nRadius ratio\nr⁺/r⁻ ≥ 0.732 (cubic)\nExamples\nCsCl, CsBr, CsI",
+   "big": "8 | nearest neighbours of the glowing Cs⁺ · cube · distance 0.866 a",
+   "tally": "",
+   "note": "Bonds grow to the nearest ions of opposite charge; together they outline the coordination polyhedron — a cube.",
+   "sites": "",
+   "hud": "Coordination"
+  },
+  {
+   "id": "anim-21",
+   "hash": "diamond/view",
+   "loadMs": 6128,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n8\nCoordination\n4 · tetrahedron\nPacking efficiency\n34.0%\nRadius relation\n√3 a = 8r\nExamples\nC (diamond), Si, Ge",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-25",
+   "hash": "cscl/view",
+   "loadMs": 6519,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1 CsCl unit\nCoordination\n8 : 8 · cube\nPacking efficiency\ndepends on the ion sizes\nRadius relation\n√3 a = 2(r⁺ + r⁻)\nRadius ratio\nr⁺/r⁻ ≥ 0.732 (cubic)\nExamples\nCsCl, CsBr, CsI",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-26",
+   "hash": "sc/view",
+   "loadMs": 6628,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-27",
+   "hash": "sc/share",
+   "loadMs": 12228,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
+   "big": "1 | atoms that belong to this cell",
+   "tally": "8 corners × ⅛ = 1\nZ = 1 ✓",
+   "note": "The cell walls slice every atom: a corner keeps ⅛ (⅙ in the hexagonal prism), an edge ¼, a face ½, an inside atom all of it. The tally adds up what stays inside.",
+   "sites": "",
+   "hud": "Atom sharing (Z)"
+  },
+  {
+   "id": "anim-28",
+   "hash": "fcc/share",
+   "loadMs": 5222,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "4 | atoms that belong to this cell",
+   "tally": "8 corners × ⅛ = 1\n6 faces × ½ = 3\nZ = 4 ✓",
+   "note": "The cell walls slice every atom: a corner keeps ⅛ (⅙ in the hexagonal prism), an edge ¼, a face ½, an inside atom all of it. The tally adds up what stays inside.",
+   "sites": "",
+   "hud": "Atom sharing (Z)"
+  },
+  {
+   "id": "anim-29",
+   "hash": "bcc/view",
+   "loadMs": 15347,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n2\nCoordination\n8 · cube\nPacking efficiency\n68.0%\nRadius relation\n√3 a = 4r (body diagonal)\nExamples\nNa, K, Cr, Fe (α)",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-30",
+   "hash": "fcc/view",
+   "loadMs": 4867,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-31",
+   "hash": "sc/plane",
+   "loadMs": 7987,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
+   "big": "d = a/√3 | (1 1 1) planes · d = 0.577 a · glowing atoms lie on the lit plane",
+   "tally": "",
+   "note": "A family of parallel planes sweeps through the cell. Each cuts the axes at a/h, a/k, a/l (0 = parallel); neighbouring planes are d = a / √(h² + k² + l²) apart.",
+   "sites": "",
+   "hud": "Miller planes"
+  },
+  {
+   "id": "anim-32",
+   "hash": "fcc/pos",
+   "loadMs": 8337,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "14 | atoms drawn in this cell",
+   "tally": "",
+   "note": "Each colour and letter is one kind of position: C corner, E edge centre, F face centre, B body centre, T tetrahedral site, I inside (hcp middle layer). Drag to turn the cell and check every corner, edge centre, face centre and the body centre.",
+   "sites": "Total in this cell\t\t\t4",
+   "hud": "Positions"
+  },
+  {
+   "id": "anim-33",
+   "hash": "sc/pack",
+   "loadMs": 11407,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
+   "big": "52.4% | packing efficiency · a = 2r",
+   "tally": "",
+   "note": "Spheres swell until neighbours touch along the contact direction; the counter tracks how much of the cell they fill.",
+   "sites": "",
+   "hud": "Packing"
+  },
+  {
+   "id": "anim-34",
+   "hash": "bcc/pack",
+   "loadMs": 8383,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n2\nCoordination\n8 · cube\nPacking efficiency\n68.0%\nRadius relation\n√3 a = 4r (body diagonal)\nExamples\nNa, K, Cr, Fe (α)",
+   "big": "68.0% | packing efficiency · √3 a = 4r (body diagonal)",
+   "tally": "",
+   "note": "Spheres swell until neighbours touch along the contact direction; the counter tracks how much of the cell they fill.",
+   "sites": "",
+   "hud": "Packing"
+  },
+  {
+   "id": "anim-35",
+   "hash": "fcc/pack",
+   "loadMs": 4192,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "74.0% | packing efficiency · √2 a = 4r (face diagonal)",
+   "tally": "",
+   "note": "Spheres swell until neighbours touch along the contact direction; the counter tracks how much of the cell they fill.",
+   "sites": "",
+   "hud": "Packing"
+  },
+  {
+   "id": "anim-36",
+   "hash": "sc/cn",
+   "loadMs": 14857,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
+   "big": "6 | nearest neighbours of the glowing atom · octahedron · distance 1.000 a",
+   "tally": "",
+   "note": "Bonds grow to the nearest atoms; together they outline the coordination polyhedron — a octahedron.",
+   "sites": "",
+   "hud": "Coordination"
+  },
+  {
+   "id": "anim-37",
+   "hash": "bcc/cn",
+   "loadMs": 2672,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n2\nCoordination\n8 · cube\nPacking efficiency\n68.0%\nRadius relation\n√3 a = 4r (body diagonal)\nExamples\nNa, K, Cr, Fe (α)",
+   "big": "8 | nearest neighbours of the glowing atom · cube · distance 0.866 a",
+   "tally": "",
+   "note": "Bonds grow to the nearest atoms; together they outline the coordination polyhedron — a cube.",
+   "sites": "",
+   "hud": "Coordination"
+  },
+  {
+   "id": "anim-38",
+   "hash": "fcc/cn",
+   "loadMs": 6430,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "12 | nearest neighbours of the glowing atom · cuboctahedron · distance 0.707 a",
+   "tally": "",
+   "note": "Bonds grow to the nearest atoms; together they outline the coordination polyhedron — a cuboctahedron.",
+   "sites": "",
+   "hud": "Coordination"
+  },
+  {
+   "id": "anim-40",
+   "hash": "fcc/layers/scp",
+   "loadMs": 7521,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "8 | counting the neighbours of the glowing atom…",
+   "tally": "layer 1 = A · 5 atoms\nlayer 2 = B · 4 atoms\nlayer 3 = A · 5 atoms\nCN of the glowing atom:\n4 below + 4 in-plane + 0 above = 8",
+   "note": "Square-packed layers stack A B A. Three of them are needed to build the fcc cell. Each atom touches 4 in its own layer, 4 below and 4 above: CN = 12 (4 + 4 + 4).",
+   "sites": "",
+   "hud": "fcc layers"
+  },
+  {
+   "id": "anim-42",
+   "hash": "sc/pack",
+   "loadMs": 7363,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
+   "big": "52.4% | packing efficiency · a = 2r",
+   "tally": "",
+   "note": "Spheres swell until neighbours touch along the contact direction; the counter tracks how much of the cell they fill.",
+   "sites": "",
+   "hud": "Packing"
+  },
+  {
+   "id": "anim-43",
+   "hash": "bcc/pack",
+   "loadMs": 6754,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n2\nCoordination\n8 · cube\nPacking efficiency\n68.0%\nRadius relation\n√3 a = 4r (body diagonal)\nExamples\nNa, K, Cr, Fe (α)",
+   "big": "68.0% | packing efficiency · √3 a = 4r (body diagonal)",
+   "tally": "",
+   "note": "Spheres swell until neighbours touch along the contact direction; the counter tracks how much of the cell they fill.",
+   "sites": "",
+   "hud": "Packing"
+  },
+  {
+   "id": "anim-44",
+   "hash": "hcp/view",
+   "loadMs": 13132,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n6 per hexagonal prism\nCoordination\n12 · anticuboctahedron\nPacking efficiency\n74.0%\nRadius relation\na = 2r, c/a = √(8/3) ≈ 1.633\nExamples\nMg, Zn, Ti, Co",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-45",
+   "hash": "fcc/layers/hcp",
+   "loadMs": 4500,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "3 + 6 + 3 = 12 | coordination number of fcc, counted 3 + 6 + 3",
+   "tally": "layer 1 = A · 1 atom\nlayer 2 = B · 6 atoms\nlayer 3 = C · 6 atoms\nlayer 4 = A · 1 atom\nCN of the glowing atom:\n3 below + 6 in-plane + 3 above = 12",
+   "note": "Close-packed (111) layers stack A B C A. Four of them are needed to build the fcc cell, corner to opposite corner. Each atom touches 6 in its own layer, 3 below and 3 above: CN = 12 (3 + 6 + 3).",
+   "sites": "",
+   "hud": "fcc layers"
+  },
+  {
+   "id": "anim-46",
+   "hash": "hcp/pack",
+   "loadMs": 7341,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n6 per hexagonal prism\nCoordination\n12 · anticuboctahedron\nPacking efficiency\n74.0%\nRadius relation\na = 2r, c/a = √(8/3) ≈ 1.633\nExamples\nMg, Zn, Ti, Co",
+   "big": "74.0% | packing efficiency · a = 2r, c/a = √(8/3) ≈ 1.633",
+   "tally": "",
+   "note": "Spheres swell until neighbours touch along the contact direction; the counter tracks how much of the cell they fill.",
+   "sites": "",
+   "hud": "Packing"
+  },
+  {
+   "id": "anim-47",
+   "hash": "fcc/voids",
+   "loadMs": 8168,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "4 + 8 | octahedral + tetrahedral voids per cell",
+   "tally": "",
+   "note": "fcc: 4 octahedral voids (12 edge centres × ¼ + 1 body centre; the coral octahedron) and 8 tetrahedral voids (the gold tetrahedra) — 1 and 2 per atom.",
+   "sites": "",
+   "hud": "Voids"
+  },
+  {
+   "id": "anim-48",
+   "hash": "fcc/voids",
+   "loadMs": 7335,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4\nCoordination\n12 · cuboctahedron\nPacking efficiency\n74.0%\nRadius relation\n√2 a = 4r (face diagonal)\nExamples\nCu, Ag, Au, Al",
+   "big": "4 + 8 | octahedral + tetrahedral voids per cell",
+   "tally": "",
+   "note": "fcc: 4 octahedral voids (12 edge centres × ¼ + 1 body centre; the coral octahedron) and 8 tetrahedral voids (the gold tetrahedra) — 1 and 2 per atom.",
+   "sites": "",
+   "hud": "Voids"
+  },
+  {
+   "id": "anim-49",
+   "hash": "diamond/view",
+   "loadMs": 9944,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n8\nCoordination\n4 · tetrahedron\nPacking efficiency\n34.0%\nRadius relation\n√3 a = 8r\nExamples\nC (diamond), Si, Ge",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-50",
+   "hash": "diamond/pack",
+   "loadMs": 4556,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n8\nCoordination\n4 · tetrahedron\nPacking efficiency\n34.0%\nRadius relation\n√3 a = 8r\nExamples\nC (diamond), Si, Ge",
+   "big": "34.0% | packing efficiency · √3 a = 8r",
+   "tally": "",
+   "note": "Spheres swell until neighbours touch along the contact direction; the counter tracks how much of the cell they fill.",
+   "sites": "",
+   "hud": "Packing"
+  },
+  {
+   "id": "anim-51",
+   "hash": "hcp/voids",
+   "loadMs": 8119,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n6 per hexagonal prism\nCoordination\n12 · anticuboctahedron\nPacking efficiency\n74.0%\nRadius relation\na = 2r, c/a = √(8/3) ≈ 1.633\nExamples\nMg, Zn, Ti, Co",
+   "big": "6 + 12 | octahedral + tetrahedral voids per cell",
+   "tally": "",
+   "note": "hcp: 6 octahedral and 12 tetrahedral voids per hexagonal prism (8 inside + 12 on the vertical edges × ⅓) — again 1 and 2 per atom.",
+   "sites": "",
+   "hud": "Voids"
+  },
+  {
+   "id": "anim-53",
+   "hash": "zns/cn",
+   "loadMs": 8284,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4 ZnS units\nCoordination\n4 : 4 · tetrahedron\nPacking efficiency\ndepends on the ion sizes\nRadius relation\n√3 a = 4(r⁺ + r⁻)\nRadius ratio\nr⁺/r⁻ = 0.225 – 0.414 (tetrahedral)\nExamples\nZnS, CuCl, CdS, HgS",
+   "big": "4 | nearest neighbours of the glowing Zn²⁺ · tetrahedron · distance 0.433 a",
+   "tally": "",
+   "note": "Bonds grow to the nearest ions of opposite charge; together they outline the coordination polyhedron — a tetrahedron.",
+   "sites": "",
+   "hud": "Coordination"
+  },
+  {
+   "id": "anim-54",
+   "hash": "nacl/cn",
+   "loadMs": 7135,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4 NaCl units\nCoordination\n6 : 6 · octahedron\nPacking efficiency\ndepends on the ion sizes\nRadius relation\na = 2(r⁺ + r⁻)\nRadius ratio\nr⁺/r⁻ = 0.414 – 0.732 (octahedral)\nExamples\nNaCl, KCl, MgO, AgCl",
+   "big": "6 | nearest neighbours of the glowing Na⁺ · octahedron · distance 0.500 a",
+   "tally": "",
+   "note": "Bonds grow to the nearest ions of opposite charge; together they outline the coordination polyhedron — a octahedron.",
+   "sites": "",
+   "hud": "Coordination"
+  },
+  {
+   "id": "anim-55",
+   "hash": "cscl/cn",
+   "loadMs": 7488,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1 CsCl unit\nCoordination\n8 : 8 · cube\nPacking efficiency\ndepends on the ion sizes\nRadius relation\n√3 a = 2(r⁺ + r⁻)\nRadius ratio\nr⁺/r⁻ ≥ 0.732 (cubic)\nExamples\nCsCl, CsBr, CsI",
+   "big": "8 | nearest neighbours of the glowing Cs⁺ · cube · distance 0.866 a",
+   "tally": "",
+   "note": "Bonds grow to the nearest ions of opposite charge; together they outline the coordination polyhedron — a cube.",
+   "sites": "",
+   "hud": "Coordination"
+  },
+  {
+   "id": "anim-56",
+   "hash": "nacl/view",
+   "loadMs": 14731,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4 NaCl units\nCoordination\n6 : 6 · octahedron\nPacking efficiency\ndepends on the ion sizes\nRadius relation\na = 2(r⁺ + r⁻)\nRadius ratio\nr⁺/r⁻ = 0.414 – 0.732 (octahedral)\nExamples\nNaCl, KCl, MgO, AgCl",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-57",
+   "hash": "nacl/pos",
+   "loadMs": 3366,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4 NaCl units\nCoordination\n6 : 6 · octahedron\nPacking efficiency\ndepends on the ion sizes\nRadius relation\na = 2(r⁺ + r⁻)\nRadius ratio\nr⁺/r⁻ = 0.414 – 0.732 (octahedral)\nExamples\nNaCl, KCl, MgO, AgCl",
+   "big": "27 | atoms drawn in this cell",
+   "tally": "",
+   "note": "Each colour and letter is one kind of position: C corner, E edge centre, F face centre, B body centre, T tetrahedral site, I inside (hcp middle layer). Drag to turn the cell and check every corner, edge centre, face centre and the body centre.",
+   "sites": "Total ions in this cell\t\t\t8",
+   "hud": "Positions"
+  },
+  {
+   "id": "anim-58",
+   "hash": "cscl/view",
+   "loadMs": 7498,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n1 CsCl unit\nCoordination\n8 : 8 · cube\nPacking efficiency\ndepends on the ion sizes\nRadius relation\n√3 a = 2(r⁺ + r⁻)\nRadius ratio\nr⁺/r⁻ ≥ 0.732 (cubic)\nExamples\nCsCl, CsBr, CsI",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-59",
+   "hash": "zns/view",
+   "loadMs": 6160,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n4 ZnS units\nCoordination\n4 : 4 · tetrahedron\nPacking efficiency\ndepends on the ion sizes\nRadius relation\n√3 a = 4(r⁺ + r⁻)\nRadius ratio\nr⁺/r⁻ = 0.225 – 0.414 (tetrahedral)\nExamples\nZnS, CuCl, CdS, HgS",
+   "big": " | ",
+   "tally": "",
+   "note": "Every structure is the same box with atoms in different places. Drag to turn it; switch structures and watch the atoms fly to their new sites.",
+   "sites": "",
+   "hud": "Structure"
+  },
+  {
+   "id": "anim-60",
+   "hash": "diamond/cn",
+   "loadMs": 7556,
+   "loaded": true,
+   "canvas": true,
+   "controls": 7,
+   "liveFramesNow": 3,
+   "facts": "Atoms per cell, Z\n8\nCoordination\n4 · tetrahedron\nPacking efficiency\n34.0%\nRadius relation\n√3 a = 8r\nExamples\nC (diamond), Si, Ge",
+   "big": "4 | nearest neighbours of the glowing atom · tetrahedron · distance 0.433 a",
+   "tally": "",
+   "note": "Bonds grow to the nearest atoms; together they outline the coordination polyhedron — a tetrahedron.",
+   "sites": "",
+   "hud": "Coordination"
+  }
+ ],
+ "geometry": [
+  {
+   "id": "anim-1",
+   "hash": "sc/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1)",
+    "ok: coordination number 6 (lab: 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 · octahedron)",
+    "ok: packing 52.36% (lab: 52.4%)"
+   ]
+  },
+  {
+   "id": "anim-2",
+   "hash": "sc/share",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1)",
+    "ok: coordination number 6 (lab: 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 · octahedron)",
+    "ok: packing 52.36% (lab: 52.4%)"
+   ]
+  },
+  {
+   "id": "anim-3",
+   "hash": "bcc/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 2 (lab: 2)",
+    "ok: coordination number 8 (lab: 8 · cube)",
+    "ok: polyhedron cube (lab: 8 · cube)",
+    "ok: packing 68.02% (lab: 68.0%)"
+   ]
+  },
+  {
+   "id": "anim-4",
+   "hash": "fcc/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-5",
+   "hash": "sc/share",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1)",
+    "ok: coordination number 6 (lab: 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 · octahedron)",
+    "ok: packing 52.36% (lab: 52.4%)"
+   ]
+  },
+  {
+   "id": "anim-6",
+   "hash": "fcc/share",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-7",
+   "hash": "bcc/share",
+   "ok": true,
+   "checks": [
+    "ok: Z = 2 (lab: 2)",
+    "ok: coordination number 8 (lab: 8 · cube)",
+    "ok: polyhedron cube (lab: 8 · cube)",
+    "ok: packing 68.02% (lab: 68.0%)"
+   ]
+  },
+  {
+   "id": "anim-8",
+   "hash": "sc/pack",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1)",
+    "ok: coordination number 6 (lab: 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 · octahedron)",
+    "ok: packing 52.36% (lab: 52.4%)"
+   ]
+  },
+  {
+   "id": "anim-9",
+   "hash": "fcc/pack",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-10",
+   "hash": "bcc/pack",
+   "ok": true,
+   "checks": [
+    "ok: Z = 2 (lab: 2)",
+    "ok: coordination number 8 (lab: 8 · cube)",
+    "ok: polyhedron cube (lab: 8 · cube)",
+    "ok: packing 68.02% (lab: 68.0%)"
+   ]
+  },
+  {
+   "id": "anim-11",
+   "hash": "sc/cn",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1)",
+    "ok: coordination number 6 (lab: 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 · octahedron)",
+    "ok: packing 52.36% (lab: 52.4%)"
+   ]
+  },
+  {
+   "id": "anim-12",
+   "hash": "fcc/cn",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-15",
+   "hash": "fcc/layers/scp",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-16",
+   "hash": "fcc/layers/hcp",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-17",
+   "hash": "fcc/voids",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)",
+    "ok: voids 4 + 8 (lab: 4 + 8 | octahedral + tetrahedral voids per cell)"
+   ]
+  },
+  {
+   "id": "anim-18",
+   "hash": "hcp/voids",
+   "ok": true,
+   "checks": [
+    "ok: Z = 6 (lab: 6 per hexagonal prism)",
+    "ok: coordination number 12 (lab: 12 · anticuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · anticuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)",
+    "ok: voids 6 + 12 (lab: 6 + 12 | octahedral + tetrahedral voids per cell)"
+   ]
+  },
+  {
+   "id": "anim-20",
+   "hash": "cscl/cn",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1 CsCl unit)",
+    "ok: coordination number 8 (lab: 8 : 8 · cube)",
+    "ok: polyhedron cube (lab: 8 : 8 · cube)"
+   ]
+  },
+  {
+   "id": "anim-21",
+   "hash": "diamond/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 8 (lab: 8)",
+    "ok: coordination number 4 (lab: 4 · tetrahedron)",
+    "ok: polyhedron tetrahedron (lab: 4 · tetrahedron)",
+    "ok: packing 34.01% (lab: 34.0%)"
+   ]
+  },
+  {
+   "id": "anim-25",
+   "hash": "cscl/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1 CsCl unit)",
+    "ok: coordination number 8 (lab: 8 : 8 · cube)",
+    "ok: polyhedron cube (lab: 8 : 8 · cube)"
+   ]
+  },
+  {
+   "id": "anim-26",
+   "hash": "sc/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1)",
+    "ok: coordination number 6 (lab: 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 · octahedron)",
+    "ok: packing 52.36% (lab: 52.4%)"
+   ]
+  },
+  {
+   "id": "anim-27",
+   "hash": "sc/share",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1)",
+    "ok: coordination number 6 (lab: 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 · octahedron)",
+    "ok: packing 52.36% (lab: 52.4%)"
+   ]
+  },
+  {
+   "id": "anim-28",
+   "hash": "fcc/share",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-29",
+   "hash": "bcc/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 2 (lab: 2)",
+    "ok: coordination number 8 (lab: 8 · cube)",
+    "ok: polyhedron cube (lab: 8 · cube)",
+    "ok: packing 68.02% (lab: 68.0%)"
+   ]
+  },
+  {
+   "id": "anim-30",
+   "hash": "fcc/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-31",
+   "hash": "sc/plane",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1)",
+    "ok: coordination number 6 (lab: 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 · octahedron)",
+    "ok: packing 52.36% (lab: 52.4%)"
+   ]
+  },
+  {
+   "id": "anim-32",
+   "hash": "fcc/pos",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)",
+    "ok: positions table total 4 (lab: 4)"
+   ]
+  },
+  {
+   "id": "anim-33",
+   "hash": "sc/pack",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1)",
+    "ok: coordination number 6 (lab: 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 · octahedron)",
+    "ok: packing 52.36% (lab: 52.4%)"
+   ]
+  },
+  {
+   "id": "anim-34",
+   "hash": "bcc/pack",
+   "ok": true,
+   "checks": [
+    "ok: Z = 2 (lab: 2)",
+    "ok: coordination number 8 (lab: 8 · cube)",
+    "ok: polyhedron cube (lab: 8 · cube)",
+    "ok: packing 68.02% (lab: 68.0%)"
+   ]
+  },
+  {
+   "id": "anim-35",
+   "hash": "fcc/pack",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-36",
+   "hash": "sc/cn",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1)",
+    "ok: coordination number 6 (lab: 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 · octahedron)",
+    "ok: packing 52.36% (lab: 52.4%)"
+   ]
+  },
+  {
+   "id": "anim-37",
+   "hash": "bcc/cn",
+   "ok": true,
+   "checks": [
+    "ok: Z = 2 (lab: 2)",
+    "ok: coordination number 8 (lab: 8 · cube)",
+    "ok: polyhedron cube (lab: 8 · cube)",
+    "ok: packing 68.02% (lab: 68.0%)"
+   ]
+  },
+  {
+   "id": "anim-38",
+   "hash": "fcc/cn",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-40",
+   "hash": "fcc/layers/scp",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-42",
+   "hash": "sc/pack",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1)",
+    "ok: coordination number 6 (lab: 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 · octahedron)",
+    "ok: packing 52.36% (lab: 52.4%)"
+   ]
+  },
+  {
+   "id": "anim-43",
+   "hash": "bcc/pack",
+   "ok": true,
+   "checks": [
+    "ok: Z = 2 (lab: 2)",
+    "ok: coordination number 8 (lab: 8 · cube)",
+    "ok: polyhedron cube (lab: 8 · cube)",
+    "ok: packing 68.02% (lab: 68.0%)"
+   ]
+  },
+  {
+   "id": "anim-44",
+   "hash": "hcp/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 6 (lab: 6 per hexagonal prism)",
+    "ok: coordination number 12 (lab: 12 · anticuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · anticuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-45",
+   "hash": "fcc/layers/hcp",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-46",
+   "hash": "hcp/pack",
+   "ok": true,
+   "checks": [
+    "ok: Z = 6 (lab: 6 per hexagonal prism)",
+    "ok: coordination number 12 (lab: 12 · anticuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · anticuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)"
+   ]
+  },
+  {
+   "id": "anim-47",
+   "hash": "fcc/voids",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)",
+    "ok: voids 4 + 8 (lab: 4 + 8 | octahedral + tetrahedral voids per cell)"
+   ]
+  },
+  {
+   "id": "anim-48",
+   "hash": "fcc/voids",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4)",
+    "ok: coordination number 12 (lab: 12 · cuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · cuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)",
+    "ok: voids 4 + 8 (lab: 4 + 8 | octahedral + tetrahedral voids per cell)"
+   ]
+  },
+  {
+   "id": "anim-49",
+   "hash": "diamond/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 8 (lab: 8)",
+    "ok: coordination number 4 (lab: 4 · tetrahedron)",
+    "ok: polyhedron tetrahedron (lab: 4 · tetrahedron)",
+    "ok: packing 34.01% (lab: 34.0%)"
+   ]
+  },
+  {
+   "id": "anim-50",
+   "hash": "diamond/pack",
+   "ok": true,
+   "checks": [
+    "ok: Z = 8 (lab: 8)",
+    "ok: coordination number 4 (lab: 4 · tetrahedron)",
+    "ok: polyhedron tetrahedron (lab: 4 · tetrahedron)",
+    "ok: packing 34.01% (lab: 34.0%)"
+   ]
+  },
+  {
+   "id": "anim-51",
+   "hash": "hcp/voids",
+   "ok": true,
+   "checks": [
+    "ok: Z = 6 (lab: 6 per hexagonal prism)",
+    "ok: coordination number 12 (lab: 12 · anticuboctahedron)",
+    "ok: polyhedron cuboctahedron (lab: 12 · anticuboctahedron)",
+    "ok: packing 74.05% (lab: 74.0%)",
+    "ok: voids 6 + 12 (lab: 6 + 12 | octahedral + tetrahedral voids per cell)"
+   ]
+  },
+  {
+   "id": "anim-53",
+   "hash": "zns/cn",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4 ZnS units)",
+    "ok: coordination number 4 (lab: 4 : 4 · tetrahedron)",
+    "ok: polyhedron tetrahedron (lab: 4 : 4 · tetrahedron)"
+   ]
+  },
+  {
+   "id": "anim-54",
+   "hash": "nacl/cn",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4 NaCl units)",
+    "ok: coordination number 6 (lab: 6 : 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 : 6 · octahedron)"
+   ]
+  },
+  {
+   "id": "anim-55",
+   "hash": "cscl/cn",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1 CsCl unit)",
+    "ok: coordination number 8 (lab: 8 : 8 · cube)",
+    "ok: polyhedron cube (lab: 8 : 8 · cube)"
+   ]
+  },
+  {
+   "id": "anim-56",
+   "hash": "nacl/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4 NaCl units)",
+    "ok: coordination number 6 (lab: 6 : 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 : 6 · octahedron)"
+   ]
+  },
+  {
+   "id": "anim-57",
+   "hash": "nacl/pos",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4 NaCl units)",
+    "ok: coordination number 6 (lab: 6 : 6 · octahedron)",
+    "ok: polyhedron octahedron (lab: 6 : 6 · octahedron)",
+    "ok: positions table total 8 (lab: 8)"
+   ]
+  },
+  {
+   "id": "anim-58",
+   "hash": "cscl/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 1 (lab: 1 CsCl unit)",
+    "ok: coordination number 8 (lab: 8 : 8 · cube)",
+    "ok: polyhedron cube (lab: 8 : 8 · cube)"
+   ]
+  },
+  {
+   "id": "anim-59",
+   "hash": "zns/view",
+   "ok": true,
+   "checks": [
+    "ok: Z = 4 (lab: 4 ZnS units)",
+    "ok: coordination number 4 (lab: 4 : 4 · tetrahedron)",
+    "ok: polyhedron tetrahedron (lab: 4 : 4 · tetrahedron)"
+   ]
+  },
+  {
+   "id": "anim-60",
+   "hash": "diamond/cn",
+   "ok": true,
+   "checks": [
+    "ok: Z = 8 (lab: 8)",
+    "ok: coordination number 4 (lab: 4 · tetrahedron)",
+    "ok: polyhedron tetrahedron (lab: 4 · tetrahedron)",
+    "ok: packing 34.01% (lab: 34.0%)"
+   ]
+  }
+ ],
  "motion": [],
  "widgets": {},
  "print": {},
- "failures": []
+ "failures": [],
+ "maxLiveFrames": 3,
+ "labPageErrors": 0,
+ "firstPrinciples": {
+  "packing": {
+   "sc": 52.36,
+   "bcc": 68.02,
+   "fcc": 74.05,
+   "hcp": 74.05,
+   "diamond": 34.01
+  },
+  "contact": {
+   "sc": "a = 2r",
+   "bcc": "√3 a = 4r",
+   "fcc": "√2 a = 4r",
+   "diamond": "√3 a = 8r"
+  },
+  "fccVoids": {
+   "octahedral": 4,
+   "tetrahedral": 8
+  },
+  "hcpVoids": {
+   "octahedral": 6,
+   "tetrahedral": 12
+  },
+  "radiusRatioLimits": {
+   "CN3": 0.15470053837925168,
+   "CN4": 0.22474487139158894,
+   "CN6": 0.41421356237309515,
+   "CN8": 0.7320508075688772
+  },
+  "densityIron": 7.846332927811214
+ }
 }

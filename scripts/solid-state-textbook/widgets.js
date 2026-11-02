@@ -293,11 +293,39 @@
           var small = el("small", "", it.head.slice(0, 70));
           a.appendChild(small); a.appendChild(document.createElement("br"));
           a.appendChild(document.createTextNode((s ? "…" : "") + it.text.slice(s, e) + (e < it.text.length ? "…" : "")));
-          a.onclick = function (ev) { ev.preventDefault(); it.node.scrollIntoView({ block: "center" }); it.node.classList.add("tb-hit"); setTimeout(function () { it.node.classList.remove("tb-hit"); }, 2500); };
+          a.onclick = function (ev) { ev.preventDefault(); var dd = it.node.closest("details"); if (dd) dd.open = true; var sd = document.getElementById("tb-side"); if (sd) sd.classList.remove("tb-open"); it.node.scrollIntoView({ block: "center" }); it.node.classList.add("tb-hit"); setTimeout(function () { it.node.classList.remove("tb-hit"); }, 2500); };
           res.appendChild(a);
         });
         if (!hits.length) res.appendChild(el("div", "tb-sum", "No match. Try another word."));
       }, 160);
     });
   }
+
+  /* ---------------- page frame: mobile menu, current-part highlight, direct #links ---------------- */
+  var side = document.getElementById("tb-side"), menuBtn = document.querySelector(".tb-menu");
+  if (side && menuBtn) {
+    menuBtn.addEventListener("click", function () { var o = side.classList.toggle("tb-open"); menuBtn.setAttribute("aria-expanded", String(o)); });
+    side.addEventListener("click", function (e) { if (e.target.closest && e.target.closest(".tb-nav a")) { side.classList.remove("tb-open"); menuBtn.setAttribute("aria-expanded", "false"); } });
+  }
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".tb-nav a[href^='#']"));
+  if (navLinks.length && "IntersectionObserver" in window) {
+    var secs = navLinks.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var visibleSet = {};
+    var spy = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { visibleSet[e.target.id] = e.isIntersecting ? e.boundingClientRect.top : null; });
+      var cur = null, best = 1e9;
+      secs.forEach(function (sx) { var t = visibleSet[sx.id]; if (t !== null && t !== undefined && Math.abs(t) < best) { best = Math.abs(t); cur = sx.id; } });
+      if (cur) navLinks.forEach(function (a) { var on = a.getAttribute("href") === "#" + cur; if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); if (on && a.scrollIntoView && side && !side.classList.contains("tb-open")) { var r = a.getBoundingClientRect(), sr = side.getBoundingClientRect(); if (r.top < sr.top + 60 || r.bottom > sr.bottom - 20) side.scrollTop += r.top - sr.top - sr.height / 2; } });
+    }, { rootMargin: "-10% 0px -60% 0px", threshold: [0, 0.01] });
+    secs.forEach(function (sx) { spy.observe(sx); });
+  }
+  // a link such as ...#part-05 must land on that part even though a very large page is still settling
+  function goHash() {
+    var id = decodeURIComponent((location.hash || "").slice(1)); if (!id) return;
+    var el = document.getElementById(id); if (!el) return;
+    var d = el.closest("details"); if (d) d.open = true;
+    el.scrollIntoView();
+  }
+  if (location.hash) { goHash(); setTimeout(goHash, 400); setTimeout(goHash, 1500); window.addEventListener("load", function () { setTimeout(goHash, 100); }); }
+  window.addEventListener("hashchange", goHash);
 })();

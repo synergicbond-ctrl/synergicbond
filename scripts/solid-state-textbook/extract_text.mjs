@@ -9,7 +9,7 @@ const p = await b.newPage();
 await p.goto("file://" + process.cwd() + "/" + file, { waitUntil: "load" });
 const res = await p.evaluate(() => {
   const root = document.body.cloneNode(true);
-  root.querySelectorAll("script,style,iframe,.tb-w,.tb-search,nav.toc").forEach((e) => e.remove());
+  root.querySelectorAll("script,style,iframe,.tb-w,.tb-search,nav.toc,.tb-side,.tb-top,.tb-hero").forEach((e) => e.remove());
   const latexAttrs = Array.from(root.querySelectorAll("[data-latex]")).map((e) => e.getAttribute("data-latex"));
   // markers: ⟦S:section-id⟧ at each section start, ⟦H:heading⟧ before each heading, so the ledger can report where a string landed
   root.querySelectorAll("section.part[id]").forEach((e) => e.prepend(document.createTextNode("⟦S:" + e.id + "⟧")));

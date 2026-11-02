@@ -145,6 +145,30 @@ k = s.rfind("</body>")
 s = s[:k] + f'<script type="text/plain" id="tb-lab-src">{lab_b64}</script>\n<script>\n{js}\n</script>\n' + s[k:]
 s = re.sub(r"<title>.*?</title>", "<title>Solid State — Complete Interactive Textbook</title>", s, count=1, flags=re.S) if "<title>" in s else "<title>Solid State — Complete Interactive Textbook</title>" + s
 
+# 7. page frame: branded header, grouped side contents with search, the opening summary folded into a "Quick summary" block
+m_top = re.search(r'<main>\s*<h1>.*?</nav>', s, re.S)
+assert m_top, "top of page not found"
+top = m_top.group(0)
+links = re.findall(r'<a href="#([^"]+)">([^<]*)</a>', top)
+search_html = re.search(r'<div class="tb-search">.*?<div id="tb-res"[^>]*></div></div>', top, re.S).group(0)
+part = {i: t for i, t in links}
+GROUPS = [("Foundations", ["part-01", "part-02", "part-03", "part-04"]), ("Lattices and unit cells", ["part-05", "part-06", "part-07", "part-08", "part-09", "part-10"]),
+          ("Counting, geometry and density", ["part-11", "part-12", "part-13", "part-14", "part-15", "part-16"]), ("Packing and voids", ["part-17", "part-18"]),
+          ("Ionic crystals and structures", ["part-19", "part-20"]), ("Defects and properties", ["part-21", "part-22", "part-23"])]
+nav = '<nav class="tb-nav" aria-label="Chapter contents"><a class="tb-quicklink" href="#quick-summary">Quick summary</a>'
+for title, ids in GROUPS:
+    nav += f'<p class="tb-group">{esc(title)}</p>' + "".join(f'<a href="#{i}">{esc(part[i])}</a>' for i in ids if i in part)
+nav += '<p class="tb-group">Master Edition</p><a href="#master">Master Edition notes (10 parts)</a></nav>'
+head = ('<header class="tb-top"><div class="tb-brand"><span class="tb-logo">SB</span><span class="tb-brandtext"><b>SYNERGIC BOND</b><small>THE CHEMISTRY OPERATING SYSTEM</small></span></div>'
+        '<button class="tb-menu" type="button" aria-expanded="false" aria-controls="tb-side">☰ Contents</button></header>')
+hero = ('<div class="tb-hero"><p class="tb-eyebrow">JEE ADVANCED · PHYSICAL CHEMISTRY</p><h1>Solid State</h1>'
+        '<p class="tb-sub">The complete chapter in one file: all 23 sections and the Master Edition notes, with an interactive 3D model beside each concept it explains.</p>'
+        '<ul class="tb-chips"><li>23 sections</li><li>Master Edition notes</li><li>3D Crystal Lab models</li><li>Works offline</li></ul></div>')
+s = s.replace(top, head + '<div class="tb-shell"><aside id="tb-side" class="tb-side">' + search_html + nav + '</aside><main class="tb-main">' + hero, 1)
+k = s.rfind("</main>"); s = s[:k] + "</main></div>" + s[k + len("</main>"):]
+a = s.index('<section id="theory"'); b = s.index('<section id="parts"')
+s = s[:a] + '<details id="quick-summary" class="tb-quick"><summary>Quick summary: the chapter in simple words (optional, read first if you like)</summary>' + s[a:b] + "</details>\n" + s[b:]
+
 OUT.write_text(s, encoding="utf-8")
 DOCS.mkdir(parents=True, exist_ok=True)
 (DOCS / "animations.json").write_text(json.dumps(sorted(records, key=lambda r: r["n"]), indent=1, ensure_ascii=False))

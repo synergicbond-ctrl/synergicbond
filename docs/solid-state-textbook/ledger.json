@@ -1,644 +1,396 @@
-[
- {
-  "id": "part01",
-  "file": "app/learn/solid-state/parts/part01.tsx",
-  "items": 7,
-  "found": 6,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "introduction-to-solid-state"
-   }
-  ]
- },
- {
-  "id": "part02",
-  "file": "app/learn/solid-state/parts/part02.tsx",
-  "items": 27,
-  "found": 25,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "crystalline-and-amorphous-solids"
-   },
-   {
-    "key": "",
-    "line": 52,
-    "text": "divide-y divide-white/10"
-   }
-  ]
- },
- {
-  "id": "part03",
-  "file": "app/learn/solid-state/parts/part03.tsx",
-  "items": 34,
-  "found": 32,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "polycrystalline-solids"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "polycrystalline-solids"
-   }
-  ]
- },
- {
-  "id": "part04",
-  "file": "app/learn/solid-state/parts/part04.tsx",
-  "items": 67,
-  "found": 65,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "classification-of-crystalline-solids"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "classification-of-crystalline-solids"
-   }
-  ]
- },
- {
-  "id": "part05",
-  "file": "app/learn/solid-state/parts/part05.tsx",
-  "items": 50,
-  "found": 48,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "crystal-lattice-lattice-point-and-unit-cell"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "crystal-lattice-lattice-point-and-unit-cell"
-   }
-  ]
- },
- {
-  "id": "part06",
-  "file": "app/learn/solid-state/parts/part06.tsx",
-  "items": 38,
-  "found": 36,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "contribution-and-sharing-of-particles-in-unit-cells"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "contribution-and-sharing-of-particles-in-unit-cells"
-   }
-  ]
- },
- {
-  "id": "part07",
-  "file": "app/learn/solid-state/parts/part07.tsx",
-  "items": 39,
-  "found": 37,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "primitive-and-centred-unit-cells"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "primitive-and-centred-unit-cells"
-   }
-  ]
- },
- {
-  "id": "part08",
-  "file": "app/learn/solid-state/parts/part08.tsx",
-  "items": 47,
-  "found": 45,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "dimensional-development-of-crystal-lattices"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "dimensional-development-of-crystal-lattices"
-   }
-  ]
- },
- {
-  "id": "part09",
-  "file": "app/learn/solid-state/parts/part09.tsx",
-  "items": 66,
-  "found": 64,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "seven-crystal-systems"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "seven-crystal-systems"
-   }
-  ]
- },
- {
-  "id": "part10",
-  "file": "app/learn/solid-state/parts/part10.tsx",
-  "items": 42,
-  "found": 40,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "fourteen-bravais-lattices"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "fourteen-bravais-lattices"
-   }
-  ]
- },
- {
-  "id": "part11",
-  "file": "app/learn/solid-state/parts/part11.tsx",
-  "items": 44,
-  "found": 42,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "symmetry-of-a-cube"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "symmetry-of-a-cube"
-   }
-  ]
- },
- {
-  "id": "part12",
-  "file": "app/learn/solid-state/parts/part12.tsx",
-  "items": 35,
-  "found": 33,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "effective-number-of-atoms-per-unit-cell-z"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "effective-number-of-atoms-per-unit-cell-z"
-   }
-  ]
- },
- {
-  "id": "part13",
-  "file": "app/learn/solid-state/parts/part13.tsx",
-  "items": 39,
-  "found": 37,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "atomic-radius-edge-length-relations"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "atomic-radius-edge-length-relations"
-   }
-  ]
- },
- {
-  "id": "part14",
-  "file": "app/learn/solid-state/parts/part14.tsx",
-  "items": 64,
-  "found": 62,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "coordination-number-and-neighbour-shells"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "coordination-number-and-neighbour-shells"
-   }
-  ]
- },
- {
-  "id": "part15",
-  "file": "app/learn/solid-state/parts/part15.tsx",
-  "items": 38,
-  "found": 36,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "density-of-unit-cell"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "density-of-unit-cell"
-   }
-  ]
- },
- {
-  "id": "part16",
-  "file": "app/learn/solid-state/parts/part16.tsx",
-  "items": 51,
-  "found": 49,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "crystal-stoichiometry-and-atom-removal-problems"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "crystal-stoichiometry-and-atom-removal-problems"
-   }
-  ]
- },
- {
-  "id": "part17",
-  "file": "app/learn/solid-state/parts/part17.tsx",
-  "items": 80,
-  "found": 78,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "packing-in-solids"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "packing-in-solids"
-   }
-  ]
- },
- {
-  "id": "part18",
-  "file": "app/learn/solid-state/parts/part18.tsx",
-  "items": 42,
-  "found": 40,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "voids-in-crystal-packing"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "voids-in-crystal-packing"
-   }
-  ]
- },
- {
-  "id": "part19",
-  "file": "app/learn/solid-state/parts/part19.tsx",
-  "items": 62,
-  "found": 60,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "radius-ratio-and-limiting-geometry"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "radius-ratio-and-limiting-geometry"
-   }
-  ]
- },
- {
-  "id": "part20",
-  "file": "app/learn/solid-state/parts/part20.tsx",
-  "items": 132,
-  "found": 130,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "important-crystal-structures"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "important-crystal-structures"
-   }
-  ]
- },
- {
-  "id": "part21",
-  "file": "app/learn/solid-state/parts/part21.tsx",
-  "items": 74,
-  "found": 72,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "defects-in-solids"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "defects-in-solids"
-   }
-  ]
- },
- {
-  "id": "part22",
-  "file": "app/learn/solid-state/parts/part22.tsx",
-  "items": 68,
-  "found": 66,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "electrical-properties-of-solids"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "electrical-properties-of-solids"
-   }
-  ]
- },
- {
-  "id": "part23",
-  "file": "app/learn/solid-state/parts/part23.tsx",
-  "items": 64,
-  "found": 62,
-  "missing": [
-   {
-    "key": "slug",
-    "line": 5,
-    "text": "magnetic-properties-of-solids"
-   },
-   {
-    "key": "slug",
-    "line": 11,
-    "text": "magnetic-properties-of-solids"
-   }
-  ]
- },
- {
-  "id": "master",
-  "file": "app/learn/solid-state/master/_content.ts",
-  "items": 1533,
-  "found": 1488,
-  "missing": [
-   {
-    "key": "shortTitle",
-    "line": 28,
-    "text": "Foundations: Solids and Lattices"
-   },
-   {
-    "key": "description",
-    "line": 29,
-    "text": "Structural order, classification of solids, anisotropy, lattice–basis language and the meaning of a unit cell."
-   },
-   {
-    "key": "id",
-    "line": 258,
-    "text": "lattice-basis"
-   },
-   {
-    "key": "text",
-    "line": 278,
-    "text": "A three-dimensional unit cell is described by edge lengths $a$, $b$, $c$ and interaxial angles $\\u0007lpha$, $\\beta$, $\\gamma$. By convention, $\\u0007lpha$ is t"
-   },
-   {
-    "key": "text",
-    "line": 286,
-    "text": "For an orthogonal cell, $\\u0007lpha=\\beta=\\gamma=90^\\circ$ and the volume reduces to $abc$. For a cubic cell, $a=b=c$, so $V=a^3$."
-   },
-   {
-    "key": "rows",
-    "line": 313,
-    "text": "$a,b,c,\\u0007lpha,\\beta,\\gamma$"
-   },
-   {
-    "key": "review",
-    "line": 335,
-    "text": "The six lattice parameters are $a,b,c,\\u0007lpha,\\beta,\\gamma$."
-   },
-   {
-    "key": "shortTitle",
-    "line": 348,
-    "text": "Unit Cells and Bravais Lattices"
-   },
-   {
-    "key": "description",
-    "line": 349,
-    "text": "Fractional sharing, centred cells, dimensional lattices, seven crystal systems, fourteen Bravais lattices and cube symmetry."
-   },
-   {
-    "key": "rows",
-    "line": 555,
-    "text": "$\\u0007lpha=\\beta=\\gamma=90^\\circ$"
-   },
-   {
-    "key": "rows",
-    "line": 561,
-    "text": "$\\u0007lpha=\\beta=\\gamma=90^\\circ$"
-   },
-   {
-    "key": "rows",
-    "line": 567,
-    "text": "$\\u0007lpha=\\beta=\\gamma=90^\\circ$"
-   },
-   {
-    "key": "rows",
-    "line": 573,
-    "text": "$\\u0007lpha=\\beta=90^\\circ$, $\\gamma=120^\\circ$"
-   },
-   {
-    "key": "rows",
-    "line": 579,
-    "text": "$\\u0007lpha=\\beta=\\gamma\\neq90^\\circ$"
-   },
-   {
-    "key": "rows",
-    "line": 585,
-    "text": "$\\u0007lpha=\\gamma=90^\\circ$, $\\beta\\neq90^\\circ$"
-   },
-   {
-    "key": "rows",
-    "line": 591,
-    "text": "$\\u0007lpha\\neq\\beta\\neq\\gamma$, none necessarily $90^\\circ$"
-   },
-   {
-    "key": "shortTitle",
-    "line": 925,
-    "text": "Cubic Geometry and Density"
-   },
-   {
-    "key": "description",
-    "line": 926,
-    "text": "SC, BCC and FCC counting; contact relations; coordination shells; density; formula and atom-removal problems."
-   },
-   {
-    "key": "title",
-    "line": 966,
-    "text": "Do not transfer monatomic $Z$ blindly"
-   },
-   {
-    "key": "id",
-    "line": 977,
-    "text": "cubic-contact"
-   },
-   {
-    "key": "steps",
-    "line": 1148,
-    "text": "Substitution gives $Z\\u0007pprox2.00$."
-   },
-   {
-    "key": "shortTitle",
-    "line": 1269,
-    "text": "Packing and Close-Packed Structures"
-   },
-   {
-    "key": "description",
-    "line": 1270,
-    "text": "Packing fraction, square and hexagonal layers, SC/BCC packing, HCP/CCP stacking and ideal close-packed geometry."
-   },
-   {
-    "key": "shortTitle",
-    "line": 1704,
-    "text": "Voids and Interstitial Sites"
-   },
-   {
-    "key": "description",
-    "line": 1705,
-    "text": "Tetrahedral, octahedral and cubic holes; coordinates and counts; partial occupancy; HCP and diamond geometry."
-   },
-   {
-    "key": "rows",
-    "line": 1992,
-    "text": "$\\pi\\sqrt3/16\\u0007pprox34.0\\%$"
-   },
-   {
-    "key": "shortTitle",
-    "line": 2082,
-    "text": "Radius Ratio and Coordination"
-   },
-   {
-    "key": "description",
-    "line": 2083,
-    "text": "Geometrical critical ratios, coordination ranges, derivations, limitations and links between polyhedra and ionic structures."
-   },
-   {
-    "key": "shortTitle",
-    "line": 2448,
-    "text": "Named Crystal Structures"
-   },
-   {
-    "key": "description",
-    "line": 2449,
-    "text": "Rock salt, CsCl, ZnS, fluorite, antifluorite, NiAs, rutile, perovskite, spinel, corundum, diamond and graphite."
-   },
-   {
-    "key": "caption",
-    "line": 2776,
-    "text": "Ideal cubic ABO$_3$ perovskite with corner A, body-centre B and face-centre O sites."
-   },
-   {
-    "key": "note",
-    "line": 2814,
-    "text": "Goldschmidt tolerance factor; $t\\u0007pprox1$ favours an undistorted cubic perovskite."
-   },
-   {
-    "key": "shortTitle",
-    "line": 3044,
-    "text": "Defects and Non-Stoichiometry"
-   },
-   {
-    "key": "description",
-    "line": 3045,
-    "text": "Point defects, Schottky and Frenkel disorder, impurity compensation, metal excess/deficiency, colour centres and defect equilibria."
-   },
-   {
-    "key": "title",
-    "line": 3195,
-    "text": "SrCl$_2$ doped NaCl"
-   },
-   {
-    "key": "title",
-    "line": 3282,
-    "text": "Fe$_{0.95}$O oxidation-state fraction"
-   },
-   {
-    "key": "shortTitle",
-    "line": 3381,
-    "text": "Electrical Properties and Semiconductors"
-   },
-   {
-    "key": "description",
-    "line": 3382,
-    "text": "Band theory, metallic and ionic conduction, intrinsic/extrinsic semiconductors, p–n junctions and superconductivity."
-   },
-   {
-    "key": "title",
-    "line": 3678,
-    "text": "BCS and high-$T_c$ materials"
-   },
-   {
-    "key": "question",
-    "line": 3690,
-    "text": "Two intrinsic semiconductors at the same temperature have gaps 1.0 eV and 1.4 eV. Ignoring prefactors, find the ratio $n_{i,1}/n_{i,2}$ at 300 K, where $kT\\u000"
-   },
-   {
-    "key": "steps",
-    "line": 3694,
-    "text": "Exponent $\\u0007pprox7.72$, so ratio $\\u0007pprox2.25\\times10^3$."
-   },
-   {
-    "key": "shortTitle",
-    "line": 3794,
-    "text": "Magnetism and Integrated Problems"
-   },
-   {
-    "key": "description",
-    "line": 3795,
-    "text": "Atomic magnetic moments, susceptibility, dia/para/ferro/antiferro/ferrimagnetism, Curie laws, hysteresis and integrated JEE Advanced applications."
-   },
-   {
-    "key": "answer",
-    "line": 3825,
-    "text": "$\\mu\\u0007pprox5.92\\,\\mu_B$."
-   },
-   {
-    "key": "id",
-    "line": 3942,
-    "text": "magnetic-order"
-   }
-  ]
+{
+ "report": [
+  {
+   "id": "part01",
+   "file": "app/learn/solid-state/parts/part01.tsx",
+   "items": 54,
+   "preserved": 25,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 29,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part02",
+   "file": "app/learn/solid-state/parts/part02.tsx",
+   "items": 158,
+   "preserved": 90,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 68,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part03",
+   "file": "app/learn/solid-state/parts/part03.tsx",
+   "items": 33,
+   "preserved": 33,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part04",
+   "file": "app/learn/solid-state/parts/part04.tsx",
+   "items": 73,
+   "preserved": 73,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part05",
+   "file": "app/learn/solid-state/parts/part05.tsx",
+   "items": 59,
+   "preserved": 59,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part06",
+   "file": "app/learn/solid-state/parts/part06.tsx",
+   "items": 46,
+   "preserved": 46,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part07",
+   "file": "app/learn/solid-state/parts/part07.tsx",
+   "items": 37,
+   "preserved": 37,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part08",
+   "file": "app/learn/solid-state/parts/part08.tsx",
+   "items": 47,
+   "preserved": 47,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part09",
+   "file": "app/learn/solid-state/parts/part09.tsx",
+   "items": 88,
+   "preserved": 88,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part10",
+   "file": "app/learn/solid-state/parts/part10.tsx",
+   "items": 58,
+   "preserved": 58,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part11",
+   "file": "app/learn/solid-state/parts/part11.tsx",
+   "items": 46,
+   "preserved": 46,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part12",
+   "file": "app/learn/solid-state/parts/part12.tsx",
+   "items": 38,
+   "preserved": 38,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part13",
+   "file": "app/learn/solid-state/parts/part13.tsx",
+   "items": 37,
+   "preserved": 37,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part14",
+   "file": "app/learn/solid-state/parts/part14.tsx",
+   "items": 110,
+   "preserved": 110,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part15",
+   "file": "app/learn/solid-state/parts/part15.tsx",
+   "items": 36,
+   "preserved": 36,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part16",
+   "file": "app/learn/solid-state/parts/part16.tsx",
+   "items": 51,
+   "preserved": 51,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part17",
+   "file": "app/learn/solid-state/parts/part17.tsx",
+   "items": 96,
+   "preserved": 96,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part18",
+   "file": "app/learn/solid-state/parts/part18.tsx",
+   "items": 44,
+   "preserved": 44,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part19",
+   "file": "app/learn/solid-state/parts/part19.tsx",
+   "items": 83,
+   "preserved": 83,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part20",
+   "file": "app/learn/solid-state/parts/part20.tsx",
+   "items": 140,
+   "preserved": 140,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part21",
+   "file": "app/learn/solid-state/parts/part21.tsx",
+   "items": 72,
+   "preserved": 72,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part22",
+   "file": "app/learn/solid-state/parts/part22.tsx",
+   "items": 69,
+   "preserved": 69,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "part23",
+   "file": "app/learn/solid-state/parts/part23.tsx",
+   "items": 66,
+   "preserved": 66,
+   "corrected": 0,
+   "metadata": 0,
+   "formatting": 0,
+   "omission": 0,
+   "notes": []
+  },
+  {
+   "id": "master",
+   "file": "app/learn/solid-state/master/_content.ts",
+   "items": 1837,
+   "preserved": 1819,
+   "corrected": 17,
+   "metadata": 0,
+   "formatting": 1,
+   "omission": 0,
+   "notes": [
+    {
+     "line": 278,
+     "key": "text",
+     "before": "A three-dimensional unit cell is described by edge lengths $a$, $b$, $c$ and interaxial angles $\\u0007lpha$, $\\beta$, $\\",
+     "after": "A three-dimensional unit cell is described by edge lengths $a$, $b$, $c$ and interaxial angles $\\alpha$, $\\beta$, $\\gamm"
+    },
+    {
+     "line": 286,
+     "key": "text",
+     "before": "For an orthogonal cell, $\\u0007lpha=\\beta=\\gamma=90^\\circ$ and the volume reduces to $abc$. For a cubic cell, $a=b=c$, s",
+     "after": "For an orthogonal cell, $\\alpha=\\beta=\\gamma=90^\\circ$ and the volume reduces to $abc$. For a cubic cell, $a=b=c$, so $V"
+    },
+    {
+     "line": 313,
+     "key": "rows",
+     "before": "$a,b,c,\\u0007lpha,\\beta,\\gamma$",
+     "after": "$a,b,c,\\alpha,\\beta,\\gamma$"
+    },
+    {
+     "line": 335,
+     "key": "review",
+     "before": "The six lattice parameters are $a,b,c,\\u0007lpha,\\beta,\\gamma$.",
+     "after": "The six lattice parameters are $a,b,c,\\alpha,\\beta,\\gamma$."
+    },
+    {
+     "line": 555,
+     "key": "rows",
+     "before": "$\\u0007lpha=\\beta=\\gamma=90^\\circ$",
+     "after": "$\\alpha=\\beta=\\gamma=90^\\circ$"
+    },
+    {
+     "line": 561,
+     "key": "rows",
+     "before": "$\\u0007lpha=\\beta=\\gamma=90^\\circ$",
+     "after": "$\\alpha=\\beta=\\gamma=90^\\circ$"
+    },
+    {
+     "line": 567,
+     "key": "rows",
+     "before": "$\\u0007lpha=\\beta=\\gamma=90^\\circ$",
+     "after": "$\\alpha=\\beta=\\gamma=90^\\circ$"
+    },
+    {
+     "line": 573,
+     "key": "rows",
+     "before": "$\\u0007lpha=\\beta=90^\\circ$, $\\gamma=120^\\circ$",
+     "after": "$\\alpha=\\beta=90^\\circ$, $\\gamma=120^\\circ$"
+    },
+    {
+     "line": 579,
+     "key": "rows",
+     "before": "$\\u0007lpha=\\beta=\\gamma\\neq90^\\circ$",
+     "after": "$\\alpha=\\beta=\\gamma\\neq90^\\circ$"
+    },
+    {
+     "line": 585,
+     "key": "rows",
+     "before": "$\\u0007lpha=\\gamma=90^\\circ$, $\\beta\\neq90^\\circ$",
+     "after": "$\\alpha=\\gamma=90^\\circ$, $\\beta\\neq90^\\circ$"
+    },
+    {
+     "line": 591,
+     "key": "rows",
+     "before": "$\\u0007lpha\\neq\\beta\\neq\\gamma$, none necessarily $90^\\circ$",
+     "after": "$\\alpha\\neq\\beta\\neq\\gamma$, none necessarily $90^\\circ$"
+    },
+    {
+     "line": 1148,
+     "key": "steps",
+     "before": "Substitution gives $Z\\u0007pprox2.00$.",
+     "after": "Substitution gives $Z\\approx2.00$."
+    },
+    {
+     "line": 1992,
+     "key": "rows",
+     "before": "$\\pi\\sqrt3/16\\u0007pprox34.0\\%$",
+     "after": "$\\pi\\sqrt3/16\\approx34.0\\%$"
+    },
+    {
+     "line": 2814,
+     "key": "note",
+     "before": "Goldschmidt tolerance factor; $t\\u0007pprox1$ favours an undistorted cubic perovskite.",
+     "after": "Goldschmidt tolerance factor; $t\\approx1$ favours an undistorted cubic perovskite."
+    },
+    {
+     "line": 3690,
+     "key": "question",
+     "before": "Two intrinsic semiconductors at the same temperature have gaps 1.0 eV and 1.4 eV. Ignoring prefactors, find the ratio $n",
+     "after": "Two intrinsic semiconductors at the same temperature have gaps 1.0 eV and 1.4 eV. Ignoring prefactors, find the ratio $n"
+    },
+    {
+     "line": 3694,
+     "key": "steps",
+     "before": "Exponent $\\u0007pprox7.72$, so ratio $\\u0007pprox2.25\\times10^3$.",
+     "after": "Exponent $\\approx7.72$, so ratio $\\approx2.25\\times10^3$."
+    },
+    {
+     "line": 3825,
+     "key": "answer",
+     "before": "$\\mu\\u0007pprox5.92\\,\\mu_B$.",
+     "after": "$\\mu\\approx5.92\\,\\mu_B$."
+    }
+   ]
+  }
+ ],
+ "structural": {
+  "source": {
+   "parts:p": 75,
+   "parts:bullets": 33,
+   "parts:callout": 17,
+   "parts:ascii": 19,
+   "parts:table": 30,
+   "parts:formula": 54,
+   "master:paragraph": 117,
+   "master:figure": 20,
+   "master:table": 57,
+   "master:note": 39,
+   "master:formula": 40,
+   "master:example": 48,
+   "master:bullets": 8,
+   "master:derivation": 18
+  },
+  "textbook": {
+   "tables": 108,
+   "svgs": 255,
+   "katex": 1111,
+   "figures": 100,
+   "details": 10
+  }
  }
-]
+}

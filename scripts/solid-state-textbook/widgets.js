@@ -131,6 +131,13 @@
   }
 
   document.querySelectorAll("figure.tb-lab").forEach(initLab);
+  document.querySelectorAll("a[data-tb-full]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var f = document.getElementById(a.getAttribute("data-tb-full")); if (!f) return;
+      var req = f.requestFullscreen || f.webkitRequestFullscreen;
+      if (req) { e.preventDefault(); try { var r = req.call(f); if (r && r.catch) r.catch(function () {}); } catch (x) {} }
+    });
+  });
 
   /* ---------------- small non-3D models ---------------- */
   function defectsModel(fig, host) {

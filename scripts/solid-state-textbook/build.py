@@ -67,23 +67,15 @@ if latex:
     s = "".join(parts)
 print("raw $maths$ rendered:", len(latex), latex)
 
-# 4. find every anchor heading exactly once
-anchors, problems = {}, []
-for pl in PLACEMENTS:
-    h = pl["heading"]
-    if h in anchors:
-        continue
-    ms = list(re.finditer(r"<h([234])[^>]*>\s*" + re.escape(h) + r"\s*</h\1>", s))
-    if len(ms) != 1:
-        problems.append((h, len(ms)))
-    else:
-        anchors[h] = ms[0].end()
-if problems:
-    sys.exit(f"heading anchors not unique/found: {problems}")
+# 4. Master part overview (the hub-card titles and descriptions, so none of that source text is left out)
+ov = json.loads(subprocess.run(["node", str(HERE / "master_overview.mjs")], capture_output=True, text=True, check=True).stdout)
+ov_html = ('<div class="tb-overview"><p class="tb-tag">Master Edition · the ten parts</p><ol>' + "".join(
+    f'<li><b>Part {o["number"]} · {esc(o["title"])}</b> ({esc(o["shortTitle"])}). {esc(o["description"])}</li>' for o in ov) + "</ol></div>")
+m_ = re.search(r"<h2[^>]*>\s*Master Edition notes\s*</h2>", s)
+assert m_, "master heading not found"
+s = s[:m_.end()] + ov_html + s[m_.end():]
 
-# 5. number the animations in document order and build their HTML
-order = sorted(range(len(PLACEMENTS)), key=lambda k: (anchors[PLACEMENTS[k]["heading"]], k))
-number = {k: i + 1 for i, k in enumerate(order)}
+# 5. build the figures (numbered later, in reading order) and place them after the theory they explain
 hashes = sorted({pl["hash"] for pl in PLACEMENTS if pl["kind"] == "lab"})
 (pathlib.Path("/tmp/solid-state-hashes.json")).write_text(json.dumps(hashes))
 subprocess.run(["node", str(HERE / "posters.mjs"), "/tmp/solid-state-hashes.json", str(POSTERS)], check=True)
@@ -94,36 +86,58 @@ def fields_html(f, connect):
             ("Why it happens", f["why"]), ("Key conclusion", f["concl"]), ("Link to the theory", connect)]
     return "".join(f"<p><b>{esc(k)}.</b> {esc(v)}</p>" for k, v in rows)
 
-inserts, records = {}, []
+figs, meta, replaces = {}, [], []
 for k, pl in enumerate(PLACEMENTS):
-    n = number[k]
     if pl["kind"] == "lab":
         parts_ = pl["hash"].split("/")
         struct, mode, way = parts_[0], parts_[1], (parts_[2] if len(parts_) > 2 else None)
         f = describe(struct, mode, way)
         title = pl["title"] or f"{STRUCT_TITLE[struct]}: {MODE_TITLE[mode]}"
-        fig = (f'<figure class="tb-lab" id="anim-{n}" data-hash="{esc(pl["hash"])}" data-title="{esc(title)}">'
+        fig = (f'<figure class="tb-lab" data-ph="{k}" data-hash="{esc(pl["hash"])}" data-title="{esc(title)}">'
                f'<div class="tb-stage"><img class="tb-poster" src="{posters[pl["hash"]]}" alt="Still image of the Crystal Lab: {esc(title)}" width="760" height="600">'
                f'<button class="tb-load" type="button">▶ Load the interactive 3D model</button></div><div class="tb-bar" hidden></div>'
-               f'<figcaption class="tb-desc"><p class="tb-tag">Animation {n} · {esc(title)}</p>{fields_html(f, pl["connect"])}</figcaption></figure>')
-        records.append(dict(n=n, id=f"anim-{n}", kind="3D Crystal Lab (existing Three.js model)", ref=pl["hash"], title=title, heading=pl["heading"]))
+               f'<figcaption class="tb-desc"><p class="tb-tag">Animation 0 · {esc(title)}</p>{fields_html(f, pl["connect"])}</figcaption></figure>')
+        meta.append(dict(ph=k, kind="3D Crystal Lab (existing Three.js model)", ref=pl["hash"], title=title, heading=pl["heading"]))
     else:
         w = pl["widget"]; title = WIDGET_TITLE[w]
         default = f' data-default="{esc(pl["default"])}"' if pl.get("default") else ""
         f = {x: pl[x] for x in ("see", "interact", "happens", "why", "concl")}
-        fig = (f'<figure class="tb-w" id="anim-{n}" data-widget="{w}"{default}><p class="tb-tag">Animation {n} · {esc(title)}</p><div class="tb-host"></div>'
+        fig = (f'<figure class="tb-w" data-ph="{k}" data-widget="{w}"{default}><p class="tb-tag">Animation 0 · {esc(title)}</p><div class="tb-host"></div>'
                f'<figcaption class="tb-desc">{fields_html(f, pl["connect"])}</figcaption></figure>')
-        records.append(dict(n=n, id=f"anim-{n}", kind="Small interactive model (new)", ref=w + (":" + pl["default"] if pl.get("default") else ""), title=title, heading=pl["heading"]))
-    inserts.setdefault(anchors[pl["heading"]], []).append((k, fig))
+        meta.append(dict(ph=k, kind="Small interactive model (new)", ref=w + (":" + pl["default"] if pl.get("default") else ""), title=title, heading=pl["heading"]))
+    if pl.get("replace_iframe"):
+        replaces.append(dict(src=pl["replace_iframe"], fig=fig, heading=pl["heading"]))
+    else:
+        figs.setdefault(pl["heading"], []).append(fig)
 
-for pos in sorted(inserts, reverse=True):
-    block = "\n" + "\n".join(f for _, f in sorted(inserts[pos])) + "\n"
-    s = s[:pos] + block + s[pos:]
+pathlib.Path("/tmp/tb-stage1.html").write_text(s, encoding="utf-8")
+pathlib.Path("/tmp/tb-plan.json").write_text(json.dumps(dict(plan=[dict(heading=h, figs=v) for h, v in figs.items()], replace=replaces)), encoding="utf-8")
+subprocess.run(["node", str(HERE / "place.mjs"), "/tmp/tb-stage1.html", "/tmp/tb-plan.json", "/tmp/tb-stage2.html", "/tmp/tb-place-report.json"], check=True)
+s = pathlib.Path("/tmp/tb-stage2.html").read_text(encoding="utf-8")
+report = json.loads(pathlib.Path("/tmp/tb-place-report.json").read_text())
+bad = [x for x in report["placed"] if x.get("error") or x.get("where") == "fallback-after-heading"]
+if bad:
+    sys.exit(f"placement problems: {bad}")
+where_by_heading = {x["heading"]: x for x in report["placed"]}
+records = []
+for o in report["order"]:
+    m = meta[o["ph"]]; w = where_by_heading.get(m["heading"]) if not any(r["heading"] == m["heading"] and r["fig"].count(f'data-ph="{o["ph"]}"') for r in replaces) else dict(where="replaces-original-iframe", beforeExample=False, theoryBlocksAbove=0)
+    records.append(dict(n=int(o["id"].split("-")[1]), id=o["id"], kind=m["kind"], ref=m["ref"], title=m["title"], heading=m["heading"],
+                        placement=w["where"], placedBeforeExample=w["beforeExample"], theoryBlocksAbove=w["theoryBlocksAbove"]))
 
 # 6. chrome: search box, widget CSS, the lab (stored once), the runtime, and the title
 search = '<div class="tb-search"><input id="tb-q" type="search" placeholder="Search the whole chapter…" aria-label="Search the chapter" autocomplete="off"><div id="tb-res" class="tb-results" role="region" aria-label="Search results"></div></div>\n'
 i = s.find('<nav class="toc"')
 s = (s[:i] + search + s[i:]) if i >= 0 else s.replace("<body>", "<body>\n" + search, 1)
+# the site's own styling, compiled for exactly the classes this chapter uses (otherwise the standalone file has none of it)
+site_css = subprocess.run(["node", str(HERE / "site_css.mjs"), "/tmp/tb-stage2.html"], capture_output=True, text=True, check=True).stdout
+prefix = re.search(r"(reader-module__[A-Za-z0-9]+)__", s).group(1)
+s = s.replace("</head>", '<style id="site-styles">\n' + site_css + "\n</style>\n</head>", 1)
+def add_root_class(m):
+    attrs = m.group(1)
+    cm = re.search(r'class="([^"]*)"', attrs)
+    return "<body" + (attrs.replace(cm.group(0), f'class="{cm.group(1)} {prefix}__root"') if cm else attrs + f' class="{prefix}__root"') + ">"
+s = re.sub(r"<body([^>]*)>", add_root_class, s, count=1)
 s = s.replace("</head>", "<style>\n" + (HERE / "widgets.css").read_text(encoding="utf-8") + "\n</style>\n</head>", 1)
 lab_b64 = base64.b64encode(LAB.read_bytes()).decode()
 js = (HERE / "widgets.js").read_text(encoding="utf-8")
@@ -134,4 +148,5 @@ s = re.sub(r"<title>.*?</title>", "<title>Solid State — Complete Interactive T
 OUT.write_text(s, encoding="utf-8")
 DOCS.mkdir(parents=True, exist_ok=True)
 (DOCS / "animations.json").write_text(json.dumps(sorted(records, key=lambda r: r["n"]), indent=1, ensure_ascii=False))
+(DOCS / "placement-report.json").write_text(json.dumps(report, indent=1))
 print("animations:", len(records), "| lab views:", len(hashes), "| bytes:", OUT.stat().st_size)

@@ -209,4 +209,11 @@ PARTS = [
            concl="Vacancies lower the density and interstitials raise it."),
 ]
 
-PLACEMENTS = MASTER + PARTS
+# The notes already contained one embedded lab view that loaded a separate crystal-lab.html file. It is replaced in place by the
+# same view served from this file, so the original text around it is kept and the textbook works on its own.
+ORIGINAL_IFRAME = [
+    dict(kind="lab", heading="FCC can be built in two ways", hash="fcc/layers/scp", replace_iframe="crystal-lab.html#fcc/layers/scp/embed",
+         connect="This is the animation that the notes above already referred to. It now loads from this file, so it works offline.", title=None),
+]
+
+PLACEMENTS = MASTER + PARTS + ORIGINAL_IFRAME

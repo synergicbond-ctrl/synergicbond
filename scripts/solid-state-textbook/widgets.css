@@ -89,3 +89,17 @@ span.label { max-width: 100%; overflow-wrap: anywhere; white-space: normal; }
   table, math, .katex-display, pre { overflow: visible; display: table; }
   math, .katex-display { display: block; }
 }
+
+/* Master part overview */
+.tb-overview { margin: 14px 0 22px; padding: 14px 16px; border: 1px solid var(--tb-line); border-radius: 12px; background: var(--tb-card); }
+.tb-overview ol { margin: 8px 0 0; padding-left: 22px; line-height: 1.6; color: #d9d3c6; }
+.tb-overview li { margin: 4px 0; }
+
+/* answer-key grids: keep long answers inside their cell on narrow screens */
+@media (max-width: 480px) { .grid-cols-5 > *, .grid-cols-4 > *, .grid-cols-3 > * { overflow-wrap: anywhere; font-size: .92em; } }
+
+/* grid items may shrink below their content width, so one wide child cannot stretch the whole column on a phone */
+.grid > * { min-width: 0; }
+
+/* long unbroken words (for example "dia/para/ferro/antiferro/ferrimagnetism") must wrap inside narrow screens */
+section.part :where(p, li, dd, dt, label, h2, h3, h4, figcaption), .tb-overview li, .tb-desc p { overflow-wrap: anywhere; }

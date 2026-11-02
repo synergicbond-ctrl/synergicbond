@@ -5,7 +5,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "sc/view",
   "title": "Simple cubic: structure",
-  "heading": "3. Unit Cell"
+  "heading": "3. Unit Cell",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 1
  },
  {
   "n": 2,
@@ -13,7 +16,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "sc/share",
   "title": "Simple cubic: atom sharing",
-  "heading": "1. Sharing Fractions"
+  "heading": "1. Sharing Fractions",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 1
  },
  {
   "n": 3,
@@ -21,7 +27,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "bcc/view",
   "title": "Body-centred cubic: structure",
-  "heading": "2. Body-Centred Cell (I)"
+  "heading": "2. Body-Centred Cell (I)",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 4,
@@ -29,7 +38,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/view",
   "title": "Face-centred cubic: structure",
-  "heading": "3. Face-Centred Cell (F)"
+  "heading": "3. Face-Centred Cell (F)",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 2
  },
  {
   "n": 5,
@@ -37,7 +49,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "sc/share",
   "title": "Simple cubic: atom sharing",
-  "heading": "1. Simple Cubic (SC)"
+  "heading": "1. Simple Cubic (SC)",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 1
  },
  {
   "n": 6,
@@ -45,7 +60,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/share",
   "title": "Face-centred cubic: atom sharing",
-  "heading": "2. Face-Centred Cubic (FCC)"
+  "heading": "2. Face-Centred Cubic (FCC)",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 1
  },
  {
   "n": 7,
@@ -53,7 +71,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "bcc/share",
   "title": "Body-centred cubic: atom sharing",
-  "heading": "3. Body-Centred Cubic (BCC)"
+  "heading": "3. Body-Centred Cubic (BCC)",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 1
  },
  {
   "n": 8,
@@ -61,7 +82,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "sc/pack",
   "title": "Simple cubic: packing",
-  "heading": "1. Simple Cubic"
+  "heading": "1. Simple Cubic",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 2
  },
  {
   "n": 9,
@@ -69,7 +93,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/pack",
   "title": "Face-centred cubic: packing",
-  "heading": "2. Face-Centred Cubic"
+  "heading": "2. Face-Centred Cubic",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 10,
@@ -77,7 +104,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "bcc/pack",
   "title": "Body-centred cubic: packing",
-  "heading": "3. Body-Centred Cubic"
+  "heading": "3. Body-Centred Cubic",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 11,
@@ -85,7 +115,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "sc/cn",
   "title": "Simple cubic: coordination",
-  "heading": "2. Simple Cubic — First Six Shells"
+  "heading": "2. Simple Cubic — First Six Shells",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 1
  },
  {
   "n": 12,
@@ -93,7 +126,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/cn",
   "title": "Face-centred cubic: coordination",
-  "heading": "5. Coordination Number"
+  "heading": "5. Coordination Number",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 1
  },
  {
   "n": 13,
@@ -101,7 +137,10 @@
   "kind": "Small interactive model (new)",
   "ref": "density",
   "title": "Density of a unit cell",
-  "heading": "1. Density Derivation"
+  "heading": "1. Density Derivation",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 14,
@@ -109,7 +148,10 @@
   "kind": "Small interactive model (new)",
   "ref": "packing",
   "title": "Packing efficiency of the cubic lattices",
-  "heading": "1. Packing Fraction / Efficiency"
+  "heading": "1. Packing Fraction / Efficiency",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 2
  },
  {
   "n": 15,
@@ -117,7 +159,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/layers/scp",
   "title": "Face-centred cubic: stacking layers",
-  "heading": "4. Three-Dimensional Packing from Square Layers"
+  "heading": "4. Three-Dimensional Packing from Square Layers",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 1
  },
  {
   "n": 16,
@@ -125,7 +170,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/layers/hcp",
   "title": "Face-centred cubic: stacking layers",
-  "heading": "5. Three-Dimensional Packing from Hexagonal Close-Packed Layers"
+  "heading": "5. Three-Dimensional Packing from Hexagonal Close-Packed Layers",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 17,
@@ -133,7 +181,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/voids",
   "title": "Face-centred cubic: voids",
-  "heading": "2. FCC / CCP Void Locations"
+  "heading": "2. FCC / CCP Void Locations",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 18,
@@ -141,7 +192,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "hcp/voids",
   "title": "Hexagonal close-packed: voids",
-  "heading": "4. HCP Void Count and Layer Locations"
+  "heading": "4. HCP Void Count and Layer Locations",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 2
  },
  {
   "n": 19,
@@ -149,7 +203,10 @@
   "kind": "Small interactive model (new)",
   "ref": "radius",
   "title": "Radius ratio and coordination number",
-  "heading": "1. Classical Radius-Ratio Table"
+  "heading": "1. Classical Radius-Ratio Table",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 1
  },
  {
   "n": 20,
@@ -157,7 +214,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "cscl/cn",
   "title": "CsCl: coordination",
-  "heading": "7. Coordination Number and Stoichiometry Contact Count"
+  "heading": "7. Coordination Number and Stoichiometry Contact Count",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 2
  },
  {
   "n": 21,
@@ -165,7 +225,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "diamond/view",
   "title": "Diamond: structure",
-  "heading": "8. Diamond Cubic"
+  "heading": "8. Diamond Cubic",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 22,
@@ -173,7 +236,10 @@
   "kind": "Small interactive model (new)",
   "ref": "defects:vacancy",
   "title": "Point defects in a crystal",
-  "heading": "2. Vacancy and Interstitial Defects"
+  "heading": "2. Vacancy and Interstitial Defects",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 1
  },
  {
   "n": 23,
@@ -181,7 +247,10 @@
   "kind": "Small interactive model (new)",
   "ref": "defects:schottky",
   "title": "Point defects in a crystal",
-  "heading": "3. Schottky Defect"
+  "heading": "3. Schottky Defect",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 24,
@@ -189,7 +258,10 @@
   "kind": "Small interactive model (new)",
   "ref": "defects:frenkel",
   "title": "Point defects in a crystal",
-  "heading": "4. Frenkel Defect"
+  "heading": "4. Frenkel Defect",
+  "placement": "part-section",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 25,
@@ -197,7 +269,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "cscl/view",
   "title": "CsCl: structure",
-  "heading": "1.4 Lattice, basis and crystal structure"
+  "heading": "1.4 Lattice, basis and crystal structure",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 5
  },
  {
   "n": 26,
@@ -205,7 +280,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "sc/view",
   "title": "Simple cubic: structure",
-  "heading": "1.5 Unit cell and lattice parameters"
+  "heading": "1.5 Unit cell and lattice parameters",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 6
  },
  {
   "n": 27,
@@ -213,7 +291,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "sc/share",
   "title": "Simple cubic: atom sharing",
-  "heading": "2.1 Fractional contribution of boundary particles"
+  "heading": "2.1 Fractional contribution of boundary particles",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 6
  },
  {
   "n": 28,
@@ -221,7 +302,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/share",
   "title": "Face-centred cubic: atom sharing",
-  "heading": "2.1 Fractional contribution of boundary particles"
+  "heading": "2.1 Fractional contribution of boundary particles",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 6
  },
  {
   "n": 29,
@@ -229,7 +313,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "bcc/view",
   "title": "Body-centred cubic: structure",
-  "heading": "2.2 Primitive and centred conventional cells"
+  "heading": "2.2 Primitive and centred conventional cells",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 5
  },
  {
   "n": 30,
@@ -237,7 +324,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/view",
   "title": "Face-centred cubic: structure",
-  "heading": "2.2 Primitive and centred conventional cells"
+  "heading": "2.2 Primitive and centred conventional cells",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 5
  },
  {
   "n": 31,
@@ -245,7 +335,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "sc/plane",
   "title": "Simple cubic: Miller planes",
-  "heading": "2.8 Miller indices and interplanar spacing"
+  "heading": "2.8 Miller indices and interplanar spacing",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 32,
@@ -253,7 +346,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/pos",
   "title": "Face-centred cubic: positions and atom count",
-  "heading": "3.1 Effective number of particles in cubic cells"
+  "heading": "3.1 Effective number of particles in cubic cells",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 33,
@@ -261,7 +357,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "sc/pack",
   "title": "Simple cubic: packing",
-  "heading": "3.2 Contact directions and radius–edge relations"
+  "heading": "3.2 Contact directions and radius–edge relations",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 7
  },
  {
   "n": 34,
@@ -269,7 +368,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "bcc/pack",
   "title": "Body-centred cubic: packing",
-  "heading": "3.2 Contact directions and radius–edge relations"
+  "heading": "3.2 Contact directions and radius–edge relations",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 7
  },
  {
   "n": 35,
@@ -277,7 +379,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/pack",
   "title": "Face-centred cubic: packing",
-  "heading": "3.2 Contact directions and radius–edge relations"
+  "heading": "3.2 Contact directions and radius–edge relations",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 7
  },
  {
   "n": 36,
@@ -285,7 +390,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "sc/cn",
   "title": "Simple cubic: coordination",
-  "heading": "3.3 Coordination number and neighbour shells"
+  "heading": "3.3 Coordination number and neighbour shells",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 37,
@@ -293,7 +401,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "bcc/cn",
   "title": "Body-centred cubic: coordination",
-  "heading": "3.3 Coordination number and neighbour shells"
+  "heading": "3.3 Coordination number and neighbour shells",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 38,
@@ -301,7 +412,10 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/cn",
   "title": "Face-centred cubic: coordination",
-  "heading": "3.3 Coordination number and neighbour shells"
+  "heading": "3.3 Coordination number and neighbour shells",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 39,
@@ -309,63 +423,87 @@
   "kind": "Small interactive model (new)",
   "ref": "density",
   "title": "Density of a unit cell",
-  "heading": "3.4 Density of a unit cell"
+  "heading": "3.4 Density of a unit cell",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 5
  },
  {
   "n": 40,
   "id": "anim-40",
-  "kind": "Small interactive model (new)",
-  "ref": "packing",
-  "title": "Packing efficiency of the cubic lattices",
-  "heading": "4.1 Packing fraction and empty space"
+  "kind": "3D Crystal Lab (existing Three.js model)",
+  "ref": "fcc/layers/scp",
+  "title": "Face-centred cubic: stacking layers",
+  "heading": "FCC can be built in two ways",
+  "placement": "replaces-original-iframe",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 0
  },
  {
   "n": 41,
   "id": "anim-41",
-  "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "sc/pack",
-  "title": "Simple cubic: packing",
-  "heading": "4.3 Simple-cubic packing"
+  "kind": "Small interactive model (new)",
+  "ref": "packing",
+  "title": "Packing efficiency of the cubic lattices",
+  "heading": "4.1 Packing fraction and empty space",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 42,
   "id": "anim-42",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "bcc/pack",
-  "title": "Body-centred cubic: packing",
-  "heading": "4.4 Body-centred-cubic packing"
+  "ref": "sc/pack",
+  "title": "Simple cubic: packing",
+  "heading": "4.3 Simple-cubic packing",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 43,
   "id": "anim-43",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "hcp/view",
-  "title": "Hexagonal close-packed: structure",
-  "heading": "4.5 Close-packed layers: HCP and CCP"
+  "ref": "bcc/pack",
+  "title": "Body-centred cubic: packing",
+  "heading": "4.4 Body-centred-cubic packing",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 44,
   "id": "anim-44",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "fcc/layers/hcp",
-  "title": "Face-centred cubic: stacking layers",
-  "heading": "4.5 Close-packed layers: HCP and CCP"
+  "ref": "hcp/view",
+  "title": "Hexagonal close-packed: structure",
+  "heading": "4.5 Close-packed layers: HCP and CCP",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 6
  },
  {
   "n": 45,
   "id": "anim-45",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "hcp/pack",
-  "title": "Hexagonal close-packed: packing",
-  "heading": "4.6 Ideal HCP geometry"
+  "ref": "fcc/layers/hcp",
+  "title": "Face-centred cubic: stacking layers",
+  "heading": "4.5 Close-packed layers: HCP and CCP",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 6
  },
  {
   "n": 46,
   "id": "anim-46",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "fcc/voids",
-  "title": "Face-centred cubic: voids",
-  "heading": "5.1 Meaning of a void"
+  "ref": "hcp/pack",
+  "title": "Hexagonal close-packed: packing",
+  "heading": "4.6 Ideal HCP geometry",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 47,
@@ -373,118 +511,174 @@
   "kind": "3D Crystal Lab (existing Three.js model)",
   "ref": "fcc/voids",
   "title": "Face-centred cubic: voids",
-  "heading": "5.3 Holes in an FCC conventional cell"
+  "heading": "5.1 Meaning of a void",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 48,
   "id": "anim-48",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "diamond/view",
-  "title": "Diamond: structure",
-  "heading": "5.6 Diamond structure"
+  "ref": "fcc/voids",
+  "title": "Face-centred cubic: voids",
+  "heading": "5.3 Holes in an FCC conventional cell",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 49,
   "id": "anim-49",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "diamond/pack",
-  "title": "Diamond: packing",
-  "heading": "5.6 Diamond structure"
+  "ref": "diamond/view",
+  "title": "Diamond: structure",
+  "heading": "5.6 Diamond structure",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 6
  },
  {
   "n": 50,
   "id": "anim-50",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "hcp/voids",
-  "title": "Hexagonal close-packed: voids",
-  "heading": "5.7 Interstitial sites in the conventional HCP cell"
+  "ref": "diamond/pack",
+  "title": "Diamond: packing",
+  "heading": "5.6 Diamond structure",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 6
  },
  {
   "n": 51,
   "id": "anim-51",
-  "kind": "Small interactive model (new)",
-  "ref": "radius",
-  "title": "Radius ratio and coordination number",
-  "heading": "6.1 Purpose of the radius-ratio model"
+  "kind": "3D Crystal Lab (existing Three.js model)",
+  "ref": "hcp/voids",
+  "title": "Hexagonal close-packed: voids",
+  "heading": "5.7 Interstitial sites in the conventional HCP cell",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 52,
   "id": "anim-52",
-  "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "zns/cn",
-  "title": "Zinc blende (ZnS): coordination",
-  "heading": "6.3 Coordination number 4: tetrahedral hole"
+  "kind": "Small interactive model (new)",
+  "ref": "radius",
+  "title": "Radius ratio and coordination number",
+  "heading": "6.1 Purpose of the radius-ratio model",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 53,
   "id": "anim-53",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "nacl/cn",
-  "title": "Rock salt (NaCl): coordination",
-  "heading": "6.4 Coordination number 6: octahedral hole"
+  "ref": "zns/cn",
+  "title": "Zinc blende (ZnS): coordination",
+  "heading": "6.3 Coordination number 4: tetrahedral hole",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 54,
   "id": "anim-54",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "cscl/cn",
-  "title": "CsCl: coordination",
-  "heading": "6.5 Coordination number 8: cubic hole"
+  "ref": "nacl/cn",
+  "title": "Rock salt (NaCl): coordination",
+  "heading": "6.4 Coordination number 6: octahedral hole",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 55,
   "id": "anim-55",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "nacl/view",
-  "title": "Rock salt (NaCl): structure",
-  "heading": "7.2 Rock-salt or NaCl structure"
+  "ref": "cscl/cn",
+  "title": "CsCl: coordination",
+  "heading": "6.5 Coordination number 8: cubic hole",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 56,
   "id": "anim-56",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "nacl/pos",
-  "title": "Rock salt (NaCl): positions and atom count",
-  "heading": "7.2 Rock-salt or NaCl structure"
+  "ref": "nacl/view",
+  "title": "Rock salt (NaCl): structure",
+  "heading": "7.2 Rock-salt or NaCl structure",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 57,
   "id": "anim-57",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "cscl/view",
-  "title": "CsCl: structure",
-  "heading": "7.3 CsCl structure"
+  "ref": "nacl/pos",
+  "title": "Rock salt (NaCl): positions and atom count",
+  "heading": "7.2 Rock-salt or NaCl structure",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 58,
   "id": "anim-58",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "zns/view",
-  "title": "Zinc blende (ZnS): structure",
-  "heading": "7.4 Zinc blende and wurtzite"
+  "ref": "cscl/view",
+  "title": "CsCl: structure",
+  "heading": "7.3 CsCl structure",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 5
  },
  {
   "n": 59,
   "id": "anim-59",
   "kind": "3D Crystal Lab (existing Three.js model)",
-  "ref": "diamond/cn",
-  "title": "Diamond: coordination",
-  "heading": "7.9 Corundum, diamond and graphite"
+  "ref": "zns/view",
+  "title": "Zinc blende (ZnS): structure",
+  "heading": "7.4 Zinc blende and wurtzite",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 4
  },
  {
   "n": 60,
   "id": "anim-60",
-  "kind": "Small interactive model (new)",
-  "ref": "defects:schottky",
-  "title": "Point defects in a crystal",
-  "heading": "8.2 Stoichiometric intrinsic defects"
+  "kind": "3D Crystal Lab (existing Three.js model)",
+  "ref": "diamond/cn",
+  "title": "Diamond: coordination",
+  "heading": "7.9 Corundum, diamond and graphite",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 3
  },
  {
   "n": 61,
   "id": "anim-61",
   "kind": "Small interactive model (new)",
+  "ref": "defects:schottky",
+  "title": "Point defects in a crystal",
+  "heading": "8.2 Stoichiometric intrinsic defects",
+  "placement": "master-content",
+  "placedBeforeExample": false,
+  "theoryBlocksAbove": 6
+ },
+ {
+  "n": 62,
+  "id": "anim-62",
+  "kind": "Small interactive model (new)",
   "ref": "defects:substitution",
   "title": "Point defects in a crystal",
-  "heading": "8.4 Impurity defects and charge compensation"
+  "heading": "8.4 Impurity defects and charge compensation",
+  "placement": "master-content",
+  "placedBeforeExample": true,
+  "theoryBlocksAbove": 4
  }
 ]

@@ -35,6 +35,7 @@ const nextConfig: NextConfig = {
   // Isomerism PDFs/HTML are read from disk by a gated route handler; make sure
   // they are bundled into that serverless function.
   outputFileTracingIncludes: {
+    "/learn/solid-state/textbook": ["./content/solid-state-html/solid-state-textbook.html"],
     "/learn/isomerism/files/[...path]": ["./content/isomerism-resources/**/*"],
     "/notes/assignments/[chapter]/[...path]": ["./content/assignments/**/*"],
   },

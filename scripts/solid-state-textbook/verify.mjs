@@ -68,9 +68,11 @@ for (const { id, hash } of labIds) {
 }
 R.maxLiveFrames = maxLive; R.labPageErrors = pageErrs.length;
 
+fs.writeFileSync(OUT, JSON.stringify(R, null, 1));   // keep what we have so far
 // ---------- D. controls actually do something (one instance per mode) ----------
-async function shot(id) { return (await p.locator(`#${id} .tb-stage`).screenshot()).toString("base64"); }
+async function shot(id) { const bb = await p.locator(`#${id} .tb-stage`).boundingBox(); return (await p.screenshot({ clip: bb, timeout: 90000 })).toString("base64"); }   // region shot: animated canvases never count as 'stable'
 for (const [mode, id] of Object.entries(firstOfMode)) {
+  try {
   await p.evaluate((i) => document.getElementById(i).scrollIntoView({ block: "center" }), id); await sleep(2500);
   const rec = { mode, id };
   const btn = (name) => p.locator(`#${id} .tb-bar button`, { hasText: name }).first();
@@ -92,6 +94,7 @@ for (const [mode, id] of Object.entries(firstOfMode)) {
   rec.resetReloaded = await p.evaluate((i) => { const f = document.getElementById(i); const fr = f.querySelector("iframe.tb-frame"); try { return !!fr && !!fr.contentDocument.querySelector("canvas"); } catch { return false; } }, id);
   rec.fullscreenButton = (await btn("Fullscreen").count()) === 1;
   R.motion.push(rec);
+  } catch (e) { R.motion.push({ mode, id, error: String(e.message).split("\n")[0] }); }
 }
 
 // ---------- E. the non-3D models ----------

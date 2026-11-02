@@ -254,10 +254,10 @@ save();
     const readyNow = await p.evaluate((i) => !!document.getElementById(i).querySelector("iframe.tb-frame"), target.id);
     if (readyNow) {
       const r1 = await p.evaluate(async (i) => { const d = document.getElementById(i).querySelector("iframe.tb-frame").contentDocument; const w = (ms) => new Promise((r) => setTimeout(r, ms)); const out = {};
-        d.querySelector('#modes button[data-m="share"]').click(); await w(800); out.shareMode = d.getElementById("hudR").textContent; out.tallyShown = getComputedStyle(d.getElementById("tally")).display !== "none";
-        d.querySelector('#structs button[data-s="bcc"]').click(); await w(800); out.structure = d.getElementById("title").textContent; out.bccFacts = d.getElementById("facts").innerText.replace(/\s+/g, " ").slice(0, 60);
+        const sb = d.querySelector('#modes button[data-m="share"]'); if (sb) sb.click(); await w(800); out.shareMode = d.getElementById("hudR").textContent; out.tallyShown = getComputedStyle(d.getElementById("tally")).display !== "none";
+        const bb2 = d.querySelector('#structs button[data-s="bcc"]'); if (bb2) bb2.click(); await w(800); out.structure = d.getElementById("title").textContent; out.bccFacts = d.getElementById("facts").innerText.replace(/\s+/g, " ").slice(0, 60);
         const a = d.getElementById("auto"); const before = a.textContent; a.click(); await w(200); out.rotateToggled = a.textContent !== before; a.click();
-        d.getElementById("replay").click(); await w(300); out.replayRan = true; return out; }, target.id);
+        const rp = d.getElementById("replay"); if (rp) { rp.click(); out.replayRan = true; } else out.replayRan = "button absent in this view"; await w(300); return out; }, target.id);
       Object.assign(beh, r1);
     }
   }

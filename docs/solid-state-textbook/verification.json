@@ -1474,8 +1474,19 @@
    "74.05%"
   ]
  },
- "print": {},
- "failures": [],
+ "print": {
+  "overflow": 0,
+  "controlsVisible": 0,
+  "postersShown": 51,
+  "figures": 51,
+  "pdfBytes": 20720984
+ },
+ "failures": [
+  {
+   "where": "performance",
+   "what": "offscreen models still cost main-thread time: 0.11"
+  }
+ ],
  "maxLiveFrames": 3,
  "labPageErrors": 0,
  "firstPrinciples": {
@@ -1516,5 +1527,93 @@
   "labRunsOffline": true,
   "failedRequests": 0,
   "pageErrors": 0
+ },
+ "labIntegrity": {
+  "embeddedEqualsRepoFile": true,
+  "sha256": "b58b9af002c00c94",
+  "unchangedSinceCheckpoint": true
+ },
+ "labBehaviour": {
+  "shareMode": "Atom sharing (Z)",
+  "tallyShown": true,
+  "structure": "Body-centred cubic",
+  "bccFacts": "Atoms per cell, Z 2 Coordination 8 · cube Packing efficiency",
+  "rotateToggled": true,
+  "replayRan": true
+ },
+ "labMatchesStandalone": [
+  {
+   "hash": "fcc/pos",
+   "tested": true,
+   "same": true
+  },
+  {
+   "hash": "bcc/pack",
+   "tested": true,
+   "same": true
+  },
+  {
+   "hash": "nacl/cn",
+   "tested": true,
+   "same": true
+  },
+  {
+   "hash": "diamond/view",
+   "tested": true,
+   "same": true
+  },
+  {
+   "hash": "hcp/voids",
+   "tested": true,
+   "same": true
+  }
+ ],
+ "performance": {
+  "topOfPageOffscreenModelsHalted": {
+   "mainThreadBusyFraction": 0.11,
+   "scriptFraction": 0.024,
+   "framesPerSecond": 0,
+   "mainThreadMsPerFrame": null,
+   "jsHeapMB": 9.7,
+   "live": 2,
+   "halted": 2
+  },
+  "oneModelOnScreen": {
+   "mainThreadBusyFraction": 0.048,
+   "scriptFraction": 0.011,
+   "framesPerSecond": 3.38,
+   "mainThreadMsPerFrame": 14.1,
+   "jsHeapMB": 15.8,
+   "live": 3,
+   "halted": 2
+  },
+  "onScreenButPaused": {
+   "mainThreadBusyFraction": 0.053,
+   "scriptFraction": 0.013,
+   "framesPerSecond": 3.33,
+   "mainThreadMsPerFrame": 16,
+   "jsHeapMB": 12.5,
+   "live": 3,
+   "halted": 2
+  },
+  "modelStartMsMedian": 7335,
+  "modelStartMsMax": 15347,
+  "page": {
+   "domContentLoadedMs": 3087,
+   "htmlMB": 8.3
+  },
+  "note": "Frames per second here are limited by SwiftShader (software rendering on the test machine's CPU) and say nothing about a student's device. The hardware-independent figures are main-thread time per frame, the number of live WebGL contexts (never more than 3), halted offscreen models, heap size and start-up time."
+ },
+ "summary": {
+  "labInstances": 51,
+  "loadedWithCanvas": 51,
+  "controlsPerInstance": [
+   7
+  ],
+  "maxLiveFrames": 3,
+  "geometryChecked": 51,
+  "geometryAllOk": true,
+  "modesControlTested": 2,
+  "failures": 1
  }
 }

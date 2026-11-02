@@ -268,6 +268,7 @@ export function ImportantNote({ title, children }: { title: string; children: Re
   return (
     <aside
       aria-label={title}
+      data-block="jee"
       style={{
         borderLeft: "3px solid var(--chem-energy)",
         paddingLeft: "1rem",
@@ -302,6 +303,7 @@ export function FormulaLine({ math }: { math: string }) {
      and breathing room signals "this is a result, not running prose". */
   return (
     <div
+      data-block="formula"
       style={{
         margin: "0.5rem 0",
         paddingLeft: "1rem",
@@ -383,6 +385,7 @@ export function DiagramBox({ title, children }: { title: string; children: React
      the diagram is the visual hero, not the container it sits in. */
   return (
     <figure
+      data-block="visual"
       style={{
         margin: "0.5rem 0",
         borderRadius: "var(--radius)",

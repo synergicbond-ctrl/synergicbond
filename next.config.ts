@@ -36,6 +36,7 @@ const nextConfig: NextConfig = {
   // they are bundled into that serverless function.
   outputFileTracingIncludes: {
     "/learn/isomerism/files/[...path]": ["./content/isomerism-resources/**/*"],
+    "/learn/solid-state/files/[...path]": ["./content/solid-state-html/**/*"],
     "/notes/assignments/[chapter]/[...path]": ["./content/assignments/**/*"],
   },
   // This repository is a standalone Next.js app. Without an explicit root,

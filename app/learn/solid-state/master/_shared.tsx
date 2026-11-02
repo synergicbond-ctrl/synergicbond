@@ -3,6 +3,8 @@ import katex from "katex";
 import { AppShell } from "@/components/AppShell";
 import type { NoteTone, SolidStateBlock, SolidStatePart } from "./_content";
 import { SOLID_STATE_PARTS } from "./_content";
+import { LabEmbed } from "../parts/LabEmbed";
+import { MASTER_LABS } from "../parts/labs";
 
 function renderMath(latex: string, displayMode = false) {
   try {
@@ -411,6 +413,13 @@ export function SolidStatePartPage({ part }: { part: SolidStatePart }) {
       nextRef={next ? { href: `/learn/solid-state/master/part${String(next.number).padStart(2, "0")}`, label: next.shortTitle } : undefined}
     >
       <article className="mx-auto max-w-3xl">
+        {(MASTER_LABS[part.number] ?? []).length > 0 ? (
+          <div className="mb-12 grid gap-8">
+            {(MASTER_LABS[part.number] ?? []).map((lab) => (
+              <LabEmbed key={lab.hash} hash={lab.hash} title={lab.title} caption={lab.caption} />
+            ))}
+          </div>
+        ) : null}
         {part.sections.map((section,sectionIndex)=><section key={section.title} id={slugify(section.title)} className={`${sectionIndex?"mt-14 border-t border-[var(--border)] pt-12":""} scroll-mt-32`}><h2 className="text-2xl font-black tracking-tight text-[var(--foreground)] md:text-3xl">{section.title}</h2><div className="mt-6 space-y-5">{section.blocks.map((block,blockIndex)=><BlockView key={`${section.title}-${blockIndex}`} block={block} exampleNumber={block.kind==="example"?getExampleNumber(part,sectionIndex,blockIndex):0}/>)}</div></section>)}
 
         <section className="mt-14 border-t border-[var(--border)] pt-12"><h2 className="text-2xl font-black text-[var(--foreground)] md:text-3xl">Part review</h2><div className="mt-6 grid gap-3">{part.review.map((item,index)=><div key={item} className="flex gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3.5"><span className="font-black text-[var(--accent)]">{index+1}</span><p className="leading-7 text-[var(--text-body)]"><RichText text={item}/></p></div>)}</div></section>

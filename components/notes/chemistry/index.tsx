@@ -297,7 +297,7 @@ export function FormulaCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-cyan-400 bg-cyan-950/10 px-5 py-4 my-4 space-y-2 text-cyan-200 overflow-x-auto font-medium ${className}`}>
+    <div data-block="formula" className={`border-l-4 border-cyan-400 bg-cyan-950/10 px-5 py-4 my-4 space-y-2 text-cyan-200 overflow-x-auto font-medium ${className}`}>
       {title && <div className="text-xs font-bold uppercase tracking-wider text-cyan-300 mb-1">{title}</div>}
       <div className="text-white space-y-1.5">{children}</div>
     </div>
@@ -314,7 +314,7 @@ export function ExampleCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-violet-400 bg-violet-950/10 p-5 my-4 space-y-3 text-slate-200 ${className}`}>
+    <div data-block="example" className={`border-l-4 border-violet-400 bg-violet-950/10 p-5 my-4 space-y-3 text-slate-200 ${className}`}>
       {title && <div className="font-bold text-white">{title}</div>}
       <div className="space-y-2">{children}</div>
     </div>
@@ -331,7 +331,7 @@ export function QuestionCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-rose-400 bg-rose-500/5 p-5 my-4 space-y-2 text-slate-100 ${className}`}>
+    <div data-block="example" className={`border-l-4 border-rose-400 bg-rose-500/5 p-5 my-4 space-y-2 text-slate-100 ${className}`}>
       <div className="font-bold text-rose-300 text-sm uppercase tracking-wider">{title}</div>
       <div className="space-y-2 font-medium leading-relaxed">{children}</div>
     </div>
@@ -363,7 +363,7 @@ export function FinalAnswerCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-emerald-400 bg-emerald-500/10 p-4 my-3.5 font-bold text-emerald-100 flex items-start sm:items-center gap-2.5 ${className}`}>
+    <div data-block="example" className={`border-l-4 border-emerald-400 bg-emerald-500/10 p-4 my-3.5 font-bold text-emerald-100 flex items-start sm:items-center gap-2.5 ${className}`}>
       <span className="flex shrink-0 h-6 w-6 rounded-full bg-emerald-600 text-white items-center justify-center text-xs font-extrabold">✓</span>
       <div className="flex-1 text-[15px] sm:text-base">{children}</div>
     </div>
@@ -380,7 +380,7 @@ export function ImportantNoteCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-amber-400 bg-amber-500/5 p-5 my-4 space-y-2.5 text-amber-200 ${className}`}>
+    <div data-block="jee" className={`border-l-4 border-amber-400 bg-amber-500/5 p-5 my-4 space-y-2.5 text-amber-200 ${className}`}>
       {title && (
         <div className="font-bold text-amber-300 flex items-center gap-1.5 text-sm uppercase tracking-wider">
           <span>★</span> {title}
@@ -401,7 +401,7 @@ export function WarningCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-red-400 bg-red-500/5 p-5 my-4 space-y-2.5 text-red-200 ${className}`}>
+    <div data-block="trap" className={`border-l-4 border-red-400 bg-red-500/5 p-5 my-4 space-y-2.5 text-red-200 ${className}`}>
       {title && (
         <div className="font-bold text-red-300 flex items-center gap-1.5 text-sm uppercase tracking-wider">
           <span>⚠️</span> {title}
@@ -422,7 +422,7 @@ export function DiagramPanel({
   className?: string;
 }) {
   return (
-    <div className={`py-4 my-4 text-center space-y-3 overflow-x-auto ${className}`}>
+    <div data-block="visual" className={`py-4 my-4 text-center space-y-3 overflow-x-auto ${className}`}>
       {title && <div className="text-xs font-bold uppercase tracking-widest text-purple-400 mb-2">{title}</div>}
       <div className="text-slate-200 flex flex-col items-center justify-center gap-3">{children}</div>
     </div>

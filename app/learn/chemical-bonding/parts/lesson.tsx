@@ -1,3 +1,4 @@
+import { ConceptBlock } from "@/components/chapter-ui/blocks";
 import { ChemicalBondingDeepVisual } from "../_components/ChemicalBondingDeepVisuals";
 import {
   BulletList,
@@ -34,8 +35,10 @@ export default function ChemicalBondingLesson({ part }: { part: number }) {
         if (topic.visual) seenVisuals.add(topic.visual);
         return (
           <TopicBlock key={topic.number} number={topic.number} title={topic.title}>
-            {topic.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
-            {topic.bullets?.length ? <BulletList items={topic.bullets} /> : null}
+            <ConceptBlock lead={<p>{topic.paragraphs[0]}</p>}>
+              {topic.paragraphs.slice(1).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+              {topic.bullets?.length ? <BulletList items={topic.bullets} /> : null}
+            </ConceptBlock>
             {topic.formula ? <FormulaLine math={topic.formula} /> : null}
             {topic.modern ? <ModernNote>{topic.modern}</ModernNote> : null}
             {topic.exam ? <ImportantNote title="JEE Advanced focus">{topic.exam}</ImportantNote> : null}

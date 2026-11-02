@@ -228,10 +228,11 @@ export function Prose({
 
 export type CalloutTone = "insight" | "trap" | "rule";
 
+// The reader palette (--c-*) is defined inside the shared reader shell; the chem tokens are the fallback.
 const CALLOUT_COLOR: Record<CalloutTone, string> = {
-  insight: "var(--chem-bond)",
-  trap: "var(--chem-trap)",
-  rule: "var(--chem-rule)",
+  insight: "var(--c-concept, var(--chem-bond))",
+  trap: "var(--c-trap, var(--chem-trap))",
+  rule: "var(--c-jee, var(--chem-rule))",
 };
 
 /** Infers tone from the callout's own label, so authored content needs no
@@ -265,6 +266,7 @@ export function Callout({
   return (
     <aside
       className="my-8 max-w-[var(--measure)] py-1 pl-5"
+      data-block={resolved === "trap" ? "trap" : resolved === "rule" ? "jee" : undefined}
       style={{ borderLeft: `2px solid ${color}` }}
     >
       {label ? (

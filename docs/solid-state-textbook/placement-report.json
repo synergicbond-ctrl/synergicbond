@@ -1,0 +1,572 @@
+{
+ "placed": [
+  {
+   "heading": "1.4 Lattice, basis and crystal structure",
+   "where": "master-content",
+   "beforeExample": false,
+   "theoryBlocksAbove": 5
+  },
+  {
+   "heading": "1.5 Unit cell and lattice parameters",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 6
+  },
+  {
+   "heading": "2.1 Fractional contribution of boundary particles",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 6
+  },
+  {
+   "heading": "2.2 Primitive and centred conventional cells",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 5
+  },
+  {
+   "heading": "2.8 Miller indices and interplanar spacing",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "3.1 Effective number of particles in cubic cells",
+   "where": "master-content",
+   "beforeExample": false,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "3.2 Contact directions and radius\u2013edge relations",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 7
+  },
+  {
+   "heading": "3.3 Coordination number and neighbour shells",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "3.4 Density of a unit cell",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 5
+  },
+  {
+   "heading": "4.1 Packing fraction and empty space",
+   "where": "master-content",
+   "beforeExample": false,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "4.3 Simple-cubic packing",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "4.4 Body-centred-cubic packing",
+   "where": "master-content",
+   "beforeExample": false,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "4.5 Close-packed layers: HCP and CCP",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 6
+  },
+  {
+   "heading": "4.6 Ideal HCP geometry",
+   "where": "master-content",
+   "beforeExample": false,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "5.1 Meaning of a void",
+   "where": "master-content",
+   "beforeExample": false,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "5.3 Holes in an FCC conventional cell",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "5.6 Diamond structure",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 6
+  },
+  {
+   "heading": "5.7 Interstitial sites in the conventional HCP cell",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "6.1 Purpose of the radius-ratio model",
+   "where": "master-content",
+   "beforeExample": false,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "6.3 Coordination number 4: tetrahedral hole",
+   "where": "master-content",
+   "beforeExample": false,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "6.4 Coordination number 6: octahedral hole",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "6.5 Coordination number 8: cubic hole",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "7.2 Rock-salt or NaCl structure",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "7.3 CsCl structure",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 5
+  },
+  {
+   "heading": "7.4 Zinc blende and wurtzite",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "7.9 Corundum, diamond and graphite",
+   "where": "master-content",
+   "beforeExample": false,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "8.2 Stoichiometric intrinsic defects",
+   "where": "master-content",
+   "beforeExample": false,
+   "theoryBlocksAbove": 6
+  },
+  {
+   "heading": "8.4 Impurity defects and charge compensation",
+   "where": "master-content",
+   "beforeExample": true,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "3. Unit Cell",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 1
+  },
+  {
+   "heading": "1. Sharing Fractions",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 2
+  },
+  {
+   "heading": "2. Body-Centred Cell (I)",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "3. Face-Centred Cell (F)",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 2
+  },
+  {
+   "heading": "1. Simple Cubic (SC)",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 1
+  },
+  {
+   "heading": "2. Face-Centred Cubic (FCC)",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 1
+  },
+  {
+   "heading": "3. Body-Centred Cubic (BCC)",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 1
+  },
+  {
+   "heading": "1. Simple Cubic",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 2
+  },
+  {
+   "heading": "2. Face-Centred Cubic",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "3. Body-Centred Cubic",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "2. Simple Cubic \u2014 First Six Shells",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 1
+  },
+  {
+   "heading": "5. Coordination Number",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 1
+  },
+  {
+   "heading": "1. Density Derivation",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "1. Packing Fraction / Efficiency",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 2
+  },
+  {
+   "heading": "4. Three-Dimensional Packing from Square Layers",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 1
+  },
+  {
+   "heading": "5. Three-Dimensional Packing from Hexagonal Close-Packed Layers",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "2. FCC / CCP Void Locations",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "4. HCP Void Count and Layer Locations",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 2
+  },
+  {
+   "heading": "7. Coordination Number and Stoichiometry Contact Count",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 2
+  },
+  {
+   "heading": "8. Diamond Cubic",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "1. Classical Radius-Ratio Table",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 1
+  },
+  {
+   "heading": "3. Schottky Defect",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 4
+  },
+  {
+   "heading": "4. Frenkel Defect",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 3
+  },
+  {
+   "heading": "2. Vacancy and Interstitial Defects",
+   "where": "part-section",
+   "beforeExample": false,
+   "theoryBlocksAbove": 1
+  },
+  {
+   "heading": "FCC can be built in two ways",
+   "where": "replaces-original-iframe",
+   "beforeExample": false,
+   "theoryBlocksAbove": 0
+  }
+ ],
+ "order": [
+  {
+   "id": "anim-1",
+   "ph": 37
+  },
+  {
+   "id": "anim-2",
+   "ph": 38
+  },
+  {
+   "id": "anim-3",
+   "ph": 39
+  },
+  {
+   "id": "anim-4",
+   "ph": 40
+  },
+  {
+   "id": "anim-5",
+   "ph": 41
+  },
+  {
+   "id": "anim-6",
+   "ph": 42
+  },
+  {
+   "id": "anim-7",
+   "ph": 43
+  },
+  {
+   "id": "anim-8",
+   "ph": 44
+  },
+  {
+   "id": "anim-9",
+   "ph": 45
+  },
+  {
+   "id": "anim-10",
+   "ph": 46
+  },
+  {
+   "id": "anim-11",
+   "ph": 47
+  },
+  {
+   "id": "anim-12",
+   "ph": 48
+  },
+  {
+   "id": "anim-13",
+   "ph": 49
+  },
+  {
+   "id": "anim-14",
+   "ph": 50
+  },
+  {
+   "id": "anim-15",
+   "ph": 51
+  },
+  {
+   "id": "anim-16",
+   "ph": 52
+  },
+  {
+   "id": "anim-17",
+   "ph": 53
+  },
+  {
+   "id": "anim-18",
+   "ph": 54
+  },
+  {
+   "id": "anim-19",
+   "ph": 57
+  },
+  {
+   "id": "anim-20",
+   "ph": 55
+  },
+  {
+   "id": "anim-21",
+   "ph": 56
+  },
+  {
+   "id": "anim-22",
+   "ph": 60
+  },
+  {
+   "id": "anim-23",
+   "ph": 58
+  },
+  {
+   "id": "anim-24",
+   "ph": 59
+  },
+  {
+   "id": "anim-25",
+   "ph": 0
+  },
+  {
+   "id": "anim-26",
+   "ph": 1
+  },
+  {
+   "id": "anim-27",
+   "ph": 2
+  },
+  {
+   "id": "anim-28",
+   "ph": 3
+  },
+  {
+   "id": "anim-29",
+   "ph": 4
+  },
+  {
+   "id": "anim-30",
+   "ph": 5
+  },
+  {
+   "id": "anim-31",
+   "ph": 6
+  },
+  {
+   "id": "anim-32",
+   "ph": 7
+  },
+  {
+   "id": "anim-33",
+   "ph": 8
+  },
+  {
+   "id": "anim-34",
+   "ph": 9
+  },
+  {
+   "id": "anim-35",
+   "ph": 10
+  },
+  {
+   "id": "anim-36",
+   "ph": 11
+  },
+  {
+   "id": "anim-37",
+   "ph": 12
+  },
+  {
+   "id": "anim-38",
+   "ph": 13
+  },
+  {
+   "id": "anim-39",
+   "ph": 14
+  },
+  {
+   "id": "anim-40",
+   "ph": 61
+  },
+  {
+   "id": "anim-41",
+   "ph": 15
+  },
+  {
+   "id": "anim-42",
+   "ph": 16
+  },
+  {
+   "id": "anim-43",
+   "ph": 17
+  },
+  {
+   "id": "anim-44",
+   "ph": 18
+  },
+  {
+   "id": "anim-45",
+   "ph": 19
+  },
+  {
+   "id": "anim-46",
+   "ph": 20
+  },
+  {
+   "id": "anim-47",
+   "ph": 21
+  },
+  {
+   "id": "anim-48",
+   "ph": 22
+  },
+  {
+   "id": "anim-49",
+   "ph": 23
+  },
+  {
+   "id": "anim-50",
+   "ph": 24
+  },
+  {
+   "id": "anim-51",
+   "ph": 25
+  },
+  {
+   "id": "anim-52",
+   "ph": 26
+  },
+  {
+   "id": "anim-53",
+   "ph": 27
+  },
+  {
+   "id": "anim-54",
+   "ph": 28
+  },
+  {
+   "id": "anim-55",
+   "ph": 29
+  },
+  {
+   "id": "anim-56",
+   "ph": 30
+  },
+  {
+   "id": "anim-57",
+   "ph": 31
+  },
+  {
+   "id": "anim-58",
+   "ph": 32
+  },
+  {
+   "id": "anim-59",
+   "ph": 33
+  },
+  {
+   "id": "anim-60",
+   "ph": 34
+  },
+  {
+   "id": "anim-61",
+   "ph": 35
+  },
+  {
+   "id": "anim-62",
+   "ph": 36
+  }
+ ]
+}

@@ -58,11 +58,11 @@ export function ConceptCard({ title, children }: { title: string; children: Reac
 }
 
 export function DefinitionCard({ term, children }: { term: string; children: ReactNode }) {
-  return <section className="rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.09] to-slate-950/20 p-5"><p className="text-[11px] font-black uppercase tracking-[0.2em] text-cyan-200">Key definition</p><h2 className="mt-1 text-xl font-black text-white">{term}</h2><div className="mt-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
+  return <section data-block="definition" className="rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.09] to-slate-950/20 p-5"><p className="text-[11px] font-black uppercase tracking-[0.2em] text-cyan-200">Key definition</p><h2 className="mt-1 text-xl font-black text-white">{term}</h2><div className="mt-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
 }
 
 export function FormulaCard({ label, children }: { label: string; children: ReactNode }) {
-  return <section className="border-l-2 border-violet-300/40 pl-4"><div className="text-[11px] font-black uppercase tracking-[0.15em] text-violet-200">{label}</div><div className="overflow-x-auto text-cyan-100 [&_.katex-display]:my-1">{children}</div></section>;
+  return <section data-block="formula" className="border-l-2 border-violet-300/40 pl-4"><div className="text-[11px] font-black uppercase tracking-[0.15em] text-violet-200">{label}</div><div className="overflow-x-auto text-cyan-100 [&_.katex-display]:my-1">{children}</div></section>;
 }
 
 export function ComparisonTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][] }) {
@@ -70,11 +70,11 @@ export function ComparisonTable({ headers, rows }: { headers: ReactNode[]; rows:
 }
 
 export function WorkedExample({ title, children }: { title: string; children: ReactNode }) {
-  return <section className="rounded-lg border border-amber-300/20 bg-amber-300/[0.045] p-5"><p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-200">Worked example</p><h2 className="mt-1 text-lg font-black text-white">{title}</h2><div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
+  return <section data-block="example" className="rounded-lg border border-amber-300/20 bg-amber-300/[0.045] p-5"><p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-200">Worked example</p><h2 className="mt-1 text-lg font-black text-white">{title}</h2><div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
 }
 
 export function DerivationPanel({ title, children }: { title: string; children: ReactNode }) {
-  return <section className="border-l-2 border-fuchsia-300/40 pl-4"><h2 className="text-base font-black text-fuchsia-100">{title}</h2><div className="mt-2 space-y-1.5 text-sm leading-relaxed text-slate-100 sm:text-base [&_.katex-display]:my-1">{children}</div></section>;
+  return <section data-block="formula" className="border-l-2 border-fuchsia-300/40 pl-4"><h2 className="text-base font-black text-fuchsia-100">{title}</h2><div className="mt-2 space-y-1.5 text-sm leading-relaxed text-slate-100 sm:text-base [&_.katex-display]:my-1">{children}</div></section>;
 }
 
 export function FigureCaption({ children }: { children: ReactNode }) {
@@ -82,7 +82,7 @@ export function FigureCaption({ children }: { children: ReactNode }) {
 }
 
 export function ImportantNote({ title = "Important note", children }: { title?: string; children: ReactNode }) {
-  return <aside className="rounded-xl border-l-4 border-amber-300 bg-amber-300/[0.08] px-4 py-3 text-sm leading-relaxed text-amber-50"><p className="font-bold text-amber-200">{title}</p><div className="mt-1">{children}</div></aside>;
+  return <aside data-block="jee" className="rounded-xl border-l-4 border-amber-300 bg-amber-300/[0.08] px-4 py-3 text-sm leading-relaxed text-amber-50"><p className="font-bold text-amber-200">{title}</p><div className="mt-1">{children}</div></aside>;
 }
 
 export function PracticeQuestion({ prompt, answer }: { prompt: ReactNode; answer?: ReactNode }) {

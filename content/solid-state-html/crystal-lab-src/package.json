@@ -1,0 +1,7 @@
+{
+  "name": "crystal-lab",
+  "private": true,
+  "type": "module",
+  "description": "Source of crystal-lab.html (one offline file). Rebuild: npm install && node build.mjs ../crystal-lab.html",
+  "dependencies": { "three": "0.165.0", "esbuild": "0.21.5" }
+}

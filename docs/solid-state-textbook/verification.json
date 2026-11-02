@@ -1,5 +1,5 @@
 {
- "when": "2026-11-02T12:03:18.763Z",
+ "when": "2026-11-02T12:33:11.756Z",
  "engine": "Chromium 153.0.8010.12",
  "viewports": [
   {
@@ -488,7 +488,7 @@
    "loaded": true,
    "canvas": true,
    "controls": 7,
-   "liveFramesNow": 3,
+   "liveFramesNow": 4,
    "facts": "Atoms per cell, Z\n1\nCoordination\n6 · octahedron\nPacking efficiency\n52.4%\nRadius relation\na = 2r\nExamples\nPo (α-polonium)",
    "big": "6 | nearest neighbours of the glowing atom · octahedron · distance 1.000 a",
    "tally": "",
@@ -1352,131 +1352,16 @@
    ]
   }
  ],
- "motion": [
-  {
-   "mode": "view",
-   "id": "anim-1",
-   "checks": {
-    "pause freezes the picture": false,
-    "pause stops the lab's clock": true,
-    "button now reads Play": true,
-    "play runs the clock at normal speed": false,
-    "speed 0.5× runs the clock at 0.5×": false,
-    "speed 2× runs the clock at 2×": false,
-    "speed 0.25× runs the clock at 0.25×": false,
-    "reset reloads the model": true,
-    "reset restores Pause label and 1× speed": true,
-    "dragging rotates the model (also while paused)": true,
-    "scrolling zooms the model": true,
-    "fullscreen makes the animation fill the screen": true
-   }
-  },
-  {
-   "mode": "share",
-   "id": "anim-2",
-   "checks": {},
-   "error": "page.evaluate: TypeError: Cannot read properties of null (reading 'contentDocument')"
-  },
-  {
-   "mode": "pack",
-   "id": "anim-8",
-   "checks": {},
-   "error": "page.screenshot: Target page, context or browser has been closed"
-  },
-  {
-   "mode": "cn",
-   "id": "anim-11",
-   "checks": {},
-   "error": "page.evaluate: Target page, context or browser has been closed"
-  },
-  {
-   "mode": "voids",
-   "id": "anim-17",
-   "checks": {},
-   "error": "page.evaluate: Target page, context or browser has been closed"
-  },
-  {
-   "mode": "plane",
-   "id": "anim-31",
-   "checks": {},
-   "error": "page.evaluate: Target page, context or browser has been closed"
-  },
-  {
-   "mode": "pos",
-   "id": "anim-32",
-   "checks": {},
-   "error": "page.evaluate: Target page, context or browser has been closed"
-  },
-  {
-   "mode": "layers:fcc/layers/scp",
-   "id": "anim-40",
-   "checks": {},
-   "error": "page.evaluate: Target page, context or browser has been closed"
-  },
-  {
-   "mode": "layers:fcc/layers/hcp",
-   "id": "anim-45",
-   "checks": {},
-   "error": "page.evaluate: Target page, context or browser has been closed"
-  }
- ],
+ "motion": [],
  "widgets": {},
  "print": {},
  "failures": [
   {
-   "where": "controls view",
-   "what": "pause freezes the picture"
-  },
-  {
-   "where": "controls view",
-   "what": "play runs the clock at normal speed | rate 3.031"
-  },
-  {
-   "where": "controls view",
-   "what": "speed 0.5× runs the clock at 0.5× | rate 1.727"
-  },
-  {
-   "where": "controls view",
-   "what": "speed 2× runs the clock at 2× | rate 4.111"
-  },
-  {
-   "where": "controls view",
-   "what": "speed 0.25× runs the clock at 0.25× | rate 0.448"
-  },
-  {
-   "where": "controls share",
-   "what": "test aborted: page.evaluate: TypeError: Cannot read properties of null (reading 'contentDocument')"
-  },
-  {
-   "where": "controls pack",
-   "what": "test aborted: page.screenshot: Target page, context or browser has been closed"
-  },
-  {
-   "where": "controls cn",
-   "what": "test aborted: page.evaluate: Target page, context or browser has been closed"
-  },
-  {
-   "where": "controls voids",
-   "what": "test aborted: page.evaluate: Target page, context or browser has been closed"
-  },
-  {
-   "where": "controls plane",
-   "what": "test aborted: page.evaluate: Target page, context or browser has been closed"
-  },
-  {
-   "where": "controls pos",
-   "what": "test aborted: page.evaluate: Target page, context or browser has been closed"
-  },
-  {
-   "where": "controls layers:fcc/layers/scp",
-   "what": "test aborted: page.evaluate: Target page, context or browser has been closed"
-  },
-  {
-   "where": "controls layers:fcc/layers/hcp",
-   "what": "test aborted: page.evaluate: Target page, context or browser has been closed"
+   "where": "performance",
+   "what": "more than 3 live 3D frames: 4"
   }
  ],
- "maxLiveFrames": 3,
+ "maxLiveFrames": 4,
  "labPageErrors": 0,
  "firstPrinciples": {
   "packing": {

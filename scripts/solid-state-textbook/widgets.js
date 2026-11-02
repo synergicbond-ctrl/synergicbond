@@ -119,8 +119,12 @@
       f.srcdoc = html;
       st.frame = f; stage.appendChild(f);
       st.lastSeen = Date.now(); live.push(api);
-      var extra = live.filter(function (a) { return a !== api && !a.visible(); }).sort(function (a, b) { return a.lastSeen() - b.lastSeen(); });
-      while (live.length > MAX_LIVE && extra.length) extra.shift().release();
+      // never more than MAX_LIVE 3D frames at once: release the one whose figure is farthest from the middle of the screen
+      while (live.length > MAX_LIVE) {
+        var victim = live.filter(function (a) { return a !== api; }).sort(function (a, b) { return b.dist() - a.dist(); })[0];
+        if (!victim) break;
+        victim.release();
+      }
     }
     function release() {
       if (st.frame) { st.frame.remove(); st.frame = null; }
@@ -134,7 +138,8 @@
       msg.textContent = "The interactive 3D model could not start on this device (WebGL may be unavailable). The still image shows the same view.";
       msg.hidden = false;
     }
-    var api = { release: release, visible: function () { return st.visible; }, lastSeen: function () { return st.lastSeen; } };
+    var api = { release: release, visible: function () { return st.visible; }, lastSeen: function () { return st.lastSeen; },
+      dist: function () { var r = fig.getBoundingClientRect(); return Math.abs((r.top + r.bottom) / 2 - window.innerHeight / 2); } };
     loadBtn.onclick = function () { activate(); };
     ppLabel();
 

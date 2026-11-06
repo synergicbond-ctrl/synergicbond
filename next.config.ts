@@ -38,6 +38,7 @@ const nextConfig: NextConfig = {
     "/learn/solid-state/textbook": ["./content/solid-state-html/solid-state-textbook.html"],
     "/learn/isomerism/files/[...path]": ["./content/isomerism-resources/**/*"],
     "/notes/assignments/[chapter]/[...path]": ["./content/assignments/**/*"],
+    "/learn/jee-advanced/organic-chemistry/reaction-intermediates/files/[name]": ["./content/reaction-intermediates/**/*"],
   },
   // This repository is a standalone Next.js app. Without an explicit root,
   // Turbopack walks up to an unrelated parent lockfile, increasing file-system

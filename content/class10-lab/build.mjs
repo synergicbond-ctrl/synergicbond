@@ -7,7 +7,7 @@ const rd = f => readFileSync(join(src, f), 'utf8');
 const data = JSON.stringify(JSON.parse(rd('data.json')));
 const files = readdirSync(src);
 const pick = re => files.filter(f => re.test(f)).sort();
-const js = ['engine.js', ...pick(/^extra.*\.js$/), ...pick(/^scenes.*\.js$/), 'ui.js'].map(f => `/* ---- ${f} ---- */\n` + rd(f)).join('\n');
+const js = ['engine.js', ...pick(/^extra.*\.js$/), ...pick(/^scenes.*\.js$/), 'practice.js', 'ui.js'].map(f => `/* ---- ${f} ---- */\n` + rd(f)).join('\n');
 let html = rd('template.html');
 // function replacers: the data/js contain "$&"-style sequences that String.replace would otherwise interpret
 html = html.replace('/*CSS*/', () => rd('style.css')).replace('/*DATA*/', () => `const ACTIVITIES = ${data};\nconst EXTRA = {};`).replace('/*JS*/', () => js);

@@ -160,10 +160,8 @@ function tabObs(a) {
   return `<div class="grid2"><div>${exp}<h3>Observation</h3><p>${esc(a.observation)}</p>${a.result ? `<div class="callout"><b class="t">Result / conclusion</b>${a.result}</div>` : ''}</div><div><h3>Your recorded readings</h3>${mine}</div></div>`;
 }
 function tabViva(a) {
-  const q = a.quiz, st = S.quiz[a.id];
-  const quiz = q ? `<h3>Concept check</h3><p><b>${esc(q.question)}</b></p><div id="quizOpts">${q.answers.map((x, i) => `<button class="quiz-opt ${st ? (i === q.correct ? 'ok' : (i === st.pick ? 'no' : '')) : ''}" data-i="${i}" ${st ? 'disabled' : ''}>${String.fromCharCode(65 + i)}. ${esc(x)}</button>`).join('')}</div>${st ? `<div class="quiz-fb"><b>${st.pick === q.correct ? '✓ Correct.' : '✗ Not quite.'}</b> ${esc(q.explanation)}</div>` : ''}` : '';
   const qa = (arr, mk) => arr && arr.length ? arr.map(x => `<details class="qa"><summary><span>${x[0]}</span>${mk ? `<span class="m">${x[2] || ''}</span>` : ''}</summary><div>${x[1]}</div></details>`).join('') : '';
-  return `<div class="grid2"><div>${quiz}</div><div>${a.viva ? `<h3>Viva voce</h3>${qa(a.viva)}` : ''}${a.board ? `<h3>Board-style questions</h3>${qa(a.board, 1)}` : ''}</div></div>`;
+  return `<div class="grid2"><div>${practiceHTML(a)}</div><div>${a.viva ? `<h3>Viva voce <small style="color:var(--mute)">(tap to reveal)</small></h3>${qa(a.viva)}` : ''}${a.board ? `<h3>Board-style questions</h3>${qa(a.board, 1)}` : ''}</div></div>`;
 }
 function tabReal(a) {
   return `${a.apps ? `<h3>Where this matters in real life</h3><div class="tag-apps">${a.apps.map(x => `<div class="app-card"><b>${x[0]}</b>${x[1]}</div>`).join('')}</div>` : '<p class="empty">—</p>'}${a.link ? `<div class="callout"><b class="t">Exam link</b>${a.link}</div>` : ''}`;
@@ -174,7 +172,7 @@ function tabNotes(a) {
 }
 function bindTab(a) {
   if (S.tab === 2) { const c = $('csvBtn'); if (c) c.onclick = () => { const r = S.rec[a.id]; const csv = [['#', ...r.head], ...r.rows.map((x, i) => [i + 1, ...x])].map(x => x.map(y => `"${String(y).replace(/"/g, '""')}"`).join(',')).join('\n'); dl(`experiment-${a.id}-readings.csv`, csv, 'text/csv'); }; const k = $('clrRec'); if (k) k.onclick = () => { delete S.rec[a.id]; jset('c10.rec', S.rec); renderTabs(); }; }
-  if (S.tab === 3 && a.quiz) $('quizOpts').querySelectorAll('button').forEach(b => b.onclick = () => { S.quiz[a.id] = { pick: +b.dataset.i }; renderTabs(); });
+  if (S.tab === 3) bindPractice(a);
   if (S.tab === 5) {
     const n = $('notes'), wc = () => { const w = n.value.trim().split(/\s+/).filter(Boolean).length; $('wc').textContent = w + ' words'; }; wc(); let tm;
     n.oninput = () => { wc(); clearTimeout(tm); tm = setTimeout(() => { S.notes[a.id] = n.value; jset('c10.notes', S.notes); const s = $('saved'); if (s) { s.style.opacity = 1; setTimeout(() => s.style.opacity = 0, 900); } }, 400); };

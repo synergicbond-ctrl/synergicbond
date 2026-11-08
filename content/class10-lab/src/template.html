@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Class 10 Science Virtual Laboratory · Synergic Bond</title>
+<meta name="description" content="56 interactive NCERT Class 10 Science experiments with live animations, observation tables, viva questions and board-style practice.">
+<style>
+/*CSS*/
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="side" id="side">
+    <div class="brand"><div class="mark"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5.5 9.5A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-2.5L14 9V3"/><path d="M7.5 15h9"/></svg></div><div><b>Science Lab</b><small>Class 10 · NCERT · 56 experiments</small></div></div>
+    <div class="prog"><div class="prog-bar"><i id="progFill"></i></div><span id="progText">0 / 56 completed</span></div>
+    <div class="search"><input id="search" type="search" placeholder="Search experiments, e.g. rusting, lens, pH" aria-label="Search experiments"></div>
+    <div class="chips" id="chips" role="tablist" aria-label="Filter by subject"></div>
+    <nav id="nav" aria-label="Experiments"></nav>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <main class="main" id="main">
+    <header class="top">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open experiment list">☰</button>
+      <div class="crumb" id="crumb"></div>
+      <div class="top-actions">
+        <button class="btn ghost" id="themeBtn" title="Toggle light / dark">◐</button>
+        <button class="btn ghost" id="prevBtn">‹ Prev</button>
+        <button class="btn" id="nextBtn">Next ›</button>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="hero-text">
+        <div class="eyebrow" id="eyebrow"></div>
+        <h1 id="title"></h1>
+        <p class="aim" id="aim"></p>
+      </div>
+      <div class="hero-side">
+        <span class="subject" id="subjectTag"></span>
+        <button class="btn done" id="doneBtn">✓ Mark completed</button>
+      </div>
+    </section>
+
+    <section class="lab">
+      <div class="stage-card">
+        <div class="stage-bar">
+          <div class="stage-tabs" id="stageTabs" role="tablist"></div>
+          <div class="stage-tools">
+            <button class="chip-btn" id="microBtn" title="Show the particle-level view">🔬 Particle view</button>
+            <button class="chip-btn" id="snapBtn" title="Save a PNG of the current frame">📷 Snapshot</button>
+            <button class="chip-btn" id="fsBtn" title="Fullscreen">⛶</button>
+          </div>
+        </div>
+        <div class="canvas-wrap" id="canvasWrap"><canvas id="sim" aria-label="Animated experiment"></canvas></div>
+        <div class="transport">
+          <button class="btn primary" id="runBtn">▶ Run experiment</button>
+          <button class="btn" id="pauseBtn" title="Pause or resume the animation (Space)">❚❚ Pause</button>
+          <button class="btn ghost" id="resetBtn">↺ Reset</button>
+          <label class="spd">Speed
+            <select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select>
+          </label>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <div class="card ctrl">
+          <div class="card-h">Experiment control</div>
+          <div class="ctrl-row"><span id="ctrlLabel"></span><b id="ctrlVal"></b></div>
+          <input type="range" id="ctrl" aria-label="Experiment variable">
+          <div class="ctrl-scale"><span id="ctrlMin"></span><span id="ctrlMax"></span></div>
+        </div>
+        <div class="card">
+          <div class="card-h">Live readings <button class="mini" id="recBtn" title="Add the current readings to your observation table (R)">＋ Record</button></div>
+          <div class="reads" id="reads"></div>
+        </div>
+        <div class="card obs">
+          <div class="card-h">What you are seeing</div>
+          <p id="liveObs"></p>
+        </div>
+        <div class="card eq">
+          <div class="card-h">Equation / principle</div>
+          <div class="eqbox" id="eqBox"></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="learn">
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <div class="tab-body" id="tabBody"></div>
+    </section>
+    <footer class="foot">Synergic Bond · Class 10 Science Virtual Laboratory · animations are scientific models for learning; always follow your teacher's safety instructions in a real laboratory.</footer>
+  </main>
+</div>
+<script>
+/*DATA*/
+/*JS*/
+</script>
+</body>
+</html>

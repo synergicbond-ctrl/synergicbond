@@ -31,6 +31,9 @@ const eslintConfig = defineConfig([
     // artifacts (PDF/DOCX/HTML dumps) — never imported by the app, never
     // deployed. Not first-party application source.
     "scratchpad/**",
+    // Source for the standalone Class 10 virtual lab (plain browser JS bundled by
+    // content/class10-lab/build.mjs into public/class10-science-lab.html).
+    "content/class10-lab/**",
   ]),
 ]);
 

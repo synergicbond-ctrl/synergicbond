@@ -1,0 +1,2138 @@
+[
+ {
+  "id": "10.1.1",
+  "title": "Evidence of Chemical Reactions",
+  "scene": "reactions",
+  "chapter": "10.1",
+  "chapterTitle": "Chemical Reactions & Equations",
+  "subject": "Chemistry",
+  "apparatus": "Conical flask, test tubes, dropper, lead nitrate Pb(NO₃)₂, potassium iodide KI, zinc granules, dilute H₂SO₄, quicklime CaO, thermometer.",
+  "steps": [
+   "Test 1 (Precipitate): Add 2 mL of clear KI solution dropwise to clear Pb(NO₃)₂ solution.",
+   "Test 2 (Gas Evolution): Drop zinc granules into dilute sulphuric acid and inspect effervescence.",
+   "Test 3 (Temperature Rise): Slowly add water to quicklime (CaO) in a beaker and monitor the thermometer."
+  ],
+  "observation": "Test 1 yields an instant brilliant yellow precipitate (PbI₂). Test 2 vigorously evolves hydrogen gas bubbles. Test 3 warms during the exothermic reaction; the actual final temperature depends on quantities and heat loss.",
+  "concept": "A chemical reaction produces new substances with distinct chemical identities, signaled macroscopically by precipitation, gas evolution, color change, or enthalpy changes.",
+  "equation": "Pb(NO₃)₂(aq) + 2KI(aq) → PbI₂↓(s) + 2KNO₃(aq)",
+  "control": {
+   "label": "Reactant addition",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 50,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "What is the chemical identity of the bright yellow precipitate formed when mixing lead nitrate and potassium iodide?",
+   "answers": [
+    "Lead iodide (PbI₂)",
+    "Potassium nitrate (KNO₃)",
+    "Lead oxide (PbO)",
+    "Iodine crystals (I₂)"
+   ],
+   "correct": 0,
+   "explanation": "Pb²⁺ cations bind with I⁻ anions to form insoluble lead(II) iodide, PbI₂, which precipitates as a brilliant canary-yellow solid."
+  },
+  "safety": "Lead compounds are toxic. Wear nitrile gloves and safety goggles. Dispose of heavy metal precipitates in a dedicated chemical waste container."
+ },
+ {
+  "id": "10.1.2",
+  "title": "Recognising Reaction Types",
+  "scene": "reactiontypes",
+  "chapter": "10.1",
+  "chapterTitle": "Chemical Reactions & Equations",
+  "subject": "Chemistry",
+  "apparatus": "Boiling tubes, test tube holder, burner, quicklime CaO, ferrous sulphate FeSO₄·7H₂O, iron nails, copper sulphate CuSO₄, barium chloride BaCl₂, sodium sulphate Na₂SO₄.",
+  "steps": [
+   "Select Reaction 1: Combination (Slaking of lime with water).",
+   "Select Reaction 2: Thermal Decomposition (Heating pale-green FeSO₄ crystals).",
+   "Select Reaction 3: Displacement (Clean iron nail immersed in sky-blue CuSO₄ solution).",
+   "Select Reaction 4: Double Displacement (Mixing Na₂SO₄ and BaCl₂ solutions)."
+  ],
+  "observation": "Combination releases intense heat; decomposition produces reddish-brown Fe₂O₃ with choking SO₂/SO₃ fumes; displacement coats iron with red copper; double displacement forms milky BaSO₄ precipitate.",
+  "concept": "Chemical reactions are classified by rearrangement topology: Combination (A+B→AB), Decomposition (AB→A+B), Single Displacement (A+BC→AC+B), and Double Displacement (AB+CD→AD+CB).",
+  "equation": "Fe(s) + CuSO₄(aq) → FeSO₄(aq) + Cu(s) ; BaCl₂(aq) + Na₂SO₄(aq) → BaSO₄↓ + 2NaCl(aq)",
+  "control": {
+   "label": "Reaction type",
+   "min": 1,
+   "max": 4,
+   "step": 1,
+   "value": 1,
+   "unit": "mode"
+  },
+  "quiz": {
+   "question": "When heating pale green ferrous sulphate crystals, which gases are evolved?",
+   "answers": [
+    "SO₂ and SO₃ (sulphur dioxide and trioxide)",
+    "H₂ and O₂",
+    "CO₂ and CO",
+    "NO₂ and N₂O"
+   ],
+   "correct": 0,
+   "explanation": "2FeSO₄(s) heated yields ferric oxide Fe₂O₃(s) and characteristic burning-sulphur choking gases: SO₂ and SO₃."
+  },
+  "safety": "Thermal decomposition releases choking, acidic SO₂ and SO₃ gases. Conduct in a fume hood or well-ventilated laboratory; do not inhale vapors directly."
+ },
+ {
+  "id": "10.1.3",
+  "title": "Electrolysis of Water",
+  "scene": "electrolysis",
+  "chapter": "10.1",
+  "chapterTitle": "Chemical Reactions & Equations",
+  "subject": "Chemistry",
+  "apparatus": "Voltameter apparatus, 6V-12V DC power pack, carbon electrodes, graduated collection tubes, acidified water (H₂SO₄ electrolyte), glowing splint.",
+  "steps": [
+   "Fill voltameter with acidified water and invert graduated test tubes over both electrodes.",
+   "Connect cathode to negative terminal and anode to positive terminal; adjust current intensity.",
+   "Observe bubble nucleation rates and measure displaced liquid columns over time.",
+   "Perform splint tests on collected gases at cathode (pop burst) and anode (rekindles flame)."
+  ],
+  "observation": "Gas accumulates twice as fast at the cathode (−) as at the anode (+). The ideal collected gas volume ratio is approximately 2 : 1 (Hydrogen : Oxygen).",
+  "concept": "Water decomposes electrolytically under direct electrical current into elemental hydrogen and oxygen gases in stoichiometric molar proportion 2 : 1 governed by Faraday's laws of electrolysis.",
+  "equation": "2H₂O(l) ─(electric current)→ 2H₂(g) [Cathode] + O₂(g) [Anode]",
+  "control": {
+   "label": "Current intensity",
+   "min": 1,
+   "max": 10,
+   "step": 1,
+   "value": 5,
+   "unit": "A"
+  },
+  "quiz": {
+   "question": "Why is the volume of gas collected at the cathode twice the volume collected at the anode?",
+   "answers": [
+    "Water molecule formula H₂O has a 2:1 hydrogen to oxygen atom ratio",
+    "Hydrogen is twice as dense as oxygen",
+    "Oxygen dissolves completely in water",
+    "Cathode attracts negative ions"
+   ],
+   "correct": 0,
+   "explanation": "Electrolysis follows 2H₂O → 2H₂ + O₂. By Avogadro's hypothesis, equal gas moles occupy equal volumes; thus 2 moles of H₂ produce twice the volume of 1 mole of O₂."
+  },
+  "safety": "Acidified electrolyte is corrosive. Hydrogen gas is flammable; keep open flames away except for small controlled splint confirmation."
+ },
+ {
+  "id": "10.1.4",
+  "title": "Oxidation and Reduction of Copper",
+  "scene": "copperredox",
+  "chapter": "10.1",
+  "chapterTitle": "Chemical Reactions & Equations",
+  "subject": "Chemistry",
+  "apparatus": "China dish, tripod stand, wire gauze, bunsen burner, copper powder, hydrogen gas generator/cylinder, combustion tube.",
+  "steps": [
+   "Spread reddish-brown copper powder on china dish and ignite burner to heat strongly in air.",
+   "Observe surface darkening as copper oxidises to black copper(II) oxide CuO.",
+   "Pass dry hydrogen gas over heated black CuO in the combustion tube.",
+   "Observe reduction: black oxide loses oxygen to form water droplets, restoring shiny reddish-brown metallic copper."
+  ],
+  "observation": "Heating in air: 2Cu + O₂ → 2CuO (Black layer). Passing H₂ over heated CuO: CuO + H₂ → Cu + H₂O (Restores red-brown copper with water condensation).",
+  "concept": "Oxidation is the gain of oxygen or loss of electrons; reduction is the loss of oxygen or gain of electrons. When occurring simultaneously, it is a Redox reaction.",
+  "equation": "2Cu(s) + O₂(g) → 2CuO(s)  ;  CuO(s) + H₂(g) → Cu(s) + H₂O(g)",
+  "control": {
+   "label": "Reaction progress",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 50,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "In the reaction CuO + H₂ → Cu + H₂O, which substance acts as the reducing agent?",
+   "answers": [
+    "Hydrogen (H₂)",
+    "Copper(II) oxide (CuO)",
+    "Metallic copper (Cu)",
+    "Water (H₂O)"
+   ],
+   "correct": 0,
+   "explanation": "Hydrogen gains oxygen (is oxidised to H₂O), thereby causing the reduction of CuO to Cu. Therefore, H₂ is the reducing agent."
+  },
+  "safety": "Hydrogen gas mixed with air can be explosive. Ensure complete air displacement before heating the combustion tube. Use heat-resistant gloves."
+ },
+ {
+  "id": "10.2.1",
+  "title": "Testing Acids and Bases Using Indicators",
+  "scene": "indicators",
+  "chapter": "10.2",
+  "chapterTitle": "Acids, Bases & Salts",
+  "subject": "Chemistry",
+  "apparatus": "Porcelain spot plate, droppers, test tubes, dil. HCl, dil. NaOH, red & blue litmus papers, phenolphthalein, methyl orange, turmeric paper.",
+  "steps": [
+   "Place 4 drops of acid (HCl) and alkali (NaOH) into separate spot plate cavities.",
+   "Add blue and red litmus solutions; record color transitions.",
+   "Add 1 drop of phenolphthalein indicator to both test wells.",
+   "Add 1 drop of methyl orange indicator and compare against natural turmeric extract."
+  ],
+  "observation": "In acid: Blue litmus→Red; Phenolphthalein→Colorless; Methyl orange→Red; Turmeric→Yellow. In base: Red litmus→Blue; Phenolphthalein→Vivid pink; Methyl orange→Yellow; Turmeric→Reddish-brown.",
+  "concept": "Indicators are weak organic acids or bases whose conjugated forms exhibit different electronic absorption spectra and colors depending on hydronium ion concentration [H₃O⁺].",
+  "equation": "HIn(aq) [Color A] + H₂O(l) ⇌ In⁻(aq) [Color B] + H₃O⁺(aq)",
+  "control": {
+   "label": "Solution pH",
+   "min": 1,
+   "max": 14,
+   "step": 1,
+   "value": 3,
+   "unit": "pH"
+  },
+  "quiz": {
+   "question": "What color does phenolphthalein turn when added to an aqueous sodium hydroxide solution?",
+   "answers": [
+    "Deep pink / magenta",
+    "Colorless",
+    "Brick red",
+    "Bright yellow"
+   ],
+   "correct": 0,
+   "explanation": "In alkaline media (pH > 8.3), phenolphthalein deprotonates into its quinoid dianion form, displaying an intense pink/magenta coloration."
+  },
+  "safety": "Dilute acids and alkalis can irritate skin and eyes. Flush immediately with copious running water if contact occurs."
+ },
+ {
+  "id": "10.2.2",
+  "title": "Chemical Properties of Acids and Bases",
+  "scene": "acidbase",
+  "chapter": "10.2",
+  "chapterTitle": "Acids, Bases & Salts",
+  "subject": "Chemistry",
+  "apparatus": "Woulfe's bottle, thistle funnel, delivery tube, test tubes, zinc granules, sodium carbonate Na₂CO₃, freshly prepared limewater Ca(OH)₂, dil. HCl, dil. NaOH.",
+  "steps": [
+   "Mode 1 (Metal + Acid): Treat zinc granules with dilute HCl; route evolved gas through soap solution and ignite bubbles.",
+   "Mode 2 (Carbonate + Acid): Add dilute HCl to sodium carbonate; pass evolved gas into clear limewater.",
+   "Mode 3 (Neutralisation): Titrate dilute HCl into dilute NaOH with phenolphthalein until pink just discharges."
+  ],
+  "observation": "Metal+acid evolves combustible H₂ gas (pops with flame). Carbonate+acid evolves CO₂ which turns limewater milky (CaCO₃ precipitate). Neutralisation generates heat and forms NaCl salt solution.",
+  "concept": "Acids react with active metals to liberate H₂, with metal carbonates to evolve CO₂, and with bases in an exothermic neutralization to produce a salt and water.",
+  "equation": "Zn + 2HCl → ZnCl₂ + H₂↑  ;  Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂↑  ;  HCl + NaOH → NaCl + H₂O",
+  "control": {
+   "label": "Experiment mode",
+   "min": 1,
+   "max": 3,
+   "step": 1,
+   "value": 1,
+   "unit": "test"
+  },
+  "quiz": {
+   "question": "Why does clear limewater turn milky when carbon dioxide is bubbled through it?",
+   "answers": [
+    "Formation of insoluble white calcium carbonate (CaCO₃)",
+    "Formation of soluble calcium bicarbonate",
+    "Precipitation of calcium chloride",
+    "Oxidation of calcium hydroxide to quicklime"
+   ],
+   "correct": 0,
+   "explanation": "CO₂ reacts with aqueous Ca(OH)₂ to form microcrystalline, insoluble calcium carbonate (CaCO₃↓), giving a milky suspension."
+  },
+  "safety": "Gas evolution can cause liquid splashing. Secure all stoppers and thistle funnels below the liquid line."
+ },
+ {
+  "id": "10.2.3",
+  "title": "Estimating pH with Universal Indicator",
+  "scene": "phscale",
+  "chapter": "10.2",
+  "chapterTitle": "Acids, Bases & Salts",
+  "subject": "Chemistry",
+  "apparatus": "Universal indicator solution, pH paper strips, standard color comparison chart, spot plate, droppers, samples: gastric juice, lemon, pure water, blood, milk of magnesia, NaOH.",
+  "steps": [
+   "Spot representative test solutions onto dry universal indicator test strips.",
+   "Match the developed test color against the calibrated 14-step NCERT/CBSE reference spectrum.",
+   "Correlate color to quantitative pH value and hydronium concentration [H⁺].",
+   "Classify sample as strongly acidic, weakly acidic, neutral, weakly basic, or strongly basic."
+  ],
+  "observation": "Lemon juice turns red (pH ~2.2); saliva before meal turns green (pH ~7.4); pure water turns yellow-green (pH 7.0); milk of magnesia turns blue (pH ~10.5); 1M NaOH turns deep violet (pH 14).",
+  "concept": "pH is a logarithmic measure of hydronium ion activity: pH = −log₁₀[H₃O⁺]. Values < 7 denote acidity, 7 is neutral (at 25°C), and > 7 denote basicity.",
+  "equation": "pH = −log₁₀[H₃O⁺]  ;  [H₃O⁺][OH⁻] = 1.0 × 10⁻¹⁴ (at 25°C)",
+  "control": {
+   "label": "Sample pH",
+   "min": 0,
+   "max": 14,
+   "step": 1,
+   "value": 7,
+   "unit": "pH"
+  },
+  "quiz": {
+   "question": "A sample solution turns universal indicator paper dark blue (pH ~ 10). What is the nature of this solution?",
+   "answers": [
+    "Mild base (e.g., antacid / milk of magnesia)",
+    "Strong acid",
+    "Neutral liquid",
+    "Concentrated sulphuric acid"
+   ],
+   "correct": 0,
+   "explanation": "pH 10 corresponds to a mildly alkaline solution rich in OH⁻ ions, typical of antacids such as magnesium hydroxide."
+  },
+  "safety": "Do not taste or touch unknown chemical solutions to test acidity or basicity. Always use indicator strips."
+ },
+ {
+  "id": "10.2.4",
+  "title": "Identifying Bleaching Powder, Baking Soda and Washing Soda",
+  "scene": "powders",
+  "chapter": "10.2",
+  "chapterTitle": "Acids, Bases & Salts",
+  "subject": "Chemistry",
+  "apparatus": "Three unlabelled white salts (A, B, C), watch glasses, test tubes, burner, red rose petals / ink, dilute HCl, phenolphthalein, thermometer.",
+  "steps": [
+   "Smell & Air Exposure: Check sample for pungent chlorine odour (CaOCl₂).",
+   "Decolourisation Test: Add sample solution to colored rose petals or diluted ink to check bleaching action.",
+   "Thermal Test: Heat dry powder in a boiling tube and check for gas evolution (NaHCO₃ decomposes to CO₂ + H₂O).",
+   "Dissolution Calorimetry: Dissolve sample in water and record temperature change (Na₂CO₃·10H₂O dissolves)."
+  ],
+  "observation": "Bleaching powder smells of Cl₂ and rapidly bleaches rose petals. Baking soda releases CO₂ on heating with minimal temp change. Washing soda dissolves in water and turns phenolphthalein pink.",
+  "concept": "Visually indistinguishable white salts can be unambiguously classified by diagnostic chemical behaviors: oxidative bleaching, thermal decarboxylation, and enthalpy of hydration.",
+  "equation": "CaOCl₂ + 2HCl → CaCl₂ + H₂O + Cl₂↑  ;  2NaHCO₃ ─(Δ)→ Na₂CO₃ + H₂O + CO₂↑",
+  "control": {
+   "label": "Salt sample",
+   "min": 1,
+   "max": 3,
+   "step": 1,
+   "value": 1,
+   "unit": "sample"
+  },
+  "quiz": {
+   "question": "Which white household salt decomposes upon heating to yield sodium carbonate, carbon dioxide, and water vapor?",
+   "answers": [
+    "Baking soda (NaHCO₃)",
+    "Bleaching powder (CaOCl₂)",
+    "Washing soda (Na₂CO₃·10H₂O)",
+    "Plaster of Paris (CaSO₄·½H₂O)"
+   ],
+   "correct": 0,
+   "explanation": "Baking soda (sodium hydrogen carbonate) decomposes on mild heating: 2NaHCO₃ → Na₂CO₃ + H₂O + CO₂↑."
+  },
+  "safety": "Bleaching powder emits irritating chlorine gas. Avoid direct inhalation. Handle with clean spatula."
+ },
+ {
+  "id": "10.2.5",
+  "title": "Water of Crystallisation in Copper Sulphate",
+  "scene": "hydration",
+  "chapter": "10.2",
+  "chapterTitle": "Acids, Bases & Salts",
+  "subject": "Chemistry",
+  "apparatus": "Dry boiling tube, test tube holder, bunsen burner, crystalline blue copper sulphate (CuSO₄·5H₂O), dropper, distilled water.",
+  "steps": [
+   "Place 2 g of crystalline blue copper sulphate into a completely dry test tube.",
+   "Clamp and heat gently over bunsen flame; observe color transition from bottom up.",
+   "Inspect cooler upper neck of the test tube for condensing transparent liquid droplets.",
+   "Remove from flame, let cool, and add 2–3 drops of water with a dropper onto the white anhydrous residue."
+  ],
+  "observation": "Blue crystals turn into a powdery white anhydrous solid while water droplets condense near the tube mouth. Adding water immediately restores the vibrant royal blue color with heat sizzle.",
+  "concept": "Water of crystallisation refers to fixed stoichiometric water molecules coordinated inside the crystal lattice. Removal by heat collapses the chromophore crystal field; rehydration reconstitutes the blue pentaaqua complex.",
+  "equation": "CuSO₄·5H₂O(s) [Blue] ⇌ CuSO₄(s) [White] + 5H₂O(g) [Condensed droplets]",
+  "control": {
+   "label": "Thermal dehydration",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 35,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "How many water molecules are stoichiometrically present as water of crystallisation in one formula unit of blue vitriol?",
+   "answers": [
+    "5 molecules",
+    "2 molecules",
+    "7 molecules",
+    "10 molecules"
+   ],
+   "correct": 0,
+   "explanation": "Blue copper sulphate is a pentahydrate: CuSO₄·5H₂O, containing five coordinated water molecules per formula unit."
+  },
+  "safety": "Point mouth of test tube away from yourself and others during heating to prevent hot condensate or powder ejection."
+ },
+ {
+  "id": "10.2.6",
+  "title": "Sulphur Dioxide and Its Properties",
+  "scene": "sulphurdioxide",
+  "chapter": "10.2",
+  "chapterTitle": "Acids, Bases & Salts",
+  "subject": "Chemistry",
+  "apparatus": "Round-bottom flask, dropping funnel, delivery tube, gas jars, sodium sulphite Na₂SO₃, conc. H₂SO₄, moist blue litmus, acidified potassium dichromate K₂Cr₂O₇.",
+  "steps": [
+   "Generate SO₂ by reacting sodium sulphite with concentrated sulphuric acid.",
+   "Pass gas into gas jar containing moist blue litmus paper.",
+   "Bubble SO₂ into a test tube containing orange acidified potassium dichromate solution.",
+   "Bubble SO₂ into water and verify the formation of sulphurous acid (H₂SO₃)."
+  ],
+  "observation": "Moist blue litmus turns red and then bleaches slowly. Orange acidified potassium dichromate turns brilliant emerald green (Cr³⁺ formed).",
+  "concept": "Sulphur dioxide is a non-metallic acidic oxide that dissolves in water to form sulphurous acid. It acts as a powerful reducing agent, reducing orange hexavalent Cr(VI) to green trivalent Cr(III).",
+  "equation": "SO₂(g) + H₂O(l) ⇌ H₂SO₃(aq)  ;  K₂Cr₂O₇ + 3SO₂ + H₂SO₄ → K₂SO₄ + Cr₂(SO₄)₃ + H₂O",
+  "control": {
+   "label": "Gas delivery rate",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 45,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "What is the cause of the color change when SO₂ gas is bubbled into acidified potassium dichromate?",
+   "answers": [
+    "Reduction of orange Cr₂O₇²⁻ to green Cr³⁺",
+    "Precipitation of yellow sulphur",
+    "Oxidation of sulphur to sulphate ion",
+    "Neutralisation by chromic acid"
+   ],
+   "correct": 0,
+   "explanation": "SO₂ acts as a reducing agent: dichromate Cr(VI) is reduced to green chromium(III) sulphate Cr₂(SO₄)₃."
+  },
+  "safety": "Sulphur dioxide is a toxic, suffocating irritant gas that triggers respiratory distress. Always use a closed gas delivery apparatus inside an active fume cupboard."
+ },
+ {
+  "id": "10.3.1",
+  "title": "Physical Properties of Metals and Non-metals",
+  "scene": "metalprops",
+  "chapter": "10.3",
+  "chapterTitle": "Metals & Non-metals",
+  "subject": "Chemistry",
+  "apparatus": "Samples of copper, aluminium, iron, sulphur, coal/carbon, iodine, sandpaper, steel hammer, anvil, battery-bulb testing circuit, acoustic striker.",
+  "steps": [
+   "Station 1 (Lustre): Rub surface of metal and non-metal samples with sandpaper; check for metallic lustre.",
+   "Station 2 (Malleability): Place sample on anvil and strike with heavy hammer; check if it flattens into sheet or shatters.",
+   "Station 3 (Electrical Conduction): Insert sample between circuit alligator clips and observe bulb illumination."
+  ],
+  "observation": "Metals (Cu, Al, Fe) show bright metallic lustre, flatten into thin sheets without breaking (malleable), and conduct electricity with bright bulb glow. Sulphur and coal are dull, brittle, shatter upon impact, and do not conduct.",
+  "concept": "Metallic bonding features delocalised conduction electrons yielding high electrical/thermal conductivity, metallic lustre, malleability, and ductility. Non-metals feature localized covalent or van der Waals bonds.",
+  "equation": "Metallic lattice: [M⁺ cations] in delocalised 'electron sea' → high mobile charge carrier density",
+  "control": {
+   "label": "Testing station",
+   "min": 1,
+   "max": 3,
+   "step": 1,
+   "value": 1,
+   "unit": "station"
+  },
+  "quiz": {
+   "question": "Which non-metal is an exceptional electrical conductor due to its delocalised π-electron sheet structure?",
+   "answers": [
+    "Graphite (allotrope of carbon)",
+    "Diamond",
+    "Sulphur",
+    "Phosphorus"
+   ],
+   "correct": 0,
+   "explanation": "Graphite has sp² hybridized carbon atoms arranged in hexagonal layers with free delocalized π electrons that move freely along sheets."
+  },
+  "safety": "Wear safety goggles during hammering tests to guard against flying brittle fragments of non-metals."
+ },
+ {
+  "id": "10.3.2",
+  "title": "Reactions of Metals with Air, Water and Acids",
+  "scene": "metalreact",
+  "chapter": "10.3",
+  "chapterTitle": "Metals & Non-metals",
+  "subject": "Chemistry",
+  "apparatus": "Troughs, boiling tubes, delivery tube, wire gauze, metals: K, Na, Ca, Mg, Al, Zn, Fe, Cu, cold water, hot water, steam generator, dilute HCl.",
+  "steps": [
+   "Test 1: React small piece of metal with cold water; observe reaction vigour, temperature, and gas evolution.",
+   "Test 2: Test unreactive metals (Mg, Al, Zn, Fe) with steam passed over heated metal.",
+   "Test 3: Treat metal strips with dilute HCl; measure rate of hydrogen gas bubble evolution.",
+   "Construct a comparative reactivity series based on observed reaction kinetics."
+  ],
+  "observation": "Na/K react violently with cold water, catching fire. Ca reacts briskly and floats on H₂ bubbles. Mg reacts with hot water. Zn & Fe react only with steam. Cu does not react with water or dilute non-oxidising acids.",
+  "concept": "Metals differ in their electropositive tendency to lose electrons. High-reactivity metals displace hydrogen readily from cold water; intermediate metals require steam or acid; unreactive metals do not liberate H₂.",
+  "equation": "2Na + 2H₂O → 2NaOH + H₂↑  ;  Mg + 2HCl → MgCl₂ + H₂↑  ;  Cu + HCl(dil.) → No Reaction",
+  "control": {
+   "label": "Metal choice (1:Mg → 5:Cu)",
+   "min": 1,
+   "max": 5,
+   "step": 1,
+   "value": 1,
+   "unit": "metal"
+  },
+  "quiz": {
+   "question": "Why does metallic copper fail to displace hydrogen gas from dilute hydrochloric acid?",
+   "answers": [
+    "Copper has lower reduction potential than hydrogen (lies below hydrogen in reactivity series)",
+    "Copper has a protective oxide film",
+    "Hydrochloric acid is an oxidising acid",
+    "Copper is an amphoteric metal"
+   ],
+   "correct": 0,
+   "explanation": "Copper has a positive standard reduction potential (+0.34 V vs SHE) and lies below hydrogen in the reactivity series, making it unable to reduce H⁺ to H₂."
+  },
+  "safety": "Sodium and potassium react explosively with water. Use minute rice-grain sized pieces with protective safety shields."
+ },
+ {
+  "id": "10.3.3",
+  "title": "Displacement and Reactivity Order of Metals",
+  "scene": "displacement",
+  "chapter": "10.3",
+  "chapterTitle": "Metals & Non-metals",
+  "subject": "Chemistry",
+  "apparatus": "Test tube rack, strips of Mg, Al, Zn, Cu, solutions of MgSO₄, Al₂(SO₄)₃, ZnSO₄, FeSO₄, CuSO₄.",
+  "steps": [
+   "Clean metal strips with sandpaper to strip passive oxide passivating films.",
+   "Immerse zinc strip into blue CuSO₄ solution; record changes to strip and solution color.",
+   "Immerse copper strip into colorless ZnSO₄ solution; inspect for any changes.",
+   "Test all permutations systematically and establish the relative displacement hierarchy."
+  ],
+  "observation": "Zn immersed in CuSO₄ rapidly becomes coated with reddish-brown copper while blue solution turns colorless ZnSO₄. Conversely, Cu in ZnSO₄ shows zero reaction.",
+  "concept": "A more reactive metal has a greater oxidation potential and displaces a less reactive metal from its aqueous salt solution: Reactivity hierarchy: Mg > Al > Zn > Fe > Cu.",
+  "equation": "Zn(s) + CuSO₄(aq) [Blue] → ZnSO₄(aq) [Colorless] + Cu(s) [Red-brown deposit]",
+  "control": {
+   "label": "Immersed metal (1:Mg 2:Al 3:Zn 4:Cu)",
+   "min": 1,
+   "max": 4,
+   "step": 1,
+   "value": 3,
+   "unit": "metal"
+  },
+  "quiz": {
+   "question": "What happens when a polished strip of metallic copper is placed into an aqueous solution of zinc sulphate (ZnSO₄)?",
+   "answers": [
+    "No reaction takes place",
+    "Zinc deposits onto copper",
+    "Solution turns bright blue",
+    "Hydrogen gas bubbles violently"
+   ],
+   "correct": 0,
+   "explanation": "Copper is lower in the reactivity series than zinc, so it cannot displace zinc ions from ZnSO₄."
+  },
+  "safety": "Wash hands after handling heavy metal salt solutions. Wear eye protection."
+ },
+ {
+  "id": "10.3.4",
+  "title": "Solubility of Ionic Compounds",
+  "scene": "solubility",
+  "chapter": "10.3",
+  "chapterTitle": "Metals & Non-metals",
+  "subject": "Chemistry",
+  "apparatus": "Beakers, stirring rods, spatula, sodium chloride NaCl, copper sulphate CuSO₄, distilled water (polar), kerosene / petrol (non-polar).",
+  "steps": [
+   "Add 2 g of NaCl to 50 mL of polar distilled water; stir and inspect dissolution.",
+   "Add 2 g of NaCl to 50 mL of non-polar kerosene; stir and inspect dissolution.",
+   "Repeat comparative test with blue copper sulphate crystals.",
+   "Examine molecular hydration sphere mechanism in microscopic view."
+  ],
+  "observation": "The tested soluble salts dissolve in water and are much less soluble in kerosene; solubility depends on the specific compound.",
+  "concept": "Like dissolves like. Water's high dielectric constant and strong dipole-ion hydration enthalpy overcome the crystal lattice energy of ionic compounds. Non-polar solvents lack dipoles to stabilize separated ions.",
+  "equation": "NaCl(s) + (x+y)H₂O → Na⁺(H₂O)ₓ + Cl⁻(H₂O)ᵧ  [ΔH_hydration > ΔH_lattice]",
+  "control": {
+   "label": "Solvent (0:Water 1:Kerosene)",
+   "min": 0,
+   "max": 1,
+   "step": 1,
+   "value": 0,
+   "unit": "type"
+  },
+  "quiz": {
+   "question": "Why do ionic compounds dissolve readily in water but not in non-polar organic solvents like petrol or kerosene?",
+   "answers": [
+    "Water dipoles provide high hydration energy that overcomes ionic lattice energy",
+    "Ionic bonds are destroyed by organic liquids",
+    "Kerosene has higher boiling point",
+    "Water is non-polar"
+   ],
+   "correct": 0,
+   "explanation": "Water is a polar solvent with a high dielectric constant (ε ≈ 80). Dissolution depends on the combined effects of lattice interactions, hydration and entropy. NaCl dissolves in water but poorly in kerosene."
+  },
+  "safety": "Kerosene and petrol are volatile flammable organic hydrocarbons. Keep strictly away from naked flames."
+ },
+ {
+  "id": "10.3.5",
+  "title": "Electrical Conduction by Ionic Solutions",
+  "scene": "ionicconduct",
+  "chapter": "10.3",
+  "chapterTitle": "Metals & Non-metals",
+  "subject": "Chemistry",
+  "apparatus": "Beaker, carbon / graphite electrodes, 6V DC battery, 6V filament bulb, switch, ammeter, solid NaCl crystals, distilled water, aqueous NaCl, glucose solution.",
+  "steps": [
+   "Test 1: Insert electrodes into dry, solid NaCl crystals; close switch and inspect bulb.",
+   "Test 2: Test pure distilled water alone (control).",
+   "Test 3: Dissolve NaCl in the water; close switch and observe bulb brightness and ammeter needle.",
+   "Test 4: Switch to non-electrolyte glucose solution for comparison."
+  ],
+  "observation": "Dry solid NaCl does not conduct electricity (bulb stays dark). Aqueous NaCl solution conducts vigorously: bulb shines brightly and ammeter shows strong current. Pure glucose does not conduct.",
+  "concept": "Solid ionic salts have ions rigidly locked in a crystalline lattice with zero mobility. In aqueous solution or molten state, the lattice dissolves into free-moving solvated cations and anions that transport electric current.",
+  "equation": "NaCl(s) → Na⁺(aq) + Cl⁻(aq)  ;  I = q / t = (n_+ v_+ + n_- v_-) · e · A",
+  "control": {
+   "label": "Electrolyte concentration",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 55,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "Why does solid sodium chloride fail to conduct electricity, while its aqueous solution conducts readily?",
+   "answers": [
+    "Ions are immobilized in the solid lattice but become freely mobile in aqueous solution",
+    "Solid NaCl has no electrons",
+    "Solid NaCl is a covalent molecular solid",
+    "Water donates electrons to the circuit"
+   ],
+   "correct": 0,
+   "explanation": "Electrical conduction through electrolytes requires mobile charge carriers. In solid NaCl, Na⁺ and Cl⁻ ions are held tightly in lattice positions; in water, they dissociate into mobile charge carriers."
+  },
+  "safety": "Do not touch live bare electrodes while circuit is energized. Use safe low-voltage DC power packs (< 12V)."
+ },
+ {
+  "id": "10.3.6",
+  "title": "Conditions Needed for Rusting",
+  "scene": "rusting",
+  "chapter": "10.3",
+  "chapterTitle": "Metals & Non-metals",
+  "subject": "Chemistry",
+  "apparatus": "Three clean test tubes (A, B, C), rubber stoppers, polished iron nails, tap water, boiled deoxygenated distilled water, vegetable oil, anhydrous calcium chloride CaCl₂.",
+  "steps": [
+   "Tube A: Place nails partially submerged in normal tap water with open air headspace (Air + Moisture).",
+   "Tube B: Place nails in boiled deoxygenated water covered with a 1 cm insulating oil layer (Moisture, No Oxygen).",
+   "Tube C: Place nails in dry air over anhydrous CaCl₂ desiccant, sealed with rubber stopper (Oxygen, No Moisture).",
+   "Leave for 7 days and inspect corrosion extent on all three nail sets."
+  ],
+  "observation": "Nails in Tube A rust heavily with thick reddish-brown flaky hydrated iron(III) oxide. Nails in Tube B and Tube C remain completely pristine and rust-free.",
+  "concept": "Corrosion (rusting) of iron is an electrochemical redox process that strictly requires the simultaneous presence of both oxygen and liquid water / moisture.",
+  "equation": "4Fe(s) + 3O₂(g) + 2xH₂O(l) → 2Fe₂O₃·xH₂O(s) [Hydrated Ferric Oxide / Rust]",
+  "control": {
+   "label": "Elapsed time",
+   "min": 0,
+   "max": 10,
+   "step": 1,
+   "value": 5,
+   "unit": "days"
+  },
+  "quiz": {
+   "question": "What is the purpose of adding a layer of oil on top of boiled distilled water in Test Tube B?",
+   "answers": [
+    "To prevent atmospheric oxygen from redissolving into the deoxygenated water",
+    "To keep the iron nail lubricated",
+    "To chemically react with iron to form a protective coat",
+    "To absorb water vapor"
+   ],
+   "correct": 0,
+   "explanation": "Boiling expels dissolved air/oxygen; the immiscible oil layer acts as an impermeable barrier preventing atmospheric oxygen from dissolving back in."
+  },
+  "safety": "Handle iron nails carefully to prevent puncture injuries. Ensure anhydrous CaCl₂ does not contact skin."
+ },
+ {
+  "id": "10.4.1",
+  "title": "Properties of Ethanoic Acid",
+  "scene": "ethanoic",
+  "chapter": "10.4",
+  "chapterTitle": "Carbon & Its Compounds",
+  "subject": "Chemistry",
+  "apparatus": "Test tubes, dropper, glacial ethanoic acid CH₃COOH, blue & red litmus, sodium bicarbonate NaHCO₃, delivery tube, freshly prepared limewater Ca(OH)₂.",
+  "steps": [
+   "Odour & Physical State: Smell vapors carefully using wafting motion; note vinegar smell and freezing point.",
+   "Litmus Test: Add a drop of ethanoic acid to moist blue litmus paper.",
+   "Reaction with Bicarbonate: Add 1 g of NaHCO₃ to 2 mL ethanoic acid; observe brisk effervescence.",
+   "Gas Confirmation: Route evolved gas into limewater and verify turbidity."
+  ],
+  "observation": "Ethanoic acid has a sharp vinegar odor, turns blue litmus red (weak acid), and reacts briskly with NaHCO₃ to liberate CO₂ gas which turns limewater milky.",
+  "concept": "Ethanoic acid (acetic acid) is a monocarboxylic organic weak acid (pKa ≈ 4.76). It partially ionizes in water and reacts with carbonates to produce sodium ethanoate, CO₂, and H₂O.",
+  "equation": "CH₃COOH(aq) + NaHCO₃(s) → CH₃COONa(aq) + H₂O(l) + CO₂↑(g)",
+  "control": {
+   "label": "Added bicarbonate",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 50,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "What common culinary substance is a 5% to 8% aqueous solution of ethanoic acid?",
+   "answers": [
+    "Vinegar",
+    "Baking powder",
+    "Spirit of salt",
+    "Formic acid"
+   ],
+   "correct": 0,
+   "explanation": "Vinegar is fundamentally a 5%–8% aqueous solution of ethanoic (acetic) acid, used widely as a food preservative."
+  },
+  "safety": "Glacial ethanoic acid is concentrated and can cause skin blisters. Never inhale vapors directly; waft gently."
+ },
+ {
+  "id": "10.4.2",
+  "title": "Making an Ester: Esterification",
+  "scene": "ester",
+  "chapter": "10.4",
+  "chapterTitle": "Carbon & Its Compounds",
+  "subject": "Chemistry",
+  "apparatus": "Boiling tube, beaker water bath, tripod, wire gauze, burner, absolute ethanol C₂H₅OH, glacial ethanoic acid CH₃COOH, concentrated sulphuric acid H₂SO₄, beaker with water.",
+  "steps": [
+   "In a boiling tube, mix 2 mL absolute ethanol and 2 mL glacial ethanoic acid.",
+   "Carefully add 4 drops of concentrated sulphuric acid catalyst.",
+   "Immerse tube in a warm water bath (60–70°C) for 5 minutes (never heat directly on naked flame).",
+   "Pour reaction mixture into a beaker containing 20 mL cold water and sniff vapors."
+  ],
+  "observation": "An immiscible oily layer separates on top of water with a distinct, pleasant, sweet fruity aroma characteristic of ethyl ethanoate ester.",
+  "concept": "Esterification is an acid-catalysed reversible condensation reaction between a carboxylic acid and an alcohol yielding an ester and water.",
+  "equation": "CH₃COOH(l) + C₂H₅OH(l) ⇌(conc. H₂SO₄, Δ)⇌ CH₃COOC₂H₅(l) [Ethyl Ethanoate] + H₂O(l)",
+  "control": {
+   "label": "Reaction progress",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 55,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "What is the dual role of concentrated sulphuric acid in the esterification reaction?",
+   "answers": [
+    "Acid catalyst and dehydrating agent",
+    "Reducing agent and solvent",
+    "Neutraliser and indicator",
+    "Oxidising agent only"
+   ],
+   "correct": 0,
+   "explanation": "Conc. H₂SO₄ acts as a proton-donating catalyst and as a dehydrating agent that removes water, shifting equilibrium forward by Le Chatelier's principle."
+  },
+  "safety": "Ethanol is highly flammable. Never heat ethanol directly over a burner flame; always use an indirect hot water bath."
+ },
+ {
+  "id": "10.4.3",
+  "title": "Oxidation of Ethanol with Permanganate",
+  "scene": "ethanoloxidation",
+  "chapter": "10.4",
+  "chapterTitle": "Carbon & Its Compounds",
+  "subject": "Chemistry",
+  "apparatus": "Boiling tube, water bath, burner, ethanol C₂H₅OH, alkaline potassium permanganate KMnO₄ solution (1% in NaOH), dropper, blue litmus paper.",
+  "steps": [
+   "Take 3 mL of ethanol in a test tube and warm gently in a water bath.",
+   "Add alkaline KMnO₄ drop-by-drop with continuous shaking.",
+   "Observe rapid discharge of deep purple color on initial drops.",
+   "Continue adding excess drops until purple color persists, indicating oxidation completion."
+  ],
+  "observation": "The deep purple permanganate color discharges instantly initially as ethanol oxidises. Excess drops retain color; the mixture develops the sharp vinegar smell of ethanoic acid and turns blue litmus red.",
+  "concept": "Alkaline potassium permanganate is a powerful oxidising agent that oxidises primary alcohols into carboxylic acids by donating nascent oxygen.",
+  "equation": "CH₃CH₂OH(l) + 2[O] ─(alkaline KMnO₄, Δ)→ CH₃COOH(l) + H₂O(l)",
+  "control": {
+   "label": "Oxidant addition",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 45,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "What is the organic product formed when ethanol is heated with alkaline potassium permanganate?",
+   "answers": [
+    "Ethanoic acid (CH₃COOH)",
+    "Ethene (C₂H₄)",
+    "Methanoic acid (HCOOH)",
+    "Diethyl ether (C₂H₅OC₂H₅)"
+   ],
+   "correct": 0,
+   "explanation": "Alkaline KMnO₄ oxidises primary alcohols completely into corresponding carboxylic acids: ethanol yields ethanoic acid."
+  },
+  "safety": "Potassium permanganate stains skin and clothes dark brown (MnO₂). Wear gloves and wash splashes promptly."
+ },
+ {
+  "id": "10.4.4",
+  "title": "Soap versus Detergent in Hard Water",
+  "scene": "hardwater",
+  "chapter": "10.4",
+  "chapterTitle": "Carbon & Its Compounds",
+  "subject": "Chemistry",
+  "apparatus": "Two identical graduated test tubes, hard water (distilled water + 0.1M CaCl₂ / MgSO₄), soap solution, synthetic detergent solution, ruler.",
+  "steps": [
+   "Fill Test Tube A and B with 10 mL of hard water containing Ca²⁺/Mg²⁺ ions.",
+   "Add 5 drops of soap solution to Tube A and 5 drops of synthetic detergent solution to Tube B.",
+   "Shake both tubes with equal vigor for 15 seconds.",
+   "Measure foam height and inspect for insoluble curdy precipitate (scum)."
+  ],
+  "observation": "Tube A (Soap): minimal foam, cloudy liquid with a thick, insoluble white curdy precipitate (scum). Tube B (Detergent): rich, copious, long-lasting lather column with zero scum.",
+  "concept": "Soap anions precipitate with divalent Ca²⁺/Mg²⁺ cations into insoluble calcium/magnesium stearate scum. Synthetic detergents possess sulphonate/sulphate head groups whose calcium salts remain water-soluble.",
+  "equation": "2C₁₇H₃₅COO⁻Na⁺ + Ca²⁺ → (C₁₇H₃₅COO)₂Ca↓ [Insoluble Scum] + 2Na⁺",
+  "control": {
+   "label": "Detergent concentration",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 50,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "Why do synthetic detergents clean effectively even in hard water, unlike ordinary soaps?",
+   "answers": [
+    "Their calcium and magnesium salts are water-soluble",
+    "They are made of pure fats",
+    "They are highly acidic",
+    "They destroy calcium ions"
+   ],
+   "correct": 0,
+   "explanation": "Detergents are sodium salts of alkylbenzenesulphonic acids; their Ca²⁺ and Mg²⁺ salts do not precipitate as scum but remain soluble in water."
+  },
+  "safety": "Avoid splashing soapy or detergent solutions into eyes; rinse thoroughly with clean water if contacted."
+ },
+ {
+  "id": "10.4.5",
+  "title": "Soap Lather in Soft and Hard Water",
+  "scene": "soapwater",
+  "chapter": "10.4",
+  "chapterTitle": "Carbon & Its Compounds",
+  "subject": "Chemistry",
+  "apparatus": "Graduated measuring cylinders, distilled water (soft), tap/well water (hard water), standardized soap solution, stopwatch, ruler.",
+  "steps": [
+   "Pour 20 mL distilled water into Tube 1 and 20 mL hard water into Tube 2.",
+   "Add exactly 1 mL soap solution to each tube.",
+   "Stopper both tubes and shake simultaneously for 20 seconds.",
+   "Measure initial foam height and record foam persistence time over 5 minutes."
+  ],
+  "observation": "Distilled water produces a tall (8 cm) dense, stable lather with zero scum. Hard water yields a thin, transient foam (1.5 cm) that collapses quickly beneath curdy scum flakes.",
+  "concept": "Water hardness consumes soap molecules stoichiometrically before any lather can be generated. Soft water enables soap molecules to freely populate the air-water interface to stabilize bubbles and form micelles.",
+  "equation": "Micelle structure: Hydrophobic hydrocarbon tail oriented toward oil core; hydrophilic ionic head -COO⁻Na⁺ oriented outward into water",
+  "control": {
+   "label": "Water hardness",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 65,
+   "unit": "ppm"
+  },
+  "quiz": {
+   "question": "In a spherical soap micelle formed in water, how are the soap molecules oriented?",
+   "answers": [
+    "Hydrophobic tails point inwards toward grease, while hydrophilic heads point outwards into water",
+    "Hydrophilic heads point inwards while tails point outwards",
+    "Molecules align in flat sheets",
+    "Tails dissolve in water"
+   ],
+   "correct": 0,
+   "explanation": "The non-polar hydrophobic hydrocarbon tails sequester away from water into the micelle interior (dissolving grease), while polar carboxylate heads point outwards into the aqueous medium."
+  },
+  "safety": "Spilled soap solution makes laboratory floors slippery; wipe up spills immediately."
+ },
+ {
+  "id": "10.5.1",
+  "title": "Viewing Stomata Under a Microscope",
+  "scene": "stomata",
+  "chapter": "10.5",
+  "chapterTitle": "Life Processes",
+  "subject": "Biology",
+  "apparatus": "Fresh leaf of Tradescantia / Bryophyllum, forceps, watch glass, safranin stain, brush, glass slide, cover slip, glycerin, compound microscope (100x & 400x).",
+  "steps": [
+   "Tear leaf peel sharply to obtain thin, transparent lower epidermal layer.",
+   "Transfer peel to watch glass containing dilute safranin stain for 1 minute.",
+   "Mount in drop of glycerin on slide, cover with cover slip avoiding air bubbles.",
+   "Examine under 100x low power to count stomata, then 400x high power to inspect guard cells."
+  ],
+  "observation": "Numerous tiny stomatal apertures are visible. Each pore is flanked by two kidney-shaped guard cells containing distinct chloroplasts and a nucleus, surrounded by epidermal pavement cells.",
+  "concept": "Stomatal movement is driven by guard cell turgor pressure. Endosmosis inflates guard cells, causing the thin outer elastic wall to bulge outward, which pulls the thick inner concave wall open.",
+  "equation": "K⁺ influx + Endosmosis → Guard cell turgidity ↑ → Pore Opens  ;  K⁺ efflux + Exosmosis → Flaccidity → Pore Closes",
+  "control": {
+   "label": "Guard-cell turgor",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 70,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "What anatomical feature of guard cells causes the stomatal pore to curve open when turgor pressure increases?",
+   "answers": [
+    "The inner wall bordering the pore is thick and inelastic, while the outer wall is thin and elastic",
+    "Guard cells lack cell walls",
+    "Chloroplasts contract actively",
+    "Epidermal cells push them apart"
+   ],
+   "correct": 0,
+   "explanation": "Guard cell walls are differentially thickened: thin outer walls stretch and bulge outwards when turgid, mechanically pulling the rigid, thick inner walls apart."
+  },
+  "safety": "Handle glass slides and razor blades carefully to avoid cuts. Dispose of broken cover slips in glass bins."
+ },
+ {
+  "id": "10.5.2",
+  "title": "Light is Needed for Photosynthesis",
+  "scene": "photoleaf",
+  "chapter": "10.5",
+  "chapterTitle": "Life Processes",
+  "subject": "Biology",
+  "apparatus": "Potted destarched plant, black paper stencil, paper clips, 250 mL beaker, boiling tube, water bath, burner, ethanol, iodine solution, petri dish.",
+  "steps": [
+   "Destarch a potted plant by keeping it in complete darkness for 72 hours.",
+   "Fasten a black paper strip (with stencil cut-out) across both sides of a healthy leaf.",
+   "Expose plant to bright sunlight for 6 hours.",
+   "Pluck leaf, boil in water (kills cells), then boil in ethanol in a water bath to extract chlorophyll.",
+   "Rinse pale white leaf in warm water, spread in petri dish, and flood with dilute iodine solution."
+  ],
+  "observation": "Only the exposed portions of the leaf turn intense blue-black with iodine. The covered stencil area remains yellow-brown, confirming absence of starch.",
+  "concept": "Photons absorbed by chlorophyll drive photolysis of water and ATP/NADPH synthesis (light reactions). Without light energy, carbon fixation cannot occur and no reserve starch is synthesised.",
+  "equation": "6CO₂ + 6H₂O ─(Light, Chlorophyll)→ C₆H₁₂O₆ + 6O₂  ;  Starch + I₂/KI → Blue-black complex",
+  "control": {
+   "label": "Light exposure",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 70,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "Why is the green leaf boiled in ethanol inside a water bath before applying the iodine reagent?",
+   "answers": [
+    "To dissolve and remove green chlorophyll pigments so color changes can be observed clearly",
+    "To soften the cuticle",
+    "To synthesize glucose",
+    "To kill bacteria on leaf"
+   ],
+   "correct": 0,
+   "explanation": "Chlorophyll pigments mask colorimetric tests; boiling in ethanol extracts chlorophyll, turning the leaf pale white so the blue-black iodine-starch response is clearly visible."
+  },
+  "safety": "Ethanol is highly inflammable. Never boil ethanol directly on an open flame; always use an indirect water bath."
+ },
+ {
+  "id": "10.5.3",
+  "title": "Carbon Dioxide is Needed for Photosynthesis",
+  "scene": "photoco2",
+  "chapter": "10.5",
+  "chapterTitle": "Life Processes",
+  "subject": "Biology",
+  "apparatus": "Two destarched potted plants (A and B), two bell jars, glass plates, vaseline seal, watch glass with KOH pellets, iodine testing kit.",
+  "steps": [
+   "Destarch both potted plants in complete darkness for 3 days.",
+   "Place Plant A under Bell Jar A with a watch glass containing KOH pellets (absorbs CO₂).",
+   "Place Plant B under Bell Jar B with watch glass containing water (control with normal CO₂).",
+   "Seal bell jar rims to glass base plates airtight using petroleum jelly (vaseline).",
+   "Expose both setups to sunlight for 4 hours, then perform iodine starch test on leaves from both plants."
+  ],
+  "observation": "Leaf from Plant A (CO₂-depleted) shows no blue-black color (negative starch test). Leaf from Plant B (normal air) turns deep blue-black (positive starch test).",
+  "concept": "Carbon dioxide is the fundamental carbon substrate fixed during the Calvin-Benson cycle by RuBisCO into carbohydrates. In the absence of CO₂, photosynthesis ceases entirely.",
+  "equation": "2KOH(s) + CO₂(g) → K₂CO₃(s) + H₂O(l)  ;  6CO₂ + 12H₂O ─(hv)→ C₆H₁₂O₆ + 6O₂ + 6H₂O",
+  "control": {
+   "label": "Available CO₂",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 50,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "What is the chemical function of potassium hydroxide (KOH) inside Bell Jar A?",
+   "answers": [
+    "To chemically absorb all carbon dioxide from the enclosed atmosphere",
+    "To release oxygen into the air",
+    "To absorb moisture and dry the plant",
+    "To absorb sunlight"
+   ],
+   "correct": 0,
+   "explanation": "KOH is a strong alkaline absorbent that reacts with atmospheric CO₂ to form potassium carbonate (K₂CO₃), creating a CO₂-free microclimate."
+  },
+  "safety": "KOH pellets are caustic and cause severe chemical burns. Handle exclusively with plastic forceps."
+ },
+ {
+  "id": "10.5.4(a)",
+  "title": "Carbon Dioxide in Exhaled Air",
+  "scene": "breath",
+  "chapter": "10.5",
+  "chapterTitle": "Life Processes",
+  "subject": "Biology",
+  "apparatus": "Two test tubes (A and B), test tube rack, fresh limewater Ca(OH)₂, glass delivery straw, rubber picher syringe.",
+  "steps": [
+   "Fill Test Tube A and B with 10 mL of freshly prepared, clear, filtered limewater.",
+   "Tube A (Control): Use a rubber syringe to bubble atmospheric room air through the limewater.",
+   "Tube B (Exhaled air): Exhale gently through a clean straw into the limewater.",
+   "Compare the time required for visible turbidity/milkiness to develop in both tubes."
+  ],
+  "observation": "Tube B (exhaled air) turns distinctly milky within 10–15 seconds. Tube A (atmospheric air) remains clear for minutes, showing only faint cloudiness after prolonged pumping.",
+  "concept": "Cellular respiration produces carbon dioxide as a metabolic byproduct. Exhaled alveolar air contains ~4.4% CO₂ compared to only ~0.04% in atmospheric air.",
+  "equation": "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + 38 ATP  ;  CO₂ + Ca(OH)₂ → CaCO₃↓ [Milky] + H₂O",
+  "control": {
+   "label": "Exhalation rate",
+   "min": 1,
+   "max": 10,
+   "step": 1,
+   "value": 5,
+   "unit": "rate"
+  },
+  "quiz": {
+   "question": "Approximately what percentage of carbon dioxide is present in exhaled alveolar air versus inhaled atmospheric air?",
+   "answers": [
+    "4.4% exhaled vs 0.04% inhaled",
+    "21% exhaled vs 78% inhaled",
+    "50% exhaled vs 50% inhaled",
+    "0.04% exhaled vs 4.4% inhaled"
+   ],
+   "correct": 0,
+   "explanation": "Exhaled air contains about 4.4% CO₂ (over 100 times higher than the 0.04% in ambient air) due to cellular decarboxylation reactions."
+  },
+  "safety": "Do not suck in or swallow limewater while blowing through the straw. Exhale gently and continuously."
+ },
+ {
+  "id": "10.5.4(b)",
+  "title": "Respiration in Germinating Seeds",
+  "scene": "seedresp",
+  "chapter": "10.5",
+  "chapterTitle": "Life Processes",
+  "subject": "Biology",
+  "apparatus": "Conical flask, germinating gram/pea seeds, small test tube with 20% KOH solution, thread, delivery tube bent twice at right angles, beaker with colored water, vaseline.",
+  "steps": [
+   "Place moist, actively germinating gram seeds in a 250 mL conical flask.",
+   "Suspend a small test tube containing freshly prepared 20% KOH inside the flask with thread.",
+   "Insert airtight rubber stopper carrying a bent capillary tube dipping into colored water in a beaker.",
+   "Seal joints with petroleum jelly and record initial liquid level in the manometer tube.",
+   "Monitor liquid level rise in the capillary tube over 2 hours."
+  ],
+  "observation": "The colored water column in the delivery tube rises steadily up the capillary tube over time.",
+  "concept": "Germinating seeds respire aerobically, consuming oxygen gas. The CO₂ evolved is instantly absorbed by the suspended KOH pellets. This creates a net partial pressure deficit inside the sealed flask, sucking colored liquid inward.",
+  "equation": "O₂ consumed - CO₂ absorbed = Net Gas Volume Deficit → Negative Manometric Head ΔP",
+  "control": {
+   "label": "Respiration progress",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 55,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "Why does the colored water column rise in the delivery tube during the seed respiration experiment?",
+   "answers": [
+    "O₂ is consumed by seeds and evolved CO₂ is absorbed by KOH, reducing internal gas pressure",
+    "Seeds release oxygen gas",
+    "Temperature drops inside the flask",
+    "Seeds absorb water through the capillary tube"
+   ],
+   "correct": 0,
+   "explanation": "Seeds consume O₂ while all released CO₂ is absorbed by KOH. The total moles of gas in the sealed flask decrease, causing atmospheric pressure to push colored liquid up the tube."
+  },
+  "safety": "Ensure the suspended test tube of caustic KOH does not spill onto the germinating seeds."
+ },
+ {
+  "id": "10.5.5",
+  "title": "Carbon Dioxide from Anaerobic Respiration",
+  "scene": "fermentation",
+  "chapter": "10.5",
+  "chapterTitle": "Life Processes",
+  "subject": "Biology",
+  "apparatus": "Test tube, active baker's yeast Saccharomyces cerevisiae, 10% glucose solution, liquid paraffin oil (to seal air), delivery tube, limewater tube, water bath (35°C).",
+  "steps": [
+   "Mix 20 mL of 10% glucose solution with 2 g active dry yeast in a test tube.",
+   "Pour a 1 cm layer of liquid paraffin oil over the surface to prevent atmospheric oxygen ingress.",
+   "Fit a single-bore stopper with a delivery tube leading into a second tube containing limewater.",
+   "Place the setup in a warm water bath at 35°C and observe gas bubble evolution."
+  ],
+  "observation": "Vigorous gas bubbling occurs through the delivery tube, turning limewater milky. The fermentation mixture develops a characteristic alcoholic/yeasty aroma.",
+  "concept": "Under anaerobic conditions, yeast converts glucose enzymatically (glycolysis + alcoholic fermentation via pyruvate decarboxylase and alcohol dehydrogenase) into ethanol and carbon dioxide, releasing 2 ATP.",
+  "equation": "C₆H₁₂O₆ (Glucose) ─(Zymase complex)→ 2C₂H₅OH (Ethanol) + 2CO₂↑ + 2 ATP",
+  "control": {
+   "label": "Fermentation temperature",
+   "min": 10,
+   "max": 50,
+   "step": 1,
+   "value": 35,
+   "unit": "°C"
+  },
+  "quiz": {
+   "question": "What is the biochemical purpose of pouring a layer of liquid paraffin over the yeast-glucose mixture?",
+   "answers": [
+    "To create strict anaerobic conditions by blocking atmospheric oxygen diffusion",
+    "To provide lipid nutrients to yeast",
+    "To trap carbon dioxide in the liquid",
+    "To kill bacteria"
+   ],
+   "correct": 0,
+   "explanation": "Liquid paraffin is an immiscible, inert barrier that prevents atmospheric O₂ from diffusing into the mixture, ensuring anaerobic fermentation."
+  },
+  "safety": "Do not stopper fermentation tubes completely rigidly without gas outlets; rising pressure can cause glass rupture."
+ },
+ {
+  "id": "10.5.6",
+  "title": "Salivary Amylase Breaks Down Starch",
+  "scene": "amylase",
+  "chapter": "10.5",
+  "chapterTitle": "Life Processes",
+  "subject": "Biology",
+  "apparatus": "Spot plate, droppers, test tubes, 1% soluble starch solution, filtered saliva / salivary amylase, iodine solution, water bath (37°C), stopwatch.",
+  "steps": [
+   "Add 5 mL of 1% starch solution into Test Tube A (Experimental) and Tube B (Control).",
+   "Add 1 mL of filtered saliva to Tube A and 1 mL distilled water to Tube B; place both in a 37°C water bath.",
+   "Every 2 minutes, withdraw 1 drop from each tube and mix with a drop of iodine on the spot plate.",
+   "Record color changes sequentially until the achromic point (no color change) is reached."
+  ],
+  "observation": "In Tube A, the iodine test is deep blue-black at 0 min, brown at 4 min, reddish-yellow at 8 min, and completely yellow/clear by 12 min. In control Tube B, the blue-black color persists indefinitely.",
+  "concept": "Salivary amylase (ptyalin) hydrolyses the α-(1→4) glycosidic bonds of starch, converting long helical amylose polysaccharides into dextrins and maltose disaccharides, which do not form a blue-black iodine complex.",
+  "equation": "(C₆H₁₀O₅)ₙ [Starch] + n/2 H₂O ─(Salivary Amylase, pH 6.8, 37°C)→ n/2 C₁₂H₂₂O₁₁ [Maltose]",
+  "control": {
+   "label": "Digestion time",
+   "min": 0,
+   "max": 20,
+   "step": 1,
+   "value": 10,
+   "unit": "min"
+  },
+  "quiz": {
+   "question": "What does reaching the 'achromic point' in an amylase-starch digestion experiment signify?",
+   "answers": [
+    "All starch has been completely hydrolysed into smaller sugars that no longer complex with iodine",
+    "Amylase enzyme has been denatured",
+    "Iodine solution has evaporated",
+    "Solution has become alkaline"
+   ],
+   "correct": 0,
+   "explanation": "The achromic point is reached when iodine no longer produces any color shift, indicating that all starch polysaccharides have been digested into maltose."
+  },
+  "safety": "Collect saliva using clean disposable containers under strict hygienic protocol. Wash equipment with lab detergent."
+ },
+ {
+  "id": "10.5.7",
+  "title": "Water Absorption by Raisins",
+  "scene": "imbibition",
+  "chapter": "10.5",
+  "chapterTitle": "Life Processes",
+  "subject": "Biology",
+  "apparatus": "Dry raisins with intact stalks, petri dishes, distilled water, 10% concentrated sugar solution, blotting paper, digital electronic balance (0.01g sensitivity).",
+  "steps": [
+   "Weigh approximately 10–15 dry raisins on the electronic balance; record initial mass (W₁).",
+   "Immerse raisins in a petri dish containing distilled water for 2 hours at room temperature.",
+   "Remove raisins, gently blot dry on blotting paper to eliminate superficial surface water.",
+   "Reweigh swollen turgid raisins; record final mass (W₂) and compute percentage water absorbed.",
+   "Optionally transfer swollen raisins to concentrated hypertonic sugar solution to observe exosmosis."
+  ],
+  "observation": "Dry wrinkled raisins absorb water, becoming fully turgid and swollen, gaining 40%–70% in mass. In hypertonic sugar solution, they lose water and become flaccid/shriveled.",
+  "concept": "Water moves down its water potential gradient across the selectively permeable raisin cell membranes via endosmosis (hypotonic medium) or exosmosis (hypertonic medium).",
+  "equation": "% Water Absorbed = [(W₂ − W₁) / W₁] × 100%  ;  Ψ_w (outside) > Ψ_w (inside) → Endosmosis",
+  "control": {
+   "label": "Soaking duration",
+   "min": 0,
+   "max": 120,
+   "step": 5,
+   "value": 60,
+   "unit": "min"
+  },
+  "quiz": {
+   "question": "What biological phenomenon causes dry raisins to swell when immersed in pure distilled water?",
+   "answers": [
+    "Endosmosis through selectively permeable membranes",
+    "Exosmosis",
+    "Active transport",
+    "Thermal expansion"
+   ],
+   "correct": 0,
+   "explanation": "Distilled water is hypotonic relative to the concentrated sugary cell sap of raisins. Water enters the cells by endosmosis until equilibrium turgor is attained."
+  },
+  "safety": "Do not consume raisins or food items used in laboratory experiments."
+ },
+ {
+  "id": "10.6.1(a)",
+  "title": "Phototropism: Shoots Bend Towards Light",
+  "scene": "phototropism",
+  "chapter": "10.6",
+  "chapterTitle": "Control & Coordination",
+  "subject": "Biology",
+  "apparatus": "Germinating bean/gram seedlings, moist cotton wool, light-proof cardboard box (phototropic chamber) with a single unilateral light slit, adjustable lamp.",
+  "steps": [
+   "Place healthy potted bean seedlings inside the light-proof chamber.",
+   "Open a single unilateral aperture on the right side to admit directional light.",
+   "Maintain moisture and observe directional growth daily for 4 days.",
+   "Rotate box or shift light window to the opposite side to test reversibility of curvature."
+  ],
+  "observation": "Shoot apices bend distinctively towards the directional light source (positive phototropism), while root radicles curve away from light (negative phototropism).",
+  "concept": "Phototropism is mediated by the phytohormone auxin (IAA). Unilateral blue light stimulates lateral translocation of auxin to the shaded side of the shoot, stimulating cell elongation on the dark side and bending the stem towards light.",
+  "equation": "Unilateral Light → Phototropin activation → Lateral Auxin Translocation → Asymmetric Cell Elongation",
+  "control": {
+   "label": "Light incident angle",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 75,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "How does the plant hormone auxin cause a shoot to bend towards a unilateral light source?",
+   "answers": [
+    "Auxin accumulates on the shaded side, stimulating greater cell elongation there than on the illuminated side",
+    "Auxin destroys cells on the lit side",
+    "Auxin attracts light rays",
+    "Auxin evaporates in sunlight"
+   ],
+   "correct": 0,
+   "explanation": "Auxin diffuses preferentially towards the darker/shaded side of the shoot tip. The elevated auxin concentration stimulates cell elongation on the shaded side, curving the shoot towards light."
+  },
+  "safety": "Ensure electrical connections to the plant growth illumination lamp are grounded and dry."
+ },
+ {
+  "id": "10.6.1(b)",
+  "title": "Geotropism: Roots and Shoots Respond to Gravity",
+  "scene": "geotropism",
+  "chapter": "10.6",
+  "chapterTitle": "Control & Coordination",
+  "subject": "Biology",
+  "apparatus": "Germinating bean seeds with 1 cm radicles, petri dish with moist cotton, clinostat (rotating mechanical disc), clamps, protractor.",
+  "steps": [
+   "Pin germinated seedlings horizontally onto a moist cork disc in a dark room.",
+   "Keep Setup A stationary horizontally (gravity acts unilaterally).",
+   "Mount Setup B onto a clinostat rotating continuously at 1 revolution per hour (neutralizes gravity vector).",
+   "Observe curvature after 24–48 hours in both setups."
+  ],
+  "observation": "In the stationary setup, root tips bend downwards (+90° positive geotropism) and shoot tips curve upwards (−90° negative geotropism). On the rotating clinostat, roots and shoots continue growing straight horizontally.",
+  "concept": "Gravitropism is coordinated by sedimenting amyloplasts (statoliths) in root columella cells. In roots, high auxin on the lower side inhibits cell elongation, causing downward curvature; in shoots, high auxin promotes elongation, causing upward curvature.",
+  "equation": "Stationary: Root: +ve Gravitropism (Downward) ; Shoot: -ve Gravitropism (Upward)  |  Clinostat: Zero net vector",
+  "control": {
+   "label": "Tilt angle / rotation",
+   "min": 0,
+   "max": 90,
+   "step": 5,
+   "value": 45,
+   "unit": "°"
+  },
+  "quiz": {
+   "question": "Why do roots exhibit positive gravitropism while shoots exhibit negative gravitropism under the same gravitational field?",
+   "answers": [
+    "Root cells are inhibited by high auxin concentrations, whereas shoot cells are stimulated by high auxin concentrations",
+    "Roots have no auxin",
+    "Shoots are heavier than roots",
+    "Roots seek darkness only"
+   ],
+   "correct": 0,
+   "explanation": "Auxin has opposite physiological dose-response effects: shoot tissue requires high auxin concentrations to stimulate elongation, whereas root tissue elongation is inhibited by identical auxin levels."
+  },
+  "safety": "Ensure rotating clinostat motors are securely fastened and cotton wool is kept moist without dripping."
+ },
+ {
+  "id": "10.7.1",
+  "title": "Asexual Reproduction: Fission and Budding",
+  "scene": "fission",
+  "chapter": "10.7",
+  "chapterTitle": "How Organisms Reproduce",
+  "subject": "Biology",
+  "apparatus": "Permanent prepared slides of binary fission in Amoeba, budding in Yeast and Hydra, compound microscope (100x and 400x).",
+  "steps": [
+   "Mount slide of Amoeba under 100x; locate cells in different mitotic fission stages.",
+   "Switch to 400x to observe karyokinesis (nuclear division) and cytokinesis (equatorial constriction furrow).",
+   "Mount slide of Hydra / Yeast to observe mitotic asexual budding.",
+   "Compare daughter cell symmetry: binary fission yields equal halves; budding yields an asymmetric daughter outgrowth."
+  ],
+  "observation": "Amoeba exhibits progressive nuclear elongation followed by a transverse cleavage furrow dividing the parent into two identical daughter cells. Hydra exhibits a lateral cellular outgrowth (bud) with miniature tentacles that detaches.",
+  "concept": "Asexual reproduction involves mitosis from a single parent without gamete fusion, producing genetically identical clonal progeny. Binary fission splits the parent entirely; budding grows a new individual from a localized regenerative tissue bud.",
+  "equation": "Parent Cell ─(Karyokinesis)→ Binucleate Cell ─(Cytokinesis)→ 2 Identical Clonal Daughters",
+  "control": {
+   "label": "Reproduction stage",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 55,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "What is the primary morphological difference between binary fission in Amoeba and budding in Yeast?",
+   "answers": [
+    "Binary fission divides parent body into two equal-sized daughter cells, while budding produces an initially smaller asymmetric outgrowth",
+    "Budding involves meiosis",
+    "Amoeba forms multicellular spores",
+    "Yeast produces gametes"
+   ],
+   "correct": 0,
+   "explanation": "In binary fission, the parent cell body divides symmetrically into two equal daughter cells; in budding, a smaller protuberance develops upon the parent cell and pinches off."
+  },
+  "safety": "Handle fragile glass microscope slides with care. Use coarse focus only under low power to prevent slide cracking."
+ },
+ {
+  "id": "10.7.2",
+  "title": "Vegetative Propagation in Plants",
+  "scene": "vegetative",
+  "chapter": "10.7",
+  "chapterTitle": "How Organisms Reproduce",
+  "subject": "Biology",
+  "apparatus": "Sprouting potato tuber with 'eyes', ginger rhizome with nodes, Bryophyllum leaf with marginal notches, moist sand tray, hand lens.",
+  "steps": [
+   "Examine potato tuber eyes with a hand lens to identify dormant axillary buds and scale leaf scars.",
+   "Cut potato pieces with at least one eye ('germ') and plant in moist soil; plant pieces lacking eyes as controls.",
+   "Inspect Bryophyllum leaf margins kept in moist petri dish for epiphyllous adventitious buds.",
+   "Monitor root and aerial shoot development over 10 days."
+  ],
+  "observation": "Potato pieces containing 'eyes' sprout vigorous aerial green shoots and adventitious roots, while eye-less pieces rot. Bryophyllum leaf notches produce complete miniature plantlets with roots and foliage.",
+  "concept": "Vegetative propagation is an asexual mode where specialized vegetative structures (axillary buds of stems, tubers, rhizomes, or foliar leaf notches) regenerate complete fertile plants via mitotic organogenesis.",
+  "equation": "Vegetative Meristem (Bud / Node) + Moisture + Warmth → Adventitious Roots + Foliar Shoots",
+  "control": {
+   "label": "Sprouting growth",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 65,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "What botanical structure corresponds to the 'eyes' found on a potato tuber?",
+   "answers": [
+    "Axillary buds situated at nodes of the modified underground stem",
+    "True sexual seeds",
+    "Root hair clusters",
+    "Lenticels for gas exchange"
+   ],
+   "correct": 0,
+   "explanation": "A potato is a modified underground stem (tuber). The 'eyes' are axillary buds located at stem nodes capable of developing into vegetative shoots."
+  },
+  "safety": "Use a blunt scalpel or butter knife when cutting plant specimens. Discard decaying plant debris properly."
+ },
+ {
+  "id": "10.7.3",
+  "title": "Parts of a Flower and Their Roles",
+  "scene": "flower",
+  "chapter": "10.7",
+  "chapterTitle": "How Organisms Reproduce",
+  "subject": "Biology",
+  "apparatus": "Complete bisexual flower (Hibiscus rosa-sinensis / Mustard), dissection forceps, fine needles, magnifying hand lens, microscope slide, razor blade.",
+  "steps": [
+   "Identify the four concentric floral whorls: Calyx (sepals), Corolla (petals), Androecium (stamens), Gynoecium (pistil/carpel).",
+   "Remove sepals and petals carefully with forceps.",
+   "Dissect stamen to reveal filament and bilobed anther; dust pollen grains onto a glass slide.",
+   "Make a longitudinal section (L.S.) through the pistil: locate sticky stigma, elongated style, swollen basal ovary, and internal ovules."
+  ],
+  "observation": "Anther lobes are packed with golden-yellow microspores (pollen grains). The ovary interior reveals neatly arranged ovules attached to the placenta along the locule chamber.",
+  "concept": "Flowers are the specialized angiosperm reproductive shoots. Stamens (androecium) produce male microgametophytes (pollen); the pistil/carpel (gynoecium) encloses female megagametophytes (ovules) awaiting pollination and double fertilization.",
+  "equation": "Stamen: Anther (Pollen / Male Gamete)  |  Carpel: Stigma + Style + Ovary (Ovule / Female Gamete) → Seed + Fruit",
+  "control": {
+   "label": "Floral whorl highlighted",
+   "min": 0,
+   "max": 4,
+   "step": 1,
+   "value": 2,
+   "unit": "whorl"
+  },
+  "quiz": {
+   "question": "Which floral organ swells and matures into the botanical fruit following successful fertilization?",
+   "answers": [
+    "The ovary",
+    "The anther",
+    "The sepal",
+    "The stigma"
+   ],
+   "correct": 0,
+   "explanation": "Following double fertilization in angiosperms, the ovary wall ripens into the pericarp of the fruit, while the fertilized ovules develop into seeds."
+  },
+  "safety": "Individuals with severe pollen allergies should wear masks during flower dissection. Exercise caution with razor blades."
+ },
+ {
+  "id": "10.8.1",
+  "title": "Homologous and Analogous Organs",
+  "scene": "homology",
+  "chapter": "10.8",
+  "chapterTitle": "Heredity & Evolution",
+  "subject": "Biology",
+  "apparatus": "Anatomical charts and models of vertebrate forelimbs (human arm, bird wing, bat wing, cheetah forelimb, whale flipper), insect wings, plant tendrils/thorns.",
+  "steps": [
+   "Examine pentadactyl skeletal anatomy of human arm, bird wing, bat wing, and whale flipper.",
+   "Trace corresponding skeletal elements: humerus, radius-ulna, carpals, metacarpals, phalanges across all specimens.",
+   "Compare with analogous structures: insect wing (chitinous membrane) vs bird wing (feathered bony limb).",
+   "Differentiate divergent evolution (homology) from convergent evolution (analogy)."
+  ],
+  "observation": "Vertebrate forelimbs share identical underlying skeletal layout despite radically diverse adaptive functions (grasping, flying, swimming). Insect and bird wings perform identical flight function but lack common structural blueprint.",
+  "concept": "Homologous organs share a common ancestral developmental origin with divergent functional adaptations. Analogous organs have different structural origins but converge on similar functions due to comparable selective pressures.",
+  "equation": "Homology: Same Archetype Structure + Common Ancestor → Divergent Functions  |  Analogy: Convergent Evolution",
+  "control": {
+   "label": "Organ comparison",
+   "min": 0,
+   "max": 2,
+   "step": 1,
+   "value": 1,
+   "unit": "mode"
+  },
+  "quiz": {
+   "question": "Why are the human arm, the bat wing, and the whale flipper classified as homologous organs?",
+   "answers": [
+    "They share the same fundamental pentadactyl skeletal blueprint inherited from a common vertebrate ancestor",
+    "They have identical external appearance",
+    "They perform identical mechanical functions",
+    "They develop without bones"
+   ],
+   "correct": 0,
+   "explanation": "Homology is defined by shared anatomical design and common evolutionary descent (same bone sequence: humerus, radius, ulna, carpals), regardless of functional modification."
+  },
+  "safety": "Handle museum skeletal specimens and plastic anatomical models with care."
+ },
+ {
+  "id": "10.8.2",
+  "title": "Inheritance of Traits (Mendelian Genetics)",
+  "scene": "inheritance",
+  "chapter": "10.8",
+  "chapterTitle": "Heredity & Evolution",
+  "subject": "Biology",
+  "apparatus": "Mendelian breeding simulation cards, monohybrid cross allele tokens (Tall T, Dwarf t), Punnett square grid board, statistical probability dice.",
+  "steps": [
+   "Set up pure breeding parental cross: Homozygous Tall (TT) × Homozygous Dwarf (tt).",
+   "Observe F₁ generation: 100% heterozygous tall (Tt) showing complete dominance of T allele.",
+   "Self-pollinate F₁ hybrids: Tt × Tt.",
+   "Compute theoretical gamete combinations on a 2×2 Punnett square and measure phenotypic and genotypic ratios."
+  ],
+  "observation": "F₁ generation exhibits 100% Tall phenotype. F₂ generation yields a consistent 3 : 1 phenotypic ratio (3 Tall : 1 Dwarf) and a 1 : 2 : 1 genotypic ratio (1 TT : 2 Tt : 1 tt).",
+  "concept": "Gregor Mendel's Law of Segregation states that allele pairs separate during gametogenesis so that each gamete carries only one allele. Dominant alleles mask recessive phenotypes in heterozygotes.",
+  "equation": "Parental: TT × tt → F₁: 100% Tt (Tall)  |  F₂: 1 TT : 2 Tt : 1 tt → Phenotypic Ratio 3:1 (Tall:Dwarf)",
+  "control": {
+   "label": "Recessive allele freq.",
+   "min": 0,
+   "max": 100,
+   "step": 5,
+   "value": 50,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "What phenotypic and genotypic ratios are obtained in the F₂ generation of a Mendelian monohybrid cross between two heterozygous (Tt) tall pea plants?",
+   "answers": [
+    "Phenotypic 3:1 (Tall:Dwarf) ; Genotypic 1:2:1 (TT:Tt:tt)",
+    "Phenotypic 1:1 ; Genotypic 3:1",
+    "Phenotypic 9:3:3:1",
+    "Phenotypic 100% Tall"
+   ],
+   "correct": 0,
+   "explanation": "Self-crossing Tt × Tt yields genotypes 1 TT, 2 Tt, and 1 tt. Because T is dominant over t, TT and Tt are phenotypically tall (3 tall), while tt is dwarf (1 dwarf), giving 3:1."
+  },
+  "safety": "Educational simulation activity. Ensure understanding of probability and sample size effects in biological trials."
+ },
+ {
+  "id": "10.9.1",
+  "title": "Images in the Two Sides of a Shiny Spoon",
+  "scene": "spoon",
+  "chapter": "10.9",
+  "chapterTitle": "Light: Reflection & Refraction",
+  "subject": "Physics",
+  "apparatus": "High-polish stainless steel spoon, candle/pencil object, millimeter ruler, optical bench mount.",
+  "steps": [
+   "Hold the inner curved surface (concave mirror) close to your eye/pencil; observe orientation and size.",
+   "Move object progressively farther away from the concave surface; record the distance at which image flips inverted.",
+   "Reverse spoon to outer curved surface (convex mirror); observe image at close, medium, and far distances."
+  ],
+  "observation": "Inner surface (concave): close up (< f), image is erect and highly magnified. As distance increases (> f), image flips inverted and becomes smaller. Outer surface (convex): at all distances, image is strictly erect, virtual, and diminished.",
+  "concept": "Curved reflecting surfaces obey the fundamental law of reflection (θ_i = θ_r) at every point tangent. The concave side converges rays, producing real inverted or virtual magnified images; the convex side diverges rays, forming only virtual diminished images.",
+  "equation": "Concave side: u < f → Virtual, Erect, Magnified ; u > f → Real, Inverted  |  Convex side: Always Virtual, Erect, Diminished",
+  "control": {
+   "label": "Object distance",
+   "min": 1,
+   "max": 10,
+   "step": 0.5,
+   "value": 4,
+   "unit": "cm"
+  },
+  "quiz": {
+   "question": "What type of image is formed when an object is held very close (inside the principal focus) to the inner curved surface of a spoon?",
+   "answers": [
+    "Virtual, erect, and magnified",
+    "Real, inverted, and diminished",
+    "Real, erect, and same size",
+    "Virtual, inverted, and smaller"
+   ],
+   "correct": 0,
+   "explanation": "When an object lies between the pole P and principal focus F of a concave mirror, reflected rays diverge; their backward extensions intersect behind the mirror to form a virtual, erect, and magnified image."
+  },
+  "safety": "Do not use flammable candle flames near plastic surfaces or clothing."
+ },
+ {
+  "id": "10.9.2",
+  "title": "A Concave Mirror Concentrates Sunlight",
+  "scene": "mirrorsun",
+  "chapter": "10.9",
+  "chapterTitle": "Light: Reflection & Refraction",
+  "subject": "Physics",
+  "apparatus": "Concave spherical mirror (f ≈ 15 cm), stand, sheet of black paper, millimeter ruler, outdoor sunlight or collimated laser bench.",
+  "steps": [
+   "Orient concave mirror facing directly towards the distant sun (parallel paraxial rays, u ≈ ∞).",
+   "Hold a sheet of paper in front of the mirror in the path of the reflected light cone.",
+   "Move paper back and forth along principal axis until the reflected spot contracts into a sharp, blinding point.",
+   "Hold paper motionless at this sharp focal point and measure distance from mirror pole with a ruler."
+  ],
+  "observation": "At a precise distance (principal focal length f ≈ R/2), sunlight converges into an intense, sharp luminous spot. The focused solar energy heats the paper, causing it to smoke and scorch into a burned hole.",
+  "concept": "Paraxial incident rays parallel to the principal axis of a concave mirror converge after reflection at a common point on the principal axis called the principal focus (F). For spherical mirrors of small aperture, f = R/2.",
+  "equation": "1/f = 1/v + 1/u  ;  When u → ∞, v = f = R / 2  ;  Solar Flux Density ∝ 1 / (Spot Area)",
+  "control": {
+   "label": "Mirror curvature (R)",
+   "min": 15,
+   "max": 60,
+   "step": 1,
+   "value": 35,
+   "unit": "cm"
+  },
+  "quiz": {
+   "question": "Why does paper scorch and catch fire when held at the principal focus of a concave mirror exposed to sunlight?",
+   "answers": [
+    "The mirror concentrates parallel radiant solar thermal energy into a tiny focal spot, raising temperature above kindling point",
+    "The mirror generates nuclear heat",
+    "Concave mirrors emit infrared laser beams",
+    "Sunlight is magnified by refraction"
+   ],
+   "correct": 0,
+   "explanation": "A concave mirror converges all paraxial sunlight rays across its entire aperture onto a tiny focal spot, concentrating thermal flux and igniting the paper."
+  },
+  "safety": "NEVER view the reflected sun image directly with naked eyes; retinal burns will occur. Do not leave burning paper unattended."
+ },
+ {
+  "id": "10.9.3",
+  "title": "Image Formation by a Concave Mirror",
+  "scene": "concavemirror",
+  "chapter": "10.9",
+  "chapterTitle": "Light: Reflection & Refraction",
+  "subject": "Physics",
+  "apparatus": "Precision optical bench (1.5 m), concave mirror (f = 15 cm) on upright, illuminated arrow / candle object on sliding rider, frosted glass screen, meter rule.",
+  "steps": [
+   "Position 1: Object beyond 2F (Centre of Curvature C); find sharp image on screen between F and C.",
+   "Position 2: Object at 2F (at C); locate image at C (real, inverted, equal size, m = −1).",
+   "Position 3: Object between C and F; locate magnified image beyond C.",
+   "Position 4: Object at F; observe reflected rays emerge parallel (image at infinity).",
+   "Position 5: Object between F and Pole P; observe virtual, erect, magnified image formed behind mirror."
+  ],
+  "observation": "As the object moves from infinity towards the focus, the real inverted image moves from focus to infinity, growing in magnification. Inside the focus, image transitions abruptly to virtual, erect, and magnified behind the mirror.",
+  "concept": "Image formation obeys the mirror formula 1/f = 1/v + 1/u and Cartesian sign conventions (f < 0, u < 0). Real images form where reflected rays physically intersect (v < 0); virtual images form where rays appear to diverge behind mirror (v > 0).",
+  "equation": "1/f = 1/v + 1/u  ;  m = h_i / h_o = −v / u  ;  Sign Convention: Distances measured against incident light are negative",
+  "control": {
+   "label": "Object distance (u / f)",
+   "min": 0.5,
+   "max": 4.0,
+   "step": 0.1,
+   "value": 2.5,
+   "unit": "f"
+  },
+  "quiz": {
+   "question": "Where should an object be placed in front of a concave mirror to obtain a real, inverted image of exactly the same size as the object?",
+   "answers": [
+    "At the Centre of Curvature C (u = 2f)",
+    "At the Principal Focus F (u = f)",
+    "Beyond C (u > 2f)",
+    "Between F and P"
+   ],
+   "correct": 0,
+   "explanation": "When an object is placed at C (u = 2f), the image is formed exactly at C (v = 2f), inverted, with magnification m = −v/u = −(−2f)/(−2f) = −1."
+  },
+  "safety": "Keep hot candle flames away from meter rules and bench fixtures. Use LED illuminator objects when available."
+ },
+ {
+  "id": "10.9.4",
+  "title": "Image Formed by a Convex Mirror",
+  "scene": "convexmirror",
+  "chapter": "10.9",
+  "chapterTitle": "Light: Reflection & Refraction",
+  "subject": "Physics",
+  "apparatus": "Optical bench, convex mirror (f = +15 cm), illuminated object, plane mirror comparison slider, meter rule.",
+  "steps": [
+   "Position object at various distances u from the convex mirror (from distant u = 5f to close u = 0.5f).",
+   "Trace ray 1 (parallel to axis, diverges along line from virtual focus F behind mirror).",
+   "Trace ray 2 (directed towards center of curvature C behind mirror, retraces path).",
+   "Identify virtual intersection behind mirror and evaluate image size, orientation, and field of view."
+  ],
+  "observation": "At all object distances, the image formed by a convex mirror is strictly virtual, erect, diminished (m < +1), and located behind the mirror between the pole P and focus F.",
+  "concept": "A convex mirror diverges incident paraxial rays. By the mirror formula with f > 0 and u < 0, v is always positive (behind mirror) and smaller in magnitude than u, guaranteeing an erect, diminished image with a broad field of view.",
+  "equation": "1/v = 1/f − 1/u  ;  f > 0, u < 0 → 1/v > 0 (Always Virtual)  ;  m = −v / u > 0 and |m| < 1",
+  "control": {
+   "label": "Object distance (u / f)",
+   "min": 0.5,
+   "max": 5.0,
+   "step": 0.1,
+   "value": 3.0,
+   "unit": "f"
+  },
+  "quiz": {
+   "question": "Why are convex mirrors universally preferred as driver rear-view mirrors in automobiles?",
+   "answers": [
+    "They always form erect, diminished images and afford a much wider field of view than flat plane mirrors",
+    "They produce magnified real images",
+    "They absorb glare completely",
+    "They have infinite focal length"
+   ],
+   "correct": 0,
+   "explanation": "Convex mirrors are curved outward, allowing them to capture a wide panoramic field of view while always rendering erect (though diminished) images of trailing traffic."
+  },
+  "safety": "Clean optical surfaces with lens tissue only; avoid scratching delicate optical coatings."
+ },
+ {
+  "id": "10.9.5",
+  "title": "The Image in a Plane Mirror",
+  "scene": "planemirror",
+  "chapter": "10.9",
+  "chapterTitle": "Light: Reflection & Refraction",
+  "subject": "Physics",
+  "apparatus": "High-flatness silvered plane mirror, drawing board, optical pins, white paper sheet, protractor, ruler, asymmetrical object letter 'P'.",
+  "steps": [
+   "Fix plane mirror vertically on paper using wooden support block.",
+   "Place object pin or letter 'P' at perpendicular distance u in front of mirror.",
+   "Fix two sighting pins to trace reflected rays into the eye.",
+   "Extend reflected rays backwards behind mirror plane to locate image position.",
+   "Measure image distance v, compare with u, and check lateral inversion of letter 'P'."
+  ],
+  "observation": "Image distance equals object distance (v = u). The image is virtual, erect, exactly identical in size (m = +1), and exhibits lateral inversion (left and right reversed).",
+  "concept": "Reflection at a planar interface preserves ray divergence angles. The virtual image is the symmetrical specular reflection across the mirror plane: v = −u, magnification m = +1.",
+  "equation": "d_image = d_object  ;  h_image = h_object  ;  Magnification m = +1.0  ;  Angle i = Angle r",
+  "control": {
+   "label": "Object distance",
+   "min": 1,
+   "max": 8,
+   "step": 0.5,
+   "value": 4,
+   "unit": "cm"
+  },
+  "quiz": {
+   "question": "If an object is moved from a distance of 4 cm in front of a plane mirror to 7 cm, what is the total distance between the object and its virtual image?",
+   "answers": [
+    "14 cm",
+    "7 cm",
+    "3.5 cm",
+    "28 cm"
+   ],
+   "correct": 0,
+   "explanation": "In a plane mirror, image distance behind mirror equals object distance in front (v = u = 7 cm). Total distance from object to image = u + v = 7 + 7 = 14 cm."
+  },
+  "safety": "Handle glass plate mirrors carefully by edges to avoid edge cuts."
+ },
+ {
+  "id": "10.9.6",
+  "title": "Refraction Through a Rectangular Glass Slab",
+  "scene": "glassslab",
+  "chapter": "10.9",
+  "chapterTitle": "Light: Reflection & Refraction",
+  "subject": "Physics",
+  "apparatus": "Rectangular optical glass slab (n ≈ 1.50, thickness t), drawing board, pins, white paper, protractor, sharp pencil, ruler.",
+  "steps": [
+   "Draw rectangular outline of glass slab on paper; draw normal and incident ray at angle i (e.g., 35°).",
+   "Fix two pins P₁ and P₂ on incident ray; look through opposite face and fix pins P₃ and P₄ in alignment.",
+   "Remove slab, join pinpricks, and measure angle of refraction r at first interface and angle of emergence e at second.",
+   "Verify that emergent ray is strictly parallel to incident ray (e = i) and measure lateral displacement d."
+  ],
+  "observation": "Light bends towards normal upon entering glass (i > r). At exit, it bends away from normal (e = i). The emergent ray is parallel to incident ray but laterally displaced sideways by distance d.",
+  "concept": "Refraction is caused by change in phase velocity of electromagnetic waves across media (v = c/n). Snell's law governs interfaces: n₁ sin i = n₂ sin r. Across parallel slab faces, reciprocal refraction ensures emergent ray parallelism with lateral shift.",
+  "equation": "n₁ sin i = n₂ sin r  ;  Lateral Shift d = [t · sin(i − r)] / cos r  ;  Angle of emergence e = i",
+  "control": {
+   "label": "Incident angle (i)",
+   "min": 5,
+   "max": 65,
+   "step": 1,
+   "value": 35,
+   "unit": "°"
+  },
+  "quiz": {
+   "question": "What is the relationship between the angle of incidence i and the angle of emergence e for a light ray traversing a rectangular glass slab with parallel opposite faces?",
+   "answers": [
+    "Angle of emergence equals angle of incidence (e = i)",
+    "Angle e is always 90°",
+    "Angle e is half of angle i",
+    "Angle e depends on glass thickness only"
+   ],
+   "correct": 0,
+   "explanation": "Because opposite faces of the rectangular slab are parallel, the angle of refraction at the first face equals the angle of incidence at the second face; Snell's law ensures e = i."
+  },
+  "safety": "Ensure drawing pins are inserted straight without excessive pressure to avoid bending."
+ },
+ {
+  "id": "10.9.7",
+  "title": "A Convex Lens Focuses Parallel Sunlight",
+  "scene": "lenssun",
+  "chapter": "10.9",
+  "chapterTitle": "Light: Reflection & Refraction",
+  "subject": "Physics",
+  "apparatus": "Double convex converging lens (f ≈ 12 cm), lens stand, sheet of paper, meter ruler, outdoor sunlight or collimated ray box.",
+  "steps": [
+   "Direct convex lens toward distant sun (parallel incident light rays).",
+   "Hold paper screen on opposite side in the path of refracted light cone.",
+   "Translate screen along optical axis until spot converges to minimum bright point.",
+   "Measure distance between optical center O of lens and paper screen to determine focal length f."
+  ],
+  "observation": "Refracted rays converge at the principal focus F₂ on the opposite side, forming a sharp real image of the sun that heats the paper, producing smoke and scorching a hole.",
+  "concept": "A biconvex lens is thicker in the middle than at edges, causing incident paraxial rays to refract twice (bending towards base of prism sections) and converge at the principal focus.",
+  "equation": "1/f = (n − 1)(1/R₁ − 1/R₂) [Lens Maker's Formula]  ;  When u → ∞, v = f",
+  "control": {
+   "label": "Focal length (f)",
+   "min": 8,
+   "max": 20,
+   "step": 1,
+   "value": 12,
+   "unit": "cm"
+  },
+  "quiz": {
+   "question": "Why is a convex lens termed a 'converging lens'?",
+   "answers": [
+    "It bends parallel incident light rays inward towards its principal axis to meet at a real focus",
+    "It spreads light rays outward into a wide beam",
+    "It absorbs divergent rays",
+    "It reflects light backwards"
+   ],
+   "correct": 0,
+   "explanation": "A convex lens is geometrically thicker at the center; light rays refract towards the thicker middle, causing parallel incoming rays to converge at the principal focus."
+  },
+  "safety": "Never look through a convex lens directly at the sun; permanent blindness can occur within milliseconds."
+ },
+ {
+  "id": "10.9.8",
+  "title": "Image Formation by a Convex Lens",
+  "scene": "convexlens",
+  "chapter": "10.9",
+  "chapterTitle": "Light: Reflection & Refraction",
+  "subject": "Physics",
+  "apparatus": "Optical bench with graduated rail (1.5 m), convex lens (f = 15 cm) on upright carrier, illuminated object candle, frosted white screen, meter ruler.",
+  "steps": [
+   "Case 1: Object beyond 2F₁ (u > 2f) → real, inverted, diminished image between F₂ and 2F₂.",
+   "Case 2: Object at 2F₁ (u = 2f) → real, inverted, same size image at 2F₂ (m = −1).",
+   "Case 3: Object between 2F₁ and F₁ → real, inverted, magnified image beyond 2F₂.",
+   "Case 4: Object at F₁ → refracted rays emerge parallel (image at infinity).",
+   "Case 5: Object between F₁ and Optical Centre O → virtual, erect, magnified image on same side (Magnifying Glass mode)."
+  ],
+  "observation": "As object approaches F₁, real inverted image recedes towards infinity while growing dramatically. Inside F₁, image flips to an upright, virtual, magnified image on the object side.",
+  "concept": "Image position and size are governed by the lens formula 1/f = 1/v − 1/u and magnification m = v/u under Cartesian sign convention (f > 0, u < 0).",
+  "equation": "1/f = 1/v − 1/u  ;  m = h_i / h_o = +v / u  ;  Power P = 1 / f (in meters) [Dioptres, D]",
+  "control": {
+   "label": "Object distance (u / f)",
+   "min": 0.5,
+   "max": 4.0,
+   "step": 0.1,
+   "value": 2.5,
+   "unit": "f"
+  },
+  "quiz": {
+   "question": "How should a convex lens be used as a simple magnifying reading glass?",
+   "answers": [
+    "Place object closer to the lens than its focal length (u < f)",
+    "Place object at 2F",
+    "Place object at infinity",
+    "Place object beyond 2F"
+   ],
+   "correct": 0,
+   "explanation": "When an object is placed inside the focal length (between O and F₁), the lens forms an erect, virtual, and magnified image on the same side of the lens."
+  },
+  "safety": "Secure all upright carriers tightly to prevent heavy lenses from toppling off optical bench rails."
+ },
+ {
+  "id": "10.10.1",
+  "title": "Different Materials Offer Different Resistance",
+  "scene": "materialsresistance",
+  "chapter": "10.10",
+  "chapterTitle": "Electricity",
+  "subject": "Physics",
+  "apparatus": "6V DC battery, plug key, DC ammeter (0–3A), connecting wires, test gaps, equal length (50 cm) and thickness (26 SWG) wires of Copper, Aluminium, Iron, and Nichrome.",
+  "steps": [
+   "Set up series circuit: Battery → Key → Ammeter → Gap (A-B) → Lamp.",
+   "Insert Copper wire into Gap A-B; close key and record current and lamp brightness.",
+   "Repeat test sequentially with identical gauge Aluminium, Iron, and Nichrome wires.",
+   "Rank conductor materials in order of electrical resistivity."
+  ],
+  "observation": "Copper yields highest current (2.4 A) and brilliant lamp glow. Aluminium is slightly lower (2.1 A). Iron gives moderate current (0.9 A). Nichrome gives lowest current (0.3 A), faint bulb glow, and wire gets hot.",
+  "concept": "Electrical resistance is an intrinsic material property. Resistance depends on electronic band structure and electron scattering against vibrating lattice ions, characterized by electrical resistivity ρ: R = ρL/A.",
+  "equation": "R = ρ · L / A  ;  I = V / R  ;  Resistivity: ρ_Cu (1.62×10⁻⁸) < ρ_Al (2.63×10⁻⁸) < ρ_Fe (9.68×10⁻⁸) < ρ_Nichrome (1.10×10⁻⁶ Ω·m)",
+  "control": {
+   "label": "Conductor material (1:Cu 2:Al 3:Fe 4:NiCr)",
+   "min": 1,
+   "max": 4,
+   "step": 1,
+   "value": 2,
+   "unit": "wire"
+  },
+  "quiz": {
+   "question": "Why is nichrome alloy chosen as the heating element in electric irons and toasters rather than copper?",
+   "answers": [
+    "Nichrome has ~60× higher resistivity than copper and does not readily oxidise at high temperatures",
+    "Nichrome has zero resistance",
+    "Nichrome is cheaper than copper",
+    "Nichrome is a superconductor"
+   ],
+   "correct": 0,
+   "explanation": "Nichrome has very high electrical resistivity and high melting point, generating extensive Joule heat (H = I²Rt) without undergoing thermal oxidation at red heat."
+  },
+  "safety": "Nichrome wire can become red-hot during tests. Do not touch bare energized wire with fingers."
+ },
+ {
+  "id": "10.10.2",
+  "title": "How Length and Thickness Affect Resistance",
+  "scene": "wireresistance",
+  "chapter": "10.10",
+  "chapterTitle": "Electricity",
+  "subject": "Physics",
+  "apparatus": "6V DC battery, ammeter, voltmeter, nichrome wires of length L, 2L, thickness A, 2A (double wire in parallel), connecting leads.",
+  "steps": [
+   "Connect nichrome wire of length L = 50 cm; record voltage V and current I, compute R₁ = V/I.",
+   "Replace with wire of double length 2L = 100 cm (same thickness); compute R₂.",
+   "Replace with thicker wire of double cross-sectional area 2A (same length L); compute R₃.",
+   "Deduce quantitative relationships: R ∝ L and R ∝ 1/A."
+  ],
+  "observation": "Doubling wire length (2L) doubles resistance (R₂ = 2R₁) and halves current. Doubling cross-sectional area (2A) halves resistance (R₃ = R₁/2) and doubles current.",
+  "concept": "The resistance of a uniform conductor is directly proportional to its length L (longer collision path for drift electrons) and inversely proportional to its cross-sectional area A (wider conduit allows greater parallel electron flux).",
+  "equation": "R = ρ · L / A  ;  R ∝ L  ;  R ∝ 1 / A  ;  R ∝ 1 / r² (for cylindrical wire)",
+  "control": {
+   "label": "Wire length (L)",
+   "min": 20,
+   "max": 150,
+   "step": 5,
+   "value": 75,
+   "unit": "cm"
+  },
+  "quiz": {
+   "question": "If a uniform cylindrical metal wire of resistance R is stretched uniformly to double its original length, what will be its new electrical resistance?",
+   "answers": [
+    "4 R (quadrupled)",
+    "2 R (doubled)",
+    "R / 2 (halved)",
+    "R / 4"
+   ],
+   "correct": 0,
+   "explanation": "Stretching doubles length (L' = 2L). Because metal volume remains constant (V = A·L), the cross-sectional area halves (A' = A/2). Therefore R' = ρ(2L)/(A/2) = 4(ρL/A) = 4R."
+  },
+  "safety": "Disconnect plug key between measurement readings to prevent wire heating, which alters temperature-dependent resistivity."
+ },
+ {
+  "id": "10.10.3",
+  "title": "Current is Equal at Every Point in a Series Circuit",
+  "scene": "seriescurrent",
+  "chapter": "10.10",
+  "chapterTitle": "Electricity",
+  "subject": "Physics",
+  "apparatus": "Three unequal resistors (R₁ = 10Ω, R₂ = 20Ω, R₃ = 30Ω), 6V battery, DC ammeter (0–1A), plug key, connecting wires.",
+  "steps": [
+   "Connect resistors R₁, R₂, R₃ in series with battery, key, and ammeter at Position 1 (before R₁).",
+   "Close key and record current reading I₁.",
+   "Move ammeter to Position 2 (between R₁ and R₂); record current I₂.",
+   "Move ammeter to Position 3 (between R₂ and R₃) and Position 4 (after R₃); compare all readings."
+  ],
+  "observation": "The ammeter registers exactly identical current readings regardless of where it is inserted in the series circuit: I₁ = I₂ = I₃ = I₄ = 0.100 A (for 6V over 60Ω).",
+  "concept": "In an unbranched series circuit, there is only a single conducting path for electric charge. By conservation of charge, electric current (rate of charge flow dq/dt) is strictly identical across every component.",
+  "equation": "I_total = I₁ = I₂ = I₃ = V / (R₁ + R₂ + R₃)  ;  dq/dt = Constant throughout loop",
+  "control": {
+   "label": "Supply voltage (V)",
+   "min": 1.5,
+   "max": 12.0,
+   "step": 0.5,
+   "value": 6.0,
+   "unit": "V"
+  },
+  "quiz": {
+   "question": "In a series circuit containing 10 Ω, 20 Ω, and 30 Ω resistors connected to a battery, how does current through the 30 Ω resistor compare with current through the 10 Ω resistor?",
+   "answers": [
+    "The current is exactly the same through both resistors",
+    "Current through 30 Ω is three times greater",
+    "Current through 10 Ω is three times greater",
+    "Current through 30 Ω is zero"
+   ],
+   "correct": 0,
+   "explanation": "In a series circuit, there are no junctions for current to branch; conservation of charge mandates that the identical current flows through every series element."
+  },
+  "safety": "Always connect the ammeter in series, never in parallel across a voltage source (its near-zero internal resistance causes a short circuit)."
+ },
+ {
+  "id": "10.10.4",
+  "title": "Potential Difference Across Series Resistors",
+  "scene": "seriesvoltage",
+  "chapter": "10.10",
+  "chapterTitle": "Electricity",
+  "subject": "Physics",
+  "apparatus": "6V DC battery, series resistors (R₁ = 10Ω, R₂ = 20Ω, R₃ = 30Ω), DC voltmeter (0–10V), plug key, connecting leads.",
+  "steps": [
+   "Connect R₁, R₂, R₃ in series across 6V battery with a plug key.",
+   "Connect voltmeter probes in parallel across R₁ (10Ω); record voltage drop V₁.",
+   "Connect voltmeter in parallel across R₂ (20Ω); record V₂.",
+   "Connect voltmeter across R₃ (30Ω); record V₃.",
+   "Connect voltmeter across entire combination and verify Kirchhoff's loop rule: V = V₁ + V₂ + V₃."
+  ],
+  "observation": "V₁ = 1.0 V (across 10Ω), V₂ = 2.0 V (across 20Ω), V₃ = 3.0 V (across 30Ω). The total voltage drop V = 1.0 + 2.0 + 3.0 = 6.0 V equals battery terminal voltage.",
+  "concept": "Total work done per unit charge moving across a series circuit equals the sum of potential drops across individual resistors. Voltage divides across series resistors in direct proportion to resistance: V_i = I · R_i.",
+  "equation": "V_total = V₁ + V₂ + V₃  ;  V_i = I · R_i  ;  V₁ : V₂ : V₃ = R₁ : R₂ : R₃",
+  "control": {
+   "label": "Supply voltage (V)",
+   "min": 1.5,
+   "max": 12.0,
+   "step": 0.5,
+   "value": 6.0,
+   "unit": "V"
+  },
+  "quiz": {
+   "question": "Two resistors of 10 Ω and 30 Ω are connected in series across a 12 V battery. What is the potential difference across the 30 Ω resistor?",
+   "answers": [
+    "9.0 V",
+    "3.0 V",
+    "12.0 V",
+    "6.0 V"
+   ],
+   "correct": 0,
+   "explanation": "Total resistance R_eq = 10 + 30 = 40 Ω. Series current I = 12V / 40Ω = 0.3 A. Potential difference across 30 Ω = I × R = 0.3 A × 30 Ω = 9.0 V."
+  },
+  "safety": "Connect voltmeter strictly in parallel across the resistor under test with correct polarity (+ to positive side)."
+ },
+ {
+  "id": "10.10.5",
+  "title": "Current and Voltage in a Parallel Circuit",
+  "scene": "parallelcircuit",
+  "chapter": "10.10",
+  "chapterTitle": "Electricity",
+  "subject": "Physics",
+  "apparatus": "6V battery, three parallel resistors (R₁ = 20Ω, R₂ = 30Ω, R₃ = 50Ω), individual branch switches, ammeter, voltmeter, connecting leads.",
+  "steps": [
+   "Connect R₁, R₂, R₃ in three parallel branches across common main bus lines.",
+   "Connect voltmeter across each individual branch; verify potential difference across all branches.",
+   "Measure individual branch currents I₁, I₂, I₃ with branch ammeters.",
+   "Measure total main line current I_total and verify Kirchhoff's current junction rule: I_total = I₁ + I₂ + I₃.",
+   "Disconnect one branch switch and verify that other branches continue operating unaffected."
+  ],
+  "observation": "Potential difference is identical across all parallel branches (V₁ = V₂ = V₃ = 6.0 V). Main current splits: I₁ = 0.30 A, I₂ = 0.20 A, I₃ = 0.12 A, totaling I_total = 0.62 A. Equivalent resistance (9.68 Ω) is smaller than the smallest branch resistor.",
+  "concept": "Parallel connections provide independent conducting branches. Potential difference is identical across all parallel branches; total current equals the algebraic sum of branch currents. Equivalent resistance decreases: 1/R_p = 1/R₁ + 1/R₂ + 1/R₃.",
+  "equation": "V₁ = V₂ = V₃ = V  ;  I_total = I₁ + I₂ + I₃  ;  1 / R_parallel = 1/R₁ + 1/R₂ + 1/R₃",
+  "control": {
+   "label": "Supply voltage (V)",
+   "min": 1.5,
+   "max": 12.0,
+   "step": 0.5,
+   "value": 6.0,
+   "unit": "V"
+  },
+  "quiz": {
+   "question": "What is the primary advantage of connecting domestic appliances in parallel rather than in series in household wiring?",
+   "answers": [
+    "Each appliance receives full line voltage and can be switched independently without affecting other appliances",
+    "It uses less copper wire",
+    "It increases total circuit resistance",
+    "Appliances draw equal currents"
+   ],
+   "correct": 0,
+   "explanation": "In parallel, each appliance receives full mains voltage (220V) and operates independently; if one appliance is switched off or fails, the others continue working."
+  },
+  "safety": "Parallel circuits draw higher total current from power supplies. Do not exceed power pack ampacity."
+ },
+ {
+  "id": "10.11.1",
+  "title": "Magnetic Field Around a Current-Carrying Wire",
+  "scene": "oersted",
+  "chapter": "10.11",
+  "chapterTitle": "Magnetic Effects of Current",
+  "subject": "Physics",
+  "apparatus": "Thick copper wire, magnetic plotting compass, 6V accumulator, reversing commutator switch, rheostat, support stand.",
+  "steps": [
+   "Place a magnetic compass directly beneath a straight horizontal copper wire aligned North-South.",
+   "Close switch so current flows from South to North; observe direction of compass needle deflection.",
+   "Reverse current direction (North to South) using commutator; observe compass needle deflection reversal.",
+   "Hold compass above wire and compare deflection direction against SNOW rule."
+  ],
+  "observation": "When current flows South to North over the compass, the North pole of the needle deflects towards the West (SNOW rule). Reversing current reverses needle deflection to East. Placing compass above wire inverts deflection.",
+  "concept": "Hans Christian Oersted (1820) discovered that moving electric charges (currents) generate a surrounding magnetic field. Field lines form concentric circles centered on the wire, governed by Maxwell's Right-Hand Thumb Rule.",
+  "equation": "B = (μ₀ · I) / (2π · r)  ;  Right-Hand Thumb Rule: Thumb || I → Curled Fingers || Field B",
+  "control": {
+   "label": "Current (A)",
+   "min": -5.0,
+   "max": 5.0,
+   "step": 1.0,
+   "value": 3.0,
+   "unit": "A"
+  },
+  "quiz": {
+   "question": "According to the Right-Hand Thumb Rule, if the thumb points in the direction of conventional electric current, what do the curled fingers represent?",
+   "answers": [
+    "The direction of the circular magnetic field lines circling the conductor",
+    "The direction of mechanical force",
+    "The direction of electric field",
+    "The flow of electrons"
+   ],
+   "correct": 0,
+   "explanation": "Maxwell's Right-Hand Thumb Rule states that if the right-hand thumb points along the conventional current, the curled fingers indicate the orientation of the concentric magnetic field lines."
+  },
+  "safety": "Passing high currents through straight wires causes rapid heating. Close key only momentarily while taking readings."
+ },
+ {
+  "id": "10.11.2",
+  "title": "Iron Filings Reveal Field Lines of a Bar Magnet",
+  "scene": "magnetfilings",
+  "chapter": "10.11",
+  "chapterTitle": "Magnetic Effects of Current",
+  "subject": "Physics",
+  "apparatus": "Strong permanent alnico bar magnet, smooth stiff white cardboard sheet, fine iron filings shaker, small plastic mallet / pencil.",
+  "steps": [
+   "Place bar magnet flat on bench and cover with horizontal cardboard sheet.",
+   "Sprinkle iron filings uniformly and thinly over the cardboard surface using shaker.",
+   "Tap cardboard gently with a pencil to overcome static friction.",
+   "Observe iron filings orient into smooth curved lines radiating between magnetic poles."
+  ],
+  "observation": "Iron filings align into continuous curved loops emerging from the North pole and entering the South pole, with highest line density crowding near both pole tips.",
+  "concept": "Each iron filing behaves as a tiny induced magnetic dipole that rotates to align tangentially along local magnetic field lines B(r). Line density directly represents relative magnetic field strength.",
+  "equation": "Torque τ = m × B → 0 when filing dipole m aligns parallel to local B vector  ;  Flux Density B ∝ Line Spacing",
+  "control": {
+   "label": "Field visibility / tapping",
+   "min": 10,
+   "max": 100,
+   "step": 5,
+   "value": 75,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "What does the crowding or high density of magnetic field lines near the poles of a bar magnet indicate?",
+   "answers": [
+    "The magnetic field is strongest near the poles",
+    "The magnetic field is weakest near the poles",
+    "Magnetic poles attract iron filings only",
+    "Field lines intersect at poles"
+   ],
+   "correct": 0,
+   "explanation": "The degree of closeness of magnetic field lines is a direct measure of magnetic field strength: crowded lines near the poles indicate a strong field, while widely spaced lines indicate a weaker field."
+  },
+  "safety": "Keep fine iron filings away from eyes. Do not inhale iron filing dust."
+ },
+ {
+  "id": "10.11.3",
+  "title": "Tracing Magnetic Field Lines Using a Compass",
+  "scene": "compasstrace",
+  "chapter": "10.11",
+  "chapterTitle": "Magnetic Effects of Current",
+  "subject": "Physics",
+  "apparatus": "Bar magnet, drawing board, white paper sheet, small magnetic plotting compass (1 cm diameter), sharp pencil, brass drawing pins.",
+  "steps": [
+   "Place bar magnet at center of paper; draw its rectangular outline and mark N and S poles.",
+   "Place compass near North pole; mark pencil dots at needle tip (N) and tail (S).",
+   "Move compass so tail sits exactly on the previous tip dot; mark new tip dot.",
+   "Repeat stepping across paper until compass reaches South pole; join dots with smooth curve.",
+   "Repeat from various starting points around magnet to map full vector field."
+  ],
+  "observation": "Continuous smooth field lines emerge from the North pole, curve through surrounding space, and enter the South pole without intersecting at any point.",
+  "concept": "A magnetic field line is the trajectory along which a theoretical isolated North magnetic pole would move. Two magnetic field lines can never cross; if they did, a compass placed at the intersection would point in two contradictory directions simultaneously.",
+  "equation": "Tangent to field line at point P = Direction of B vector  ;  ∇ · B = 0 (No magnetic monopoles)",
+  "control": {
+   "label": "Compass trace position",
+   "min": 0,
+   "max": 100,
+   "step": 1,
+   "value": 50,
+   "unit": "%"
+  },
+  "quiz": {
+   "question": "Why can two magnetic field lines never cross or intersect each other?",
+   "answers": [
+    "At the point of intersection, the compass needle would have to point in two different directions simultaneously, which is physically impossible",
+    "Magnetic lines repel each other",
+    "Field lines are parallel everywhere",
+    "Magnetic field drops to zero between lines"
+   ],
+   "correct": 0,
+   "explanation": "The tangent to a field line gives the unique direction of the magnetic field vector. If two lines intersected, the field would have two different directions at that single point, which is physically impossible."
+  },
+  "safety": "Store plotting compasses away from strong magnetic fields to prevent demagnetization or polarity reversal."
+ },
+ {
+  "id": "10.11.4",
+  "title": "Magnetic Field of a Circular Current Loop",
+  "scene": "circularcoil",
+  "chapter": "10.11",
+  "chapterTitle": "Magnetic Effects of Current",
+  "subject": "Physics",
+  "apparatus": "Thick circular copper loop / multi-turn coil mounted through horizontal cardboard, 6V DC battery, iron filings, compasses, rheostat, switch.",
+  "steps": [
+   "Pass circular copper wire loop vertically through two holes in a horizontal cardboard sheet.",
+   "Sprinkle iron filings uniformly over cardboard and close switch to pass 5A DC current.",
+   "Gently tap cardboard to reveal magnetic field pattern.",
+   "Use plotting compasses to trace field lines near wire conductors and across the loop center."
+  ],
+  "observation": "Near the wire segments, field lines form concentric circles. As you move towards the loop center, the curved circular arcs flatten out into straight, parallel lines perpendicular to the loop plane.",
+  "concept": "Every infinitesimal current segment contributes vectorially to the total field (Biot-Savart Law). At the coil center, magnetic contributions from all loop segments add constructively in the same direction, generating a strong uniform magnetic field.",
+  "equation": "B_center = (μ₀ · N · I) / (2 · R)  ;  Clock Face Rule: Clockwise current = South Pole ; Anticlockwise = North Pole",
+  "control": {
+   "label": "Current strength (I)",
+   "min": 1,
+   "max": 10,
+   "step": 1,
+   "value": 6,
+   "unit": "A"
+  },
+  "quiz": {
+   "question": "If you look at one circular face of a current-carrying coil and the current flows in a clockwise direction, what magnetic pole does that face represent?",
+   "answers": [
+    "South magnetic pole",
+    "North magnetic pole",
+    "Neutral face",
+    "Alternating pole"
+   ],
+   "correct": 0,
+   "explanation": "By the Clock Face Rule, if current flows in a clockwise direction around the perimeter, that face acts as a South magnetic pole; anticlockwise current represents a North pole."
+  },
+  "safety": "High currents in circular coils generate resistive heat. Use an intermittent tap key to prevent overheating."
+ },
+ {
+  "id": "10.11.5",
+  "title": "Force on a Wire Carrying Current in a Magnetic Field",
+  "scene": "motorforce",
+  "chapter": "10.11",
+  "chapterTitle": "Magnetic Effects of Current",
+  "subject": "Physics",
+  "apparatus": "Light aluminium rod (AB) suspended horizontally by flexible copper leads, strong permanent horseshoe magnet, 6V battery, reversing switch, retort stand.",
+  "steps": [
+   "Suspend aluminium rod AB horizontally between the vertical poles of horseshoe magnet (magnetic field B directed upwards from N to S).",
+   "Pass current through rod from end B to end A; observe direction of mechanical displacement.",
+   "Reverse current direction (from A to B) and observe reversed rod displacement.",
+   "Interchange magnet poles (field directed downwards) and verify Fleming's Left-Hand Rule."
+  ],
+  "observation": "When current flows through the rod in the magnetic field, the rod experiences an immediate sideways mechanical thrust and swings outward. Reversing either current or magnetic field reverses displacement direction.",
+  "concept": "A current-carrying conductor in a magnetic field experiences a Lorentz magnetic force: F = I(L × B). The direction of force is perpendicular to both current and magnetic field, predicted by Fleming's Left-Hand Rule.",
+  "equation": "F = B · I · L · sin(θ)  ;  Fleming's Left-Hand Rule: Forefinger = Field (B), Center finger = Current (I), Thumb = Force (F)",
+  "control": {
+   "label": "Current direction / magnitude",
+   "min": -5.0,
+   "max": 5.0,
+   "step": 1.0,
+   "value": 3.0,
+   "unit": "A"
+  },
+  "quiz": {
+   "question": "According to Fleming's Left-Hand Rule, which finger represents the direction of the mechanical force (motion) acting on the conductor?",
+   "answers": [
+    "The thumb",
+    "The forefinger",
+    "The center finger",
+    "The ring finger"
+   ],
+   "correct": 0,
+   "explanation": "In Fleming's Left-Hand Rule: Forefinger represents magnetic Field, Center finger represents Current, and Thumb points in the direction of mechanical Force (Motion)."
+  },
+  "safety": "Ensure flexible leads allow free swinging motion without short-circuiting against the steel magnet body."
+ },
+ {
+  "id": "10.11.6",
+  "title": "Electromagnetic Induction by Moving a Magnet",
+  "scene": "magnetinduction",
+  "chapter": "10.11",
+  "chapterTitle": "Magnetic Effects of Current",
+  "subject": "Physics",
+  "apparatus": "Multi-turn insulated copper wire solenoid coil (N = 500 turns), strong permanent bar magnet, sensitive center-zero galvanometer (G), connecting leads.",
+  "steps": [
+   "Connect solenoid terminals directly to a sensitive center-zero galvanometer (no battery in circuit).",
+   "Plunge North pole of bar magnet rapidly into the coil interior; observe galvanometer needle kick.",
+   "Hold magnet completely stationary inside the coil; observe galvanometer needle position.",
+   "Withdraw magnet rapidly from coil; observe needle kick in the opposite direction.",
+   "Test effect of moving magnet slowly vs rapidly, and repeat with South pole."
+  ],
+  "observation": "Moving the magnet into the coil causes instantaneous needle deflection to the right. When the magnet stops moving, deflection returns to ZERO. Withdrawing magnet deflects needle to the left. Faster motion produces greater deflection.",
+  "concept": "Faraday's Law of Electromagnetic Induction: an induced electromotive force (EMF) and current are generated in a closed circuit whenever the magnetic flux linking the circuit changes with time. Stationary flux produces zero induced current.",
+  "equation": "Induced EMF ε = −N · (dΦ_B / dt)  ;  Φ_B = ∫ B · dA  ;  Lenz's Law: Induced current opposes the flux change",
+  "control": {
+   "label": "Magnet velocity (v)",
+   "min": -5.0,
+   "max": 5.0,
+   "step": 1.0,
+   "value": 3.0,
+   "unit": "v"
+  },
+  "quiz": {
+   "question": "What happens to the galvanometer reading when a strong bar magnet is held completely stationary inside a conducting solenoid?",
+   "answers": [
+    "The galvanometer needle rests precisely at zero (no induced current)",
+    "The needle shows constant maximum deflection",
+    "The needle oscillates continuously",
+    "The needle deflects backward"
+   ],
+   "correct": 0,
+   "explanation": "Electromagnetic induction requires a changing magnetic flux (dΦ/dt ≠ 0). When the magnet is stationary relative to the coil, flux is constant (dΦ/dt = 0), so induced EMF is strictly zero."
+  },
+  "safety": "Center-zero galvanometers are highly sensitive instruments; avoid dropping or subjecting to heavy mechanical shocks."
+ },
+ {
+  "id": "10.11.7",
+  "title": "Induction Between Neighbouring Coils (Mutual Induction)",
+  "scene": "mutualinduction",
+  "chapter": "10.11",
+  "chapterTitle": "Magnetic Effects of Current",
+  "subject": "Physics",
+  "apparatus": "Primary coil P (with battery and tapping key), Secondary coil S (connected to sensitive galvanometer), soft iron cylindrical core, connecting wires.",
+  "steps": [
+   "Wind Primary coil P and Secondary coil S side-by-side over a common non-conducting cylinder or soft iron core.",
+   "Connect Primary coil to battery and tapping key; connect Secondary coil to galvanometer.",
+   "Press tapping key to close primary circuit; observe momentary galvanometer kick in secondary.",
+   "Hold key continuously closed (steady primary current); observe galvanometer reading.",
+   "Release tapping key to open primary circuit; observe momentary galvanometer kick in opposite direction."
+  ],
+  "observation": "A momentary transient deflection appears in the secondary coil only at the exact instant primary current is switched ON or switched OFF. While primary current is steady DC, secondary galvanometer reads exactly ZERO.",
+  "concept": "Mutual induction is the phenomenon whereby a time-varying current in a primary coil creates a time-varying magnetic flux that links a neighbouring secondary coil, inducing an electromotive force: ε₂ = −M (dI₁/dt).",
+  "equation": "ε₂ = −M · (dI₁ / dt)  ;  M = Mutual Inductance (Henries)  ;  Steady DC (dI/dt = 0) → ε₂ = 0",
+  "control": {
+   "label": "Primary current change rate",
+   "min": -5.0,
+   "max": 5.0,
+   "step": 1.0,
+   "value": 3.0,
+   "unit": "dI/dt"
+  },
+  "quiz": {
+   "question": "When a steady, unchanging direct current (DC) flows through the primary coil, what is the induced current in the neighbouring secondary coil?",
+   "answers": [
+    "Zero induced current",
+    "Constant DC current",
+    "Alternating current",
+    "Maximum current"
+   ],
+   "correct": 0,
+   "explanation": "A steady direct current creates a constant, unchanging magnetic flux. Because mutual induction requires a rate of change of flux (dΦ/dt), a steady DC primary induces zero EMF in the secondary."
+  },
+  "safety": "Sudden opening of inductive primary circuits can produce a high back-EMF spark across switch contacts."
+ }
+]

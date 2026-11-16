@@ -1,68 +1,31 @@
-import {
-  BulletList,
-  Callout,
-  ChapterIndex,
-  DataTable,
-  Formula,
-  NumberedList,
-  Prose,
-  SectionHeading,
-  SubHeading,
-  type TermLexicon,
-} from "@/components/design";
+import type { Metadata } from "next";
 import { CanonicalChapterPage } from "@/components/notes/canonical";
-import { hydrocarbonBlocks, hydrocarbonChapterMap, type HydrocarbonBlock } from "./hydrocarbons-notes";
 
-export const metadata = {
-  title: "Hydrocarbons: Alkanes, Alkenes, Alkynes and Aromatics | JEE Advanced Organic Chemistry",
+export const metadata: Metadata = {
+  title: "Hydrocarbons: Alkanes, Alkenes, Alkynes and Aromatic Substitution | JEE Advanced Organic Chemistry",
   description:
-    "Free-radical halogenation, E1/E2 elimination, Markovnikov and anti-Markovnikov addition, ozonolysis, alkyne acidity, and the electrophilic aromatic substitution mechanism with all five named EAS reactions and directing-effect problems.",
+    "Complete JEE Advanced hydrocarbon notes in three parts: alkanes, alkenes and alkynes side by side, and aromatic substitution (EAS and NAS), with step-wise curved-arrow mechanisms and exact reagents.",
 };
 
-const LEXICON: TermLexicon = [
-  { match: ["carbocation", "carbanion", "free radical", "arenium ion"], kind: "bond" },
-  { match: ["Markovnikov", "aromaticity", "syn addition", "anti-periplanar"], kind: "orbital" },
-  { match: ["Warning / limitation", "Common trap", "JEE trap"], kind: "trap" },
-  { match: ["Key idea", "JEE-to-university bridge"], kind: "rule" },
+// Each part is one complete, self-contained HTML notes file served by its own
+// premium-gated route (see lib/notes/htmlNotes.ts).
+const PARTS = [
+  {
+    href: "/learn/jee-advanced/organic-chemistry/hydrocarbons/alkanes",
+    title: "Alkanes",
+    blurb: "Preparation, physical properties, free-radical halogenation, cracking, combustion and every named reaction, with step-wise mechanisms.",
+  },
+  {
+    href: "/learn/jee-advanced/organic-chemistry/hydrocarbons/alkenes-alkynes",
+    title: "Alkenes and Alkynes",
+    blurb: "Alkenes and alkynes side by side: preparation, electrophilic and radical addition, oxidation, ozonolysis, dienes and alkyne acidity.",
+  },
+  {
+    href: "/learn/jee-advanced/organic-chemistry/hydrocarbons/aromatic-substitution",
+    title: "Aromatic Substitution (EAS and NAS)",
+    blurb: "Aromaticity, the arenium-ion mechanism, nitration, sulphonation, halogenation, Friedel–Crafts, directing effects and nucleophilic aromatic substitution.",
+  },
 ];
-
-function slugForMajor(text: string) {
-  const section = text.match(/^Section (\d+)/i);
-  if (section) return `section-${section[1]}`;
-  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 72);
-}
-
-function BlockView({ block }: { block: HydrocarbonBlock }) {
-  switch (block.kind) {
-    case "major":
-    case "section": {
-      const text = block.text ?? "";
-      const match = text.match(/^Section (\d+)\s*-\s*(.*)$/i);
-      return (
-        <SectionHeading id={slugForMajor(text)} eyebrow={match ? `Section ${match[1]}` : undefined}>
-          {match ? match[2] : text}
-        </SectionHeading>
-      );
-    }
-    case "subheading":
-      return <SubHeading>{block.text}</SubHeading>;
-    case "callout": {
-      const raw = block.text ?? "";
-      const match = raw.match(/^([^:]+):\s*(.*)$/);
-      return <Callout label={match?.[1] ?? "Key idea"} text={match?.[2] ?? raw} lexicon={LEXICON} />;
-    }
-    case "bullets":
-      return <BulletList items={block.items ?? []} lexicon={LEXICON} />;
-    case "numbered":
-      return <NumberedList items={block.items ?? []} lexicon={LEXICON} />;
-    case "table":
-      return <DataTable headers={block.headers ?? []} rows={block.rows ?? []} lexicon={LEXICON} />;
-    case "formula":
-      return <Formula expression={block.text ?? ""} label={block.formulaLabel} />;
-    default:
-      return <Prose text={block.text ?? ""} lexicon={LEXICON} />;
-  }
-}
 
 export default function HydrocarbonsPage() {
   return (
@@ -71,25 +34,22 @@ export default function HydrocarbonsPage() {
       discipline="JEE Advanced · Organic Chemistry"
       chapterTitle="Hydrocarbons"
       chapterSlug="hydrocarbons"
-      description="Alkanes, alkenes, alkynes and aromatics — where the reactive intermediates and electronic effects built in General Organic Chemistry turn into real reactions: free-radical halogenation, elimination, electrophilic addition, oxidative cleavage, and the five named electrophilic aromatic substitutions with their directing-effect logic."
+      description="Complete notes in three parts. Each part opens as one full chapter with every mechanism drawn step by step."
       free={false}
     >
-      <article className="space-y-8">
-        <Callout label="Central idea" tone="rule">
-            Every regiochemical outcome here — Markovnikov addition, Zaitsev elimination,
-            ortho/para vs meta substitution — is the same underlying question asked
-            repeatedly: which intermediate (carbocation, radical, or arenium ion) is more
-            stable, and does the mechanism actually pass through that intermediate.
-          </Callout>
-
-        <ChapterIndex items={hydrocarbonChapterMap} />
-
-        <div className="space-y-6">
-          {hydrocarbonBlocks.map((block, index) => (
-              <BlockView key={`${block.kind}-${(block.text ?? "").slice(0, 64)}-${index}`} block={block} />
-            ))}
-        </div>
-      </article>
+      <div className="grid gap-4 sm:grid-cols-3">
+        {PARTS.map((part, i) => (
+          <a
+            key={part.href}
+            href={part.href}
+            className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 transition hover:border-[var(--border-strong)] hover:bg-[var(--surface-hover)] sm:p-6"
+          >
+            <span className="font-mono text-sm font-bold text-[var(--accent)]">{String(i + 1).padStart(2, "0")}</span>
+            <h2 className="mt-2 text-lg font-semibold text-[var(--foreground)]">{part.title}</h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{part.blurb}</p>
+          </a>
+        ))}
+      </div>
     </CanonicalChapterPage>
   );
 }

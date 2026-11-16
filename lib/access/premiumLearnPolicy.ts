@@ -22,6 +22,9 @@ export const PREMIUM_LEARN_ELIGIBLE_PROGRAM_KEYS = {
   // Solid State master notes are authored for the JEE Advanced track only.
   "solid-state": ["jee-advanced"],
   "organic-chemistry": ["jee-advanced"],
+  // Complete chapter notes published as self-contained HTML files under the
+  // JEE Advanced track (kinetics, coordination, hydrocarbons, elimination).
+  "jee-advanced-notes": ["jee-advanced"],
   isomerism: [
     "neet", "jee-main", "jee-advanced",
     "cbse:class-11", "isc:class-11", "icse:class-11", "state-boards:class-11",

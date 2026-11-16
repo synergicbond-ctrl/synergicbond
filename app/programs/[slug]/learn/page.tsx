@@ -4,7 +4,7 @@ import ProgramPageHeader from "@/components/programs/ProgramPageHeader";
 import { examChapters } from "@/components/syllabus/ExamSyllabus";
 import { getProgram, PROGRAMS } from "@/lib/programs";
 import { formulaCards } from "@/lib/chemistry/formulas";
-import { isEngineSlug, AUTHORED_NOTES, ENGINE_PROGRAMS } from "@/lib/engine/programSpec";
+import { isEngineSlug, authoredNotesFor, ENGINE_PROGRAMS, JEE_ADVANCED_COMPLETE_NOTES_HUB } from "@/lib/engine/programSpec";
 import { getPremiumNotesForExam } from "@/lib/premiumNotes";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -67,6 +67,18 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
       />
 
       <div className="mx-auto max-w-6xl px-6 py-12">
+        {slug === "jee-advanced" && (
+          <Link
+            href={JEE_ADVANCED_COMPLETE_NOTES_HUB}
+            className={`mb-10 block rounded-lg border bg-white/[0.02] p-5 transition hover:bg-white/[0.04] ${accent.card}`}
+          >
+            <span className={`text-xs font-bold uppercase tracking-[0.16em] ${accent.text}`}>Complete notes · Premium</span>
+            <span className="mt-1 block text-lg font-semibold">JEE Advanced complete chapter notes →</span>
+            <span className="mt-1 block text-sm text-[var(--text-muted)]">
+              Chemical Bonding, Chemical Kinetics, Coordination Compounds, Hydrocarbons (Alkanes, Alkenes and Alkynes, Aromatic Substitution) and Elimination Reactions.
+            </span>
+          </Link>
+        )}
         {/* ── Chapters — primary content ── */}
         <section className="mb-14">
           <h2 className="mb-2 text-2xl font-bold">Chapters</h2>
@@ -83,7 +95,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                   // engine (engine programs) or the classic chapter workspace.
                   const notesHref = chapter.id === "solid-state" && slug === "jee-advanced"
                     ? "/learn/solid-state"
-                    : AUTHORED_NOTES[chapter.id];
+                    : authoredNotesFor(slug, chapter.id);
                   const inlineNotes = isEngineSlug(slug)
                     ? getPremiumNotesForExam(chapter.id, ENGINE_PROGRAMS[slug].exam)
                     : undefined;

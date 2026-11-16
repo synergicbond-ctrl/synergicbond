@@ -1,6 +1,6 @@
 import { serveGatedHtmlNotes } from "@/lib/notes/htmlNotes";
 
-// Chemical Kinetics: complete notes, one self-contained HTML file (replaces the 20-part course).
+// Chemical Kinetics: complete notes, one self-contained HTML file — JEE Advanced only.
 export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {

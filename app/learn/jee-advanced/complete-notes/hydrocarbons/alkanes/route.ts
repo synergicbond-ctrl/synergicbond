@@ -1,6 +1,6 @@
 import { serveGatedHtmlNotes } from "@/lib/notes/htmlNotes";
 
-// Hydrocarbons — Alkanes: complete notes, one self-contained HTML file.
+// Hydrocarbons, Alkanes: complete notes, one self-contained HTML file — JEE Advanced only.
 export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {

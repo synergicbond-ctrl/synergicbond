@@ -23,7 +23,7 @@ export const PREMIUM_LEARN_ELIGIBLE_PROGRAM_KEYS = {
   "solid-state": ["jee-advanced"],
   "organic-chemistry": ["jee-advanced"],
   // Complete chapter notes published as self-contained HTML files under the
-  // JEE Advanced track (kinetics, coordination, hydrocarbons, elimination).
+  // JEE Advanced track (bonding, kinetics, coordination, hydrocarbons, elimination).
   "jee-advanced-notes": ["jee-advanced"],
   isomerism: [
     "neet", "jee-main", "jee-advanced",

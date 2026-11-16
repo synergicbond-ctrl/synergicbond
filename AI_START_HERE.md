@@ -21,13 +21,8 @@ Everything here is designed to work WITHOUT access to old chat transcripts.
 ## Handoff bundles
 
 - `AI_HANDOFF/chemical-bonding-189/START_HERE.md` — Chemical Bonding
-  189-topic course: status (replaced on 2026-11-16 by the HTML notes below),
-  protected chemistry corrections, recovery paths.
-- `content/jee-advanced-notes/` — the owner's complete chapter notes as
-  self-contained HTML files (Chemical Bonding, Chemical Kinetics,
-  Coordination, Hydrocarbons ×3, Elimination), served by premium-gated route
-  handlers via `lib/notes/htmlNotes.ts`. Edit the HTML files themselves; do
-  not split or rewrite them.
+  189-topic course: status (COMPLETE + DEPLOYED), architecture, protected
+  chemistry corrections, validation baseline, recovery paths.
 
 ## Other standing context
 

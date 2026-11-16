@@ -1,15 +1,5 @@
 # Chemical Bonding — 189-Topic Course · START HERE
 
-> **2026-11-16 — REPLACED (owner request).** `/learn/chemical-bonding` now
-> serves the owner's complete Chemical Bonding notes as one self-contained
-> HTML file (`content/jee-advanced-notes/chemical-bonding.html`, route
-> `app/learn/chemical-bonding/route.ts`, same premium rule
-> `hasPremiumLearnAccess(keys, "chemical-bonding")`). The 189-topic React
-> course described below was removed from the tree; restore it from git
-> (last present at commit `f693844`) or `snapshot/current/`. Protected
-> corrections 1–10 were spot-checked against the new HTML (11 valence for NO,
-> no SCN²⁻, no "Awaiting instruction", N–N bond in N₂O₄, O₂²⁻ diamagnetic).
-
 **Status: COMPLETE and DEPLOYED.** Verified 2026-07-19: the authoritative
 189-topic rebuild is merged on `origin/main` (PR #7, commit `8238df90`) and
 included in the successful Vercel production deployment of `093a8a42`.

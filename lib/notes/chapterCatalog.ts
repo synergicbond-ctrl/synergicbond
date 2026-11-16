@@ -120,10 +120,10 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "chemical-kinetics",
     title: "Chemical Kinetics",
     href: "/learn/jee-advanced/chemical-kinetics",
-    lessonLabel: "Complete notes",
+    lessonLabel: "20 parts",
     premium: true,
     description:
-      "Complete JEE Advanced Chemical Kinetics notes on one page: rate laws, order and molecularity, integrated rate equations, half-life, Arrhenius theory, collision and transition-state theory, and complex (consecutive, parallel, reversible) reactions.",
+      "Complete JEE Advanced Chemical Kinetics course: rate laws, order and molecularity, integrated rate equations, half-life, Arrhenius theory, collision and transition-state theory, and complex (consecutive, parallel, reversible) reactions.",
   },
   // ── Gaseous State ──────────────────────────────────────────────────────────
   {
@@ -195,9 +195,9 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "chemical-bonding",
     title: "Chemical Bonding",
     href: "/learn/chemical-bonding",
-    lessonLabel: "Complete notes · 29 chapters",
+    lessonLabel: "24 lessons · 189 topics",
     premium: true,
-    description: "Complete JEE Advanced Chemical Bonding notes on one page — Lewis theory, lattice energy, Fajans' rules, VBT and hybridisation, VSEPR, back bonding, MOT, dipole moment, hydrogen bonding, the inert-pair effect, with interactive animations.",
+    description: "Authoritative 189-topic course — Lewis theory, lattice energy, VBT and hybridisation, VSEPR, back bonding, MOT, hydrogen bonding, silicates and integrated JEE Advanced practice.",
   },
   // ── Electrochemistry ───────────────────────────────────────────────────────
   {
@@ -412,19 +412,9 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "hydrocarbons",
     title: "Hydrocarbons",
     href: "/learn/jee-advanced/organic-chemistry/hydrocarbons",
-    lessonLabel: "3 parts",
+    lessonLabel: "12 sections",
     premium: true,
-    description: "Complete notes in three parts — Alkanes, Alkenes and Alkynes side by side, and Aromatic Substitution (EAS and NAS) — with step-wise curved-arrow mechanisms and exact reagents.",
-  },
-  {
-    id: "elimination-reactions",
-    syllabusId: "haloalkanes-haloarenes",
-    sectionLabel: "Elimination reactions",
-    title: "Elimination Reactions",
-    href: "/learn/jee-advanced/organic-chemistry/elimination-reactions",
-    lessonLabel: "Complete notes",
-    premium: true,
-    description: "E1, E2, E1cB and Ei eliminations with step-wise mechanisms, stereochemistry (anti-periplanar, cyclohexane chairs), Saytzeff vs Hofmann products and rearrangements.",
+    description: "Alkanes, alkenes, alkynes and aromatic hydrocarbons: full mechanisms for radical halogenation, electrophilic addition, EAS, ozonolysis, and 25 JEE Advanced-pattern questions.",
   },
   {
     id: "haloalkanes-haloarenes",
@@ -496,9 +486,9 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "coordination-compounds",
     title: "Coordination Compounds",
     href: "/learn/jee-advanced/inorganic-chemistry/coordination-compounds",
-    lessonLabel: "Complete notes",
+    lessonLabel: "11 sections",
     premium: true,
-    description: "Complete JEE Advanced Coordination Chemistry notes on one page: Werner's theory, IUPAC nomenclature, isomerism, VBT and CFT with d-orbital splitting, magnetism and colour, stability constants and organometallics.",
+    description: "Werner's theory, IUPAC nomenclature, isomerism, VBT and CFT with d-orbital splitting, stability constants, and 25 JEE Advanced questions.",
   },
 ];
 

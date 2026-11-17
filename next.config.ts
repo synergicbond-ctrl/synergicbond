@@ -36,6 +36,14 @@ const nextConfig: NextConfig = {
   // they are bundled into that serverless function.
   outputFileTracingIncludes: {
     "/learn/solid-state/textbook": ["./content/solid-state-html/solid-state-textbook.html"],
+    // JEE Advanced complete chapter notes, one self-contained HTML file per route.
+    "/learn/jee-advanced/complete-notes/chemical-bonding": ["./content/jee-advanced-notes/chemical-bonding.html"],
+    "/learn/jee-advanced/complete-notes/chemical-kinetics": ["./content/jee-advanced-notes/chemical-kinetics.html"],
+    "/learn/jee-advanced/complete-notes/coordination-compounds": ["./content/jee-advanced-notes/coordination-compounds.html"],
+    "/learn/jee-advanced/complete-notes/hydrocarbons/alkanes": ["./content/jee-advanced-notes/alkanes.html"],
+    "/learn/jee-advanced/complete-notes/hydrocarbons/alkenes-alkynes": ["./content/jee-advanced-notes/alkenes-alkynes.html"],
+    "/learn/jee-advanced/complete-notes/hydrocarbons/aromatic-substitution": ["./content/jee-advanced-notes/aromatic-substitution.html"],
+    "/learn/jee-advanced/complete-notes/elimination-reactions": ["./content/jee-advanced-notes/elimination-reactions.html"],
     "/learn/isomerism/files/[...path]": ["./content/isomerism-resources/**/*"],
     "/notes/assignments/[chapter]/[...path]": ["./content/assignments/**/*"],
   },

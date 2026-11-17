@@ -9,7 +9,7 @@ import type { PYQChapter } from "@/lib/pyq";
 import { getAllUserAnswers } from "@/lib/attempts/store";
 import { buildMistakeJournal } from "@/lib/attempts/mistakes";
 import {
-  ENGINE_PROGRAMS, isEngineSlug, CHAPTER_PYQ_MAP, AUTHORED_NOTES,
+  ENGINE_PROGRAMS, isEngineSlug, CHAPTER_PYQ_MAP, authoredNotesFor,
 } from "@/lib/engine/programSpec";
 import { buildNcertIntel, type Importance } from "@/lib/engine/ncertIntel";
 import { buildChapterMastery } from "@/lib/engine/mastery";
@@ -102,7 +102,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
   const examPool = ALL_PYQ_QUESTIONS.filter((q) => scope.has(q.chapter) && q.exam === engine.exam);
   const ncert = buildNcertIntel(pyqChapters);
   const topics = chapter.concepts.map((c) => c.title).slice(0, 10);
-  const authoredHref = AUTHORED_NOTES[id];
+  const authoredHref = authoredNotesFor(slug, id);
   const premiumNotes = getPremiumNotesForExam(id, engine.exam);
 
   // Per-user layers (route is auth-protected; degrade gracefully regardless).

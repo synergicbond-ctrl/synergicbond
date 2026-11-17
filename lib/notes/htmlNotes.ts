@@ -47,8 +47,54 @@ export function withoutPrinting(html: string): string {
   return out.slice(0, end) + NO_PRINT + out.slice(end);
 }
 
+// Per-chapter clean-up: remove filler text (format notes, "offline" labels,
+// feature counts) and the search boxes, and give the Kinetics top bar a clean
+// title. Elements that the files' scripts look up are hidden, not deleted.
+type Polish = { remove?: (string | RegExp)[]; replace?: [string, string][]; css?: string };
+const POLISH: Record<string, Polish> = {
+  "chemical-kinetics.html": {
+    replace: [['<div class="brand">CHEMICAL KINETICS</div>', '<div class="brand">Chemical Kinetics</div>']],
+    css:
+      ".topbar .controls,.intro p{display:none!important}" +
+      ".topbar{background:rgba(255,255,255,.9)!important;-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #e7eaf3!important;box-shadow:0 1px 12px rgba(30,41,90,.06);padding:14px max(20px,calc((100vw - 1480px)/2))!important}" +
+      ".topbar .brand{display:flex;align-items:center;gap:12px;font-size:1.06rem!important;font-weight:700!important;letter-spacing:.015em!important;color:#25226b!important}" +
+      ".topbar .brand::before{content:'';width:6px;height:24px;border-radius:3px;background:linear-gradient(180deg,#4f46e5,#0d9488)}" +
+      ".intro{padding-bottom:8px}",
+  },
+  "chemical-bonding.html": {
+    remove: [
+      "<small>SYNERGIC BOND · JEE ADVANCED · OFFLINE TEXTBOOK</small>",
+      /<p>Comprehensive JEE Advanced learning edition:[^<]*<\/p>/,
+      /<span class="pill">(?:29 chapters · continuous navigation|271 Subtopic Entries|540 Numbered Worked-Example Entries|18 Canvas Demonstrations \+ SVG Figures)<\/span>/g,
+    ],
+    css: "aside>#search,#chapterSearch,.sidebar-small{display:none!important}",
+  },
+  "solid-state-textbook.html": {
+    replace: [["<h1>Solid State — Complete</h1>", "<h1>Solid State</h1>"]],
+    remove: ['<p class="meta">JEE Advanced Physical Chemistry · Synergic Bond · everything in one file</p>'],
+    css: ".tb-search{display:none!important}",
+  },
+};
+
+export function polishNotes(html: string, fileName: string): string {
+  const polish = POLISH[fileName];
+  let out = withoutPrinting(html);
+  if (!polish) return out;
+  for (const item of polish.remove ?? []) {
+    out = typeof item === "string" ? out.split(item).join("") : out.replace(item, "");
+  }
+  for (const [from, to] of polish.replace ?? []) out = out.split(from).join(to);
+  if (polish.css) {
+    // Appended at the end of <head> so it wins over the file's own styles.
+    const style = `<style id="sb-polish">${polish.css}</style>`;
+    const close = out.search(/<\/head>/i);
+    out = close === -1 ? style + out : out.slice(0, close) + style + out.slice(close);
+  }
+  return out;
+}
+
 async function prepare(absPath: string): Promise<PreparedFile> {
-  const raw = Buffer.from(withoutPrinting(await readFile(absPath, "utf8")), "utf8");
+  const raw = Buffer.from(polishNotes(await readFile(absPath, "utf8"), path.basename(absPath)), "utf8");
   const [br, gz] = await Promise.all([
     brotli(raw, {
       params: {

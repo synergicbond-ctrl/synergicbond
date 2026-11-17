@@ -414,14 +414,47 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     description: "Bond fission, carbocations, carbanions, radicals, carbenes, inductive/resonance/hyperconjugation/electromeric effects, aromaticity, and acid-base strength — with 25 JEE Advanced-pattern questions.",
   },
   {
-    id: "hydrocarbons",
+    id: "hydrocarbons-alkanes",
     syllabusId: "hydrocarbons",
-    title: "Hydrocarbons",
-    href: "/learn/jee-advanced/complete-notes/hydrocarbons",
-    lessonLabel: "3 parts",
+    title: "Alkanes",
+    href: "/learn/jee-advanced/complete-notes/hydrocarbons/alkanes",
+    lessonLabel: "6 chapters",
     premium: true,
     description:
-      "Complete JEE Advanced hydrocarbon notes in three parts: Alkanes (free radicals, preparation and reactions), Alkenes and Alkynes side by side (every addition, oxidation, ozonolysis, dienes and Diels–Alder), and Aromatic Substitution (EAS and NAS), with every mechanism drawn step by step.",
+      "Complete JEE Advanced Alkanes notes: free radicals, how they are generated and how they react, general methods of preparation, physical properties and every chemical reaction of alkanes, with step-wise mechanisms.",
+  },
+  {
+    id: "hydrocarbons-alkenes",
+    syllabusId: "hydrocarbons",
+    ownCard: true,
+    title: "Alkenes",
+    href: "/learn/jee-advanced/complete-notes/hydrocarbons/alkenes-alkynes#part1",
+    lessonLabel: "24 sections",
+    premium: true,
+    description:
+      "Complete JEE Advanced Alkenes notes: structure and stability, preparation by elimination and dehydration, Wittig, hydrogenation, electrophilic addition and Markovnikov's rule, hydroboration, oxymercuration, peroxide effect, carbenes, epoxidation, ozonolysis, dienes and Diels–Alder, polymerisation and tests.",
+  },
+  {
+    id: "hydrocarbons-alkynes",
+    syllabusId: "hydrocarbons",
+    ownCard: true,
+    title: "Alkynes",
+    href: "/learn/jee-advanced/complete-notes/hydrocarbons/alkenes-alkynes#part2",
+    lessonLabel: "18 sections",
+    premium: true,
+    description:
+      "Complete JEE Advanced Alkynes notes: structure and acidity, preparation from halides and acetylides, reduction, addition of HX and halogens, Kucherov hydration and tautomerism, hydroboration, KMnO₄ oxidation, oxidative cleavage, ozonolysis, nucleophilic addition, polymerisation of acetylene and tests.",
+  },
+  {
+    id: "hydrocarbons-aromatic",
+    syllabusId: "hydrocarbons",
+    ownCard: true,
+    title: "Aromatic Substitution (EAS and NAS)",
+    href: "/learn/jee-advanced/complete-notes/hydrocarbons/aromatic-substitution",
+    lessonLabel: "12 chapters",
+    premium: true,
+    description:
+      "Complete JEE Advanced aromatic substitution notes: aromaticity, the arenium-ion mechanism, nitration, sulphonation and blocking, ipso substitution, halogenation, Friedel–Crafts alkylation and acylation, formylation, directing effects, naphthalene and heterocycles, rearrangements and nucleophilic aromatic substitution (SNAr, benzyne).",
   },
   {
     id: "haloalkanes-haloarenes",

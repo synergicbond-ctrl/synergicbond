@@ -47,19 +47,37 @@ export function withoutPrinting(html: string): string {
   return out.slice(0, end) + NO_PRINT + out.slice(end);
 }
 
+// Speed: two chapters did all their heavy script work at page load, freezing
+// the page on phones (Kinetics ~18 s typesetting ~3,400 MathJax formulas;
+// Bonding ~14 s booting and paginating 7 interactive modules). Both now do
+// that work only for the part of the chapter near the screen.
+const KINETICS_MATHJAX_CONFIG = String.raw`window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};`;
+const KINETICS_MATHJAX_LAZY = String.raw`window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{typeset:false,ready:function(){MathJax.startup.defaultReady();MathJax.startup.promise.then(function(){var q=[],busy=false,jump=null;function realign(){if(jump&&Date.now()-jump.t<6000){var el=document.getElementById(jump.id);if(el)el.scrollIntoView({block:'start'});}}function run(){if(busy||!q.length)return;busy=true;var els=q.splice(0,q.length);MathJax.typesetPromise(els).catch(function(){}).then(function(){busy=false;realign();if(q.length)setTimeout(run,0);});}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var id=decodeURIComponent(a.getAttribute('href').slice(1));if(!id||!document.getElementById(id))return;e.preventDefault();jump={id:id,t:Date.now()};document.getElementById(id).scrollIntoView({block:'start'});history.replaceState(null,'','#'+id);},true);window.addEventListener('wheel',function(){jump=null;},{passive:true});window.addEventListener('touchmove',function(){jump=null;},{passive:true});if(location.hash){var h=decodeURIComponent(location.hash.slice(1));if(document.getElementById(h))jump={id:h,t:Date.now()};}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);q.push(e.target);}});run();},{rootMargin:'1500px 0px'});function collect(el,out){if(el.children.length>1&&el.getBoundingClientRect().height>2000){for(var i=0;i<el.children.length;i++)collect(el.children[i],out);}else out.push(el);}var t=[];document.querySelectorAll('#toc,.intro,section[data-chapter]').forEach(function(s){collect(s,t);});t.forEach(function(el){io.observe(el);});});}}};`;
+const BONDING_MODULE_BOOT = "connectedCallback(){if(this.__done)return;this.__done=true;";
+const BONDING_MODULE_LAZY_BOOT =
+  "connectedCallback(){if(this.__done)return;if(!this.__go){__sbLazy(this);return;}this.__done=true;";
+const BONDING_MODULE_DEFINE = "customElements.define('sb-native-chemistry-module'";
+const BONDING_LAZY_OBSERVER =
+  "const __sbIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&e.target.__boot)e.target.__boot();}),{rootMargin:'1500px 0px'});" +
+  "function __sbLazy(el){if(el.__boot)return;el.__boot=()=>{if(el.__go)return;el.__go=true;__sbIO.unobserve(el);el.connectedCallback();};__sbIO.observe(el);}\n";
+const BONDING_LINK_LOOKUP = "var m=art&&art.querySelector('sb-native-chemistry-module');";
+
 // Per-chapter clean-up: remove filler text (format notes, "offline" labels,
 // feature counts) and the search boxes, and give the Kinetics top bar a clean
 // title. Elements that the files' scripts look up are hidden, not deleted.
 type Polish = { remove?: (string | RegExp)[]; replace?: [string, string][]; css?: string };
 const POLISH: Record<string, Polish> = {
   "chemical-kinetics.html": {
-    replace: [['<div class="brand">CHEMICAL KINETICS</div>', '<div class="brand">Chemical Kinetics</div>']],
+    replace: [
+      ['<div class="brand">CHEMICAL KINETICS</div>', '<div class="brand">Chemical Kinetics</div>'],
+      [KINETICS_MATHJAX_CONFIG, KINETICS_MATHJAX_LAZY],
+    ],
     css:
       ".topbar .controls,.intro p{display:none!important}" +
       ".topbar{background:rgba(255,255,255,.9)!important;-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #e7eaf3!important;box-shadow:0 1px 12px rgba(30,41,90,.06);padding:14px max(20px,calc((100vw - 1480px)/2))!important}" +
       ".topbar .brand{display:flex;align-items:center;gap:12px;font-size:1.06rem!important;font-weight:700!important;letter-spacing:.015em!important;color:#25226b!important}" +
       ".topbar .brand::before{content:'';width:6px;height:24px;border-radius:3px;background:linear-gradient(180deg,#4f46e5,#0d9488)}" +
-      ".intro{padding-bottom:8px}",
+      ".intro{padding-bottom:8px}html{scroll-behavior:auto!important}section[data-chapter],[id]{scroll-margin-top:76px!important}",
   },
   "chemical-bonding.html": {
     remove: [
@@ -67,7 +85,13 @@ const POLISH: Record<string, Polish> = {
       /<p>Comprehensive JEE Advanced learning edition:[^<]*<\/p>/,
       /<span class="pill">(?:29 chapters · continuous navigation|271 Subtopic Entries|540 Numbered Worked-Example Entries|18 Canvas Demonstrations \+ SVG Figures)<\/span>/g,
     ],
-    css: "aside>#search,#chapterSearch,.sidebar-small{display:none!important}",
+    replace: [
+      [BONDING_MODULE_BOOT, BONDING_MODULE_LAZY_BOOT],
+      [BONDING_MODULE_DEFINE, BONDING_LAZY_OBSERVER + BONDING_MODULE_DEFINE],
+      // A link into a module that has not started yet starts it first.
+      [BONDING_LINK_LOOKUP, BONDING_LINK_LOOKUP + "if(m&&m.__boot)m.__boot();"],
+    ],
+    css: "aside>#search,#chapterSearch,.sidebar-small{display:none!important}sb-native-chemistry-module:not([data-status]){min-height:480px}",
   },
   "solid-state-textbook.html": {
     replace: [["<h1>Solid State — Complete</h1>", "<h1>Solid State</h1>"]],

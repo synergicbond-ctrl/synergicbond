@@ -14,7 +14,7 @@ const H = `${B}/hydrocarbons`;
 
 const CHAPTERS = [
   { href: `${B}/chemical-bonding`, title: "Chemical Bonding", blurb: "29 chapters: Lewis theory, lattice energy, Fajans' rules, VBT and hybridisation, VSEPR, back bonding, MOT, dipole moment, hydrogen bonding and the inert-pair effect, with interactive animations." },
-  { href: `${B}/chemical-kinetics`, title: "Chemical Kinetics", blurb: "26 chapters and a 78-question bank: rate laws, integrated rate equations, complex reactions, collision and transition-state theory, mechanisms, enzyme and chain kinetics." },
+  { href: `${B}/chemical-kinetics`, title: "Chemical Kinetics", blurb: "25 chapters and 78 practice questions: rate laws, integrated rate equations, complex reactions, collision and transition-state theory, mechanisms, enzyme and chain kinetics." },
   { href: "/learn/solid-state/textbook", title: "Solid State", blurb: "The interactive textbook: 23 parts, the Master notes and the 3D Crystal Lab, from lattices and unit cells to packing, voids, defects, electrical and magnetic properties." },
   { href: `${B}/coordination-compounds`, title: "Coordination Compounds", blurb: "11 chapters: Werner's theory, nomenclature, isomerism, VBT and CFT, magnetism and colour, stability constants and organometallics." },
   { href: `${H}/alkanes`, title: "Alkanes", blurb: "6 chapters: free radicals, preparation, physical properties and every chemical reaction of alkanes, with step-wise mechanisms." },

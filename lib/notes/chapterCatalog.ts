@@ -125,7 +125,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "chemical-kinetics",
     title: "Chemical Kinetics",
     href: "/learn/jee-advanced/complete-notes/chemical-kinetics",
-    lessonLabel: "26 chapters · 78-question bank",
+    lessonLabel: "25 chapters · 78 practice questions",
     premium: true,
     description:
       "Complete JEE Advanced Chemical Kinetics notes: rate laws, order and molecularity, every integrated rate law with master tables, experimental order determination, reversible, parallel and consecutive reactions, collision and transition-state theory, mechanisms with the steady-state approximation, Michaelis–Menten, Lindemann, chain and photochemical kinetics, solved exercises and a 78-question practice bank.",

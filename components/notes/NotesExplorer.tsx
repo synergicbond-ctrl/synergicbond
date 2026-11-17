@@ -7,7 +7,7 @@ import {
   type NoteLink,
 } from "@/lib/notesEngine";
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
-import { AUTHORED_COURSES, COURSE_GROUP_CARDS, coursesForSyllabusChapter, groupLessonTotal, type AuthoredCourse } from "@/lib/notes/chapterCatalog";
+import { AUTHORED_COURSES, COURSE_GROUP_CARDS, coursesForSyllabusChapter, ownCardCoursesAfter, groupLessonTotal, type AuthoredCourse } from "@/lib/notes/chapterCatalog";
 import UnlockBanner from "@/components/monetization/UnlockBanner";
 import ChapterCardVisual from "@/components/notes/ChapterCardVisual";
 
@@ -390,6 +390,24 @@ function buildCards(
 ): ChapterCardData[] {
   const cards: ChapterCardData[] = [];
   for (const syllabusChapter of SYLLABUS_CHAPTERS) {
+    pushChapterCard(syllabusChapter);
+    for (const course of ownCardCoursesAfter(syllabusChapter.id)) {
+      cards.push({
+        key: course.id,
+        syllabusId: syllabusChapter.id,
+        title: course.title,
+        category: syllabusChapter.category,
+        description: course.description,
+        status: "full",
+        statusLine: `Full notes · ${course.lessonLabel}`,
+        premium: course.premium,
+        href: course.href,
+      });
+    }
+  }
+  return cards;
+
+  function pushChapterCard(syllabusChapter: SyllabusLite) {
     const courses = coursesForSyllabusChapter(syllabusChapter.id);
     if (courses.length > 1) {
       // Sections of ONE chapter (e.g. Some Basic Concepts) → one chapter card.
@@ -407,7 +425,7 @@ function buildCards(
         mixedAccess: courses.some((course) => course.premium) && courses.some((course) => !course.premium),
         href: group?.href ?? courses[0].href,
       });
-      continue;
+      return;
     }
     if (courses.length === 1) {
       const course = courses[0];
@@ -422,7 +440,7 @@ function buildCards(
         premium: course.premium,
         href: course.href,
       });
-      continue;
+      return;
     }
     const authored = authoredFor(syllabusChapter.id, chapters);
     const locked = !authored && restrictedChapterIds.includes(notesIdFor(syllabusChapter.id));
@@ -441,7 +459,6 @@ function buildCards(
       premium: locked,
     });
   }
-  return cards;
 }
 
 interface NotesExplorerProps {

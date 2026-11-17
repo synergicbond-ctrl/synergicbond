@@ -36,6 +36,11 @@ export interface AuthoredCourse {
   /** True when the route itself is entitlement-gated (server-side). */
   premium: boolean;
   description: string;
+  /**
+   * True when this course gets its own card (placed right after its syllabus
+   * chapter's card) instead of being grouped as a section of that chapter.
+   */
+  ownCard?: boolean;
 }
 
 export const AUTHORED_COURSES: AuthoredCourse[] = [
@@ -119,11 +124,11 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     id: "chemical-kinetics",
     syllabusId: "chemical-kinetics",
     title: "Chemical Kinetics",
-    href: "/learn/jee-advanced/chemical-kinetics",
-    lessonLabel: "20 parts",
+    href: "/learn/jee-advanced/complete-notes/chemical-kinetics",
+    lessonLabel: "26 chapters · 78-question bank",
     premium: true,
     description:
-      "Complete JEE Advanced Chemical Kinetics course: rate laws, order and molecularity, integrated rate equations, half-life, Arrhenius theory, collision and transition-state theory, and complex (consecutive, parallel, reversible) reactions.",
+      "Complete JEE Advanced Chemical Kinetics notes: rate laws, order and molecularity, every integrated rate law with master tables, experimental order determination, reversible, parallel and consecutive reactions, collision and transition-state theory, mechanisms with the steady-state approximation, Michaelis–Menten, Lindemann, chain and photochemical kinetics, solved exercises and a 78-question practice bank.",
   },
   // ── Gaseous State ──────────────────────────────────────────────────────────
   {
@@ -141,11 +146,11 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     id: "solid-state",
     syllabusId: "solid-state",
     title: "Solid State",
-    href: "/learn/solid-state/master",
-    lessonLabel: "10 parts",
+    href: "/learn/solid-state/textbook",
+    lessonLabel: "23 parts · Master notes · 3D Crystal Lab",
     premium: true,
     description:
-      "Complete JEE Advanced Solid State notes covering crystal classification, lattices and unit cells, seven crystal systems, packing, voids, radius-ratio rules, important ionic structures, defects, electrical properties and magnetism.",
+      "The complete interactive Solid State textbook: crystalline and amorphous solids, lattices and unit cells, seven crystal systems and fourteen Bravais lattices, Z, radius–edge relations, density, packing, voids, radius ratio, important crystal structures, defects, electrical and magnetic properties, with the Master notes and the 3D Crystal Lab built in.",
   },
   // ── Atomic Structure ───────────────────────────────────────────────────────
   {
@@ -194,10 +199,11 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     id: "chemical-bonding",
     syllabusId: "chemical-bonding",
     title: "Chemical Bonding",
-    href: "/learn/chemical-bonding",
-    lessonLabel: "24 lessons · 189 topics",
+    href: "/learn/jee-advanced/complete-notes/chemical-bonding",
+    lessonLabel: "29 chapters",
     premium: true,
-    description: "Authoritative 189-topic course — Lewis theory, lattice energy, VBT and hybridisation, VSEPR, back bonding, MOT, hydrogen bonding, silicates and integrated JEE Advanced practice.",
+    description:
+      "Complete JEE Advanced Chemical Bonding notes: atomic orbitals and why bonds form, ionic bonding and lattice energy, Fajans' rules, dipole moments, VBT and hybridisation, VSEPR, back bonding, MOT, hydrogen bonding and the inert-pair effect, with interactive animations.",
   },
   // ── Electrochemistry ───────────────────────────────────────────────────────
   {
@@ -411,10 +417,11 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     id: "hydrocarbons",
     syllabusId: "hydrocarbons",
     title: "Hydrocarbons",
-    href: "/learn/jee-advanced/organic-chemistry/hydrocarbons",
-    lessonLabel: "12 sections",
+    href: "/learn/jee-advanced/complete-notes/hydrocarbons",
+    lessonLabel: "3 parts",
     premium: true,
-    description: "Alkanes, alkenes, alkynes and aromatic hydrocarbons: full mechanisms for radical halogenation, electrophilic addition, EAS, ozonolysis, and 25 JEE Advanced-pattern questions.",
+    description:
+      "Complete JEE Advanced hydrocarbon notes in three parts: Alkanes (free radicals, preparation and reactions), Alkenes and Alkynes side by side (every addition, oxidation, ozonolysis, dienes and Diels–Alder), and Aromatic Substitution (EAS and NAS), with every mechanism drawn step by step.",
   },
   {
     id: "haloalkanes-haloarenes",
@@ -424,6 +431,17 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     lessonLabel: "10 sections",
     premium: true,
     description: "SN1, SN2, E1, E2 mechanisms with full stereochemistry; nucleophilic aromatic substitution; named reactions and 25 JEE Advanced questions.",
+  },
+  {
+    id: "elimination-reactions",
+    syllabusId: "haloalkanes-haloarenes",
+    ownCard: true,
+    title: "Elimination Reactions",
+    href: "/learn/jee-advanced/complete-notes/elimination-reactions",
+    lessonLabel: "24 chapters",
+    premium: true,
+    description:
+      "Complete JEE Advanced Elimination notes: E2, E1, E1cB and Ei with step-wise mechanisms, Saytzeff vs Hofmann products, anti-periplanar stereochemistry from Fischer and Newman projections, Hofmann exhaustive methylation, fragmentations, α-elimination, and solved and study problems for every mechanism.",
   },
   {
     id: "alcohols-phenols-ethers",
@@ -485,10 +503,11 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     id: "coordination-compounds",
     syllabusId: "coordination-compounds",
     title: "Coordination Compounds",
-    href: "/learn/jee-advanced/inorganic-chemistry/coordination-compounds",
-    lessonLabel: "11 sections",
+    href: "/learn/jee-advanced/complete-notes/coordination-compounds",
+    lessonLabel: "11 chapters",
     premium: true,
-    description: "Werner's theory, IUPAC nomenclature, isomerism, VBT and CFT with d-orbital splitting, stability constants, and 25 JEE Advanced questions.",
+    description:
+      "Complete JEE Advanced Coordination Chemistry notes: Werner's theory, ligands, chelation and HSAB, coordination polyhedra, IUPAC nomenclature, EAN and the 18-electron rule, metal carbonyls and organometallics, VBT and magnetism, CFT and Jahn–Teller, isomerism, colour and electronic spectra, and stability constants.",
   },
 ];
 
@@ -526,12 +545,19 @@ export function groupLessonTotal(courses: AuthoredCourse[]): number {
 }
 
 const BY_SYLLABUS = new Map<string, AuthoredCourse[]>();
+const OWN_CARDS_AFTER = new Map<string, AuthoredCourse[]>();
 for (const course of AUTHORED_COURSES) {
-  const list = BY_SYLLABUS.get(course.syllabusId) ?? [];
+  const index = course.ownCard ? OWN_CARDS_AFTER : BY_SYLLABUS;
+  const list = index.get(course.syllabusId) ?? [];
   list.push(course);
-  BY_SYLLABUS.set(course.syllabusId, list);
+  index.set(course.syllabusId, list);
 }
 
 export function coursesForSyllabusChapter(syllabusId: string): AuthoredCourse[] {
   return BY_SYLLABUS.get(syllabusId) ?? [];
+}
+
+/** Courses shown as their own card right after this syllabus chapter's card. */
+export function ownCardCoursesAfter(syllabusId: string): AuthoredCourse[] {
+  return OWN_CARDS_AFTER.get(syllabusId) ?? [];
 }

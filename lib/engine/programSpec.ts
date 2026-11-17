@@ -170,6 +170,28 @@ export const AUTHORED_NOTES: Record<string, string> = {
   "polymers": "/learn/jee-advanced/polymers",
 };
 
+/**
+ * JEE Advanced only: chapters whose notes are the complete self-contained HTML
+ * notes under /learn/jee-advanced/complete-notes. Other programmes keep
+ * AUTHORED_NOTES; these routes are gated to the JEE Advanced entitlement.
+ */
+export const JEE_ADVANCED_COMPLETE_NOTES_HUB = "/learn/jee-advanced/complete-notes";
+export const JEE_ADVANCED_COMPLETE_NOTES: Record<string, string> = {
+  "chemical-bonding": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/chemical-bonding`,
+  "chemical-kinetics": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/chemical-kinetics`,
+  "coordination-compounds": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/coordination-compounds`,
+  "hydrocarbons": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/hydrocarbons`,
+  "solid-state": "/learn/solid-state/textbook",
+};
+
+/** Notes route for a chapter inside a programme (JEE Advanced overrides first). */
+export function authoredNotesFor(programSlug: string, chapterId: string): string | undefined {
+  if (programSlug === "jee-advanced" && JEE_ADVANCED_COMPLETE_NOTES[chapterId]) {
+    return JEE_ADVANCED_COMPLETE_NOTES[chapterId];
+  }
+  return AUTHORED_NOTES[chapterId];
+}
+
 // ── Expected-time heuristic (labelled as derived wherever shown) ──────────────
 
 export const EXPECTED_SECONDS: Record<PYQDifficulty, number> = {

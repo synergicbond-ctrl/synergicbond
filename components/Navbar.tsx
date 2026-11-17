@@ -298,7 +298,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]">
-      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-2 px-3 sm:gap-4 sm:px-4 md:px-6">
+      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-2 px-3 sm:gap-4 sm:px-4 md:px-6 min-[60rem]:gap-2 xl:gap-4">
 
         {/* Brand signature — static SB ligature, wordmark and two-line descriptor. */}
         <Link href="/" aria-label="SYNERGIC BOND — The Chemistry Operating System" className="shrink-0">
@@ -309,7 +309,7 @@ export default function Navbar() {
             marketing IA (Home · Programs · Features · Pricing · Support)
             for everyone else. */}
         {portalMode ? (
-          <nav className="hidden xl:flex items-center justify-center flex-1 gap-1" aria-label="Portal">
+          <nav className="hidden min-[60rem]:flex items-center justify-center flex-1 gap-0.5 xl:gap-1" aria-label="Portal">
             {portalLinks.map((l) => {
               const Icon = l.icon;
               const active = pathname === l.href || (l.href !== "/dashboard" && pathname?.startsWith(`${l.href}/`));
@@ -317,25 +317,25 @@ export default function Navbar() {
                 <Link
                   key={l.label}
                   href={l.href}
-                  className={`flex items-center gap-1.5 whitespace-nowrap px-3 py-2 rounded-lg text-sm font-medium transition ${
+                  className={`flex items-center gap-1.5 whitespace-nowrap px-2 xl:px-3 py-2 rounded-lg text-[13px] xl:text-sm font-medium transition ${
                     active ? "text-[var(--accent)] bg-[var(--accent-wash)]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
                   }`}
                 >
-                  <Icon className="h-4 w-4" /> {l.label}
+                  <span className="hidden xl:inline-flex"><Icon className="h-4 w-4" /></span> {l.label}
                 </Link>
               );
             })}
           </nav>
         ) : (
-        <nav className="hidden xl:flex items-center justify-center flex-1 gap-1">
+        <nav className="hidden min-[60rem]:flex items-center justify-center flex-1 gap-0.5 xl:gap-1">
           {/* Home */}
           <Link
             href="/"
-            className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium transition ${
+            className={`flex items-center gap-1.5 whitespace-nowrap px-2 xl:px-2.5 2xl:px-3 py-2 rounded-lg text-[13px] xl:text-sm font-medium transition ${
               pathname === "/" ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
             }`}
           >
-            <Home className="h-4 w-4" /> Home
+            <span className="hidden xl:inline-flex"><Home className="h-4 w-4" /></span> Home
           </Link>
 
           {/* Programs + Features mega-menus (shared panel machinery) */}
@@ -344,9 +344,9 @@ export default function Navbar() {
             const allItems = menu.groups.flatMap((g) => g.items);
             const hasActive = allItems.some((it) => it.href === pathname) || menu.pinned?.href === pathname;
             return (
-              <div key={menu.title} className="relative" onMouseEnter={() => setOpenMenu(menu.title)} onMouseLeave={() => setOpenMenu(null)}>
+              <div key={menu.title} className="relative max-xl:text-[13px]" onMouseEnter={() => setOpenMenu(menu.title)} onMouseLeave={() => setOpenMenu(null)}>
                 <button
-                  className={`flex items-center gap-1 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium transition ${
+                  className={`flex items-center gap-1 whitespace-nowrap px-2 xl:px-2.5 2xl:px-3 py-2 rounded-lg text-[13px] xl:text-sm font-medium transition ${
                     open || hasActive ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
                   }`}
                 >
@@ -406,16 +406,16 @@ export default function Navbar() {
           {/* Snap & Solve — permanent flagship, stays top-level (Phase 7 rule) */}
           <Link
             href="/snap-solve"
-            className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-semibold transition ${
+            className={`flex items-center gap-1.5 whitespace-nowrap px-2 xl:px-2.5 2xl:px-3 py-2 rounded-lg text-[13px] xl:text-sm font-semibold transition ${
               pathname === "/snap-solve"
                 ? "text-[var(--accent)] bg-[var(--accent-wash)]"
                 : "text-gray-200 hover:text-white hover:bg-white/[0.05]"
             }`}
           >
-            <Camera className="h-4 w-4" /> Snap &amp; Solve
+            <span className="hidden xl:inline-flex"><Camera className="h-4 w-4" /></span> Snap &amp; Solve
           </Link>
 
-          <span className="mx-1.5 h-5 w-px bg-white/10" />
+          <span className="mx-1.5 hidden h-5 w-px bg-white/10 xl:block" />
 
           {/* Pricing · Support */}
           {NAV_LINKS.map((l) => {
@@ -424,18 +424,18 @@ export default function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium transition ${
+                className={`flex items-center gap-1.5 whitespace-nowrap px-2 xl:px-2.5 2xl:px-3 py-2 rounded-lg text-[13px] xl:text-sm font-medium transition ${
                   pathname === l.href ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
                 }`}
               >
-                <Icon className="h-4 w-4" /> {l.label}
+                <span className="hidden xl:inline-flex"><Icon className="h-4 w-4" /></span> {l.label}
               </Link>
             );
           })}
 
           {/* Search quick-link (utility) */}
-          <Link href="/search" className="flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/[0.05] transition">
-            <Search className="h-4 w-4" /> {t("nav.search")}
+          <Link href="/search" className="flex items-center gap-1.5 whitespace-nowrap px-2 xl:px-2.5 2xl:px-3 py-2 rounded-lg text-[13px] xl:text-sm font-medium text-gray-300 hover:text-white hover:bg-white/[0.05] transition" aria-label={t("nav.search")}>
+            <Search className="h-4 w-4" /> <span className="hidden xl:inline">{t("nav.search")}</span>
           </Link>
         </nav>
         )}
@@ -557,7 +557,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl text-gray-400 transition hover:bg-white/[0.05] hover:text-white sm:h-11 sm:w-11 xl:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-xl text-gray-400 transition hover:bg-white/[0.05] hover:text-white sm:h-11 sm:w-11 min-[60rem]:hidden"
             aria-label="Menu"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -567,7 +567,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="xl:hidden border-t border-white/[0.06] bg-[var(--background)]/98 px-4 py-4">
+        <div className="min-[60rem]:hidden border-t border-white/[0.06] bg-[var(--background)]/98 px-4 py-4">
           <div className="grid grid-cols-3 gap-2 mb-4">
             {LANGS.map((l) => (
               <button

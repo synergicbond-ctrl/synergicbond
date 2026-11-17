@@ -181,6 +181,7 @@ export const JEE_ADVANCED_COMPLETE_NOTES: Record<string, string> = {
   "chemical-kinetics": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/chemical-kinetics`,
   "coordination-compounds": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/coordination-compounds`,
   "hydrocarbons": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/hydrocarbons`,
+  "solid-state": "/learn/solid-state/textbook",
 };
 
 /** Notes route for a chapter inside a programme (JEE Advanced overrides first). */

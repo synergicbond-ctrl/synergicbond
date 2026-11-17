@@ -75,7 +75,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
             <span className={`text-xs font-bold uppercase tracking-[0.16em] ${accent.text}`}>Complete notes · Premium</span>
             <span className="mt-1 block text-lg font-semibold">JEE Advanced complete chapter notes →</span>
             <span className="mt-1 block text-sm text-[var(--text-muted)]">
-              Chemical Bonding, Chemical Kinetics, Coordination Compounds, Hydrocarbons (Alkanes, Alkenes and Alkynes, Aromatic Substitution) and Elimination Reactions.
+              Chemical Bonding, Chemical Kinetics, Coordination Compounds, Solid State, Alkanes, Alkenes, Alkynes, Aromatic Substitution and Elimination Reactions.
             </span>
           </Link>
         )}
@@ -93,9 +93,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                   // Authored chapters open the canonical full-notes experience;
                   // the Chapter Engine stays one tap away. Others open the
                   // engine (engine programs) or the classic chapter workspace.
-                  const notesHref = chapter.id === "solid-state" && slug === "jee-advanced"
-                    ? "/learn/solid-state"
-                    : authoredNotesFor(slug, chapter.id);
+                  const notesHref = authoredNotesFor(slug, chapter.id);
                   const inlineNotes = isEngineSlug(slug)
                     ? getPremiumNotesForExam(chapter.id, ENGINE_PROGRAMS[slug].exam)
                     : undefined;

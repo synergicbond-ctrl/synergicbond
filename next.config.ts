@@ -44,6 +44,7 @@ const nextConfig: NextConfig = {
     "/learn/jee-advanced/complete-notes/hydrocarbons/alkenes-alkynes": ["./content/jee-advanced-notes/alkenes-alkynes.html"],
     "/learn/jee-advanced/complete-notes/hydrocarbons/aromatic-substitution": ["./content/jee-advanced-notes/aromatic-substitution.html"],
     "/learn/jee-advanced/complete-notes/elimination-reactions": ["./content/jee-advanced-notes/elimination-reactions.html"],
+    "/learn/jee-advanced/complete-notes/isomerism": ["./content/jee-advanced-notes/isomerism.html"],
     "/learn/isomerism/files/[...path]": ["./content/isomerism-resources/**/*"],
     "/notes/assignments/[chapter]/[...path]": ["./content/assignments/**/*"],
   },

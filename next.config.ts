@@ -45,6 +45,7 @@ const nextConfig: NextConfig = {
     "/learn/jee-advanced/complete-notes/hydrocarbons/aromatic-substitution": ["./content/jee-advanced-notes/aromatic-substitution.html"],
     "/learn/jee-advanced/complete-notes/elimination-reactions": ["./content/jee-advanced-notes/elimination-reactions.html"],
     "/learn/jee-advanced/complete-notes/isomerism": ["./content/jee-advanced-notes/isomerism.html"],
+    "/learn/jee-advanced/complete-notes/protein-secondary-structure": ["./content/jee-advanced-notes/protein-secondary-structure.html"],
     "/learn/isomerism/files/[...path]": ["./content/isomerism-resources/**/*"],
     "/notes/assignments/[chapter]/[...path]": ["./content/assignments/**/*"],
   },

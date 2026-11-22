@@ -48,6 +48,19 @@ export default function OlympiadPage() {
           </div>
         </div>
 
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold mb-2">Complete Chapter Notes</h2>
+          <p className="text-[var(--text-muted)] mb-6">Full authored Olympiad notes with practice questions</p>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Link href="/learn/olympiad/complete-notes/d-and-f-block-elements"
+              className="bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--border-strong)] rounded-lg p-5 transition group">
+              <div className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] mb-2">Theory + 450 Questions</div>
+              <div className="font-bold text-lg text-[var(--foreground)] group-hover:text-[var(--accent)] transition">d- and f-Block Elements</div>
+              <div className="text-[var(--text-muted)] text-sm mt-1">Transition and inner-transition elements, lanthanoids and actinoids.</div>
+            </Link>
+          </div>
+        </div>
+
         <div>
           <h2 className="text-2xl font-bold mb-2">Olympiad Topics</h2>
           <p className="text-[var(--text-muted)] mb-2">Advanced focus areas beyond the JEE syllabus.</p>

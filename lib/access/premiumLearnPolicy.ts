@@ -25,6 +25,8 @@ export const PREMIUM_LEARN_ELIGIBLE_PROGRAM_KEYS = {
   // Complete chapter notes published as self-contained HTML files under the
   // JEE Advanced track (bonding, kinetics, coordination, hydrocarbons, elimination).
   "jee-advanced-notes": ["jee-advanced"],
+  // Complete chapter notes published under the Chemistry Olympiad track only.
+  "olympiad-notes": ["olympiad"],
   isomerism: [
     "neet", "jee-main", "jee-advanced",
     "cbse:class-11", "isc:class-11", "icse:class-11", "state-boards:class-11",

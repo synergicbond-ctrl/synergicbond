@@ -135,6 +135,37 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
           </section>
         )}
 
+        {slug === "olympiad" && (
+          <section className="mb-10">
+            <div className="mb-5">
+              <div className="text-xs font-black uppercase tracking-[0.25em] text-[var(--text-muted)]">
+                Chemistry Olympiad Notes
+              </div>
+              <h2 className="mt-1 text-2xl font-black text-white">Complete Chapter Notes</h2>
+              <p className="mt-2 text-sm text-[var(--text-muted)]">
+                Full authored notes with practice questions for the NSEC → INChO → IChO track.
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              <Link
+                href="/learn/olympiad/complete-notes/d-and-f-block-elements"
+                className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.08] p-5 transition hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/[0.13]"
+              >
+                <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[var(--accent)]">
+                  Full Notes · Theory + 450 Questions
+                </div>
+                <h3 className="mt-2 text-xl font-black text-white">d- and f-Block Elements</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
+                  Transition and inner-transition elements: trends, colour, magnetism,
+                  oxidation states, key compounds, lanthanoids and actinoids.
+                </p>
+                <div className="mt-4 font-bold text-[var(--accent)]">Open d- and f-Block Notes →</div>
+              </Link>
+            </div>
+          </section>
+        )}
+
         <div className="mb-12">
           <ProgramHubSections sections={sections} accentText={accent.text} accentCard={accent.card} />
           {hasSyllabus && (

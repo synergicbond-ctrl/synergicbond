@@ -182,6 +182,7 @@ export const JEE_ADVANCED_COMPLETE_NOTES: Record<string, string> = {
   "coordination-compounds": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/coordination-compounds`,
   "hydrocarbons": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/hydrocarbons`,
   "isomerism": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/isomerism`,
+  "chemistry-in-everyday-life": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/chemistry-in-everyday-life`,
   "solid-state": "/learn/solid-state/textbook",
 };
 

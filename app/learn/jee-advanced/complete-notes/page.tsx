@@ -5,7 +5,7 @@ import { NotesCardGrid } from "./_cards";
 export const metadata: Metadata = {
   title: "JEE Advanced Complete Chapter Notes | Synergic Bond",
   description:
-    "Complete JEE Advanced chemistry notes: Chemical Bonding, Chemical Kinetics, Solid State, Coordination Compounds, Isomerism, Alkanes, Alkenes, Alkynes, Aromatic Substitution and Elimination Reactions, with step-wise mechanisms and interactive figures.",
+    "Complete JEE Advanced chemistry notes: Chemical Bonding, Chemical Kinetics, Solid State, Coordination Compounds, Isomerism, Alkanes, Alkenes, Alkynes, Aromatic Substitution and Elimination Reactions, d- and f-Block Elements, Biomolecules, Environmental Chemistry, with step-wise mechanisms and interactive figures.",
 };
 
 const B = "/learn/jee-advanced/complete-notes";
@@ -23,6 +23,9 @@ const CHAPTERS = [
   { href: `${H}/alkenes-alkynes#part2`, title: "Alkynes", blurb: "18 sections: acidity and acetylides, reduction, additions, Kucherov hydration, hydroboration, oxidative cleavage, ozonolysis and reactions of acetylene." },
   { href: `${H}/aromatic-substitution`, title: "Aromatic Substitution (EAS and NAS)", blurb: "12 chapters: aromaticity, the arenium-ion mechanism, nitration, sulphonation, halogenation, Friedel–Crafts, directing effects and nucleophilic aromatic substitution." },
   { href: `${B}/elimination-reactions`, title: "Elimination Reactions", blurb: "24 chapters: E1, E2, E1cB and Ei with step-wise mechanisms, stereochemistry, Saytzeff vs Hofmann products, fragmentations and solved problems." },
+  { href: `${B}/d-and-f-block`, title: "d- and f-Block Elements", blurb: "Complete theory for the transition and inner-transition elements: configurations, oxidation states, colour, magnetism, chromium and manganese chemistry, lanthanoids and actinoids, with a 275-question bank." },
+  { href: `${B}/biomolecules`, title: "Biomolecules", blurb: "Carbohydrates, amino acids, peptides and proteins, nucleic acids, vitamins and enzymes, with drawn reactions and structures and worked problems." },
+  { href: `${B}/environmental-chemistry`, title: "Environmental Chemistry", blurb: "Atmospheric, water and soil chemistry: pollutants, mechanisms, control strategies and green chemistry, in 12 complete parts." },
 ];
 
 export default function CompleteNotesHub() {

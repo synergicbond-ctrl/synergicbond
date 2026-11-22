@@ -36,7 +36,7 @@ const prepared = new Map<string, Promise<PreparedFile>>();
 // hidden (kept in the DOM because the files' scripts look them up by id), the
 // browser's print output is blank, and Ctrl/Cmd+P and window.print() do nothing.
 const PRINT_BUTTONS = ['<span class="pill">A4 Print Styles · Offline</span>'];
-const NO_PRINT = `<style id="sb-no-print">#print-notes,#printDoc{display:none!important}@media print{html,body{display:none!important}}</style><script id="sb-no-print-js">(function(){try{window.print=function(){};}catch(e){}document.addEventListener("keydown",function(e){if((e.ctrlKey||e.metaKey)&&(e.key==="p"||e.key==="P")){e.preventDefault();e.stopImmediatePropagation();}},true);})();</script>`;
+const NO_PRINT = `<style id="sb-no-print">#print-notes,#printDoc,#printBtn{display:none!important}@media print{html,body{display:none!important}}</style><script id="sb-no-print-js">(function(){try{window.print=function(){};}catch(e){}document.addEventListener("keydown",function(e){if((e.ctrlKey||e.metaKey)&&(e.key==="p"||e.key==="P")){e.preventDefault();e.stopImmediatePropagation();}},true);})();</script>`;
 
 export function withoutPrinting(html: string): string {
   let out = html;

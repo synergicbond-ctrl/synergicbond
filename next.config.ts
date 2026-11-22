@@ -45,6 +45,8 @@ const nextConfig: NextConfig = {
     "/learn/jee-advanced/complete-notes/hydrocarbons/aromatic-substitution": ["./content/jee-advanced-notes/aromatic-substitution.html"],
     "/learn/jee-advanced/complete-notes/elimination-reactions": ["./content/jee-advanced-notes/elimination-reactions.html"],
     "/learn/jee-advanced/complete-notes/isomerism": ["./content/jee-advanced-notes/isomerism.html"],
+    // Chemistry Olympiad complete chapter notes.
+    "/learn/olympiad/complete-notes/d-and-f-block-elements": ["./content/olympiad-notes/d-and-f-block-elements.html"],
     "/learn/isomerism/files/[...path]": ["./content/isomerism-resources/**/*"],
     "/notes/assignments/[chapter]/[...path]": ["./content/assignments/**/*"],
   },

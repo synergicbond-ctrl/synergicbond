@@ -22,6 +22,8 @@ import { hasPremiumLearnAccess, type PremiumLearnChapter } from "@/lib/access/pr
 // does not download it again. The access check still runs on every request.
 
 export const HTML_NOTES_DIR = path.join(process.cwd(), "content", "jee-advanced-notes");
+// Chemistry Olympiad complete notes (same format, Olympiad track only).
+export const OLYMPIAD_NOTES_DIR = path.join(process.cwd(), "content", "olympiad-notes");
 
 const NO_STORE = { "Cache-Control": "no-store" };
 
@@ -177,6 +179,7 @@ export async function serveGatedHtmlNotes(
   request: Request,
   file: string,
   chapter: PremiumLearnChapter,
+  dir: string = HTML_NOTES_DIR,
 ): Promise<Response> {
   const { pathname } = new URL(request.url);
   const { hasUser, keys } = await getUserEntitlements();
@@ -186,5 +189,5 @@ export async function serveGatedHtmlNotes(
   if (!hasPremiumLearnAccess(keys, chapter)) {
     return Response.redirect(new URL(`/pricing?next=${encodeURIComponent(pathname)}`, request.url), 307);
   }
-  return sendHtmlFile(request, path.join(HTML_NOTES_DIR, file));
+  return sendHtmlFile(request, path.join(dir, file));
 }

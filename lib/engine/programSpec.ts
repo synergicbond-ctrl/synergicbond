@@ -182,6 +182,10 @@ export const JEE_ADVANCED_COMPLETE_NOTES: Record<string, string> = {
   "coordination-compounds": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/coordination-compounds`,
   "hydrocarbons": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/hydrocarbons`,
   "isomerism": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/isomerism`,
+  "biomolecules": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/biomolecules`,
+  "d-and-f-block-elements": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/d-and-f-block`,
+  "f-block-elements": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/d-and-f-block#group-3`,
+  "environmental-chemistry": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/environmental-chemistry`,
   "solid-state": "/learn/solid-state/textbook",
 };
 

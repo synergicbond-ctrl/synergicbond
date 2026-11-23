@@ -1,9 +1,37 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 type VisualProps = {
   chapterId: string;
   title: string;
+  /** Card key (course id) — checked before chapterId when picking a poster. */
+  cardKey?: string;
 };
+
+/**
+ * 16:9 chapter posters in public/images/chapter-posters/<id>.webp, keyed by
+ * card key (course id) or syllabus chapter id. Cards without a poster fall
+ * back to the authored SVG drawing below.
+ */
+const CHAPTER_POSTERS = new Set([
+  "atomic-structure", "mole-concept", "redox-reactions", "chemical-equilibrium",
+  "thermodynamics", "electrochemistry", "chemical-kinetics", "solutions",
+  "states-of-matter", "solid-state", "surface-chemistry", "haloalkanes-haloarenes",
+  "elimination-reactions", "goc", "isomerism", "aldehydes-ketones",
+  "alcohols-phenols-ethers", "amines", "hydrocarbons", "hydrocarbons-alkenes",
+  "hydrocarbons-alkynes", "hydrocarbons-aromatic", "biomolecules",
+  "purification-characterisation", "polymers", "chemistry-in-everyday-life",
+  "periodic-table", "chemical-bonding", "general-inorganic-chemistry",
+  "coordination-compounds", "p-block-elements", "d-and-f-block-elements",
+  "hydrogen", "s-block-elements", "f-block-elements", "metallurgy",
+  "qualitative-analysis", "environmental-chemistry",
+]);
+
+function posterFor(cardKey: string | undefined, chapterId: string): string | undefined {
+  if (cardKey && CHAPTER_POSTERS.has(cardKey)) return cardKey;
+  if (CHAPTER_POSTERS.has(chapterId)) return chapterId;
+  return undefined;
+}
 
 // These hues carry meaning inside the authored chemistry drawings.
 const C = {
@@ -37,7 +65,22 @@ function Atoms({ points, bonds = true }: { points: [number, number][]; bonds?: b
  * no shared "spectrum" chart: every chapter selects a diagram tied to its
  * actual scientific topic, while the card chrome remains consistent.
  */
-export default function ChapterCardVisual({ chapterId, title }: VisualProps) {
+export default function ChapterCardVisual({ chapterId, title, cardKey }: VisualProps) {
+  const poster = posterFor(cardKey, chapterId);
+  if (poster) {
+    return (
+      <figure aria-hidden className="relative -mx-4 -mt-4 mb-4 aspect-video overflow-hidden sm:-mx-5 sm:-mt-5" style={{ background: C.ink, borderBottom: "1px solid var(--border)" }}>
+        <Image
+          src={`/images/chapter-posters/${poster}.webp`}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition duration-300 group-hover:scale-[1.02]"
+        />
+      </figure>
+    );
+  }
+
   const id = chapterId.toLowerCase();
   let drawing: ReactNode;
 

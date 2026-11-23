@@ -280,8 +280,10 @@ function ChapterCard({
 }) {
   const isAuthored = card.status !== "syllabus";
 
-  const cardClass =
-    "group flex w-full min-w-0 transform-gpu flex-col overflow-hidden rounded-lg border border-l-[3px] p-4 text-left transition duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none sm:p-5";
+  const posterCard = hasChapterPoster(card.key, card.syllabusId);
+  const cardClass = posterCard
+    ? "group relative block w-full min-w-0 transform-gpu overflow-hidden rounded-lg border text-left transition duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none"
+    : "group flex w-full min-w-0 transform-gpu flex-col overflow-hidden rounded-lg border border-l-[3px] p-4 text-left transition duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none sm:p-5";
 
   const cardStyle: React.CSSProperties = {
     background: selected ? "var(--surface-2)" : "var(--surface)",
@@ -290,25 +292,31 @@ function ChapterCard({
     ...(selected && { borderColor: "var(--border-strong)", borderLeftColor: isAuthored ? "var(--accent)" : "var(--border-strong)" }),
   };
 
-  const showTitle = !hasChapterPoster(card.key, card.syllabusId);
+  const posterOnly = posterCard;
 
-  const content = (
+  const openLabel = (
+    <span
+      className="rounded-md px-2.5 py-1 text-[12px] font-bold"
+      style={{ background: "rgba(0,0,0,0.6)", color: card.href ? "var(--accent)" : "#fff", backdropFilter: "blur(2px)" }}
+    >
+      Open
+    </span>
+  );
+
+  // Poster cards: only the poster, with a small "Open" in the corner.
+  // Cards without a poster keep their drawing and title so they stay identifiable.
+  const content = posterOnly ? (
+    <>
+      <ChapterCardVisual chapterId={card.syllabusId} cardKey={card.key} title={card.title} bare />
+      <span className="absolute bottom-2.5 right-2.5">{openLabel}</span>
+    </>
+  ) : (
     <>
       <ChapterCardVisual chapterId={card.syllabusId} cardKey={card.key} title={card.title} />
-      {showTitle && (
-        <h3 className="break-words text-[15px] font-bold leading-snug sm:text-[16px]" style={{ color: "var(--foreground)" }}>
-          {card.title}
-        </h3>
-      )}
-
-      <div className="mt-auto flex justify-end pt-3">
-        <span
-          className="shrink-0 text-[13px] font-bold transition-transform duration-150 group-hover:translate-x-0.5"
-          style={{ color: card.href ? "var(--accent)" : "var(--text-muted)" }}
-        >
-          Open
-        </span>
-      </div>
+      <h3 className="break-words text-[15px] font-bold leading-snug sm:text-[16px]" style={{ color: "var(--foreground)" }}>
+        {card.title}
+      </h3>
+      <div className="mt-auto flex justify-end pt-3">{openLabel}</div>
     </>
   );
 

@@ -6,6 +6,8 @@ type VisualProps = {
   title: string;
   /** Card key (course id) — checked before chapterId when picking a poster. */
   cardKey?: string;
+  /** Poster fills the whole card (no padding offsets, no divider). */
+  bare?: boolean;
 };
 
 /**
@@ -70,11 +72,15 @@ function Atoms({ points, bonds = true }: { points: [number, number][]; bonds?: b
  * no shared "spectrum" chart: every chapter selects a diagram tied to its
  * actual scientific topic, while the card chrome remains consistent.
  */
-export default function ChapterCardVisual({ chapterId, title, cardKey }: VisualProps) {
+export default function ChapterCardVisual({ chapterId, title, cardKey, bare = false }: VisualProps) {
   const poster = posterFor(cardKey, chapterId);
   if (poster) {
     return (
-      <figure aria-hidden className="relative -mx-4 -mt-4 mb-4 aspect-video overflow-hidden sm:-mx-5 sm:-mt-5" style={{ background: C.ink, borderBottom: "1px solid var(--border)" }}>
+      <figure
+        aria-hidden
+        className={bare ? "relative m-0 aspect-video overflow-hidden" : "relative -mx-4 -mt-4 mb-4 aspect-video overflow-hidden sm:-mx-5 sm:-mt-5"}
+        style={{ background: C.ink, ...(bare ? {} : { borderBottom: "1px solid var(--border)" }) }}
+      >
         <Image
           src={`/images/chapter-posters/${poster}.webp`}
           alt=""

@@ -516,10 +516,10 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     id: "chemistry-in-everyday-life",
     syllabusId: "chemistry-in-everyday-life",
     title: "Chemistry in Everyday Life",
-    href: "/learn/jee-advanced/organic-chemistry/chemistry-in-everyday-life",
-    lessonLabel: "8 sections",
+    href: "/learn/jee-advanced/complete-notes/chemistry-in-everyday-life",
+    lessonLabel: "5 chapters",
     premium: true,
-    description: "Drug classifications, mechanism of drug action, antiseptics vs disinfectants, food preservatives, cleansing agents, and 25 JEE-pattern questions.",
+    description: "Drug classification, how drugs interact with enzymes and receptors, therapeutic classes of drugs, chemicals in food and cleansing agents, with drawn structures, a master revision table and worked questions.",
   },
   // ── General Inorganic Chemistry ───────────────────────────────────────────
   {

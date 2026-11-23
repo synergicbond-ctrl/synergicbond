@@ -27,6 +27,11 @@ const CHAPTER_POSTERS = new Set([
   "qualitative-analysis", "environmental-chemistry",
 ]);
 
+/** True when this card shows a poster (the poster carries the chapter name). */
+export function hasChapterPoster(cardKey: string | undefined, chapterId: string): boolean {
+  return posterFor(cardKey, chapterId) !== undefined;
+}
+
 function posterFor(cardKey: string | undefined, chapterId: string): string | undefined {
   if (cardKey && CHAPTER_POSTERS.has(cardKey)) return cardKey;
   if (CHAPTER_POSTERS.has(chapterId)) return chapterId;

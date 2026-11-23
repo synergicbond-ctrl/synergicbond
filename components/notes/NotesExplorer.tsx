@@ -9,7 +9,7 @@ import {
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
 import { AUTHORED_COURSES, COURSE_GROUP_CARDS, coursesForSyllabusChapter, ownCardCoursesAfter, groupLessonTotal, type AuthoredCourse } from "@/lib/notes/chapterCatalog";
 import UnlockBanner from "@/components/monetization/UnlockBanner";
-import ChapterCardVisual from "@/components/notes/ChapterCardVisual";
+import ChapterCardVisual, { hasChapterPoster } from "@/components/notes/ChapterCardVisual";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Notes Explorer — uniform chapter card system.
@@ -268,30 +268,6 @@ interface ChapterCardData {
   href?: string;
 }
 
-function PremiumBadge() {
-  return (
-    <span className="shrink-0 rounded-sm px-2 py-0.5 text-[9.5px] font-black uppercase tracking-widest" style={{ border: "1px solid var(--accent)", color: "var(--accent)", background: "var(--accent-wash)" }}>
-      Premium
-    </span>
-  );
-}
-
-function MixedBadge() {
-  return (
-    <span className="shrink-0 rounded-sm px-2 py-0.5 text-[9.5px] font-black uppercase tracking-widest" style={{ border: "1px solid var(--border-strong)", color: "var(--text-faint)", background: "transparent" }}>
-      Free + Premium
-    </span>
-  );
-}
-
-function FreeBadge() {
-  return (
-    <span className="shrink-0 rounded-sm px-2 py-0.5 text-[9.5px] font-black uppercase tracking-widest" style={{ border: "1px solid var(--border)", color: "var(--text-muted)", background: "transparent" }}>
-      Free
-    </span>
-  );
-}
-
 /** One consistent card shell with a distinct, chapter-specific chemistry visual. */
 function ChapterCard({
   card,
@@ -305,7 +281,7 @@ function ChapterCard({
   const isAuthored = card.status !== "syllabus";
 
   const cardClass =
-    "group flex min-h-[272px] w-full min-w-0 transform-gpu flex-col overflow-hidden rounded-lg border border-l-[3px] p-4 text-left transition duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none sm:min-h-[296px] sm:p-5";
+    "group flex w-full min-w-0 transform-gpu flex-col overflow-hidden rounded-lg border border-l-[3px] p-4 text-left transition duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none sm:p-5";
 
   const cardStyle: React.CSSProperties = {
     background: selected ? "var(--surface-2)" : "var(--surface)",
@@ -314,45 +290,23 @@ function ChapterCard({
     ...(selected && { borderColor: "var(--border-strong)", borderLeftColor: isAuthored ? "var(--accent)" : "var(--border-strong)" }),
   };
 
+  const showTitle = !hasChapterPoster(card.key, card.syllabusId);
+
   const content = (
     <>
       <ChapterCardVisual chapterId={card.syllabusId} cardKey={card.key} title={card.title} />
-      <div className="flex items-start justify-between gap-2">
-        <span className="min-w-0 text-[9.5px] font-bold uppercase tracking-[0.2em]" style={{ color: "var(--text-muted)" }}>
-          {card.groupLabel
-            ? `${card.groupLabel}${card.sectionLabel ? ` · ${card.sectionLabel}` : ""}`
-            : CATEGORY_LABEL[card.category]}
-        </span>
-        {card.mixedAccess ? (
-          <MixedBadge />
-        ) : card.premium ? (
-          <PremiumBadge />
-        ) : card.status !== "syllabus" ? (
-          <FreeBadge />
-        ) : null}
-      </div>
+      {showTitle && (
+        <h3 className="break-words text-[15px] font-bold leading-snug sm:text-[16px]" style={{ color: "var(--foreground)" }}>
+          {card.title}
+        </h3>
+      )}
 
-      <h3 className="mt-2.5 break-words text-[15px] font-bold leading-snug sm:text-[16px]" style={{ color: "var(--foreground)" }}>
-        {card.title}
-      </h3>
-
-      <p className="mt-2 line-clamp-4 min-w-0 flex-1 text-[12.5px] leading-relaxed sm:line-clamp-3" style={{ color: "var(--text-muted)" }}>
-        {card.description}
-      </p>
-
-      <div className="mt-4 flex min-w-0 flex-col items-start gap-2 border-t pt-3 sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: "var(--border)" }}>
-        <span className="max-w-full break-words text-[11px]" style={{ color: "var(--text-muted)" }}>
-          {card.statusLine}
-        </span>
+      <div className="mt-auto flex justify-end pt-3">
         <span
-          className="shrink-0 text-[11px] font-bold transition-transform duration-150 group-hover:translate-x-0.5"
+          className="shrink-0 text-[13px] font-bold transition-transform duration-150 group-hover:translate-x-0.5"
           style={{ color: card.href ? "var(--accent)" : "var(--text-muted)" }}
         >
-          {card.href
-            ? "Open full notes →"
-            : card.status === "syllabus"
-              ? "View syllabus ↓"
-              : "Open notes ↓"}
+          Open
         </span>
       </div>
     </>

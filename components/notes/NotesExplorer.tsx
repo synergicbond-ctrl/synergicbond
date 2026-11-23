@@ -316,7 +316,7 @@ function ChapterCard({
     return (
       <Link
         href={card.href}
-        aria-label={`Open ${card.title} full notes`}
+        aria-label={`Open ${card.title}`}
         className={cardClass}
         style={cardStyle}
       >

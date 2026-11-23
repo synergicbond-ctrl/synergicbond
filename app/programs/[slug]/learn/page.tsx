@@ -125,8 +125,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                       </Link>
                       <div className="mt-3 flex items-center justify-between gap-2">
                         <span className={`text-sm font-semibold ${accent.text}`}>
-                          {notesHref ? "Explore lessons" : inlineNotes ? "Open full notes" : "Open chapter"}{" "}
-                          <span className="inline-block transition group-hover:translate-x-1">→</span>
+                          Open
                         </span>
                         {hasFullNotes && (
                           <Link

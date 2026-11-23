@@ -585,30 +585,11 @@ export default function NotesExplorer({
                 ))}
                 <span className="text-[11px] text-white/40">D{syllabusChapter.difficulty} · ~{syllabusChapter.estimatedHours}h</span>
               </div>
-              <p className="mt-2.5 text-[13.5px] text-white/60">
-                {chapterCourses.length > 0
-                  ? "Open the full authored course above — the official syllabus is listed below."
-                  : "Detailed notes not added yet. Official syllabus available below."}
-              </p>
+              {chapterCourses.length === 0 && (
+                <p className="mt-2.5 text-[13.5px] text-white/60">Detailed notes not added yet.</p>
+              )}
             </div>
 
-            <div className="rounded-sm border p-4">
-              <h2 className="mb-3 flex items-center gap-2 text-lg font-black text-white">📋 Official Syllabus</h2>
-              <ul className="space-y-2.5">
-                {syllabusChapter.concepts.map((c) => (
-                  <li key={c.id} className="text-sm leading-relaxed">
-                    <span className="font-semibold text-white/90">{c.title}</span>
-                    {c.description && <span className="text-white/55"> — {c.description}</span>}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-4 flex flex-wrap gap-2 text-[11px]">
-                <Link href={`/chapter/${syllabusChapter.id}`} className="rounded-sm px-2.5 py-1 font-bold transition" style={{ border: "1px solid var(--accent)", color: "var(--accent)", background: "var(--accent-wash)" }}>Open chapter page →</Link>
-                <Link href="/pyq" className="rounded-sm px-2.5 py-1 transition" style={{ border: "1px solid var(--border)", color: "var(--text-muted)", background: "transparent" }}>PYQs</Link>
-                <Link href="/tests" className="rounded-sm px-2.5 py-1 transition" style={{ border: "1px solid var(--border)", color: "var(--text-muted)", background: "transparent" }}>Tests</Link>
-                <Link href="/snap-solve" className="rounded-sm px-2.5 py-1 transition" style={{ border: "1px solid var(--border)", color: "var(--text-muted)", background: "transparent" }}>Snap & Solve</Link>
-              </div>
-            </div>
           </section>
         )}
       </div>

@@ -316,7 +316,7 @@ function ChapterCard({
 
   const content = (
     <>
-      <ChapterCardVisual chapterId={card.syllabusId} title={card.title} />
+      <ChapterCardVisual chapterId={card.syllabusId} cardKey={card.key} title={card.title} />
       <div className="flex items-start justify-between gap-2">
         <span className="min-w-0 text-[9.5px] font-bold uppercase tracking-[0.2em]" style={{ color: "var(--text-muted)" }}>
           {card.groupLabel

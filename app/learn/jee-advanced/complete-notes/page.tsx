@@ -5,7 +5,7 @@ import { NotesCardGrid } from "./_cards";
 export const metadata: Metadata = {
   title: "JEE Advanced Complete Chapter Notes | Synergic Bond",
   description:
-    "Complete JEE Advanced chemistry notes: Chemical Bonding, Chemical Kinetics, Solid State, Coordination Compounds, Isomerism, Alkanes, Alkenes, Alkynes, Aromatic Substitution, Elimination Reactions and Chemistry in Everyday Life, with step-wise mechanisms and interactive figures.",
+    "Complete JEE Advanced chemistry notes: Chemical Bonding, Chemical Kinetics, Solid State, Coordination Compounds, Isomerism, Alkanes, Alkenes, Alkynes, Aromatic Substitution, Elimination Reactions, Chemistry in Everyday Life, Surface Chemistry, Salt Analysis, Metallurgy, d- and f-Block, Polymers, Environmental Chemistry, Biomolecules and Alcohols, Phenols and Ethers, with step-wise mechanisms and interactive figures.",
 };
 
 const B = "/learn/jee-advanced/complete-notes";
@@ -24,6 +24,15 @@ const CHAPTERS = [
   { href: `${H}/aromatic-substitution`, title: "Aromatic Substitution (EAS and NAS)", blurb: "12 chapters: aromaticity, the arenium-ion mechanism, nitration, sulphonation, halogenation, Friedel–Crafts, directing effects and nucleophilic aromatic substitution." },
   { href: `${B}/chemistry-in-everyday-life`, title: "Chemistry in Everyday Life", blurb: "5 chapters: drugs and their classification, drug-target interaction, therapeutic classes of drugs, chemicals in food and cleansing agents, with drawn structures, a master revision table and worked questions." },
   { href: `${B}/elimination-reactions`, title: "Elimination Reactions", blurb: "24 chapters: E1, E2, E1cB and Ei with step-wise mechanisms, stereochemistry, Saytzeff vs Hofmann products, fragmentations and solved problems." },
+  { href: `${B}/surface-chemistry`, title: "Surface Chemistry", blurb: "Adsorption, isotherms, catalysis, colloids, coagulation, emulsions and micelles, with 24 drawn plates, animated scenes and 21 live 3D films placed after the theory they show." },
+  { href: `${B}/salt-analysis`, title: "Qualitative Salt Analysis", blurb: "Preliminary tests, anions, cation groups and confirmatory tests, with live 3D films of every key test and the Salt Lab: bench, flame, bead, colour atlas and flowchart." },
+  { href: `${B}/metallurgy`, title: "Metallurgy", blurb: "Ores, concentration, roasting, reduction, Ellingham diagrams, extraction and refining, with six live 3D labs: froth flotation, zone refining, electrorefining, Hall–Héroult, Bessemer and the blast furnace." },
+  { href: `${B}/d-and-f-block`, title: "d- and f-Block Elements", blurb: "Transition elements, lanthanoids and actinoids: configurations, trends, oxidation states, colour, magnetism and key compounds, with 275 questions." },
+  { href: `${B}/polymers`, title: "Polymers", blurb: "Classification, polymerisation mechanisms, tacticity, molecular mass and important polymers, with interactive labs including an atom-by-atom 3D chain model." },
+  { href: `${B}/environmental-chemistry`, title: "Environmental Chemistry", blurb: "12 parts: atmospheric, water and soil pollution, their chemistry and control, and green chemistry." },
+  { href: `${B}/biomolecules`, title: "Biomolecules", blurb: "Carbohydrates, amino acids and proteins, enzymes, nucleic acids and vitamins, with drawn structures and interactive models." },
+  { href: `${B}/alcohols-phenols-ethers`, title: "Alcohols, Phenols and Ethers", blurb: "12 sections: preparation, properties and reactions of alcohols, phenols and ethers, with 142 drawn structures and solved examples." },
+  { href: `${B}/media-gallery`, title: "Topic Media Gallery", blurb: "Every film, diagram and lab of Surface Chemistry, Salt Analysis, Metallurgy and Chemistry in Everyday Life in one place, with search and filters." },
 ];
 
 export default function CompleteNotesHub() {

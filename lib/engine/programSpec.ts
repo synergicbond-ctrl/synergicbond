@@ -193,6 +193,8 @@ export const JEE_ADVANCED_COMPLETE_NOTES: Record<string, string> = {
   "d-and-f-block-elements": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/d-and-f-block`,
   "f-block-elements": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/d-and-f-block`,
   "solid-state": "/learn/solid-state/textbook",
+  "thermodynamics": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/thermodynamics`,
+  "goc": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/general-organic-chemistry`,
 };
 
 /** Notes route for a chapter inside a programme (JEE Advanced overrides first). */

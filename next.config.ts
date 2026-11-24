@@ -55,6 +55,8 @@ const nextConfig: NextConfig = {
     "/learn/jee-advanced/complete-notes/biomolecules": ["./content/jee-advanced-notes/biomolecules.html"],
     "/learn/jee-advanced/complete-notes/environmental-chemistry": ["./content/jee-advanced-notes/environmental-chemistry.html"],
     "/learn/jee-advanced/complete-notes/d-and-f-block": ["./content/jee-advanced-notes/d-and-f-block.html"],
+    "/learn/jee-advanced/complete-notes/thermodynamics": ["./content/jee-advanced-notes/thermodynamics.html"],
+    "/learn/jee-advanced/complete-notes/general-organic-chemistry": ["./content/jee-advanced-notes/general-organic-chemistry.html"],
     "/learn/isomerism/files/[...path]": ["./content/isomerism-resources/**/*"],
     "/notes/assignments/[chapter]/[...path]": ["./content/assignments/**/*"],
   },

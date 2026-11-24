@@ -183,6 +183,10 @@ export const JEE_ADVANCED_COMPLETE_NOTES: Record<string, string> = {
   "hydrocarbons": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/hydrocarbons`,
   "isomerism": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/isomerism`,
   "chemistry-in-everyday-life": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/chemistry-in-everyday-life`,
+  "surface-chemistry": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/surface-chemistry`,
+  "metallurgy": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/metallurgy`,
+  "qualitative-analysis": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/qualitative-salt-analysis`,
+  "alcohols-phenols-ethers": `${JEE_ADVANCED_COMPLETE_NOTES_HUB}/alcohols-phenols-ethers`,
   "solid-state": "/learn/solid-state/textbook",
 };
 

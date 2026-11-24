@@ -5,7 +5,7 @@ import { NotesCardGrid } from "./_cards";
 export const metadata: Metadata = {
   title: "JEE Advanced Complete Chapter Notes | Synergic Bond",
   description:
-    "Complete JEE Advanced chemistry notes: Chemical Bonding, Chemical Kinetics, Solid State, Coordination Compounds, Isomerism, Alkanes, Alkenes, Alkynes, Aromatic Substitution, Elimination Reactions and Chemistry in Everyday Life, with step-wise mechanisms and interactive figures.",
+    "Complete JEE Advanced chemistry notes: Chemical Bonding, Chemical Kinetics, Solid State, Coordination Compounds, Isomerism, Alkanes, Alkenes, Alkynes, Aromatic Substitution, Elimination Reactions, Alcohols, Phenols and Ethers, Surface Chemistry, Metallurgy, Qualitative Salt Analysis and Chemistry in Everyday Life, with step-wise mechanisms and interactive figures.",
 };
 
 const B = "/learn/jee-advanced/complete-notes";
@@ -24,6 +24,10 @@ const CHAPTERS = [
   { href: `${H}/aromatic-substitution`, title: "Aromatic Substitution (EAS and NAS)", blurb: "12 chapters: aromaticity, the arenium-ion mechanism, nitration, sulphonation, halogenation, Friedel–Crafts, directing effects and nucleophilic aromatic substitution." },
   { href: `${B}/chemistry-in-everyday-life`, title: "Chemistry in Everyday Life", blurb: "5 chapters: drugs and their classification, drug-target interaction, therapeutic classes of drugs, chemicals in food and cleansing agents, with drawn structures, a master revision table and worked questions." },
   { href: `${B}/elimination-reactions`, title: "Elimination Reactions", blurb: "24 chapters: E1, E2, E1cB and Ei with step-wise mechanisms, stereochemistry, Saytzeff vs Hofmann products, fragmentations and solved problems." },
+  { href: `${B}/alcohols-phenols-ethers`, title: "Alcohols, Phenols and Ethers", blurb: "Preparation, properties and every reaction of alcohols, phenols and ethers, with 142 drawn structures and step-wise mechanisms." },
+  { href: `${B}/surface-chemistry`, title: "Surface Chemistry", blurb: "Adsorption, isotherms, catalysis, colloids, emulsions and micelles, with 21 live 3D films and 28 illustrated scenes." },
+  { href: `${B}/metallurgy`, title: "Metallurgy", blurb: "Ores, concentration, roasting and calcination, reduction, Ellingham diagrams, extraction and refining of metals, with six live 3D labs." },
+  { href: `${B}/qualitative-salt-analysis`, title: "Qualitative Salt Analysis", blurb: "18 chapters: preliminary tests, anions, cation groups, confirmatory tests and interfering radicals, with 16 3D experiment films and an interactive Salt Lab." },
 ];
 
 export default function CompleteNotesHub() {

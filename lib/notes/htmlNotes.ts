@@ -62,6 +62,28 @@ const BONDING_LAZY_OBSERVER =
   "function __sbLazy(el){if(el.__boot)return;el.__boot=()=>{if(el.__go)return;el.__go=true;__sbIO.unobserve(el);el.connectedCallback();};__sbIO.observe(el);}\n";
 const BONDING_LINK_LOOKUP = "var m=art&&art.querySelector('sb-native-chemistry-module');";
 
+// Speed: Qualitative Salt Analysis is ~10 MB of pre-typeset reactions
+// (~170,000 page elements). The browser laid out every chapter before showing
+// anything, then started the WebGL lab at the top of the page and decoded the
+// embedded practice PDF, so the page sat frozen for several seconds. Now only
+// the chapters near the screen are laid out (content-visibility), and the 3D
+// films/labs and the PDF start once the text is on screen and the page is idle.
+const SALT_BOOT = "\nboot();\n";
+const SALT_LAZY_BOOT =
+  "\n(function(){var go=function(){(window.requestIdleCallback||function(f){setTimeout(f,200);})(boot,{timeout:1500});};if(document.readyState==='complete')go();else window.addEventListener('load',go,{once:true});})();\n";
+// Skipped chapters use an estimated height until they are drawn, so a smooth
+// scroll to a far heading would stop short. In-page links therefore jump
+// instantly and re-align for a moment while the chapters around the target
+// are drawn; scrolling by the reader cancels the re-align.
+const SALT_JUMP = `<script id="sb-jump">(function(){var jump=null;function align(){if(!jump)return;var el=document.getElementById(jump.id);if(!el||Date.now()-jump.t>2500){jump=null;return;}el.scrollIntoView({block:'start',behavior:'instant'});requestAnimationFrame(align);}function go(id){jump={id:id,t:Date.now()};align();}document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey)return;var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var id=decodeURIComponent(a.getAttribute('href').slice(1));if(!id||!document.getElementById(id))return;e.preventDefault();history.pushState(null,'','#'+id);go(id);},false);window.addEventListener('popstate',function(){var id=decodeURIComponent(location.hash.slice(1));if(id&&document.getElementById(id))go(id);});['wheel','touchstart','keydown'].forEach(function(t){window.addEventListener(t,function(){jump=null;},{passive:true});});window.addEventListener('load',function(){var id=decodeURIComponent(location.hash.slice(1));if(id&&document.getElementById(id))go(id);},{once:true});})();</script>`;
+const SALT_PDF_START = "(function(){var b=atob(";
+const SALT_PDF_LAZY_START = "window.__sbPdf=(function(){if(window.PRACTICE_URL)return;var b=atob(";
+const SALT_PDF_END = "if(a)a.href=window.PRACTICE_URL;})();";
+const SALT_PDF_LAZY_END =
+  "if(a)a.href=window.PRACTICE_URL;});" +
+  "document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('.practice-jump,#practiceDownload'))window.__sbPdf();},true);" +
+  "window.addEventListener('load',function(){setTimeout(function(){(window.requestIdleCallback||function(f){setTimeout(f,0);})(window.__sbPdf,{timeout:4000});},2500);},{once:true});";
+
 // Per-chapter clean-up: remove filler text (format notes, "offline" labels,
 // feature counts) and the search boxes, and give the Kinetics top bar a clean
 // title. Elements that the files' scripts look up are hidden, not deleted.
@@ -92,6 +114,15 @@ const POLISH: Record<string, Polish> = {
       [BONDING_LINK_LOOKUP, BONDING_LINK_LOOKUP + "if(m&&m.__boot)m.__boot();"],
     ],
     css: "aside>#search,#chapterSearch,.sidebar-small{display:none!important}sb-native-chemistry-module:not([data-status]){min-height:480px}",
+  },
+  "salt-analysis.html": {
+    replace: [
+      [SALT_BOOT, SALT_LAZY_BOOT],
+      ["</body>", SALT_JUMP + "</body>"],
+      [SALT_PDF_START, SALT_PDF_LAZY_START],
+      [SALT_PDF_END, SALT_PDF_LAZY_END],
+    ],
+    css: "main>section.chapter,main>section.entry{content-visibility:auto;contain-intrinsic-size:auto 4000px}",
   },
   "solid-state-textbook.html": {
     replace: [["<h1>Solid State — Complete</h1>", "<h1>Solid State</h1>"]],
